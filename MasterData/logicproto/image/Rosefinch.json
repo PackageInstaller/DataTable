@@ -1,0 +1,360 @@
+{
+ "name": "Rosefinch",
+ "actions": [
+  {
+   "name": "s100",
+   "animate": "5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -1200.0
+    },
+    "b": {
+     "x": -300.0,
+     "y": 100.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 4.5,
+      "end": 5.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10001
+   ],
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_AddHp",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "nightingale/nightingale_s100_03",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {
+      "y": -60.0
+     },
+     "randomPlay": true
+    },
+    {
+     "name": "nightingale/nightingale_s100_04",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 1,
+     "position": {},
+     "offPosition": {
+      "y": -60.0
+     },
+     "randomPlay": true
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "nightingale/nightingale_s100_01",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 3,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "s200",
+   "animate": "5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -1200.0
+    },
+    "b": {
+     "x": -300.0,
+     "y": 100.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 4.5,
+      "end": 5.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10002
+   ],
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_AddHp",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "nightingale/nightingale_s100_03",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {
+      "y": -60.0
+     },
+     "randomPlay": true
+    },
+    {
+     "name": "nightingale/nightingale_s100_04",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 1,
+     "position": {},
+     "offPosition": {
+      "y": -60.0
+     },
+     "randomPlay": true
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "nightingale/nightingale_s100_02",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 3,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "stand",
+   "animate": "1",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "run",
+   "animate": "1",
+   "actionType": "ActionType_Run",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {
+    "x": 400.0
+   },
+   "acceleration": {},
+   "nextAction": "run",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  }
+ ]
+}

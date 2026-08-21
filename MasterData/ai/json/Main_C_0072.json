@@ -1,0 +1,718 @@
+[
+  {
+    "name": "主线72 治疗&减伤| 游佐惠美Po3，司波达也Po2，莲太郎Po1",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "游佐惠美 \b—— P0 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "司波达也 P0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "莲太郎 \bP0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 —— P1 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "司波达也 P1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "莲太郎 P1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P2 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "司波达也 \b P2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 P2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P3 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "司波达也 \bP3",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 \bP3",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P4 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "司波达也 P4",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 \bP4",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "里见莲太郎 —— P5 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "司波达也 P5",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 \bP5",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,696 @@
+{
+ "name": "uiharu",
+ "actions": [
+  {
+   "name": "stand",
+   "animate": "1",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "disappear",
+   "animate": "0.3",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "blink1",
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "show_1_1",
+   "animate": "1.5",
+   "actionType": "ActionType_Pose",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "kojyo_show",
+     "path": [
+      "Voice/kazari/Uih00_2200",
+      "Voice/kazari/Uih00_2201"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "run",
+   "animate": "1",
+   "actionType": "ActionType_Run",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {
+    "x": 400.0
+   },
+   "acceleration": {},
+   "nextAction": "run",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 15,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "sup100",
+   "animate": "sup100",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -500.0
+    },
+    "b": {
+     "x": 500.0,
+     "y": 500.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 1.8,
+      "end": 2.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "empty",
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10021
+   ],
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_AddHp",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Sound/se/Potential"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.1,
+     "path": [
+      "Sound/se/Flower"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.3,
+     "path": [
+      "Voice/kazari/Uih00_7001_b",
+      "Voice/kazari/Uih00_7002_b",
+      "Voice/kazari/Uih00_7003_b"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 1.8,
+     "path": [
+      "Sound/se/Stars"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 3,
+    "position": {
+     "x": -4.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "uiharu/uiharu_petal_02",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {
+      "y": -180.0
+     }
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "uiharu/uiharu_petal_01",
+     "start": 0.01,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "common/P_yinshen_01_D",
+     "start": 0.01,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link_krk",
+   "animate": "link_krk",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10051
+   ],
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Sound/se/Potential"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "path": [
+      "Sound/se/keyboard"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "tag": "kojyo_show",
+     "path": [
+      "Voice/kazari/Uih00_7101_b_s0",
+      "Voice/kazari/Uih00_7102",
+      "Voice/kazari/Uih00_7103_b_s0"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 3,
+    "position": {
+     "x": -1.3
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "start": 0.01,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2114001,
+     "start": 0.1,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {}
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "sup200"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "preview",
+   "animate": "preview",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "linkz1",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10053
+   ],
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Sound/se/Potential"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.4,
+     "path": [
+      "Sound/se/keyboard"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "tag": "kojyo_show",
+     "path": [
+      "Voice/kazari/Uih00_7101_b_s0",
+      "Voice/kazari/Uih00_7102",
+      "Voice/kazari/Uih00_7103_b_s0"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.6,
+     "path": [
+      "Sound/se/Cast_MagicBow"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.4,
+     "path": [
+      "Voice/kazari/Uih00_7200_b_s1"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 3,
+    "position": {
+     "x": -4.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "start": 0.01,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  }
+ ]
+}

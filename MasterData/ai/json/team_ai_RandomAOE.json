@@ -1,0 +1,509 @@
+[
+  {
+    "name": "team_ai_RandomAOE",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "T1 1号位打4张",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "当局随机数",
+                    "type": "ActionGenRandom",
+                    "prop": {
+                      "varname": "R",
+                      "rangeLower": "0",
+                      "rangeUpper": "100"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "R",
+                      "compareOperation": "4",
+                      "expression": "40"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "1",
+                      "scardCountExp": "0",
+                      "cardCountExp": "4"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "T2 否则1号位打3张",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "1",
+                      "scardCountExp": "0",
+                      "cardCountExp": "3"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 ",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "3",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "T2 2号位打4张",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "2",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "当局随机数",
+                    "type": "ActionGenRandom",
+                    "prop": {
+                      "varname": "S",
+                      "rangeLower": "0",
+                      "rangeUpper": "100"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "S",
+                      "compareOperation": "4",
+                      "expression": "40"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "2",
+                      "scardCountExp": "0",
+                      "cardCountExp": "4"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "T2 否则2号位打3张",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "2",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "2",
+                      "scardCountExp": "0",
+                      "cardCountExp": "3"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 ",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "3",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "T3 辅助打牌",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "当局随机数",
+                    "type": "ActionGenRandom",
+                    "prop": {
+                      "varname": "H",
+                      "rangeLower": "0",
+                      "rangeUpper": "100"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "H",
+                      "compareOperation": "3",
+                      "expression": "33"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "4",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "T3 ",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "H",
+                      "compareOperation": "3",
+                      "expression": "66"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "5",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 ",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "6",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "T4 3号位打4张",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "当局随机数",
+                    "type": "ActionGenRandom",
+                    "prop": {
+                      "varname": "N",
+                      "rangeLower": "0",
+                      "rangeUpper": "100"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "N",
+                      "compareOperation": "4",
+                      "expression": "30"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "3",
+                      "scardCountExp": "0",
+                      "cardCountExp": "4"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "x",
+                      "value": "x+4"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "T4 否则3号位打3张",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "3",
+                      "scardCountExp": "0",
+                      "cardCountExp": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "x",
+                      "value": "x+4"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 ",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "3",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "x",
+                      "value": "4+x"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

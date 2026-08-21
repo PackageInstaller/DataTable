@@ -1,0 +1,336 @@
+{
+ "name": "mhcr2bullet3",
+ "actions": [
+  {
+   "name": "dropboom",
+   "animate": "2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "layontheground",
+   "comboRange": {},
+   "dropEndAction": "layontheground",
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "mhcr2/mhcr2_Bomb",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "durationBinding": true,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "layontheground",
+   "animate": "1.5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "empty",
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "boom",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 0.3,
+     "start": 0.04,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 0.32,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 0.55,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 0.78,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 0.94,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 1.1,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 1.24,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 1.36,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 1.46,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    },
+    {
+     "volume": 0.3,
+     "start": 1.52,
+     "path": [
+      "Sound/effect/other/sampleplay_e"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "mhcr2/mhcr2_Bomb",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "durationBinding": true,
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "common/P_smoke_dropend_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {
+      "y": -15.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "mhcr2/mhcr2_Bomb_01",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {
+      "y": -15.0
+     },
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "boom",
+   "animate": "2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -500.0
+    },
+    "b": {
+     "x": 500.0,
+     "y": 300.0
+    },
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -500.0,
+     "y": 1300.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.3,
+     "path": [
+      "Sound/effect/boom/tase_12"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "qwenthur/qwenthur_baozha_02",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {
+     "x": 30.0,
+     "y": 30.0
+    },
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  }
+ ]
+}

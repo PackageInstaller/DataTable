@@ -1,0 +1,1646 @@
+{
+ "name": "miyuki_bullet",
+ "actions": [
+  {
+   "name": "sup100",
+   "animate": "3",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -400.0
+    },
+    "b": {
+     "x": 400.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 0.8,
+      "end": 1.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -600.0,
+     "y": 800.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 2.0,
+    "tag": "miyuki_s100_se2",
+    "path": [
+     "Sound/se/Ice_A"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_05_D",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": 50.0
+     }
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_bingzhui_Front_X",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "miyuki/miyuki_bingzhui_Floor_X",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 4,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 3,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "s200",
+   "animate": "5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -500.0
+    },
+    "b": {
+     "x": 500.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 1.2,
+      "end": 1.4
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "tag": "miyuki_s200_se2",
+    "path": [
+     "Sound/effect/other/profilescreen_02"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_AddHp",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "miyuki/miyuki_shell_role_L",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": -200.0
+     }
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 3,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "s300_back",
+   "animate": "5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    0
+   ],
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "miyuki_s300_se1",
+     "path": [
+      "Sound/se/Cutin_EX"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_fazhen1_01_X",
+     "start": 0.22,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 4,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 30,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "s301_back",
+   "animate": "2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -450.0
+    },
+    "b": {
+     "x": 450.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 0.08,
+      "end": 1.5,
+      "hitInterval": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": 1100.0,
+     "y": 300.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "tag": "miyuki_s300_se3",
+    "path": [
+     "Sound/se/Hit_SlashD"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "tag": "miyuki_s300_se2",
+     "path": [
+      "Sound/se/Blizzard"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_05_D",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": 50.0
+     }
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_cast_02_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 15,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "s400",
+   "animate": "5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -500.0
+    },
+    "b": {
+     "x": 500.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 2.0,
+      "end": 2.5
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -600.0,
+     "y": 700.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "tag": "miyuki_s400_se1"
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "miyuki_s400_se2",
+     "path": [
+      "Sound/se/Val_ChargeBeam"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 1.85,
+     "tag": "miyuki_s400_se3",
+     "path": [
+      "Sound/se/Val_ShotBeam"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "miyuki/miyuki_fazhen5_Hit1_X",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": 50.0
+     }
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_fazhen5_Floor_X",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 4,
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "miyuki/miyuki_fazhen5_Front_X",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 3,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "climax_ice",
+   "animate": "2.5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 300.0,
+     "y": 700.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 2.2,
+      "hitInterval": 0.3
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "y": 250.0
+    },
+    "freeze": {
+     "duration": 0.06,
+     "freezeMotion": true
+    },
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "tag": "miyuki_climax_se4",
+    "path": [
+     "Sound/se/Hit_ThrustA"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "miyuki/miyuki_DZ_Hit_ice",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "climax_fire",
+   "animate": "2.5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 300.0,
+     "y": 700.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 0.15,
+      "end": 2.35,
+      "hitInterval": 0.3
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "y": 240.0
+    },
+    "freeze": {
+     "duration": 0.06,
+     "freezeMotion": true
+    },
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "tag": "miyuki_climax_se5",
+    "path": [
+     "Sound/se/Hit_ThrustA"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "miyuki/miyuki_DZ_Hit_fire",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "climax_mix",
+   "animate": "2.2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -450.0
+    },
+    "b": {
+     "x": 450.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 2.2,
+      "hitInterval": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": 1200.0,
+     "y": 300.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "tag": "miyuki_climax_se6",
+    "path": [
+     "Sound/se/Hit_SlashD"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "climax_mix_2",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_05_D",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": 50.0
+     }
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 15,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "climax_mix_2",
+   "animate": "1",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -450.0
+    },
+    "b": {
+     "x": 450.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.5
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -200.0,
+     "y": 1500.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "tag": "miyuki_climax_se7",
+    "path": [
+     "Sound/se/Hit_SlashD"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_05_D",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": 50.0
+     }
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 15,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link10013_01",
+   "animate": "5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    0
+   ],
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 0.5,
+     "tag": "miyuki_s300_se1",
+     "path": [
+      "Sound/se/Cutin_EX"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_fazhen1_01_X",
+     "start": 0.22,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 4,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 30,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link10013_02",
+   "animate": "2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -450.0
+    },
+    "b": {
+     "x": 450.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 0.08,
+      "end": 1.5,
+      "hitInterval": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": 1100.0,
+     "y": 300.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 0.6,
+    "tag": "miyuki_s300_se3",
+    "path": [
+     "Sound/se/Hit_SlashD"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "tag": "miyuki_s300_se2",
+     "path": [
+      "Sound/se/Blizzard"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_05_D",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": 50.0
+     }
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_cast_02_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 15,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link10015_01",
+   "animate": "2.9",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -300.0,
+     "y": 150.0
+    },
+    "b": {
+     "x": 300.0,
+     "y": 300.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": -1.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "hitBoxIgnoreDamage": true,
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {},
+    "freeze": {
+     "duration": 1.0,
+     "freezeMotion": true
+    },
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "binding": 1,
+    "bindingOffset": {
+     "y": -250.0
+    }
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.5,
+    "start": 0.3,
+    "path": [
+     "Sound/se/Ice_A"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "link10015_02",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 0.4,
+     "start": 0.3,
+     "path": [
+      "Sound/se/Blizzard"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_lx_01_X",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 4,
+     "durationBinding": true,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link10015_02",
+   "animate": "0.5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -300.0,
+     "y": -50.0
+    },
+    "b": {
+     "x": 300.0,
+     "y": 300.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "y": -1000.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "miyuki/miyuki_fazhen5_Hit1_X",
+     "start": 0.5,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_lx_02_X",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 1003001,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 4,
+      "position": {}
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "link10015_03"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "pushFreezeTime": 3.0,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link10015_03",
+   "animate": "0.5",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 50.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": -1.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "hitBoxIgnoreDamage": true,
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "y": 500.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "path": [
+     "Sound/se/Ice_A"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "start": 0.1,
+    "shakeRange": {
+     "y": 50.0
+    },
+    "shakeK": {
+     "y": 5.0
+    }
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "pushFreezeTime": 1.5,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "s100",
+   "animate": "4",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -450.0
+    },
+    "b": {
+     "x": 450.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 1.0,
+      "end": 3.2,
+      "hitInterval": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": 280.0,
+     "y": 250.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "tag": "miyuki_s300_se3",
+    "path": [
+     "Sound/se/Hit_Ice01",
+     "Sound/se/Hit_Ice02",
+     "Sound/se/Hit_Ice03"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "miyuki_s300_se1",
+     "path": [
+      "Sound/effect/machine/spsys_d_drive"
+     ]
+    },
+    {
+     "volume": 0.6,
+     "start": 1.1,
+     "tag": "miyuki_s300_se2",
+     "path": [
+      "Sound/se/Blizzard"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_05_D",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": 50.0
+     }
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_fazhen1_01_X",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 4,
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "miyuki/miyuki_cast_02_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link_kry",
+   "animate": "1.2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 300.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 1.15,
+      "hitInterval": 0.15
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {},
+    "freeze": {
+     "duration": 1.0,
+     "freezeMotion": true
+    },
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "path": [
+     "Sound/se/miyuki/link_kry_Fz"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "miyuki/miyuki_lianxie_03comp",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 6,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link_snk_bullet",
+   "animate": "3",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -100.0
+    },
+    "b": {
+     "x": 800.0,
+     "y": 400.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 0.8,
+      "end": 1.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "behit_middle",
+    "speed": {},
+    "freeze": {
+     "duration": 2.0,
+     "freezeMotion": true
+    },
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 2.0,
+    "tag": "miyuki_s100_se2",
+    "path": [
+     "Sound/se/Ice_A"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_05_D",
+     "scale": {},
+     "position": {},
+     "offPosition": {
+      "y": 50.0
+     }
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  }
+ ]
+}

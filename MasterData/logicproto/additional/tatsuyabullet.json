@@ -1,0 +1,76 @@
+{
+ "name": "tatsuyabullet",
+ "actions": [
+  {
+   "name": "circle1",
+   "animate": "0.1",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -2500.0
+    },
+    "b": {
+     "y": 300.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 2.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "hitBoxIgnoreDamage": true,
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "behit_middle",
+    "speed": {},
+    "freeze": {
+     "duration": 2.5,
+     "freezeMotion": true
+    },
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  }
+ ]
+}

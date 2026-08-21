@@ -1,0 +1,534 @@
+[
+  {
+    "name": "刀剑一家raid",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "name": "通用检测控制",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "亚丝娜大于半血检测|添加清除buff，清除桐人分心buff",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckHp",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "compareOperation": "2",
+                      "valueType": "1",
+                      "expression": "5000"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionAddBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "buffIndexExp": "998208",
+                      "buffLevelExp": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "亚丝娜半血检测|给桐人添加分心buff",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckHp",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "compareOperation": "5",
+                      "valueType": "1",
+                      "expression": "5000"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionAddBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "buffIndexExp": "998204",
+                      "buffLevelExp": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "亚丝娜阵亡检测|给桐人添加激怒buff",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionAddBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "buffIndexExp": "998206",
+                      "buffLevelExp": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "Burst",
+                      "value": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "莉法阵亡检测|给桐人添加",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionAddBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "buffIndexExp": "998206",
+                      "buffLevelExp": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "多人行动判断",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "桐人行动",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "Burst",
+                          "compareOperation": "0",
+                          "expression": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "4"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "Burst",
+                          "compareOperation": "0",
+                          "expression": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "value": "T+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "value": "T+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "value": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "compareOperation": "0",
+                                  "expression": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "T",
+                                  "value": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "亚丝娜行动",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "",
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "Y",
+                                  "compareOperation": "0",
+                                  "expression": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "Y",
+                                  "value": "Y+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "Y",
+                                  "compareOperation": "0",
+                                  "expression": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "Y",
+                                  "value": "Y+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "Y",
+                                  "compareOperation": "0",
+                                  "expression": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "Y",
+                                  "value": "Y+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "Y",
+                                  "compareOperation": "0",
+                                  "expression": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "Y",
+                                  "value": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "莉法行动",
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

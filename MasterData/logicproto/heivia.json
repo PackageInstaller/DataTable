@@ -1,0 +1,1437 @@
+{
+ "name": "heivia",
+ "actions": [
+  {
+   "name": "sup",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 280.0
+    },
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "poseend",
+   "protectTime": 0.35,
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "start": 0.35,
+     "tag": "SwingC",
+     "path": [
+      "Sound/se/SwingC"
+     ]
+    },
+    {
+     "path": [
+      "Voice/qwenthur/Qen00_7100",
+      "Voice/qwenthur/Qen00_7103"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addRoles": [
+    {
+     "characterID": 2124001,
+     "start": 0.42,
+     "endTime": 1.42,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 200.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "boomss"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 10,
+   "cost": 50,
+   "distance": 20.0,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "sup100",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {
+     "x": -50.0,
+     "y": -13.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 20.0
+    },
+    "c": {}
+   },
+   "interrupt": [
+    "burst"
+   ],
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10051
+   ],
+   "nextAction": "dis1",
+   "comboRange": {},
+   "dropEndAction": "dropend",
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "start": 0.56,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "start": 0.76,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "start": 0.96,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "start": 1.16,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "start": 1.36,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "path": [
+      "Voice/qwenthur/Hei00_8011_s1"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 1,
+    "position": {
+     "x": -600.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "qwenthur/qwenthur_jiqiang_01",
+     "start": 0.56,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2124001,
+     "start": 0.56,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 0.76,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 0.96,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 1.16,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 1.36,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 6,
+   "damage": 20,
+   "distance": 20.0,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "sup1001",
+   "animate": "sup100",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {
+     "x": -50.0,
+     "y": -13.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 20.0
+    },
+    "c": {}
+   },
+   "interrupt": [
+    "burst"
+   ],
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10021
+   ],
+   "nextAction": "dis1",
+   "protectTime": 0.3,
+   "comboRange": {},
+   "dropEndAction": "dropend",
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "start": 0.56,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "start": 0.76,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "start": 0.96,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "start": 1.16,
+     "path": [
+      "Sound/se/Shot_Stab"
+     ]
+    },
+    {
+     "path": [
+      "Voice/qwenthur/Hei00_8011_s1"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 1,
+    "position": {
+     "x": -600.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "qwenthur/qwenthur_jiqiang_01",
+     "start": 0.56,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2124001,
+     "start": 0.56,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 0.76,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 0.96,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 1.16,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 250.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "bullet"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 6,
+   "damage": 20,
+   "distance": 20.0,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "sup101",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {
+     "x": -50.0,
+     "y": -13.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 20.0
+    },
+    "c": {}
+   },
+   "interrupt": [
+    "burst"
+   ],
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10052
+   ],
+   "nextAction": "dis1",
+   "protectTime": 0.3,
+   "comboRange": {},
+   "dropEndAction": "dropend",
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "start": 0.64,
+     "path": [
+      "Sound/se/Bomb_VeryShort"
+     ]
+    },
+    {
+     "path": [
+      "Voice/qwenthur/Hei00_7501_b"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 1,
+    "position": {
+     "x": -1200.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "qwenthur/qwenthur_daodan_01",
+     "start": 1.12,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2124001,
+     "start": 0.64,
+     "endTime": 1.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 1,
+      "position": {
+       "x": -400.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "fire"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 6,
+   "damage": 20,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "sup1011",
+   "animate": "sup101",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {
+     "x": -50.0,
+     "y": -13.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 20.0
+    },
+    "c": {}
+   },
+   "interrupt": [
+    "burst"
+   ],
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10022
+   ],
+   "nextAction": "dis1",
+   "protectTime": 0.3,
+   "comboRange": {},
+   "dropEndAction": "dropend",
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "start": 1.12,
+     "path": [
+      "Sound/se/Bomb_VeryShort"
+     ]
+    },
+    {
+     "start": 1.64,
+     "path": [
+      "Sound/se/Bomb"
+     ]
+    },
+    {
+     "start": 1.7,
+     "path": [
+      "Sound/se/Bomb"
+     ]
+    },
+    {
+     "start": 1.76,
+     "path": [
+      "Sound/se/Bomb"
+     ]
+    },
+    {
+     "path": [
+      "Voice/qwenthur/Hei00_7501_b"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 1,
+    "position": {
+     "x": -1200.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "qwenthur/qwenthur_daodan_01",
+     "start": 1.12,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2124001,
+     "start": 1.64,
+     "endTime": 2.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {}
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 1.7,
+     "endTime": 2.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {
+       "x": -270.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 1.76,
+     "endTime": 2.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {
+       "x": -540.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 6,
+   "damage": 20,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "links1",
+   "animate": "sup101",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {
+     "x": -50.0,
+     "y": -13.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 20.0
+    },
+    "c": {}
+   },
+   "interrupt": [
+    "burst"
+   ],
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10053
+   ],
+   "nextAction": "dis1",
+   "protectTime": 0.3,
+   "comboRange": {},
+   "dropEndAction": "dropend",
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "start": 1.12,
+     "path": [
+      "Sound/se/Bomb_VeryShort"
+     ]
+    },
+    {
+     "start": 1.64,
+     "path": [
+      "Sound/se/Bomb"
+     ]
+    },
+    {
+     "start": 1.7,
+     "path": [
+      "Sound/se/Bomb"
+     ]
+    },
+    {
+     "start": 1.76,
+     "path": [
+      "Sound/se/Bomb"
+     ]
+    },
+    {
+     "path": [
+      "Voice/qwenthur/Hei00_7501_b"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 3,
+    "position": {
+     "x": -2.4
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "qwenthur/qwenthur_daodan_01",
+     "start": 1.12,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2124001,
+     "start": 1.64,
+     "endTime": 2.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {}
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 1.7,
+     "endTime": 2.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {
+       "x": -270.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2124001,
+     "start": 1.76,
+     "endTime": 2.0,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {
+       "x": -540.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 6,
+   "damage": 20,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "dis1",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {
+    "x": -1500.0,
+    "y": 900.0
+   },
+   "acceleration": {},
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Voice/qwenthur/Hei00_7001"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.1,
+     "path": [
+      "Sound/se/Dart"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "alphaOption": -1,
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "stand",
+   "animate": "1",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "run",
+   "animate": "1",
+   "actionType": "ActionType_Run",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {
+    "x": 400.0
+   },
+   "acceleration": {},
+   "nextAction": "run",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "show_1_1",
+   "animate": "1.5",
+   "actionType": "ActionType_Pose",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Voice/qwenthur/Hei00_2010",
+      "Voice/qwenthur/Hei00_2011",
+      "Voice/qwenthur/Hei00_2012"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "show_2_1",
+   "animate": "1.5",
+   "actionType": "ActionType_Pose",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Voice/qwenthur/Hei00_2010",
+      "Voice/qwenthur/Hei00_2011",
+      "Voice/qwenthur/Hei00_2012"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "preview",
+   "animate": "preview",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  }
+ ]
+}

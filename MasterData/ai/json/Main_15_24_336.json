@@ -1,0 +1,67 @@
+[
+  {
+    "name": "15-7 无大招",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "R1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "R≥1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "4",
+                  "valueExp": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayBestSkill",
+                "prop": {
+                  "canUseSuperSkill": "1",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "1",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "1",
+                  "returnFailIfFailToPlayDueToLock": "0",
+                  "canUseSkill3_9": "1"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

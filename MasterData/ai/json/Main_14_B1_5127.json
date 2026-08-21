@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Bonus27 使用大招后伤害增强",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "ActionPlayBestSkill",
+            "prop": {
+              "canUseSuperSkill": "1",
+              "canUseLink": "1",
+              "canUseAssistSkill": "1",
+              "canUseSkill2": "1",
+              "canUseSkill1": "1",
+              "returnFailIfFailToPlayDueToLock": "0",
+              "canUseSkill3_9": "0"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

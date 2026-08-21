@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS03" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S03/PathWay.prefab" />
+    <ScenePart Name="S03_scene" Asset="Assets/AssetBundle/Scene/Main/S03/S03_scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="S03_AD2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Bridge1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Leg" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Panda" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Building01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Building02" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface285" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface286" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Building04" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Building6" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface166" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface282" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface283" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface284" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Building7" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Building8" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Car1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Car2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Cover1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Cover2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Crosswalk1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Crosswalk2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_DoorGlass" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Glass1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Floor" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Floor2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Light" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Sky" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Tree1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Tree2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Tree3" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Tree4" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Tree5" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Tree6" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Truck1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_TruckGlass1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_Truck2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_TruckGlass2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S03_UtilityPole" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>

@@ -1,0 +1,141 @@
+<Root>
+  <Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="1" />
+        <ConditionCheckActorIsAlive team="0" target="1" alive="1" />
+        <ActionPlayCards target="1" cardCountExp="2" scardCountExp="0" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="1" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="1" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="2" />
+        <ConditionCheckActorIsAlive team="0" target="2" alive="1" />
+        <ConditionCheckActorIsAlive team="0" target="3" alive="1" />
+        <ActionPlayChain actorId1Exp="1006" actorId2Exp="2105" actorId3Exp="1009" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="2" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="2" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="3" />
+        <ConditionCheckActorIsAlive team="0" target="1" alive="1" />
+        <ActionPlayCards target="1" cardCountExp="2" scardCountExp="0" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="3" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="2" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="4" />
+        <ActionPlayCards target="5" cardCountExp="1" scardCountExp="0" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="5" />
+        <ConditionCheckActorIsAlive team="0" target="2" alive="1" />
+        <ActionPlayCards target="2" cardCountExp="3" scardCountExp="0" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="5" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="2" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="6" />
+        <ConditionCheckActorIsAlive team="0" target="2" alive="1" />
+        <ConditionCheckActorIsAlive team="0" target="3" alive="1" />
+        <ActionPlayChain actorId1Exp="1009" actorId2Exp="1006" actorId3Exp="2101" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="6" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="1" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="7+x" />
+        <ConditionCheckActorIsAlive team="0" target="1" alive="1" />
+        <ActionPlayCards target="1" cardCountExp="3" scardCountExp="0" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="7+x" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="2" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="8+x" />
+        <ConditionCheckActorIsAlive team="0" target="3" alive="1" />
+        <ActionPlayCards target="3" cardCountExp="4" scardCountExp="0" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="8+x" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="1" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="9+x" />
+        <ConditionCheckActorIsAlive team="0" target="2" alive="1" />
+        <ActionPlayCards target="2" cardCountExp="3" scardCountExp="0" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="9+x" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="2" scardRateExp="" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="10+x" />
+        <ConditionCheckActorIsAlive team="0" target="1" alive="1" />
+        <ConditionCheckActorIsAlive team="0" target="1" alive="1" />
+        <ActionPlayChain actorId1Exp="1009" actorId2Exp="1006" actorId3Exp="2101" />
+        <ActionSetVar varname="x" value="4" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="10+x" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="1" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="15" />
+        <ConditionCheckActorIsAlive team="0" target="1" alive="1" />
+        <ActionPlayCards target="1" cardCountExp="4" scardCountExp="0" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="15" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="2" scardRateExp="0" excludeTargets="3" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="16" />
+        <ConditionCheckActorIsAlive team="0" target="3" alive="1" />
+        <ActionPlayCards target="1" cardCountExp="4" scardCountExp="0" />
+      </Sequence>
+      <Sequence>
+        <ConditionCheckRound compareOperation="0" valueExp="16" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="1" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+    <Selector>
+      <Sequence>
+        <ConditionCheckRound compareOperation="4" valueExp="17" />
+        <ActionPlayRandomCards target="0" maxCardsCountExp="4" scardRateExp="0" excludeTargets="" />
+      </Sequence>
+    </Selector>
+  </Selector>
+</Root>

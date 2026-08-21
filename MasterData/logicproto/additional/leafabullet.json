@@ -1,0 +1,405 @@
+{
+ "name": "leafabullet",
+ "actions": [
+  {
+   "name": "sup200bullet",
+   "animate": "0.6",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -100.0
+    },
+    "b": {
+     "x": 100.0,
+     "y": 200.0
+    },
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "empty",
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {
+    "x": 2000.0
+   },
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_AddHp",
+   "audio": [
+    {
+     "volume": 1.0,
+     "start": 0.1,
+     "path": [
+      "Sound/se/Stars"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "buff/public_jiaxue_01",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "position": {
+      "y": -150.0
+     },
+     "offPosition": {
+      "y": -150.0
+     }
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link100bullet",
+   "animate": "2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -100.0
+    },
+    "b": {
+     "x": 100.0,
+     "y": 200.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 0.2,
+      "end": 1.0,
+      "hitInterval": 0.12
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "behit_middle",
+    "speed": {
+     "x": 300.0,
+     "y": 220.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "path": [
+     "Sound/se/Hit_ThrustC"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "audio": [
+    {
+     "volume": 1.0,
+     "start": 0.1,
+     "path": [
+      "Sound/se/Stars"
+     ]
+    },
+    {
+     "volume": 1.5,
+     "start": 0.01,
+     "path": [
+      "Sound/se/leafa/link_krt_01"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/p_hit_03_H",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link200bullet",
+   "animate": "0.6",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -100.0
+    },
+    "b": {
+     "x": 100.0,
+     "y": 200.0
+    },
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "empty",
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {
+    "x": 2000.0
+   },
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_AddHp",
+   "audio": [
+    {
+     "volume": 1.0,
+     "start": 0.1,
+     "path": [
+      "Sound/se/Stars"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "buff/public_jiaxue_01",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "position": {
+      "y": -150.0
+     },
+     "offPosition": {
+      "y": -150.0
+     }
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link_kmz_01",
+   "animate": "4",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -100.0
+    },
+    "b": {
+     "x": 100.0,
+     "y": 200.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 0.2,
+      "end": 4.0,
+      "hitInterval": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": 300.0,
+     "y": 260.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 0.4,
+    "path": [
+     "Sound/se/Hit_ThrustC"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "audio": [
+    {
+     "volume": 1.0,
+     "start": 0.1,
+     "path": [
+      "Sound/se/Stars"
+     ]
+    },
+    {
+     "volume": 1.5,
+     "start": 0.01,
+     "path": [
+      "Sound/se/leafa/link_krt_01"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/p_hit_03_H",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 5,
+   "damage": 10,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  }
+ ]
+}

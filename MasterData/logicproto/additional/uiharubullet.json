@@ -1,0 +1,266 @@
+{
+ "name": "uiharubullet",
+ "actions": [
+  {
+   "name": "link10001_01",
+   "animate": "0.8",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 1000.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.5
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {
+    "duration": 0.1,
+    "freezeMotion": true
+   },
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Sound/se/Kirifuda"
+     ]
+    }
+   ],
+   "startPos": {
+    "faceOption": 1,
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 1,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "uiharu/uiharu_lx_01",
+     "scale": {},
+     "binding": true,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link10002_01",
+   "animate": "0.8",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 1000.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.5
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {
+    "duration": 0.1,
+    "freezeMotion": true
+   },
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Sound/se/Kirifuda"
+     ]
+    }
+   ],
+   "startPos": {
+    "faceOption": 1,
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 1,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "uiharu/uiharu_lx_01",
+     "scale": {},
+     "binding": true,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "sup200",
+   "animate": "0.8",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 1000.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.5
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {
+    "duration": 0.1,
+    "freezeMotion": true
+   },
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Sound/se/Kirifuda"
+     ]
+    }
+   ],
+   "startPos": {
+    "faceOption": 1,
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 1,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "uiharu/uiharu_lx_01",
+     "scale": {},
+     "binding": true,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  }
+ ]
+}

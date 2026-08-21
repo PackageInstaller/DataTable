@@ -1,0 +1,1697 @@
+[
+  {
+    "name": "14章 boss3 前排无敌",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "name": "前排检测是否只剩自己",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "2",
+                      "alive": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionAddBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "buffIndexExp": "997365",
+                      "buffLevelExp": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "保证selector一定返回true",
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "S",
+                  "value": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "前排",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "攻击循环",
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "状态1 第二次无敌 有标志1、2 无敌",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "997402"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "997404"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "99741"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P1",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "1",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P1",
+                                      "value": "P1+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P1",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P1",
+                                      "value": "P1+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P1",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "3",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P1",
+                                      "value": "P1+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P1",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "状态2 第一次无敌 有标志1 无敌",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "997402"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "99741"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P2",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "1",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P2",
+                                      "value": "P2+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P2",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P2",
+                                      "value": "P2+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P2",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "3",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P2",
+                                      "value": "P2+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P2",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "状态3 第3次普通 有标志1、2",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "997402"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "997404"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "",
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "1",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "value": "P3+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "value": "P3+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "3",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "value": "P3+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "value": "P3+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P3",
+                                      "compareOperation": "0",
+                                      "expression": "4"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "状态3 第4次普通 有标志1",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckActorHasBuff",
+                            "prop": {
+                              "targetTeam": "0",
+                              "target": "1",
+                              "keyType": "2",
+                              "buffKeyExp": "997402"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "",
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "1",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "value": "P4+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "0",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "value": "P4+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "compareOperation": "0",
+                                      "expression": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "3",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "value": "P4+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "compareOperation": "0",
+                                      "expression": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "value": "P4+1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "P4",
+                                      "compareOperation": "0",
+                                      "expression": "4"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "4",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "状态5 初始技能循环 没有任何状态",
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "compareOperation": "0",
+                                  "expression": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "value": "P5+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "compareOperation": "0",
+                                  "expression": "1"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "value": "P5+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "compareOperation": "0",
+                                  "expression": "2"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "3",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "value": "P5+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "compareOperation": "0",
+                                  "expression": "3"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "2",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionSetVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "value": "P5+1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "P5",
+                                  "compareOperation": "0",
+                                  "expression": "4"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "4",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R1",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R2",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R3",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R4",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R5",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "5"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R6",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "6"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R7",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "7"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R8",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "8"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R9",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "9"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R10-",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "4",
+                      "valueExp": "10"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "B",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "B",
+                              "value": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "C",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "C",
+                              "value": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R10+",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "4",
+                      "valueExp": "10"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "深雪零",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "B",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "B",
+                              "value": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "亚丝娜莉法",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "C",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "C",
+                              "value": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

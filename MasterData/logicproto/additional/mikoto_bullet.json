@@ -1,0 +1,389 @@
+{
+ "name": "mikoto_bullet",
+ "actions": [
+  {
+   "name": "s200",
+   "animate": "0.65",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -400.0
+    },
+    "b": {
+     "x": 400.0,
+     "y": 1000.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.7,
+      "hitInterval": 0.15
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_NoDropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -200.0,
+     "y": 350.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {
+    "duration": 0.1,
+    "freezeMotion": true
+   },
+   "hitAudio": {
+    "volume": 0.3,
+    "path": [
+     "Sound/effect/hit/hit_wind1"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Sound/se/thunder_A"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.15,
+     "path": [
+      "Sound/se/thunder_A"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.3,
+     "path": [
+      "Sound/se/thunder_A"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.45,
+     "path": [
+      "Sound/se/thunder_A"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.6,
+     "path": [
+      "Sound/se/thunder_B"
+     ]
+    }
+   ],
+   "startPos": {
+    "faceOption": 1,
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 1,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_03_D",
+     "scale": {},
+     "binding": true,
+     "position": {},
+     "offPosition": {
+      "x": -30.0,
+      "y": 50.0
+     }
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "mikoto/mikoto_s3111",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "start": 0.01,
+    "shakeRange": {
+     "y": 20.0
+    },
+    "shakeK": {
+     "x": 0.05,
+     "y": 0.05
+    },
+    "count": 5,
+    "interval": 0.15
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "thunder",
+   "animate": "2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -400.0,
+     "y": -20.0
+    },
+    "b": {
+     "x": 400.0,
+     "y": 500.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.15
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -500.0,
+     "y": 800.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "start": 0.02,
+    "path": [
+     "Sound/se/thunder_A"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "start": 0.21,
+     "tag": "mikoto_lightning",
+     "path": [
+      "Sound/se/LightShot"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.2,
+     "tag": "mikoto_lightning",
+     "path": [
+      "Sound/se/thunder"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "tag": "mikoto_lightning",
+     "path": [
+      "Sound/se/Lightning"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_03_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "mikoto/mikoto_s3_01",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "start": 0.01,
+    "shakeRange": {
+     "y": 100.0
+    },
+    "shakeK": {
+     "x": 1.0,
+     "y": 0.01
+    },
+    "count": 2,
+    "interval": 0.1
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "link_acc",
+   "animate": "1.9",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -50.0
+    },
+    "b": {
+     "x": 50.0,
+     "y": 300.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 1.9,
+      "hitInterval": 0.2
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": 80.0,
+     "y": 260.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "path": [
+     "Sound/se/mikotomizu/Sand_Attack"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "end",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "path": [
+      "Sound/se/mikotomizu/Sand_Storage"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "accelerator/mikoto_link_wind_00_1",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 1,
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "accelerator/mikoto_link_wind_00",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  }
+ ]
+}

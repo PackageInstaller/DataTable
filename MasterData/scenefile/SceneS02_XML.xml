@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS02" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S02/PathWay.prefab" />
+    <ScenePart Name="S02_scene" Asset="Assets/AssetBundle/Scene/Main/S02/S02_scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="S02_Bookcase02" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_BuildingMain" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_BuildingMain_U" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Chair01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Chair04" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Chair05" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Chair06" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_CleaningTool" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_DirectionalLightGlow" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Dog" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_DoorGlass" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Floor" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_FloorLight01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_FloorLight02" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_FloorLight03" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_FloorLight04" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_FloorLight05" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_FloorLight06" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_FloorLight07" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_FloorLight08" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Furniture01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Furniture02" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Furniture03" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Furniture04" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_Paper" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_SkyPlane" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_SkyPlane1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_SkyPlane2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_TV" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S02_WindowGlass" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>

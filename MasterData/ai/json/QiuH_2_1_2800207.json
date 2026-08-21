@@ -1,0 +1,432 @@
+[
+  {
+    "name": "秋活 danger 2-1| 亚丝娜&桐人Po1；CMR&莉法Po2；CMR&艾利欧Po3；",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "一鼓作气 状态",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "AsunaBurst",
+                      "compareOperation": "0",
+                      "expression": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "keyType": "2",
+                      "buffKeyExp": "998501"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "AsunaBurst",
+                      "value": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "B",
+                      "value": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": " 力竭 状态",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "AsunaBurst",
+                      "compareOperation": "0",
+                      "expression": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "keyType": "2",
+                      "buffKeyExp": "998502"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "AsunaBurst",
+                      "value": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "C",
+                      "value": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "100%通过的通道",
+                "type": "Sequence",
+                "prop": {},
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "CMR&莉法",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "3",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "CMR&艾利欧",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "3",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "亚丝娜&桐人 Burst On",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "AsunaBurst",
+                      "compareOperation": "0",
+                      "expression": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "循环 P1/3",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "B",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "B",
+                              "value": "B+1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "循环 P2/3",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "B",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "B",
+                              "value": "B+1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "循环 P3/3",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "B",
+                              "compareOperation": "0",
+                              "expression": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "B",
+                              "value": "B-2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "亚丝娜&桐人 Burst OFF",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "AsunaBurst",
+                      "compareOperation": "0",
+                      "expression": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "循环 P1/3",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "C",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "C",
+                              "value": "C+1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "循环 P2/3",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "C",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "C",
+                              "value": "C+1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "循环 P3/3",
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "C",
+                              "compareOperation": "0",
+                              "expression": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "C",
+                              "value": "C-2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

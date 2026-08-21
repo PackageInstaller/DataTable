@@ -1,0 +1,368 @@
+[
+  {
+    "name": "主线016 进驱 | 桐人Po2，Drei Po3，凤蝶&亚子MS Po1",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "第一次严格策略要求",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "桐人 \b—— P0 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Drei P0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "黑雪姬凤蝶 \bP0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "桐人 —— P1 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Drei P1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "黑雪姬凤蝶 P1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "桐人 —— P2 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "name": "减2回归循环",
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A-2"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Drei \b P2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B-2"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "黑雪姬凤蝶 P2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C-2"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

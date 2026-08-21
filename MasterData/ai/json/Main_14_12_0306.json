@@ -1,0 +1,947 @@
+[
+  {
+    "name": "14章 boss2 攻击无增益目标概率获得Sp",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "name": "中排检测是否只剩自己",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "0"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionAddBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "buffIndexExp": "997364",
+                      "buffLevelExp": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "保证selector一定返回true",
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "S",
+                  "value": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "R1",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "凑智花&蓝原延珠",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐乃&袴田日向",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐人&静雄",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R2",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "凑智花&蓝原延珠",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐乃&袴田日向",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐人&静雄",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R3",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "凑智花&蓝原延珠",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐乃&袴田日向",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐人&静雄",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R4",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "凑智花&蓝原延珠",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐乃&袴田日向",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐人&静雄",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R5",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "5"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "凑智花&蓝原延珠",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐乃&袴田日向",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐人&静雄",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R6",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "6"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "凑智花&蓝原延珠",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐乃&袴田日向",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐人&静雄",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R7-",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "4",
+                      "valueExp": "7"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "凑智花&蓝原延珠",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "A",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "A",
+                              "value": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐乃&袴田日向",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "B",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "B",
+                              "value": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐人&静雄",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "C",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "C",
+                              "value": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "R7+",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "4",
+                      "valueExp": "7"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "凑智花&蓝原延珠",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "A",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "A",
+                              "value": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐乃&袴田日向",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "B",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "B",
+                              "value": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "桐人&静雄",
+                            "type": "ConditionCheckActor",
+                            "prop": {
+                              "actorPosition": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "C",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "C",
+                              "value": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlayBestSkill",
+                            "prop": {
+                              "canUseSuperSkill": "1",
+                              "canUseLink": "1",
+                              "canUseAssistSkill": "1",
+                              "canUseSkill2": "1",
+                              "canUseSkill1": "1",
+                              "returnFailIfFailToPlayDueToLock": "0",
+                              "canUseSkill3_9": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

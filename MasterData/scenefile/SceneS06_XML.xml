@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS06" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S06/PathWay.prefab" />
+    <ScenePart Name="S06_Scene" Asset="Assets/AssetBundle/Scene/Main/S06/S06_Scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="S06_BirdHouse01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse02" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse03" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse04" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse05" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse06" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse07" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse08" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse09" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse10" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse11" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse12" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse13" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse14" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse15" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse16" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse17" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse18" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse19" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse20" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse21" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse22" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse23" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse24" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse25" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_BirdHouse26" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_PiaoPiao" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_Shengzi" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pCube21" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pCube96" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pCube97" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pCylinder42" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Floor1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface21" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface22" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_Fence1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_Hill" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S06_Sky" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Sakula" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Wall" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Water" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>

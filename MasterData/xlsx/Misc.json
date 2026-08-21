@@ -1,0 +1,560 @@
+[
+ {
+  "defaultLanguage": 1,
+  "maxCardGroupNum": 100,
+  "equipExpToResource": {
+   "type": 7,
+   "count": 3
+  },
+  "dailyRefreshTime": "06:00:00",
+  "minAnyPurchase": 10,
+  "maxAnyPurchase": 30000,
+  "danMuIntervalSeconds": 2,
+  "maxSkillPoint": 20,
+  "maxRecentContact": 20,
+  "maxWorldSubChannelCapacity": 1000,
+  "maxPlayerMail": 99,
+  "maxGlobalMail": 99,
+  "maxWorldSubChannelWeight": 700,
+  "maxActorLevel": 60,
+  "maxActorGroup": 10,
+  "maxGoldActorGroup": 1,
+  "maxWorldSubChannelCount": 9999,
+  "maxOfflineChatNum": 5,
+  "maxTowerActorGroup": 3,
+  "towerShowNextAwardCount": 3,
+  "talent_ratio": 30,
+  "maxNotifyDeployNum": 45,
+  "maxAccomplishDeployNum": 40,
+  "resetTalentIndexPos": 4,
+  "percentAttrNum": 4,
+  "spaceBooksCount": 23,
+  "playerHeadCount": 6,
+  "actorDecomposeTalentCoef": 0.016,
+  "maxActorCommentCountOneDay": 3,
+  "auraCooldown": 14400,
+  "auraRelationPointAddStranger": 20,
+  "auraRelationPointAddFriends": 25,
+  "maxUnlockPosterScore": 4,
+  "gachaRecordActorTalentScore": 70,
+  "gachaRecordActorMax": 10,
+  "mailAttachmentLevelLimit": 10,
+  "oneStarRewardCount": 3,
+  "dungeonBalanceFavour": 1,
+  "signboardFavourCycle": 3600,
+  "signboardFavourValue": 1,
+  "deployFavourCycle": 3600,
+  "maxRoleFavourLevel": 10,
+  "gachaMaxCountOnce": 100,
+  "gachaPointGenRation": 1000,
+  "monthCardIncreaseDays": 30,
+  "monthCardRewardDaily": [
+   {
+    "type": 5,
+    "count": 50
+   },
+   {
+    "type": 7,
+    "count": 20000
+   }
+  ],
+  "maxStarLevel": 6,
+  "pvpTickets": 1,
+  "pvpOneRandActorNum": 3,
+  "pvpRandTimes": 3,
+  "pvpMinRandTime": 5,
+  "pvpMaxRandTime": 10,
+  "pvpMaxWinNum": 5,
+  "pvpMaxDieNum": 3,
+  "maxCongratsRoleNum": 3,
+  "minCongratsFavourLv": 2,
+  "rolePresentInterval": 86400,
+  "rolePresentMaxNum": 3,
+  "racePvpMinRandTime": 5,
+  "racePvpMaxRandTime": 10,
+  "maxRacePvpPlyNum": 5,
+  "burstPvpActorStar": 1,
+  "burstPvpActorLevel": 1,
+  "burstPvpActorQuality": 1,
+  "maxAsyncPVPActorGroup": 1,
+  "maxRacePVPActorGroup": 1,
+  "notepadEventVoiceOpenLevel": 4,
+  "burstPvpMatchMaxWaitTime": 60,
+  "unlockNoticeSystemLevel": 12,
+  "maxNameLen": 7,
+  "maxChatLen": 128,
+  "gameCenterDSRewardType": 7,
+  "gameCenterDSRewardCount": 200,
+  "recallSinceLastLogin": 5,
+  "vipSuperDSRewardType": 7,
+  "vipSuperDSRewardCount": 200,
+  "maxFriendNum": 200,
+  "maxBlackContactNum": 200,
+  "maxFriendApplyListNum": 100,
+  "maxActorCommentCount": 1000,
+  "maxResetTalentCount": 10,
+  "fightInteractionInterval": 10,
+  "racePVPGroupMaxPlayer": 20,
+  "clickLikeLimit": 100,
+  "dailyRefreshZeroTime": "00:00:00",
+  "reportedRefreshTime": 24,
+  "reportedGuildNum": 2,
+  "maxReportedScore": 15,
+  "chatBanColdTime": 48,
+  "reportedIpLimit": 1,
+  "forceLimitedPoolCount": 30,
+  "racePVPTicketNum": 6,
+  "racePVPRoundNum": 8,
+  "teamDungeonTicket": {
+   "73": {
+    "type": 11,
+    "id": 80012,
+    "count": 1
+   },
+   "23": {
+    "type": 11,
+    "id": 80005,
+    "count": 1
+   }
+  },
+  "wxSubscribeMsgId": [
+   297
+  ],
+  "qqSubscribeSceneId": [
+   65
+  ],
+  "relationPointDailyLimit": 400,
+  "triggeredEventActiveInterval": 1,
+  "triggeredEventPassiveInterval": 300,
+  "triggeredEventTickets": [
+   80009
+  ],
+  "dayTriggeredEventActiveOpenTime": "00:00:00",
+  "dayTriggeredEventActiveCloseTime": "23:59:59",
+  "dayTriggeredEventPassiveOpenTime": "00:00:00",
+  "dayTriggeredEventPassiveCloseTime": "23:59:59",
+  "triggeredEventLastTime": 10800,
+  "dayTriggeredEventFinishLimit": 5,
+  "dayPassiveTriggeredEventLimit": 3,
+  "maxTriggeredEventOfflineMessageNum": 10,
+  "channels": [
+   {
+    "name": "bilibili",
+    "id": "10029304",
+    "privilege_ignore": true
+   },
+   {
+    "name": "taptap",
+    "id": "10025553",
+    "privilege_ignore": true
+   },
+   {
+    "name": "yingyongbao",
+    "id": "3",
+    "privilege_ignore": true
+   }
+  ],
+  "gameDataReportOnlineTimePeriod": 300,
+  "gameDataReportPurchaseTimePeriod": 300,
+  "notifyCD": {
+   "powerFull": 60,
+   "deployFinish": 30
+  },
+  "maxActorWarningCount": 4500,
+  "maxEquipWarningCount": 4000,
+  "dailySubscribeCheckTime": "12:00:00",
+  "payTestRechargeEndTime": "2028-08-26 23:59:59",
+  "payTestRewardStartTime": "2028-08-27 06:00:00",
+  "maxDanmuVideoLength": 180,
+  "maxDanmuTextLength": 30,
+  "msdkFriendIcon": "https://down.qq.com/dianji/fci_notify/OB-icon-tx.jpg",
+  "modifyNameTutorialLevel": 6,
+  "unlockFightSpeedLevel": 5,
+  "taskPresentRewardBoxId": 121002,
+  "CreditsListScrollVelocity": 3.0,
+  "citySceneUpdateTime1": 8,
+  "citySceneUpdateTime2": 20,
+  "clawCraneCost": {
+   "type": 11,
+   "id": 61001,
+   "count": 1
+  },
+  "clawCraneSupplyTime": "12:30:00",
+  "maxTriggeredEventOwnCount": 10,
+  "gachaFreeTime": "06:00:00",
+  "clawCraneTotalProbability": 10000000,
+  "gachaPurpleSameTypeCount": 3,
+  "gachaOrangeSameTypeCount": 2,
+  "normalGachaPurpleProbability": 500,
+  "limitGachaPurpleProbability": 1000,
+  "gachaForceOrangeProbabilitiy": 100,
+  "actorAttrsVersion": 5,
+  "friendApplyLevelMin": 6,
+  "friendApplyLevelMax": 99,
+  "mailWarningCount": 80,
+  "chipExchangeSet": [
+   20001,
+   20014,
+   20008,
+   20135,
+   20006,
+   20114,
+   20133,
+   20116
+  ],
+  "chipExchangeMaxModifyCount": 2,
+  "dungeonActorOverflowExp": 7000,
+  "purblePairsTotalCnt": 18,
+  "purblePairsPerGroupCnt": 2,
+  "purblePairsMaxCntPerDay": 3,
+  "cultivationPVPHideRanks": 10,
+  "guildDungeonCloseTime": "00:00:00",
+  "guildDungeonOpenTime": "06:00:00",
+  "talentCheckVersion": 1,
+  "taskWeekStepReward": [
+   {
+    "step": 3,
+    "reward": [
+     {
+      "type": 11,
+      "id": 73002,
+      "count": 2
+     },
+     {
+      "type": 5,
+      "count": 150
+     }
+    ]
+   },
+   {
+    "step": 5,
+    "reward": [
+     {
+      "type": 5,
+      "count": 200
+     }
+    ]
+   },
+   {
+    "step": 7,
+    "reward": [
+     {
+      "type": 11,
+      "id": 90001,
+      "count": 5
+     },
+     {
+      "type": 5,
+      "count": 400
+     }
+    ]
+   }
+  ],
+  "taskWeekRefreshMaxCountPerDay": 1,
+  "starPhases": [
+   0,
+   2,
+   3,
+   4,
+   4,
+   0
+  ],
+  "shareTimeInterval": 60,
+  "TowerNewMaxFloor": 8,
+  "gachaCustomTotalCount": 10,
+  "gachaCustomActorCount": 5,
+  "gachaCustomForceDropActivity": 91,
+  "temadunFreeRewardSwitch": 1,
+  "teamdunFreeTicket": {
+   "73": {
+    "type": 11,
+    "id": 80014,
+    "count": 1
+   },
+   "23": {
+    "type": 11,
+    "id": 80011,
+    "count": 1
+   }
+  },
+  "taskWeekBeginTime": "2018-12-19 00:00:00",
+  "halfYearBackActiveDay": 14,
+  "halfYearBackDuration": 12,
+  "halfYearBackShowDay": 1,
+  "halfYearBackCDTime": 60,
+  "halfYearBackLowLevel": 10,
+  "extremeChallengeDrugLimit": 100,
+  "maxCookingPlateNum": 8,
+  "maxRecipeResearchIndex": 3,
+  "catchItemMiniGameConfig": {
+   "max_untrigger_times": 2,
+   "max_triggered_times": 3,
+   "trigger_cold_down": 2,
+   "trigger_chance": 10000,
+   "trigger_level_max": 99
+  },
+  "maxCookingRoleLevel": 9,
+  "extremeChallengeTicket": {
+   "type": 11,
+   "id": 80013,
+   "count": 1
+  },
+  "voteGroupPlayerCnt": 50,
+  "oldPlayerBackTimeConf": 604800,
+  "dungeonTeamWelfareLimitLv": 30,
+  "cookingEatingOverLimitExp": 10,
+  "dormMaxNameLen": 7,
+  "dormFeedSeatMax": 6,
+  "dormFeedSeatDefault": 3,
+  "dormLevelMax": 8,
+  "dormFoodCountDefault": 10000,
+  "dormFoodCountMax": 50000,
+  "weaponMisc": {
+   "weaponMaxPhase": 6,
+   "weaponGachaOrangeProb": 160,
+   "weaponGachaPurpleProb": 600,
+   "weaponNoGoldMax": 80,
+   "weaponShowLevel": 45,
+   "weaponLevelToStory": {
+    "1": 0,
+    "2": 3,
+    "3": 5
+   },
+   "weaponGachaOrangeProbFeatured": 130,
+   "weaponGachaPurpleProbFeatured": 600
+  },
+  "dormFoodActorCost": {
+   "actorFoodConst": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6
+   }
+  },
+  "dormFoodRefreshInterval": 10,
+  "dormActorShowSeatFloorMax": 4,
+  "dormActorExpConst": {
+   "staticConst": 1,
+   "playerLevelConst": 1,
+   "dormComfortConst": 1,
+   "actorCountConst": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6
+   }
+  },
+  "recommendExpire": 86400,
+  "dormDefaultFurniture": [
+   100001,
+   100002
+  ],
+  "dormFoodShopId": 31,
+  "dormActorGiftInterval": [
+   14400,
+   21600
+  ],
+  "dormCustomSchemeMax": 5,
+  "dormCustomSchemeNameMax": 5,
+  "dormVisitorListLimit": 10,
+  "friendPvpConf": {
+   "roomExpireTime": 900,
+   "readyTimeOut": 90,
+   "dungeonExpireTime": 3600,
+   "heartBeatTime": 5,
+   "toleranceRate": 2
+  },
+  "inputLimit": {
+   "TeamRCMDDescription": 120,
+   "TeamRCMDComment": 120
+  },
+  "guildRecruitConfig": {
+   "minDuration": 1,
+   "maxDuration": 24,
+   "maxBulletinContentLength": 100,
+   "publishCost": {
+    "type": 17,
+    "count": 100
+   },
+   "addRecruitInterval": 60,
+   "getRecruitInterval": 10,
+   "randomBatchCount": 10
+  },
+  "guildLoanActorContributionReward": 40000,
+  "GcNameTimeInterval": 15552000,
+  "GcNameReward": [
+   {
+    "type": 11,
+    "id": 80010,
+    "count": 1
+   }
+  ],
+  "mazeMiscConf": {
+   "maze_confs": {
+    "34001": {
+     "chaosPollutionPerStep": 5.0,
+     "balanceParams": {
+      "1": {
+       "floor": 17.33,
+       "events": 1.0
+      },
+      "2": {
+       "floor": 17.33,
+       "events": 1.0
+      },
+      "3": {
+       "floor": 17.33,
+       "events": 1.0
+      },
+      "4": {
+       "floor": 17.33,
+       "events": 1.0
+      },
+      "5": {
+       "floor": 17.33,
+       "events": 1.0
+      }
+     },
+     "reward": [
+      {
+       "type": 41,
+       "count": 100
+      },
+      {
+       "type": 11,
+       "id": 55005,
+       "count": 225
+      },
+      {
+       "type": 11,
+       "id": 55006,
+       "count": 10
+      },
+      {
+       "type": 7,
+       "count": 40000
+      }
+     ],
+     "scoreToPointTransferRate": 100,
+     "chaosPollutionMax": 100.0,
+     "hollow_drop_count": 3,
+     "camp_add_hp_percent": 2000,
+     "total_score_max": 100
+    },
+    "34002": {
+     "hollow_drop_count": 3,
+     "camp_add_hp_percent": 2000
+    }
+   },
+   "miku_activity_id": 34002,
+   "maze_activity_id": 34001,
+   "quick_fight_max_round": 9,
+   "maze_default_skeletonRes_roleId": 108,
+   "maze_role_speed": 20,
+   "maze_chaos_recure_item_id": 92000
+  },
+  "asyncPvpV2Info": {
+   "upgradeSeg": 3000,
+   "downSeg": 7000,
+   "simpleTargetCoefficient": 1.0,
+   "normalTargetCoefficient": 1.1,
+   "difficultTargetCoefficient": 1.2,
+   "specialActorCoefficient": 1.3,
+   "battleRecordSaveCnt": 10,
+   "dungeonID": 9999,
+   "defendRewards": [
+    {
+     "type": 7,
+     "count": 1000
+    }
+   ],
+   "matchCosts": [
+    {
+     "type": 11,
+     "id": 80001,
+     "count": 1
+    }
+   ],
+   "balanceWeekDay": 1,
+   "balanceEndHour": 6,
+   "maxContinueWin": 5,
+   "maxRewardWinCnt": 5,
+   "dailyBattleCnt": 3,
+   "defualtActorGroup": 1,
+   "rankAndMatchExpireTime": 86400
+  },
+  "playerBackPauseStartTime": "2019-05-17 00:00:00",
+  "playerBackPauseEndTime": "2019-05-31 00:00:00",
+  "randomSkinLimitNum": 5,
+  "ShareGroupCommentMonthPoint": 999,
+  "ShareGroupCommentPoint": 1,
+  "progressTaskSwitchingTime": 7,
+  "ShareGroupPointId": 32003,
+  "ShareGroupMonthPoint": 10,
+  "ShareGroupUploadPoint": 1,
+  "ShareGroupOnePageNum": 5,
+  "ShareGroupCopyNewestNum": 10,
+  "ShareGroupLikeAddCredit": 1,
+  "ShareGroupDislikeDecCredit": 1,
+  "ShareGroupMaxCredit": 100,
+  "ShareGroupMonthAddCredit": 50,
+  "ShareGroupFirstCopyPoint": 1,
+  "ShareGroupHotScoreParamX": 1,
+  "ShareGroupHotScoreParamY": 1,
+  "ShareGroupHotScoreParamZ": 1,
+  "ShareGroupMaxDailyShareCount": 3,
+  "screenSetting": {
+   "maxNotch": 130,
+   "recommandNotch": 90
+  },
+  "RDPVPMaxNum": 5,
+  "WeaponGachaAddRes": {
+   "type": 23,
+   "count": 15
+  },
+  "ShareGroupCopyMonthPoint": 999,
+  "ShareGroupLikeMonthPoint": 999,
+  "ShareGroupLikePoint": 1,
+  "friendFastDeleteTime": 30,
+  "guildMailTitleLimit": 14,
+  "guildMailContentLimit": 128,
+  "recallActivityLevelLimit": 20,
+  "recallActivityDayLimit": 14,
+  "UnforcedTutorialMaxLevel": 20,
+  "playerBackMailEffectiveDay": 30,
+  "skipTutorialDungeon": 16,
+  "dungeonStarConfigVersion": 1,
+  "gachaFreeDropCount": 5,
+  "ptTaskPresent": 8,
+  "allowActorDecomposeDungeon": 10,
+  "newPlayerSignInConfig": [
+   {
+    "activityId": 10201,
+    "totalDays": 14
+   }
+  ],
+  "applyListLimit": 20,
+  "PringlesGifts": [
+   {
+    "type": 5,
+    "count": 50
+   },
+   {
+    "type": 11,
+    "id": 74038,
+    "count": 3
+   },
+   {
+    "type": 7,
+    "count": 23333
+   }
+  ],
+  "PringlesMedalId": 99000,
+  "ExchangeShopRefreshDayOfWeek": 1,
+  "ExchangeShopRefreshTimeInDay": "00:00:00"
+ }
+]

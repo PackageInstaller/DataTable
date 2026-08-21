@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS15" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S15/PathWay.prefab" />
+    <ScenePart Name="S15_Scene" Asset="Assets/AssetBundle/Scene/Main/S15/S15_Scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="Buildings" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Floor" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface422" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface423" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface424" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface425" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pCone1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pCone2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface418" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="WindowsGlow" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="WindowsGlow1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="WindsowGlow2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="WindsowGlow10" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="WindsowGlow11" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="WindsowGlow12" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="WindsowGlow13" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface427" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface429" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface430" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface431" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface432" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface433" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface434" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface435" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface436" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface437" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface438" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface439" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface440" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface441" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface442" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Trees" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Sky01" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>

@@ -1,0 +1,757 @@
+[
+  {
+    "name": "11-boss2 击杀前排 智能AI测试",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "库温瑟 芙萝蕾缇雅",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "name": "只放一次防御",
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "Defense",
+                          "compareOperation": "0",
+                          "expression": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckRage",
+                        "prop": {
+                          "targetTeam": "1",
+                          "compareOperation": "2",
+                          "valueRatio": "50"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "Defense",
+                          "value": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "三回合大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckVar",
+                        "prop": {
+                          "varname": "skill3",
+                          "compareOperation": "0",
+                          "expression": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "2",
+                          "valueExp": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "skill3",
+                          "value": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "七回合大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "7"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "没有流血效果放连携",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "1",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2203101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "1",
+                                  "keyType": "1",
+                                  "buffKeyExp": "10"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "没有流血效果放连携",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "2",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2203101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "2",
+                                  "keyType": "1",
+                                  "buffKeyExp": "10"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "没有流血效果放连携",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "3",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2203101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "3",
+                                  "keyType": "1",
+                                  "buffKeyExp": "10"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ActionPlayBestSkill",
+                        "prop": {
+                          "canUseSuperSkill": "0",
+                          "canUseLink": "0",
+                          "canUseAssistSkill": "0",
+                          "canUseSkill2": "1",
+                          "canUseSkill1": "1",
+                          "returnFailIfFailToPlayDueToLock": "0",
+                          "canUseSkill3_9": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionPlayBestSkill",
+                    "prop": {
+                      "canUseSuperSkill": "0",
+                      "canUseLink": "1",
+                      "canUseAssistSkill": "0",
+                      "canUseSkill2": "1",
+                      "canUseSkill1": "1",
+                      "returnFailIfFailToPlayDueToLock": "0",
+                      "canUseSkill3_9": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "桐乃 黑猫",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "清凑智花大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "1",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "1",
+                                  "keyType": "1",
+                                  "buffKeyExp": "2"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "2",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "2",
+                                  "keyType": "1",
+                                  "buffKeyExp": "2"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "3",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "3",
+                                  "keyType": "1",
+                                  "buffKeyExp": "2"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "清夏娜大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "1",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "1",
+                                  "keyType": "1",
+                                  "buffKeyExp": "10"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "2",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "2",
+                                  "keyType": "1",
+                                  "buffKeyExp": "10"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "3",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "3",
+                                  "keyType": "1",
+                                  "buffKeyExp": "10"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "4回合后解锁大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "4",
+                          "valueExp": "4"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlayBestSkill",
+                        "prop": {
+                          "canUseSuperSkill": "1",
+                          "canUseLink": "0",
+                          "canUseAssistSkill": "1",
+                          "canUseSkill2": "0",
+                          "canUseSkill1": "1",
+                          "returnFailIfFailToPlayDueToLock": "0",
+                          "canUseSkill3_9": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionPlayRandomSkill",
+                    "prop": {
+                      "canUseSuperSkill": "0",
+                      "canUseLink": "0",
+                      "canUseAssistSkill": "1",
+                      "canUseSkill2": "0",
+                      "canUseSkill1": "1",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "雪菜 高须龙儿",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "清凑智花大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "1",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "1",
+                                  "keyType": "1",
+                                  "buffKeyExp": "2"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "2",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "2",
+                                  "keyType": "1",
+                                  "buffKeyExp": "2"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "3",
+                                  "keyType": "0",
+                                  "buffKeyExp": "2021101"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "1",
+                                  "target": "3",
+                                  "keyType": "1",
+                                  "buffKeyExp": "2"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "清封技",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "1",
+                                  "keyType": "1",
+                                  "buffKeyExp": "6"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "2",
+                                  "keyType": "1",
+                                  "buffKeyExp": "6"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "",
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckActorHasBuff",
+                                "prop": {
+                                  "targetTeam": "0",
+                                  "target": "3",
+                                  "keyType": "1",
+                                  "buffKeyExp": "6"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "4回合后解锁大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "4",
+                          "valueExp": "4"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlayBestSkill",
+                        "prop": {
+                          "canUseSuperSkill": "1",
+                          "canUseLink": "0",
+                          "canUseAssistSkill": "0",
+                          "canUseSkill2": "1",
+                          "canUseSkill1": "1",
+                          "returnFailIfFailToPlayDueToLock": "0",
+                          "canUseSkill3_9": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ActionPlayRandomSkill",
+                    "prop": {
+                      "canUseSuperSkill": "0",
+                      "canUseLink": "0",
+                      "canUseAssistSkill": "0",
+                      "canUseSkill2": "1",
+                      "canUseSkill1": "1",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

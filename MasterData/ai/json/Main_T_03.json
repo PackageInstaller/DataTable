@@ -1,0 +1,631 @@
+[
+  {
+    "name": "OB03 | 黑雪姬&春雪S，黑子&初春S，夏娜 | 不阵亡数值玩法",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "回合数 \b—— P1 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑子",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "夏娜",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P2 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬 连携怼中排",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "4"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑子",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "夏娜 大招施压",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P3 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬 ",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑子 连携怼后排",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "夏娜",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P4 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬 大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑子",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "夏娜",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P5 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑子 大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "夏娜",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P6 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "6"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑子",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "夏娜 大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P7 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "7"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬 大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "黑子 大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "夏娜 大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— 大于P7 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "2",
+                  "valueExp": "7"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayBestSkill",
+                "prop": {
+                  "canUseSuperSkill": "1",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "1",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "0",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

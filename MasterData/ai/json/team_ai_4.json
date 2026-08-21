@@ -1,0 +1,28 @@
+[
+  {
+    "name": "team_ai_1",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "type": "ActionPlayBestSkill",
+            "prop": {
+              "canUseSuperSkill": "1",
+              "canUseLink": "1",
+              "canUseAssistSkill": "1",
+              "canUseSkill2": "0",
+              "canUseSkill1": "1",
+              "canUseSkill3_9": "1"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

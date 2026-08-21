@@ -1,0 +1,882 @@
+[
+  {
+    "name": "混沌界域打中排",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "概率控制",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ActionGenRandom",
+                "prop": {
+                  "varname": "A",
+                  "rangeLower": "0",
+                  "rangeUpper": "100"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "1~2回合 80%中排 10%群体 10%单体",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "5",
+                          "valueExp": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "",
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "80"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "80"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "85"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "85"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "90"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "5",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "90"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "6",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "3回合1个大招 +2个100%群体",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "如果C=1 释放群攻",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "C",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "6",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "如果B=0 随机B的值",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "B",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionGenRandom",
+                                    "prop": {
+                                      "varname": "B",
+                                      "rangeLower": "0",
+                                      "rangeUpper": "100"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "确保返回真",
+                                "type": "ActionLog",
+                                "prop": {
+                                  "log": "上一个人大招释放失败"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "1号位33%几率大招 释放成功C设置为1",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActor",
+                                    "prop": {
+                                      "actorPosition": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "B",
+                                      "compareOperation": "5",
+                                      "expression": "33"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "C",
+                                      "value": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "2号位33%几率大招 释放成功C设置为1",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActor",
+                                    "prop": {
+                                      "actorPosition": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "B",
+                                      "compareOperation": "2",
+                                      "expression": "33"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "B",
+                                      "compareOperation": "5",
+                                      "expression": "66"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "C",
+                                      "value": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "3号位34%几率大招 释放成功C设置为1",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActor",
+                                    "prop": {
+                                      "actorPosition": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "B",
+                                      "compareOperation": "2",
+                                      "expression": "66"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "C",
+                                      "value": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "6",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "1~2回合 80%中排 10%群体 10%单体",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "4"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "",
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "80"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "80"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "85"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "85"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "90"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "5",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "90"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "6",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "5回合1个大招 +2个100%群体",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "5"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "如果E=1 释放群攻",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "E",
+                                      "compareOperation": "0",
+                                      "expression": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "6",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "如果D=0 随机D的值",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D",
+                                      "compareOperation": "0",
+                                      "expression": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionGenRandom",
+                                    "prop": {
+                                      "varname": "D",
+                                      "rangeLower": "0",
+                                      "rangeUpper": "100"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "确保返回值为真",
+                                "type": "ActionLog",
+                                "prop": {
+                                  "log": "上一个人大招释放失败"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Selector",
+                            "prop": {},
+                            "children": [
+                              {
+                                "name": "1号位33%几率大招 释放成功C设置为1",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActor",
+                                    "prop": {
+                                      "actorPosition": "1"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D",
+                                      "compareOperation": "5",
+                                      "expression": "33"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "E",
+                                      "value": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "2号位33%几率大招 释放成功C设置为1",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActor",
+                                    "prop": {
+                                      "actorPosition": "2"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D",
+                                      "compareOperation": "2",
+                                      "expression": "33"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D",
+                                      "compareOperation": "5",
+                                      "expression": "66"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "E",
+                                      "value": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "3号位34%几率大招 释放成功C设置为1",
+                                "type": "Sequence",
+                                "prop": {},
+                                "children": [
+                                  {
+                                    "type": "ConditionCheckActor",
+                                    "prop": {
+                                      "actorPosition": "3"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ConditionCheckVar",
+                                    "prop": {
+                                      "varname": "D",
+                                      "compareOperation": "2",
+                                      "expression": "66"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionPlaySkill",
+                                    "prop": {
+                                      "skillType": "2",
+                                      "returnFailIfFailToPlayDueToLock": "0"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "ActionSetVar",
+                                    "prop": {
+                                      "varname": "E",
+                                      "value": "1"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "6",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "1~2回合 80%中排 10%群体 10%单体",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "4",
+                          "valueExp": "6"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "",
+                        "type": "Selector",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "80"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "1",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "80"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "85"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "0",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "85"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "5",
+                                  "expression": "90"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "5",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Sequence",
+                            "prop": {},
+                            "children": [
+                              {
+                                "type": "ConditionCheckVar",
+                                "prop": {
+                                  "varname": "A",
+                                  "compareOperation": "2",
+                                  "expression": "90"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "ActionPlaySkill",
+                                "prop": {
+                                  "skillType": "6",
+                                  "returnFailIfFailToPlayDueToLock": "0"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

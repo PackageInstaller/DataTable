@@ -1,0 +1,16 @@
+<root>
+  <selector>
+    <sequence>
+      <condition_CheckSkill sourceObjectType="0" searchSourceTypes="" skillName="1" />
+      <action_LaunchSkill targetObjectType="2" searchTargetTypes="1" skillName="1" />
+    </sequence>
+    <sequence>
+      <condition_CheckSkill sourceObjectType="0" searchSourceTypes="" skillName="2" />
+      <action_LaunchSkill targetObjectType="2" searchTargetTypes="1" skillName="2" />
+    </sequence>
+    <sequence>
+      <condition_CheckSkill sourceObjectType="0" searchSourceTypes="" skillName="3" />
+      <action_LaunchSkill targetObjectType="2" searchTargetTypes="1" skillName="3" />
+    </sequence>
+  </selector>
+</root>

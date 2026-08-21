@@ -1,0 +1,197 @@
+[
+  {
+    "name": "单夏娜35大招",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckActorHasBuff",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "1",
+                  "keyType": "0",
+                  "buffKeyExp": "996000"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionAddBuff",
+                "prop": {
+                  "targetTeam": "0",
+                  "target": "1",
+                  "buffIndexExp": "996001",
+                  "buffLevelExp": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": " p1",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "1",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": " p2",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "0",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": " p3",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": " p4",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "0",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": " p5",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "5"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": " p6",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "6"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "1",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "ActionPlayBestSkill",
+                "prop": {
+                  "canUseSuperSkill": "1",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "1",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "1"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

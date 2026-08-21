@@ -1,0 +1,225 @@
+[
+  {
+    "name": "攻击叠加BUFF爆发",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "爆发回合",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "1",
+                      "keyType": "0",
+                      "buffKeyExp": "997042"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "爆发回合",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "keyType": "0",
+                      "buffKeyExp": "997042"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "爆发回合",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActor",
+                    "prop": {
+                      "actorPosition": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "3",
+                      "keyType": "0",
+                      "buffKeyExp": "997042"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlaySkill",
+                    "prop": {
+                      "skillType": "2",
+                      "returnFailIfFailToPlayDueToLock": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "name": "使用大招以外的技能（临时）",
+                "type": "ActionPlayBestSkill",
+                "prop": {
+                  "canUseSuperSkill": "0",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "1",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "1",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "库温瑟1回合",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "深雪1回合",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "惠美1回合",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckRound",
+                        "prop": {
+                          "compareOperation": "0",
+                          "valueExp": "3"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

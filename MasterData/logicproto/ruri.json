@@ -1,0 +1,1342 @@
+{
+ "name": "ruri",
+ "actions": [
+  {
+   "name": "stand",
+   "animate": "1",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "run",
+   "animate": "1",
+   "actionType": "ActionType_Run",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {
+    "x": 400.0
+   },
+   "acceleration": {},
+   "nextAction": "run",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "s1",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "kuroneko_sup1_v1",
+     "path": [
+      "Voice/kuroneko/Kro00_7001",
+      "Voice/kuroneko/Kro00_7002",
+      "Voice/kuroneko/Kro00_7002b"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "tag": "blink1",
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.3,
+     "path": [
+      "Sound/se/Swing_Magic"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 1,
+    "position": {
+     "x": -300.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "kuroneko/kuroneko_huaduo_01_D",
+     "start": 0.4,
+     "scale": {
+      "x": 0.9,
+      "y": 0.9
+     },
+     "binding": true,
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2101001,
+     "start": 0.8,
+     "endTime": 10.0,
+     "scale": 1.0,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": -50.0,
+       "y": 60.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "hana1"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 0.95,
+     "endTime": 10.0,
+     "scale": 0.8,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 120.0,
+       "y": 220.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "hana2"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 1.1,
+     "endTime": 10.0,
+     "scale": 1.0,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 100.0,
+       "y": 180.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "hana3"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 1.25,
+     "endTime": 10.0,
+     "scale": 0.8,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "y": 80.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "hana4"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 1.4,
+     "endTime": 10.0,
+     "scale": 0.9,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 50.0,
+       "y": 100.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "hana1"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 1.55,
+     "endTime": 10.0,
+     "scale": 1.0,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 150.0,
+       "y": 280.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "hana2"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 1.7,
+     "endTime": 10.0,
+     "scale": 1.0,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 140.0,
+       "y": 260.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "hana3"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 1.85,
+     "endTime": 10.0,
+     "scale": 0.9,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "position": {
+       "x": 80.0,
+       "y": 150.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "hana4"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 30,
+   "distance": 25.0,
+   "actorIdForResource": 2101,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "s2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10001
+   ],
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "kuroneko_sup2_v1",
+     "path": [
+      "Voice/kuroneko/Kro00_7000"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.4,
+     "tag": "kuroneko_sup2_se1",
+     "path": [
+      "Sound/effect/nature/rc_d_guangzhu"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "tag": "blink1",
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "posOption": 4,
+    "position": {
+     "x": -350.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "kuroneko/kuroneko_s1_01_BG",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 2,
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "kuroneko/kuroneko_s1_01",
+     "start": 0.3,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 1,
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "kuroneko/kuroneko_s1_01_Front",
+     "start": 0.3,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2101001,
+     "start": 0.8,
+     "endTime": 10.0,
+     "scale": 1.0,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {}
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 0.8,
+     "endTime": 10.0,
+     "scale": 1.0,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {
+       "x": -270.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    },
+    {
+     "characterID": 2101001,
+     "start": 0.8,
+     "endTime": 10.0,
+     "scale": 1.0,
+     "drawOrder": 1,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {
+       "x": -540.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "circle1"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 15,
+   "damage": 50,
+   "actorIdForResource": 2101,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "show_1_1",
+   "animate": "1.5",
+   "actionType": "ActionType_Pose",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "kuroneko_show",
+     "path": [
+      "Voice/kuroneko/Kro00_4901",
+      "Voice/kuroneko/Kro00_2200"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "show_2_1",
+   "animate": "1.5",
+   "actionType": "ActionType_Pose",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "kuroneko_show",
+     "path": [
+      "Voice/kuroneko/Kro00_4901",
+      "Voice/kuroneko/Kro00_2200"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "disappear",
+   "animate": "0.3",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "blink1",
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "kuroneko/kuroneko_flash1_02",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {
+    "start": 0.1,
+    "duration": 0.1,
+    "type": 5
+   },
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "link_krn",
+   "animate": "link_krn",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {
+     "x": 1200.0,
+     "y": 300.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 1.3,
+      "end": 1.4
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "empty",
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10071
+   ],
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_AddHp",
+   "audio": [
+    {
+     "tag": "blink2",
+     "path": [
+      "Sound/se/Potential"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "path": [
+      "Voice/kuroneko/Kro_skill_13"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 1.2,
+     "path": [
+      "Sound/se/Val_ChargeBeam"
+     ]
+    }
+   ],
+   "startPos": {
+    "faceOption": 7,
+    "posOption": 3,
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "kuroneko/kuroneko_flash1_01",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "kuroneko/kuroneko_link_foot",
+     "start": 1.2,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 1,
+     "position": {
+      "x": 500.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "kuroneko/kuroneko_link_front",
+     "start": 1.2,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {
+      "x": 500.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "kuroneko/kuroneko_s1_02_Front",
+     "start": 0.4,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "preview",
+   "animate": "preview",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {}
+  },
+  {
+   "name": "linkh1",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {},
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10072
+   ],
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "kuroneko_sup1_v1",
+     "path": [
+      "Voice/kuroneko/Kro00_7001",
+      "Voice/kuroneko/Kro00_7002",
+      "Voice/kuroneko/Kro00_7002b"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "tag": "blink1",
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 1.0,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 1.2,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 1.4,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 1.6,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 1.8,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.0,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.2,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.4,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.6,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.8,
+     "tag": "blink1",
+     "path": [
+      "Sound/se/Hit_ThrustA",
+      "Sound/se/Hit_ThrustB"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 3,
+    "position": {
+     "x": -4.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 30,
+   "distance": 25.0,
+   "actorIdForResource": 2101,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "sup_link_kuro",
+   "animate": "sup_link_kuro",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": 400.0
+    },
+    "b": {
+     "x": 700.0,
+     "y": 800.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 2.8,
+      "end": 3.3,
+      "hitInterval": 0.15
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -50.0,
+     "y": 500.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0,
+    "path": [
+     "Sound/se/Hit_Fire"
+    ]
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10073
+   ],
+   "nextAction": "disappear",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "volume": 1.0,
+     "tag": "blink1",
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.4,
+     "path": [
+      "Sound/se/ruri/s200_01"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.4,
+     "path": [
+      "Sound/se/Hit_Fire"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.4,
+     "path": [
+      "Voice/kuroneko/Kro00_7001",
+      "Voice/kuroneko/Kmi_battle_10"
+     ]
+    }
+   ],
+   "startPos": {
+    "posOption": 3,
+    "position": {
+     "x": -1.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_11_H",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "kuroneko/kuroneko_flash1_02",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "kurokomaid/kurokomaid_link_kuro_01",
+     "start": 2.0,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 1,
+     "position": {
+      "x": 525.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "kurokomaid/kurokomaid_link_kuro_02",
+     "start": 2.45,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {
+      "x": 503.0
+     },
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {
+    "start": 4.0,
+    "duration": 0.1,
+    "type": 7
+   },
+   "breakAudio": {
+    "volume": 1.0
+   }
+  }
+ ]
+}

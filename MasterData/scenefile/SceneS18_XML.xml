@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS18" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S18/PathWay.prefab" />
+    <ScenePart Name="S18_Scene" Asset="Assets/AssetBundle/Scene/Main/S18/S18_Scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="BuildingMain" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface33" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface159" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface160" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface161" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface162" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface163" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface164" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface165" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface166" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface168" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface172" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface173" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface175" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Desk" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Floor" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface212" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface213" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface214" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface215" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface216" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface217" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface218" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface219" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface220" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface221" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface222" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface223" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface224" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface225" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface226" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface227" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface228" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface229" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface230" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface231" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface232" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface233" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface234" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface235" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface236" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface237" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface238" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface239" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface240" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface241" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface242" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface243" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface244" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface245" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface246" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface247" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Light15" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Cup1_polySurface251" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Cup6_polySurface250" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="LaZhu7" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Pic" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Shadow" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Sky01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Sofa" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy3" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy4" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy5" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy6" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy7" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy8" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy9" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Toy12" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane8" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane9" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane10" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane11" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane12" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane13" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane14" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="pPlane15" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>

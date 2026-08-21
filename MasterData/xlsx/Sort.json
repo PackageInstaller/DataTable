@@ -1,0 +1,1374 @@
+[
+ {
+  "id": 1,
+  "localization": "Sort_ActorColor",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 2,
+  "localization": "Sort_ActorLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 3,
+  "localization": "Sort_StarLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 4,
+  "localization": "Sort_GetTime",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 5,
+  "localization": "Sort_ActorName",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "actorName"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "quality",
+    "param": 1
+   },
+   {
+    "keyName": "level",
+    "param": 1
+   },
+   {
+    "keyName": "star",
+    "param": 1
+   },
+   {
+    "keyName": "uid",
+    "param": 1
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 6,
+  "localization": "Sort_Quality",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 7,
+  "localization": "Sort_EquipLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 8,
+  "localization": "Sort_GetTime",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 9,
+  "localization": "Sort_EquipOn",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "equipOn",
+    "param": 1
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 10,
+  "localization": "Sort_Quality",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "gotTime"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 3
+ },
+ {
+  "id": 11,
+  "localization": "Sort_GetTime",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "gotTime"
+   },
+   {
+    "keyName": "quality",
+    "param": 1
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 3
+ },
+ {
+  "id": 12,
+  "localization": "Sort_GetTime",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "gotTime"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 3
+ },
+ {
+  "id": 13,
+  "localization": "Sort_ItemExp",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "exp"
+   },
+   {
+    "keyName": "gotTime"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 3
+ },
+ {
+  "id": 14,
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "auraActorQuality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "actorNameEn",
+    "param": 1
+   },
+   {
+    "keyName": "auraActorId"
+   }
+  ],
+  "type": 4
+ },
+ {
+  "id": 15,
+  "localization": "Sort_CollectionsActorDefault",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "id"
+   }
+  ],
+  "type": 5
+ },
+ {
+  "id": 16,
+  "localization": "Sort_ByCollectionsActorName",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "actorName"
+   },
+   {
+    "keyName": "id"
+   }
+  ],
+  "type": 5
+ },
+ {
+  "id": 17,
+  "localization": "Sort_CollectionsActorDefault",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "favourLevel"
+   },
+   {
+    "keyName": "favour"
+   },
+   {
+    "keyName": "unlockTime"
+   },
+   {
+    "keyName": "roleId"
+   }
+  ],
+  "type": 9
+ },
+ {
+  "id": 18,
+  "keys": [
+   {
+    "keyName": "online",
+    "param": 1
+   },
+   {
+    "keyName": "lastLogoutTime",
+    "param": 1
+   }
+  ],
+  "type": 7
+ },
+ {
+  "id": 19,
+  "keys": [
+   {
+    "keyName": "level",
+    "param": 1
+   }
+  ],
+  "type": 7
+ },
+ {
+  "id": 20,
+  "localization": "Sort_ActorCultivation",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "cultivationTotal"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 21,
+  "localization": "Sort_ActorSpeed",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "orderNew",
+    "param": 1
+   },
+   {
+    "keyName": "speed"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 22,
+  "localization": "Sort_GuildMemberCount",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "membersCount"
+   },
+   {
+    "keyName": "level",
+    "param": 1
+   },
+   {
+    "keyName": "score",
+    "param": 2
+   }
+  ],
+  "type": 6
+ },
+ {
+  "id": 23,
+  "localization": "Sort_GuildScore",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "score"
+   },
+   {
+    "keyName": "level",
+    "param": 1
+   },
+   {
+    "keyName": "membersCount",
+    "param": 2
+   }
+  ],
+  "type": 6
+ },
+ {
+  "id": 24,
+  "localization": "Sort_Quality",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 25,
+  "localization": "Sort_EquipLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 26,
+  "localization": "Sort_GetTime",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 27,
+  "localization": "Sort_ActorColor",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 8
+ },
+ {
+  "id": 28,
+  "localization": "Sort_ActorLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 8
+ },
+ {
+  "id": 29,
+  "localization": "Sort_StarLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 8
+ },
+ {
+  "id": 30,
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "role"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "quality",
+    "param": 1
+   },
+   {
+    "keyName": "level",
+    "param": 1
+   },
+   {
+    "keyName": "star",
+    "param": 1
+   },
+   {
+    "keyName": "uid",
+    "param": 1
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 31,
+  "localization": "Sort_ByCollectionsActorName",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "roleId"
+   },
+   {
+    "keyName": "favour"
+   },
+   {
+    "keyName": "unlockTime"
+   },
+   {
+    "keyName": "favourLevel"
+   }
+  ],
+  "type": 9
+ },
+ {
+  "id": 32,
+  "localization": "Sort_ActorColor",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 33,
+  "localization": "Sort_ActorLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 34,
+  "localization": "Sort_StarLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 35,
+  "localization": "Sort_ActorCultivation",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "cultivationTotal"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 36,
+  "localization": "Sort_ActorSpeed",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "speed"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 37,
+  "localization": "Sort_ActorName",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "actorName"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "quality",
+    "param": 1
+   },
+   {
+    "keyName": "level",
+    "param": 1
+   },
+   {
+    "keyName": "star",
+    "param": 1
+   },
+   {
+    "keyName": "uid",
+    "param": 1
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 38,
+  "localization": "Sort_GetTime",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 1
+ },
+ {
+  "id": 39,
+  "localization": "Sort_GuildLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "score",
+    "param": 1
+   },
+   {
+    "keyName": "membersCount",
+    "param": 2
+   }
+  ],
+  "type": 6
+ },
+ {
+  "id": 40,
+  "localization": "Sort_ActorColor",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "alive"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 11
+ },
+ {
+  "id": 41,
+  "localization": "Sort_ActorLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "alive"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 11
+ },
+ {
+  "id": 42,
+  "localization": "Sort_StarLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "alive"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 11
+ },
+ {
+  "id": 43,
+  "localization": "Sort_GetTime",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "alive"
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 11
+ },
+ {
+  "id": 44,
+  "localization": "Sort_ActorName",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "alive"
+   },
+   {
+    "keyName": "actorName"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "quality",
+    "param": 1
+   },
+   {
+    "keyName": "level",
+    "param": 1
+   },
+   {
+    "keyName": "star",
+    "param": 1
+   },
+   {
+    "keyName": "uid",
+    "param": 1
+   }
+  ],
+  "type": 11
+ },
+ {
+  "id": 45,
+  "localization": "Sort_ActorSpeed",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "alive"
+   },
+   {
+    "keyName": "speed"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 11
+ },
+ {
+  "id": 46,
+  "localization": "Sort_ActorCultivation",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "alive"
+   },
+   {
+    "keyName": "cultivationTotal"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 11
+ },
+ {
+  "id": 47,
+  "localization": "Sort_ActorCultivation",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "cultivation"
+   },
+   {
+    "keyName": "id"
+   }
+  ],
+  "type": 12
+ },
+ {
+  "id": 54,
+  "localization": "Sort_AttackRate",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "AttackRate"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 55,
+  "localization": "Sort_HpRate",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "HpRate"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 56,
+  "localization": "Sort_PhysicalDefenseRate",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "PhysicalDefenseRate"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 57,
+  "localization": "Sort_MagicalDefenseRate",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "MagicalDefenseRate"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 58,
+  "localization": "Sort_CriticalHitRate",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "CriticalHitRate"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 59,
+  "localization": "Sort_CriticalHitDamageRate",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "CriticalHitDamageRate"
+   },
+   {
+    "keyName": "position",
+    "param": 2
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   }
+  ],
+  "type": 2
+ },
+ {
+  "id": 48,
+  "localization": "Sort_ActorColor",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 13
+ },
+ {
+  "id": 49,
+  "localization": "Sort_ActorLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 13
+ },
+ {
+  "id": 50,
+  "localization": "Sort_StarLevel",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 13
+ },
+ {
+  "id": 51,
+  "localization": "Sort_ActorCultivation",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "cultivationTotal"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 13
+ },
+ {
+  "id": 52,
+  "localization": "Sort_ActorSpeed",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "speed"
+   },
+   {
+    "keyName": "quality"
+   },
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "star"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "uid"
+   }
+  ],
+  "type": 13
+ },
+ {
+  "id": 53,
+  "localization": "Sort_ActorName",
+  "algorithm": 1,
+  "keys": [
+   {
+    "keyName": "actorName"
+   },
+   {
+    "keyName": "id",
+    "param": 1
+   },
+   {
+    "keyName": "quality",
+    "param": 1
+   },
+   {
+    "keyName": "level",
+    "param": 1
+   },
+   {
+    "keyName": "star",
+    "param": 1
+   },
+   {
+    "keyName": "uid",
+    "param": 1
+   }
+  ],
+  "type": 13
+ },
+ {
+  "id": 66,
+  "localization": "Sort_ActorLevel",
+  "keys": [
+   {
+    "keyName": "level"
+   },
+   {
+    "keyName": "lastLogoutTime"
+   }
+  ],
+  "type": 7
+ },
+ {
+  "id": 67,
+  "localization": "Sort_LogoutTime",
+  "keys": [
+   {
+    "keyName": "online"
+   },
+   {
+    "keyName": "lastLogoutTime"
+   },
+   {
+    "keyName": "level"
+   }
+  ],
+  "type": 7
+ }
+]

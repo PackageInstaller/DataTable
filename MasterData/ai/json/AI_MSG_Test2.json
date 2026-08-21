@@ -1,0 +1,35 @@
+[
+  {
+    "name": "测试表达式",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "A",
+                      "value": "5/2"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

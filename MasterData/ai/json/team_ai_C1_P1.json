@@ -1,0 +1,772 @@
+[
+  {
+    "name": "核心：1号位 伤害：AOE 强度：1",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "T1 援助1 SK1 执行随机",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "当局随机数",
+                    "type": "ActionGenRandom",
+                    "prop": {
+                      "varname": "R",
+                      "rangeLower": "0",
+                      "rangeUpper": "100"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "【强制】援助打牌",
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "4",
+                      "scardCountExp": "0",
+                      "cardCountExp": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "T2 随机酱油角色3，2打牌 SK2",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "》=50 3号打牌",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "R",
+                      "compareOperation": "4",
+                      "expression": "50"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "3",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "否则2号打牌",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "2",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "2",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 随2",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "2"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "2",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "T3 核心角色 展示压力",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "1",
+                      "scardCountExp": "0",
+                      "cardCountExp": "4"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 随机2张",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "3"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "2",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "T4 随机酱油角色2，3打牌 SK2",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "》=50 2号",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "2",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "R",
+                      "compareOperation": "4",
+                      "expression": "50"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "2",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "否则3号",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "3",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 随2",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "4"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "2",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "T5 援助2打牌",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "5"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "5",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "T6 核心角色 展示压力",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "6"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "1",
+                      "scardCountExp": "0",
+                      "cardCountExp": "4"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 随机2张",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "6"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "2",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "循环1/4  T7+X 随机酱油角色3，2打牌 SK2",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "》=50 3号打牌",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "7+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "R",
+                      "compareOperation": "4",
+                      "expression": "50"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "3",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "否则2号打牌",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "7+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "6",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 随2",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "7+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "2",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "循环2/4  T8+X 核心角色展示压力",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "8+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "1",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "R",
+                      "compareOperation": "4",
+                      "expression": "50"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "1",
+                      "scardCountExp": "0",
+                      "cardCountExp": "4"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 随机2张",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "8+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "2",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "循环3/4 T9+X 随机酱油角色2，3打牌 SK2",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "》=50 2号",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "9+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "2",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckVar",
+                    "prop": {
+                      "varname": "R",
+                      "compareOperation": "4",
+                      "expression": "50"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "2",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "否则3号",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "9+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ConditionCheckActorIsAlive",
+                    "prop": {
+                      "team": "0",
+                      "target": "3",
+                      "alive": "1"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayCards",
+                    "prop": {
+                      "target": "3",
+                      "scardCountExp": "0",
+                      "cardCountExp": "2"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "替补 随2",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "9+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "2",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "循环4/4 T10+X 过度回合",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "name": "",
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "",
+                    "type": "ConditionCheckRound",
+                    "prop": {
+                      "compareOperation": "0",
+                      "valueExp": "10+x"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionPlayRandomCards",
+                    "prop": {
+                      "target": "0",
+                      "scardRateExp": "0",
+                      "maxCardsCountExp": "2",
+                      "excludeTargets": ""
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ActionSetVar",
+                    "prop": {
+                      "varname": "x",
+                      "value": "x+4"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

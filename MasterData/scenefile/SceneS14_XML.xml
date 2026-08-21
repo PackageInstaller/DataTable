@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS14" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S14/PathWay.prefab" />
+    <ScenePart Name="S14_Scene" Asset="Assets/AssetBundle/Scene/Main/S14/S14_Scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="Base" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Arms1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Buildings01" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Floor1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="polySurface67" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="RobotRotateX2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Sky01" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>

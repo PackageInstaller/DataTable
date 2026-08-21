@@ -1,0 +1,422 @@
+[
+  {
+    "name": "攻驱&点杀| CMR-91 亚子 MHCR-Zwei_S 卢西安_S",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "回合数 \b—— P1 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "CMR-91攻击 1-0",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "亚子 加防御",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P2 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "CMR-91攻击 2-3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "亚子加血",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P3 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "CMR-91攻击 5-3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "亚子 攻击削弱防御 5-3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "",
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P4 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "CMR-91攻击 1-0",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "亚子 加防御 ",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P5 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "CMR-91攻击 1-0",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "亚子加血",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P6 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "6"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "CMR-91攻击 5-3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "1"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "亚子 攻击削弱防御 5-3",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ConditionCheckActor",
+                        "prop": {
+                          "actorPosition": "2"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— 大于P6 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "2",
+                  "valueExp": "6"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayBestSkill",
+                "prop": {
+                  "canUseSuperSkill": "1",
+                  "canUseLink": "1",
+                  "canUseAssistSkill": "1",
+                  "canUseSkill2": "1",
+                  "canUseSkill1": "1",
+                  "returnFailIfFailToPlayDueToLock": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

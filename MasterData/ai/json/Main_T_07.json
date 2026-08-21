@@ -1,0 +1,234 @@
+[
+  {
+    "name": "OB组队副本 防御 | 黑雪姬&桐人MS",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "回合数 \b—— P1 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "1+x"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "桐人 援助",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P2 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "2+x"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬 技能1",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P3 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "3+x"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "黑雪姬 大招",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P4 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "4+x"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "桐人 ",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P5 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "5+x"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "大招连携",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "4"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "回合数 \b—— P6 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRound",
+                "prop": {
+                  "compareOperation": "0",
+                  "valueExp": "6+x"
+                },
+                "children": []
+              },
+              {
+                "type": "Selector",
+                "prop": {},
+                "children": [
+                  {
+                    "name": "桐人  技能2",
+                    "type": "Sequence",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "type": "ActionSetVar",
+                        "prop": {
+                          "varname": "x",
+                          "value": "6+x"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

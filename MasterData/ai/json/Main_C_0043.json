@@ -1,0 +1,718 @@
+[
+  {
+    "name": "攻驱&点杀| 游佐惠美Po1 MHCR-ZweiPo2 MHCR-EinsPo3",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "MHCR-Zwei \b—— P0 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 P0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Eins \bP0",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "0"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Zwei —— P1 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 P1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Eins P1",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Zwei —— P2 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 \b P2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Eins P2",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Zwei —— P3 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 P3",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "2"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Eins \bP3",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Zwei —— P4 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 P4",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Eins \bP4",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "4"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Zwei —— P5 ——",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "A",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "1"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "A",
+                  "value": "A+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游佐惠美 P5",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "B",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "2"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "B",
+                  "value": "B+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "1"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "MHCR-Eins \bP5",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckVar",
+                "prop": {
+                  "varname": "C",
+                  "compareOperation": "0",
+                  "expression": "5"
+                },
+                "children": []
+              },
+              {
+                "type": "ConditionCheckActor",
+                "prop": {
+                  "actorPosition": "3"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionSetVar",
+                "prop": {
+                  "varname": "C",
+                  "value": "C+1"
+                },
+                "children": []
+              },
+              {
+                "name": "",
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "skillType": "3"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

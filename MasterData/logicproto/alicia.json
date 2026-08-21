@@ -1,0 +1,932 @@
+{
+ "name": "alicia",
+ "actions": [
+  {
+   "name": "skillGrenade",
+   "animate": "skillGrenade",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {
+    "x": 2100.0
+   },
+   "acceleration": {
+    "x": -2800.0
+   },
+   "inputKey": [
+    10021
+   ],
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "name": "voice",
+     "volume": 1.0,
+     "start": 1.37,
+     "path": [
+      "Voice/alicia/Alc00_7002"
+     ]
+    },
+    {
+     "name": "voice",
+     "volume": 0.3,
+     "start": 0.35,
+     "path": [
+      "Sound/se/alicia/s100_1"
+     ]
+    },
+    {
+     "name": "voice",
+     "volume": 1.0,
+     "start": 0.1,
+     "path": [
+      "Sound/se/izaya/jump"
+     ]
+    },
+    {
+     "name": "grenade",
+     "volume": 1.0,
+     "start": 1.85,
+     "path": [
+      "Sound/se/alicia/s100_2"
+     ]
+    },
+    {
+     "volume": 0.5,
+     "start": 0.01,
+     "path": [
+      "Sound/se/rinko/attack01_1"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 2.5,
+     "tag": "blink",
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.97,
+     "tag": "blink",
+     "path": [
+      "Sound/se/show_mech2"
+     ]
+    }
+   ],
+   "startPos": {
+    "flash": true,
+    "posOption": 9,
+    "position": {
+     "x": 1950.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "posOption": 9,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "start": 2.5,
+     "scale": {
+      "x": 2.0,
+      "y": 1.5
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "alicia/alicia_bomb_01",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {
+      "x": 720.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "alicia/alicia_bomb_01_back",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "behindRole": 1,
+     "position": {
+      "x": 720.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "common/P_smoke_02_L",
+     "start": 0.54,
+     "scale": {
+      "x": -1.0,
+      "y": 2.0
+     },
+     "binding": true,
+     "position": {
+      "x": 100.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "common/P_smoke_02_H",
+     "start": 0.01,
+     "scale": {
+      "x": 0.6,
+      "y": 0.4
+     },
+     "binding": true,
+     "position": {
+      "x": -150.0
+     },
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2127001,
+     "start": 0.8,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {}
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "boom"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "start": 2.3,
+    "shakeRange": {
+     "x": 15.0,
+     "y": 15.0
+    },
+    "shakeK": {
+     "x": 7.0,
+     "y": 7.0
+    },
+    "count": 2,
+    "interval": 0.15
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {
+    "start": 0.15,
+    "duration": 0.1,
+    "type": 8
+   },
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "skillValkyrie",
+   "animate": "skillValkyrie",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10022
+   ],
+   "nextAction": "skillValkyrie2",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "name": "duobudiao",
+     "volume": 1.0,
+     "start": 0.13,
+     "path": [
+      "Voice/alicia/Alc00_7003"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.1,
+     "path": [
+      "Sound/se/alicia/s200_1"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "tag": "blink",
+     "path": [
+      "Sound/se/Potential"
+     ]
+    }
+   ],
+   "startPos": {
+    "posOption": 9,
+    "position": {
+     "x": 290.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "flash": true,
+    "posOption": 9,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "alicia/alicia_skillValkyrie01",
+     "start": 0.01,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "common/P_smoke_01_H",
+     "start": 1.01,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "position": {
+      "x": 20.0
+     },
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "skillValkyrie2",
+   "animate": "skillValkyrie2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -450.0
+    },
+    "b": {
+     "x": 250.0,
+     "y": 500.0
+    },
+    "c": {},
+    "range": [
+     {
+      "start": 0.23,
+      "end": 0.7,
+      "hitInterval": 1.0
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "push",
+    "speed": {
+     "x": -850.0,
+     "y": 800.0
+    },
+    "freeze": {},
+    "changePos": {
+     "faceOption": 2,
+     "posOption": 9,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "name": "hit",
+    "volume": 2.0,
+    "path": [
+     "Sound/se/alicia/s200_2"
+    ]
+   },
+   "speed": {
+    "x": 7000.0
+   },
+   "acceleration": {
+    "x": -65000.0
+   },
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "name": "7000",
+     "volume": 1.0,
+     "start": 0.13,
+     "path": [
+      "Voice/alicia/Alc00_7000"
+     ]
+    },
+    {
+     "name": "7000",
+     "volume": 1.0,
+     "path": [
+      "Sound/se/Dart"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.92,
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    }
+   ],
+   "startPos": {
+    "posOption": 1,
+    "position": {}
+   },
+   "finishPos": {
+    "position": {}
+   },
+   "hitEffects": [
+    {
+     "name": "common/P_hit_23_X",
+     "start": 0.01,
+     "scale": {
+      "x": 1.2,
+      "y": 1.2
+     },
+     "position": {
+      "y": 30.0
+     },
+     "offPosition": {}
+    }
+   ],
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "start": 0.92,
+     "scale": {
+      "x": 1.5,
+      "y": 1.5
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "alicia/alicia_skillValkyrie02",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "alicia/alicia_skillValkyrie03",
+     "start": 0.16,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "link_selvaria",
+   "animate": "linkSelvaria",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "inputKey": [
+    10071
+   ],
+   "nextAction": "link_selvaria_2",
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "name": "2",
+     "volume": 1.0,
+     "start": 0.3,
+     "path": [
+      "Sound/se/alicia/link_selvaria_1"
+     ]
+    },
+    {
+     "name": "2",
+     "volume": 1.0,
+     "start": 0.5,
+     "path": [
+      "Sound/se/Swing_Fire"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "tag": "blink",
+     "path": [
+      "Sound/effect/other/ptse_09"
+     ]
+    },
+    {
+     "volume": 15.0,
+     "start": 2.3,
+     "tag": "blink",
+     "path": [
+      "Sound/se/selvaria/link_ruj_02"
+     ]
+    }
+   ],
+   "startPos": {
+    "posOption": 9,
+    "position": {
+     "x": -940.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "alicia/alicia_linkSelvaria",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "common/P_smoke_04_X",
+     "start": 2.56,
+     "scale": {
+      "x": -1.0,
+      "y": 1.0
+     },
+     "binding": true,
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {
+    "start": 0.01,
+    "duration": 0.3,
+    "type": 8
+   },
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "link_selvaria_2",
+   "animate": "linkSelvaria2",
+   "actionType": "ActionType_Attack",
+   "hitBox": {
+    "a": {
+     "x": -135.0
+    },
+    "b": {
+     "x": 135.0,
+     "y": 300.0
+    },
+    "c": {},
+    "range": [
+     {
+      "end": 0.1,
+      "hitInterval": 0.1
+     }
+    ]
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "flyin": "FlyinType_DropEnd",
+   "selfVictimFace": 1,
+   "victim": {
+    "action": "behit_middle",
+    "speed": {
+     "x": -1500.0
+    },
+    "freeze": {
+     "start": 0.1,
+     "duration": 0.1,
+     "freezeMotion": true
+    },
+    "changePos": {
+     "faceOption": 2,
+     "posOption": 9,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {
+    "x": -10000.0
+   },
+   "acceleration": {
+    "x": 75500.0
+   },
+   "comboRange": {},
+   "inheritSpeed": {},
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "audio": [
+    {
+     "name": "haah!",
+     "volume": 2.0,
+     "path": [
+      "Voice/alicia/Alc00_7110"
+     ]
+    },
+    {
+     "volume": 1.0,
+     "start": 0.01,
+     "path": [
+      "Sound/se/Dart"
+     ]
+    }
+   ],
+   "startPos": {
+    "posOption": 1,
+    "position": {
+     "y": 35.0
+    }
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "addEffects": [
+    {
+     "name": "common/P_yinshen_01_D",
+     "start": 0.9,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    },
+    {
+     "name": "alicia/alicia_linkSelvaria_hit",
+     "start": 0.2,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {
+      "x": -200.0,
+      "y": 150.0
+     },
+     "offPosition": {}
+    },
+    {
+     "name": "alicia/alicia_linkSelvaria2",
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "position": {},
+     "offPosition": {}
+    }
+   ],
+   "addRoles": [
+    {
+     "characterID": 2127001,
+     "start": 0.1,
+     "endTime": 0.3,
+     "scale": 1.0,
+     "position": {
+      "faceOption": 1,
+      "posOption": 9,
+      "position": {
+       "x": -140.0
+      }
+     },
+     "endTimeAction": "end",
+     "startActions": [
+      "crash"
+     ],
+     "speed": {}
+    }
+   ],
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "start": 0.2,
+    "shakeRange": {
+     "x": 15.0,
+     "y": 7.0
+    },
+    "shakeK": {
+     "x": 6.0,
+     "y": 3.0
+    },
+    "count": 6,
+    "interval": 0.03
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {
+    "start": 0.9,
+    "duration": 0.4,
+    "type": 8
+   },
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "stand",
+   "animate": "stand",
+   "actionType": "ActionType_Standby",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {},
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "superArmor": 15,
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  },
+  {
+   "name": "run",
+   "animate": "1",
+   "actionType": "ActionType_Run",
+   "hitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "behitBox": {
+    "a": {},
+    "b": {},
+    "c": {}
+   },
+   "selfVictimFace": 1,
+   "victim": {
+    "speed": {},
+    "freeze": {},
+    "changePos": {
+     "faceOption": 7,
+     "position": {}
+    },
+    "bindingOffset": {}
+   },
+   "hitFreeze": {},
+   "hitAudio": {
+    "volume": 1.0
+   },
+   "speed": {
+    "x": 400.0
+   },
+   "acceleration": {},
+   "comboRange": {},
+   "inheritSpeed": {
+    "y": true
+   },
+   "deadAction": "dead",
+   "attackType": "AttackType_None",
+   "startPos": {
+    "position": {}
+   },
+   "finishPos": {
+    "faceOption": 3,
+    "position": {}
+   },
+   "hitCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "onTimeCameraShake": {
+    "shakeRange": {},
+    "shakeK": {}
+   },
+   "sceneFadeStart": {},
+   "sceneFadeEnd": {},
+   "colorMaskValueBegin": {},
+   "colorMaskValueEnd": {},
+   "actorFadeStart": {},
+   "actorFadeEnd": {},
+   "breakAudio": {
+    "volume": 1.0
+   }
+  }
+ ]
+}

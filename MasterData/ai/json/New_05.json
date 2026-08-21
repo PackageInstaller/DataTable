@@ -1,0 +1,92 @@
+[
+  {
+    "name": "测试4",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "name": "",
+        "type": "Selector",
+        "prop": {},
+        "children": [
+          {
+            "name": "怒气>=15",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRage",
+                "prop": {
+                  "targetTeam": "0",
+                  "compareOperation": "4",
+                  "valueRatio": "80"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlayLink",
+                "prop": {
+                  "linkId": "10010",
+                  "fallbackSkillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "怒气<6",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRage",
+                "prop": {
+                  "targetTeam": "0",
+                  "compareOperation": "3",
+                  "valueRatio": "30"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "target": "1",
+                  "skillType": "0",
+                  "cardNum": "4",
+                  "fallbackSkillType": "0"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "怒气<15",
+            "type": "Sequence",
+            "prop": {},
+            "children": [
+              {
+                "type": "ConditionCheckRage",
+                "prop": {
+                  "targetTeam": "0",
+                  "compareOperation": "3",
+                  "valueRatio": "80"
+                },
+                "children": []
+              },
+              {
+                "type": "ActionPlaySkill",
+                "prop": {
+                  "target": "1",
+                  "skillType": "1",
+                  "cardNum": "4",
+                  "fallbackSkillType": "0"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

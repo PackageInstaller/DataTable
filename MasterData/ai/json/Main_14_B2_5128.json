@@ -1,0 +1,283 @@
+[
+  {
+    "name": "Bonus28 莲太郎 单体",
+    "type": "BevTree",
+    "prop": {},
+    "children": [
+      {
+        "type": "Sequence",
+        "prop": {},
+        "children": [
+          {
+            "type": "ConditionCheckActor",
+            "prop": {
+              "actorPosition": "2"
+            },
+            "children": []
+          },
+          {
+            "name": "",
+            "type": "Selector",
+            "prop": {},
+            "children": [
+              {
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "ConditionCheckActorHasBuff",
+                    "prop": {
+                      "targetTeam": "0",
+                      "target": "2",
+                      "keyType": "2",
+                      "buffKeyExp": "997311"
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckRound",
+                            "prop": {
+                              "compareOperation": "0",
+                              "valueExp": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "0",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckRound",
+                            "prop": {
+                              "compareOperation": "0",
+                              "valueExp": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckRound",
+                            "prop": {
+                              "compareOperation": "0",
+                              "valueExp": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckRound",
+                            "prop": {
+                              "compareOperation": "0",
+                              "valueExp": "4"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ActionPlaySkill",
+                        "prop": {
+                          "skillType": "2",
+                          "returnFailIfFailToPlayDueToLock": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Sequence",
+                "prop": {},
+                "children": [
+                  {
+                    "type": "Selector",
+                    "prop": {},
+                    "children": [
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "R",
+                              "compareOperation": "0",
+                              "expression": "0"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "1",
+                              "returnFailIfFailToPlayDueToLock": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "R",
+                              "value": "R+1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "R",
+                              "compareOperation": "0",
+                              "expression": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "3",
+                              "returnFailIfFailToPlayDueToLock": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "R",
+                              "value": "R+1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "R",
+                              "compareOperation": "0",
+                              "expression": "2"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "4",
+                              "returnFailIfFailToPlayDueToLock": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "R",
+                              "value": "R+1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Sequence",
+                        "prop": {},
+                        "children": [
+                          {
+                            "type": "ConditionCheckVar",
+                            "prop": {
+                              "varname": "R",
+                              "compareOperation": "0",
+                              "expression": "3"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionPlaySkill",
+                            "prop": {
+                              "skillType": "2",
+                              "returnFailIfFailToPlayDueToLock": "1"
+                            },
+                            "children": []
+                          },
+                          {
+                            "type": "ActionSetVar",
+                            "prop": {
+                              "varname": "R",
+                              "value": "0"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

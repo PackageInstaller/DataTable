@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Scene Name="SceneS05" Rotate="0">
+    <AmbientLight R="255" G="255" B="255" Intensity="1" />
+    <DirectionalLight RotX="40.00002" RotY="320" RotZ="340" R="200" G="150" B="150" Intensity="1.5" />
+    <SkyBox Name="" />
+    <Fog FogEnable="False" FogMode="Linear" FogDensity="0.02" FogStart="40" FogEnd="180" FogR="232" FogG="206" FogB="255" />
+    <LightMap />
+    <PathWay Asset="Assets/AssetBundle/Scene/Main/S05/PathWay.prefab" />
+    <ScenePart Name="S05_Scene" Asset="Assets/AssetBundle/Scene/Main/S05/S05_Scene.prefab">
+      <Transform>
+        <Position X="0" Y="0" Z="0" />
+        <Rotation X="0" Y="0" Z="0" />
+      </Transform>
+      <Render Name="S05_Bg" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S05_Box" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S05_Floor1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="S05_Floor2" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Ring1" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Ring3" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="Tree" Index="-1" X="1" Y="1" Z="0" W="0" />
+      <Render Name="TreeD" Index="-1" X="1" Y="1" Z="0" W="0" />
+    </ScenePart>
+  </Scene>
+</Root>
