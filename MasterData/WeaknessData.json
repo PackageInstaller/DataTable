@@ -1,0 +1,110 @@
+[
+    {
+        "Id": 1,
+        "Level": 1,
+        "ToughnessDamage": 0.0,
+        "Damage": 0.0,
+        "XPIncrease": 0.0,
+        "WeaknessViewColor": [
+            0.282353,
+            0.3058824,
+            0.3686275,
+            0.0
+        ],
+        "WeaknessWorldKey": "weakness1",
+        "WeaknessCriticalWorldKey": "weakness1_cri",
+        "WeaknessHitSfx": [],
+        "WeaknessHitSfxCooling": [],
+        "IsWarnWeakness": false
+    },
+    {
+        "Id": 2,
+        "Level": 2,
+        "ToughnessDamage": 0.699999988079071,
+        "Damage": 0.0,
+        "XPIncrease": 0.10000000149011612,
+        "WeaknessViewColor": [
+            1.0,
+            0.9411765,
+            0.6039216,
+            1.0
+        ],
+        "WeaknessWorldKey": "weakness2",
+        "WeaknessCriticalWorldKey": "weakness2_cri",
+        "WeaknessHitSfx": [
+            0,
+            170012,
+            170011,
+            170011,
+            170011
+        ],
+        "WeaknessHitSfxCooling": [
+            0,
+            110001,
+            110001,
+            110001,
+            110001
+        ],
+        "IsWarnWeakness": true
+    },
+    {
+        "Id": 3,
+        "Level": 3,
+        "ToughnessDamage": 1.0,
+        "Damage": 0.0,
+        "XPIncrease": 0.20000000298023224,
+        "WeaknessViewColor": [
+            1.0,
+            0.3843137,
+            0.254902,
+            1.0
+        ],
+        "WeaknessWorldKey": "weakness3",
+        "WeaknessCriticalWorldKey": "weakness3_cri",
+        "WeaknessHitSfx": [
+            0,
+            170014,
+            170013,
+            170013,
+            170013
+        ],
+        "WeaknessHitSfxCooling": [
+            0,
+            110001,
+            110001,
+            110001,
+            110001
+        ],
+        "IsWarnWeakness": true
+    },
+    {
+        "Id": 4,
+        "Level": 4,
+        "ToughnessDamage": 1.25,
+        "Damage": 0.0,
+        "XPIncrease": 0.0,
+        "WeaknessViewColor": [
+            0.7960784,
+            0.0,
+            0.172549,
+            1.0
+        ],
+        "WeaknessWorldKey": "weakness4",
+        "WeaknessCriticalWorldKey": "weakness4_cri",
+        "WeaknessHitSfx": [
+            0,
+            170014,
+            170013,
+            170013,
+            170013
+        ],
+        "WeaknessHitSfxCooling": [
+            0,
+            110001,
+            110001,
+            110001,
+            110001
+        ],
+        "IsWarnWeakness": true
+    }
+]

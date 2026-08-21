@@ -1,0 +1,3644 @@
+[
+    {
+        "Id": 1,
+        "Name": "协同增幅",
+        "Desc": "攻击力增加10",
+        "DetailDesc": "攻击力增加10",
+        "EntryId": 7001,
+        "Level": 1,
+        "EntryID": 700101,
+        "EntryType": 3,
+        "EntryKey": [
+            700110
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 2,
+        "Name": "协同增幅",
+        "Desc": "攻击力增加20",
+        "DetailDesc": "攻击力增加20",
+        "EntryId": 7001,
+        "Level": 2,
+        "EntryID": 700102,
+        "EntryType": 3,
+        "EntryKey": [
+            700120
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 3,
+        "Name": "协同增幅",
+        "Desc": "攻击力增加20；释放<color=#cc5545><操控召唤物></color>的招式后，造成的所有招式伤害增加25%，持续20秒",
+        "DetailDesc": "攻击力增加20；释放<color=#cc5545><操控召唤物></color>的招式后，造成的所有招式伤害增加25%，持续20秒",
+        "EntryId": 7001,
+        "Level": 3,
+        "EntryID": 700103,
+        "EntryType": 3,
+        "EntryKey": [
+            700130,
+            700132
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 4,
+        "Name": "双效调优",
+        "Desc": "攻击力增加10",
+        "DetailDesc": "攻击力增加10",
+        "EntryId": 7002,
+        "Level": 1,
+        "EntryID": 700201,
+        "EntryType": 3,
+        "EntryKey": [
+            700210
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 5,
+        "Name": "双效调优",
+        "Desc": "攻击力增加20",
+        "DetailDesc": "攻击力增加20",
+        "EntryId": 7002,
+        "Level": 2,
+        "EntryID": 700202,
+        "EntryType": 3,
+        "EntryKey": [
+            700220
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 6,
+        "Name": "双效调优",
+        "Desc": "攻击力增加20；<color=#cc5545><派生></color>招式伤害增加21%，削韧增加21%",
+        "DetailDesc": "攻击力增加20；<color=#cc5545><派生></color>招式伤害增加21%，削韧增加21%",
+        "EntryId": 7002,
+        "Level": 3,
+        "EntryID": 700203,
+        "EntryType": 3,
+        "EntryKey": [
+            700230,
+            700231
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 7,
+        "Name": "效能累积",
+        "Desc": "攻击力增加10",
+        "DetailDesc": "攻击力增加10",
+        "EntryId": 7008,
+        "Level": 1,
+        "EntryID": 700801,
+        "EntryType": 3,
+        "EntryKey": [
+            700810
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 8,
+        "Name": "效能累积",
+        "Desc": "攻击力增加20",
+        "DetailDesc": "攻击力增加20",
+        "EntryId": 7008,
+        "Level": 2,
+        "EntryID": 700802,
+        "EntryType": 3,
+        "EntryKey": [
+            700820
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 9,
+        "Name": "效能累积",
+        "Desc": "攻击力增加20；触发<color=#cc5545><精确释放></color>时，招式伤害提高25%，持续20秒。",
+        "DetailDesc": "攻击力增加20；触发<color=#cc5545><精确释放></color>时，招式伤害提高25%，持续20秒。",
+        "EntryId": 7008,
+        "Level": 3,
+        "EntryID": 700803,
+        "EntryType": 3,
+        "EntryKey": [
+            700830,
+            700831
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 10,
+        "Name": "临界爆发",
+        "Desc": "攻击力增加10",
+        "DetailDesc": "攻击力增加10",
+        "EntryId": 7010,
+        "Level": 1,
+        "EntryID": 701001,
+        "EntryType": 3,
+        "EntryKey": [
+            701010
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 11,
+        "Name": "临界爆发",
+        "Desc": "攻击力增加20",
+        "DetailDesc": "攻击力增加20",
+        "EntryId": 7010,
+        "Level": 2,
+        "EntryID": 701002,
+        "EntryType": 3,
+        "EntryKey": [
+            701020
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 12,
+        "Name": "临界爆发",
+        "Desc": "攻击力增加20；<color=#cc5545><蓄力></color>技能（不包括普攻）伤害增加30%",
+        "DetailDesc": "攻击力增加20；<color=#cc5545><蓄力></color>技能（不包括普攻）伤害增加30%",
+        "EntryId": 7010,
+        "Level": 3,
+        "EntryID": 701003,
+        "EntryType": 3,
+        "EntryKey": [
+            701030,
+            701031
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 13,
+        "Name": "连锁破坏",
+        "Desc": "攻击力增加10",
+        "DetailDesc": "攻击力增加10",
+        "EntryId": 7011,
+        "Level": 1,
+        "EntryID": 701101,
+        "EntryType": 3,
+        "EntryKey": [
+            701110
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 14,
+        "Name": "连锁破坏",
+        "Desc": "攻击力增加20",
+        "DetailDesc": "攻击力增加20",
+        "EntryId": 7011,
+        "Level": 2,
+        "EntryID": 701102,
+        "EntryType": 3,
+        "EntryKey": [
+            701120
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 15,
+        "Name": "连锁破坏",
+        "Desc": "攻击力增加20；<color=#cc5545><多段></color>招式伤害增加25%；释放多段招式后，6秒内下一个多段技能（不包括普攻）的基础耐力消耗减少30%",
+        "DetailDesc": "攻击力增加20；<color=#cc5545><多段></color>招式伤害增加25%；释放多段招式后，6秒内下一个多段技能（不包括普攻）的基础耐力消耗减少30%",
+        "EntryId": 7011,
+        "Level": 3,
+        "EntryID": 701103,
+        "EntryType": 3,
+        "EntryKey": [
+            701130,
+            701131,
+            701133,
+            701134
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 16,
+        "Name": "毁灭增幅",
+        "Desc": "攻击力增加10",
+        "DetailDesc": "攻击力增加10",
+        "EntryId": 7017,
+        "Level": 1,
+        "EntryID": 701701,
+        "EntryType": 3,
+        "EntryKey": [
+            701710
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 17,
+        "Name": "毁灭增幅",
+        "Desc": "攻击力增加20",
+        "DetailDesc": "攻击力增加20",
+        "EntryId": 7017,
+        "Level": 2,
+        "EntryID": 701702,
+        "EntryType": 3,
+        "EntryKey": [
+            701720
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 18,
+        "Name": "毁灭增幅",
+        "Desc": "攻击力增加20；释放<color=#cc5545><终结技></color>后，角色攻击力增加20%，下一个<color=#cc5545><终结技></color>动作过程中的所有招式伤害增加15%，持续16秒",
+        "DetailDesc": "攻击力增加20；释放<color=#cc5545><终结技></color>后，角色攻击力增加20%，下一个<color=#cc5545><终结技></color>动作过程中的所有招式伤害增加15%，持续16秒",
+        "EntryId": 7017,
+        "Level": 3,
+        "EntryID": 701703,
+        "EntryType": 3,
+        "EntryKey": [
+            701730,
+            701731
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 1
+    },
+    {
+        "Id": 19,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加3%、暴击增加2%",
+        "DetailDesc": "对破绽状态敌人的伤害增加3%、暴击增加2%",
+        "EntryId": 7034,
+        "Level": 1,
+        "EntryID": 703401,
+        "EntryType": 3,
+        "EntryKey": [
+            703410
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 20,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加6%、暴击增加3%",
+        "DetailDesc": "对破绽状态敌人的伤害增加6%、暴击增加3%",
+        "EntryId": 7034,
+        "Level": 2,
+        "EntryID": 703402,
+        "EntryType": 3,
+        "EntryKey": [
+            703420
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 21,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加24%、暴击增加12%",
+        "DetailDesc": "对破绽状态敌人的伤害增加24%、暴击增加12%",
+        "EntryId": 7034,
+        "Level": 3,
+        "EntryID": 703403,
+        "EntryType": 3,
+        "EntryKey": [
+            703430
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 22,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加30%、暴击增加15%",
+        "DetailDesc": "对破绽状态敌人的伤害增加30%、暴击增加15%",
+        "EntryId": 7034,
+        "Level": 4,
+        "EntryID": 703404,
+        "EntryType": 3,
+        "EntryKey": [
+            703440
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 23,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加36%、暴击增加18%",
+        "DetailDesc": "对破绽状态敌人的伤害增加36%、暴击增加18%",
+        "EntryId": 7034,
+        "Level": 5,
+        "EntryID": 703405,
+        "EntryType": 3,
+        "EntryKey": [
+            703450
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 24,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加64%、暴击增加32%",
+        "DetailDesc": "对破绽状态敌人的伤害增加64%、暴击增加32%",
+        "EntryId": 7034,
+        "Level": 6,
+        "EntryID": 703406,
+        "EntryType": 3,
+        "EntryKey": [
+            703460
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 25,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加74%、暴击增加37%",
+        "DetailDesc": "对破绽状态敌人的伤害增加74%、暴击增加37%",
+        "EntryId": 7034,
+        "Level": 7,
+        "EntryID": 703407,
+        "EntryType": 3,
+        "EntryKey": [
+            703470
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 26,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加84%、暴击增加42%",
+        "DetailDesc": "对破绽状态敌人的伤害增加84%、暴击增加42%",
+        "EntryId": 7034,
+        "Level": 8,
+        "EntryID": 703408,
+        "EntryType": 3,
+        "EntryKey": [
+            703480
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 27,
+        "Name": "超载爆击",
+        "Desc": "对破绽状态敌人的伤害增加120%、暴击增加60%",
+        "DetailDesc": "对破绽状态敌人的伤害增加120%、暴击增加60%",
+        "EntryId": 7034,
+        "Level": 9,
+        "EntryID": 703409,
+        "EntryType": 3,
+        "EntryKey": [
+            703490
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 28,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加2%，对破绽状态敌人的削韧增加1%",
+        "DetailDesc": "对倒地状态敌人的伤害增加2%，对破绽状态敌人的削韧增加1%",
+        "EntryId": 7035,
+        "Level": 1,
+        "EntryID": 703501,
+        "EntryType": 3,
+        "EntryKey": [
+            703510
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 29,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加3%，对破绽状态敌人的削韧增加2%",
+        "DetailDesc": "对倒地状态敌人的伤害增加3%，对破绽状态敌人的削韧增加2%",
+        "EntryId": 7035,
+        "Level": 2,
+        "EntryID": 703502,
+        "EntryType": 3,
+        "EntryKey": [
+            703520
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 30,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加12%，对破绽状态敌人的削韧增加6%",
+        "DetailDesc": "对倒地状态敌人的伤害增加12%，对破绽状态敌人的削韧增加6%",
+        "EntryId": 7035,
+        "Level": 3,
+        "EntryID": 703503,
+        "EntryType": 3,
+        "EntryKey": [
+            703530
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 31,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加15%，对破绽状态敌人的削韧增加7%",
+        "DetailDesc": "对倒地状态敌人的伤害增加15%，对破绽状态敌人的削韧增加7%",
+        "EntryId": 7035,
+        "Level": 4,
+        "EntryID": 703504,
+        "EntryType": 3,
+        "EntryKey": [
+            703540
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 32,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加18%，对破绽状态敌人的削韧增加9%",
+        "DetailDesc": "对倒地状态敌人的伤害增加18%，对破绽状态敌人的削韧增加9%",
+        "EntryId": 7035,
+        "Level": 5,
+        "EntryID": 703505,
+        "EntryType": 3,
+        "EntryKey": [
+            703550
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 33,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加32%，对破绽状态敌人的削韧增加16%",
+        "DetailDesc": "对倒地状态敌人的伤害增加32%，对破绽状态敌人的削韧增加16%",
+        "EntryId": 7035,
+        "Level": 6,
+        "EntryID": 703506,
+        "EntryType": 3,
+        "EntryKey": [
+            703560
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 34,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加37%，对破绽状态敌人的削韧增加18%",
+        "DetailDesc": "对倒地状态敌人的伤害增加37%，对破绽状态敌人的削韧增加18%",
+        "EntryId": 7035,
+        "Level": 7,
+        "EntryID": 703507,
+        "EntryType": 3,
+        "EntryKey": [
+            703570
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 35,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加42%，对破绽状态敌人的削韧增加21%",
+        "DetailDesc": "对倒地状态敌人的伤害增加42%，对破绽状态敌人的削韧增加21%",
+        "EntryId": 7035,
+        "Level": 8,
+        "EntryID": 703508,
+        "EntryType": 3,
+        "EntryKey": [
+            703580
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 36,
+        "Name": "引力压制",
+        "Desc": "对倒地状态敌人的伤害增加60%，对破绽状态敌人的削韧增加30%",
+        "DetailDesc": "对倒地状态敌人的伤害增加60%，对破绽状态敌人的削韧增加30%",
+        "EntryId": 7035,
+        "Level": 9,
+        "EntryID": 703509,
+        "EntryType": 3,
+        "EntryKey": [
+            703590
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 37,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加1%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加1%",
+        "EntryId": 7036,
+        "Level": 1,
+        "EntryID": 703601,
+        "EntryType": 3,
+        "EntryKey": [
+            703610,
+            703611
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 38,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加2%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加2%",
+        "EntryId": 7036,
+        "Level": 2,
+        "EntryID": 703602,
+        "EntryType": 3,
+        "EntryKey": [
+            703620,
+            703621
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 39,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加9%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加9%",
+        "EntryId": 7036,
+        "Level": 3,
+        "EntryID": 703603,
+        "EntryType": 3,
+        "EntryKey": [
+            703630,
+            703631
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 40,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加11%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加11%",
+        "EntryId": 7036,
+        "Level": 4,
+        "EntryID": 703604,
+        "EntryType": 3,
+        "EntryKey": [
+            703640,
+            703641
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 41,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加13%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加13%",
+        "EntryId": 7036,
+        "Level": 5,
+        "EntryID": 703605,
+        "EntryType": 3,
+        "EntryKey": [
+            703650,
+            703651
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 42,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加24%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加24%",
+        "EntryId": 7036,
+        "Level": 6,
+        "EntryID": 703606,
+        "EntryType": 3,
+        "EntryKey": [
+            703660,
+            703661
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 43,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加28%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加28%",
+        "EntryId": 7036,
+        "Level": 7,
+        "EntryID": 703607,
+        "EntryType": 3,
+        "EntryKey": [
+            703670,
+            703671
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 44,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加32%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加32%",
+        "EntryId": 7036,
+        "Level": 8,
+        "EntryID": 703608,
+        "EntryType": 3,
+        "EntryKey": [
+            703680,
+            703681
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 45,
+        "Name": "直立增伤",
+        "Desc": "对非倒地状态敌人的伤害增加45%",
+        "DetailDesc": "对非倒地状态敌人的伤害增加45%",
+        "EntryId": 7036,
+        "Level": 9,
+        "EntryID": 703609,
+        "EntryType": 3,
+        "EntryKey": [
+            703690,
+            703691
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 46,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加4；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加2%",
+        "DetailDesc": "攻击力增加4；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加2%",
+        "EntryId": 7037,
+        "Level": 1,
+        "EntryID": 703701,
+        "EntryType": 3,
+        "EntryKey": [
+            703710,
+            703711
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 47,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加9；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加3%",
+        "DetailDesc": "攻击力增加9；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加3%",
+        "EntryId": 7037,
+        "Level": 2,
+        "EntryID": 703702,
+        "EntryType": 3,
+        "EntryKey": [
+            703720,
+            703721
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 48,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加32；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加12%",
+        "DetailDesc": "攻击力增加32；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加12%",
+        "EntryId": 7037,
+        "Level": 3,
+        "EntryID": 703703,
+        "EntryType": 3,
+        "EntryKey": [
+            703730,
+            703731
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 49,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加40；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加15%",
+        "DetailDesc": "攻击力增加40；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加15%",
+        "EntryId": 7037,
+        "Level": 4,
+        "EntryID": 703704,
+        "EntryType": 3,
+        "EntryKey": [
+            703740,
+            703741
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 50,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加48；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加18%",
+        "DetailDesc": "攻击力增加48；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加18%",
+        "EntryId": 7037,
+        "Level": 5,
+        "EntryID": 703705,
+        "EntryType": 3,
+        "EntryKey": [
+            703750,
+            703751
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 51,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加86；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加32%",
+        "DetailDesc": "攻击力增加86；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加32%",
+        "EntryId": 7037,
+        "Level": 6,
+        "EntryID": 703706,
+        "EntryType": 3,
+        "EntryKey": [
+            703760,
+            703761
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 52,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加99；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加37%",
+        "DetailDesc": "攻击力增加99；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加37%",
+        "EntryId": 7037,
+        "Level": 7,
+        "EntryID": 703707,
+        "EntryType": 3,
+        "EntryKey": [
+            703770,
+            703771
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 53,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加112；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加42%",
+        "DetailDesc": "攻击力增加112；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加42%",
+        "EntryId": 7037,
+        "Level": 8,
+        "EntryID": 703708,
+        "EntryType": 3,
+        "EntryKey": [
+            703780,
+            703781
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 54,
+        "Name": "图灵测试",
+        "Desc": "攻击力增加160；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加60%",
+        "DetailDesc": "攻击力增加160；玩家角色携带该词条时，周围15米范围内的非玩家操控的烬天使角色攻击力额外增加60%",
+        "EntryId": 7037,
+        "Level": 9,
+        "EntryID": 703709,
+        "EntryType": 3,
+        "EntryKey": [
+            703790,
+            703791
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 55,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加8，受到的治疗效果增加1%",
+        "DetailDesc": "防御力增加8，受到的治疗效果增加1%",
+        "EntryId": 7038,
+        "Level": 1,
+        "EntryID": 703801,
+        "EntryType": 3,
+        "EntryKey": [
+            703810,
+            703811
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 56,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加16，受到的治疗效果增加2%",
+        "DetailDesc": "防御力增加16，受到的治疗效果增加2%",
+        "EntryId": 7038,
+        "Level": 2,
+        "EntryID": 703802,
+        "EntryType": 3,
+        "EntryKey": [
+            703820,
+            703821
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 57,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加60，受到的治疗效果增加5%",
+        "DetailDesc": "防御力增加60，受到的治疗效果增加5%",
+        "EntryId": 7038,
+        "Level": 3,
+        "EntryID": 703803,
+        "EntryType": 3,
+        "EntryKey": [
+            703830,
+            703831
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 58,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加75，受到的治疗效果增加6%",
+        "DetailDesc": "防御力增加75，受到的治疗效果增加6%",
+        "EntryId": 7038,
+        "Level": 4,
+        "EntryID": 703804,
+        "EntryType": 3,
+        "EntryKey": [
+            703840,
+            703841
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 59,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加90，受到的治疗效果增加7%",
+        "DetailDesc": "防御力增加90，受到的治疗效果增加7%",
+        "EntryId": 7038,
+        "Level": 5,
+        "EntryID": 703805,
+        "EntryType": 3,
+        "EntryKey": [
+            703850,
+            703851
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 60,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加162，受到的治疗效果增加13%",
+        "DetailDesc": "防御力增加162，受到的治疗效果增加13%",
+        "EntryId": 7038,
+        "Level": 6,
+        "EntryID": 703806,
+        "EntryType": 3,
+        "EntryKey": [
+            703860,
+            703861
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 61,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加186，受到的治疗效果增加15%",
+        "DetailDesc": "防御力增加186，受到的治疗效果增加15%",
+        "EntryId": 7038,
+        "Level": 7,
+        "EntryID": 703807,
+        "EntryType": 3,
+        "EntryKey": [
+            703870,
+            703871
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 62,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加210，受到的治疗效果增加17%",
+        "DetailDesc": "防御力增加210，受到的治疗效果增加17%",
+        "EntryId": 7038,
+        "Level": 8,
+        "EntryID": 703808,
+        "EntryType": 3,
+        "EntryKey": [
+            703880,
+            703881
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 63,
+        "Name": "愈护矩阵",
+        "Desc": "防御力增加300，受到的治疗效果增加25%",
+        "DetailDesc": "防御力增加300，受到的治疗效果增加25%",
+        "EntryId": 7038,
+        "Level": 9,
+        "EntryID": 703809,
+        "EntryType": 3,
+        "EntryKey": [
+            703890,
+            703891
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 64,
+        "Name": "超载续航",
+        "Desc": "命中破绽时回复12耐力，每秒最多触发1次",
+        "DetailDesc": "命中破绽时回复12耐力，每秒最多触发1次",
+        "EntryId": 7039,
+        "Level": 1,
+        "EntryID": 703901,
+        "EntryType": 3,
+        "EntryKey": [
+            703910
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 65,
+        "Name": "超载续航",
+        "Desc": "命中破绽时回复24耐力，每秒最多触发1次",
+        "DetailDesc": "命中破绽时回复24耐力，每秒最多触发1次",
+        "EntryId": 7039,
+        "Level": 2,
+        "EntryID": 703902,
+        "EntryType": 3,
+        "EntryKey": [
+            703920
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 66,
+        "Name": "超载续航",
+        "Desc": "命中破绽时回复114耐力，每秒最多触发1次",
+        "DetailDesc": "命中破绽时回复114耐力，每秒最多触发1次",
+        "EntryId": 7039,
+        "Level": 3,
+        "EntryID": 703903,
+        "EntryType": 3,
+        "EntryKey": [
+            703930
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 67,
+        "Name": "超载续航",
+        "Desc": "命中破绽时回复144耐力，每秒最多触发1次",
+        "DetailDesc": "命中破绽时回复144耐力，每秒最多触发1次",
+        "EntryId": 7039,
+        "Level": 4,
+        "EntryID": 703904,
+        "EntryType": 3,
+        "EntryKey": [
+            703940
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 68,
+        "Name": "超载续航",
+        "Desc": "命中破绽时回复174耐力，每秒最多触发1次",
+        "DetailDesc": "命中破绽时回复174耐力，每秒最多触发1次",
+        "EntryId": 7039,
+        "Level": 5,
+        "EntryID": 703905,
+        "EntryType": 3,
+        "EntryKey": [
+            703950
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 69,
+        "Name": "超载续航",
+        "Desc": "命中破绽时回复300耐力，每秒最多触发1次",
+        "DetailDesc": "命中破绽时回复300耐力，每秒最多触发1次",
+        "EntryId": 7039,
+        "Level": 6,
+        "EntryID": 703906,
+        "EntryType": 3,
+        "EntryKey": [
+            703960
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 70,
+        "Name": "火种共振",
+        "Desc": "奥义伤害增加2%；灵魂火种获取效率增加2%",
+        "DetailDesc": "奥义伤害增加2%；灵魂火种获取效率增加2%",
+        "EntryId": 7040,
+        "Level": 1,
+        "EntryID": 704001,
+        "EntryType": 3,
+        "EntryKey": [
+            704010,
+            704012
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 71,
+        "Name": "火种共振",
+        "Desc": "奥义伤害增加3%；灵魂火种获取效率增加3%",
+        "DetailDesc": "奥义伤害增加3%；灵魂火种获取效率增加3%",
+        "EntryId": 7040,
+        "Level": 2,
+        "EntryID": 704002,
+        "EntryType": 3,
+        "EntryKey": [
+            704020,
+            704022
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 72,
+        "Name": "火种共振",
+        "Desc": "奥义伤害增加14%；灵魂火种获取效率增加14%",
+        "DetailDesc": "奥义伤害增加14%；灵魂火种获取效率增加14%",
+        "EntryId": 7040,
+        "Level": 3,
+        "EntryID": 704003,
+        "EntryType": 3,
+        "EntryKey": [
+            704030,
+            704032
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 73,
+        "Name": "火种共振",
+        "Desc": "奥义伤害增加17%；灵魂火种获取效率增加17%",
+        "DetailDesc": "奥义伤害增加17%；灵魂火种获取效率增加17%",
+        "EntryId": 7040,
+        "Level": 4,
+        "EntryID": 704004,
+        "EntryType": 3,
+        "EntryKey": [
+            704040,
+            704042
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 74,
+        "Name": "火种共振",
+        "Desc": "奥义伤害增加20%；灵魂火种获取效率增加20%",
+        "DetailDesc": "奥义伤害增加20%；灵魂火种获取效率增加20%",
+        "EntryId": 7040,
+        "Level": 5,
+        "EntryID": 704005,
+        "EntryType": 3,
+        "EntryKey": [
+            704050,
+            704052
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 75,
+        "Name": "火种共振",
+        "Desc": "奥义伤害增加36%；灵魂火种获取效率增加36%",
+        "DetailDesc": "奥义伤害增加36%；灵魂火种获取效率增加36%",
+        "EntryId": 7040,
+        "Level": 6,
+        "EntryID": 704006,
+        "EntryType": 3,
+        "EntryKey": [
+            704060,
+            704062
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 76,
+        "Name": "熵值逆转",
+        "Desc": "命中弱点部位时所有招式伤害增加1%，命中致命弱点时额外增加1%",
+        "DetailDesc": "命中弱点部位时所有招式伤害增加1%，命中致命弱点时额外增加1%",
+        "EntryId": 7041,
+        "Level": 1,
+        "EntryID": 704101,
+        "EntryType": 3,
+        "EntryKey": [
+            704110,
+            704111
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 77,
+        "Name": "熵值逆转",
+        "Desc": "命中弱点部位时所有招式伤害增加2%，命中致命弱点时额外增加2%",
+        "DetailDesc": "命中弱点部位时所有招式伤害增加2%，命中致命弱点时额外增加2%",
+        "EntryId": 7041,
+        "Level": 2,
+        "EntryID": 704102,
+        "EntryType": 3,
+        "EntryKey": [
+            704120,
+            704121
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 78,
+        "Name": "熵值逆转",
+        "Desc": "命中弱点部位时所有招式伤害增加7%，命中致命弱点时额外增加7%",
+        "DetailDesc": "命中弱点部位时所有招式伤害增加7%，命中致命弱点时额外增加7%",
+        "EntryId": 7041,
+        "Level": 3,
+        "EntryID": 704103,
+        "EntryType": 3,
+        "EntryKey": [
+            704130,
+            704131
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 79,
+        "Name": "熵值逆转",
+        "Desc": "命中弱点部位时所有招式伤害增加8%，命中致命弱点时额外增加8%",
+        "DetailDesc": "命中弱点部位时所有招式伤害增加8%，命中致命弱点时额外增加8%",
+        "EntryId": 7041,
+        "Level": 4,
+        "EntryID": 704104,
+        "EntryType": 3,
+        "EntryKey": [
+            704140,
+            704141
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 80,
+        "Name": "熵值逆转",
+        "Desc": "命中弱点部位时所有招式伤害增加10%，命中致命弱点时额外增加10%",
+        "DetailDesc": "命中弱点部位时所有招式伤害增加10%，命中致命弱点时额外增加10%",
+        "EntryId": 7041,
+        "Level": 5,
+        "EntryID": 704105,
+        "EntryType": 3,
+        "EntryKey": [
+            704150,
+            704151
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 81,
+        "Name": "熵值逆转",
+        "Desc": "命中弱点部位时所有招式伤害增加18%，命中致命弱点时额外增加18%",
+        "DetailDesc": "命中弱点部位时所有招式伤害增加18%，命中致命弱点时额外增加18%",
+        "EntryId": 7041,
+        "Level": 6,
+        "EntryID": 704106,
+        "EntryType": 3,
+        "EntryKey": [
+            704160,
+            704161
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 82,
+        "Name": "动能的残像",
+        "Desc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加2%，削韧增加2%",
+        "DetailDesc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加2%，削韧增加2%",
+        "EntryId": 7042,
+        "Level": 1,
+        "EntryID": 704201,
+        "EntryType": 3,
+        "EntryKey": [
+            704210
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 83,
+        "Name": "动能的残像",
+        "Desc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加4%，削韧增加4%",
+        "DetailDesc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加4%，削韧增加4%",
+        "EntryId": 7042,
+        "Level": 2,
+        "EntryID": 704202,
+        "EntryType": 3,
+        "EntryKey": [
+            704220
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 84,
+        "Name": "动能的残像",
+        "Desc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加17%，削韧增加17%",
+        "DetailDesc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加17%，削韧增加17%",
+        "EntryId": 7042,
+        "Level": 3,
+        "EntryID": 704203,
+        "EntryType": 3,
+        "EntryKey": [
+            704230
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 85,
+        "Name": "动能的残像",
+        "Desc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加21%，削韧增加21%",
+        "DetailDesc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加21%，削韧增加21%",
+        "EntryId": 7042,
+        "Level": 4,
+        "EntryID": 704204,
+        "EntryType": 3,
+        "EntryKey": [
+            704240
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 86,
+        "Name": "动能的残像",
+        "Desc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加26%，削韧增加26%",
+        "DetailDesc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加26%，削韧增加26%",
+        "EntryId": 7042,
+        "Level": 5,
+        "EntryID": 704205,
+        "EntryType": 3,
+        "EntryKey": [
+            704250
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 87,
+        "Name": "动能的残像",
+        "Desc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加45%，削韧增加45%",
+        "DetailDesc": "闪避触发<color=#cc5545><精确闪避></color>后，下一个技能（不包括普攻）过程中所有招式伤害增加45%，削韧增加45%",
+        "EntryId": 7042,
+        "Level": 6,
+        "EntryID": 704206,
+        "EntryType": 3,
+        "EntryKey": [
+            704260
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 88,
+        "Name": "变量侵蚀",
+        "Desc": "造成伤害后，每秒增加0.3%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "DetailDesc": "造成伤害后，每秒增加0.3%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "EntryId": 7043,
+        "Level": 1,
+        "EntryID": 704301,
+        "EntryType": 3,
+        "EntryKey": [
+            704310
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 89,
+        "Name": "变量侵蚀",
+        "Desc": "造成伤害后，每秒增加0.5%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "DetailDesc": "造成伤害后，每秒增加0.5%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "EntryId": 7043,
+        "Level": 2,
+        "EntryID": 704302,
+        "EntryType": 3,
+        "EntryKey": [
+            704320
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 90,
+        "Name": "变量侵蚀",
+        "Desc": "造成伤害后，每秒增加2.3%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "DetailDesc": "造成伤害后，每秒增加2.3%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "EntryId": 7043,
+        "Level": 3,
+        "EntryID": 704303,
+        "EntryType": 3,
+        "EntryKey": [
+            704330
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 91,
+        "Name": "变量侵蚀",
+        "Desc": "造成伤害后，每秒增加2.8%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "DetailDesc": "造成伤害后，每秒增加2.8%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "EntryId": 7043,
+        "Level": 4,
+        "EntryID": 704304,
+        "EntryType": 3,
+        "EntryKey": [
+            704340
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 92,
+        "Name": "变量侵蚀",
+        "Desc": "造成伤害后，每秒增加3.5%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "DetailDesc": "造成伤害后，每秒增加3.5%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "EntryId": 7043,
+        "Level": 5,
+        "EntryID": 704305,
+        "EntryType": 3,
+        "EntryKey": [
+            704350
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 93,
+        "Name": "变量侵蚀",
+        "Desc": "造成伤害后，每秒增加6%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "DetailDesc": "造成伤害后，每秒增加6%攻击力，最多叠加10次。2秒内不造成伤害则移除所有加成",
+        "EntryId": 7043,
+        "Level": 6,
+        "EntryID": 704306,
+        "EntryType": 3,
+        "EntryKey": [
+            704360
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 94,
+        "Name": "二次验证",
+        "Desc": "所有招式伤害增加1%，削韧增加1%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "DetailDesc": "所有招式伤害增加1%，削韧增加1%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "EntryId": 7044,
+        "Level": 1,
+        "EntryID": 704401,
+        "EntryType": 3,
+        "EntryKey": [
+            704410,
+            704411
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 95,
+        "Name": "二次验证",
+        "Desc": "所有招式伤害增加2%，削韧增加2%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "DetailDesc": "所有招式伤害增加2%，削韧增加2%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "EntryId": 7044,
+        "Level": 2,
+        "EntryID": 704402,
+        "EntryType": 3,
+        "EntryKey": [
+            704420,
+            704421
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 96,
+        "Name": "二次验证",
+        "Desc": "所有招式伤害增加3%，削韧增加3%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "DetailDesc": "所有招式伤害增加3%，削韧增加3%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "EntryId": 7044,
+        "Level": 3,
+        "EntryID": 704403,
+        "EntryType": 3,
+        "EntryKey": [
+            704430,
+            704431
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 97,
+        "Name": "二次验证",
+        "Desc": "所有招式伤害增加5%，削韧增加5%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "DetailDesc": "所有招式伤害增加5%，削韧增加5%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "EntryId": 7044,
+        "Level": 4,
+        "EntryID": 704404,
+        "EntryType": 3,
+        "EntryKey": [
+            704440,
+            704441
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 98,
+        "Name": "二次验证",
+        "Desc": "所有招式伤害增加8%，削韧增加8%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "DetailDesc": "所有招式伤害增加8%，削韧增加8%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "EntryId": 7044,
+        "Level": 5,
+        "EntryID": 704405,
+        "EntryType": 3,
+        "EntryKey": [
+            704450,
+            704451
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 99,
+        "Name": "二次验证",
+        "Desc": "所有招式伤害增加12%，削韧增加12%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "DetailDesc": "所有招式伤害增加12%，削韧增加12%。每2个连续招式结束时，下一个招式动作过程中，该效果变为3倍。",
+        "EntryId": 7044,
+        "Level": 6,
+        "EntryID": 704406,
+        "EntryType": 3,
+        "EntryKey": [
+            704460,
+            704461
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 100,
+        "Name": "蚀刻残响",
+        "Desc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.002%",
+        "DetailDesc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.002%",
+        "EntryId": 7045,
+        "Level": 1,
+        "EntryID": 704501,
+        "EntryType": 3,
+        "EntryKey": [
+            704510
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 101,
+        "Name": "蚀刻残响",
+        "Desc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.004%",
+        "DetailDesc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.004%",
+        "EntryId": 7045,
+        "Level": 2,
+        "EntryID": 704502,
+        "EntryType": 3,
+        "EntryKey": [
+            704520
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 102,
+        "Name": "蚀刻残响",
+        "Desc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.02%",
+        "DetailDesc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.02%",
+        "EntryId": 7045,
+        "Level": 3,
+        "EntryID": 704503,
+        "EntryType": 3,
+        "EntryKey": [
+            704530
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 103,
+        "Name": "蚀刻残响",
+        "Desc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.024%",
+        "DetailDesc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.024%",
+        "EntryId": 7045,
+        "Level": 4,
+        "EntryID": 704504,
+        "EntryType": 3,
+        "EntryKey": [
+            704540
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 104,
+        "Name": "蚀刻残响",
+        "Desc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.029%",
+        "DetailDesc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.029%",
+        "EntryId": 7045,
+        "Level": 5,
+        "EntryID": 704505,
+        "EntryType": 3,
+        "EntryKey": [
+            704550
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 105,
+        "Name": "蚀刻残响",
+        "Desc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.05%",
+        "DetailDesc": "根据剩余耐力值增加攻击力，每点耐力可以增加0.05%",
+        "EntryId": 7045,
+        "Level": 6,
+        "EntryID": 704506,
+        "EntryType": 3,
+        "EntryKey": [
+            704560
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 106,
+        "Name": "术法余波",
+        "Desc": "受到攻击后，3秒内所有招式伤害增加1%，削韧增加1%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "DetailDesc": "受到攻击后，3秒内所有招式伤害增加1%，削韧增加1%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "EntryId": 7046,
+        "Level": 1,
+        "EntryID": 704601,
+        "EntryType": 3,
+        "EntryKey": [
+            704610,
+            704611
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 107,
+        "Name": "术法余波",
+        "Desc": "受到攻击后，3秒内所有招式伤害增加2%，削韧增加2%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "DetailDesc": "受到攻击后，3秒内所有招式伤害增加2%，削韧增加2%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "EntryId": 7046,
+        "Level": 2,
+        "EntryID": 704602,
+        "EntryType": 3,
+        "EntryKey": [
+            704620,
+            704621
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 108,
+        "Name": "术法余波",
+        "Desc": "受到攻击后，3秒内所有招式伤害增加12%，削韧增加12%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "DetailDesc": "受到攻击后，3秒内所有招式伤害增加12%，削韧增加12%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "EntryId": 7046,
+        "Level": 3,
+        "EntryID": 704603,
+        "EntryType": 3,
+        "EntryKey": [
+            704630,
+            704631
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 109,
+        "Name": "术法余波",
+        "Desc": "受到攻击后，3秒内所有招式伤害增加14%，削韧增加14%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "DetailDesc": "受到攻击后，3秒内所有招式伤害增加14%，削韧增加14%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "EntryId": 7046,
+        "Level": 4,
+        "EntryID": 704604,
+        "EntryType": 3,
+        "EntryKey": [
+            704640,
+            704641
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 110,
+        "Name": "术法余波",
+        "Desc": "受到攻击后，3秒内所有招式伤害增加17%，削韧增加17%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "DetailDesc": "受到攻击后，3秒内所有招式伤害增加17%，削韧增加17%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "EntryId": 7046,
+        "Level": 5,
+        "EntryID": 704605,
+        "EntryType": 3,
+        "EntryKey": [
+            704650,
+            704651
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 111,
+        "Name": "术法余波",
+        "Desc": "受到攻击后，3秒内所有招式伤害增加30%，削韧增加30%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "DetailDesc": "受到攻击后，3秒内所有招式伤害增加30%，削韧增加30%；如果该伤害没有打断你的招式，则持续时间改为12秒",
+        "EntryId": 7046,
+        "Level": 6,
+        "EntryID": 704606,
+        "EntryType": 3,
+        "EntryKey": [
+            704660,
+            704661
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 112,
+        "Name": "抗性增幅",
+        "Desc": "技能动作过程中（不包括普攻）你的抗打断能力小幅增加。",
+        "DetailDesc": "技能动作过程中（不包括普攻）你的抗打断能力小幅增加。",
+        "EntryId": 7047,
+        "Level": 1,
+        "EntryID": 704701,
+        "EntryType": 3,
+        "EntryKey": [
+            704710
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 113,
+        "Name": "抗性增幅",
+        "Desc": "技能动作过程中（不包括普攻）你的抗打断能力中幅增加。",
+        "DetailDesc": "技能动作过程中（不包括普攻）你的抗打断能力中幅增加。",
+        "EntryId": 7047,
+        "Level": 2,
+        "EntryID": 704702,
+        "EntryType": 3,
+        "EntryKey": [
+            704720
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 114,
+        "Name": "抗性增幅",
+        "Desc": "技能动作过程中（不包括普攻）你的抗打断能力大幅增加；终结技抗打断能力增加。",
+        "DetailDesc": "技能动作过程中（不包括普攻）你的抗打断能力大幅增加；终结技抗打断能力增加。",
+        "EntryId": 7047,
+        "Level": 3,
+        "EntryID": 704703,
+        "EntryType": 3,
+        "EntryKey": [
+            704730,
+            704731
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 115,
+        "Name": "极速跃迁",
+        "Desc": "闪避后的短暂时间内，移动速度略微增加。",
+        "DetailDesc": "闪避后的短暂时间内，移动速度略微增加。",
+        "EntryId": 7048,
+        "Level": 1,
+        "EntryID": 704801,
+        "EntryType": 3,
+        "EntryKey": [
+            704810
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 116,
+        "Name": "极速跃迁",
+        "Desc": "闪避后的短暂时间内，移动速度小幅增加。",
+        "DetailDesc": "闪避后的短暂时间内，移动速度小幅增加。",
+        "EntryId": 7048,
+        "Level": 2,
+        "EntryID": 704802,
+        "EntryType": 3,
+        "EntryKey": [
+            704820
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 117,
+        "Name": "极速跃迁",
+        "Desc": "闪避后的短暂时间内，移动速度增加。并且闪避更容易触发精确闪避。",
+        "DetailDesc": "闪避后的短暂时间内，移动速度增加。并且闪避更容易触发精确闪避。",
+        "EntryId": 7048,
+        "Level": 3,
+        "EntryID": 704803,
+        "EntryType": 3,
+        "EntryKey": [
+            704830,
+            704832
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 118,
+        "Name": "至高的认可",
+        "Desc": "至高庇护对你的回复效果增加6%，并使接下来10秒内受到的减少伤害减少6%",
+        "DetailDesc": "至高庇护对你的回复效果增加6%，并使接下来10秒内受到的减少伤害减少6%",
+        "EntryId": 7049,
+        "Level": 1,
+        "EntryID": 704901,
+        "EntryType": 3,
+        "EntryKey": [
+            704910,
+            704911
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 119,
+        "Name": "至高的认可",
+        "Desc": "至高庇护对你的回复效果增加12%，并且接下来10秒内受到的减少伤害减少12%。",
+        "DetailDesc": "至高庇护对你的回复效果增加12%，并且接下来10秒内受到的减少伤害减少12%。",
+        "EntryId": 7049,
+        "Level": 2,
+        "EntryID": 704902,
+        "EntryType": 3,
+        "EntryKey": [
+            704920,
+            704921
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 120,
+        "Name": "至高的认可",
+        "Desc": "至高庇护对你的回复效果增加60%，并使接下来10秒内受到的减少伤害减少60%",
+        "DetailDesc": "至高庇护对你的回复效果增加60%，并使接下来10秒内受到的减少伤害减少60%",
+        "EntryId": 7049,
+        "Level": 3,
+        "EntryID": 704903,
+        "EntryType": 3,
+        "EntryKey": [
+            704930,
+            704931
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 121,
+        "Name": "预知未来",
+        "Desc": "成功触发<color=#cc5545><格挡></color>、<color=#cc5545><精确闪避></color>后，攻击力增加3%，持续8秒",
+        "DetailDesc": "成功触发<color=#cc5545><格挡></color>、<color=#cc5545><精确闪避></color>后，攻击力增加3%，持续8秒",
+        "EntryId": 7050,
+        "Level": 1,
+        "EntryID": 705001,
+        "EntryType": 3,
+        "EntryKey": [
+            705010
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 122,
+        "Name": "预知未来",
+        "Desc": "成功触发<color=#cc5545><格挡></color>、<color=#cc5545><精确闪避></color>后，攻击力增加5%，持续8秒",
+        "DetailDesc": "成功触发<color=#cc5545><格挡></color>、<color=#cc5545><精确闪避></color>后，攻击力增加5%，持续8秒",
+        "EntryId": 7050,
+        "Level": 2,
+        "EntryID": 705002,
+        "EntryType": 3,
+        "EntryKey": [
+            705020
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 123,
+        "Name": "预知未来",
+        "Desc": "成功触发<color=#cc5545><格挡></color>、<color=#cc5545><精确闪避></color>后，攻击力增加25%，持续8秒",
+        "DetailDesc": "成功触发<color=#cc5545><格挡></color>、<color=#cc5545><精确闪避></color>后，攻击力增加25%，持续8秒",
+        "EntryId": 7050,
+        "Level": 3,
+        "EntryID": 705003,
+        "EntryType": 3,
+        "EntryKey": [
+            705030
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 124,
+        "Name": "挑战者",
+        "Desc": "攻击使怪物怒气额外增加5%",
+        "DetailDesc": "攻击使怪物怒气额外增加5%",
+        "EntryId": 7051,
+        "Level": 1,
+        "EntryID": 705101,
+        "EntryType": 3,
+        "EntryKey": [
+            705110
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 125,
+        "Name": "挑战者",
+        "Desc": "攻击使怪物怒气额外增加9%",
+        "DetailDesc": "攻击使怪物怒气额外增加9%",
+        "EntryId": 7051,
+        "Level": 2,
+        "EntryID": 705102,
+        "EntryType": 3,
+        "EntryKey": [
+            705120
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 126,
+        "Name": "挑战者",
+        "Desc": "攻击使怪物怒气额外增加45%",
+        "DetailDesc": "攻击使怪物怒气额外增加45%",
+        "EntryId": 7051,
+        "Level": 3,
+        "EntryID": 705103,
+        "EntryType": 3,
+        "EntryKey": [
+            705130
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 127,
+        "Name": "箴言的反噬",
+        "Desc": "体力值下降时，提升2%招式伤害，持续12秒。",
+        "DetailDesc": "体力值下降时，提升2%招式伤害，持续12秒。",
+        "EntryId": 7052,
+        "Level": 1,
+        "EntryID": 705201,
+        "EntryType": 3,
+        "EntryKey": [
+            705210
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 128,
+        "Name": "箴言的反噬",
+        "Desc": "体力值下降时，提升3%招式伤害，持续12秒。",
+        "DetailDesc": "体力值下降时，提升3%招式伤害，持续12秒。",
+        "EntryId": 7052,
+        "Level": 2,
+        "EntryID": 705202,
+        "EntryType": 3,
+        "EntryKey": [
+            705220
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 129,
+        "Name": "箴言的反噬",
+        "Desc": "体力值下降时，提升12%招式伤害，持续12秒。",
+        "DetailDesc": "体力值下降时，提升12%招式伤害，持续12秒。",
+        "EntryId": 7052,
+        "Level": 3,
+        "EntryID": 705203,
+        "EntryType": 3,
+        "EntryKey": [
+            705230
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 130,
+        "Name": "时序骤解",
+        "Desc": "接受冰冻、燃烧异常状态的持续时间减少8%",
+        "DetailDesc": "接受冰冻、燃烧异常状态的持续时间减少8%",
+        "EntryId": 7053,
+        "Level": 1,
+        "EntryID": 705301,
+        "EntryType": 3,
+        "EntryKey": [
+            705310
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 131,
+        "Name": "时序骤解",
+        "Desc": "接受冰冻、燃烧异常状态的持续时间减少15%",
+        "DetailDesc": "接受冰冻、燃烧异常状态的持续时间减少15%",
+        "EntryId": 7053,
+        "Level": 2,
+        "EntryID": 705302,
+        "EntryType": 3,
+        "EntryKey": [
+            705320
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 132,
+        "Name": "时序骤解",
+        "Desc": "接受冰冻、燃烧异常状态的持续时间减少75%",
+        "DetailDesc": "接受冰冻、燃烧异常状态的持续时间减少75%",
+        "EntryId": 7053,
+        "Level": 3,
+        "EntryID": 705303,
+        "EntryType": 3,
+        "EntryKey": [
+            705330
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 133,
+        "Name": "以暴制暴",
+        "Desc": "对暴怒状态的敌人伤害增加1%，暴击率增加2%",
+        "DetailDesc": "对暴怒状态的敌人伤害增加1%，暴击率增加2%",
+        "EntryId": 7054,
+        "Level": 1,
+        "EntryID": 705401,
+        "EntryType": 3,
+        "EntryKey": [
+            705410,
+            705411
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 134,
+        "Name": "以暴制暴",
+        "Desc": "对暴怒状态的敌人伤害增加2%，暴击率增加4%",
+        "DetailDesc": "对暴怒状态的敌人伤害增加2%，暴击率增加4%",
+        "EntryId": 7054,
+        "Level": 2,
+        "EntryID": 705402,
+        "EntryType": 3,
+        "EntryKey": [
+            705420,
+            705421
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 135,
+        "Name": "以暴制暴",
+        "Desc": "对暴怒状态的敌人伤害增加12%，暴击率增加18%",
+        "DetailDesc": "对暴怒状态的敌人伤害增加12%，暴击率增加18%",
+        "EntryId": 7054,
+        "Level": 3,
+        "EntryID": 705403,
+        "EntryType": 3,
+        "EntryKey": [
+            705430,
+            705431
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 136,
+        "Name": "肾上腺素",
+        "Desc": "体力值95%以上时，全部招式增加2%的伤害。",
+        "DetailDesc": "体力值95%以上时，全部招式增加2%的伤害。",
+        "EntryId": 7055,
+        "Level": 1,
+        "EntryID": 705501,
+        "EntryType": 3,
+        "EntryKey": [
+            705510
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 137,
+        "Name": "肾上腺素",
+        "Desc": "体力值95%以上时，全部招式增加3%伤害。",
+        "DetailDesc": "体力值95%以上时，全部招式增加3%伤害。",
+        "EntryId": 7055,
+        "Level": 2,
+        "EntryID": 705502,
+        "EntryType": 3,
+        "EntryKey": [
+            705520
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 138,
+        "Name": "肾上腺素",
+        "Desc": "体力值95%以上时，全部招式增加15%的伤害。",
+        "DetailDesc": "体力值95%以上时，全部招式增加15%的伤害。",
+        "EntryId": 7055,
+        "Level": 3,
+        "EntryID": 705503,
+        "EntryType": 3,
+        "EntryKey": [
+            705530
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 139,
+        "Name": "紧急除颤",
+        "Desc": "体力值30%以下时，所有招式伤害增加2%，防御力增加2%",
+        "DetailDesc": "体力值30%以下时，所有招式伤害增加2%，防御力增加2%",
+        "EntryId": 7056,
+        "Level": 1,
+        "EntryID": 705601,
+        "EntryType": 3,
+        "EntryKey": [
+            705610,
+            705611
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 140,
+        "Name": "紧急除颤",
+        "Desc": "体力值30%以下时，所有招式伤害增加4%，防御力增加4%",
+        "DetailDesc": "体力值30%以下时，所有招式伤害增加4%，防御力增加4%",
+        "EntryId": 7056,
+        "Level": 2,
+        "EntryID": 705602,
+        "EntryType": 3,
+        "EntryKey": [
+            705620,
+            705621
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 141,
+        "Name": "紧急除颤",
+        "Desc": "体力值30%以下时，所有招式伤害增加20%，防御力增加20%",
+        "DetailDesc": "体力值30%以下时，所有招式伤害增加20%，防御力增加20%",
+        "EntryId": 7056,
+        "Level": 3,
+        "EntryID": 705603,
+        "EntryType": 3,
+        "EntryKey": [
+            705630,
+            705631
+        ],
+        "EntryValue": [],
+        "EntryColor": 3,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 142,
+        "Name": "刃锋强化",
+        "Desc": "刃心获取效率增加2%",
+        "DetailDesc": "刃心获取效率增加2%",
+        "EntryId": 7057,
+        "Level": 1,
+        "EntryID": 705701,
+        "EntryType": 3,
+        "EntryKey": [
+            705710
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 143,
+        "Name": "刃锋强化",
+        "Desc": "刃心获取效率增加3%",
+        "DetailDesc": "刃心获取效率增加3%",
+        "EntryId": 7057,
+        "Level": 2,
+        "EntryID": 705702,
+        "EntryType": 3,
+        "EntryKey": [
+            705720
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 144,
+        "Name": "刃锋强化",
+        "Desc": "刃心获取效率增加15%；进入战斗状态时，若刃心等级为1级以下，则获得刃心值到1级刃心等级",
+        "DetailDesc": "刃心获取效率增加15%；进入战斗状态时，若刃心等级为1级以下，则获得刃心值到1级刃心等级",
+        "EntryId": 7057,
+        "Level": 3,
+        "EntryID": 705703,
+        "EntryType": 3,
+        "EntryKey": [
+            705730,
+            705731
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 145,
+        "Name": "心脏过载",
+        "Desc": "心流获取效率增加2%",
+        "DetailDesc": "心流获取效率增加2%",
+        "EntryId": 7058,
+        "Level": 1,
+        "EntryID": 705801,
+        "EntryType": 3,
+        "EntryKey": [
+            705810
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 146,
+        "Name": "心脏过载",
+        "Desc": "心流获取效率增加3%",
+        "DetailDesc": "心流获取效率增加3%",
+        "EntryId": 7058,
+        "Level": 2,
+        "EntryID": 705802,
+        "EntryType": 3,
+        "EntryKey": [
+            705820
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 147,
+        "Name": "心脏过载",
+        "Desc": "心流获取效率增加15%；进入战斗状态时，若心流在1格以下，则获得心流到1格",
+        "DetailDesc": "心流获取效率增加15%；进入战斗状态时，若心流在1格以下，则获得心流到1格",
+        "EntryId": 7058,
+        "Level": 3,
+        "EntryID": 705803,
+        "EntryType": 3,
+        "EntryKey": [
+            705830,
+            705831
+        ],
+        "EntryValue": [],
+        "EntryColor": 2,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 148,
+        "Name": "灵能吸附",
+        "Desc": "灵能获取效率增加2%",
+        "DetailDesc": "灵能获取效率增加2%",
+        "EntryId": 7059,
+        "Level": 1,
+        "EntryID": 705901,
+        "EntryType": 3,
+        "EntryKey": [
+            705910
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 149,
+        "Name": "灵能吸附",
+        "Desc": "灵能获取效率增加3%",
+        "DetailDesc": "灵能获取效率增加3%",
+        "EntryId": 7059,
+        "Level": 2,
+        "EntryID": 705902,
+        "EntryType": 3,
+        "EntryKey": [
+            705920
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 150,
+        "Name": "灵能吸附",
+        "Desc": "灵能获取效率增加15%；进入战斗状态时，若灵能不足一半，则获得灵能到一半",
+        "DetailDesc": "灵能获取效率增加15%；进入战斗状态时，若灵能不足一半，则获得灵能到一半",
+        "EntryId": 7059,
+        "Level": 3,
+        "EntryID": 705903,
+        "EntryType": 3,
+        "EntryKey": [
+            705930,
+            705931
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 151,
+        "Name": "幻醒灵速",
+        "Desc": "觉醒值获取效率增加2%",
+        "DetailDesc": "觉醒值获取效率增加2%",
+        "EntryId": 7060,
+        "Level": 1,
+        "EntryID": 706001,
+        "EntryType": 3,
+        "EntryKey": [
+            706010
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 152,
+        "Name": "幻醒灵速",
+        "Desc": "觉醒值获取效率增加3%",
+        "DetailDesc": "觉醒值获取效率增加3%",
+        "EntryId": 7060,
+        "Level": 2,
+        "EntryID": 706002,
+        "EntryType": 3,
+        "EntryKey": [
+            706020
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 153,
+        "Name": "幻醒灵速",
+        "Desc": "觉醒值获取效率增加15%；进入战斗状态时，若觉醒值不足一半，则获得觉醒值到一半",
+        "DetailDesc": "觉醒值获取效率增加15%；进入战斗状态时，若觉醒值不足一半，则获得觉醒值到一半",
+        "EntryId": 7060,
+        "Level": 3,
+        "EntryID": 706003,
+        "EntryType": 3,
+        "EntryKey": [
+            706030,
+            706031
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 154,
+        "Name": "集中蓄能",
+        "Desc": "威势获取效率增加2%",
+        "DetailDesc": "威势获取效率增加2%",
+        "EntryId": 7061,
+        "Level": 1,
+        "EntryID": 706101,
+        "EntryType": 3,
+        "EntryKey": [
+            706110
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 155,
+        "Name": "集中蓄能",
+        "Desc": "威势获取效率增加3%",
+        "DetailDesc": "威势获取效率增加3%",
+        "EntryId": 7061,
+        "Level": 2,
+        "EntryID": 706102,
+        "EntryType": 3,
+        "EntryKey": [
+            706120
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 156,
+        "Name": "集中蓄能",
+        "Desc": "威势获取效率增加15%；进入战斗状态时，若威势不足2格，则获得威势到2格",
+        "DetailDesc": "威势获取效率增加15%；进入战斗状态时，若威势不足2格，则获得威势到2格",
+        "EntryId": 7061,
+        "Level": 3,
+        "EntryID": 706103,
+        "EntryType": 3,
+        "EntryKey": [
+            706130,
+            706131
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 157,
+        "Name": "灯火的连击",
+        "Desc": "普攻3秒或触发<精确释放>时召唤可存在最多3个的灯火。释放技能时发射，造成333点伤害和3%无视抗性的削韧。灯火命中后，攻击力增加1%，最多3层，持续15秒。",
+        "DetailDesc": "普攻3秒或触发<精确释放>时召唤可存在最多3个的灯火。释放技能时发射，造成333点伤害和3%无视抗性的削韧。灯火命中后，攻击力增加1%，最多3层，持续15秒。",
+        "EntryId": 7062,
+        "Level": 1,
+        "EntryID": 706201,
+        "EntryType": 3,
+        "EntryKey": [
+            706210,
+            706212
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 158,
+        "Name": "灯火的连击",
+        "Desc": "普攻3秒或触发<精确释放>时召唤可存在最多3个的灯火。释放技能时发射，造成666点伤害和6%无视抗性的削韧。灯火命中后，攻击力增加2%，最多3层，持续15秒。",
+        "DetailDesc": "普攻3秒或触发<精确释放>时召唤可存在最多3个的灯火。释放技能时发射，造成666点伤害和6%无视抗性的削韧。灯火命中后，攻击力增加2%，最多3层，持续15秒。",
+        "EntryId": 7062,
+        "Level": 2,
+        "EntryID": 706202,
+        "EntryType": 3,
+        "EntryKey": [
+            706220,
+            706222
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 159,
+        "Name": "灯火的连击",
+        "Desc": "普攻3秒或触发<精确释放>时召唤可存在最多3个的灯火。释放技能时发射，造成999点伤害和18%无视抗性的削韧。灯火命中后，攻击力增加6%，最多3层，持续15秒。",
+        "DetailDesc": "普攻3秒或触发<精确释放>时召唤可存在最多3个的灯火。释放技能时发射，造成999点伤害和18%无视抗性的削韧。灯火命中后，攻击力增加6%，最多3层，持续15秒。",
+        "EntryId": 7062,
+        "Level": 3,
+        "EntryID": 706203,
+        "EntryType": 3,
+        "EntryKey": [
+            706230,
+            706232
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 160,
+        "Name": "学识的深渊",
+        "Desc": "命中致命弱点0.5秒后，向最近的敌方目标方向增加1次相当于你的攻击力10%的攻击，对路径上的所有目标造成的伤害，每3秒最多触发一次。",
+        "DetailDesc": "命中致命弱点0.5秒后，向最近的敌方目标方向增加1次相当于你的攻击力10%的攻击，对路径上的所有目标造成的伤害，每3秒最多触发一次。",
+        "EntryId": 7063,
+        "Level": 1,
+        "EntryID": 706301,
+        "EntryType": 3,
+        "EntryKey": [
+            706310
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 161,
+        "Name": "学识的深渊",
+        "Desc": "命中致命弱点0.5秒后，向最近的敌方目标方向增加1次相当于你的攻击力20%的攻击，对路径上的所有目标造成的伤害，每3秒最多触发一次。",
+        "DetailDesc": "命中致命弱点0.5秒后，向最近的敌方目标方向增加1次相当于你的攻击力20%的攻击，对路径上的所有目标造成的伤害，每3秒最多触发一次。",
+        "EntryId": 7063,
+        "Level": 2,
+        "EntryID": 706302,
+        "EntryType": 3,
+        "EntryKey": [
+            706320
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 162,
+        "Name": "学识的深渊",
+        "Desc": "命中致命弱点0.5秒后，向最近的敌方目标方向增加1次相当于你的攻击力100%的攻击，对路径上的所有目标造成的伤害，每3秒最多触发一次。",
+        "DetailDesc": "命中致命弱点0.5秒后，向最近的敌方目标方向增加1次相当于你的攻击力100%的攻击，对路径上的所有目标造成的伤害，每3秒最多触发一次。",
+        "EntryId": 7063,
+        "Level": 3,
+        "EntryID": 706303,
+        "EntryType": 3,
+        "EntryKey": [
+            706330
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 163,
+        "Name": "坠敌援护",
+        "Desc": "击倒BOSS时，恢复30耐力；当BOSS处于倒地状态时，每秒恢复5耐力",
+        "DetailDesc": "击倒BOSS时，恢复30耐力；当BOSS处于倒地状态时，每秒恢复5耐力",
+        "EntryId": 7064,
+        "Level": 1,
+        "EntryID": 706401,
+        "EntryType": 3,
+        "EntryKey": [
+            706410,
+            706411
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 164,
+        "Name": "坠敌援护",
+        "Desc": "击倒BOSS时，恢复60耐力；当BOSS处于倒地状态时，每秒恢复9耐力",
+        "DetailDesc": "击倒BOSS时，恢复60耐力；当BOSS处于倒地状态时，每秒恢复9耐力",
+        "EntryId": 7064,
+        "Level": 2,
+        "EntryID": 706402,
+        "EntryType": 3,
+        "EntryKey": [
+            706420,
+            706421
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 165,
+        "Name": "坠敌援护",
+        "Desc": "击倒BOSS时，恢复300耐力；当BOSS处于倒地状态时，每秒恢复45耐力",
+        "DetailDesc": "击倒BOSS时，恢复300耐力；当BOSS处于倒地状态时，每秒恢复45耐力",
+        "EntryId": 7064,
+        "Level": 3,
+        "EntryID": 706403,
+        "EntryType": 3,
+        "EntryKey": [
+            706430,
+            706431
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 166,
+        "Name": "识破",
+        "Desc": "削弱你命中的敌人，使其破绽暴露的时间小幅增加",
+        "DetailDesc": "削弱你命中的敌人，使其破绽暴露的时间小幅增加",
+        "EntryId": 7065,
+        "Level": 1,
+        "EntryID": 706501,
+        "EntryType": 3,
+        "EntryKey": [
+            706510
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 167,
+        "Name": "识破",
+        "Desc": "削弱你命中的敌人，使其破绽暴露的时间增加",
+        "DetailDesc": "削弱你命中的敌人，使其破绽暴露的时间增加",
+        "EntryId": 7065,
+        "Level": 2,
+        "EntryID": 706502,
+        "EntryType": 3,
+        "EntryKey": [
+            706520
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 168,
+        "Name": "识破",
+        "Desc": "削弱你命中的敌人，使其破绽暴露的时间大幅增加",
+        "DetailDesc": "削弱你命中的敌人，使其破绽暴露的时间大幅增加",
+        "EntryId": 7065,
+        "Level": 3,
+        "EntryID": 706503,
+        "EntryType": 3,
+        "EntryKey": [
+            706530
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 169,
+        "Name": "死亡幻觉",
+        "Desc": "防御力增加6%",
+        "DetailDesc": "防御力增加6%",
+        "EntryId": 7066,
+        "Level": 1,
+        "EntryID": 706601,
+        "EntryType": 3,
+        "EntryKey": [
+            706610
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 170,
+        "Name": "死亡幻觉",
+        "Desc": "防御力增加15%",
+        "DetailDesc": "防御力增加15%",
+        "EntryId": 7066,
+        "Level": 2,
+        "EntryID": 706602,
+        "EntryType": 3,
+        "EntryKey": [
+            706620
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 171,
+        "Name": "死亡幻觉",
+        "Desc": "防御力增加20%，受到致命伤害时，保留体力值到1点，每3分钟最多触发1次",
+        "DetailDesc": "防御力增加20%，受到致命伤害时，保留体力值到1点，每3分钟最多触发1次",
+        "EntryId": 7066,
+        "Level": 3,
+        "EntryID": 706603,
+        "EntryType": 3,
+        "EntryKey": [
+            706630,
+            706631,
+            706632
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 706701,
+        "Name": "贯穿聚焦",
+        "Desc": "勇气获取效率增加2%",
+        "DetailDesc": "勇气获取效率增加2%",
+        "EntryId": 7067,
+        "Level": 1,
+        "EntryID": 706701,
+        "EntryType": 3,
+        "EntryKey": [
+            706710
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 706702,
+        "Name": "贯穿聚焦",
+        "Desc": "勇气获取效率增加3%",
+        "DetailDesc": "勇气获取效率增加3%",
+        "EntryId": 7067,
+        "Level": 2,
+        "EntryID": 706702,
+        "EntryType": 3,
+        "EntryKey": [
+            706720
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 706703,
+        "Name": "贯穿聚焦",
+        "Desc": "勇气获取效率增加15%;(3级额外效果)进入战斗状态时,老勇气不足一半,则获得勇气到一半",
+        "DetailDesc": "勇气获取效率增加15%;(3级额外效果)进入战斗状态时,老勇气不足一半,则获得勇气到一半",
+        "EntryId": 7067,
+        "Level": 3,
+        "EntryID": 706703,
+        "EntryType": 3,
+        "EntryKey": [
+            706730,
+            706731
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 172,
+        "Name": "绝技·破霄",
+        "Desc": "斩锋类角色所有招式伤害增加6%",
+        "DetailDesc": "斩锋类角色所有招式伤害增加6%",
+        "EntryId": 7114,
+        "Level": 1,
+        "EntryID": 711401,
+        "EntryType": 3,
+        "EntryKey": [
+            711410
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 173,
+        "Name": "绝技·破霄I",
+        "Desc": "斩锋类角色所有招式伤害增加12%",
+        "DetailDesc": "斩锋类角色所有招式伤害增加12%",
+        "EntryId": 7114,
+        "Level": 2,
+        "EntryID": 711402,
+        "EntryType": 3,
+        "EntryKey": [
+            711420
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 174,
+        "Name": "绝技·破霄II",
+        "Desc": "斩锋类角色所有招式伤害增加18%",
+        "DetailDesc": "斩锋类角色所有招式伤害增加18%",
+        "EntryId": 7114,
+        "Level": 3,
+        "EntryID": 711403,
+        "EntryType": 3,
+        "EntryKey": [
+            711430
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 175,
+        "Name": "绝技·破霄III",
+        "Desc": "斩锋类角色所有招式伤害增加24%",
+        "DetailDesc": "斩锋类角色所有招式伤害增加24%",
+        "EntryId": 7114,
+        "Level": 4,
+        "EntryID": 711404,
+        "EntryType": 3,
+        "EntryKey": [
+            711440
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 176,
+        "Name": "绝技·破霄IV",
+        "Desc": "斩锋类角色所有招式伤害增加30%",
+        "DetailDesc": "斩锋类角色所有招式伤害增加30%",
+        "EntryId": 7114,
+        "Level": 5,
+        "EntryID": 711405,
+        "EntryType": 3,
+        "EntryKey": [
+            711450
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 711406,
+        "Name": "绝技·破霄Ⅴ",
+        "Desc": "斩锋类角色所有招式伤害增加45%",
+        "DetailDesc": "斩锋类角色所有招式伤害增加45%",
+        "EntryId": 7114,
+        "Level": 6,
+        "EntryID": 711406,
+        "EntryType": 3,
+        "EntryKey": [
+            711460
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 177,
+        "Name": "绝技·横扫",
+        "Desc": "强袭类角色所有招式伤害增加6%",
+        "DetailDesc": "强袭类角色所有招式伤害增加6%",
+        "EntryId": 7115,
+        "Level": 1,
+        "EntryID": 711501,
+        "EntryType": 3,
+        "EntryKey": [
+            711510
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 178,
+        "Name": "绝技·横扫I",
+        "Desc": "强袭类角色所有招式伤害增加12%",
+        "DetailDesc": "强袭类角色所有招式伤害增加12%",
+        "EntryId": 7115,
+        "Level": 2,
+        "EntryID": 711502,
+        "EntryType": 3,
+        "EntryKey": [
+            711520
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 179,
+        "Name": "绝技·横扫II",
+        "Desc": "强袭类角色所有招式伤害增加18%",
+        "DetailDesc": "强袭类角色所有招式伤害增加18%",
+        "EntryId": 7115,
+        "Level": 3,
+        "EntryID": 711503,
+        "EntryType": 3,
+        "EntryKey": [
+            711530
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 180,
+        "Name": "绝技·横扫III",
+        "Desc": "强袭类角色所有招式伤害增加24%",
+        "DetailDesc": "强袭类角色所有招式伤害增加24%",
+        "EntryId": 7115,
+        "Level": 4,
+        "EntryID": 711504,
+        "EntryType": 3,
+        "EntryKey": [
+            711540
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 181,
+        "Name": "绝技·横扫IV",
+        "Desc": "强袭类角色所有招式伤害增加30%",
+        "DetailDesc": "强袭类角色所有招式伤害增加30%",
+        "EntryId": 7115,
+        "Level": 5,
+        "EntryID": 711505,
+        "EntryType": 3,
+        "EntryKey": [
+            711550
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 711506,
+        "Name": "绝技·横扫Ⅴ",
+        "Desc": "强袭类角色所有招式伤害增加45%",
+        "DetailDesc": "强袭类角色所有招式伤害增加45%",
+        "EntryId": 7115,
+        "Level": 6,
+        "EntryID": 711506,
+        "EntryType": 3,
+        "EntryKey": [
+            711560
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 182,
+        "Name": "绝技·火控",
+        "Desc": "灵御类角色所有招式伤害增加6%",
+        "DetailDesc": "灵御类角色所有招式伤害增加6%",
+        "EntryId": 7116,
+        "Level": 1,
+        "EntryID": 711601,
+        "EntryType": 3,
+        "EntryKey": [
+            711610
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 183,
+        "Name": "绝技·火控I",
+        "Desc": "灵御类角色所有招式伤害增加12%",
+        "DetailDesc": "灵御类角色所有招式伤害增加12%",
+        "EntryId": 7116,
+        "Level": 2,
+        "EntryID": 711602,
+        "EntryType": 3,
+        "EntryKey": [
+            711620
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 184,
+        "Name": "绝技·火控II",
+        "Desc": "灵御类角色所有招式伤害增加18%",
+        "DetailDesc": "灵御类角色所有招式伤害增加18%",
+        "EntryId": 7116,
+        "Level": 3,
+        "EntryID": 711603,
+        "EntryType": 3,
+        "EntryKey": [
+            711630
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 185,
+        "Name": "绝技·火控III",
+        "Desc": "灵御类角色所有招式伤害增加24%",
+        "DetailDesc": "灵御类角色所有招式伤害增加24%",
+        "EntryId": 7116,
+        "Level": 4,
+        "EntryID": 711604,
+        "EntryType": 3,
+        "EntryKey": [
+            711640
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 186,
+        "Name": "绝技·火控IV",
+        "Desc": "灵御类角色所有招式伤害增加30%",
+        "DetailDesc": "灵御类角色所有招式伤害增加30%",
+        "EntryId": 7116,
+        "Level": 5,
+        "EntryID": 711605,
+        "EntryType": 3,
+        "EntryKey": [
+            711650
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 711606,
+        "Name": "绝技·火控Ⅴ",
+        "Desc": "灵御类角色所有招式伤害增加45%",
+        "DetailDesc": "灵御类角色所有招式伤害增加45%",
+        "EntryId": 7116,
+        "Level": 6,
+        "EntryID": 711606,
+        "EntryType": 3,
+        "EntryKey": [
+            711660
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 187,
+        "Name": "绝技·陨殛",
+        "Desc": "破势类角色所有招式伤害增加6%",
+        "DetailDesc": "破势类角色所有招式伤害增加6%",
+        "EntryId": 7117,
+        "Level": 1,
+        "EntryID": 711701,
+        "EntryType": 3,
+        "EntryKey": [
+            711710
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 188,
+        "Name": "绝技·陨殛I",
+        "Desc": "破势类角色所有招式伤害增加12%",
+        "DetailDesc": "破势类角色所有招式伤害增加12%",
+        "EntryId": 7117,
+        "Level": 2,
+        "EntryID": 711702,
+        "EntryType": 3,
+        "EntryKey": [
+            711720
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 189,
+        "Name": "绝技·陨殛II",
+        "Desc": "破势类角色所有招式伤害增加18%",
+        "DetailDesc": "破势类角色所有招式伤害增加18%",
+        "EntryId": 7117,
+        "Level": 3,
+        "EntryID": 711703,
+        "EntryType": 3,
+        "EntryKey": [
+            711730
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 190,
+        "Name": "绝技·陨殛III",
+        "Desc": "破势类角色所有招式伤害增加24%",
+        "DetailDesc": "破势类角色所有招式伤害增加24%",
+        "EntryId": 7117,
+        "Level": 4,
+        "EntryID": 711704,
+        "EntryType": 3,
+        "EntryKey": [
+            711740
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 191,
+        "Name": "绝技·陨殛IV",
+        "Desc": "破势类角色所有招式伤害增加30%",
+        "DetailDesc": "破势类角色所有招式伤害增加30%",
+        "EntryId": 7117,
+        "Level": 5,
+        "EntryID": 711705,
+        "EntryType": 3,
+        "EntryKey": [
+            711750
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 711706,
+        "Name": "绝技·陨殛Ⅴ",
+        "Desc": "破势类角色所有招式伤害增加45%",
+        "DetailDesc": "破势类角色所有招式伤害增加45%",
+        "EntryId": 7117,
+        "Level": 6,
+        "EntryID": 711706,
+        "EntryType": 3,
+        "EntryKey": [
+            711760
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 192,
+        "Name": "绝技·羽击",
+        "Desc": "翎射类角色所有招式伤害增加6%",
+        "DetailDesc": "翎射类角色所有招式伤害增加6%",
+        "EntryId": 7118,
+        "Level": 1,
+        "EntryID": 711801,
+        "EntryType": 3,
+        "EntryKey": [
+            711810
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 193,
+        "Name": "绝技·羽击I",
+        "Desc": "翎射类角色所有招式伤害增加12%",
+        "DetailDesc": "翎射类角色所有招式伤害增加12%",
+        "EntryId": 7118,
+        "Level": 2,
+        "EntryID": 711802,
+        "EntryType": 3,
+        "EntryKey": [
+            711820
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 194,
+        "Name": "绝技·羽击II",
+        "Desc": "翎射类角色所有招式伤害增加18%",
+        "DetailDesc": "翎射类角色所有招式伤害增加18%",
+        "EntryId": 7118,
+        "Level": 3,
+        "EntryID": 711803,
+        "EntryType": 3,
+        "EntryKey": [
+            711830
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 195,
+        "Name": "绝技·羽击III",
+        "Desc": "翎射类角色所有招式伤害增加24%",
+        "DetailDesc": "翎射类角色所有招式伤害增加24%",
+        "EntryId": 7118,
+        "Level": 4,
+        "EntryID": 711804,
+        "EntryType": 3,
+        "EntryKey": [
+            711840
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 196,
+        "Name": "绝技·羽击IV",
+        "Desc": "翎射类角色所有招式伤害增加30%",
+        "DetailDesc": "翎射类角色所有招式伤害增加30%",
+        "EntryId": 7118,
+        "Level": 5,
+        "EntryID": 711805,
+        "EntryType": 3,
+        "EntryKey": [
+            711850
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 711806,
+        "Name": "绝技·羽击Ⅴ",
+        "Desc": "翎射类角色所有招式伤害增加45%",
+        "DetailDesc": "翎射类角色所有招式伤害增加45%",
+        "EntryId": 7118,
+        "Level": 6,
+        "EntryID": 711806,
+        "EntryType": 3,
+        "EntryKey": [
+            711860
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 197,
+        "Name": "碎流猛攻",
+        "Desc": "所有招式伤害增加3%，削韧增加3%",
+        "DetailDesc": "所有招式伤害增加3%，削韧增加3%",
+        "EntryId": 7119,
+        "Level": 1,
+        "EntryID": 711901,
+        "EntryType": 3,
+        "EntryKey": [
+            711910
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 198,
+        "Name": "碎流猛攻I",
+        "Desc": "所有招式伤害增加6%，削韧增加6%",
+        "DetailDesc": "所有招式伤害增加6%，削韧增加6%",
+        "EntryId": 7119,
+        "Level": 2,
+        "EntryID": 711902,
+        "EntryType": 3,
+        "EntryKey": [
+            711920
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 199,
+        "Name": "碎流猛攻II",
+        "Desc": "所有招式伤害增加9%，削韧增加9%",
+        "DetailDesc": "所有招式伤害增加9%，削韧增加9%",
+        "EntryId": 7119,
+        "Level": 3,
+        "EntryID": 711903,
+        "EntryType": 3,
+        "EntryKey": [
+            711930
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 200,
+        "Name": "碎流猛攻III",
+        "Desc": "所有招式伤害增加12%，削韧增加12%",
+        "DetailDesc": "所有招式伤害增加12%，削韧增加12%",
+        "EntryId": 7119,
+        "Level": 4,
+        "EntryID": 711904,
+        "EntryType": 3,
+        "EntryKey": [
+            711940
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 201,
+        "Name": "碎流猛攻IV",
+        "Desc": "所有招式伤害增加15%，削韧增加15%",
+        "DetailDesc": "所有招式伤害增加15%，削韧增加15%",
+        "EntryId": 7119,
+        "Level": 5,
+        "EntryID": 711905,
+        "EntryType": 3,
+        "EntryKey": [
+            711950
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 711906,
+        "Name": "碎流猛攻Ⅴ",
+        "Desc": "所有招式伤害增加25%，削韧增加25%",
+        "DetailDesc": "所有招式伤害增加25%，削韧增加25%",
+        "EntryId": 7119,
+        "Level": 6,
+        "EntryID": 711906,
+        "EntryType": 3,
+        "EntryKey": [
+            711960
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 202,
+        "Name": "越战越勇",
+        "Desc": "战斗状态下，每秒使所有招式伤害增加0.04%，最多3分钟达到最大加成7.2%，离开战斗状态时移除该加成",
+        "DetailDesc": "战斗状态下，每秒使所有招式伤害增加0.04%，最多3分钟达到最大加成7.2%，离开战斗状态时移除该加成",
+        "EntryId": 7120,
+        "Level": 1,
+        "EntryID": 712001,
+        "EntryType": 3,
+        "EntryKey": [
+            712010,
+            712011
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 203,
+        "Name": "越战越勇I",
+        "Desc": "战斗状态下，每秒使所有招式伤害增加0.07%，最多3分钟达到最大加成12.6%，离开战斗状态时移除该加成",
+        "DetailDesc": "战斗状态下，每秒使所有招式伤害增加0.07%，最多3分钟达到最大加成12.6%，离开战斗状态时移除该加成",
+        "EntryId": 7120,
+        "Level": 2,
+        "EntryID": 712002,
+        "EntryType": 3,
+        "EntryKey": [
+            712020,
+            712021
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 204,
+        "Name": "越战越勇II",
+        "Desc": "战斗状态下，每秒使所有招式伤害增加0.1%，最多3分钟达到最大加成18%，离开战斗状态时移除该加成",
+        "DetailDesc": "战斗状态下，每秒使所有招式伤害增加0.1%，最多3分钟达到最大加成18%，离开战斗状态时移除该加成",
+        "EntryId": 7120,
+        "Level": 3,
+        "EntryID": 712003,
+        "EntryType": 3,
+        "EntryKey": [
+            712030,
+            712031
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 205,
+        "Name": "越战越勇III",
+        "Desc": "战斗状态下，每秒使所有招式伤害增加0.15%，最多3分钟达到最大加成27%，离开战斗状态时移除该加成",
+        "DetailDesc": "战斗状态下，每秒使所有招式伤害增加0.15%，最多3分钟达到最大加成27%，离开战斗状态时移除该加成",
+        "EntryId": 7120,
+        "Level": 4,
+        "EntryID": 712004,
+        "EntryType": 3,
+        "EntryKey": [
+            712040,
+            712041
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 206,
+        "Name": "越战越勇IV",
+        "Desc": "战斗状态下，每秒使所有招式伤害增加0.18%，最多3分钟达到最大加成32.4%，离开战斗状态时移除该加成",
+        "DetailDesc": "战斗状态下，每秒使所有招式伤害增加0.18%，最多3分钟达到最大加成32.4%，离开战斗状态时移除该加成",
+        "EntryId": 7120,
+        "Level": 5,
+        "EntryID": 712005,
+        "EntryType": 3,
+        "EntryKey": [
+            712050,
+            712051
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 712006,
+        "Name": "越战越勇Ⅴ",
+        "Desc": "战斗状态下，每秒使所有招式伤害增加0.3%，最多3分钟达到最大加成54%，离开战斗状态时移除该加成",
+        "DetailDesc": "战斗状态下，每秒使所有招式伤害增加0.3%，最多3分钟达到最大加成54%，离开战斗状态时移除该加成",
+        "EntryId": 7120,
+        "Level": 6,
+        "EntryID": 712006,
+        "EntryType": 3,
+        "EntryKey": [
+            712060,
+            712061
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 712101,
+        "Name": "绝技·穿云",
+        "Desc": "锐贯类角色所有招式伤害增加6%",
+        "DetailDesc": "锐贯类角色所有招式伤害增加6%",
+        "EntryId": 7121,
+        "Level": 1,
+        "EntryID": 712101,
+        "EntryType": 3,
+        "EntryKey": [
+            712110
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 712102,
+        "Name": "绝技·穿云I",
+        "Desc": "锐贯类角色所有招式伤害增加12%",
+        "DetailDesc": "锐贯类角色所有招式伤害增加12%",
+        "EntryId": 7121,
+        "Level": 2,
+        "EntryID": 712102,
+        "EntryType": 3,
+        "EntryKey": [
+            712120
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 712103,
+        "Name": "绝技·穿云II",
+        "Desc": "锐贯类角色所有招式伤害增加18%",
+        "DetailDesc": "锐贯类角色所有招式伤害增加18%",
+        "EntryId": 7121,
+        "Level": 3,
+        "EntryID": 712103,
+        "EntryType": 3,
+        "EntryKey": [
+            712130
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 712104,
+        "Name": "绝技·穿云III",
+        "Desc": "锐贯类角色所有招式伤害增加24%",
+        "DetailDesc": "锐贯类角色所有招式伤害增加24%",
+        "EntryId": 7121,
+        "Level": 4,
+        "EntryID": 712104,
+        "EntryType": 3,
+        "EntryKey": [
+            712140
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 712105,
+        "Name": "绝技·穿云IV",
+        "Desc": "锐贯类角色所有招式伤害增加30%",
+        "DetailDesc": "锐贯类角色所有招式伤害增加30%",
+        "EntryId": 7121,
+        "Level": 5,
+        "EntryID": 712105,
+        "EntryType": 3,
+        "EntryKey": [
+            712150
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    },
+    {
+        "Id": 712106,
+        "Name": "绝技·穿云Ⅴ",
+        "Desc": "锐贯类角色所有招式伤害增加45%",
+        "DetailDesc": "锐贯类角色所有招式伤害增加45%",
+        "EntryId": 7121,
+        "Level": 6,
+        "EntryID": 712106,
+        "EntryType": 3,
+        "EntryKey": [
+            712160
+        ],
+        "EntryValue": [],
+        "EntryColor": 1,
+        "SpecialEntry": 0
+    }
+]

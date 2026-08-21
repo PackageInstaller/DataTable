@@ -1,0 +1,248 @@
+[
+    {
+        "Id": 1,
+        "BuildingId": 1,
+        "Level": 1,
+        "HomelandLevelNeed": 1,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 0,
+        "UpgradeEffectId": [],
+        "UpgradeEffectVal": []
+    },
+    {
+        "Id": 2,
+        "BuildingId": 1,
+        "Level": 2,
+        "HomelandLevelNeed": 3,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 200,
+        "UpgradeEffectId": [
+            6,
+            7,
+            8
+        ],
+        "UpgradeEffectVal": [
+            2.0,
+            4.0,
+            125.0
+        ]
+    },
+    {
+        "Id": 3,
+        "BuildingId": 1,
+        "Level": 3,
+        "HomelandLevelNeed": 5,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 1000,
+        "UpgradeEffectId": [
+            6,
+            7,
+            8
+        ],
+        "UpgradeEffectVal": [
+            3.0,
+            5.0,
+            150.0
+        ]
+    },
+    {
+        "Id": 4,
+        "BuildingId": 1,
+        "Level": 4,
+        "HomelandLevelNeed": 6,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 1500,
+        "UpgradeEffectId": [
+            6,
+            7,
+            8
+        ],
+        "UpgradeEffectVal": [
+            4.0,
+            6.0,
+            175.0
+        ]
+    },
+    {
+        "Id": 5,
+        "BuildingId": 1,
+        "Level": 5,
+        "HomelandLevelNeed": 7,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 3000,
+        "UpgradeEffectId": [
+            6,
+            7
+        ],
+        "UpgradeEffectVal": [
+            5.0,
+            7.0
+        ]
+    },
+    {
+        "Id": 6,
+        "BuildingId": 1,
+        "Level": 6,
+        "HomelandLevelNeed": 8,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 6000,
+        "UpgradeEffectId": [
+            6,
+            7
+        ],
+        "UpgradeEffectVal": [
+            6.0,
+            8.0
+        ]
+    },
+    {
+        "Id": 7,
+        "BuildingId": 2,
+        "Level": 1,
+        "HomelandLevelNeed": 1,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 0,
+        "UpgradeEffectId": [],
+        "UpgradeEffectVal": []
+    },
+    {
+        "Id": 8,
+        "BuildingId": 2,
+        "Level": 2,
+        "HomelandLevelNeed": 2,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 50,
+        "UpgradeEffectId": [
+            1,
+            2,
+            3,
+            11,
+            5
+        ],
+        "UpgradeEffectVal": [
+            2.0,
+            0.0,
+            2.0,
+            4.0,
+            10.0
+        ]
+    },
+    {
+        "Id": 9,
+        "BuildingId": 2,
+        "Level": 3,
+        "HomelandLevelNeed": 3,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 100,
+        "UpgradeEffectId": [
+            1,
+            2,
+            11,
+            5
+        ],
+        "UpgradeEffectVal": [
+            3.0,
+            0.0,
+            5.0,
+            15.0
+        ]
+    },
+    {
+        "Id": 10,
+        "BuildingId": 2,
+        "Level": 4,
+        "HomelandLevelNeed": 5,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 500,
+        "UpgradeEffectId": [
+            1,
+            2,
+            3,
+            11,
+            5
+        ],
+        "UpgradeEffectVal": [
+            4.0,
+            0.0,
+            3.0,
+            6.0,
+            20.0
+        ]
+    },
+    {
+        "Id": 11,
+        "BuildingId": 2,
+        "Level": 5,
+        "HomelandLevelNeed": 7,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 1500,
+        "UpgradeEffectId": [
+            1,
+            2,
+            11,
+            5
+        ],
+        "UpgradeEffectVal": [
+            5.0,
+            0.0,
+            8.0,
+            25.0
+        ]
+    },
+    {
+        "Id": 12,
+        "BuildingId": 3,
+        "Level": 1,
+        "HomelandLevelNeed": 1,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 0,
+        "UpgradeEffectId": [],
+        "UpgradeEffectVal": []
+    },
+    {
+        "Id": 13,
+        "BuildingId": 3,
+        "Level": 2,
+        "HomelandLevelNeed": 6,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 100,
+        "UpgradeEffectId": [
+            9,
+            10
+        ],
+        "UpgradeEffectVal": [
+            2.0,
+            8.0
+        ]
+    },
+    {
+        "Id": 14,
+        "BuildingId": 3,
+        "Level": 3,
+        "HomelandLevelNeed": 8,
+        "NeedItem": [],
+        "NeedItemCount": [],
+        "MoneyNeed": 1000,
+        "UpgradeEffectId": [
+            9,
+            10
+        ],
+        "UpgradeEffectVal": [
+            3.0,
+            10.0
+        ]
+    }
+]

@@ -1,0 +1,30 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Ase;
+
+[Trigger("修改击打平台受击盒参数触发器")]
+public class SetHitPlatformCanHitParamTrigger : BaseTrigger
+{
+	public List<int> MovingPlatIds;
+
+	public int Index;
+
+	public bool CanHit;
+
+	public override string TriggerName => "修改击打平台受击盒参数触发器";
+
+	protected override void DoExecute()
+	{
+		base.DoExecute();
+		LevelMapData levelMapData = sceneSystem.GetLevelMapData();
+		if (!((Object)(object)levelMapData != null) || MovingPlatIds == null)
+		{
+			return;
+		}
+		foreach (int movingPlatId in MovingPlatIds)
+		{
+			levelMapData.SetHitVolumeParamCanHit(movingPlatId, Index, CanHit);
+		}
+	}
+}

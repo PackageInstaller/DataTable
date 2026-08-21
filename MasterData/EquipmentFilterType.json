@@ -1,0 +1,82 @@
+[
+    {
+        "Id": 1,
+        "TypeName": "稀有度",
+        "FilterScene": [
+            1,
+            3
+        ],
+        "FilterLogic": 1,
+        "IsActive": true
+    },
+    {
+        "Id": 2,
+        "TypeName": "R级",
+        "FilterScene": [
+            1,
+            3
+        ],
+        "FilterLogic": 2,
+        "IsActive": true
+    },
+    {
+        "Id": 3,
+        "TypeName": "部位",
+        "FilterScene": [
+            1
+        ],
+        "FilterLogic": 3,
+        "IsActive": true
+    },
+    {
+        "Id": 4,
+        "TypeName": "主属性",
+        "FilterScene": [
+            1,
+            2
+        ],
+        "FilterLogic": 4,
+        "IsActive": true
+    },
+    {
+        "Id": 5,
+        "TypeName": "副属性",
+        "FilterScene": [
+            1,
+            2
+        ],
+        "FilterLogic": 5,
+        "IsActive": true
+    },
+    {
+        "Id": 6,
+        "TypeName": "固定词条",
+        "FilterScene": [
+            1,
+            2
+        ],
+        "FilterLogic": 6,
+        "IsActive": true
+    },
+    {
+        "Id": 7,
+        "TypeName": "其他词条",
+        "FilterScene": [
+            1,
+            2,
+            3
+        ],
+        "FilterLogic": 7,
+        "IsActive": true
+    },
+    {
+        "Id": 8,
+        "TypeName": "主词条",
+        "FilterScene": [
+            3,
+            2
+        ],
+        "FilterLogic": 8,
+        "IsActive": true
+    }
+]

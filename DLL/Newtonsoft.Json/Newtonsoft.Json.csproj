@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Newtonsoft.Json</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Newtonsoft.Json.xml" />
+    <EmbeddedResource Include="Newtonsoft.Json.xml" LogicalName="Newtonsoft.Json.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Numerics">
+      <HintPath>../../../../../../../usr/share/dotnet/shared/Microsoft.NETCore.App/6.0.36/System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>../../../../../../../usr/share/dotnet/shared/Microsoft.NETCore.App/6.0.36/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>../../../../../../../usr/share/dotnet/shared/Microsoft.NETCore.App/6.0.36/System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>Download/DLL/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>../../../../../../../usr/share/dotnet/shared/Microsoft.NETCore.App/6.0.36/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../../../../../../usr/share/dotnet/shared/Microsoft.NETCore.App/6.0.36/System.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

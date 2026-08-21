@@ -1,0 +1,884 @@
+[
+    {
+        "Id": 101,
+        "TypeId": 1,
+        "Choice": "绿色",
+        "MatchId": 1,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 102,
+        "TypeId": 1,
+        "Choice": "蓝色",
+        "MatchId": 2,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 103,
+        "TypeId": 1,
+        "Choice": "紫色",
+        "MatchId": 3,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 104,
+        "TypeId": 1,
+        "Choice": "金色",
+        "MatchId": 4,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 201,
+        "TypeId": 2,
+        "Choice": "R1",
+        "MatchId": 1,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 202,
+        "TypeId": 2,
+        "Choice": "R2",
+        "MatchId": 2,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 203,
+        "TypeId": 2,
+        "Choice": "R3",
+        "MatchId": 3,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 204,
+        "TypeId": 2,
+        "Choice": "R4",
+        "MatchId": 4,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 205,
+        "TypeId": 2,
+        "Choice": "R5",
+        "MatchId": 5,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 206,
+        "TypeId": 2,
+        "Choice": "R6",
+        "MatchId": 6,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 207,
+        "TypeId": 2,
+        "Choice": "R7",
+        "MatchId": 7,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 301,
+        "TypeId": 3,
+        "Choice": "匣",
+        "MatchId": 0,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 302,
+        "TypeId": 3,
+        "Choice": "钥",
+        "MatchId": 1,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 303,
+        "TypeId": 3,
+        "Choice": "灯",
+        "MatchId": 2,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 304,
+        "TypeId": 3,
+        "Choice": "书",
+        "MatchId": 3,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 305,
+        "TypeId": 3,
+        "Choice": "心",
+        "MatchId": 4,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 401,
+        "TypeId": 4,
+        "Choice": "体力",
+        "MatchId": 200100,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 402,
+        "TypeId": 4,
+        "Choice": "体力百分比",
+        "MatchId": 200020,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 403,
+        "TypeId": 4,
+        "Choice": "防御",
+        "MatchId": 200110,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 404,
+        "TypeId": 4,
+        "Choice": "防御百分比",
+        "MatchId": 200040,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 405,
+        "TypeId": 4,
+        "Choice": "攻击",
+        "MatchId": 200120,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 406,
+        "TypeId": 4,
+        "Choice": "攻击百分比",
+        "MatchId": 200060,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 407,
+        "TypeId": 4,
+        "Choice": "暴击",
+        "MatchId": 200070,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 408,
+        "TypeId": 4,
+        "Choice": "暴击伤害",
+        "MatchId": 200080,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 409,
+        "TypeId": 4,
+        "Choice": "治疗加成",
+        "MatchId": 203030,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 410,
+        "TypeId": 4,
+        "Choice": "受治疗加成",
+        "MatchId": 203040,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 411,
+        "TypeId": 4,
+        "Choice": "削韧加成",
+        "MatchId": 203020,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 412,
+        "TypeId": 4,
+        "Choice": "光属性伤害提高",
+        "MatchId": 200130,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 413,
+        "TypeId": 4,
+        "Choice": "暗属性伤害提高",
+        "MatchId": 200140,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 414,
+        "TypeId": 4,
+        "Choice": "水属性伤害提高",
+        "MatchId": 200150,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 415,
+        "TypeId": 4,
+        "Choice": "火属性伤害提高",
+        "MatchId": 200160,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 416,
+        "TypeId": 4,
+        "Choice": "风属性伤害提高",
+        "MatchId": 200170,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 417,
+        "TypeId": 4,
+        "Choice": "冰属性伤害提高",
+        "MatchId": 200180,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 418,
+        "TypeId": 4,
+        "Choice": "雷属性伤害提高",
+        "MatchId": 200190,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 501,
+        "TypeId": 5,
+        "Choice": "体力",
+        "MatchId": 200100,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 502,
+        "TypeId": 5,
+        "Choice": "体力百分比",
+        "MatchId": 200020,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 503,
+        "TypeId": 5,
+        "Choice": "防御",
+        "MatchId": 200110,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 504,
+        "TypeId": 5,
+        "Choice": "防御百分比",
+        "MatchId": 200040,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 505,
+        "TypeId": 5,
+        "Choice": "攻击",
+        "MatchId": 200120,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 506,
+        "TypeId": 5,
+        "Choice": "攻击百分比",
+        "MatchId": 200060,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 507,
+        "TypeId": 5,
+        "Choice": "暴击",
+        "MatchId": 200070,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 508,
+        "TypeId": 5,
+        "Choice": "暴击伤害",
+        "MatchId": 200080,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 509,
+        "TypeId": 5,
+        "Choice": "治疗加成",
+        "MatchId": 203030,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 510,
+        "TypeId": 5,
+        "Choice": "受治疗加成",
+        "MatchId": 203040,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 601,
+        "TypeId": 6,
+        "Choice": "协同增幅",
+        "MatchId": 7001,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 602,
+        "TypeId": 6,
+        "Choice": "双效调优",
+        "MatchId": 7002,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 603,
+        "TypeId": 6,
+        "Choice": "效能累积",
+        "MatchId": 7008,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 604,
+        "TypeId": 6,
+        "Choice": "临界爆发",
+        "MatchId": 7010,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 605,
+        "TypeId": 6,
+        "Choice": "连锁破坏",
+        "MatchId": 7011,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 606,
+        "TypeId": 6,
+        "Choice": "毁灭增幅",
+        "MatchId": 7017,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 607,
+        "TypeId": 6,
+        "Choice": "超载爆击",
+        "MatchId": 7034,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 608,
+        "TypeId": 6,
+        "Choice": "引力压制",
+        "MatchId": 7035,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 609,
+        "TypeId": 6,
+        "Choice": "直立增伤",
+        "MatchId": 7036,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 610,
+        "TypeId": 6,
+        "Choice": "图灵测试",
+        "MatchId": 7037,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 611,
+        "TypeId": 6,
+        "Choice": "愈护矩阵",
+        "MatchId": 7038,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 612,
+        "TypeId": 6,
+        "Choice": "超载续航",
+        "MatchId": 7039,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 613,
+        "TypeId": 6,
+        "Choice": "火种共振",
+        "MatchId": 7040,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 614,
+        "TypeId": 6,
+        "Choice": "熵值逆转",
+        "MatchId": 7041,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 615,
+        "TypeId": 6,
+        "Choice": "动能的残像",
+        "MatchId": 7042,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 616,
+        "TypeId": 6,
+        "Choice": "变量侵蚀",
+        "MatchId": 7043,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 617,
+        "TypeId": 6,
+        "Choice": "二次验证",
+        "MatchId": 7044,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 618,
+        "TypeId": 6,
+        "Choice": "蚀刻残响",
+        "MatchId": 7045,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 619,
+        "TypeId": 6,
+        "Choice": "术法余波",
+        "MatchId": 7046,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 620,
+        "TypeId": 6,
+        "Choice": "抗性增幅",
+        "MatchId": 7047,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 621,
+        "TypeId": 6,
+        "Choice": "极速跃迁",
+        "MatchId": 7048,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 622,
+        "TypeId": 6,
+        "Choice": "至高的认可",
+        "MatchId": 7049,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 623,
+        "TypeId": 6,
+        "Choice": "预知未来",
+        "MatchId": 7050,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 624,
+        "TypeId": 6,
+        "Choice": "挑战者",
+        "MatchId": 7051,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 625,
+        "TypeId": 6,
+        "Choice": "箴言的反噬",
+        "MatchId": 7052,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 626,
+        "TypeId": 6,
+        "Choice": "时序骤解",
+        "MatchId": 7053,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 627,
+        "TypeId": 6,
+        "Choice": "以暴制暴",
+        "MatchId": 7054,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 628,
+        "TypeId": 6,
+        "Choice": "肾上腺素",
+        "MatchId": 7055,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 629,
+        "TypeId": 6,
+        "Choice": "紧急除颤",
+        "MatchId": 7056,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 630,
+        "TypeId": 6,
+        "Choice": "刃锋强化",
+        "MatchId": 7057,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 631,
+        "TypeId": 6,
+        "Choice": "心脏过载",
+        "MatchId": 7058,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 632,
+        "TypeId": 6,
+        "Choice": "灵能吸附",
+        "MatchId": 7059,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 633,
+        "TypeId": 6,
+        "Choice": "幻醒灵速",
+        "MatchId": 7060,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 634,
+        "TypeId": 6,
+        "Choice": "集中蓄能",
+        "MatchId": 7061,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 635,
+        "TypeId": 6,
+        "Choice": "灯火的连击",
+        "MatchId": 7062,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 636,
+        "TypeId": 6,
+        "Choice": "学识的深渊",
+        "MatchId": 7063,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 637,
+        "TypeId": 6,
+        "Choice": "坠敌援护",
+        "MatchId": 7064,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 638,
+        "TypeId": 6,
+        "Choice": "识破",
+        "MatchId": 7065,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 639,
+        "TypeId": 6,
+        "Choice": "死亡幻觉",
+        "MatchId": 7066,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 640,
+        "TypeId": 6,
+        "Choice": "贯穿聚焦",
+        "MatchId": 7067,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 701,
+        "TypeId": 7,
+        "Choice": "超载爆击",
+        "MatchId": 7034,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 702,
+        "TypeId": 7,
+        "Choice": "引力压制",
+        "MatchId": 7035,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 703,
+        "TypeId": 7,
+        "Choice": "直立增伤",
+        "MatchId": 7036,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 704,
+        "TypeId": 7,
+        "Choice": "图灵测试",
+        "MatchId": 7037,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 705,
+        "TypeId": 7,
+        "Choice": "愈护矩阵",
+        "MatchId": 7038,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 706,
+        "TypeId": 7,
+        "Choice": "超载续航",
+        "MatchId": 7039,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 707,
+        "TypeId": 7,
+        "Choice": "火种共振",
+        "MatchId": 7040,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 708,
+        "TypeId": 7,
+        "Choice": "熵值逆转",
+        "MatchId": 7041,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 709,
+        "TypeId": 7,
+        "Choice": "动能的残像",
+        "MatchId": 7042,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 710,
+        "TypeId": 7,
+        "Choice": "变量侵蚀",
+        "MatchId": 7043,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 711,
+        "TypeId": 7,
+        "Choice": "二次验证",
+        "MatchId": 7044,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 712,
+        "TypeId": 7,
+        "Choice": "蚀刻残响",
+        "MatchId": 7045,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 713,
+        "TypeId": 7,
+        "Choice": "术法余波",
+        "MatchId": 7046,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 714,
+        "TypeId": 7,
+        "Choice": "抗性增幅",
+        "MatchId": 7047,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 715,
+        "TypeId": 7,
+        "Choice": "极速跃迁",
+        "MatchId": 7048,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 716,
+        "TypeId": 7,
+        "Choice": "至高的认可",
+        "MatchId": 7049,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 717,
+        "TypeId": 7,
+        "Choice": "预知未来",
+        "MatchId": 7050,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 718,
+        "TypeId": 7,
+        "Choice": "挑战者",
+        "MatchId": 7051,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 719,
+        "TypeId": 7,
+        "Choice": "箴言的反噬",
+        "MatchId": 7052,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 720,
+        "TypeId": 7,
+        "Choice": "时序骤解",
+        "MatchId": 7053,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 721,
+        "TypeId": 7,
+        "Choice": "以暴制暴",
+        "MatchId": 7054,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 722,
+        "TypeId": 7,
+        "Choice": "肾上腺素",
+        "MatchId": 7055,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 723,
+        "TypeId": 7,
+        "Choice": "紧急除颤",
+        "MatchId": 7056,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 724,
+        "TypeId": 7,
+        "Choice": "刃锋强化",
+        "MatchId": 7057,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 725,
+        "TypeId": 7,
+        "Choice": "心脏过载",
+        "MatchId": 7058,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 726,
+        "TypeId": 7,
+        "Choice": "灵能吸附",
+        "MatchId": 7059,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 727,
+        "TypeId": 7,
+        "Choice": "幻醒灵速",
+        "MatchId": 7060,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 728,
+        "TypeId": 7,
+        "Choice": "集中蓄能",
+        "MatchId": 7061,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 729,
+        "TypeId": 7,
+        "Choice": "灯火的连击",
+        "MatchId": 7062,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 730,
+        "TypeId": 7,
+        "Choice": "学识的深渊",
+        "MatchId": 7063,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 731,
+        "TypeId": 7,
+        "Choice": "坠敌援护",
+        "MatchId": 7064,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 732,
+        "TypeId": 7,
+        "Choice": "识破",
+        "MatchId": 7065,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 733,
+        "TypeId": 7,
+        "Choice": "死亡幻觉",
+        "MatchId": 7066,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 734,
+        "TypeId": 7,
+        "Choice": "贯穿聚焦",
+        "MatchId": 7067,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 801,
+        "TypeId": 8,
+        "Choice": "绝技·破霄",
+        "MatchId": 7114,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 802,
+        "TypeId": 8,
+        "Choice": "绝技·横扫",
+        "MatchId": 7115,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 803,
+        "TypeId": 8,
+        "Choice": "绝技·火控",
+        "MatchId": 7116,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 804,
+        "TypeId": 8,
+        "Choice": "绝技·陨殛",
+        "MatchId": 7117,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 805,
+        "TypeId": 8,
+        "Choice": "绝技·羽击",
+        "MatchId": 7118,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 806,
+        "TypeId": 8,
+        "Choice": "绝技·穿云",
+        "MatchId": 7121,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 807,
+        "TypeId": 8,
+        "Choice": "碎流猛攻",
+        "MatchId": 7119,
+        "IsAcquiesce": false
+    },
+    {
+        "Id": 808,
+        "TypeId": 8,
+        "Choice": "越战越勇",
+        "MatchId": 7120,
+        "IsAcquiesce": false
+    }
+]

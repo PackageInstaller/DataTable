@@ -1,0 +1,810 @@
+[
+    {
+        "Id": 200010,
+        "Desc": "体力",
+        "Icon": 1010001,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "Hp"
+    },
+    {
+        "Id": 200020,
+        "Desc": "体力百分比",
+        "Icon": 1010001,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HpRadio"
+    },
+    {
+        "Id": 200030,
+        "Desc": "防御",
+        "Icon": 1010003,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "Defence"
+    },
+    {
+        "Id": 200040,
+        "Desc": "防御百分比",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "DefenceRadio"
+    },
+    {
+        "Id": 200050,
+        "Desc": "攻击",
+        "Icon": 1010005,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "Attack"
+    },
+    {
+        "Id": 200060,
+        "Desc": "攻击百分比",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AttackRadio"
+    },
+    {
+        "Id": 200070,
+        "Desc": "暴击",
+        "Icon": 1010042,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "Crit"
+    },
+    {
+        "Id": 200080,
+        "Desc": "暴击伤害",
+        "Icon": 1010007,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "CritRadio"
+    },
+    {
+        "Id": 200090,
+        "Desc": "耐力上限",
+        "Icon": 1010015,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "Energy"
+    },
+    {
+        "Id": 200100,
+        "Desc": "体力",
+        "Icon": 1010001,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "FixHp"
+    },
+    {
+        "Id": 200110,
+        "Desc": "防御",
+        "Icon": 1010003,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "FixDefence"
+    },
+    {
+        "Id": 200120,
+        "Desc": "攻击",
+        "Icon": 1010005,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "FixAttack"
+    },
+    {
+        "Id": 200130,
+        "Desc": "光属性伤害增加",
+        "Icon": 1010084,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "LightDamageRadio"
+    },
+    {
+        "Id": 200140,
+        "Desc": "暗属性伤害增加",
+        "Icon": 1010085,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "DarkDamageRadio"
+    },
+    {
+        "Id": 200150,
+        "Desc": "水属性伤害增加",
+        "Icon": 1010086,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "WaterDamageRadio"
+    },
+    {
+        "Id": 200160,
+        "Desc": "火属性伤害增加",
+        "Icon": 1010087,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "FireDamageRadio"
+    },
+    {
+        "Id": 200170,
+        "Desc": "风属性伤害增加",
+        "Icon": 1010088,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "WindDamageRadio"
+    },
+    {
+        "Id": 200180,
+        "Desc": "冰属性伤害增加",
+        "Icon": 1010141,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "IceDamageRadio"
+    },
+    {
+        "Id": 200190,
+        "Desc": "雷属性伤害增加",
+        "Icon": 1010142,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ThunderDamageRadio"
+    },
+    {
+        "Id": 200200,
+        "Desc": "岩属性伤害增加",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "RockDamageRadio"
+    },
+    {
+        "Id": 200210,
+        "Desc": "龙属性伤害增加",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "DragonDamageRadio"
+    },
+    {
+        "Id": 200220,
+        "Desc": "奥义充能速度",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "XpEnergyRatio"
+    },
+    {
+        "Id": 201010,
+        "Desc": "红弱额外暴击",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HighWeaknessCritAddition"
+    },
+    {
+        "Id": 201020,
+        "Desc": "HB额外暴击",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HBCritAddition"
+    },
+    {
+        "Id": 201030,
+        "Desc": "击倒额外暴击",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "KnockDownCritAddition"
+    },
+    {
+        "Id": 201040,
+        "Desc": "OD额外暴击",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ODCritAddition"
+    },
+    {
+        "Id": 202010,
+        "Desc": "锐贯伤害提升",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "SwordDamageAdditon"
+    },
+    {
+        "Id": 202020,
+        "Desc": "强袭伤害提升",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "GlovesDamageAddition"
+    },
+    {
+        "Id": 202030,
+        "Desc": "翎射伤害提升",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "BowDamageAddition"
+    },
+    {
+        "Id": 202040,
+        "Desc": "灵御伤害提升",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "GunDamageAddition"
+    },
+    {
+        "Id": 202050,
+        "Desc": "破势伤害提升",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HammerDamageAddition"
+    },
+    {
+        "Id": 203010,
+        "Desc": "技能增伤",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "SkillDamageAddition"
+    },
+    {
+        "Id": 203020,
+        "Desc": "削韧加成",
+        "Icon": 203020,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "TenacityAddition"
+    },
+    {
+        "Id": 203030,
+        "Desc": "治疗加成",
+        "Icon": 203030,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "CureAddition"
+    },
+    {
+        "Id": 203040,
+        "Desc": "受治疗加成",
+        "Icon": 203030,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "CureExtraScale"
+    },
+    {
+        "Id": 203050,
+        "Desc": "组队增伤",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "TeamDamageAddition"
+    },
+    {
+        "Id": 203060,
+        "Desc": "伤害系数调整值",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "DamageRatioAddition"
+    },
+    {
+        "Id": 204010,
+        "Desc": "break额外伤害倍率",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "BreakDamageAddition"
+    },
+    {
+        "Id": 204020,
+        "Desc": "破绽额外伤害",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HighWeaknessDamageAddition"
+    },
+    {
+        "Id": 204030,
+        "Desc": "HB部位额外伤害",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HBDamageAddition"
+    },
+    {
+        "Id": 204031,
+        "Desc": "B部位额外伤害",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "BDamageAddition"
+    },
+    {
+        "Id": 204032,
+        "Desc": "NB部位额外伤害",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "NBDamageAddition"
+    },
+    {
+        "Id": 204040,
+        "Desc": "破绽额外削韧",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HighWeaknessTenacityAddition"
+    },
+    {
+        "Id": 204050,
+        "Desc": "HB部位额外削韧",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HBTenacityAddition"
+    },
+    {
+        "Id": 204051,
+        "Desc": "B部位额外削韧",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "BTenacityAddition"
+    },
+    {
+        "Id": 204052,
+        "Desc": "NB部位额外削韧",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "NBTenacityAddition"
+    },
+    {
+        "Id": 204060,
+        "Desc": "击倒额外伤害",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "KnockDownDamageAddition"
+    },
+    {
+        "Id": 204070,
+        "Desc": "OD额外伤害",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ODDamageAddition"
+    },
+    {
+        "Id": 204080,
+        "Desc": "击倒额外削韧",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "KnockDownTenacityAddition"
+    },
+    {
+        "Id": 204090,
+        "Desc": "OD额外削韧",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ODTenacityAddition"
+    },
+    {
+        "Id": 205010,
+        "Desc": "易伤修正",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "IncreaseDamageAmend"
+    },
+    {
+        "Id": 205020,
+        "Desc": "减伤修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ReduceDamageAmend"
+    },
+    {
+        "Id": 205030,
+        "Desc": "概率伤害修正",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ProbabilityReduceDamageAmend"
+    },
+    {
+        "Id": 205040,
+        "Desc": "减伤概率",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ReduceDamageProbability"
+    },
+    {
+        "Id": 205050,
+        "Desc": "无视防御",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "IgnoreDefence"
+    },
+    {
+        "Id": 206010,
+        "Desc": "光元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "LightResistance"
+    },
+    {
+        "Id": 206020,
+        "Desc": "暗元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "DarkResistance"
+    },
+    {
+        "Id": 206030,
+        "Desc": "水元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "WaterResistance"
+    },
+    {
+        "Id": 206040,
+        "Desc": "火元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "FireResistance"
+    },
+    {
+        "Id": 206050,
+        "Desc": "风元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "WindResistance"
+    },
+    {
+        "Id": 206060,
+        "Desc": "冰元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "IceResistance"
+    },
+    {
+        "Id": 206070,
+        "Desc": "雷元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ThunderResistance"
+    },
+    {
+        "Id": 206080,
+        "Desc": "岩元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "RockResistance"
+    },
+    {
+        "Id": 206090,
+        "Desc": "龙元素抗性",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "DragonResistance"
+    },
+    {
+        "Id": 206100,
+        "Desc": "受光属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByLight"
+    },
+    {
+        "Id": 206110,
+        "Desc": "受暗属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByDark"
+    },
+    {
+        "Id": 206120,
+        "Desc": "受水属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByWater"
+    },
+    {
+        "Id": 206130,
+        "Desc": "受火属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByFire"
+    },
+    {
+        "Id": 206140,
+        "Desc": "受风属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByWind"
+    },
+    {
+        "Id": 206150,
+        "Desc": "受冰属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByIce"
+    },
+    {
+        "Id": 206160,
+        "Desc": "受雷属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByThunder"
+    },
+    {
+        "Id": 206170,
+        "Desc": "受岩属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByRock"
+    },
+    {
+        "Id": 206180,
+        "Desc": "受龙属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendByDragon"
+    },
+    {
+        "Id": 206190,
+        "Desc": "对光属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToLight"
+    },
+    {
+        "Id": 206200,
+        "Desc": "对暗属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToDark"
+    },
+    {
+        "Id": 206210,
+        "Desc": "对水属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToWater"
+    },
+    {
+        "Id": 206220,
+        "Desc": "对火属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToFire"
+    },
+    {
+        "Id": 206230,
+        "Desc": "对风属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToWind"
+    },
+    {
+        "Id": 206240,
+        "Desc": "对冰属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToIce"
+    },
+    {
+        "Id": 206250,
+        "Desc": "对雷属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToThunder"
+    },
+    {
+        "Id": 206260,
+        "Desc": "对岩属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToRock"
+    },
+    {
+        "Id": 206270,
+        "Desc": "对龙属性伤害修正",
+        "Icon": 1010003,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AmendToDragon"
+    },
+    {
+        "Id": 207010,
+        "Desc": "斩锋机制倍率",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "SwordFrameAddition"
+    },
+    {
+        "Id": 207020,
+        "Desc": "强袭机制倍率",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "GlovesFrameAddition"
+    },
+    {
+        "Id": 207030,
+        "Desc": "翎射机制倍率",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "BowFrameAddition"
+    },
+    {
+        "Id": 207040,
+        "Desc": "灵御机制倍率",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "GunFrameAddition"
+    },
+    {
+        "Id": 207050,
+        "Desc": "破势机制倍率",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "HammerFrameAddition"
+    },
+    {
+        "Id": 207060,
+        "Desc": "武器机制伤害加成",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "WeaponFrame"
+    },
+    {
+        "Id": 207070,
+        "Desc": "全局伤害加成",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "DamageAddition"
+    },
+    {
+        "Id": 208010,
+        "Desc": "闪避无敌帧",
+        "Icon": 1010005,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "InvincibleFrame"
+    },
+    {
+        "Id": 208020,
+        "Desc": "蓄力速度",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "ChargeSpeed"
+    },
+    {
+        "Id": 208030,
+        "Desc": "吃果子等级",
+        "Icon": 1010005,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "EatApple"
+    },
+    {
+        "Id": 208040,
+        "Desc": "闪避距离",
+        "Icon": 1010005,
+        "Type": 1,
+        "Details": "",
+        "AffixKey": "DodgeDistanceScale"
+    },
+    {
+        "Id": 208050,
+        "Desc": "普攻回耐修正",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "NormalAttackEnergyAmend"
+    },
+    {
+        "Id": 208060,
+        "Desc": "破绽回耐修正",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "WeaknessEnergyAmend"
+    },
+    {
+        "Id": 208070,
+        "Desc": "常态削韧修正",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "NormalTenacityAmend"
+    },
+    {
+        "Id": 208080,
+        "Desc": "耐力恢复速度",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "EnergyRecovery"
+    },
+    {
+        "Id": 208090,
+        "Desc": "AI伤害系数",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AiDamageRatio"
+    },
+    {
+        "Id": 208100,
+        "Desc": "AI伤害系数",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AiTenacityRatio"
+    },
+    {
+        "Id": 209010,
+        "Desc": "弓箭觉醒值获取倍率",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "AwakenExtraRatio"
+    },
+    {
+        "Id": 209020,
+        "Desc": "首通增伤",
+        "Icon": 1010005,
+        "Type": 2,
+        "Details": "",
+        "AffixKey": "PassAddition"
+    }
+]

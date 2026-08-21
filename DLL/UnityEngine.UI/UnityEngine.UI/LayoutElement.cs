@@ -1,0 +1,200 @@
+using UnityEngine.EventSystems;
+
+namespace UnityEngine.UI;
+
+[AddComponentMenu("Layout/Layout Element", 140)]
+[RequireComponent(typeof(RectTransform))]
+[ExecuteAlways]
+public class LayoutElement : UIBehaviour, ILayoutElement, ILayoutIgnorer
+{
+	[SerializeField]
+	private bool m_IgnoreLayout;
+
+	[SerializeField]
+	private float m_MinWidth = -1f;
+
+	[SerializeField]
+	private float m_MinHeight = -1f;
+
+	[SerializeField]
+	private float m_PreferredWidth = -1f;
+
+	[SerializeField]
+	private float m_PreferredHeight = -1f;
+
+	[SerializeField]
+	private float m_FlexibleWidth = -1f;
+
+	[SerializeField]
+	private float m_FlexibleHeight = -1f;
+
+	[SerializeField]
+	private int m_LayoutPriority = 1;
+
+	public virtual bool ignoreLayout
+	{
+		get
+		{
+			return m_IgnoreLayout;
+		}
+		set
+		{
+			if (SetPropertyUtility.SetStruct(ref m_IgnoreLayout, value))
+			{
+				SetDirty();
+			}
+		}
+	}
+
+	public virtual float minWidth
+	{
+		get
+		{
+			return m_MinWidth;
+		}
+		set
+		{
+			if (SetPropertyUtility.SetStruct(ref m_MinWidth, value))
+			{
+				SetDirty();
+			}
+		}
+	}
+
+	public virtual float minHeight
+	{
+		get
+		{
+			return m_MinHeight;
+		}
+		set
+		{
+			if (SetPropertyUtility.SetStruct(ref m_MinHeight, value))
+			{
+				SetDirty();
+			}
+		}
+	}
+
+	public virtual float preferredWidth
+	{
+		get
+		{
+			return m_PreferredWidth;
+		}
+		set
+		{
+			if (SetPropertyUtility.SetStruct(ref m_PreferredWidth, value))
+			{
+				SetDirty();
+			}
+		}
+	}
+
+	public virtual float preferredHeight
+	{
+		get
+		{
+			return m_PreferredHeight;
+		}
+		set
+		{
+			if (SetPropertyUtility.SetStruct(ref m_PreferredHeight, value))
+			{
+				SetDirty();
+			}
+		}
+	}
+
+	public virtual float flexibleWidth
+	{
+		get
+		{
+			return m_FlexibleWidth;
+		}
+		set
+		{
+			if (SetPropertyUtility.SetStruct(ref m_FlexibleWidth, value))
+			{
+				SetDirty();
+			}
+		}
+	}
+
+	public virtual float flexibleHeight
+	{
+		get
+		{
+			return m_FlexibleHeight;
+		}
+		set
+		{
+			if (SetPropertyUtility.SetStruct(ref m_FlexibleHeight, value))
+			{
+				SetDirty();
+			}
+		}
+	}
+
+	public virtual int layoutPriority
+	{
+		get
+		{
+			return m_LayoutPriority;
+		}
+		set
+		{
+			if (SetPropertyUtility.SetStruct(ref m_LayoutPriority, value))
+			{
+				SetDirty();
+			}
+		}
+	}
+
+	public virtual void CalculateLayoutInputHorizontal()
+	{
+	}
+
+	public virtual void CalculateLayoutInputVertical()
+	{
+	}
+
+	protected LayoutElement()
+	{
+	}
+
+	protected override void OnEnable()
+	{
+		base.OnEnable();
+		SetDirty();
+	}
+
+	protected override void OnTransformParentChanged()
+	{
+		SetDirty();
+	}
+
+	protected override void OnDisable()
+	{
+		SetDirty();
+		base.OnDisable();
+	}
+
+	protected override void OnDidApplyAnimationProperties()
+	{
+		SetDirty();
+	}
+
+	protected override void OnBeforeTransformParentChanged()
+	{
+		SetDirty();
+	}
+
+	protected void SetDirty()
+	{
+		if (IsActive())
+		{
+			LayoutRebuilder.MarkLayoutForRebuild(base.transform as RectTransform);
+		}
+	}
+}

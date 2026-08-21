@@ -1,0 +1,114 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Unity.Hotfix.Codes</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="GameFramework">
+      <HintPath>Download/DLL/GameFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Download/DLL/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Download/DLL/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>Download/DLL/UniTask.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule" />
+    <Reference Include="GameFramework.Runtime">
+      <HintPath>Download/DLL/GameFramework.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Model.Codes">
+      <HintPath>Download/DLL/Unity.Model.Codes.dll</HintPath>
+    </Reference>
+    <Reference Include="Aliyun.OSS" />
+    <Reference Include="ZString">
+      <HintPath>Download/DLL/ZString.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule" />
+    <Reference Include="UnityEngine.AudioModule" />
+    <Reference Include="UnityEngine.ParticleSystemModule" />
+    <Reference Include="UnityEngine.IMGUIModule" />
+    <Reference Include="Unity.TextMeshPro" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Download/DLL/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization" />
+    <Reference Include="UnityEngine.UIModule" />
+    <Reference Include="DOTween">
+      <HintPath>Download/DLL/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>Download/DLL/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime" />
+    <Reference Include="UnityEngine.TextRenderingModule" />
+    <Reference Include="UnityEngine.Physics2DModule" />
+    <Reference Include="UnityEngine.AIModule" />
+    <Reference Include="FMODUnity" />
+    <Reference Include="YarnSpinner.Unity">
+      <HintPath>Download/DLL/YarnSpinner.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>Download/DLL/Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule" />
+    <Reference Include="Unity.Timeline" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream" />
+    <Reference Include="Unity.ThirdParty">
+      <HintPath>Download/DLL/Unity.ThirdParty.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Download/DLL/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>Download/DLL/Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="UniWebView-CSharp" />
+    <Reference Include="UnityEngine.VideoModule" />
+    <Reference Include="UnityEngine.TerrainModule" />
+    <Reference Include="EasyWallCollider" />
+    <Reference Include="MemoryPack">
+      <HintPath>Download/DLL/MemoryPack.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-unity" />
+    <Reference Include="UnityEngine.UnityWebRequestModule" />
+    <Reference Include="YooAsset" />
+    <Reference Include="TAA.Runtime" />
+    <Reference Include="spine-csharp">
+      <HintPath>Download/DLL/spine-csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner" />
+    <Reference Include="Coffee.UIParticle" />
+    <Reference Include="UnityEngine.InputLegacyModule" />
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule" />
+    <Reference Include="System.Numerics">
+      <HintPath>../../../../../../../usr/share/dotnet/shared/Microsoft.NETCore.App/10.0.10/System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Compiler" />
+    <Reference Include="NavMeshComponents" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Download/DLL/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DrawDebugTools" />
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>Download/DLL/Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween.Modules" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Download/DLL/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics" />
+    <Reference Include="ThinkingAnalytics" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,308 @@
+[
+    {
+        "Id": 1001,
+        "TaskType": 1,
+        "TargetType": 1001,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 1,
+        "EXP": 100,
+        "TargetDesc": "登录游戏",
+        "TargetWindow": "",
+        "WindowParams": 0
+    },
+    {
+        "Id": 1002,
+        "TaskType": 1,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                2
+            ]
+        ],
+        "TargetValue": 1,
+        "EXP": 150,
+        "TargetDesc": "通关回廊裂隙1次",
+        "TargetWindow": "CopyFirstWindow",
+        "WindowParams": 2
+    },
+    {
+        "Id": 1003,
+        "TaskType": 1,
+        "TargetType": 1016,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 100,
+        "EXP": 150,
+        "TargetDesc": "每日活跃达到100",
+        "TargetWindow": "GameActivityWindow",
+        "WindowParams": 1
+    },
+    {
+        "Id": 1004,
+        "TaskType": 1,
+        "TargetType": 1004,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 120,
+        "EXP": 250,
+        "TargetDesc": "累计消耗120点可燃魂",
+        "TargetWindow": "",
+        "WindowParams": 0
+    },
+    {
+        "Id": 1005,
+        "TaskType": 1,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                6
+            ]
+        ],
+        "TargetValue": 1,
+        "EXP": 150,
+        "TargetDesc": "通关1次淬炼之间",
+        "TargetWindow": "ActivityEquipView",
+        "WindowParams": 0
+    },
+    {
+        "Id": 2001,
+        "TaskType": 2,
+        "TargetType": 1001,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 5,
+        "EXP": 600,
+        "TargetDesc": "累计登录5天",
+        "TargetWindow": "",
+        "WindowParams": 0
+    },
+    {
+        "Id": 2002,
+        "TaskType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                1
+            ]
+        ],
+        "TargetValue": 5,
+        "EXP": 600,
+        "TargetDesc": "通关5次碎烬裂隙",
+        "TargetWindow": "CopyFirstWindow",
+        "WindowParams": 1
+    },
+    {
+        "Id": 2003,
+        "TaskType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                2
+            ]
+        ],
+        "TargetValue": 10,
+        "EXP": 800,
+        "TargetDesc": "通关10次回廊裂隙",
+        "TargetWindow": "CopyFirstWindow",
+        "WindowParams": 2
+    },
+    {
+        "Id": 2004,
+        "TaskType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                3
+            ]
+        ],
+        "TargetValue": 2,
+        "EXP": 1000,
+        "TargetDesc": "通关2次暗箱裂隙",
+        "TargetWindow": "CopySecondType3Window",
+        "WindowParams": 0
+    },
+    {
+        "Id": 2005,
+        "TaskType": 2,
+        "TargetType": 1006,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 300000,
+        "EXP": 1000,
+        "TargetDesc": "消耗300000德拉塔",
+        "TargetWindow": "",
+        "WindowParams": 0
+    },
+    {
+        "Id": 2006,
+        "TaskType": 2,
+        "TargetType": 1008,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 5,
+        "EXP": 600,
+        "TargetDesc": "在余温熔炉收获5次",
+        "TargetWindow": "HomeLandPlantWindow",
+        "WindowParams": 0
+    },
+    {
+        "Id": 2007,
+        "TaskType": 2,
+        "TargetType": 1009,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 10,
+        "EXP": 800,
+        "TargetDesc": "制作10个战斗道具",
+        "TargetWindow": "BattlePropMakeWindow",
+        "WindowParams": 0
+    },
+    {
+        "Id": 2008,
+        "TaskType": 2,
+        "TargetType": 1011,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 3,
+        "EXP": 600,
+        "TargetDesc": "在余火商的灯码消费3次",
+        "TargetWindow": "HomeShopWindow",
+        "WindowParams": 0
+    },
+    {
+        "Id": 2009,
+        "TaskType": 2,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                6
+            ]
+        ],
+        "TargetValue": 10,
+        "EXP": 800,
+        "TargetDesc": "通关10次淬炼之间",
+        "TargetWindow": "ActivityEquipView",
+        "WindowParams": 0
+    },
+    {
+        "Id": 3001,
+        "TaskType": 3,
+        "TargetType": 1012,
+        "Condition": [
+            1000
+        ],
+        "Target": [
+            [
+                0
+            ]
+        ],
+        "TargetValue": 40,
+        "EXP": 1800,
+        "TargetDesc": "进行40次誓约",
+        "TargetWindow": "DrawCardWindow",
+        "WindowParams": 0
+    },
+    {
+        "Id": 3002,
+        "TaskType": 3,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                4
+            ]
+        ],
+        "TargetValue": 6,
+        "EXP": 1800,
+        "TargetDesc": "通关6次极黯裂隙",
+        "TargetWindow": "CopySecondType4Window",
+        "WindowParams": 0
+    },
+    {
+        "Id": 3003,
+        "TaskType": 3,
+        "TargetType": 1005,
+        "Condition": [
+            1004
+        ],
+        "Target": [
+            [
+                5
+            ]
+        ],
+        "TargetValue": 3,
+        "EXP": 1800,
+        "TargetDesc": "通关3次肃清裂隙",
+        "TargetWindow": "CopySecondType5Window",
+        "WindowParams": 0
+    }
+]

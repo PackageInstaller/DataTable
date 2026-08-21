@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>YarnSpinner.Unity</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Download/DLL/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner" />
+    <Reference Include="System.Core">
+      <HintPath>Download/DLL/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Download/DLL/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Yarn.CsvHelper" />
+    <Reference Include="UnityEngine.AudioModule" />
+    <Reference Include="Unity.TextMeshPro" />
+    <Reference Include="Unity.InputSystem">
+      <HintPath>Download/DLL/Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule" />
+    <Reference Include="Yarn.Google.Protobuf" />
+    <Reference Include="UnityEngine.JSONSerializeModule" />
+    <Reference Include="UnityEngine.InputLegacyModule" />
+  </ItemGroup>
+</Project>

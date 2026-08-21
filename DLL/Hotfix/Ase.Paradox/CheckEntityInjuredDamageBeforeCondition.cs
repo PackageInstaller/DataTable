@@ -1,0 +1,55 @@
+using Ase.ECS;
+using NodeCanvas.Framework;
+using ParadoxNotion.Design;
+
+namespace Ase.Paradox;
+
+[Name("检测实体是否被击中 （出伤前）", 0)]
+[Category("✫ DragonLost/Entity")]
+[Description("检测指定实体是否受到子弹命中，并返回攻击者ID和子弹类型。")]
+public class CheckEntityInjuredDamageBeforeCondition : ConditionTaskBase
+{
+	[Name("返回的攻击者ID", 0)]
+	[Description("受到攻击的实体的攻击者ID。")]
+	public BBParameter<int> AttackId;
+
+	[Name("是否清空数据", 0)]
+	[Description("是否在检测后清空受击数据。")]
+	public bool ClearData;
+
+	[Name("返回的子弹Buff类型", 0)]
+	[Description("返回的子弹Buff类型。")]
+	public BBParameter<BulletBuffTypeEnum> BuffTypeEnum;
+
+	[RequiredField]
+	[Name("实体ID", 0)]
+	[Description("要检测的实体的ID。")]
+	public BBParameter<int> EntityId;
+
+	protected override bool OnCheck()
+	{
+		base.OnCheck();
+		BaseEntity entity = GetEntity(EntityId.value, isSyncEntity: false);
+		if (entity == null)
+		{
+			return false;
+		}
+		HitComponent component = entity.GetComponent<HitComponent>();
+		if (component == null)
+		{
+			return false;
+		}
+		AttackId.value = component.DamageBeforeAttackId;
+		BuffTypeEnum.value = component.BuffTypeEnum;
+		bool isInjuredByDamageBefore = component.IsInjuredByDamageBefore;
+		if (ClearData)
+		{
+			component.ClearEntityInjuredByDamageBefore();
+		}
+		if (LockstepData.Instance != null)
+		{
+			LockstepData.Instance?.WriteAuthorityEntityId($"检测实体是否被击中 {isInjuredByDamageBefore}", entity);
+		}
+		return isInjuredByDamageBefore;
+	}
+}

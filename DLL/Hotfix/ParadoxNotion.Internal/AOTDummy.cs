@@ -1,0 +1,1946 @@
+using Ase;
+using Ase.Paradox;
+using NodeCanvas.BehaviourTrees;
+using NodeCanvas.Framework;
+using NodeCanvas.Framework.Internal;
+using NodeCanvas.Tasks.Actions;
+using NodeCanvas.Tasks.Conditions;
+using UnityEngine;
+
+namespace ParadoxNotion.Internal;
+
+internal class AOTDummy
+{
+	private object o;
+
+	private CheckListCount<bool> Ase_Paradox_CheckListCount_System_Boolean;
+
+	private CheckListCount<float> Ase_Paradox_CheckListCount_System_Single;
+
+	private CheckListCount<int> Ase_Paradox_CheckListCount_System_Int32;
+
+	private CheckListCount<Vector2> Ase_Paradox_CheckListCount_UnityEngine_Vector2;
+
+	private CheckListCount<Vector3> Ase_Paradox_CheckListCount_UnityEngine_Vector3;
+
+	private CheckListCount<Vector4> Ase_Paradox_CheckListCount_UnityEngine_Vector4;
+
+	private CheckListCount<Quaternion> Ase_Paradox_CheckListCount_UnityEngine_Quaternion;
+
+	private CheckListCount<Keyframe> Ase_Paradox_CheckListCount_UnityEngine_Keyframe;
+
+	private CheckListCount<Bounds> Ase_Paradox_CheckListCount_UnityEngine_Bounds;
+
+	private CheckListCount<Color> Ase_Paradox_CheckListCount_UnityEngine_Color;
+
+	private CheckListCount<Rect> Ase_Paradox_CheckListCount_UnityEngine_Rect;
+
+	private CheckListCount<ContactPoint> Ase_Paradox_CheckListCount_UnityEngine_ContactPoint;
+
+	private CheckListCount<ContactPoint2D> Ase_Paradox_CheckListCount_UnityEngine_ContactPoint2D;
+
+	private CheckListCount<RaycastHit> Ase_Paradox_CheckListCount_UnityEngine_RaycastHit;
+
+	private CheckListCount<RaycastHit2D> Ase_Paradox_CheckListCount_UnityEngine_RaycastHit2D;
+
+	private CheckListCount<Ray> Ase_Paradox_CheckListCount_UnityEngine_Ray;
+
+	private CheckListCount<Space> Ase_Paradox_CheckListCount_UnityEngine_Space;
+
+	private CheckListCount<HeroAIStageEnum> Ase_Paradox_CheckListCount_Ase_HeroAIStageEnum;
+
+	private CheckListCount<HeroBehaviorTypeEnum> Ase_Paradox_CheckListCount_Ase_HeroBehaviorTypeEnum;
+
+	private CheckListCount<HeroSkillType> Ase_Paradox_CheckListCount_Ase_HeroSkillType;
+
+	private CheckListCount<HeroSkillTypeEnum> Ase_Paradox_CheckListCount_Ase_HeroSkillTypeEnum;
+
+	private CheckListCount<MapItemState> Ase_Paradox_CheckListCount_Ase_MapItemState;
+
+	private CheckListCount<MobStageEnum> Ase_Paradox_CheckListCount_Ase_MobStageEnum;
+
+	private CheckListCount<MonsterPhaseEnum> Ase_Paradox_CheckListCount_Ase_MonsterPhaseEnum;
+
+	private CheckListCount<SkillExecuteState> Ase_Paradox_CheckListCount_Ase_SkillExecuteState;
+
+	private GetEntityVariableValue<bool> Ase_Paradox_GetEntityVariableValue_System_Boolean;
+
+	private GetEntityVariableValue<float> Ase_Paradox_GetEntityVariableValue_System_Single;
+
+	private GetEntityVariableValue<int> Ase_Paradox_GetEntityVariableValue_System_Int32;
+
+	private GetEntityVariableValue<Vector2> Ase_Paradox_GetEntityVariableValue_UnityEngine_Vector2;
+
+	private GetEntityVariableValue<Vector3> Ase_Paradox_GetEntityVariableValue_UnityEngine_Vector3;
+
+	private GetEntityVariableValue<Vector4> Ase_Paradox_GetEntityVariableValue_UnityEngine_Vector4;
+
+	private GetEntityVariableValue<Quaternion> Ase_Paradox_GetEntityVariableValue_UnityEngine_Quaternion;
+
+	private GetEntityVariableValue<Keyframe> Ase_Paradox_GetEntityVariableValue_UnityEngine_Keyframe;
+
+	private GetEntityVariableValue<Bounds> Ase_Paradox_GetEntityVariableValue_UnityEngine_Bounds;
+
+	private GetEntityVariableValue<Color> Ase_Paradox_GetEntityVariableValue_UnityEngine_Color;
+
+	private GetEntityVariableValue<Rect> Ase_Paradox_GetEntityVariableValue_UnityEngine_Rect;
+
+	private GetEntityVariableValue<ContactPoint> Ase_Paradox_GetEntityVariableValue_UnityEngine_ContactPoint;
+
+	private GetEntityVariableValue<ContactPoint2D> Ase_Paradox_GetEntityVariableValue_UnityEngine_ContactPoint2D;
+
+	private GetEntityVariableValue<RaycastHit> Ase_Paradox_GetEntityVariableValue_UnityEngine_RaycastHit;
+
+	private GetEntityVariableValue<RaycastHit2D> Ase_Paradox_GetEntityVariableValue_UnityEngine_RaycastHit2D;
+
+	private GetEntityVariableValue<Ray> Ase_Paradox_GetEntityVariableValue_UnityEngine_Ray;
+
+	private GetEntityVariableValue<Space> Ase_Paradox_GetEntityVariableValue_UnityEngine_Space;
+
+	private GetEntityVariableValue<HeroAIStageEnum> Ase_Paradox_GetEntityVariableValue_Ase_HeroAIStageEnum;
+
+	private GetEntityVariableValue<HeroBehaviorTypeEnum> Ase_Paradox_GetEntityVariableValue_Ase_HeroBehaviorTypeEnum;
+
+	private GetEntityVariableValue<HeroSkillType> Ase_Paradox_GetEntityVariableValue_Ase_HeroSkillType;
+
+	private GetEntityVariableValue<HeroSkillTypeEnum> Ase_Paradox_GetEntityVariableValue_Ase_HeroSkillTypeEnum;
+
+	private GetEntityVariableValue<MapItemState> Ase_Paradox_GetEntityVariableValue_Ase_MapItemState;
+
+	private GetEntityVariableValue<MobStageEnum> Ase_Paradox_GetEntityVariableValue_Ase_MobStageEnum;
+
+	private GetEntityVariableValue<MonsterPhaseEnum> Ase_Paradox_GetEntityVariableValue_Ase_MonsterPhaseEnum;
+
+	private GetEntityVariableValue<SkillExecuteState> Ase_Paradox_GetEntityVariableValue_Ase_SkillExecuteState;
+
+	private GetListCount<bool> Ase_Paradox_GetListCount_System_Boolean;
+
+	private GetListCount<float> Ase_Paradox_GetListCount_System_Single;
+
+	private GetListCount<int> Ase_Paradox_GetListCount_System_Int32;
+
+	private GetListCount<Vector2> Ase_Paradox_GetListCount_UnityEngine_Vector2;
+
+	private GetListCount<Vector3> Ase_Paradox_GetListCount_UnityEngine_Vector3;
+
+	private GetListCount<Vector4> Ase_Paradox_GetListCount_UnityEngine_Vector4;
+
+	private GetListCount<Quaternion> Ase_Paradox_GetListCount_UnityEngine_Quaternion;
+
+	private GetListCount<Keyframe> Ase_Paradox_GetListCount_UnityEngine_Keyframe;
+
+	private GetListCount<Bounds> Ase_Paradox_GetListCount_UnityEngine_Bounds;
+
+	private GetListCount<Color> Ase_Paradox_GetListCount_UnityEngine_Color;
+
+	private GetListCount<Rect> Ase_Paradox_GetListCount_UnityEngine_Rect;
+
+	private GetListCount<ContactPoint> Ase_Paradox_GetListCount_UnityEngine_ContactPoint;
+
+	private GetListCount<ContactPoint2D> Ase_Paradox_GetListCount_UnityEngine_ContactPoint2D;
+
+	private GetListCount<RaycastHit> Ase_Paradox_GetListCount_UnityEngine_RaycastHit;
+
+	private GetListCount<RaycastHit2D> Ase_Paradox_GetListCount_UnityEngine_RaycastHit2D;
+
+	private GetListCount<Ray> Ase_Paradox_GetListCount_UnityEngine_Ray;
+
+	private GetListCount<Space> Ase_Paradox_GetListCount_UnityEngine_Space;
+
+	private GetListCount<HeroAIStageEnum> Ase_Paradox_GetListCount_Ase_HeroAIStageEnum;
+
+	private GetListCount<HeroBehaviorTypeEnum> Ase_Paradox_GetListCount_Ase_HeroBehaviorTypeEnum;
+
+	private GetListCount<HeroSkillType> Ase_Paradox_GetListCount_Ase_HeroSkillType;
+
+	private GetListCount<HeroSkillTypeEnum> Ase_Paradox_GetListCount_Ase_HeroSkillTypeEnum;
+
+	private GetListCount<MapItemState> Ase_Paradox_GetListCount_Ase_MapItemState;
+
+	private GetListCount<MobStageEnum> Ase_Paradox_GetListCount_Ase_MobStageEnum;
+
+	private GetListCount<MonsterPhaseEnum> Ase_Paradox_GetListCount_Ase_MonsterPhaseEnum;
+
+	private GetListCount<SkillExecuteState> Ase_Paradox_GetListCount_Ase_SkillExecuteState;
+
+	private OperationList<bool> Ase_Paradox_OperationList_System_Boolean;
+
+	private OperationList<float> Ase_Paradox_OperationList_System_Single;
+
+	private OperationList<int> Ase_Paradox_OperationList_System_Int32;
+
+	private OperationList<Vector2> Ase_Paradox_OperationList_UnityEngine_Vector2;
+
+	private OperationList<Vector3> Ase_Paradox_OperationList_UnityEngine_Vector3;
+
+	private OperationList<Vector4> Ase_Paradox_OperationList_UnityEngine_Vector4;
+
+	private OperationList<Quaternion> Ase_Paradox_OperationList_UnityEngine_Quaternion;
+
+	private OperationList<Keyframe> Ase_Paradox_OperationList_UnityEngine_Keyframe;
+
+	private OperationList<Bounds> Ase_Paradox_OperationList_UnityEngine_Bounds;
+
+	private OperationList<Color> Ase_Paradox_OperationList_UnityEngine_Color;
+
+	private OperationList<Rect> Ase_Paradox_OperationList_UnityEngine_Rect;
+
+	private OperationList<ContactPoint> Ase_Paradox_OperationList_UnityEngine_ContactPoint;
+
+	private OperationList<ContactPoint2D> Ase_Paradox_OperationList_UnityEngine_ContactPoint2D;
+
+	private OperationList<RaycastHit> Ase_Paradox_OperationList_UnityEngine_RaycastHit;
+
+	private OperationList<RaycastHit2D> Ase_Paradox_OperationList_UnityEngine_RaycastHit2D;
+
+	private OperationList<Ray> Ase_Paradox_OperationList_UnityEngine_Ray;
+
+	private OperationList<Space> Ase_Paradox_OperationList_UnityEngine_Space;
+
+	private OperationList<HeroAIStageEnum> Ase_Paradox_OperationList_Ase_HeroAIStageEnum;
+
+	private OperationList<HeroBehaviorTypeEnum> Ase_Paradox_OperationList_Ase_HeroBehaviorTypeEnum;
+
+	private OperationList<HeroSkillType> Ase_Paradox_OperationList_Ase_HeroSkillType;
+
+	private OperationList<HeroSkillTypeEnum> Ase_Paradox_OperationList_Ase_HeroSkillTypeEnum;
+
+	private OperationList<MapItemState> Ase_Paradox_OperationList_Ase_MapItemState;
+
+	private OperationList<MobStageEnum> Ase_Paradox_OperationList_Ase_MobStageEnum;
+
+	private OperationList<MonsterPhaseEnum> Ase_Paradox_OperationList_Ase_MonsterPhaseEnum;
+
+	private OperationList<SkillExecuteState> Ase_Paradox_OperationList_Ase_SkillExecuteState;
+
+	private Switch<bool> NodeCanvas_BehaviourTrees_Switch_System_Boolean;
+
+	private Switch<float> NodeCanvas_BehaviourTrees_Switch_System_Single;
+
+	private Switch<int> NodeCanvas_BehaviourTrees_Switch_System_Int32;
+
+	private Switch<Vector2> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Vector2;
+
+	private Switch<Vector3> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Vector3;
+
+	private Switch<Vector4> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Vector4;
+
+	private Switch<Quaternion> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Quaternion;
+
+	private Switch<Keyframe> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Keyframe;
+
+	private Switch<Bounds> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Bounds;
+
+	private Switch<Color> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Color;
+
+	private Switch<Rect> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Rect;
+
+	private Switch<ContactPoint> NodeCanvas_BehaviourTrees_Switch_UnityEngine_ContactPoint;
+
+	private Switch<ContactPoint2D> NodeCanvas_BehaviourTrees_Switch_UnityEngine_ContactPoint2D;
+
+	private Switch<RaycastHit> NodeCanvas_BehaviourTrees_Switch_UnityEngine_RaycastHit;
+
+	private Switch<RaycastHit2D> NodeCanvas_BehaviourTrees_Switch_UnityEngine_RaycastHit2D;
+
+	private Switch<Ray> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Ray;
+
+	private Switch<Space> NodeCanvas_BehaviourTrees_Switch_UnityEngine_Space;
+
+	private Switch<HeroAIStageEnum> NodeCanvas_BehaviourTrees_Switch_Ase_HeroAIStageEnum;
+
+	private Switch<HeroBehaviorTypeEnum> NodeCanvas_BehaviourTrees_Switch_Ase_HeroBehaviorTypeEnum;
+
+	private Switch<HeroSkillType> NodeCanvas_BehaviourTrees_Switch_Ase_HeroSkillType;
+
+	private Switch<HeroSkillTypeEnum> NodeCanvas_BehaviourTrees_Switch_Ase_HeroSkillTypeEnum;
+
+	private Switch<MapItemState> NodeCanvas_BehaviourTrees_Switch_Ase_MapItemState;
+
+	private Switch<MobStageEnum> NodeCanvas_BehaviourTrees_Switch_Ase_MobStageEnum;
+
+	private Switch<MonsterPhaseEnum> NodeCanvas_BehaviourTrees_Switch_Ase_MonsterPhaseEnum;
+
+	private Switch<SkillExecuteState> NodeCanvas_BehaviourTrees_Switch_Ase_SkillExecuteState;
+
+	private BBParameter<bool> NodeCanvas_Framework_BBParameter_System_Boolean;
+
+	private BBParameter<float> NodeCanvas_Framework_BBParameter_System_Single;
+
+	private BBParameter<int> NodeCanvas_Framework_BBParameter_System_Int32;
+
+	private BBParameter<Vector2> NodeCanvas_Framework_BBParameter_UnityEngine_Vector2;
+
+	private BBParameter<Vector3> NodeCanvas_Framework_BBParameter_UnityEngine_Vector3;
+
+	private BBParameter<Vector4> NodeCanvas_Framework_BBParameter_UnityEngine_Vector4;
+
+	private BBParameter<Quaternion> NodeCanvas_Framework_BBParameter_UnityEngine_Quaternion;
+
+	private BBParameter<Keyframe> NodeCanvas_Framework_BBParameter_UnityEngine_Keyframe;
+
+	private BBParameter<Bounds> NodeCanvas_Framework_BBParameter_UnityEngine_Bounds;
+
+	private BBParameter<Color> NodeCanvas_Framework_BBParameter_UnityEngine_Color;
+
+	private BBParameter<Rect> NodeCanvas_Framework_BBParameter_UnityEngine_Rect;
+
+	private BBParameter<ContactPoint> NodeCanvas_Framework_BBParameter_UnityEngine_ContactPoint;
+
+	private BBParameter<ContactPoint2D> NodeCanvas_Framework_BBParameter_UnityEngine_ContactPoint2D;
+
+	private BBParameter<RaycastHit> NodeCanvas_Framework_BBParameter_UnityEngine_RaycastHit;
+
+	private BBParameter<RaycastHit2D> NodeCanvas_Framework_BBParameter_UnityEngine_RaycastHit2D;
+
+	private BBParameter<Ray> NodeCanvas_Framework_BBParameter_UnityEngine_Ray;
+
+	private BBParameter<Space> NodeCanvas_Framework_BBParameter_UnityEngine_Space;
+
+	private BBParameter<HeroAIStageEnum> NodeCanvas_Framework_BBParameter_Ase_HeroAIStageEnum;
+
+	private BBParameter<HeroBehaviorTypeEnum> NodeCanvas_Framework_BBParameter_Ase_HeroBehaviorTypeEnum;
+
+	private BBParameter<HeroSkillType> NodeCanvas_Framework_BBParameter_Ase_HeroSkillType;
+
+	private BBParameter<HeroSkillTypeEnum> NodeCanvas_Framework_BBParameter_Ase_HeroSkillTypeEnum;
+
+	private BBParameter<MapItemState> NodeCanvas_Framework_BBParameter_Ase_MapItemState;
+
+	private BBParameter<MobStageEnum> NodeCanvas_Framework_BBParameter_Ase_MobStageEnum;
+
+	private BBParameter<MonsterPhaseEnum> NodeCanvas_Framework_BBParameter_Ase_MonsterPhaseEnum;
+
+	private BBParameter<SkillExecuteState> NodeCanvas_Framework_BBParameter_Ase_SkillExecuteState;
+
+	private ExposedParameter<bool> NodeCanvas_Framework_ExposedParameter_System_Boolean;
+
+	private ExposedParameter<float> NodeCanvas_Framework_ExposedParameter_System_Single;
+
+	private ExposedParameter<int> NodeCanvas_Framework_ExposedParameter_System_Int32;
+
+	private ExposedParameter<Vector2> NodeCanvas_Framework_ExposedParameter_UnityEngine_Vector2;
+
+	private ExposedParameter<Vector3> NodeCanvas_Framework_ExposedParameter_UnityEngine_Vector3;
+
+	private ExposedParameter<Vector4> NodeCanvas_Framework_ExposedParameter_UnityEngine_Vector4;
+
+	private ExposedParameter<Quaternion> NodeCanvas_Framework_ExposedParameter_UnityEngine_Quaternion;
+
+	private ExposedParameter<Keyframe> NodeCanvas_Framework_ExposedParameter_UnityEngine_Keyframe;
+
+	private ExposedParameter<Bounds> NodeCanvas_Framework_ExposedParameter_UnityEngine_Bounds;
+
+	private ExposedParameter<Color> NodeCanvas_Framework_ExposedParameter_UnityEngine_Color;
+
+	private ExposedParameter<Rect> NodeCanvas_Framework_ExposedParameter_UnityEngine_Rect;
+
+	private ExposedParameter<ContactPoint> NodeCanvas_Framework_ExposedParameter_UnityEngine_ContactPoint;
+
+	private ExposedParameter<ContactPoint2D> NodeCanvas_Framework_ExposedParameter_UnityEngine_ContactPoint2D;
+
+	private ExposedParameter<RaycastHit> NodeCanvas_Framework_ExposedParameter_UnityEngine_RaycastHit;
+
+	private ExposedParameter<RaycastHit2D> NodeCanvas_Framework_ExposedParameter_UnityEngine_RaycastHit2D;
+
+	private ExposedParameter<Ray> NodeCanvas_Framework_ExposedParameter_UnityEngine_Ray;
+
+	private ExposedParameter<Space> NodeCanvas_Framework_ExposedParameter_UnityEngine_Space;
+
+	private ExposedParameter<HeroAIStageEnum> NodeCanvas_Framework_ExposedParameter_Ase_HeroAIStageEnum;
+
+	private ExposedParameter<HeroBehaviorTypeEnum> NodeCanvas_Framework_ExposedParameter_Ase_HeroBehaviorTypeEnum;
+
+	private ExposedParameter<HeroSkillType> NodeCanvas_Framework_ExposedParameter_Ase_HeroSkillType;
+
+	private ExposedParameter<HeroSkillTypeEnum> NodeCanvas_Framework_ExposedParameter_Ase_HeroSkillTypeEnum;
+
+	private ExposedParameter<MapItemState> NodeCanvas_Framework_ExposedParameter_Ase_MapItemState;
+
+	private ExposedParameter<MobStageEnum> NodeCanvas_Framework_ExposedParameter_Ase_MobStageEnum;
+
+	private ExposedParameter<MonsterPhaseEnum> NodeCanvas_Framework_ExposedParameter_Ase_MonsterPhaseEnum;
+
+	private ExposedParameter<SkillExecuteState> NodeCanvas_Framework_ExposedParameter_Ase_SkillExecuteState;
+
+	private Variable<bool> NodeCanvas_Framework_Variable_System_Boolean;
+
+	private Variable<float> NodeCanvas_Framework_Variable_System_Single;
+
+	private Variable<int> NodeCanvas_Framework_Variable_System_Int32;
+
+	private Variable<Vector2> NodeCanvas_Framework_Variable_UnityEngine_Vector2;
+
+	private Variable<Vector3> NodeCanvas_Framework_Variable_UnityEngine_Vector3;
+
+	private Variable<Vector4> NodeCanvas_Framework_Variable_UnityEngine_Vector4;
+
+	private Variable<Quaternion> NodeCanvas_Framework_Variable_UnityEngine_Quaternion;
+
+	private Variable<Keyframe> NodeCanvas_Framework_Variable_UnityEngine_Keyframe;
+
+	private Variable<Bounds> NodeCanvas_Framework_Variable_UnityEngine_Bounds;
+
+	private Variable<Color> NodeCanvas_Framework_Variable_UnityEngine_Color;
+
+	private Variable<Rect> NodeCanvas_Framework_Variable_UnityEngine_Rect;
+
+	private Variable<ContactPoint> NodeCanvas_Framework_Variable_UnityEngine_ContactPoint;
+
+	private Variable<ContactPoint2D> NodeCanvas_Framework_Variable_UnityEngine_ContactPoint2D;
+
+	private Variable<RaycastHit> NodeCanvas_Framework_Variable_UnityEngine_RaycastHit;
+
+	private Variable<RaycastHit2D> NodeCanvas_Framework_Variable_UnityEngine_RaycastHit2D;
+
+	private Variable<Ray> NodeCanvas_Framework_Variable_UnityEngine_Ray;
+
+	private Variable<Space> NodeCanvas_Framework_Variable_UnityEngine_Space;
+
+	private Variable<HeroAIStageEnum> NodeCanvas_Framework_Variable_Ase_HeroAIStageEnum;
+
+	private Variable<HeroBehaviorTypeEnum> NodeCanvas_Framework_Variable_Ase_HeroBehaviorTypeEnum;
+
+	private Variable<HeroSkillType> NodeCanvas_Framework_Variable_Ase_HeroSkillType;
+
+	private Variable<HeroSkillTypeEnum> NodeCanvas_Framework_Variable_Ase_HeroSkillTypeEnum;
+
+	private Variable<MapItemState> NodeCanvas_Framework_Variable_Ase_MapItemState;
+
+	private Variable<MobStageEnum> NodeCanvas_Framework_Variable_Ase_MobStageEnum;
+
+	private Variable<MonsterPhaseEnum> NodeCanvas_Framework_Variable_Ase_MonsterPhaseEnum;
+
+	private Variable<SkillExecuteState> NodeCanvas_Framework_Variable_Ase_SkillExecuteState;
+
+	private ReflectedAction<bool> NodeCanvas_Framework_Internal_ReflectedAction_System_Boolean;
+
+	private ReflectedAction<float> NodeCanvas_Framework_Internal_ReflectedAction_System_Single;
+
+	private ReflectedAction<int> NodeCanvas_Framework_Internal_ReflectedAction_System_Int32;
+
+	private ReflectedAction<Vector2> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Vector2;
+
+	private ReflectedAction<Vector3> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Vector3;
+
+	private ReflectedAction<Vector4> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Vector4;
+
+	private ReflectedAction<Quaternion> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Quaternion;
+
+	private ReflectedAction<Keyframe> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Keyframe;
+
+	private ReflectedAction<Bounds> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Bounds;
+
+	private ReflectedAction<Color> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Color;
+
+	private ReflectedAction<Rect> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Rect;
+
+	private ReflectedAction<ContactPoint> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_ContactPoint;
+
+	private ReflectedAction<ContactPoint2D> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_ContactPoint2D;
+
+	private ReflectedAction<RaycastHit> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_RaycastHit;
+
+	private ReflectedAction<RaycastHit2D> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_RaycastHit2D;
+
+	private ReflectedAction<Ray> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Ray;
+
+	private ReflectedAction<Space> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Space;
+
+	private ReflectedAction<HeroAIStageEnum> NodeCanvas_Framework_Internal_ReflectedAction_Ase_HeroAIStageEnum;
+
+	private ReflectedAction<HeroBehaviorTypeEnum> NodeCanvas_Framework_Internal_ReflectedAction_Ase_HeroBehaviorTypeEnum;
+
+	private ReflectedAction<HeroSkillType> NodeCanvas_Framework_Internal_ReflectedAction_Ase_HeroSkillType;
+
+	private ReflectedAction<HeroSkillTypeEnum> NodeCanvas_Framework_Internal_ReflectedAction_Ase_HeroSkillTypeEnum;
+
+	private ReflectedAction<MapItemState> NodeCanvas_Framework_Internal_ReflectedAction_Ase_MapItemState;
+
+	private ReflectedAction<MobStageEnum> NodeCanvas_Framework_Internal_ReflectedAction_Ase_MobStageEnum;
+
+	private ReflectedAction<MonsterPhaseEnum> NodeCanvas_Framework_Internal_ReflectedAction_Ase_MonsterPhaseEnum;
+
+	private ReflectedAction<SkillExecuteState> NodeCanvas_Framework_Internal_ReflectedAction_Ase_SkillExecuteState;
+
+	private ReflectedFunction<bool> NodeCanvas_Framework_Internal_ReflectedFunction_System_Boolean;
+
+	private ReflectedFunction<float> NodeCanvas_Framework_Internal_ReflectedFunction_System_Single;
+
+	private ReflectedFunction<int> NodeCanvas_Framework_Internal_ReflectedFunction_System_Int32;
+
+	private ReflectedFunction<Vector2> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Vector2;
+
+	private ReflectedFunction<Vector3> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Vector3;
+
+	private ReflectedFunction<Vector4> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Vector4;
+
+	private ReflectedFunction<Quaternion> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Quaternion;
+
+	private ReflectedFunction<Keyframe> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Keyframe;
+
+	private ReflectedFunction<Bounds> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Bounds;
+
+	private ReflectedFunction<Color> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Color;
+
+	private ReflectedFunction<Rect> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Rect;
+
+	private ReflectedFunction<ContactPoint> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_ContactPoint;
+
+	private ReflectedFunction<ContactPoint2D> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_ContactPoint2D;
+
+	private ReflectedFunction<RaycastHit> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_RaycastHit;
+
+	private ReflectedFunction<RaycastHit2D> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_RaycastHit2D;
+
+	private ReflectedFunction<Ray> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Ray;
+
+	private ReflectedFunction<Space> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Space;
+
+	private ReflectedFunction<HeroAIStageEnum> NodeCanvas_Framework_Internal_ReflectedFunction_Ase_HeroAIStageEnum;
+
+	private ReflectedFunction<HeroBehaviorTypeEnum> NodeCanvas_Framework_Internal_ReflectedFunction_Ase_HeroBehaviorTypeEnum;
+
+	private ReflectedFunction<HeroSkillType> NodeCanvas_Framework_Internal_ReflectedFunction_Ase_HeroSkillType;
+
+	private ReflectedFunction<HeroSkillTypeEnum> NodeCanvas_Framework_Internal_ReflectedFunction_Ase_HeroSkillTypeEnum;
+
+	private ReflectedFunction<MapItemState> NodeCanvas_Framework_Internal_ReflectedFunction_Ase_MapItemState;
+
+	private ReflectedFunction<MobStageEnum> NodeCanvas_Framework_Internal_ReflectedFunction_Ase_MobStageEnum;
+
+	private ReflectedFunction<MonsterPhaseEnum> NodeCanvas_Framework_Internal_ReflectedFunction_Ase_MonsterPhaseEnum;
+
+	private ReflectedFunction<SkillExecuteState> NodeCanvas_Framework_Internal_ReflectedFunction_Ase_SkillExecuteState;
+
+	private AddElementToDictionary<bool> NodeCanvas_Tasks_Actions_AddElementToDictionary_System_Boolean;
+
+	private AddElementToDictionary<float> NodeCanvas_Tasks_Actions_AddElementToDictionary_System_Single;
+
+	private AddElementToDictionary<int> NodeCanvas_Tasks_Actions_AddElementToDictionary_System_Int32;
+
+	private AddElementToDictionary<Vector2> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Vector2;
+
+	private AddElementToDictionary<Vector3> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Vector3;
+
+	private AddElementToDictionary<Vector4> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Vector4;
+
+	private AddElementToDictionary<Quaternion> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Quaternion;
+
+	private AddElementToDictionary<Keyframe> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Keyframe;
+
+	private AddElementToDictionary<Bounds> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Bounds;
+
+	private AddElementToDictionary<Color> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Color;
+
+	private AddElementToDictionary<Rect> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Rect;
+
+	private AddElementToDictionary<ContactPoint> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_ContactPoint;
+
+	private AddElementToDictionary<ContactPoint2D> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_ContactPoint2D;
+
+	private AddElementToDictionary<RaycastHit> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_RaycastHit;
+
+	private AddElementToDictionary<RaycastHit2D> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_RaycastHit2D;
+
+	private AddElementToDictionary<Ray> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Ray;
+
+	private AddElementToDictionary<Space> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Space;
+
+	private AddElementToDictionary<HeroAIStageEnum> NodeCanvas_Tasks_Actions_AddElementToDictionary_Ase_HeroAIStageEnum;
+
+	private AddElementToDictionary<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_AddElementToDictionary_Ase_HeroBehaviorTypeEnum;
+
+	private AddElementToDictionary<HeroSkillType> NodeCanvas_Tasks_Actions_AddElementToDictionary_Ase_HeroSkillType;
+
+	private AddElementToDictionary<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_AddElementToDictionary_Ase_HeroSkillTypeEnum;
+
+	private AddElementToDictionary<MapItemState> NodeCanvas_Tasks_Actions_AddElementToDictionary_Ase_MapItemState;
+
+	private AddElementToDictionary<MobStageEnum> NodeCanvas_Tasks_Actions_AddElementToDictionary_Ase_MobStageEnum;
+
+	private AddElementToDictionary<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_AddElementToDictionary_Ase_MonsterPhaseEnum;
+
+	private AddElementToDictionary<SkillExecuteState> NodeCanvas_Tasks_Actions_AddElementToDictionary_Ase_SkillExecuteState;
+
+	private AddElementToList<bool> NodeCanvas_Tasks_Actions_AddElementToList_System_Boolean;
+
+	private AddElementToList<float> NodeCanvas_Tasks_Actions_AddElementToList_System_Single;
+
+	private AddElementToList<int> NodeCanvas_Tasks_Actions_AddElementToList_System_Int32;
+
+	private AddElementToList<Vector2> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Vector2;
+
+	private AddElementToList<Vector3> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Vector3;
+
+	private AddElementToList<Vector4> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Vector4;
+
+	private AddElementToList<Quaternion> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Quaternion;
+
+	private AddElementToList<Keyframe> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Keyframe;
+
+	private AddElementToList<Bounds> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Bounds;
+
+	private AddElementToList<Color> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Color;
+
+	private AddElementToList<Rect> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Rect;
+
+	private AddElementToList<ContactPoint> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_ContactPoint;
+
+	private AddElementToList<ContactPoint2D> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_ContactPoint2D;
+
+	private AddElementToList<RaycastHit> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_RaycastHit;
+
+	private AddElementToList<RaycastHit2D> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_RaycastHit2D;
+
+	private AddElementToList<Ray> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Ray;
+
+	private AddElementToList<Space> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Space;
+
+	private AddElementToList<HeroAIStageEnum> NodeCanvas_Tasks_Actions_AddElementToList_Ase_HeroAIStageEnum;
+
+	private AddElementToList<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_AddElementToList_Ase_HeroBehaviorTypeEnum;
+
+	private AddElementToList<HeroSkillType> NodeCanvas_Tasks_Actions_AddElementToList_Ase_HeroSkillType;
+
+	private AddElementToList<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_AddElementToList_Ase_HeroSkillTypeEnum;
+
+	private AddElementToList<MapItemState> NodeCanvas_Tasks_Actions_AddElementToList_Ase_MapItemState;
+
+	private AddElementToList<MobStageEnum> NodeCanvas_Tasks_Actions_AddElementToList_Ase_MobStageEnum;
+
+	private AddElementToList<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_AddElementToList_Ase_MonsterPhaseEnum;
+
+	private AddElementToList<SkillExecuteState> NodeCanvas_Tasks_Actions_AddElementToList_Ase_SkillExecuteState;
+
+	private GetDictionaryElement<bool> NodeCanvas_Tasks_Actions_GetDictionaryElement_System_Boolean;
+
+	private GetDictionaryElement<float> NodeCanvas_Tasks_Actions_GetDictionaryElement_System_Single;
+
+	private GetDictionaryElement<int> NodeCanvas_Tasks_Actions_GetDictionaryElement_System_Int32;
+
+	private GetDictionaryElement<Vector2> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Vector2;
+
+	private GetDictionaryElement<Vector3> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Vector3;
+
+	private GetDictionaryElement<Vector4> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Vector4;
+
+	private GetDictionaryElement<Quaternion> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Quaternion;
+
+	private GetDictionaryElement<Keyframe> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Keyframe;
+
+	private GetDictionaryElement<Bounds> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Bounds;
+
+	private GetDictionaryElement<Color> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Color;
+
+	private GetDictionaryElement<Rect> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Rect;
+
+	private GetDictionaryElement<ContactPoint> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_ContactPoint;
+
+	private GetDictionaryElement<ContactPoint2D> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_ContactPoint2D;
+
+	private GetDictionaryElement<RaycastHit> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_RaycastHit;
+
+	private GetDictionaryElement<RaycastHit2D> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_RaycastHit2D;
+
+	private GetDictionaryElement<Ray> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Ray;
+
+	private GetDictionaryElement<Space> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Space;
+
+	private GetDictionaryElement<HeroAIStageEnum> NodeCanvas_Tasks_Actions_GetDictionaryElement_Ase_HeroAIStageEnum;
+
+	private GetDictionaryElement<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_GetDictionaryElement_Ase_HeroBehaviorTypeEnum;
+
+	private GetDictionaryElement<HeroSkillType> NodeCanvas_Tasks_Actions_GetDictionaryElement_Ase_HeroSkillType;
+
+	private GetDictionaryElement<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_GetDictionaryElement_Ase_HeroSkillTypeEnum;
+
+	private GetDictionaryElement<MapItemState> NodeCanvas_Tasks_Actions_GetDictionaryElement_Ase_MapItemState;
+
+	private GetDictionaryElement<MobStageEnum> NodeCanvas_Tasks_Actions_GetDictionaryElement_Ase_MobStageEnum;
+
+	private GetDictionaryElement<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_GetDictionaryElement_Ase_MonsterPhaseEnum;
+
+	private GetDictionaryElement<SkillExecuteState> NodeCanvas_Tasks_Actions_GetDictionaryElement_Ase_SkillExecuteState;
+
+	private GetIndexOfElement<bool> NodeCanvas_Tasks_Actions_GetIndexOfElement_System_Boolean;
+
+	private GetIndexOfElement<float> NodeCanvas_Tasks_Actions_GetIndexOfElement_System_Single;
+
+	private GetIndexOfElement<int> NodeCanvas_Tasks_Actions_GetIndexOfElement_System_Int32;
+
+	private GetIndexOfElement<Vector2> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Vector2;
+
+	private GetIndexOfElement<Vector3> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Vector3;
+
+	private GetIndexOfElement<Vector4> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Vector4;
+
+	private GetIndexOfElement<Quaternion> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Quaternion;
+
+	private GetIndexOfElement<Keyframe> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Keyframe;
+
+	private GetIndexOfElement<Bounds> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Bounds;
+
+	private GetIndexOfElement<Color> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Color;
+
+	private GetIndexOfElement<Rect> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Rect;
+
+	private GetIndexOfElement<ContactPoint> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_ContactPoint;
+
+	private GetIndexOfElement<ContactPoint2D> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_ContactPoint2D;
+
+	private GetIndexOfElement<RaycastHit> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_RaycastHit;
+
+	private GetIndexOfElement<RaycastHit2D> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_RaycastHit2D;
+
+	private GetIndexOfElement<Ray> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Ray;
+
+	private GetIndexOfElement<Space> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Space;
+
+	private GetIndexOfElement<HeroAIStageEnum> NodeCanvas_Tasks_Actions_GetIndexOfElement_Ase_HeroAIStageEnum;
+
+	private GetIndexOfElement<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_GetIndexOfElement_Ase_HeroBehaviorTypeEnum;
+
+	private GetIndexOfElement<HeroSkillType> NodeCanvas_Tasks_Actions_GetIndexOfElement_Ase_HeroSkillType;
+
+	private GetIndexOfElement<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_GetIndexOfElement_Ase_HeroSkillTypeEnum;
+
+	private GetIndexOfElement<MapItemState> NodeCanvas_Tasks_Actions_GetIndexOfElement_Ase_MapItemState;
+
+	private GetIndexOfElement<MobStageEnum> NodeCanvas_Tasks_Actions_GetIndexOfElement_Ase_MobStageEnum;
+
+	private GetIndexOfElement<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_GetIndexOfElement_Ase_MonsterPhaseEnum;
+
+	private GetIndexOfElement<SkillExecuteState> NodeCanvas_Tasks_Actions_GetIndexOfElement_Ase_SkillExecuteState;
+
+	private InsertElementToList<bool> NodeCanvas_Tasks_Actions_InsertElementToList_System_Boolean;
+
+	private InsertElementToList<float> NodeCanvas_Tasks_Actions_InsertElementToList_System_Single;
+
+	private InsertElementToList<int> NodeCanvas_Tasks_Actions_InsertElementToList_System_Int32;
+
+	private InsertElementToList<Vector2> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Vector2;
+
+	private InsertElementToList<Vector3> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Vector3;
+
+	private InsertElementToList<Vector4> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Vector4;
+
+	private InsertElementToList<Quaternion> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Quaternion;
+
+	private InsertElementToList<Keyframe> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Keyframe;
+
+	private InsertElementToList<Bounds> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Bounds;
+
+	private InsertElementToList<Color> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Color;
+
+	private InsertElementToList<Rect> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Rect;
+
+	private InsertElementToList<ContactPoint> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_ContactPoint;
+
+	private InsertElementToList<ContactPoint2D> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_ContactPoint2D;
+
+	private InsertElementToList<RaycastHit> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_RaycastHit;
+
+	private InsertElementToList<RaycastHit2D> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_RaycastHit2D;
+
+	private InsertElementToList<Ray> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Ray;
+
+	private InsertElementToList<Space> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Space;
+
+	private InsertElementToList<HeroAIStageEnum> NodeCanvas_Tasks_Actions_InsertElementToList_Ase_HeroAIStageEnum;
+
+	private InsertElementToList<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_InsertElementToList_Ase_HeroBehaviorTypeEnum;
+
+	private InsertElementToList<HeroSkillType> NodeCanvas_Tasks_Actions_InsertElementToList_Ase_HeroSkillType;
+
+	private InsertElementToList<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_InsertElementToList_Ase_HeroSkillTypeEnum;
+
+	private InsertElementToList<MapItemState> NodeCanvas_Tasks_Actions_InsertElementToList_Ase_MapItemState;
+
+	private InsertElementToList<MobStageEnum> NodeCanvas_Tasks_Actions_InsertElementToList_Ase_MobStageEnum;
+
+	private InsertElementToList<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_InsertElementToList_Ase_MonsterPhaseEnum;
+
+	private InsertElementToList<SkillExecuteState> NodeCanvas_Tasks_Actions_InsertElementToList_Ase_SkillExecuteState;
+
+	private PickListElement<bool> NodeCanvas_Tasks_Actions_PickListElement_System_Boolean;
+
+	private PickListElement<float> NodeCanvas_Tasks_Actions_PickListElement_System_Single;
+
+	private PickListElement<int> NodeCanvas_Tasks_Actions_PickListElement_System_Int32;
+
+	private PickListElement<Vector2> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Vector2;
+
+	private PickListElement<Vector3> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Vector3;
+
+	private PickListElement<Vector4> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Vector4;
+
+	private PickListElement<Quaternion> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Quaternion;
+
+	private PickListElement<Keyframe> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Keyframe;
+
+	private PickListElement<Bounds> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Bounds;
+
+	private PickListElement<Color> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Color;
+
+	private PickListElement<Rect> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Rect;
+
+	private PickListElement<ContactPoint> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_ContactPoint;
+
+	private PickListElement<ContactPoint2D> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_ContactPoint2D;
+
+	private PickListElement<RaycastHit> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_RaycastHit;
+
+	private PickListElement<RaycastHit2D> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_RaycastHit2D;
+
+	private PickListElement<Ray> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Ray;
+
+	private PickListElement<Space> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Space;
+
+	private PickListElement<HeroAIStageEnum> NodeCanvas_Tasks_Actions_PickListElement_Ase_HeroAIStageEnum;
+
+	private PickListElement<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_PickListElement_Ase_HeroBehaviorTypeEnum;
+
+	private PickListElement<HeroSkillType> NodeCanvas_Tasks_Actions_PickListElement_Ase_HeroSkillType;
+
+	private PickListElement<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_PickListElement_Ase_HeroSkillTypeEnum;
+
+	private PickListElement<MapItemState> NodeCanvas_Tasks_Actions_PickListElement_Ase_MapItemState;
+
+	private PickListElement<MobStageEnum> NodeCanvas_Tasks_Actions_PickListElement_Ase_MobStageEnum;
+
+	private PickListElement<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_PickListElement_Ase_MonsterPhaseEnum;
+
+	private PickListElement<SkillExecuteState> NodeCanvas_Tasks_Actions_PickListElement_Ase_SkillExecuteState;
+
+	private PickRandomListElement<bool> NodeCanvas_Tasks_Actions_PickRandomListElement_System_Boolean;
+
+	private PickRandomListElement<float> NodeCanvas_Tasks_Actions_PickRandomListElement_System_Single;
+
+	private PickRandomListElement<int> NodeCanvas_Tasks_Actions_PickRandomListElement_System_Int32;
+
+	private PickRandomListElement<Vector2> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Vector2;
+
+	private PickRandomListElement<Vector3> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Vector3;
+
+	private PickRandomListElement<Vector4> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Vector4;
+
+	private PickRandomListElement<Quaternion> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Quaternion;
+
+	private PickRandomListElement<Keyframe> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Keyframe;
+
+	private PickRandomListElement<Bounds> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Bounds;
+
+	private PickRandomListElement<Color> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Color;
+
+	private PickRandomListElement<Rect> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Rect;
+
+	private PickRandomListElement<ContactPoint> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_ContactPoint;
+
+	private PickRandomListElement<ContactPoint2D> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_ContactPoint2D;
+
+	private PickRandomListElement<RaycastHit> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_RaycastHit;
+
+	private PickRandomListElement<RaycastHit2D> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_RaycastHit2D;
+
+	private PickRandomListElement<Ray> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Ray;
+
+	private PickRandomListElement<Space> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Space;
+
+	private PickRandomListElement<HeroAIStageEnum> NodeCanvas_Tasks_Actions_PickRandomListElement_Ase_HeroAIStageEnum;
+
+	private PickRandomListElement<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_PickRandomListElement_Ase_HeroBehaviorTypeEnum;
+
+	private PickRandomListElement<HeroSkillType> NodeCanvas_Tasks_Actions_PickRandomListElement_Ase_HeroSkillType;
+
+	private PickRandomListElement<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_PickRandomListElement_Ase_HeroSkillTypeEnum;
+
+	private PickRandomListElement<MapItemState> NodeCanvas_Tasks_Actions_PickRandomListElement_Ase_MapItemState;
+
+	private PickRandomListElement<MobStageEnum> NodeCanvas_Tasks_Actions_PickRandomListElement_Ase_MobStageEnum;
+
+	private PickRandomListElement<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_PickRandomListElement_Ase_MonsterPhaseEnum;
+
+	private PickRandomListElement<SkillExecuteState> NodeCanvas_Tasks_Actions_PickRandomListElement_Ase_SkillExecuteState;
+
+	private RemoveElementFromList<bool> NodeCanvas_Tasks_Actions_RemoveElementFromList_System_Boolean;
+
+	private RemoveElementFromList<float> NodeCanvas_Tasks_Actions_RemoveElementFromList_System_Single;
+
+	private RemoveElementFromList<int> NodeCanvas_Tasks_Actions_RemoveElementFromList_System_Int32;
+
+	private RemoveElementFromList<Vector2> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Vector2;
+
+	private RemoveElementFromList<Vector3> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Vector3;
+
+	private RemoveElementFromList<Vector4> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Vector4;
+
+	private RemoveElementFromList<Quaternion> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Quaternion;
+
+	private RemoveElementFromList<Keyframe> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Keyframe;
+
+	private RemoveElementFromList<Bounds> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Bounds;
+
+	private RemoveElementFromList<Color> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Color;
+
+	private RemoveElementFromList<Rect> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Rect;
+
+	private RemoveElementFromList<ContactPoint> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_ContactPoint;
+
+	private RemoveElementFromList<ContactPoint2D> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_ContactPoint2D;
+
+	private RemoveElementFromList<RaycastHit> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_RaycastHit;
+
+	private RemoveElementFromList<RaycastHit2D> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_RaycastHit2D;
+
+	private RemoveElementFromList<Ray> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Ray;
+
+	private RemoveElementFromList<Space> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Space;
+
+	private RemoveElementFromList<HeroAIStageEnum> NodeCanvas_Tasks_Actions_RemoveElementFromList_Ase_HeroAIStageEnum;
+
+	private RemoveElementFromList<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_RemoveElementFromList_Ase_HeroBehaviorTypeEnum;
+
+	private RemoveElementFromList<HeroSkillType> NodeCanvas_Tasks_Actions_RemoveElementFromList_Ase_HeroSkillType;
+
+	private RemoveElementFromList<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_RemoveElementFromList_Ase_HeroSkillTypeEnum;
+
+	private RemoveElementFromList<MapItemState> NodeCanvas_Tasks_Actions_RemoveElementFromList_Ase_MapItemState;
+
+	private RemoveElementFromList<MobStageEnum> NodeCanvas_Tasks_Actions_RemoveElementFromList_Ase_MobStageEnum;
+
+	private RemoveElementFromList<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_RemoveElementFromList_Ase_MonsterPhaseEnum;
+
+	private RemoveElementFromList<SkillExecuteState> NodeCanvas_Tasks_Actions_RemoveElementFromList_Ase_SkillExecuteState;
+
+	private SendEvent<bool> NodeCanvas_Tasks_Actions_SendEvent_System_Boolean;
+
+	private SendEvent<float> NodeCanvas_Tasks_Actions_SendEvent_System_Single;
+
+	private SendEvent<int> NodeCanvas_Tasks_Actions_SendEvent_System_Int32;
+
+	private SendEvent<Vector2> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Vector2;
+
+	private SendEvent<Vector3> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Vector3;
+
+	private SendEvent<Vector4> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Vector4;
+
+	private SendEvent<Quaternion> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Quaternion;
+
+	private SendEvent<Keyframe> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Keyframe;
+
+	private SendEvent<Bounds> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Bounds;
+
+	private SendEvent<Color> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Color;
+
+	private SendEvent<Rect> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Rect;
+
+	private SendEvent<ContactPoint> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_ContactPoint;
+
+	private SendEvent<ContactPoint2D> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_ContactPoint2D;
+
+	private SendEvent<RaycastHit> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_RaycastHit;
+
+	private SendEvent<RaycastHit2D> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_RaycastHit2D;
+
+	private SendEvent<Ray> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Ray;
+
+	private SendEvent<Space> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Space;
+
+	private SendEvent<HeroAIStageEnum> NodeCanvas_Tasks_Actions_SendEvent_Ase_HeroAIStageEnum;
+
+	private SendEvent<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_SendEvent_Ase_HeroBehaviorTypeEnum;
+
+	private SendEvent<HeroSkillType> NodeCanvas_Tasks_Actions_SendEvent_Ase_HeroSkillType;
+
+	private SendEvent<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_SendEvent_Ase_HeroSkillTypeEnum;
+
+	private SendEvent<MapItemState> NodeCanvas_Tasks_Actions_SendEvent_Ase_MapItemState;
+
+	private SendEvent<MobStageEnum> NodeCanvas_Tasks_Actions_SendEvent_Ase_MobStageEnum;
+
+	private SendEvent<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_SendEvent_Ase_MonsterPhaseEnum;
+
+	private SendEvent<SkillExecuteState> NodeCanvas_Tasks_Actions_SendEvent_Ase_SkillExecuteState;
+
+	private SendEventToObjects<bool> NodeCanvas_Tasks_Actions_SendEventToObjects_System_Boolean;
+
+	private SendEventToObjects<float> NodeCanvas_Tasks_Actions_SendEventToObjects_System_Single;
+
+	private SendEventToObjects<int> NodeCanvas_Tasks_Actions_SendEventToObjects_System_Int32;
+
+	private SendEventToObjects<Vector2> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Vector2;
+
+	private SendEventToObjects<Vector3> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Vector3;
+
+	private SendEventToObjects<Vector4> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Vector4;
+
+	private SendEventToObjects<Quaternion> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Quaternion;
+
+	private SendEventToObjects<Keyframe> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Keyframe;
+
+	private SendEventToObjects<Bounds> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Bounds;
+
+	private SendEventToObjects<Color> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Color;
+
+	private SendEventToObjects<Rect> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Rect;
+
+	private SendEventToObjects<ContactPoint> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_ContactPoint;
+
+	private SendEventToObjects<ContactPoint2D> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_ContactPoint2D;
+
+	private SendEventToObjects<RaycastHit> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_RaycastHit;
+
+	private SendEventToObjects<RaycastHit2D> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_RaycastHit2D;
+
+	private SendEventToObjects<Ray> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Ray;
+
+	private SendEventToObjects<Space> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Space;
+
+	private SendEventToObjects<HeroAIStageEnum> NodeCanvas_Tasks_Actions_SendEventToObjects_Ase_HeroAIStageEnum;
+
+	private SendEventToObjects<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_SendEventToObjects_Ase_HeroBehaviorTypeEnum;
+
+	private SendEventToObjects<HeroSkillType> NodeCanvas_Tasks_Actions_SendEventToObjects_Ase_HeroSkillType;
+
+	private SendEventToObjects<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_SendEventToObjects_Ase_HeroSkillTypeEnum;
+
+	private SendEventToObjects<MapItemState> NodeCanvas_Tasks_Actions_SendEventToObjects_Ase_MapItemState;
+
+	private SendEventToObjects<MobStageEnum> NodeCanvas_Tasks_Actions_SendEventToObjects_Ase_MobStageEnum;
+
+	private SendEventToObjects<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_SendEventToObjects_Ase_MonsterPhaseEnum;
+
+	private SendEventToObjects<SkillExecuteState> NodeCanvas_Tasks_Actions_SendEventToObjects_Ase_SkillExecuteState;
+
+	private SendMessage<bool> NodeCanvas_Tasks_Actions_SendMessage_System_Boolean;
+
+	private SendMessage<float> NodeCanvas_Tasks_Actions_SendMessage_System_Single;
+
+	private SendMessage<int> NodeCanvas_Tasks_Actions_SendMessage_System_Int32;
+
+	private SendMessage<Vector2> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Vector2;
+
+	private SendMessage<Vector3> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Vector3;
+
+	private SendMessage<Vector4> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Vector4;
+
+	private SendMessage<Quaternion> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Quaternion;
+
+	private SendMessage<Keyframe> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Keyframe;
+
+	private SendMessage<Bounds> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Bounds;
+
+	private SendMessage<Color> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Color;
+
+	private SendMessage<Rect> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Rect;
+
+	private SendMessage<ContactPoint> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_ContactPoint;
+
+	private SendMessage<ContactPoint2D> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_ContactPoint2D;
+
+	private SendMessage<RaycastHit> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_RaycastHit;
+
+	private SendMessage<RaycastHit2D> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_RaycastHit2D;
+
+	private SendMessage<Ray> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Ray;
+
+	private SendMessage<Space> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Space;
+
+	private SendMessage<HeroAIStageEnum> NodeCanvas_Tasks_Actions_SendMessage_Ase_HeroAIStageEnum;
+
+	private SendMessage<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_SendMessage_Ase_HeroBehaviorTypeEnum;
+
+	private SendMessage<HeroSkillType> NodeCanvas_Tasks_Actions_SendMessage_Ase_HeroSkillType;
+
+	private SendMessage<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_SendMessage_Ase_HeroSkillTypeEnum;
+
+	private SendMessage<MapItemState> NodeCanvas_Tasks_Actions_SendMessage_Ase_MapItemState;
+
+	private SendMessage<MobStageEnum> NodeCanvas_Tasks_Actions_SendMessage_Ase_MobStageEnum;
+
+	private SendMessage<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_SendMessage_Ase_MonsterPhaseEnum;
+
+	private SendMessage<SkillExecuteState> NodeCanvas_Tasks_Actions_SendMessage_Ase_SkillExecuteState;
+
+	private SetListElement<bool> NodeCanvas_Tasks_Actions_SetListElement_System_Boolean;
+
+	private SetListElement<float> NodeCanvas_Tasks_Actions_SetListElement_System_Single;
+
+	private SetListElement<int> NodeCanvas_Tasks_Actions_SetListElement_System_Int32;
+
+	private SetListElement<Vector2> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Vector2;
+
+	private SetListElement<Vector3> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Vector3;
+
+	private SetListElement<Vector4> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Vector4;
+
+	private SetListElement<Quaternion> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Quaternion;
+
+	private SetListElement<Keyframe> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Keyframe;
+
+	private SetListElement<Bounds> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Bounds;
+
+	private SetListElement<Color> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Color;
+
+	private SetListElement<Rect> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Rect;
+
+	private SetListElement<ContactPoint> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_ContactPoint;
+
+	private SetListElement<ContactPoint2D> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_ContactPoint2D;
+
+	private SetListElement<RaycastHit> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_RaycastHit;
+
+	private SetListElement<RaycastHit2D> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_RaycastHit2D;
+
+	private SetListElement<Ray> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Ray;
+
+	private SetListElement<Space> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Space;
+
+	private SetListElement<HeroAIStageEnum> NodeCanvas_Tasks_Actions_SetListElement_Ase_HeroAIStageEnum;
+
+	private SetListElement<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_SetListElement_Ase_HeroBehaviorTypeEnum;
+
+	private SetListElement<HeroSkillType> NodeCanvas_Tasks_Actions_SetListElement_Ase_HeroSkillType;
+
+	private SetListElement<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_SetListElement_Ase_HeroSkillTypeEnum;
+
+	private SetListElement<MapItemState> NodeCanvas_Tasks_Actions_SetListElement_Ase_MapItemState;
+
+	private SetListElement<MobStageEnum> NodeCanvas_Tasks_Actions_SetListElement_Ase_MobStageEnum;
+
+	private SetListElement<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_SetListElement_Ase_MonsterPhaseEnum;
+
+	private SetListElement<SkillExecuteState> NodeCanvas_Tasks_Actions_SetListElement_Ase_SkillExecuteState;
+
+	private SetVariable<bool> NodeCanvas_Tasks_Actions_SetVariable_System_Boolean;
+
+	private SetVariable<float> NodeCanvas_Tasks_Actions_SetVariable_System_Single;
+
+	private SetVariable<int> NodeCanvas_Tasks_Actions_SetVariable_System_Int32;
+
+	private SetVariable<Vector2> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Vector2;
+
+	private SetVariable<Vector3> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Vector3;
+
+	private SetVariable<Vector4> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Vector4;
+
+	private SetVariable<Quaternion> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Quaternion;
+
+	private SetVariable<Keyframe> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Keyframe;
+
+	private SetVariable<Bounds> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Bounds;
+
+	private SetVariable<Color> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Color;
+
+	private SetVariable<Rect> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Rect;
+
+	private SetVariable<ContactPoint> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_ContactPoint;
+
+	private SetVariable<ContactPoint2D> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_ContactPoint2D;
+
+	private SetVariable<RaycastHit> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_RaycastHit;
+
+	private SetVariable<RaycastHit2D> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_RaycastHit2D;
+
+	private SetVariable<Ray> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Ray;
+
+	private SetVariable<Space> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Space;
+
+	private SetVariable<HeroAIStageEnum> NodeCanvas_Tasks_Actions_SetVariable_Ase_HeroAIStageEnum;
+
+	private SetVariable<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Actions_SetVariable_Ase_HeroBehaviorTypeEnum;
+
+	private SetVariable<HeroSkillType> NodeCanvas_Tasks_Actions_SetVariable_Ase_HeroSkillType;
+
+	private SetVariable<HeroSkillTypeEnum> NodeCanvas_Tasks_Actions_SetVariable_Ase_HeroSkillTypeEnum;
+
+	private SetVariable<MapItemState> NodeCanvas_Tasks_Actions_SetVariable_Ase_MapItemState;
+
+	private SetVariable<MobStageEnum> NodeCanvas_Tasks_Actions_SetVariable_Ase_MobStageEnum;
+
+	private SetVariable<MonsterPhaseEnum> NodeCanvas_Tasks_Actions_SetVariable_Ase_MonsterPhaseEnum;
+
+	private SetVariable<SkillExecuteState> NodeCanvas_Tasks_Actions_SetVariable_Ase_SkillExecuteState;
+
+	private CheckCSharpEvent<bool> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_System_Boolean;
+
+	private CheckCSharpEvent<float> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_System_Single;
+
+	private CheckCSharpEvent<int> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_System_Int32;
+
+	private CheckCSharpEvent<Vector2> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Vector2;
+
+	private CheckCSharpEvent<Vector3> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Vector3;
+
+	private CheckCSharpEvent<Vector4> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Vector4;
+
+	private CheckCSharpEvent<Quaternion> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Quaternion;
+
+	private CheckCSharpEvent<Keyframe> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Keyframe;
+
+	private CheckCSharpEvent<Bounds> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Bounds;
+
+	private CheckCSharpEvent<Color> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Color;
+
+	private CheckCSharpEvent<Rect> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Rect;
+
+	private CheckCSharpEvent<ContactPoint> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_ContactPoint;
+
+	private CheckCSharpEvent<ContactPoint2D> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_ContactPoint2D;
+
+	private CheckCSharpEvent<RaycastHit> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_RaycastHit;
+
+	private CheckCSharpEvent<RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_RaycastHit2D;
+
+	private CheckCSharpEvent<Ray> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Ray;
+
+	private CheckCSharpEvent<Space> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Space;
+
+	private CheckCSharpEvent<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Ase_HeroAIStageEnum;
+
+	private CheckCSharpEvent<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Ase_HeroBehaviorTypeEnum;
+
+	private CheckCSharpEvent<HeroSkillType> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Ase_HeroSkillType;
+
+	private CheckCSharpEvent<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Ase_HeroSkillTypeEnum;
+
+	private CheckCSharpEvent<MapItemState> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Ase_MapItemState;
+
+	private CheckCSharpEvent<MobStageEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Ase_MobStageEnum;
+
+	private CheckCSharpEvent<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Ase_MonsterPhaseEnum;
+
+	private CheckCSharpEvent<SkillExecuteState> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Ase_SkillExecuteState;
+
+	private CheckCSharpEventValue<bool> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_System_Boolean;
+
+	private CheckCSharpEventValue<float> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_System_Single;
+
+	private CheckCSharpEventValue<int> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_System_Int32;
+
+	private CheckCSharpEventValue<Vector2> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Vector2;
+
+	private CheckCSharpEventValue<Vector3> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Vector3;
+
+	private CheckCSharpEventValue<Vector4> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Vector4;
+
+	private CheckCSharpEventValue<Quaternion> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Quaternion;
+
+	private CheckCSharpEventValue<Keyframe> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Keyframe;
+
+	private CheckCSharpEventValue<Bounds> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Bounds;
+
+	private CheckCSharpEventValue<Color> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Color;
+
+	private CheckCSharpEventValue<Rect> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Rect;
+
+	private CheckCSharpEventValue<ContactPoint> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_ContactPoint;
+
+	private CheckCSharpEventValue<ContactPoint2D> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_ContactPoint2D;
+
+	private CheckCSharpEventValue<RaycastHit> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_RaycastHit;
+
+	private CheckCSharpEventValue<RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_RaycastHit2D;
+
+	private CheckCSharpEventValue<Ray> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Ray;
+
+	private CheckCSharpEventValue<Space> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Space;
+
+	private CheckCSharpEventValue<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_Ase_HeroAIStageEnum;
+
+	private CheckCSharpEventValue<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_Ase_HeroBehaviorTypeEnum;
+
+	private CheckCSharpEventValue<HeroSkillType> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_Ase_HeroSkillType;
+
+	private CheckCSharpEventValue<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_Ase_HeroSkillTypeEnum;
+
+	private CheckCSharpEventValue<MapItemState> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_Ase_MapItemState;
+
+	private CheckCSharpEventValue<MobStageEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_Ase_MobStageEnum;
+
+	private CheckCSharpEventValue<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_Ase_MonsterPhaseEnum;
+
+	private CheckCSharpEventValue<SkillExecuteState> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_Ase_SkillExecuteState;
+
+	private CheckEvent<bool> NodeCanvas_Tasks_Conditions_CheckEvent_System_Boolean;
+
+	private CheckEvent<float> NodeCanvas_Tasks_Conditions_CheckEvent_System_Single;
+
+	private CheckEvent<int> NodeCanvas_Tasks_Conditions_CheckEvent_System_Int32;
+
+	private CheckEvent<Vector2> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Vector2;
+
+	private CheckEvent<Vector3> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Vector3;
+
+	private CheckEvent<Vector4> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Vector4;
+
+	private CheckEvent<Quaternion> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Quaternion;
+
+	private CheckEvent<Keyframe> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Keyframe;
+
+	private CheckEvent<Bounds> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Bounds;
+
+	private CheckEvent<Color> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Color;
+
+	private CheckEvent<Rect> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Rect;
+
+	private CheckEvent<ContactPoint> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_ContactPoint;
+
+	private CheckEvent<ContactPoint2D> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_ContactPoint2D;
+
+	private CheckEvent<RaycastHit> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_RaycastHit;
+
+	private CheckEvent<RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_RaycastHit2D;
+
+	private CheckEvent<Ray> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Ray;
+
+	private CheckEvent<Space> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Space;
+
+	private CheckEvent<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_CheckEvent_Ase_HeroAIStageEnum;
+
+	private CheckEvent<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_CheckEvent_Ase_HeroBehaviorTypeEnum;
+
+	private CheckEvent<HeroSkillType> NodeCanvas_Tasks_Conditions_CheckEvent_Ase_HeroSkillType;
+
+	private CheckEvent<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_CheckEvent_Ase_HeroSkillTypeEnum;
+
+	private CheckEvent<MapItemState> NodeCanvas_Tasks_Conditions_CheckEvent_Ase_MapItemState;
+
+	private CheckEvent<MobStageEnum> NodeCanvas_Tasks_Conditions_CheckEvent_Ase_MobStageEnum;
+
+	private CheckEvent<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_CheckEvent_Ase_MonsterPhaseEnum;
+
+	private CheckEvent<SkillExecuteState> NodeCanvas_Tasks_Conditions_CheckEvent_Ase_SkillExecuteState;
+
+	private CheckEventValue<bool> NodeCanvas_Tasks_Conditions_CheckEventValue_System_Boolean;
+
+	private CheckEventValue<float> NodeCanvas_Tasks_Conditions_CheckEventValue_System_Single;
+
+	private CheckEventValue<int> NodeCanvas_Tasks_Conditions_CheckEventValue_System_Int32;
+
+	private CheckEventValue<Vector2> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Vector2;
+
+	private CheckEventValue<Vector3> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Vector3;
+
+	private CheckEventValue<Vector4> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Vector4;
+
+	private CheckEventValue<Quaternion> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Quaternion;
+
+	private CheckEventValue<Keyframe> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Keyframe;
+
+	private CheckEventValue<Bounds> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Bounds;
+
+	private CheckEventValue<Color> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Color;
+
+	private CheckEventValue<Rect> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Rect;
+
+	private CheckEventValue<ContactPoint> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_ContactPoint;
+
+	private CheckEventValue<ContactPoint2D> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_ContactPoint2D;
+
+	private CheckEventValue<RaycastHit> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_RaycastHit;
+
+	private CheckEventValue<RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_RaycastHit2D;
+
+	private CheckEventValue<Ray> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Ray;
+
+	private CheckEventValue<Space> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Space;
+
+	private CheckEventValue<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_CheckEventValue_Ase_HeroAIStageEnum;
+
+	private CheckEventValue<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_CheckEventValue_Ase_HeroBehaviorTypeEnum;
+
+	private CheckEventValue<HeroSkillType> NodeCanvas_Tasks_Conditions_CheckEventValue_Ase_HeroSkillType;
+
+	private CheckEventValue<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_CheckEventValue_Ase_HeroSkillTypeEnum;
+
+	private CheckEventValue<MapItemState> NodeCanvas_Tasks_Conditions_CheckEventValue_Ase_MapItemState;
+
+	private CheckEventValue<MobStageEnum> NodeCanvas_Tasks_Conditions_CheckEventValue_Ase_MobStageEnum;
+
+	private CheckEventValue<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_CheckEventValue_Ase_MonsterPhaseEnum;
+
+	private CheckEventValue<SkillExecuteState> NodeCanvas_Tasks_Conditions_CheckEventValue_Ase_SkillExecuteState;
+
+	private CheckUnityEvent<bool> NodeCanvas_Tasks_Conditions_CheckUnityEvent_System_Boolean;
+
+	private CheckUnityEvent<float> NodeCanvas_Tasks_Conditions_CheckUnityEvent_System_Single;
+
+	private CheckUnityEvent<int> NodeCanvas_Tasks_Conditions_CheckUnityEvent_System_Int32;
+
+	private CheckUnityEvent<Vector2> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Vector2;
+
+	private CheckUnityEvent<Vector3> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Vector3;
+
+	private CheckUnityEvent<Vector4> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Vector4;
+
+	private CheckUnityEvent<Quaternion> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Quaternion;
+
+	private CheckUnityEvent<Keyframe> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Keyframe;
+
+	private CheckUnityEvent<Bounds> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Bounds;
+
+	private CheckUnityEvent<Color> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Color;
+
+	private CheckUnityEvent<Rect> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Rect;
+
+	private CheckUnityEvent<ContactPoint> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_ContactPoint;
+
+	private CheckUnityEvent<ContactPoint2D> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_ContactPoint2D;
+
+	private CheckUnityEvent<RaycastHit> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_RaycastHit;
+
+	private CheckUnityEvent<RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_RaycastHit2D;
+
+	private CheckUnityEvent<Ray> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Ray;
+
+	private CheckUnityEvent<Space> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Space;
+
+	private CheckUnityEvent<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_CheckUnityEvent_Ase_HeroAIStageEnum;
+
+	private CheckUnityEvent<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_CheckUnityEvent_Ase_HeroBehaviorTypeEnum;
+
+	private CheckUnityEvent<HeroSkillType> NodeCanvas_Tasks_Conditions_CheckUnityEvent_Ase_HeroSkillType;
+
+	private CheckUnityEvent<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_CheckUnityEvent_Ase_HeroSkillTypeEnum;
+
+	private CheckUnityEvent<MapItemState> NodeCanvas_Tasks_Conditions_CheckUnityEvent_Ase_MapItemState;
+
+	private CheckUnityEvent<MobStageEnum> NodeCanvas_Tasks_Conditions_CheckUnityEvent_Ase_MobStageEnum;
+
+	private CheckUnityEvent<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_CheckUnityEvent_Ase_MonsterPhaseEnum;
+
+	private CheckUnityEvent<SkillExecuteState> NodeCanvas_Tasks_Conditions_CheckUnityEvent_Ase_SkillExecuteState;
+
+	private CheckUnityEventValue<bool> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_System_Boolean;
+
+	private CheckUnityEventValue<float> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_System_Single;
+
+	private CheckUnityEventValue<int> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_System_Int32;
+
+	private CheckUnityEventValue<Vector2> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Vector2;
+
+	private CheckUnityEventValue<Vector3> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Vector3;
+
+	private CheckUnityEventValue<Vector4> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Vector4;
+
+	private CheckUnityEventValue<Quaternion> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Quaternion;
+
+	private CheckUnityEventValue<Keyframe> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Keyframe;
+
+	private CheckUnityEventValue<Bounds> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Bounds;
+
+	private CheckUnityEventValue<Color> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Color;
+
+	private CheckUnityEventValue<Rect> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Rect;
+
+	private CheckUnityEventValue<ContactPoint> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_ContactPoint;
+
+	private CheckUnityEventValue<ContactPoint2D> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_ContactPoint2D;
+
+	private CheckUnityEventValue<RaycastHit> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_RaycastHit;
+
+	private CheckUnityEventValue<RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_RaycastHit2D;
+
+	private CheckUnityEventValue<Ray> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Ray;
+
+	private CheckUnityEventValue<Space> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Space;
+
+	private CheckUnityEventValue<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_Ase_HeroAIStageEnum;
+
+	private CheckUnityEventValue<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_Ase_HeroBehaviorTypeEnum;
+
+	private CheckUnityEventValue<HeroSkillType> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_Ase_HeroSkillType;
+
+	private CheckUnityEventValue<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_Ase_HeroSkillTypeEnum;
+
+	private CheckUnityEventValue<MapItemState> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_Ase_MapItemState;
+
+	private CheckUnityEventValue<MobStageEnum> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_Ase_MobStageEnum;
+
+	private CheckUnityEventValue<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_Ase_MonsterPhaseEnum;
+
+	private CheckUnityEventValue<SkillExecuteState> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_Ase_SkillExecuteState;
+
+	private CheckVariable<bool> NodeCanvas_Tasks_Conditions_CheckVariable_System_Boolean;
+
+	private CheckVariable<float> NodeCanvas_Tasks_Conditions_CheckVariable_System_Single;
+
+	private CheckVariable<int> NodeCanvas_Tasks_Conditions_CheckVariable_System_Int32;
+
+	private CheckVariable<Vector2> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Vector2;
+
+	private CheckVariable<Vector3> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Vector3;
+
+	private CheckVariable<Vector4> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Vector4;
+
+	private CheckVariable<Quaternion> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Quaternion;
+
+	private CheckVariable<Keyframe> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Keyframe;
+
+	private CheckVariable<Bounds> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Bounds;
+
+	private CheckVariable<Color> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Color;
+
+	private CheckVariable<Rect> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Rect;
+
+	private CheckVariable<ContactPoint> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_ContactPoint;
+
+	private CheckVariable<ContactPoint2D> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_ContactPoint2D;
+
+	private CheckVariable<RaycastHit> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_RaycastHit;
+
+	private CheckVariable<RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_RaycastHit2D;
+
+	private CheckVariable<Ray> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Ray;
+
+	private CheckVariable<Space> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Space;
+
+	private CheckVariable<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_CheckVariable_Ase_HeroAIStageEnum;
+
+	private CheckVariable<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_CheckVariable_Ase_HeroBehaviorTypeEnum;
+
+	private CheckVariable<HeroSkillType> NodeCanvas_Tasks_Conditions_CheckVariable_Ase_HeroSkillType;
+
+	private CheckVariable<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_CheckVariable_Ase_HeroSkillTypeEnum;
+
+	private CheckVariable<MapItemState> NodeCanvas_Tasks_Conditions_CheckVariable_Ase_MapItemState;
+
+	private CheckVariable<MobStageEnum> NodeCanvas_Tasks_Conditions_CheckVariable_Ase_MobStageEnum;
+
+	private CheckVariable<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_CheckVariable_Ase_MonsterPhaseEnum;
+
+	private CheckVariable<SkillExecuteState> NodeCanvas_Tasks_Conditions_CheckVariable_Ase_SkillExecuteState;
+
+	private ListContainsElement<bool> NodeCanvas_Tasks_Conditions_ListContainsElement_System_Boolean;
+
+	private ListContainsElement<float> NodeCanvas_Tasks_Conditions_ListContainsElement_System_Single;
+
+	private ListContainsElement<int> NodeCanvas_Tasks_Conditions_ListContainsElement_System_Int32;
+
+	private ListContainsElement<Vector2> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Vector2;
+
+	private ListContainsElement<Vector3> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Vector3;
+
+	private ListContainsElement<Vector4> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Vector4;
+
+	private ListContainsElement<Quaternion> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Quaternion;
+
+	private ListContainsElement<Keyframe> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Keyframe;
+
+	private ListContainsElement<Bounds> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Bounds;
+
+	private ListContainsElement<Color> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Color;
+
+	private ListContainsElement<Rect> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Rect;
+
+	private ListContainsElement<ContactPoint> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_ContactPoint;
+
+	private ListContainsElement<ContactPoint2D> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_ContactPoint2D;
+
+	private ListContainsElement<RaycastHit> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_RaycastHit;
+
+	private ListContainsElement<RaycastHit2D> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_RaycastHit2D;
+
+	private ListContainsElement<Ray> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Ray;
+
+	private ListContainsElement<Space> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Space;
+
+	private ListContainsElement<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_ListContainsElement_Ase_HeroAIStageEnum;
+
+	private ListContainsElement<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_ListContainsElement_Ase_HeroBehaviorTypeEnum;
+
+	private ListContainsElement<HeroSkillType> NodeCanvas_Tasks_Conditions_ListContainsElement_Ase_HeroSkillType;
+
+	private ListContainsElement<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_ListContainsElement_Ase_HeroSkillTypeEnum;
+
+	private ListContainsElement<MapItemState> NodeCanvas_Tasks_Conditions_ListContainsElement_Ase_MapItemState;
+
+	private ListContainsElement<MobStageEnum> NodeCanvas_Tasks_Conditions_ListContainsElement_Ase_MobStageEnum;
+
+	private ListContainsElement<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_ListContainsElement_Ase_MonsterPhaseEnum;
+
+	private ListContainsElement<SkillExecuteState> NodeCanvas_Tasks_Conditions_ListContainsElement_Ase_SkillExecuteState;
+
+	private TListIsEmpty<bool> NodeCanvas_Tasks_Conditions_TListIsEmpty_System_Boolean;
+
+	private TListIsEmpty<float> NodeCanvas_Tasks_Conditions_TListIsEmpty_System_Single;
+
+	private TListIsEmpty<int> NodeCanvas_Tasks_Conditions_TListIsEmpty_System_Int32;
+
+	private TListIsEmpty<Vector2> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Vector2;
+
+	private TListIsEmpty<Vector3> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Vector3;
+
+	private TListIsEmpty<Vector4> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Vector4;
+
+	private TListIsEmpty<Quaternion> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Quaternion;
+
+	private TListIsEmpty<Keyframe> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Keyframe;
+
+	private TListIsEmpty<Bounds> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Bounds;
+
+	private TListIsEmpty<Color> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Color;
+
+	private TListIsEmpty<Rect> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Rect;
+
+	private TListIsEmpty<ContactPoint> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_ContactPoint;
+
+	private TListIsEmpty<ContactPoint2D> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_ContactPoint2D;
+
+	private TListIsEmpty<RaycastHit> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_RaycastHit;
+
+	private TListIsEmpty<RaycastHit2D> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_RaycastHit2D;
+
+	private TListIsEmpty<Ray> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Ray;
+
+	private TListIsEmpty<Space> NodeCanvas_Tasks_Conditions_TListIsEmpty_UnityEngine_Space;
+
+	private TListIsEmpty<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_TListIsEmpty_Ase_HeroAIStageEnum;
+
+	private TListIsEmpty<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_TListIsEmpty_Ase_HeroBehaviorTypeEnum;
+
+	private TListIsEmpty<HeroSkillType> NodeCanvas_Tasks_Conditions_TListIsEmpty_Ase_HeroSkillType;
+
+	private TListIsEmpty<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_TListIsEmpty_Ase_HeroSkillTypeEnum;
+
+	private TListIsEmpty<MapItemState> NodeCanvas_Tasks_Conditions_TListIsEmpty_Ase_MapItemState;
+
+	private TListIsEmpty<MobStageEnum> NodeCanvas_Tasks_Conditions_TListIsEmpty_Ase_MobStageEnum;
+
+	private TListIsEmpty<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_TListIsEmpty_Ase_MonsterPhaseEnum;
+
+	private TListIsEmpty<SkillExecuteState> NodeCanvas_Tasks_Conditions_TListIsEmpty_Ase_SkillExecuteState;
+
+	private TryGetValue<bool> NodeCanvas_Tasks_Conditions_TryGetValue_System_Boolean;
+
+	private TryGetValue<float> NodeCanvas_Tasks_Conditions_TryGetValue_System_Single;
+
+	private TryGetValue<int> NodeCanvas_Tasks_Conditions_TryGetValue_System_Int32;
+
+	private TryGetValue<Vector2> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Vector2;
+
+	private TryGetValue<Vector3> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Vector3;
+
+	private TryGetValue<Vector4> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Vector4;
+
+	private TryGetValue<Quaternion> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Quaternion;
+
+	private TryGetValue<Keyframe> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Keyframe;
+
+	private TryGetValue<Bounds> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Bounds;
+
+	private TryGetValue<Color> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Color;
+
+	private TryGetValue<Rect> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Rect;
+
+	private TryGetValue<ContactPoint> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_ContactPoint;
+
+	private TryGetValue<ContactPoint2D> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_ContactPoint2D;
+
+	private TryGetValue<RaycastHit> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_RaycastHit;
+
+	private TryGetValue<RaycastHit2D> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_RaycastHit2D;
+
+	private TryGetValue<Ray> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Ray;
+
+	private TryGetValue<Space> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Space;
+
+	private TryGetValue<HeroAIStageEnum> NodeCanvas_Tasks_Conditions_TryGetValue_Ase_HeroAIStageEnum;
+
+	private TryGetValue<HeroBehaviorTypeEnum> NodeCanvas_Tasks_Conditions_TryGetValue_Ase_HeroBehaviorTypeEnum;
+
+	private TryGetValue<HeroSkillType> NodeCanvas_Tasks_Conditions_TryGetValue_Ase_HeroSkillType;
+
+	private TryGetValue<HeroSkillTypeEnum> NodeCanvas_Tasks_Conditions_TryGetValue_Ase_HeroSkillTypeEnum;
+
+	private TryGetValue<MapItemState> NodeCanvas_Tasks_Conditions_TryGetValue_Ase_MapItemState;
+
+	private TryGetValue<MobStageEnum> NodeCanvas_Tasks_Conditions_TryGetValue_Ase_MobStageEnum;
+
+	private TryGetValue<MonsterPhaseEnum> NodeCanvas_Tasks_Conditions_TryGetValue_Ase_MonsterPhaseEnum;
+
+	private TryGetValue<SkillExecuteState> NodeCanvas_Tasks_Conditions_TryGetValue_Ase_SkillExecuteState;
+
+	private void NodeCanvas_Framework_Blackboard_GetVariable_1()
+	{
+		((Blackboard)null).GetVariable<bool>((string)o);
+		((Blackboard)null).GetVariable<float>((string)o);
+		((Blackboard)null).GetVariable<int>((string)o);
+		((Blackboard)null).GetVariable<Vector2>((string)o);
+		((Blackboard)null).GetVariable<Vector3>((string)o);
+		((Blackboard)null).GetVariable<Vector4>((string)o);
+		((Blackboard)null).GetVariable<Quaternion>((string)o);
+		((Blackboard)null).GetVariable<Keyframe>((string)o);
+		((Blackboard)null).GetVariable<Bounds>((string)o);
+		((Blackboard)null).GetVariable<Color>((string)o);
+		((Blackboard)null).GetVariable<Rect>((string)o);
+		((Blackboard)null).GetVariable<ContactPoint>((string)o);
+		((Blackboard)null).GetVariable<ContactPoint2D>((string)o);
+		((Blackboard)null).GetVariable<RaycastHit>((string)o);
+		((Blackboard)null).GetVariable<RaycastHit2D>((string)o);
+		((Blackboard)null).GetVariable<Ray>((string)o);
+		((Blackboard)null).GetVariable<Space>((string)o);
+		((Blackboard)null).GetVariable<HeroAIStageEnum>((string)o);
+		((Blackboard)null).GetVariable<HeroBehaviorTypeEnum>((string)o);
+		((Blackboard)null).GetVariable<HeroSkillType>((string)o);
+		((Blackboard)null).GetVariable<HeroSkillTypeEnum>((string)o);
+		((Blackboard)null).GetVariable<MapItemState>((string)o);
+		((Blackboard)null).GetVariable<MobStageEnum>((string)o);
+		((Blackboard)null).GetVariable<MonsterPhaseEnum>((string)o);
+		((Blackboard)null).GetVariable<SkillExecuteState>((string)o);
+	}
+
+	private void NodeCanvas_Framework_Blackboard_GetVariableValue_2()
+	{
+		//IL_00d3: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00e5: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00f7: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0109: Unknown result type (might be due to invalid IL or missing references)
+		((Blackboard)null).GetVariableValue<bool>((string)o);
+		((Blackboard)null).GetVariableValue<float>((string)o);
+		((Blackboard)null).GetVariableValue<int>((string)o);
+		((Blackboard)null).GetVariableValue<Vector2>((string)o);
+		((Blackboard)null).GetVariableValue<Vector3>((string)o);
+		((Blackboard)null).GetVariableValue<Vector4>((string)o);
+		((Blackboard)null).GetVariableValue<Quaternion>((string)o);
+		((Blackboard)null).GetVariableValue<Keyframe>((string)o);
+		((Blackboard)null).GetVariableValue<Bounds>((string)o);
+		((Blackboard)null).GetVariableValue<Color>((string)o);
+		((Blackboard)null).GetVariableValue<Rect>((string)o);
+		((Blackboard)null).GetVariableValue<ContactPoint>((string)o);
+		((Blackboard)null).GetVariableValue<ContactPoint2D>((string)o);
+		((Blackboard)null).GetVariableValue<RaycastHit>((string)o);
+		((Blackboard)null).GetVariableValue<RaycastHit2D>((string)o);
+		((Blackboard)null).GetVariableValue<Ray>((string)o);
+		((Blackboard)null).GetVariableValue<Space>((string)o);
+		((Blackboard)null).GetVariableValue<HeroAIStageEnum>((string)o);
+		((Blackboard)null).GetVariableValue<HeroBehaviorTypeEnum>((string)o);
+		((Blackboard)null).GetVariableValue<HeroSkillType>((string)o);
+		((Blackboard)null).GetVariableValue<HeroSkillTypeEnum>((string)o);
+		((Blackboard)null).GetVariableValue<MapItemState>((string)o);
+		((Blackboard)null).GetVariableValue<MobStageEnum>((string)o);
+		((Blackboard)null).GetVariableValue<MonsterPhaseEnum>((string)o);
+		((Blackboard)null).GetVariableValue<SkillExecuteState>((string)o);
+	}
+
+	private void NodeCanvas_Framework_IBlackboardExtensions_AddVariable_1()
+	{
+		//IL_01c9: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01f0: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0217: Unknown result type (might be due to invalid IL or missing references)
+		//IL_023e: Unknown result type (might be due to invalid IL or missing references)
+		((IBlackboard)o).AddVariable((string)o, (bool)o);
+		((IBlackboard)o).AddVariable((string)o, (float)o);
+		((IBlackboard)o).AddVariable((string)o, (int)o);
+		((IBlackboard)o).AddVariable((string)o, (Vector2)o);
+		((IBlackboard)o).AddVariable((string)o, (Vector3)o);
+		((IBlackboard)o).AddVariable((string)o, (Vector4)o);
+		((IBlackboard)o).AddVariable((string)o, (Quaternion)o);
+		((IBlackboard)o).AddVariable((string)o, (Keyframe)o);
+		((IBlackboard)o).AddVariable((string)o, (Bounds)o);
+		((IBlackboard)o).AddVariable((string)o, (Color)o);
+		((IBlackboard)o).AddVariable((string)o, (Rect)o);
+		((IBlackboard)o).AddVariable<ContactPoint>((string)o, (ContactPoint)o);
+		((IBlackboard)o).AddVariable<ContactPoint2D>((string)o, (ContactPoint2D)o);
+		((IBlackboard)o).AddVariable<RaycastHit>((string)o, (RaycastHit)o);
+		((IBlackboard)o).AddVariable<RaycastHit2D>((string)o, (RaycastHit2D)o);
+		((IBlackboard)o).AddVariable((string)o, (Ray)o);
+		((IBlackboard)o).AddVariable((string)o, (Space)o);
+		((IBlackboard)o).AddVariable((string)o, (HeroAIStageEnum)o);
+		((IBlackboard)o).AddVariable((string)o, (HeroBehaviorTypeEnum)o);
+		((IBlackboard)o).AddVariable((string)o, (HeroSkillType)o);
+		((IBlackboard)o).AddVariable((string)o, (HeroSkillTypeEnum)o);
+		((IBlackboard)o).AddVariable((string)o, (MapItemState)o);
+		((IBlackboard)o).AddVariable((string)o, (MobStageEnum)o);
+		((IBlackboard)o).AddVariable((string)o, (MonsterPhaseEnum)o);
+		((IBlackboard)o).AddVariable((string)o, (SkillExecuteState)o);
+	}
+
+	private void NodeCanvas_Framework_IBlackboardExtensions_AddVariable_2()
+	{
+		((IBlackboard)o).AddVariable<bool>((string)o);
+		((IBlackboard)o).AddVariable<float>((string)o);
+		((IBlackboard)o).AddVariable<int>((string)o);
+		((IBlackboard)o).AddVariable<Vector2>((string)o);
+		((IBlackboard)o).AddVariable<Vector3>((string)o);
+		((IBlackboard)o).AddVariable<Vector4>((string)o);
+		((IBlackboard)o).AddVariable<Quaternion>((string)o);
+		((IBlackboard)o).AddVariable<Keyframe>((string)o);
+		((IBlackboard)o).AddVariable<Bounds>((string)o);
+		((IBlackboard)o).AddVariable<Color>((string)o);
+		((IBlackboard)o).AddVariable<Rect>((string)o);
+		((IBlackboard)o).AddVariable<ContactPoint>((string)o);
+		((IBlackboard)o).AddVariable<ContactPoint2D>((string)o);
+		((IBlackboard)o).AddVariable<RaycastHit>((string)o);
+		((IBlackboard)o).AddVariable<RaycastHit2D>((string)o);
+		((IBlackboard)o).AddVariable<Ray>((string)o);
+		((IBlackboard)o).AddVariable<Space>((string)o);
+		((IBlackboard)o).AddVariable<HeroAIStageEnum>((string)o);
+		((IBlackboard)o).AddVariable<HeroBehaviorTypeEnum>((string)o);
+		((IBlackboard)o).AddVariable<HeroSkillType>((string)o);
+		((IBlackboard)o).AddVariable<HeroSkillTypeEnum>((string)o);
+		((IBlackboard)o).AddVariable<MapItemState>((string)o);
+		((IBlackboard)o).AddVariable<MobStageEnum>((string)o);
+		((IBlackboard)o).AddVariable<MonsterPhaseEnum>((string)o);
+		((IBlackboard)o).AddVariable<SkillExecuteState>((string)o);
+	}
+
+	private void NodeCanvas_Framework_IBlackboardExtensions_AddVariable_3()
+	{
+		((IBlackboard)o).AddVariable<bool>((string)o, o);
+		((IBlackboard)o).AddVariable<float>((string)o, o);
+		((IBlackboard)o).AddVariable<int>((string)o, o);
+		((IBlackboard)o).AddVariable<Vector2>((string)o, o);
+		((IBlackboard)o).AddVariable<Vector3>((string)o, o);
+		((IBlackboard)o).AddVariable<Vector4>((string)o, o);
+		((IBlackboard)o).AddVariable<Quaternion>((string)o, o);
+		((IBlackboard)o).AddVariable<Keyframe>((string)o, o);
+		((IBlackboard)o).AddVariable<Bounds>((string)o, o);
+		((IBlackboard)o).AddVariable<Color>((string)o, o);
+		((IBlackboard)o).AddVariable<Rect>((string)o, o);
+		((IBlackboard)o).AddVariable<ContactPoint>((string)o, o);
+		((IBlackboard)o).AddVariable<ContactPoint2D>((string)o, o);
+		((IBlackboard)o).AddVariable<RaycastHit>((string)o, o);
+		((IBlackboard)o).AddVariable<RaycastHit2D>((string)o, o);
+		((IBlackboard)o).AddVariable<Ray>((string)o, o);
+		((IBlackboard)o).AddVariable<Space>((string)o, o);
+		((IBlackboard)o).AddVariable<HeroAIStageEnum>((string)o, o);
+		((IBlackboard)o).AddVariable<HeroBehaviorTypeEnum>((string)o, o);
+		((IBlackboard)o).AddVariable<HeroSkillType>((string)o, o);
+		((IBlackboard)o).AddVariable<HeroSkillTypeEnum>((string)o, o);
+		((IBlackboard)o).AddVariable<MapItemState>((string)o, o);
+		((IBlackboard)o).AddVariable<MobStageEnum>((string)o, o);
+		((IBlackboard)o).AddVariable<MonsterPhaseEnum>((string)o, o);
+		((IBlackboard)o).AddVariable<SkillExecuteState>((string)o, o);
+	}
+
+	private void NodeCanvas_Framework_IBlackboardExtensions_GetVariableValue_4()
+	{
+		//IL_014a: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0166: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0182: Unknown result type (might be due to invalid IL or missing references)
+		//IL_019e: Unknown result type (might be due to invalid IL or missing references)
+		((IBlackboard)o).GetVariableValue<bool>((string)o);
+		((IBlackboard)o).GetVariableValue<float>((string)o);
+		((IBlackboard)o).GetVariableValue<int>((string)o);
+		((IBlackboard)o).GetVariableValue<Vector2>((string)o);
+		((IBlackboard)o).GetVariableValue<Vector3>((string)o);
+		((IBlackboard)o).GetVariableValue<Vector4>((string)o);
+		((IBlackboard)o).GetVariableValue<Quaternion>((string)o);
+		((IBlackboard)o).GetVariableValue<Keyframe>((string)o);
+		((IBlackboard)o).GetVariableValue<Bounds>((string)o);
+		((IBlackboard)o).GetVariableValue<Color>((string)o);
+		((IBlackboard)o).GetVariableValue<Rect>((string)o);
+		((IBlackboard)o).GetVariableValue<ContactPoint>((string)o);
+		((IBlackboard)o).GetVariableValue<ContactPoint2D>((string)o);
+		((IBlackboard)o).GetVariableValue<RaycastHit>((string)o);
+		((IBlackboard)o).GetVariableValue<RaycastHit2D>((string)o);
+		((IBlackboard)o).GetVariableValue<Ray>((string)o);
+		((IBlackboard)o).GetVariableValue<Space>((string)o);
+		((IBlackboard)o).GetVariableValue<HeroAIStageEnum>((string)o);
+		((IBlackboard)o).GetVariableValue<HeroBehaviorTypeEnum>((string)o);
+		((IBlackboard)o).GetVariableValue<HeroSkillType>((string)o);
+		((IBlackboard)o).GetVariableValue<HeroSkillTypeEnum>((string)o);
+		((IBlackboard)o).GetVariableValue<MapItemState>((string)o);
+		((IBlackboard)o).GetVariableValue<MobStageEnum>((string)o);
+		((IBlackboard)o).GetVariableValue<MonsterPhaseEnum>((string)o);
+		((IBlackboard)o).GetVariableValue<SkillExecuteState>((string)o);
+	}
+
+	private void NodeCanvas_Framework_IBlackboardExtensions_SetVariableValue_5()
+	{
+		((IBlackboard)o).SetVariableValue<bool>((string)o, o);
+		((IBlackboard)o).SetVariableValue<float>((string)o, o);
+		((IBlackboard)o).SetVariableValue<int>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Vector2>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Vector3>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Vector4>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Quaternion>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Keyframe>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Bounds>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Color>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Rect>((string)o, o);
+		((IBlackboard)o).SetVariableValue<ContactPoint>((string)o, o);
+		((IBlackboard)o).SetVariableValue<ContactPoint2D>((string)o, o);
+		((IBlackboard)o).SetVariableValue<RaycastHit>((string)o, o);
+		((IBlackboard)o).SetVariableValue<RaycastHit2D>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Ray>((string)o, o);
+		((IBlackboard)o).SetVariableValue<Space>((string)o, o);
+		((IBlackboard)o).SetVariableValue<HeroAIStageEnum>((string)o, o);
+		((IBlackboard)o).SetVariableValue<HeroBehaviorTypeEnum>((string)o, o);
+		((IBlackboard)o).SetVariableValue<HeroSkillType>((string)o, o);
+		((IBlackboard)o).SetVariableValue<HeroSkillTypeEnum>((string)o, o);
+		((IBlackboard)o).SetVariableValue<MapItemState>((string)o, o);
+		((IBlackboard)o).SetVariableValue<MobStageEnum>((string)o, o);
+		((IBlackboard)o).SetVariableValue<MonsterPhaseEnum>((string)o, o);
+		((IBlackboard)o).SetVariableValue<SkillExecuteState>((string)o, o);
+	}
+
+	private void NodeCanvas_Framework_IBlackboardExtensions_SetVariableValue_6()
+	{
+		//IL_01c9: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01f0: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0217: Unknown result type (might be due to invalid IL or missing references)
+		//IL_023e: Unknown result type (might be due to invalid IL or missing references)
+		((IBlackboard)o).SetVariableValue((string)o, (bool)o);
+		((IBlackboard)o).SetVariableValue((string)o, (float)o);
+		((IBlackboard)o).SetVariableValue((string)o, (int)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Vector2)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Vector3)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Vector4)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Quaternion)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Keyframe)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Bounds)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Color)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Rect)o);
+		((IBlackboard)o).SetVariableValue<ContactPoint>((string)o, (ContactPoint)o);
+		((IBlackboard)o).SetVariableValue<ContactPoint2D>((string)o, (ContactPoint2D)o);
+		((IBlackboard)o).SetVariableValue<RaycastHit>((string)o, (RaycastHit)o);
+		((IBlackboard)o).SetVariableValue<RaycastHit2D>((string)o, (RaycastHit2D)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Ray)o);
+		((IBlackboard)o).SetVariableValue((string)o, (Space)o);
+		((IBlackboard)o).SetVariableValue((string)o, (HeroAIStageEnum)o);
+		((IBlackboard)o).SetVariableValue((string)o, (HeroBehaviorTypeEnum)o);
+		((IBlackboard)o).SetVariableValue((string)o, (HeroSkillType)o);
+		((IBlackboard)o).SetVariableValue((string)o, (HeroSkillTypeEnum)o);
+		((IBlackboard)o).SetVariableValue((string)o, (MapItemState)o);
+		((IBlackboard)o).SetVariableValue((string)o, (MobStageEnum)o);
+		((IBlackboard)o).SetVariableValue((string)o, (MonsterPhaseEnum)o);
+		((IBlackboard)o).SetVariableValue((string)o, (SkillExecuteState)o);
+	}
+
+	private void NodeCanvas_Framework_IBlackboardExtensions_GetVariable_7()
+	{
+		((IBlackboard)o).GetVariable<bool>((string)o);
+		((IBlackboard)o).GetVariable<float>((string)o);
+		((IBlackboard)o).GetVariable<int>((string)o);
+		((IBlackboard)o).GetVariable<Vector2>((string)o);
+		((IBlackboard)o).GetVariable<Vector3>((string)o);
+		((IBlackboard)o).GetVariable<Vector4>((string)o);
+		((IBlackboard)o).GetVariable<Quaternion>((string)o);
+		((IBlackboard)o).GetVariable<Keyframe>((string)o);
+		((IBlackboard)o).GetVariable<Bounds>((string)o);
+		((IBlackboard)o).GetVariable<Color>((string)o);
+		((IBlackboard)o).GetVariable<Rect>((string)o);
+		((IBlackboard)o).GetVariable<ContactPoint>((string)o);
+		((IBlackboard)o).GetVariable<ContactPoint2D>((string)o);
+		((IBlackboard)o).GetVariable<RaycastHit>((string)o);
+		((IBlackboard)o).GetVariable<RaycastHit2D>((string)o);
+		((IBlackboard)o).GetVariable<Ray>((string)o);
+		((IBlackboard)o).GetVariable<Space>((string)o);
+		((IBlackboard)o).GetVariable<HeroAIStageEnum>((string)o);
+		((IBlackboard)o).GetVariable<HeroBehaviorTypeEnum>((string)o);
+		((IBlackboard)o).GetVariable<HeroSkillType>((string)o);
+		((IBlackboard)o).GetVariable<HeroSkillTypeEnum>((string)o);
+		((IBlackboard)o).GetVariable<MapItemState>((string)o);
+		((IBlackboard)o).GetVariable<MobStageEnum>((string)o);
+		((IBlackboard)o).GetVariable<MonsterPhaseEnum>((string)o);
+		((IBlackboard)o).GetVariable<SkillExecuteState>((string)o);
+	}
+
+	private void CustomSpoof()
+	{
+	}
+}

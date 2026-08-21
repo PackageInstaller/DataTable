@@ -1,0 +1,38 @@
+[
+    {
+        "Id": 10000,
+        "DamageKey": "default",
+        "Path": "DamageText/TextDamageItem_normal",
+        "InitCap": 8
+    },
+    {
+        "Id": 10001,
+        "DamageKey": "health",
+        "Path": "DamageText/TextDamageItem_treatment",
+        "InitCap": 4
+    },
+    {
+        "Id": 10002,
+        "DamageKey": "critical",
+        "Path": "DamageText/TextDamageItem_critical",
+        "InitCap": 8
+    },
+    {
+        "Id": 10003,
+        "DamageKey": "injured",
+        "Path": "DamageText/TextDamageItem_injured",
+        "InitCap": 6
+    },
+    {
+        "Id": 20001,
+        "DamageKey": "singleCritical",
+        "Path": "DamageText/CriticalDamageText",
+        "InitCap": 16
+    },
+    {
+        "Id": 20002,
+        "DamageKey": "singleNormal",
+        "Path": "DamageText/NormalDamageText",
+        "InitCap": 16
+    }
+]

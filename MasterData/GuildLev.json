@@ -1,0 +1,84 @@
+[
+    {
+        "Id": 1,
+        "GuildLv": 1,
+        "GuildFund": 0,
+        "FundLimit": 6000,
+        "MemberLimit": 10,
+        "ViceLimit": 1,
+        "ExcellentMemberLimit": 2,
+        "ActiveCost": 100,
+        "BuffId": 70001,
+        "ExtraEffect": [],
+        "TaskQuality": [
+            2
+        ],
+        "TaskNum": [
+            3
+        ]
+    },
+    {
+        "Id": 2,
+        "GuildLv": 2,
+        "GuildFund": 2000,
+        "FundLimit": 21000,
+        "MemberLimit": 15,
+        "ViceLimit": 2,
+        "ExcellentMemberLimit": 4,
+        "ActiveCost": 300,
+        "BuffId": 70002,
+        "ExtraEffect": [
+            "公会商店商品种类增加"
+        ],
+        "TaskQuality": [
+            2
+        ],
+        "TaskNum": [
+            3
+        ]
+    },
+    {
+        "Id": 3,
+        "GuildLv": 3,
+        "GuildFund": 10500,
+        "FundLimit": 120000,
+        "MemberLimit": 20,
+        "ViceLimit": 3,
+        "ExcellentMemberLimit": 6,
+        "ActiveCost": 600,
+        "BuffId": 70003,
+        "ExtraEffect": [
+            "公会商店商品种类增加"
+        ],
+        "TaskQuality": [
+            2,
+            3
+        ],
+        "TaskNum": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 4,
+        "GuildLv": 4,
+        "GuildFund": 60000,
+        "FundLimit": 240000,
+        "MemberLimit": 25,
+        "ViceLimit": 4,
+        "ExcellentMemberLimit": 8,
+        "ActiveCost": 1000,
+        "BuffId": 70004,
+        "ExtraEffect": [
+            "公会商店商品种类增加"
+        ],
+        "TaskQuality": [
+            2,
+            3
+        ],
+        "TaskNum": [
+            2,
+            1
+        ]
+    }
+]

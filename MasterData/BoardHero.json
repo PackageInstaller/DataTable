@@ -1,0 +1,944 @@
+[
+    {
+        "Id": 1,
+        "HeroId": 1606,
+        "StateType": 0,
+        "Desc": "默认动作",
+        "Animations": [
+            "Idle_1"
+        ],
+        "ChatBubbles": [],
+        "BubbleRunTime": [],
+        "AnimationType": 0,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [
+            " \u0001   \u0001       \u0006\u0001   ?[{\"name\":\"Idle\"",
+            "\"allFusionDatas\":[{\"aniData\":[\"Idle_00\"",
+            "\"\"",
+            "\"\"]",
+            "\"length\":3.0",
+            "\"transitionDuration\":0.5}]",
+            "\"audioClip\":{\"Guid\":{\"Data1\":-1483704058",
+            "\"Data2\":1338590330",
+            "\"Data3\":67614848",
+            "\"Data4\":374841366",
+            "\"IsNull\":false}",
+            "\"Path\":\"event:/Voice/1002 BeiLuo/Hobby/1002beiluo_hobby_idle 01_voice\"",
+            "\"IsNull\":false}",
+            "\"audioId\":99}",
+            "{\"name\":\"1002h1\"",
+            "\"allFusionDatas\":[{\"aniData\":[\"B-tanqi\"",
+            "\"E-renzhen02\"",
+            "\"T-renzhen02\"",
+            "\"Ex-lianhong\"]",
+            "\"length\":2.5",
+            "\"transitionDuration\":0.5}",
+            "{\"aniData\":[\"B-yaotou\"",
+            "\"E-renzhen02\"",
+            "\"T-jingya01\"",
+            "\"Ex-lianhong\"]",
+            "\"length\":2.166",
+            "\"transitionDuration\":0.5}]",
+            "\"audioClip\":{\"Guid\":{\"Data1\":-388094137",
+            "\"Data2\":1194643418",
+            "\"Data3\":-255164262",
+            "\"Data4\":-961840132",
+            "\"IsNull\":false}",
+            "\"Path\":\"event:/Voice/1002 BeiLuo/Hobby/1002beiluo_hobby_head 01_voice\"",
+            "\"IsNull\":false}",
+            "\"audioId\":98}]_x000b_"
+        ],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 2,
+        "HeroId": 1606,
+        "StateType": 0,
+        "Desc": "待机动作",
+        "Animations": [
+            "Idle_2"
+        ],
+        "ChatBubbles": [
+            "唉~~~~格洛克不喜欢一直待在这里呢~好想出去跑跑呀",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.0
+        ],
+        "AnimationType": 1,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 3,
+        "HeroId": 1606,
+        "StateType": 0,
+        "Desc": "通用动作",
+        "Animations": [
+            "Body_1"
+        ],
+        "ChatBubbles": [
+            "传火者，以后想不想和我一起去冒险呀？这个世界好大，我已经迫不及待地想去探索那些未知的地方啦！",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.0
+        ],
+        "AnimationType": 2,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 4,
+        "HeroId": 1606,
+        "StateType": 0,
+        "Desc": "愤怒动作",
+        "Animations": [
+            "Body_2"
+        ],
+        "ChatBubbles": [
+            "呜……干嘛啦！你比风滚草还麻烦耶！",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.0
+        ],
+        "AnimationType": 3,
+        "CanBreak": false,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 5,
+        "HeroId": 1606,
+        "StateType": 0,
+        "Desc": "Hand动作",
+        "Animations": [
+            "Hand"
+        ],
+        "ChatBubbles": [
+            "嗯……嗯？这个吗？这是辉石哦！由我带头开采的西部矿业主要产品，很漂亮吧？",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.0
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            1617.0,
+            2574.0
+        ],
+        "Position": [
+            1020.0,
+            783.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 6,
+        "HeroId": 1606,
+        "StateType": 0,
+        "Desc": "Head动作",
+        "Animations": [
+            "Head"
+        ],
+        "ChatBubbles": [
+            "哎嘿！好痒呀！",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.0
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            3013.0,
+            2890.0
+        ],
+        "Position": [
+            327.0,
+            1703.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 7,
+        "HeroId": 1005,
+        "StateType": 0,
+        "Desc": "默认动作",
+        "Animations": [
+            "Idle_1"
+        ],
+        "ChatBubbles": [],
+        "BubbleRunTime": [],
+        "AnimationType": 0,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 8,
+        "HeroId": 1005,
+        "StateType": 0,
+        "Desc": "待机动作",
+        "Animations": [
+            "Idle_2"
+        ],
+        "ChatBubbles": [
+            "说起来，我以前想过在弹头刻上一个比较神圣的标志来着，但是我们骑士团长不允许呢。我觉得挺好的，好看又实用，你说呢？",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.1
+        ],
+        "AnimationType": 1,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 9,
+        "HeroId": 1005,
+        "StateType": 0,
+        "Desc": "通用动作",
+        "Animations": [
+            "Body_1"
+        ],
+        "ChatBubbles": [
+            "嗯？怎么了？如果感到无聊的话，不管是祷告还是闲聊我都可以陪你哦。不过请先等我吃完这块草莓蛋糕嘛。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            2.7
+        ],
+        "AnimationType": 2,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 10,
+        "HeroId": 1005,
+        "StateType": 0,
+        "Desc": "愤怒动作",
+        "Animations": [
+            "Body_2"
+        ],
+        "ChatBubbles": [
+            "唉，誓主啊~果然还是小孩子呢~",
+            "test"
+        ],
+        "BubbleRunTime": [
+            4.2
+        ],
+        "AnimationType": 3,
+        "CanBreak": false,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 11,
+        "HeroId": 1005,
+        "StateType": 0,
+        "Desc": "Hand动作",
+        "Animations": [
+            "Hand"
+        ],
+        "ChatBubbles": [
+            "这上面记录了上千条戒律，您最好别被我抓到小辫子哦~~",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.2
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            2937.0,
+            3156.0
+        ],
+        "Position": [
+            440.0,
+            -360.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 12,
+        "HeroId": 1005,
+        "StateType": 0,
+        "Desc": "Head动作",
+        "Animations": [
+            "Head"
+        ],
+        "ChatBubbles": [
+            "誓主，如果你想让我们的关系更加亲密，就请带我去吃光耀城评分最高的餐厅吧~",
+            "test"
+        ],
+        "BubbleRunTime": [
+            1.9
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            2444.0,
+            2475.0
+        ],
+        "Position": [
+            -366.0,
+            1719.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 13,
+        "HeroId": 1103,
+        "StateType": 0,
+        "Desc": "默认动作",
+        "Animations": [
+            "Idle_1"
+        ],
+        "ChatBubbles": [],
+        "BubbleRunTime": [],
+        "AnimationType": 0,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 14,
+        "HeroId": 1103,
+        "StateType": 0,
+        "Desc": "待机动作",
+        "Animations": [
+            "Idle_2"
+        ],
+        "ChatBubbles": [
+            "朱斯蒂提亚陛下……不，应该称呼为女王陛下。她经常说我不够坦率，有时直接一点反而可以增进你我之间的感情。我……可以这么做吗？",
+            "test"
+        ],
+        "BubbleRunTime": [
+            2.0
+        ],
+        "AnimationType": 1,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 15,
+        "HeroId": 1103,
+        "StateType": 0,
+        "Desc": "通用动作",
+        "Animations": [
+            "Body_1"
+        ],
+        "ChatBubbles": [
+            "您是来巡视的吗？请放心吧，这附近一切正常，只要有我在就绝不可能让您陷入危险。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            4.5
+        ],
+        "AnimationType": 2,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 16,
+        "HeroId": 1103,
+        "StateType": 0,
+        "Desc": "愤怒动作",
+        "Animations": [
+            "Body_2"
+        ],
+        "ChatBubbles": [
+            "我原以为您是位明主……请不要荒废时间。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            1.6
+        ],
+        "AnimationType": 3,
+        "CanBreak": false,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 17,
+        "HeroId": 1103,
+        "StateType": 0,
+        "Desc": "Hand动作",
+        "Animations": [
+            "Hand"
+        ],
+        "ChatBubbles": [
+            "以此剑起誓！对人民谦恭，对上级正直，对弱者怜悯，对敌人英勇，对罪人公正，为传火者牺牲，捍卫荣誉，燃烧灵魂！",
+            "test"
+        ],
+        "BubbleRunTime": [
+            5.2
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            1246.0,
+            10480.0
+        ],
+        "Position": [
+            -164.0,
+            -647.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 18,
+        "HeroId": 1103,
+        "StateType": 0,
+        "Desc": "Head动作",
+        "Animations": [
+            "Head"
+        ],
+        "ChatBubbles": [
+            "嗯？我的头上有什么东西吗？还是说“摸头”这种行为有别的含义……？",
+            "test"
+        ],
+        "BubbleRunTime": [
+            2.3
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            2298.0,
+            2567.0
+        ],
+        "Position": [
+            -103.0,
+            1579.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 19,
+        "HeroId": 1104,
+        "StateType": 0,
+        "Desc": "默认动作",
+        "Animations": [
+            "Idle_1"
+        ],
+        "ChatBubbles": [],
+        "BubbleRunTime": [],
+        "AnimationType": 0,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 20,
+        "HeroId": 1104,
+        "StateType": 0,
+        "Desc": "待机动作",
+        "Animations": [
+            "Idle_2"
+        ],
+        "ChatBubbles": [
+            "好晴朗的天气……星宫上也有这样的美景，到了夜晚星星就像近在咫尺，真想让您也观赏一下呢……",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.0
+        ],
+        "AnimationType": 1,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 21,
+        "HeroId": 1104,
+        "StateType": 0,
+        "Desc": "通用动作",
+        "Animations": [
+            "Body_1"
+        ],
+        "ChatBubbles": [
+            "对南星来说，当下最重要的事情就是和您一起踏遍山河，守护这个世界……无论哪里，南星永远会在您身后。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.8
+        ],
+        "AnimationType": 2,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 22,
+        "HeroId": 1104,
+        "StateType": 0,
+        "Desc": "愤怒动作",
+        "Animations": [
+            "Body_2"
+        ],
+        "ChatBubbles": [
+            "誓主，南星的头发都乱了……",
+            "test"
+        ],
+        "BubbleRunTime": [
+            4.0
+        ],
+        "AnimationType": 3,
+        "CanBreak": false,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 23,
+        "HeroId": 1104,
+        "StateType": 0,
+        "Desc": "Hand动作",
+        "Animations": [
+            "Hand"
+        ],
+        "ChatBubbles": [
+            "这把“千辰”由我的一位旧友所赠，削铁如泥，轻巧灵动，定能在传火之路上护您周全。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            4.3
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            1161.0,
+            8161.0
+        ],
+        "Position": [
+            136.0,
+            4.0
+        ],
+        "Rotation": 50.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 24,
+        "HeroId": 1104,
+        "StateType": 0,
+        "Desc": "Head动作",
+        "Animations": [
+            "Head"
+        ],
+        "ChatBubbles": [
+            "呜？……誓主又在拿我开玩笑。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.3
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            2444.0,
+            2758.0
+        ],
+        "Position": [
+            -324.0,
+            1662.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 25,
+        "HeroId": 1206,
+        "StateType": 0,
+        "Desc": "默认动作",
+        "Animations": [
+            "Idle_1"
+        ],
+        "ChatBubbles": [],
+        "BubbleRunTime": [],
+        "AnimationType": 0,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 26,
+        "HeroId": 1206,
+        "StateType": 0,
+        "Desc": "待机动作",
+        "Animations": [
+            "Idle_2"
+        ],
+        "ChatBubbles": [
+            "懒惰是一种恶习，仅限工作时间。下班后？……长官，不该管的事儿别管。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            2.7
+        ],
+        "AnimationType": 1,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 27,
+        "HeroId": 1206,
+        "StateType": 0,
+        "Desc": "通用动作",
+        "Animations": [
+            "Body_1"
+        ],
+        "ChatBubbles": [
+            "我是这里最好的执法官之一，也可能是唯一，曾经有个家伙不信邪，结果……他现在只剩大拇指了。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            5.0
+        ],
+        "AnimationType": 2,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 28,
+        "HeroId": 1206,
+        "StateType": 0,
+        "Desc": "愤怒动作",
+        "Animations": [
+            "Body_2"
+        ],
+        "ChatBubbles": [
+            "你想被我抓起来么？",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.3
+        ],
+        "AnimationType": 3,
+        "CanBreak": false,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 29,
+        "HeroId": 1206,
+        "StateType": 0,
+        "Desc": "Hand动作",
+        "Animations": [
+            "Hand"
+        ],
+        "ChatBubbles": [
+            "长官，记得时刻保养你的武器，拆开擦拭，上油……这样它才永远不会卡壳，永远命中准心。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            2.1
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            1540.0,
+            2889.0
+        ],
+        "Position": [
+            -924.0,
+            1203.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 30,
+        "HeroId": 1206,
+        "StateType": 0,
+        "Desc": "Head动作",
+        "Animations": [
+            "Head"
+        ],
+        "ChatBubbles": [
+            "不要在我面前做坏事，不然，砰！",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.3
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            2178.0,
+            2250.0
+        ],
+        "Position": [
+            -362.0,
+            1842.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 31,
+        "HeroId": 1201,
+        "StateType": 0,
+        "Desc": "默认动作",
+        "Animations": [
+            "Idle_1"
+        ],
+        "ChatBubbles": [],
+        "BubbleRunTime": [],
+        "AnimationType": 0,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 32,
+        "HeroId": 1201,
+        "StateType": 0,
+        "Desc": "待机动作",
+        "Animations": [
+            "Idle_2"
+        ],
+        "ChatBubbles": [
+            "只要你知识够多，就能比敌人提前知道答案。或者把书房的钥匙给我，我可以做您的大脑。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.0
+        ],
+        "AnimationType": 1,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 33,
+        "HeroId": 1201,
+        "StateType": 0,
+        "Desc": "通用动作",
+        "Animations": [
+            "Body_1"
+        ],
+        "ChatBubbles": [
+            "那些细小的线索会告诉我很多事，比如说闲来无事的传火者想来我的侦探社坐坐了，对吗？",
+            "test"
+        ],
+        "BubbleRunTime": [
+            7.0
+        ],
+        "AnimationType": 2,
+        "CanBreak": true,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 34,
+        "HeroId": 1201,
+        "StateType": 0,
+        "Desc": "愤怒动作",
+        "Animations": [
+            "Body_2"
+        ],
+        "ChatBubbles": [
+            "咳咳……差不多得了啊。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            2.8
+        ],
+        "AnimationType": 3,
+        "CanBreak": false,
+        "Size": [],
+        "Position": [],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 35,
+        "HeroId": 1201,
+        "StateType": 0,
+        "Desc": "Hand动作",
+        "Animations": [
+            "Hand"
+        ],
+        "ChatBubbles": [
+            "电气混合动力！这是我开发的最新款……呃……咳嗯！小毛病，小作坊产品有点问题很正常。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            3.0
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            2850.0,
+            3050.0
+        ],
+        "Position": [
+            -991.0,
+            280.0
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    },
+    {
+        "Id": 36,
+        "HeroId": 1201,
+        "StateType": 0,
+        "Desc": "Head动作",
+        "Animations": [
+            "Head"
+        ],
+        "ChatBubbles": [
+            "怎么了？老板，无聊的话我可以陪您来几盘益智小游戏，放心，绝对在您的智商范围之内。",
+            "test"
+        ],
+        "BubbleRunTime": [
+            5.3
+        ],
+        "AnimationType": 4,
+        "CanBreak": true,
+        "Size": [
+            2460.0,
+            2280.0
+        ],
+        "Position": [
+            9.7,
+            2142.8
+        ],
+        "Rotation": 0.0,
+        "ActionKey": "",
+        "ActionStrings": [],
+        "ActionUnlock": []
+    }
+]
