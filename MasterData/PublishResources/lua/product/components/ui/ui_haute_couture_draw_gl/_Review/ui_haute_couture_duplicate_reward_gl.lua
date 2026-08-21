@@ -1,0 +1,10 @@
+_class("UIHauteCoutureDuplicateRewardGL", UIHauteCoutureDrawDuplicateRewardBase)
+UIHauteCoutureDuplicateRewardGL = UIHauteCoutureDuplicateRewardGL
+
+function UIHauteCoutureDuplicateRewardGL:GetItemClassName()
+  return UIHauteCoutureDuplicateItemGL._className
+end
+
+function UIHauteCoutureDuplicateRewardGL:GetGetItemUIInfo()
+  return "UIHauteCoutureDrawGetItemCellDetailGL.prefab", UIHauteCoutureDrawGetItemCellDetailGL._className
+end

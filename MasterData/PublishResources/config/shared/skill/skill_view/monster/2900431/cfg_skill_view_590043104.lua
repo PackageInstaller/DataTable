@@ -1,0 +1,59 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = Skill02; PlayCasterBindEffect,effectID=PARAM.effectID1; "
+    }
+  },
+  {
+    2,
+    2,
+    43,
+    1,
+    1,
+    0,
+    {audioID = 6021, audioType = 1}
+  },
+  {
+    3,
+    3,
+    34,
+    1,
+    1,
+    1800,
+    {
+      gridEffectID = "PARAM.effectID2",
+      gridEffectDelayTime = 0,
+      gridIntervalTime = 100,
+      showTimeDelay = 1000
+    }
+  },
+  {
+    4,
+    4,
+    29,
+    1,
+    1,
+    2200,
+    {
+      warningCenterPosType = 4,
+      warningTextEffectID = 339,
+      areaRes = ""
+    }
+  }
+}
+return config, "ID", key

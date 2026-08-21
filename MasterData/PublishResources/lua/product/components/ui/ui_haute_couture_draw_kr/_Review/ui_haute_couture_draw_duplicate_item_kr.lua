@@ -1,0 +1,5 @@
+_class("UIHauteCoutureDuplicateItemKR", UIHauteCoutureDuplicateItem)
+UIHauteCoutureDuplicateItemKR = UIHauteCoutureDuplicateItemKR
+
+function UIHauteCoutureDuplicateItemKR:SetBg(cfg)
+end

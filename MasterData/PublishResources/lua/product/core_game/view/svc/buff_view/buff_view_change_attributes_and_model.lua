@@ -1,0 +1,5 @@
+_class("BuffViewChangeAttributesAndModel", BuffViewBase)
+BuffViewChangeAttributesAndModel = BuffViewChangeAttributesAndModel
+
+function BuffViewChangeAttributesAndModel:PlayView(TT)
+end

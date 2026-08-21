@@ -1,0 +1,5 @@
+_class("UIHauteCoutureDuplicateRewardBgBLH", UICustomWidget)
+UIHauteCoutureDuplicateRewardBgBLH = UIHauteCoutureDuplicateRewardBgBLH
+
+function UIHauteCoutureDuplicateRewardBgBLH:Constructor()
+end

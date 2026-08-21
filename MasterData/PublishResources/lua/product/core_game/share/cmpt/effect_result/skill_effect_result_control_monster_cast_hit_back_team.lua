@@ -1,0 +1,15 @@
+require("skill_effect_result_base")
+_class("SkillEffectResultControlMonsterCastHitBackTeam", SkillEffectResultBase)
+SkillEffectResultControlMonsterCastHitBackTeam = SkillEffectResultControlMonsterCastHitBackTeam
+
+function SkillEffectResultControlMonsterCastHitBackTeam:Constructor(monsterEntityIDs)
+  self._monsterEntityIDs = monsterEntityIDs
+end
+
+function SkillEffectResultControlMonsterCastHitBackTeam:GetEffectType()
+  return SkillEffectType.ControlMonsterCastHitBackTeam
+end
+
+function SkillEffectResultControlMonsterCastHitBackTeam:GetMonsterEntityIDs()
+  return self._monsterEntityIDs
+end

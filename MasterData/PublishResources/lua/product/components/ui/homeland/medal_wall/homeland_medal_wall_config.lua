@@ -1,0 +1,16 @@
+MedalWallConfig = {}
+MedalWallConfig.XMin = -1.5
+MedalWallConfig.XMax = 1.5
+MedalWallConfig.YMin = -0.5
+MedalWallConfig.YMax = 0.5
+MedalWallConfig.ScaleMin = -4
+MedalWallConfig.ScaleMax = 4
+MedalWallConfig.SpeedMin = 3
+MedalWallConfig.SpeedMax = 10
+MedalWallConfig.WheelFactor = 5
+MedalWallConfig.HomelandMedalWallWidth = 5.08
+MedalWallConfig.MedalOffset = 1.0E-4
+MedalWallConfig.MobileWheelFactor = 0.01
+MedalWallConfig.MobileMoveXFactor = 0.002
+MedalWallConfig.MobileMoveYFactor = 0.001
+MedalWallConfig.CameraResetPosTime = 0.3

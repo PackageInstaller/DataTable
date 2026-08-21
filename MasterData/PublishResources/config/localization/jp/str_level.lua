@@ -1,0 +1,28 @@
+local config = {
+  str_level_complete_condition_1 = "すべての敵を倒す",
+  str_level_complete_condition_2 = "情報を{1}個獲得する",
+  str_level_complete_condition_3 = "BOSSを倒せ",
+  str_level_complete_condition_4 = "ルーンを消す",
+  str_level_complete_condition_5 = "特定の暗鬼を倒す",
+  str_level_complete_condition_6 = "condition_6",
+  str_level_complete_condition_7 = "制限ターン以内でステージをクリアする",
+  str_level_complete_condition_8 = "離脱ポイントを解放して撤退する",
+  str_level_complete_condition_9 = "BOSSを倒せ",
+  str_level_complete_condition_10 = "すべての敵を倒す",
+  str_level_complete_condition_11 = "すべての敵を倒す、もしくは{1}ターン生き延びる",
+  str_level_complete_condition_12 = "すべての解放装置を発動させる",
+  str_level_complete_condition_13 = "奈落ノ黒金者を倒す",
+  str_level_complete_condition_14 = "敵を{1}体倒す",
+  str_level_complete_condition_15 = "生き延びてすべての敵を倒す",
+  str_level_complete_condition_19 = "すべてのBOSSを攻撃し、HP固定状態にする",
+  str_level_complete_condition_21 = "すべての敵を倒す",
+  str_level_complete_condition_22 = "暗鬼の逃走を阻止する",
+  str_level_complete_condition_23 = "暗鬼を指揮して逃げ出す",
+  str_level_complete_condition_24 = "アグアンが逃げ出す",
+  str_level_complete_condition_25 = "敵の数 ≦8にする",
+  str_level_complete_condition_27 = "精鋭エントリーを持つ敵をすべて倒す",
+  str_level_complete_condition_28 = "消去したマスの数が指定の数に達する",
+  str_level_complete_condition_29 = "{2}を{1}体倒す",
+  str_level_complete_condition_30 = "戦闘終了時の撃破数が{1}を上回る"
+}
+return config

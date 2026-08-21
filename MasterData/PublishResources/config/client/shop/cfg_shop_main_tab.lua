@@ -1,0 +1,136 @@
+local key = {
+  ID = 1,
+  MainTab = 2,
+  SubTab = 3,
+  TabName = 4,
+  TabIcon = 5,
+  TabIconSelect = 6,
+  EnName = 7,
+  SortIndex = 8
+}
+local common = {
+  {1},
+  "QIHANG"
+}
+local config = {
+  {
+    1,
+    1,
+    {
+      1,
+      2,
+      3,
+      4,
+      5
+    },
+    "str_shop_maintab1",
+    "shop_tuijian_iconn11",
+    "shop_tuijian_iconn12",
+    "RECOMMEND",
+    1
+  },
+  {
+    2,
+    2,
+    {
+      100104,
+      13,
+      13,
+      100,
+      2,
+      12
+    },
+    "str_shop_maintab2",
+    "shop_tuijian_iconn9",
+    "shop_tuijian_iconn10",
+    "MYSTERIOUS",
+    9
+  },
+  {
+    3,
+    3,
+    {
+      5,
+      6,
+      9,
+      7,
+      1
+    },
+    "str_shop_exchange",
+    "shop_tuijian_icon19",
+    "shop_tuijian_icon20",
+    "EXCHANGE",
+    8
+  },
+  {
+    4,
+    4,
+    common[1],
+    "str_shop_maintab5",
+    "shop_tuijian_iconn3",
+    "shop_tuijian_iconn4",
+    "RECHARGE",
+    6
+  },
+  {
+    5,
+    5,
+    common[1],
+    "str_shop_maintab6",
+    "shop_tuijian_iconn1",
+    "shop_tuijian_iconn2",
+    "PRESENT",
+    5
+  },
+  {
+    6,
+    6,
+    common[1],
+    "str_shop_maintab7",
+    "shop_tuijian_iconn7",
+    "shop_tuijian_iconn8",
+    "FASHION",
+    7
+  },
+  {
+    7,
+    7,
+    common[1],
+    "str_shop_maintab8",
+    "shop_tuijian_icon21",
+    "shop_tuijian_icon22",
+    "HOMELAND",
+    10
+  },
+  {
+    8,
+    8,
+    common[1],
+    "str_shop_maintab9",
+    "zh_shop_xianshi_icon001",
+    "zh_shop_xianshi_icon01",
+    "FLASHSALE",
+    2
+  },
+  {
+    9,
+    9,
+    common[1],
+    "str_shop_maintab10",
+    "shop_qh_icon04",
+    "shop_qh_icon03",
+    common[2],
+    4
+  },
+  {
+    10,
+    10,
+    common[1],
+    "str_shop_month_card",
+    "zh_shop_yueka3",
+    "zh_shop_yueka2",
+    common[2],
+    3
+  }
+}
+return config, "ID", key

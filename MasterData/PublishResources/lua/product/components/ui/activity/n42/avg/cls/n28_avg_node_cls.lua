@@ -1,0 +1,431 @@
+_class("N28AVGStoryNode", Object)
+N28AVGStoryNode = N28AVGStoryNode
+
+function N28AVGStoryNode:Constructor()
+  self.id = 0
+  self.defaultNextId = -1
+  self.endId = 0
+  self.storyId = 0
+  self.pos = Vector2.zero
+  self.title = ""
+  self.desc = ""
+  self.cg = ""
+  self.cgCanPlay = ""
+  self.paragraphs = {}
+  self.hideEvidenceBook = 1
+  self.hideVisibleCondition = nil
+  self.hideStartArchive = {}
+  self.hideStartEvidences = {}
+  self.state = nil
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
+end
+
+function N28AVGStoryNode:Init(cfgSectionExcel, cfgOptionExcel)
+  local storyManager = self.data:StoryManager()
+  self.paragraphs = {}
+  local cfgStory = storyManager._storyConfig
+  local cfgParagraphs = cfgStory.Paragraphs
+  for paragraphId, cfgParagraph in ipairs(cfgParagraphs) do
+    local paragraph = N28AVGStoryParagraph:New()
+    table.insert(self.paragraphs, paragraph)
+    paragraph.id = paragraphId
+    local cfgSections = cfgParagraph.Sections
+    for sectionIdx, cfgSection in ipairs(cfgSections) do
+      for elementIdx, cfgSectionElement in ipairs(cfgSection) do
+        if cfgSectionElement.DialogContentStr then
+          local dialog = N28AVGStoryDialog:New()
+          table.insert(paragraph.dialogs, dialog)
+          dialog.sectionIdx = sectionIdx
+          dialog.refEntityId = cfgSectionElement.RefEntityID
+          dialog.events = cfgSectionElement.Events or {}
+          local cfgvSectionExcel = self:GetCfgvSectionExcel(cfgSectionExcel, self.storyId, paragraphId, sectionIdx)
+          if cfgvSectionExcel then
+            dialog.id = cfgvSectionExcel.ID
+            dialog.beCondition = N28AVGCondition:New(cfgvSectionExcel.BECondition)
+            dialog.beId = cfgvSectionExcel.BE
+            dialog.valueChange = cfgvSectionExcel.ValueChange
+          end
+          local cfgOptions = cfgSectionElement.Options
+          if cfgOptions then
+            for optionIdx, cfgOption in ipairs(cfgOptions) do
+              local option = N28AVGStoryOption:New()
+              table.insert(dialog.options, option)
+              option.storyId = self.storyId
+              option.paragraphId = paragraphId
+              option.sectionIdx = sectionIdx
+              option.index = optionIdx
+              option.content = StringTable.Get(cfgOption.Content)
+              option.nextParagraphId = cfgOption.NextParagraphID
+              local cfgvOptionExcel = self:GetCfgvOptionExcel(cfgOptionExcel, self.storyId, paragraphId, sectionIdx, optionIdx)
+              if cfgvOptionExcel then
+                option.id = cfgvOptionExcel.ID
+                local influenceValue = cfgvOptionExcel.InfluenceValue
+                if influenceValue then
+                  for i, influence in ipairs(influenceValue) do
+                    if i == 1 then
+                      option.influenceLeader = influence
+                    else
+                      option.influencePartners[i - 1] = influence
+                    end
+                  end
+                end
+                local influence = cfgvOptionExcel.Influence
+                if influence then
+                  option.influence = StringTable.Get(influence)
+                end
+                local keyUnlockConditionDesc = cfgvOptionExcel.UnlockConditionDesc
+                if string.isnullorempty(keyUnlockConditionDesc) then
+                  option.unlockConditionDesc = ""
+                else
+                  option.unlockConditionDesc = StringTable.Get(keyUnlockConditionDesc)
+                end
+                option.unlockCondition = N28AVGCondition:New(cfgvOptionExcel.UnlockCondition, true)
+                option.visibleCondition = N28AVGCondition:New(cfgvOptionExcel.ShowCondition, true)
+                option.nextNodeId = cfgvOptionExcel.NextNodeId or 0
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  local hp, strategies, evidence = self:StartData()
+  self.cacheUserEvidences = evidence
+end
+
+function N28AVGStoryNode:GetCfgvSectionExcel(cfgSectionExcel, storyId, paragraphId, sectionIdx)
+  if cfgSectionExcel then
+    for key, cfgv in pairs(cfgSectionExcel) do
+      local sign = cfgv.SectionSign
+      if sign[1] == storyId and sign[2] == paragraphId and sign[3] == sectionIdx then
+        return cfgv
+      end
+    end
+  end
+end
+
+function N28AVGStoryNode:GetCfgvOptionExcel(cfgOptionExcel, storyId, paragraphId, sectionIdx, optionIdx)
+  if cfgOptionExcel then
+    for key, cfgv in pairs(cfgOptionExcel) do
+      local sign = cfgv.OptionSign
+      if sign[1] == storyId and sign[2] == paragraphId and sign[3] == sectionIdx and sign[4] == optionIdx then
+        return cfgv
+      end
+    end
+  end
+end
+
+function N28AVGStoryNode:IsEnd()
+  return self.endId > 0
+end
+
+function N28AVGStoryNode:IsHide()
+  if self.hideVisibleCondition then
+    return true
+  end
+  return false
+end
+
+function N28AVGStoryNode:IsHideNew()
+  if self:IsHide() and self:IsSatisfyVisible() then
+    local serverNodeInfo = self.data:GetServerNodeDataByNodeId(self.id)
+    if serverNodeInfo then
+      return serverNodeInfo.new_mark
+    else
+      return true
+    end
+  end
+  return false
+end
+
+function N28AVGStoryNode:IsSatisfyVisible()
+  if self:IsHide() then
+    return self.hideVisibleCondition:IsSatisfy()
+  end
+  return true
+end
+
+function N28AVGStoryNode:GetHideStartArchive()
+  local hp = 0
+  local strategies = {}
+  if self.hideStartArchive then
+    for index, value in ipairs(self.hideStartArchive) do
+      if index == 1 then
+        hp = value
+      else
+        table.insert(strategies, value)
+      end
+    end
+  end
+  return hp, strategies
+end
+
+function N28AVGStoryNode:GetHideStartEvidence()
+  local hideStartEvidences = {}
+  if self.hideStartEvidences then
+    for _, value in ipairs(self.hideStartEvidences) do
+      table.insert(hideStartEvidences, value)
+    end
+  end
+  return hideStartEvidences
+end
+
+function N28AVGStoryNode:GetEvidenceData()
+  return self.cacheUserEvidences
+end
+
+function N28AVGStoryNode:StartData()
+  local hp, strategies, evidences = 0, {}, {}
+  if self:IsHide() then
+    for i, value in ipairs(self.hideStartArchive) do
+      if i == 1 then
+        hp = value
+      else
+        table.insert(strategies, value)
+      end
+    end
+    evidences = self:GetHideStartEvidence()
+  else
+    local fstNodeId = self.data:FirstNodeId()
+    if fstNodeId == self.id then
+      hp = self.data.actorLeader.default
+      for index, partner in ipairs(self.data.actorPartners) do
+        table.insert(strategies, partner.default)
+      end
+      evidences = self.data.defaultEvidences or {}
+    else
+      local serNodeData = self.data:GetServerNodeDataByNodeId(self.id)
+      if serNodeData then
+        hp = serNodeData.end_formation_info.leader_hp
+        strategies = serNodeData.end_formation_info.teammate_affinity
+        evidences = serNodeData.end_formation_info.evidence
+      end
+    end
+  end
+  local strategiesCopy = {}
+  for index, value in ipairs(strategies) do
+    strategiesCopy[index] = value
+  end
+  local evidencesCopy = {}
+  for index, value in ipairs(evidences) do
+    evidencesCopy[index] = value
+  end
+  return hp, strategiesCopy, evidencesCopy
+end
+
+function N28AVGStoryNode:GetSaveTimestamp()
+  if self.data:FirstNodeId() == self.id then
+    return 0
+  end
+  if self:IsHide() then
+    return 0
+  end
+  local serverNodeInfo = self.data:GetServerNodeDataByNodeId(self.id)
+  if serverNodeInfo then
+    return serverNodeInfo.update_time
+  else
+    return 0
+  end
+end
+
+function N28AVGStoryNode:IsComplete()
+  local info = self.data:GetComponentInfoAVG()
+  if table.icontains(info.conplated_node_ids, self.id) then
+    return true
+  end
+end
+
+function N28AVGStoryNode:State()
+  return self.state
+end
+
+function N28AVGStoryNode:GetParagraphByParagraphId(paragraphId)
+  for index, paragraph in ipairs(self.paragraphs) do
+    if paragraph.id == paragraphId then
+      return paragraph
+    end
+  end
+end
+
+local N28AVGStoryNodeState = {
+  CantPlay = 0,
+  CanPlay = 1,
+  Complete = 2
+}
+_enum("N28AVGStoryNodeState", N28AVGStoryNodeState)
+_class("N28AVGStoryParagraph", Object)
+N28AVGStoryParagraph = N28AVGStoryParagraph
+
+function N28AVGStoryParagraph:Constructor()
+  self.id = 0
+  self.isEnd = false
+  self.dialogs = {}
+end
+
+function N28AVGStoryParagraph:GetDialogBySectionIdx(sectionIdx)
+  for index, dialog in ipairs(self.dialogs) do
+    if dialog.sectionIdx == sectionIdx then
+      return dialog
+    end
+  end
+end
+
+_class("N28AVGStoryDialog", Object)
+N28AVGStoryDialog = N28AVGStoryDialog
+
+function N28AVGStoryDialog:Constructor()
+  self.id = 0
+  self.sectionIdx = 0
+  self.refEntityId = 0
+  self.options = {}
+  self.events = {}
+  self.beCondition = nil
+  self.beId = 0
+  self.valueChange = {}
+end
+
+function N28AVGStoryDialog:ValueChange()
+  return self.valueChange
+end
+
+function N28AVGStoryDialog:HasValueChange()
+  local vc = self:ValueChange()
+  if vc then
+    for _, value in ipairs(vc) do
+      if value ~= 0 then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function N28AVGStoryDialog:IsSatisfyBE()
+  if self.beCondition then
+    return self.beCondition:IsSatisfy()
+  end
+  return false
+end
+
+function N28AVGStoryDialog:GetVisibleOptions()
+  local options = {}
+  for index, option in ipairs(self.options) do
+    if option:IsSatisfyVisible() then
+      table.insert(options, option)
+    end
+  end
+  return options
+end
+
+function N28AVGStoryDialog:HaveShowEvienceEvent()
+  for _, event in ipairs(self.events) do
+    local ev = self:GetEviencePhaseEvent(event.ID)
+    if ev and ev.Type == N28StateAVGEvent.ShowEvidence then
+      return true
+    end
+  end
+  return false
+end
+
+function N28AVGStoryDialog:GetEviencePhaseEvent(id)
+  local cfg = self.data:GetCfgAvgPhase()
+  for _, v in pairs(cfg) do
+    if v.EventID == id then
+      return v
+    end
+  end
+  return nil
+end
+
+_class("N28AVGStoryOption", Object)
+N28AVGStoryOption = N28AVGStoryOption
+
+function N28AVGStoryOption:Constructor()
+  self.id = 0
+  self.storyId = 0
+  self.paragraphId = 0
+  self.sectionIdx = 0
+  self.index = 0
+  self.content = ""
+  self.nextParagraphId = 0
+  self.influenceLeader = 0
+  self.influencePartners = {}
+  self.influence = ""
+  self.unlockConditionDesc = ""
+  self.unlockCondition = nil
+  self.visibleCondition = nil
+  self.nextNodeId = 0
+  local mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = mCampaign:GetN28AVGData()
+end
+
+function N28AVGStoryOption:Content()
+  return self.content
+end
+
+function N28AVGStoryOption:NextParagraphId()
+  return self.nextParagraphId
+end
+
+function N28AVGStoryOption:IsSelected()
+  if self.data:IsSelectedOption(self.id) then
+    return true
+  end
+end
+
+function N28AVGStoryOption:IsInfluential()
+  local inf = self:IsInfluentialLeader() or self:IsInfluentialPartners()
+  return inf
+end
+
+function N28AVGStoryOption:IsInfluentialLeader()
+  return self.influenceLeader ~= 0
+end
+
+function N28AVGStoryOption:IsInfluentialPartners()
+  if self.influencePartners then
+    for index, influence in ipairs(self.influencePartners) do
+      if self:IsInfluentialPartner(index) then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function N28AVGStoryOption:IsInfluentialPartner(index)
+  return self.influencePartners[index] ~= 0
+end
+
+function N28AVGStoryOption:IsSatisfyUnlock()
+  if self.unlockCondition then
+    return self.unlockCondition:IsSatisfy()
+  end
+  return true
+end
+
+function N28AVGStoryOption:HasCondition()
+  if self.unlockCondition then
+    return self.unlockCondition:GetHasCondition()
+  end
+  return false
+end
+
+function N28AVGStoryOption:IsSatisfyVisible()
+  if self.visibleCondition then
+    return self.visibleCondition:IsSatisfy()
+  end
+  return true
+end
+
+_class("N28AVGStoryLine", Object)
+N28AVGStoryLine = N28AVGStoryLine
+
+function N28AVGStoryLine:Constructor()
+  self.sNodeId = 0
+  self.eNodeId = 0
+  self.posS = Vector2.zero
+  self.posE = Vector2.zero
+  self.posLs = {}
+end

@@ -1,0 +1,9 @@
+_class("SkillEffectResultChangeGridPrism", SkillEffectResultBase)
+SkillEffectResultChangeGridPrism = SkillEffectResultChangeGridPrism
+
+function SkillEffectResultChangeGridPrism:Constructor()
+end
+
+function SkillEffectResultChangeGridPrism:GetEffectType()
+  return SkillEffectType.ChangeGridPrism
+end

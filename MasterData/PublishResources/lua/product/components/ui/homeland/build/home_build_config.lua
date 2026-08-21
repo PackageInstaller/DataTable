@@ -1,0 +1,9 @@
+BuildConfig = {}
+BuildConfig.MaxCircle = {}
+BuildConfig.MaxCircle.Center = Vector2(5, 25)
+BuildConfig.MaxCircle.Radius = 111
+BuildConfig.Camera = {}
+BuildConfig.Camera.ScaleMin = -50
+BuildConfig.Camera.ScaleMax = -10
+BuildConfig.Camera.SpeedMin = 5
+BuildConfig.Camera.SpeedMax = 50

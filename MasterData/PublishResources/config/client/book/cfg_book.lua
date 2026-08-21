@@ -1,0 +1,115 @@
+local key = {
+  ID = 1,
+  BookId = 2,
+  Name = 3,
+  Desc = 4,
+  Icon = 5
+}
+local config = {
+  {
+    1,
+    1000,
+    "str_dispatch_book_bookname_1000",
+    "str_dispatch_book_bookdes_1000",
+    "icon_item_3701000"
+  },
+  {
+    2,
+    2000,
+    "str_dispatch_book_bookname_2000",
+    "str_dispatch_book_bookdes_2000",
+    "icon_item_3702000"
+  },
+  {
+    3,
+    3000,
+    "str_dispatch_book_bookname_3000",
+    "str_dispatch_book_bookdes_3000",
+    "icon_item_3703000"
+  },
+  {
+    4,
+    4000,
+    "str_dispatch_book_bookname_4000",
+    "str_dispatch_book_bookdes_4000",
+    "icon_item_3704000"
+  },
+  {
+    5,
+    5000,
+    "str_dispatch_book_bookname_5000",
+    "str_dispatch_book_bookdes_5000",
+    "icon_item_3705000"
+  },
+  {
+    6,
+    6000,
+    "str_dispatch_book_bookname_6000",
+    "str_dispatch_book_bookdes_6000",
+    "icon_item_3706000"
+  },
+  {
+    7,
+    7000,
+    "str_dispatch_book_bookname_7000",
+    "str_dispatch_book_bookdes_7000",
+    "icon_item_3707000"
+  },
+  {
+    8,
+    8000,
+    "str_dispatch_book_bookname_8000",
+    "str_dispatch_book_bookdes_8000",
+    "icon_item_3708000"
+  },
+  {
+    9,
+    9000,
+    "str_dispatch_book_bookname_9000",
+    "str_dispatch_book_bookdes_9000",
+    "icon_item_3709000"
+  },
+  {
+    10,
+    10000,
+    "str_dispatch_book_bookname_10000",
+    "str_dispatch_book_bookdes_10000",
+    "icon_item_3710000"
+  },
+  {
+    11,
+    11000,
+    "str_dispatch_book_bookname_11000",
+    "str_dispatch_book_bookdes_11000",
+    "icon_item_3711000"
+  },
+  {
+    12,
+    12000,
+    "str_dispatch_book_bookname_12000",
+    "str_dispatch_book_bookdes_12000",
+    "icon_item_3712000"
+  },
+  {
+    13,
+    13000,
+    "str_dispatch_book_bookname_13000",
+    "str_dispatch_book_bookdes_13000",
+    "icon_item_3713000"
+  },
+  {
+    14,
+    14000,
+    "str_dispatch_book_bookname_14000",
+    "str_dispatch_book_bookdes_14000",
+    "icon_item_3714000"
+  },
+  {
+    15,
+    15000,
+    "str_dispatch_book_bookname_15000",
+    "str_dispatch_book_bookdes_15000",
+    "icon_item_3715000"
+  }
+}
+return config, "ID", key

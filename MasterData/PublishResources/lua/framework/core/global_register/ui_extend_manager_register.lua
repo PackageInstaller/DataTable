@@ -1,0 +1,4 @@
+_staticClass("UIExtendManagerRegister")
+
+function UIExtendManagerRegister:RegisterUIExtendManagers(uiControllerMgr)
+end

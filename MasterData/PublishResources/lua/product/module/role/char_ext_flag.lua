@@ -1,0 +1,1 @@
+CharExtFlag = {CEFT_MAIN_UI_SHOW_SPINE = 0}

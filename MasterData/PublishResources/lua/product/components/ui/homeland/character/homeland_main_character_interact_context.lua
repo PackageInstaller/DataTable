@@ -1,0 +1,5 @@
+_class("HomelandMainCharacterInteractContext", Object)
+HomelandMainCharacterInteractContext = HomelandMainCharacterInteractContext
+
+function HomelandMainCharacterInteractContext:Constructor()
+end

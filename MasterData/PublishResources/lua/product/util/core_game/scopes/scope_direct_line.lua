@@ -1,0 +1,2 @@
+require("scope_direct_line_blocked")
+SkillScopeCalculator_DirectLine = SkillScopeCalculator_DirectLineBlocked

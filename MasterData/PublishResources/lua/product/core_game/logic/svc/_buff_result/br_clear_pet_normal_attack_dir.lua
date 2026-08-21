@@ -1,0 +1,2 @@
+_class("BuffResultClearPetNormalAttackDir", BuffResultBase)
+BuffResultClearPetNormalAttackDir = BuffResultClearPetNormalAttackDir

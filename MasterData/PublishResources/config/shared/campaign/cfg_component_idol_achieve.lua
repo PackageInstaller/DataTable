@@ -1,0 +1,260 @@
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  AchieveId = 3,
+  Cond = 4,
+  RewardList = 5,
+  Name = 6,
+  ConditionTxt = 7,
+  DescriptionTxt = 8,
+  StateIcon = 9
+}
+local common = {
+  "str_n25_idol_y_achievement_name_1",
+  "str_n25_idol_y_achievement_con_1",
+  "str_n25_idol_y_achievement_script_1",
+  "str_n25_idol_y_achievement_name_2",
+  "str_n25_idol_y_achievement_con_2",
+  "str_n25_idol_y_achievement_script_2",
+  "str_n25_idol_y_achievement_name_3",
+  "str_n25_idol_y_achievement_con_3",
+  "str_n25_idol_y_achievement_script_3",
+  "str_n25_idol_y_achievement_name_4",
+  "str_n25_idol_y_achievement_con_4",
+  "str_n25_idol_y_achievement_script_4",
+  "str_n25_idol_y_achievement_name_5",
+  "str_n25_idol_y_achievement_con_5",
+  "str_n25_idol_y_achievement_script_5",
+  "str_n25_idol_y_achievement_name_6",
+  "str_n25_idol_y_achievement_con_6",
+  "str_n25_idol_y_achievement_script_6",
+  "str_n25_idol_y_achievement_name_7",
+  "str_n25_idol_y_achievement_con_7",
+  "str_n25_idol_y_achievement_script_7",
+  "str_n25_idol_y_achievement_name_8",
+  "str_n25_idol_y_achievement_con_8",
+  "str_n25_idol_y_achievement_script_8",
+  "str_n25_idol_y_achievement_name_9",
+  "str_n25_idol_y_achievement_con_9",
+  "str_n25_idol_y_achievement_script_9",
+  {
+    {3000003, 100}
+  },
+  {
+    {3000003, 50},
+    {3400038, 3}
+  },
+  {
+    {3000003, 50},
+    {3000002, 20000}
+  },
+  {
+    {3000003, 50},
+    {3000002, 30000}
+  },
+  {
+    {3000003, 50},
+    {3000002, 50000}
+  }
+}
+local config = {
+  {
+    1,
+    107610808,
+    1,
+    "3400,107610808,1",
+    common[28],
+    common[1],
+    common[2],
+    common[3],
+    4
+  },
+  {
+    2,
+    107610808,
+    2,
+    "3400,107610808,2",
+    common[28],
+    common[4],
+    common[5],
+    common[6],
+    4
+  },
+  {
+    3,
+    107610808,
+    3,
+    "3400,107610808,3",
+    common[28],
+    common[7],
+    common[8],
+    common[9],
+    4
+  },
+  {
+    4,
+    107610808,
+    4,
+    "3402,107610808,1500331",
+    common[29],
+    common[10],
+    common[11],
+    common[12],
+    6
+  },
+  {
+    5,
+    107610808,
+    5,
+    "3402,107610808,1601781",
+    common[29],
+    common[13],
+    common[14],
+    common[15],
+    6
+  },
+  {
+    6,
+    107610808,
+    6,
+    "3402,107610808,1601771",
+    common[29],
+    common[16],
+    common[17],
+    common[18],
+    6
+  },
+  {
+    7,
+    107610808,
+    7,
+    "3401,107610808,14,3",
+    common[30],
+    common[19],
+    common[20],
+    common[21],
+    5
+  },
+  {
+    8,
+    107610808,
+    8,
+    "3401,107610808,28,3",
+    common[31],
+    common[22],
+    common[23],
+    common[24],
+    5
+  },
+  {
+    9,
+    107610808,
+    9,
+    "3401,107610808,42,3",
+    common[32],
+    common[25],
+    common[26],
+    common[27],
+    5
+  },
+  {
+    10,
+    121210808,
+    10,
+    "3400,121210808,1",
+    common[28],
+    common[1],
+    common[2],
+    common[3],
+    4
+  },
+  {
+    11,
+    121210808,
+    11,
+    "3400,121210808,2",
+    common[28],
+    common[4],
+    common[5],
+    common[6],
+    4
+  },
+  {
+    12,
+    121210808,
+    12,
+    "3400,121210808,3",
+    common[28],
+    common[7],
+    common[8],
+    common[9],
+    4
+  },
+  {
+    13,
+    121210808,
+    13,
+    "3403,121210808,1500331",
+    common[29],
+    common[10],
+    common[11],
+    common[12],
+    6
+  },
+  {
+    14,
+    121210808,
+    14,
+    "3403,121210808,1601781",
+    common[29],
+    common[13],
+    common[14],
+    common[15],
+    6
+  },
+  {
+    15,
+    121210808,
+    15,
+    "3403,121210808,1601771",
+    common[29],
+    common[16],
+    common[17],
+    common[18],
+    6
+  },
+  {
+    16,
+    121210808,
+    16,
+    "3401,121210808,7,3",
+    common[30],
+    common[19],
+    common[20],
+    common[21],
+    5
+  },
+  {
+    17,
+    121210808,
+    17,
+    "3401,121210808,14,3",
+    common[31],
+    common[22],
+    common[23],
+    common[24],
+    5
+  },
+  {
+    18,
+    121210808,
+    18,
+    "3401,121210808,21,3",
+    common[32],
+    common[25],
+    common[26],
+    common[27],
+    5
+  }
+}
+return config, "ID", key

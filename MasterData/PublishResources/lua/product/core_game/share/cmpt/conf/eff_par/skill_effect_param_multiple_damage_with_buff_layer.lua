@@ -1,0 +1,15 @@
+require("skill_effect_param_base")
+_class("SkillEffectParamMultipleDamageWithBuffLayer", SkillDamageEffectParam)
+SkillEffectParamMultipleDamageWithBuffLayer = SkillEffectParamMultipleDamageWithBuffLayer
+
+function SkillEffectParamMultipleDamageWithBuffLayer:Constructor(t)
+  self._buffEffectType = t.buffEffectType
+end
+
+function SkillEffectParamMultipleDamageWithBuffLayer:GetEffectType()
+  return SkillEffectType.MultipleDamageWithBuffLayer
+end
+
+function SkillEffectParamMultipleDamageWithBuffLayer:GetBuffEffectType()
+  return self._buffEffectType
+end

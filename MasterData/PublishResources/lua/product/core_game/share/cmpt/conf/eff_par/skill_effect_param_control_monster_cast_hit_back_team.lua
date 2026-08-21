@@ -1,0 +1,15 @@
+require("skill_effect_param_base")
+_class("SkillEffectParamControlMonsterCastHitBackTeam", SkillEffectParamBase)
+SkillEffectParamControlMonsterCastHitBackTeam = SkillEffectParamControlMonsterCastHitBackTeam
+
+function SkillEffectParamControlMonsterCastHitBackTeam:Constructor(t)
+  self._monsterClassID = t.monsterClassID
+end
+
+function SkillEffectParamControlMonsterCastHitBackTeam:GetEffectType()
+  return SkillEffectType.ControlMonsterCastHitBackTeam
+end
+
+function SkillEffectParamControlMonsterCastHitBackTeam:GetMonsterClassID()
+  return self._monsterClassID
+end

@@ -1,0 +1,10 @@
+_class("UIHauteCoutureDuplicateRewardPLM", UIHauteCoutureDrawDuplicateRewardBase)
+UIHauteCoutureDuplicateRewardPLM = UIHauteCoutureDuplicateRewardPLM
+
+function UIHauteCoutureDuplicateRewardPLM:GetItemClassName()
+  return UIHauteCoutureDuplicateItemPLM._className
+end
+
+function UIHauteCoutureDuplicateRewardPLM:GetGetItemUIInfo()
+  return "UIHauteCoutureDrawGetItemCellDetailPLM.prefab", UIHauteCoutureDrawGetItemCellDetailPLM._className
+end

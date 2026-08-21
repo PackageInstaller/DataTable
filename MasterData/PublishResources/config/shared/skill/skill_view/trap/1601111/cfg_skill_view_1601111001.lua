@@ -1,0 +1,23 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      "DataSelectBuff,buffIndex=1; Jump,condition=CheckBuffIndexValid,result=0,goto=wait,label=checkbuff; PlayTargetAddBuff,buffEffectType =160111101; PlayTargetAddBuff,buffEffectType =160111103; PlayTargetAddBuff,buffEffectType =160111106; PlayTargetAddBuff,buffEffectType =160111110; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=checkbuff; "
+    }
+  }
+}
+return config, "ID", key

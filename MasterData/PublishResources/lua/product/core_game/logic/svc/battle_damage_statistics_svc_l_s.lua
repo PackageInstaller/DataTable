@@ -1,0 +1,24 @@
+require("base_service")
+_class("BattleDamageStatisticsServiceLogic_Server", BaseService)
+BattleDamageStatisticsServiceLogic_Server = BattleDamageStatisticsServiceLogic_Server
+
+function BattleDamageStatisticsServiceLogic_Server:Constructor(world)
+end
+
+function BattleDamageStatisticsServiceLogic_Server:_OnGetBattleDamageStatisticsComponent()
+end
+
+function BattleDamageStatisticsServiceLogic_Server:AddDamageStatisticsInfo(damageInfo)
+end
+
+function BattleDamageStatisticsServiceLogic_Server:GetDamageStatisticsInfo()
+end
+
+function BattleDamageStatisticsServiceLogic_Server:_OnSortDamageStatisticsInfo()
+end
+
+function BattleDamageStatisticsServiceLogic_Server:GetMonsterHPMaxStatistics()
+end
+
+function BattleDamageStatisticsServiceLogic_Server:AddMonsterHPMaxStatistics(hpMax)
+end

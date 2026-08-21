@@ -1,0 +1,34 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID=290560107,audioType=1; PlayCasterAnimation,animName=Skill03; PlayCasterBindEffect,effectID =290560112; PlayEffectOffsetScopeCenter,effectID=290560113,offset=0|0; PlayCasterMaterialAnim,animName=PARAM.animName; Wait,waitTime=1500; DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; Wait,waitTime=1000; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " DataSelectBuff,buffIndex=1; Jump,condition=CheckBuffIndexValid,result=0,goto=phaseEnd,label=doAgain; PlayTargetAddBuff,buffID=20026012; PlayTargetAddBuff,buffID=20026011; PlayTargetAddBuff,buffID=29056012; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "
+    }
+  }
+}
+return config, "ID", key

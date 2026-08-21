@@ -1,0 +1,177 @@
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  PetID = 3,
+  TrustTotal = 4,
+  TrustItem = 5,
+  QheadImage = 6,
+  Name = 7,
+  Des = 8,
+  FinalReport = 9,
+  Spine = 10,
+  FinalRewardIcon = 11,
+  FinalRewardDes = 12,
+  NextPetID = 13,
+  TaskList = 14,
+  RewardTaskList = 15,
+  IsDefault = 16
+}
+local common = {
+  "n34_dc_bgs_icon"
+}
+local config = {
+  {
+    1,
+    111611503,
+    1500421,
+    2500,
+    3000334,
+    "n34_dc_qhead01",
+    "str_n34_task_npc_name_1",
+    "str_n34_task_npc_desc_1",
+    "str_n34_task_person_tips_content1",
+    "n34_g_badun_spine_idle",
+    common[1],
+    "str_n34_task_person_tips_des1",
+    1600021,
+    {
+      3520708,
+      3520709,
+      3520710,
+      3520711,
+      3520712,
+      3520713,
+      3520714,
+      3520715,
+      3520716,
+      3520717,
+      3520718,
+      3520719,
+      3520720,
+      3520721,
+      3520722
+    },
+    {
+      3520768,
+      3520769,
+      3520770,
+      3520771
+    },
+    true
+  },
+  {
+    2,
+    111611503,
+    1600021,
+    2500,
+    3000335,
+    "n34_dc_qhead02",
+    "str_n34_task_npc_name_2",
+    "str_n34_task_npc_desc_2",
+    "str_n34_task_person_tips_content2",
+    "n34_g_fei_spine_idle",
+    common[1],
+    "str_n34_task_person_tips_des2",
+    1400441,
+    {
+      3520723,
+      3520724,
+      3520725,
+      3520726,
+      3520727,
+      3520728,
+      3520729,
+      3520730,
+      3520731,
+      3520732,
+      3520733,
+      3520734,
+      3520735,
+      3520736,
+      3520737
+    },
+    {
+      3520772,
+      3520773,
+      3520774,
+      3520775
+    }
+  },
+  {
+    3,
+    111611503,
+    1400441,
+    2500,
+    3000336,
+    "n34_dc_qhead03",
+    "str_n34_task_npc_name_3",
+    "str_n34_task_npc_desc_3",
+    "str_n34_task_person_tips_content3",
+    "n34_g_weiweian_spine_idle",
+    common[1],
+    "str_n34_task_person_tips_des3",
+    1600111,
+    {
+      3520738,
+      3520739,
+      3520740,
+      3520741,
+      3520742,
+      3520743,
+      3520744,
+      3520745,
+      3520746,
+      3520747,
+      3520748,
+      3520749,
+      3520750,
+      3520751,
+      3520752
+    },
+    {
+      3520776,
+      3520777,
+      3520778,
+      3520779
+    }
+  },
+  {
+    4,
+    111611503,
+    1600111,
+    2500,
+    3000337,
+    "n34_dc_qhead04",
+    "str_n34_task_npc_name_4",
+    "str_n34_task_npc_desc_4",
+    "str_n34_task_person_tips_content4",
+    "n34_g_xiluona_spine_idle",
+    common[1],
+    "str_n34_task_person_tips_des4",
+    0,
+    {
+      3520753,
+      3520754,
+      3520755,
+      3520756,
+      3520757,
+      3520758,
+      3520759,
+      3520760,
+      3520761,
+      3520762,
+      3520763,
+      3520764,
+      3520765,
+      3520766,
+      3520767
+    },
+    {
+      3520780,
+      3520781,
+      3520782,
+      3520783
+    }
+  }
+}
+return config, "ID", key

@@ -1,0 +1,40 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
+local config = {
+  {
+    1,
+    1,
+    31,
+    1,
+    0,
+    0,
+    {
+      gridEffectID = 876,
+      gridIntervalTime = 100,
+      finishDelayTime = 500,
+      hasDamage = 1,
+      hitAnimationName = "Hit",
+      hitEffectID = 0,
+      gridEffectDirection = "Up"
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    1200,
+    {
+      " DataSelectBuff,buffIndex=1; Jump,condition=CheckBuffIndexValid,result=0,goto=phaseEnd,label=buffLoop; PlayTargetAddBuff,buffID=40004011; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=buffLoop;"
+    }
+  }
+}
+return config, "ID", key

@@ -1,0 +1,15 @@
+require("skill_effect_result_base")
+_class("SkillEffectResultControlMonsterTeleportAndAttack", SkillEffectResultBase)
+SkillEffectResultControlMonsterTeleportAndAttack = SkillEffectResultControlMonsterTeleportAndAttack
+
+function SkillEffectResultControlMonsterTeleportAndAttack:Constructor(targetMonsterEntityID)
+  self._targetMonsterEntityID = targetMonsterEntityID
+end
+
+function SkillEffectResultControlMonsterTeleportAndAttack:GetEffectType()
+  return SkillEffectType.ControlMonsterTeleportAndAttack
+end
+
+function SkillEffectResultControlMonsterTeleportAndAttack:GetTargetMonsterEntityID()
+  return self._targetMonsterEntityID
+end

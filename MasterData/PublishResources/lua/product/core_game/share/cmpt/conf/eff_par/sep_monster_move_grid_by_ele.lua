@@ -1,0 +1,10 @@
+require("skill_damage_effect_param")
+_class("SkillEffectMonsterMoveGridByElementParam", SkillEffectParamBase)
+SkillEffectMonsterMoveGridByElementParam = SkillEffectMonsterMoveGridByElementParam
+
+function SkillEffectMonsterMoveGridByElementParam:Constructor(t)
+end
+
+function SkillEffectMonsterMoveGridByElementParam:GetEffectType()
+  return SkillEffectType.MonsterMoveGridByMonsterElement
+end

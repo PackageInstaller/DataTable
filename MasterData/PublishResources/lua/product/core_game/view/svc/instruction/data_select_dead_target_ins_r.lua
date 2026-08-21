@@ -1,0 +1,42 @@
+require("base_ins_r")
+_class("DataSelectDeadTargetInstruction", BaseInstruction)
+DataSelectDeadTargetInstruction = DataSelectDeadTargetInstruction
+
+function DataSelectDeadTargetInstruction:Constructor(paramList)
+  self._damageIndex = tonumber(paramList.damageIndex)
+end
+
+function DataSelectDeadTargetInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local world = casterEntity:GetOwnerWorld()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
+  local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
+  if not damageResultArray or #damageResultArray == 0 then
+    return false
+  end
+  local targetEntityList = {}
+  for _, v in ipairs(damageResultArray) do
+    local damageResult = v
+    local targetEntityID = damageResult:GetTargetID()
+    local targetEntity = world:GetEntityByID(targetEntityID)
+    if targetEntity and not table.intable(targetEntityList, targetEntity) then
+      table.insert(targetEntityList, targetEntity)
+    end
+  end
+  local deadMonsterIDList = {}
+  for _, entity in ipairs(targetEntityList) do
+    local view = entity:View()
+    local renderCurHP = entity:HP():GetRedHP()
+    if view and renderCurHP == 0 then
+      table.insert(deadMonsterIDList, entity:GetID())
+    end
+  end
+  if #deadMonsterIDList == 0 then
+    phaseContext:SetCurDamageResultIndex(-1)
+    phaseContext:SetCurTargetEntityID(-1)
+    return
+  end
+  local targetEntityID = deadMonsterIDList[self._damageIndex]
+  phaseContext:SetCurDamageResultIndex(self._damageIndex)
+  phaseContext:SetCurTargetEntityID(targetEntityID)
+end

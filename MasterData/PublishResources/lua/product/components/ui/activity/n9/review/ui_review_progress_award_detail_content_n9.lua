@@ -1,0 +1,6 @@
+_class("UIReviewProgressAwardDetailContent_N9", UIReviewProgressAwardDetailContent)
+UIReviewProgressAwardDetailContent_N9 = UIReviewProgressAwardDetailContent_N9
+
+function UIReviewProgressAwardDetailContent_N9:_GetCloseAnim()
+  return "uieffanim_ReviewProgressAwardDetailContent_N9_out", 200
+end

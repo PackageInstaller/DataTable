@@ -1,0 +1,199 @@
+_class("UISeasonMainOvalTip", Object)
+UISeasonMainOvalTip = UISeasonMainOvalTip
+
+function UISeasonMainOvalTip:Constructor(seasonID, req, onClick)
+  self._seasonID = seasonID
+  self._req = req
+  self._onClick = onClick
+  self._gameObject = req.Obj
+  self._rectTransform = self._gameObject:GetComponent(typeof(UnityEngine.RectTransform))
+  self._uiView = self._gameObject:GetComponent(typeof(UIView))
+  self._uiView:SetShow(true, self)
+  self._icon = self._uiView:GetGameObject("Icon")
+  self._iconImg = self._uiView:GetUIComponent("Image", "Icon")
+  self._arrowObj = self._uiView:GetGameObject("Arrow")
+  self._arrowRect = self._uiView:GetUIComponent("RectTransform", "Arrow")
+  self._arrowIcon = self._uiView:GetUIComponent("Image", "ArrowIcon")
+  self._name2Asset = {}
+  self._atlas = UIResourceManager.GetAsset("UISeasonMain.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+end
+
+function UISeasonMainOvalTip:TargetWorldPos()
+  if self._type == UISeasonOvalTipType.Player then
+    local target = self._target
+    return target:Position()
+  elseif self._type == UISeasonOvalTipType.Mission then
+    local target = self._target
+    return target:Position()
+  elseif self._type == UISeasonOvalTipType.Daily then
+    local target = self._target
+    return target:Position()
+  elseif self._type == UISeasonOvalTipType.Box then
+    local target = self._target
+    return target:Position()
+  elseif self._type == UISeasonOvalTipType.Task then
+    local target = self._target
+    return target:Position()
+  end
+end
+
+function UISeasonMainOvalTip:Show()
+  self._isIn = false
+  local show = true
+  if self._target and self._type == UISeasonOvalTipType.Task then
+    show = self._target:IsShow()
+  end
+  self._gameObject:SetActive(show)
+end
+
+function UISeasonMainOvalTip:Hide()
+  self._isIn = true
+  self._gameObject:SetActive(false)
+end
+
+function UISeasonMainOvalTip:Delete()
+  self._req = nil
+  self._gameObject = nil
+  self._uiView:SetShow(false, self)
+  self._uiView = nil
+  for _, req in pairs(self._name2Asset) do
+    req:Dispose()
+  end
+end
+
+function UISeasonMainOvalTip:GetReq()
+  return self._req
+end
+
+function UISeasonMainOvalTip:Dispose()
+  self._req:Dispose()
+  self:Delete()
+end
+
+function UISeasonMainOvalTip:IsInOval()
+  return self._isIn
+end
+
+function UISeasonMainOvalTip:Sync(pos, rot)
+  self._rectTransform.anchoredPosition = pos
+  self._arrowRect.localRotation = rot
+end
+
+function UISeasonMainOvalTip:Type()
+  return self._type
+end
+
+function UISeasonMainOvalTip:Target()
+  return self._target
+end
+
+function UISeasonMainOvalTip:IconOnClick()
+  self._onClick(self)
+end
+
+function UISeasonMainOvalTip:ArrowIconOnClick()
+  self._onClick(self)
+end
+
+function UISeasonMainOvalTip:ResetTarget(target, type)
+  self._uiView:SetShow(false, self)
+  self._uiView:SetShow(true, self)
+  self._type = type
+  local cameraCfg = Cfg.cfg_season_camera[self._seasonID]
+  if self._type == UISeasonOvalTipType.Player then
+    self._target = target
+    self._icon:SetActive(true)
+    local min = cameraCfg.PlayerTipHideRange[1]
+    local max = cameraCfg.PlayerTipHideRange[2]
+    local maxSize = cameraCfg.CameraSizeMin
+    local minSize = cameraCfg.CameraSizeMax
+    self._tipHideParam = (max - min) / (maxSize - minSize)
+    self._tipHideMinDistance = min
+    self._cameraMinSize = minSize
+  elseif self._type == UISeasonOvalTipType.Mission then
+    self._target = target
+    self._icon:SetActive(false)
+    local cfg = Cfg.cfg_season_map_eventpoint[self._target:GetID()]
+    if cfg.OvalTipHideRange then
+      local min = cfg.OvalTipHideRange[1]
+      local max = cfg.OvalTipHideRange[2]
+      local maxSize = cameraCfg.CameraSizeMin
+      local minSize = cameraCfg.CameraSizeMax
+      self._tipHideParam = (max - min) / (maxSize - minSize)
+      self._tipHideMinDistance = min
+      self._cameraMinSize = minSize
+    end
+  elseif self._type == UISeasonOvalTipType.Daily then
+    self._target = target
+    self._icon:SetActive(false)
+    local cfg = Cfg.cfg_season_map_eventpoint[self._target:GetID()]
+    if cfg.OvalTipHideRange then
+      local min = cfg.OvalTipHideRange[1]
+      local max = cfg.OvalTipHideRange[2]
+      local maxSize = cameraCfg.CameraSizeMin
+      local minSize = cameraCfg.CameraSizeMax
+      self._tipHideParam = (max - min) / (maxSize - minSize)
+      self._tipHideMinDistance = min
+      self._cameraMinSize = minSize
+    end
+  elseif self._type == UISeasonOvalTipType.Box then
+    self._target = target
+    self._icon:SetActive(false)
+    local cfg = Cfg.cfg_season_map_eventpoint[self._target:GetID()]
+    if cfg.OvalTipHideRange then
+      local min = cfg.OvalTipHideRange[1]
+      local max = cfg.OvalTipHideRange[2]
+      local maxSize = cameraCfg.CameraSizeMin
+      local minSize = cameraCfg.CameraSizeMax
+      self._tipHideParam = (max - min) / (maxSize - minSize)
+      self._tipHideMinDistance = min
+      self._cameraMinSize = minSize
+    end
+  elseif self._type == UISeasonOvalTipType.Task then
+    self._target = target
+    self._icon:SetActive(false)
+    local cfg = Cfg.cfg_season_map_eventpoint[self._target:GetID()]
+    if cfg.OvalTipHideRange then
+      local min = cfg.OvalTipHideRange[1]
+      local max = cfg.OvalTipHideRange[2]
+      local maxSize = cameraCfg.CameraSizeMin
+      local minSize = cameraCfg.CameraSizeMax
+      self._tipHideParam = (max - min) / (maxSize - minSize)
+      self._tipHideMinDistance = min
+      self._cameraMinSize = minSize
+    end
+  end
+  self:_RefreshIcon()
+  self:Hide()
+end
+
+function UISeasonMainOvalTip:GetCanShowDistance(cameraSize)
+  if self._tipHideMinDistance then
+    return self._tipHideMinDistance + (cameraSize - self._cameraMinSize) * self._tipHideParam
+  end
+  return 0
+end
+
+function UISeasonMainOvalTip:_RefreshIcon()
+  if self._type == UISeasonOvalTipType.Player then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_s1_map_icon05")
+    if self._seasonID == UISeasonID.S1 then
+    elseif self._seasonID == UISeasonID.S2 then
+      local atlas = UIResourceManager.GetAsset("UIS2Main.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+      local mode = GameGlobal.GetModule(SeasonModule):UIModule():SeasonManager():SeasonMapManager():Mode()
+      if mode == SeasonMapMode.Mode1 then
+        self._iconImg.sprite = atlas:GetSprite("exp_s2_map_head02")
+      elseif mode == SeasonMapMode.Mode2 then
+        self._iconImg.sprite = atlas:GetSprite("exp_s2_map_head04")
+      end
+    end
+  elseif self._type == UISeasonOvalTipType.Mission then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_s1_map_icon04")
+  elseif self._type == UISeasonOvalTipType.Daily then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_s1_map_icon31")
+  elseif self._type == UISeasonOvalTipType.Box then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_s1_map_icon06")
+  elseif self._type == UISeasonOvalTipType.Task then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_s1_map_icon33")
+  end
+end

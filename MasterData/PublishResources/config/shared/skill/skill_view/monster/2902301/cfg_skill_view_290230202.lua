@@ -1,0 +1,34 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = Skill02; PlaySummonTrap,trapID=2800701; PlayEffectAtTargetGrid,effectID=3284; Wait,waitTime=600; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " PlayAudio,audioID = 6015,audioType=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=203,turnToTarget=1,deathClear=0; PlayCasterBindEffect,effectID=1286; "
+    }
+  }
+}
+return config, "ID", key

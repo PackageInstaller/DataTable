@@ -1,0 +1,94 @@
+local key = {
+  ID = 1,
+  loadingHandlerName = 2,
+  loadingIds = 3
+}
+local common = {
+  {7},
+  {5},
+  {
+    68,
+    69,
+    20023
+  },
+  {68, 69},
+  {80030004}
+}
+local config = {
+  {
+    1,
+    "AircraftExitLoadingHandler",
+    common[1]
+  },
+  {
+    2,
+    "AircraftRoomExitLoadingHandler",
+    common[1]
+  },
+  {
+    3,
+    "AircraftEnterLoadingHandler",
+    common[1]
+  },
+  {
+    4,
+    "MazeEnterLoadingHandler",
+    common[2]
+  },
+  {
+    5,
+    "MazeExitLoadingHandler",
+    common[2]
+  },
+  {
+    6,
+    "UIDrawCardLoadingEnterUL",
+    {12}
+  },
+  {
+    7,
+    "AircraftToDrawcardLoading",
+    common[1]
+  },
+  {
+    8,
+    "HomelandEnterLoadingHandler",
+    common[3]
+  },
+  {
+    9,
+    "HomelandExitLoadingHandler",
+    common[3]
+  },
+  {
+    10,
+    "HomeSelfToVisitLoading",
+    common[4]
+  },
+  {
+    11,
+    "HomeVisitEnterLoadingHandler",
+    common[4]
+  },
+  {
+    12,
+    "HomeVisitToSelfLoading",
+    common[4]
+  },
+  {
+    13,
+    "HomeVisitToVisitLoading",
+    common[4]
+  },
+  {
+    14,
+    "SeasonEnterLoadingHandler",
+    common[5]
+  },
+  {
+    15,
+    "SeasonExitLoadingHandler",
+    common[5]
+  }
+}
+return config, "ID", key

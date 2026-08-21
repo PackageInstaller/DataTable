@@ -1,0 +1,10 @@
+_class("UIHauteCoutureDuplicateRewardQT", UIHauteCoutureDrawDuplicateRewardBase)
+UIHauteCoutureDuplicateRewardQT = UIHauteCoutureDuplicateRewardQT
+
+function UIHauteCoutureDuplicateRewardQT:GetItemClassName()
+  return UIHauteCoutureDuplicateItemQT._className
+end
+
+function UIHauteCoutureDuplicateRewardQT:GetGetItemUIInfo()
+  return "UIHauteCoutureDraw_QT_GetItemCellDetail.prefab", UIHauteCoutureDraw_QT_GetItemCellDetail._className
+end

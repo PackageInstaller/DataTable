@@ -1,0 +1,11 @@
+_class("BuffViewChangeAttackByFeatureShop", BuffViewBase)
+BuffViewChangeAttackByFeatureShop = BuffViewChangeAttackByFeatureShop
+
+function BuffViewChangeAttackByFeatureShop:PlayView(TT)
+end
+
+_class("BuffViewUndoChangeAttackByFeatureShop", BuffViewBase)
+BuffViewUndoChangeAttackByFeatureShop = BuffViewUndoChangeAttackByFeatureShop
+
+function BuffViewUndoChangeAttackByFeatureShop:PlayView(TT)
+end

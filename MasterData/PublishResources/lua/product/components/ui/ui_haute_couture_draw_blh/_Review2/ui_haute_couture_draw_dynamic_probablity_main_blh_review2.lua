@@ -1,0 +1,18 @@
+_class("UIHauteCoutureDrawDynamicProbabilityMainBLHReview2", UIHauteCoutureDrawDynamicProbablityBase)
+UIHauteCoutureDrawDynamicProbabilityMainBLHReview2 = UIHauteCoutureDrawDynamicProbabilityMainBLHReview2
+
+function UIHauteCoutureDrawDynamicProbabilityMainBLHReview2:Constructor()
+end
+
+function UIHauteCoutureDrawDynamicProbabilityMainBLHReview2:OnShow(uiParams)
+  self:InitWidgets()
+  self:_OnValue()
+end
+
+function UIHauteCoutureDrawDynamicProbabilityMainBLHReview2:InitWidgets()
+  self:InitWidgetsBase()
+end
+
+function UIHauteCoutureDrawDynamicProbabilityMainBLHReview2:GetProbablityItemScript()
+  return "UIHauteCoutureDrawProbabiltyItemBLHReview2"
+end

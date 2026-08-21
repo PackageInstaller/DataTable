@@ -1,0 +1,26 @@
+local config = {
+  str_n30_train_day = "{1}日",
+  str_n30_train_hour = "{1}時間",
+  str_n30_train_minus = "{1}分",
+  str_n30_train_less_one_minus = "<1分",
+  str_n30_train_activity_end = "イベントは終了しました",
+  str_n30_train_activity_remain_time = "イベント残り時間：",
+  str_n30_train_main_title = "必焚の禁書",
+  str_n30_train_activity_hadchall = "クリア済",
+  str_n30_train_locked_prev_popup = "前ステージクリアで解放",
+  str_n30_train_rule_description = "イベント紹介",
+  str_n30_train_activity_intro_title = "イベント【必焚の禁書】について",
+  str_n30_train_activity_intro_head_1 = "<size=32><color=#80623b>【必焚の禁書】について</color></size>",
+  str_n30_train_activity_intro_body_1 = "イベント期間中、暗鬼を倒すと豪華報酬を獲得できます。\n前のステージをクリアすると次のステージが開放されます。",
+  str_n30_train_1_name = "N1-ウォーミングアップ",
+  str_n30_train_2_name = "N2-探り",
+  str_n30_train_3_name = "N3-夢中",
+  str_n30_train_4_name = "N4-放任",
+  str_n30_train_5_name = "N5-歓喜",
+  str_n30_train_1_name_desc = "「ようこそ、ナビゲーター。お前のために準備された試練だ」",
+  str_n30_train_2_name_desc = "「進もう。戦闘のありとあらゆる可能性を探るのだ」",
+  str_n30_train_3_name_desc = "「どうだ？こんな機会はめったにあるものではない」",
+  str_n30_train_4_name_desc = "「恐れることはない。心に秘めた欲望に身を任せるのだ。真理はこの先にある」",
+  str_n30_train_5_name_desc = "「輝かしい色どりの中、最終試練の幕を引こうではないか。世界が新しく生まれ変わる」"
+}
+return config

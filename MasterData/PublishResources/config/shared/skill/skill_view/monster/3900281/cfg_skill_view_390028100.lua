@@ -1,0 +1,34 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterVisible,visible=1; PlayCasterAnimation,animName =Birth; PlayAudio,audioID = 5008,audioType=1; PlayCasterBindEffect,effectID=PARAM.BirthEffectID; PlayCasterAddBuff, buffEffectType =3022; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    2500,
+    {
+      " PlayCasterAttachEffectHolder,effHolderType=Permanent,effId=976; PlayCasterLineRenderer,group=Monster|Trap,targerEffectType=3026,lineEffectID=PARAM.LineEffectID,lineTarget=Hit,lineCurrent=Hit; "
+    }
+  }
+}
+return config, "ID", key

@@ -1,0 +1,28 @@
+local config = {
+  str_level_complete_condition_1 = "모든 적 처치",
+  str_level_complete_condition_2 = "정보 {1}개 획득",
+  str_level_complete_condition_3 = "보스 처치",
+  str_level_complete_condition_4 = "룬 소실",
+  str_level_complete_condition_5 = "특정 몬스터 처치",
+  str_level_complete_condition_6 = "condition_6",
+  str_level_complete_condition_7 = "제한된 턴 동안 스테이지 완료",
+  str_level_complete_condition_8 = "탈출 지점을 열어 탈출하세요.",
+  str_level_complete_condition_9 = "보스 처치",
+  str_level_complete_condition_10 = "모든 적 처치",
+  str_level_complete_condition_11 = "모든 적 처치 또는 {1}턴 생존",
+  str_level_complete_condition_12 = "모든 잠금 해제 장치 가동",
+  str_level_complete_condition_13 = "커스 골도어 처치",
+  str_level_complete_condition_14 = "몬스터 {1}마리 처치",
+  str_level_complete_condition_15 = "모든 적 처치 및 생존",
+  str_level_complete_condition_19 = "모든 보스를 HP 자물쇠 상태까지 공격",
+  str_level_complete_condition_21 = "모든 적 처치",
+  str_level_complete_condition_22 = "암귀 도주 막기",
+  str_level_complete_condition_23 = "암귀를 지휘해 도주 성공",
+  str_level_complete_condition_24 = "프라이드 스피어 도주 성공",
+  str_level_complete_condition_25 = "필드 내 적 유닛 수 ≤8",
+  str_level_complete_condition_27 = "모든 정예 적 처치",
+  str_level_complete_condition_28 = "칸 제거 수량이 지정 조건에 도달",
+  str_level_complete_condition_29 = "{2} {1}회 처치",
+  str_level_complete_condition_30 = "전투 종료 시 {1}보다 더 많이 처치"
+}
+return config

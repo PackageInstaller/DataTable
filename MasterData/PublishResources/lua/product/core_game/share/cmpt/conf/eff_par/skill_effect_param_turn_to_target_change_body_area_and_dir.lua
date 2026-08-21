@@ -1,0 +1,15 @@
+require("skill_effect_param_base")
+_class("SkillEffectParamTurnToTargetChangeBodyAreaAndDir", SkillEffectParamBase)
+SkillEffectParamTurnToTargetChangeBodyAreaAndDir = SkillEffectParamTurnToTargetChangeBodyAreaAndDir
+
+function SkillEffectParamTurnToTargetChangeBodyAreaAndDir:Constructor(t)
+  self._forceTurn = t.forceTurn or 0
+end
+
+function SkillEffectParamTurnToTargetChangeBodyAreaAndDir:GetEffectType()
+  return SkillEffectType.TurnToTargetChangeBodyAreaAndDir
+end
+
+function SkillEffectParamTurnToTargetChangeBodyAreaAndDir:GetForceTurn()
+  return self._forceTurn
+end

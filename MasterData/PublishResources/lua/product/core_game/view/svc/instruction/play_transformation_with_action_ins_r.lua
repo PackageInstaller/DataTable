@@ -1,0 +1,62 @@
+_class("PlayTransformationWithActionInstruction", BaseInstruction)
+PlayTransformationWithActionInstruction = PlayTransformationWithActionInstruction
+
+function PlayTransformationWithActionInstruction:Constructor(paramList)
+  self._oriAction = paramList.OriAction
+  self._oriEffect = paramList.OriEffect
+  self._oriActionTime = tonumber(paramList.OriActionTime)
+  self._newAction = paramList.NewAction
+  self._newEffect = paramList.NewEffect
+  self._newActionTime = tonumber(paramList.NewActionTime)
+end
+
+function PlayTransformationWithActionInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local world = casterEntity:GetOwnerWorld()
+  local effectSvc = world:GetService("Effect")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Transformation)
+  for i = 1, #resultArray do
+    local result = resultArray[i]
+    local caster = world:GetEntityByID(result:GetCaster())
+    local elementType = result:GetElementType()
+    if not caster then
+      Log.fatal("没有施法者，变身失败")
+      return
+    end
+    if self._oriAction then
+      caster:SetAnimatorControllerTriggers({
+        self._oriAction
+      })
+      effectSvc:CreateEffect(self._oriEffect, caster)
+      YIELD(TT, self._oriActionTime)
+    end
+    local cfgService = world:GetService("Config")
+    local monsterConfigData = cfgService:GetMonsterConfigData()
+    local monsterResPath = monsterConfigData:GetMonsterResPath(result:GetMonsterID())
+    local newPos = result:GetNewPos()
+    if newPos then
+      caster:SetPosition(newPos)
+    end
+    caster:ReplaceAsset(NativeUnityPrefabAsset:New(monsterResPath, true))
+    if self._newAction then
+      caster:SetAnimatorControllerTriggers({
+        self._newAction
+      })
+      effectSvc:CreateEffect(self._newEffect, caster)
+      YIELD(TT, self._newActionTime)
+    end
+    local sMonsterShowRender = world:GetService("MonsterShowRender")
+    sMonsterShowRender:CreateMonsterEffect(casterEntity, result:GetMonsterID())
+    local transformationHp = result:GetTransformationHp()
+    if transformationHp ~= 0 then
+      local transformationHpMax = result:GetTransformationHpMax()
+      caster:ReplaceRedAndMaxHP(transformationHp, transformationHpMax)
+    end
+    local sliderEntityID = caster:HP():GetHPSliderEntityID()
+    local sliderEntity = world:GetEntityByID(sliderEntityID)
+    TaskManager:GetInstance():CoreGameStartTask(InnerGameHelperRender:GetInstance().SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), sliderEntity, elementType)
+    local utilDataSvc = world:GetService("UtilData")
+    local hpBarType = utilDataSvc:GetHPBarTypeByEntity(caster)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossNameAndElement, result:GetMonsterID(), hpBarType, caster:GetID())
+  end
+end

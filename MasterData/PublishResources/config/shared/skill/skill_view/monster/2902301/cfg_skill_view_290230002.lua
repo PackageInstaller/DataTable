@@ -1,0 +1,23 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName=Death; PlayCasterBindEffect,effectID=3609; PlayAudio,audioID =6188,audioType=1; PlayCasterMaterialAnim,animName=eff_2602301_death; "
+    }
+  }
+}
+return config, "ID", key

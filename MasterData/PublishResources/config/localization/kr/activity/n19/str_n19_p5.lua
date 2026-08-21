@@ -1,0 +1,27 @@
+local config = {
+  str_n19_p5_name = "달빛 아래의 괴도",
+  str_n19_p5_drop_time = "이벤트 남은 시간: ",
+  str_n19_p5_activity_remaining_time = "화면 종료 시간: ",
+  str_n19_p5_battle_pass = "특별 사건부",
+  str_n19_p5_login_award = "로그인 보상",
+  str_n19_p5_pet = "첫인사",
+  str_n19_p5_shop = "잠입 개시!",
+  str_n19_p5_story_replay_start = "프롤로그",
+  str_n19_p5_story_replay_end = "최종장",
+  str_n19_p5_intro_title = "이벤트 설명",
+  str_n19_p5_intro_content = "[잠입 포인트] 아이템 획득:\n1. 이벤트 기간에 프리즘을 소모하는 메인 스테이지 또는 자원 정비 스테이지를 완료하면 일정 수량의 [잠입 포인트]를 획득할 수 있습니다.\n2. 이벤트 종료 시 이상의 스테이지에서 더는 [잠입 포인트]를 드롭하지 않습니다.\n\n[잠입 포인트] 아이템 사용:\n1. 이벤트 기간에 [잠입 개시!] 스테이지에 참가해 [잠입 포인트]를 소모하면서 전진할 수 있습니다.\n2. 이벤트 종료 후에도 [잠입 개시!] 스테이지는 3일간 개방됩니다. 기간 내에 [잠입 포인트]를 사용해 주세요. [잠입 개시!] 스테이지가 닫힌 후 사용하지 않은 잠입 포인트는 1:10의 비율에 따라 나이티움으로 전환됩니다.",
+  str_n19_p5_lottery_one = "전진하기(1회)",
+  str_n19_p5_lottery_multi = "전진하기(10회)",
+  str_n19_p5_lottery_intro_title = "규칙 설명",
+  str_n19_p5_lottery_intro_content = "1. [잠입 포인트]를 소모해 [스테이지]에서 전진할 수 있습니다.\n2. 이벤트 기간에 6개의 [스테이지]가 개방됩니다.\n3. 각 [스테이지]에는 [희귀 아이템]이 1개 있습니다. 현재 [스테이지]의 [희귀 아이템]을 획득해야만 다음 [스테이지]로 진입할 수 있습니다.\n4. [잠입 개시!] 종료 후 남은 [잠입 포인트]는 1:10의 비율에 따라 나이티움으로 전환됩니다. 이벤트 종료 1시간 후 다시 로그인하면 우편을 통해 획득할 수 있습니다.",
+  str_n19_p5_lottery_pool = "스테이지{1}",
+  str_n19_p5_pool_lock_tips = "지난 스테이지의 희귀 보상 획득 후 본 스테이지 개방",
+  str_n19_p5_shop_no_item_tips = "해당 스테이지의 모든 아이템을 획득했습니다. 스테이지를 전환하세요.",
+  str_n19_p5_shop_box_unlock_intro = "<color=#F6A201>스테이지{1}</color> 희귀 아이템 획득 시 해당 스테이지가 개방됩니다!",
+  str_n19_p5_shop_open_next_text = "본 스테이지의 희귀 아이템 [{1}] 획득! 스테이지 [{2}] 개방!",
+  str_n19_p5_shop_draw_once_more_text = "{1} 잠입 포인트를 소모해 계속 전진하겠습니까?",
+  str_n19_p5_sign_title = "이벤트 기간에 {1}일 누적 로그인 시\n루맘버, 모나 및 한정 아바타 획득!",
+  str_n19_p5_cost_not_enough = "{1} 수량 부족",
+  str_n19_p5_award_empty_tip = "본 스테이지의 보상을 모두 획득했습니다."
+}
+return config

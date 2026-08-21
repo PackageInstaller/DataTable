@@ -1,0 +1,10 @@
+require("skill_effect_param_base")
+_class("SkillEffectParamConvertWithTrapRecord", SkillAddBuffEffectParam)
+SkillEffectParamConvertWithTrapRecord = SkillEffectParamConvertWithTrapRecord
+
+function SkillEffectParamConvertWithTrapRecord:Constructor(t)
+end
+
+function SkillEffectParamConvertWithTrapRecord:GetEffectType()
+  return SkillEffectType.ConvertWithTrapRecord
+end

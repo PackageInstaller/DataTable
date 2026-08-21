@@ -1,0 +1,421 @@
+require("ui_share_controller")
+_class("UICN18N47MainController", UIShareController)
+UICN18N47MainController = UICN18N47MainController
+
+function UICN18N47MainController:_SetCommonTopButton()
+  local shareComponent = UICN18N47Helper.GetComponent(self._campaign, "share")
+  self:InitShare(shareComponent)
+  
+  local function closeCallback()
+    self:_Back()
+  end
+  
+  local function hideCallback()
+    self:_HideUI()
+  end
+  
+  local showShare = true
+  
+  local function shareCallback()
+    self:OnShare(function()
+      self:_HideUI()
+      self:GetGameObject("_backBtns"):SetActive(false)
+      self:GetGameObject("_showBtn"):SetActive(true)
+      self:GetGameObject("_uiElements"):SetActive(false)
+    end, function()
+      self:_ShowUI()
+    end)
+  end
+  
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UINewCommonTopButton")
+  obj:SetData(closeCallback, nil, nil, false, hideCallback, showShare, shareCallback)
+end
+
+function UICN18N47MainController:_Back()
+  if self:Manager():CurUIStateType() == UIStateType.UICN18N47MainController then
+    self:SwitchState(UIStateType.UIMain)
+  else
+    self:CloseDialog()
+  end
+end
+
+function UICN18N47MainController:_HideUI()
+  self:_PlayAnim("hide", function()
+    self:GetGameObject("_backBtns"):SetActive(false)
+    self:GetGameObject("_showBtn"):SetActive(true)
+    self:GetGameObject("_uiElements"):SetActive(false)
+  end)
+  self._exchangeAnim:Play("uieff_UICN18N47_ExchangeBtn_middlehide")
+  self._lineAnim:Play("uieff_UICN18N47_LineBtn_midlehide")
+  self._hardAnim:Play("uieff_UICN18N47_HardBtn_midllehide")
+end
+
+function UICN18N47MainController:_ShowUI()
+  self:GetGameObject("_backBtns"):SetActive(true)
+  self:GetGameObject("_showBtn"):SetActive(false)
+  self:GetGameObject("_uiElements"):SetActive(true)
+  self:_PlayAnim("show", function()
+  end)
+  self._exchangeAnim:Play("uieff_UICN18N47_ExchangeBtn_in2")
+  self._lineAnim:Play("uieff_UICN18N47_LineBtn_in2")
+  self._hardAnim:Play("uieff_UICN18N47_HardBtn_in2")
+end
+
+function UICN18N47MainController:_SetRemainingTime(widgetName, descId, endTime, tickCallback, stopCallback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
+  obj:SetAdvanceText(descId)
+  obj:SetData(endTime, tickCallback, stopCallback)
+end
+
+function UICN18N47MainController:_SetSpine()
+  local spine = self:GetUIComponent("SpineLoader", "_spine")
+  local campid = self._campaign._id
+  local cfg = Cfg.cfg_campaign_main_spine[campid]
+  if cfg then
+    local spineName = cfg.SpineName
+    if spineName then
+      spine:LoadSpine(spineName)
+    end
+    local spineAnim = cfg.SpineAnim
+    if spineAnim then
+      local lineComInfo = self._campaign:GetComponentInfo(UICN18N47Helper.GetComponentId("line"))
+      local passInfo = lineComInfo.m_pass_mission_info
+      local showSpineAnim
+      for i = #spineAnim, 1, -1 do
+        local data = spineAnim[i]
+        local missionid = tonumber(data[1])
+        if passInfo[missionid] then
+          showSpineAnim = data[2]
+          break
+        end
+      end
+      if showSpineAnim then
+        local skeleton
+        if spine.CurrentSkeleton then
+          skeleton = spine.CurrentSkeleton
+        else
+          skeleton = spine.CurrentMultiSkeleton
+        end
+        skeleton.AnimationState:SetAnimation(0, showSpineAnim, true)
+      end
+    end
+  end
+end
+
+function UICN18N47MainController:_SetImgRT(imgRT)
+  if imgRT ~= nil then
+    local rt = self:GetUIComponent("RawImage", "rt")
+    rt.texture = imgRT
+    return true
+  end
+  return false
+end
+
+function UICN18N47MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN18N47MainController)
+end
+
+function UICN18N47MainController:_PlayAnim(idx, callback)
+  local tb = {
+    ["in"] = {
+      animName = "uieff_UICN18N47MainController_in",
+      duration = 1467
+    },
+    hide = {
+      animName = "uieff_UICN18N47MainController_midlehide",
+      duration = 500
+    },
+    show = {
+      animName = "uieff_UICN18N47MainController_in2",
+      duration = 833
+    },
+    in2 = {
+      animName = "uieff_UICN18N47MainController_in2",
+      duration = 833
+    }
+  }
+  if tb[idx] ~= nil then
+    UIWidgetHelper.PlayAnimation(self, "_anim", tb[idx].animName, tb[idx].duration, callback)
+  elseif callback ~= nil then
+    callback()
+  end
+end
+
+function UICN18N47MainController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignType = UICN18N47Helper.GetCampaignType()
+  local componentIds = {}
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
+  UICN18N47Helper.LocalDB_Set("main", "New")
+  self._bp_campaign = UIActivityCampaign:New()
+  local bp_res = AsyncRequestRes:New()
+  self._bp_campaign:LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+end
+
+function UICN18N47MainController:OnShow(uiParams)
+  local fromMain = uiParams[1]
+  self:_AttachEvents()
+  self:_SetCommonTopButton()
+  self:_SetSpine()
+  self:GetComponents()
+  self:_UpdateRemainingTime()
+  self:_Refresh()
+  self:PlayAnimIn(fromMain)
+  self.overFirstTime = true
+end
+
+function UICN18N47MainController:GetComponents()
+  local linePool = self:GetUIComponent("UISelectObjectPath", "_lineBtn")
+  self._lineObj = linePool:SpawnObject("UIActivityCN18N47CommonComponentEnterLock")
+  self._lineAnim = self._lineObj:GetUIComponent("Animation", "anim")
+  local hardPool = self:GetUIComponent("UISelectObjectPath", "_hardBtn")
+  self._hardObj = hardPool:SpawnObject("UIActivityCN18N47CommonComponentEnterLock")
+  self._hardAnim = self._hardObj:GetUIComponent("Animation", "anim")
+end
+
+function UICN18N47MainController:PlayAnimIn(fromMain)
+  if fromMain then
+    self._exchangeAnim:Play("uieff_UICN18N47_ExchangeBtn_in")
+    self._lineAnim:Play("uieff_UICN18N47_LineBtn_in")
+    self._hardAnim:Play("uieff_UICN18N47_HardBtn_in")
+    self:_PlayAnim("in", function()
+      self:_CheckGuide()
+    end)
+  else
+    self._exchangeAnim:Play("uieff_UICN18N47_ExchangeBtn_in2")
+    self._lineAnim:Play("uieff_UICN18N47_LineBtn_in2")
+    self._hardAnim:Play("uieff_UICN18N47_HardBtn_in2")
+    self:_PlayAnim("in2", function()
+      self:_CheckGuide()
+    end)
+  end
+end
+
+function UICN18N47MainController:OnHide()
+  self:_DetachEvents()
+end
+
+function UICN18N47MainController:_Refresh()
+  UICN18N47Helper.SetBattlePassBtn(self, "_battlePassBtn", self._bp_campaign)
+  self._exchangeObj = UICN18N47Helper.SetExchangeBtn(self, "_exchangeBtn", self._campaign)
+  self._exchangeAnim = self._exchangeObj:GetUIComponent("Animation", "anim")
+  self:_SetLoginBtn()
+  self:_SetLineBtn()
+  self:_SetBlackBtn()
+end
+
+function UICN18N47MainController:_UpdateRemainingTime()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local exchangeItemComponent = UICN18N47Helper.GetComponentInfo(self._campaign, "exchange")
+  local endTime = exchangeItemComponent.m_close_time
+  local stamp = endTime - curTime
+  if 0 < stamp then
+    self:_SetRemainingTime("_time", "str_cn18_n47_shop_close_time_tips", endTime)
+    return
+  end
+end
+
+function UICN18N47MainController:_SetLoginBtn()
+  local name = "login"
+  local cmptId = UICN18N47Helper.GetComponentId(name)
+  local obj = UIWidgetHelper.SpawnObject(self, "_loginBtn", "UIActivityCommonComponentEnter")
+  
+  local function newCallback()
+    local new = UICN18N47Helper.CalcNew_Component(self._campaign, name)
+    return new
+  end
+  
+  obj:SetNew("new", newCallback)
+  
+  local function redCallback()
+    local red = UICN18N47Helper.CalcRed_Component(self._campaign, name)
+    return red
+  end
+  
+  obj:SetRed("red", redCallback)
+  
+  local function clickCallback()
+    UICN18N47Helper.LocalDB_Set(name, "New")
+    local campaignType = UICN18N47Helper.GetCampaignType()
+    self:ShowDialog("UIActivityTotalLoginAwardController", false, campaignType, cmptId)
+  end
+  
+  obj:SetData(self._campaign, clickCallback)
+end
+
+function UICN18N47MainController:_SetLineBtn()
+  local name = "line"
+  local cmptId = UICN18N47Helper.GetComponentId(name)
+  local component = UICN18N47Helper.GetComponent(self._campaign, name)
+  
+  local function newCallback()
+    local new = UICN18N47Helper.CalcNew_Component(self._campaign, name)
+    return new
+  end
+  
+  self._lineObj:SetNew("_new", newCallback)
+  
+  local function redCallback()
+    local red = UICN18N47Helper.CalcRed_Component(self._campaign, name)
+    return red
+  end
+  
+  self._lineObj:SetRed("_red", redCallback)
+  local unlockTime = component and component:ComponentUnLockTime() or 0
+  local closeTime = component and component:GetComponentInfo().m_close_time or 0
+  self._lineObj:SetActivityCommonRemainingTime("_time_unlock", "str_cn18_n47_remain_time_in_activity", closeTime, true)
+  local tb = {
+    {"state_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
+  self._lineObj:SetWidgetNameGroup(tb)
+  
+  local function lockWithTimeCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
+  end
+  
+  local lockCallback
+  
+  local function closedCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
+  end
+  
+  self._lineObj:SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
+  local state = UIStateType.UICN18N47LineController
+  
+  local function clickCallback()
+    UICN18N47Helper.LocalDB_Set(name, "New")
+    local lineKey = UICN18N47Helper._LocalDB_GetKey(name, "Red")
+    UIActivityHelper.SetCmptRedViewed(lineKey)
+    local componentMain = CampaignConst.GetSafeStateInfo(self._campaign._id, cmptId, state, nil)
+    self._campaign._campaign_module:SwitchState_Safe(true, {componentMain})
+  end
+  
+  self._lineObj:SetData(self._campaign, cmptId, clickCallback)
+end
+
+function UICN18N47MainController:_SetBlackBtn()
+  local name = "black"
+  local cmptId = UICN18N47Helper.GetComponentId(name)
+  local component = UICN18N47Helper.GetComponent(self._campaign, name)
+  
+  local function newCallback()
+    local new = UICN18N47Helper.CalcNew_Component(self._campaign, name)
+    return new
+  end
+  
+  self._hardObj:SetNew("_new", newCallback)
+  
+  local function redCallback()
+    local red = UICN18N47Helper.CalcRed_Component(self._campaign, name)
+    return red
+  end
+  
+  self._hardObj:SetRed("_red", redCallback)
+  local unlockTime = component and component:ComponentUnLockTime() or 0
+  local svrTimeModule = self:GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local endTime = component:ComponentUnLockTime() or 0
+  local stamp = endTime - curTime
+  local lineComponentInfo = UICN18N47Helper.GetComponentInfo(self._campaign, "line")
+  local isMissionLock = lineComponentInfo.m_pass_mission_info[component:GetComponentInfo().m_need_mission_id] == nil
+  if isMissionLock or 0 < stamp then
+    if 0 < stamp then
+      self._hardObj:SetActivityCommonRemainingTime("_time_lock", "str_activity_start_in", unlockTime, true, nil, function(first)
+        if lineComponentInfo.m_pass_mission_info[component:GetComponentInfo().m_need_mission_id] ~= nil then
+          self._hardObj:GetGameObject("state_lock"):SetActive(true)
+          self:_Refresh()
+        else
+          self:_Refresh()
+        end
+      end)
+    elseif isMissionLock then
+    end
+  end
+  local tb = {
+    {"state_lock", "_time_lock"},
+    {"state_lock", "_pass_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
+  self._hardObj:SetWidgetNameGroup(tb)
+  local closeTime = component and component:GetComponentInfo().m_close_time or 0
+  self._hardObj:SetActivityCommonRemainingTime("_time_unlock", "str_cn18_n47_remain_time_in_activity", closeTime, false)
+  
+  local function lockWithTimeCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
+  end
+  
+  local function lockCallback()
+    local missionName = Cfg.cfg_campaign_mission[component:GetComponentInfo().m_need_mission_id].Name
+    local lvName = StringTable.Get(missionName)
+    ToastManager.ShowToast(StringTable.Get("str_activity_hard_level_lock_tips", lvName))
+  end
+  
+  local function closedCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
+  end
+  
+  self._hardObj:SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
+  local state = UIStateType.UICN18N47HardLevel
+  
+  local function clickCallback()
+    UICN18N47Helper.LocalDB_Set(name, "New")
+    local blackKey = UICN18N47Helper._LocalDB_GetKey(name, "Red")
+    UIActivityHelper.SetCmptRedViewed(blackKey)
+    local componentMain = CampaignConst.GetSafeStateInfo(self._campaign._id, cmptId, state, nil)
+    self._campaign._campaign_module:SwitchState_Safe(true, {componentMain})
+  end
+  
+  self._hardObj:SetData(self._campaign, cmptId, clickCallback)
+end
+
+function UICN18N47MainController:IntroBtnOnClick(go)
+  self:ShowDialog("UIIntroLoader", "UICN18N47Intro", MaskType.MT_BlurMask)
+end
+
+function UICN18N47MainController:ShowBtnOnClick()
+  self:_ShowUI()
+end
+
+function UICN18N47MainController:_AttachEvents()
+  self:AttachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
+  self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
+  self:AttachEvent(GameEventType.ItemCountChanged, self._OnItemChanged)
+end
+
+function UICN18N47MainController:_DetachEvents()
+  self:DetachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
+  self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
+  self:DetachEvent(GameEventType.ItemCountChanged, self._OnItemChanged)
+end
+
+function UICN18N47MainController:_AfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
+  if topui then
+    self:_Refresh()
+  end
+end
+
+function UICN18N47MainController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
+    self:SwitchState(UIStateType.UIMain)
+  end
+  if self._ny_campaign and self._ny_campaign._id == id then
+    self:SwitchState(UIStateType.UIMain)
+  end
+end
+
+function UICN18N47MainController:_OnItemChanged(id)
+  self:_Refresh()
+end

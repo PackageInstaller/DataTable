@@ -1,0 +1,10 @@
+require("skill_effect_param_base")
+_class("SkillEffectParamSetGridMaintainColorForSupply", SkillEffectParamBase)
+SkillEffectParamSetGridMaintainColorForSupply = SkillEffectParamSetGridMaintainColorForSupply
+
+function SkillEffectParamSetGridMaintainColorForSupply:Constructor(t)
+end
+
+function SkillEffectParamSetGridMaintainColorForSupply:GetEffectType()
+  return SkillEffectType.SetGridMaintainColorForSupply
+end

@@ -1,0 +1,45 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID = 290920103,audioType=1; PlayCasterAnimation,animName=Atk02; Wait,waitTime=567; PlayCasterBindEffect,effectID=290920101; PlayTeleportAsMoving,speed=33; PlayRoleTeleport,type=9; Wait,waitTime=100; PlayCasterAnimation,animName=Atk02_2; Wait,waitTime=2000; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    667,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=290920112,turnToTarget=0,deathClear=0,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    667,
+    {
+      "DataSelectBuff,buffIndex=1; PlayAddBuffView,buffID=29092006,label=doAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; Wait,waitTime=1000;"
+    }
+  }
+}
+return config, "ID", key

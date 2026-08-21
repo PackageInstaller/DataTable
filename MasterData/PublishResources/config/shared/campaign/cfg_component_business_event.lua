@@ -1,0 +1,356 @@
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  EventName = 3,
+  EventIcon = 4,
+  EventIntro = 5,
+  OptionPool = 6
+}
+local config = {
+  [1001] = {
+    1001,
+    800407708,
+    "str_season_s4_trade_harbor_event_name1",
+    "sear_event_1",
+    "str_season_s4_trade_harbor_event_desc1",
+    {
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    }
+  },
+  [1002] = {
+    1002,
+    800407708,
+    "str_season_s4_trade_harbor_event_name2",
+    "sear_event_2",
+    "str_season_s4_trade_harbor_event_desc2",
+    {
+      7,
+      9,
+      10,
+      11,
+      12
+    }
+  },
+  [1003] = {
+    1003,
+    800407708,
+    "str_season_s4_trade_harbor_event_name3",
+    "sear_event_3",
+    "str_season_s4_trade_harbor_event_desc3",
+    {
+      13,
+      15,
+      16,
+      17,
+      18
+    }
+  },
+  [1004] = {
+    1004,
+    800407708,
+    "str_season_s4_trade_harbor_event_name4",
+    "sear_event_4",
+    "str_season_s4_trade_harbor_event_desc4",
+    {
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    }
+  },
+  [1005] = {
+    1005,
+    800407708,
+    "str_season_s4_trade_harbor_event_name5",
+    "sear_event_5",
+    "str_season_s4_trade_harbor_event_desc5",
+    {
+      25,
+      27,
+      28,
+      29,
+      30
+    }
+  },
+  [1006] = {
+    1006,
+    800407708,
+    "str_season_s4_trade_harbor_event_name6",
+    "sear_event_6",
+    "str_season_s4_trade_harbor_event_desc6",
+    {
+      31,
+      33,
+      34,
+      35,
+      36
+    }
+  },
+  [1007] = {
+    1007,
+    800407708,
+    "str_season_s4_trade_harbor_event_name7",
+    "sear_event_7",
+    "str_season_s4_trade_harbor_event_desc7",
+    {
+      37,
+      38,
+      39,
+      40,
+      41
+    }
+  },
+  [1008] = {
+    1008,
+    800407708,
+    "str_season_s4_trade_harbor_event_name8",
+    "sear_event_8",
+    "str_season_s4_trade_harbor_event_desc8",
+    {
+      43,
+      44,
+      45,
+      46,
+      47
+    }
+  },
+  [1009] = {
+    1009,
+    800407708,
+    "str_season_s4_trade_harbor_event_name9",
+    "sear_event_9",
+    "str_season_s4_trade_harbor_event_desc9",
+    {
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    }
+  },
+  [1010] = {
+    1010,
+    800407708,
+    "str_season_s4_trade_harbor_event_name10",
+    "sear_event_10",
+    "str_season_s4_trade_harbor_event_desc10",
+    {
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    }
+  },
+  [1011] = {
+    1011,
+    800407708,
+    "str_season_s4_trade_harbor_event_name11",
+    "sear_event_11",
+    "str_season_s4_trade_harbor_event_desc11",
+    {
+      61,
+      62,
+      63,
+      65,
+      66
+    }
+  },
+  [1012] = {
+    1012,
+    800407708,
+    "str_season_s4_trade_harbor_event_name12",
+    "sear_event_12",
+    "str_season_s4_trade_harbor_event_desc12",
+    {
+      67,
+      68,
+      69,
+      70,
+      71
+    }
+  },
+  [1013] = {
+    1013,
+    800407708,
+    "str_season_s4_trade_harbor_event_name13",
+    "sear_event_13",
+    "str_season_s4_trade_harbor_event_desc13",
+    {
+      73,
+      74,
+      75,
+      76,
+      77,
+      78
+    }
+  },
+  [1014] = {
+    1014,
+    800407708,
+    "str_season_s4_trade_harbor_event_name14",
+    "sear_event_14",
+    "str_season_s4_trade_harbor_event_desc14",
+    {
+      79,
+      81,
+      82,
+      83
+    }
+  },
+  [1015] = {
+    1015,
+    800407708,
+    "str_season_s4_trade_harbor_event_name15",
+    "sear_event_15",
+    "str_season_s4_trade_harbor_event_desc15",
+    {
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+    }
+  },
+  [1016] = {
+    1016,
+    800407708,
+    "str_season_s4_trade_harbor_event_name16",
+    "sear_event_16",
+    "str_season_s4_trade_harbor_event_desc16",
+    {
+      91,
+      93,
+      94,
+      95,
+      96
+    }
+  },
+  [1017] = {
+    1017,
+    800407708,
+    "str_season_s4_trade_harbor_event_name17",
+    "sear_event_17",
+    "str_season_s4_trade_harbor_event_desc17",
+    {
+      97,
+      99,
+      100,
+      101,
+      102
+    }
+  },
+  [1018] = {
+    1018,
+    800407708,
+    "str_season_s4_trade_harbor_event_name18",
+    "sear_event_18",
+    "str_season_s4_trade_harbor_event_desc18",
+    {
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    }
+  },
+  [1019] = {
+    1019,
+    800407708,
+    "str_season_s4_trade_harbor_event_name19",
+    "sear_event_19",
+    "str_season_s4_trade_harbor_event_desc19",
+    {
+      109,
+      110,
+      111,
+      112,
+      113
+    }
+  },
+  [1020] = {
+    1020,
+    800407708,
+    "str_season_s4_trade_harbor_event_name20",
+    "sear_event_20",
+    "str_season_s4_trade_harbor_event_desc20",
+    {
+      115,
+      117,
+      118,
+      119,
+      120
+    }
+  },
+  [1021] = {
+    1021,
+    800407708,
+    "str_season_s4_trade_harbor_event_name21",
+    "sear_event_21",
+    "str_season_s4_trade_harbor_event_desc21",
+    {
+      121,
+      122,
+      123,
+      124,
+      125,
+      126
+    }
+  },
+  [1022] = {
+    1022,
+    800407708,
+    "str_season_s4_trade_harbor_event_name22",
+    "sear_event_22",
+    "str_season_s4_trade_harbor_event_desc22",
+    {
+      127,
+      129,
+      130,
+      131,
+      132
+    }
+  },
+  [1023] = {
+    1023,
+    800407708,
+    "str_season_s4_trade_harbor_event_name23",
+    "sear_event_23",
+    "str_season_s4_trade_harbor_event_desc23",
+    {
+      133,
+      134,
+      135,
+      136,
+      137,
+      138
+    }
+  },
+  [1024] = {
+    1024,
+    800407708,
+    "str_season_s4_trade_harbor_event_name24",
+    "sear_event_24",
+    "str_season_s4_trade_harbor_event_desc24",
+    {
+      139,
+      140,
+      141,
+      142,
+      143,
+      144
+    }
+  }
+}
+return config, "ID", key

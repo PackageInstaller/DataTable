@@ -1,0 +1,27 @@
+local config = {
+  ui_story_5032_50323301_1_dialog_content = "フンフンフン～♪",
+  ui_story_5032_50323301_2_dialog_content = "ラララ～♪",
+  ui_story_5032_50323301_3_dialog_content = "ルンルン～♪",
+  ui_story_5032_50323301_4_dialog_content = "バイス、何してるの？",
+  ui_story_5032_50323301_5_dialog_content = "PlayerName、見て！\n天空ノ庭に、まだいいものが埋まってたわ！",
+  ui_story_5032_50323301_6_dialog_content = "<color=#e8d9bb>ガチャン――！</color>",
+  ui_story_5032_50323301_7_dialog_content = "このガラクタの山は何…？",
+  ui_story_5032_50323301_8_dialog_content = "説明してあげるわ！これは…",
+  ui_story_5032_50323301_9_dialog_content = "丸い金属の欠片ね。コインみたいだけど、模様がすり減っちゃってるの。\n溶かせば別のものにできるわ。",
+  ui_story_5032_50323301_10_dialog_content = "こっちは図面っぽいもの。\nほとんど腐っちゃってるけど、ちゃんと研究しないとね。",
+  ui_story_5032_50323301_11_dialog_content = "この黒いかたまりは人工物ではなさそう、たぶん鉱石ね。\n後でよく洗ってから確かめるわ。",
+  ui_story_5032_50323301_12_dialog_content = "あ！それからこっちは、たくさんホタルを捕まえたの。\n巨像の中で放せば、夜の照明にできるかも！",
+  ui_story_5032_50323301_13_dialog_content = "…",
+  ui_story_5032_50323301_14_dialog_content = "アハハ…",
+  ui_story_5032_50323301_15_dialog_content = "え、何かおかしかった？",
+  ui_story_5032_50323301_16_dialog_content = "いや、何でもない。今日はバイスが\nあちこち走り回ってると思ってたけど、このためだったんだね。",
+  ui_story_5032_50323301_17_dialog_content = "僕の予想が正しければ…\nあの装置、また持ち出したの？",
+  ui_story_5032_50323301_18_dialog_content = "「<color=#FFB400>携帯探索機</color>」のことね、その通りよ！",
+  ui_story_5032_50323301_19_dialog_content = "だって、ヒマだったんだもの！",
+  ui_story_5032_50323301_20_dialog_content = "分かるよ、一緒に探そうか？",
+  ui_story_5032_50323301_21_dialog_content = "いいわね！ちょうどあなたを誘おうかと思ってたの！",
+  ui_story_5032_50323301_22_dialog_content = "宝探しなら、何度やっても楽しいよ。",
+  ui_story_5032_50323301_23_dialog_content = "よし！じゃあ「<color=#FFB400>携帯探索機</color>」を持って、\n一緒に宝物を探しに行こう！",
+  ui_story_5032_50323301_24_dialog_content = "了解、ナビゲーター！"
+}
+return config

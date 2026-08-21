@@ -1,0 +1,10 @@
+_class("BuffResultChangeFeatureSkillPower", BuffResultBase)
+BuffResultChangeFeatureSkillPower = BuffResultChangeFeatureSkillPower
+
+function BuffResultChangeFeatureSkillPower:Constructor(featureSkillPowerDataList)
+  self._featureSkillPowerDataList = featureSkillPowerDataList
+end
+
+function BuffResultChangeFeatureSkillPower:GetFeatureSkillPowerDataList()
+  return self._featureSkillPowerDataList
+end

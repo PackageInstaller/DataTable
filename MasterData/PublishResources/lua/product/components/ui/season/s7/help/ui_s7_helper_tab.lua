@@ -1,0 +1,47 @@
+_class("UIS7HelperTab", UICustomWidget)
+UIS7HelperTab = UIS7HelperTab
+
+function UIS7HelperTab:OnShow(uiParams)
+  self:InitWidget()
+end
+
+function UIS7HelperTab:InitWidget()
+  self._tabNameText = self:GetUIComponent("UILocalizationText", "TabName")
+  self._tabName2Text = self:GetUIComponent("UILocalizationText", "TabName2")
+  self._selectedGo = self:GetGameObject("SelectedImg")
+  self._unselectedGo = self:GetGameObject("UnselectedImg")
+  if self._selectedGo then
+    self._selectedGo:SetActive(false)
+  end
+  if self._unselectedGo then
+    self._unselectedGo:SetActive(false)
+  end
+end
+
+function UIS7HelperTab:OnHide()
+end
+
+function UIS7HelperTab:TabBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+  if self._callback then
+    self._callback(self._tabId)
+  end
+end
+
+function UIS7HelperTab:SetData(tabCfg, callback)
+  self._tabCfg = tabCfg
+  self._tabId = self._tabCfg.TabEnum
+  self._callback = callback
+  local str = StringTable.Get(self._tabCfg.Title)
+  self._tabNameText:SetText(str)
+  self._tabName2Text:SetText(str)
+end
+
+function UIS7HelperTab:OnSelectIndex(tabId)
+  if self._selectedGo then
+    self._selectedGo:SetActive(self._tabId == tabId)
+  end
+  if self._unselectedGo then
+    self._unselectedGo:SetActive(self._tabId ~= tabId)
+  end
+end

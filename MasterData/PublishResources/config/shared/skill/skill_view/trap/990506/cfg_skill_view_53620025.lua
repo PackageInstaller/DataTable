@@ -1,0 +1,46 @@
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID = 9037,audioType=1; Wait,waitTime=2000; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " PlayCasterAnimation,animName = AtkUlt; PlayCasterBindEffect,effectID=1710; PlayAudio,audioID = 3094,audioType=1; Wait,waitTime=6800; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    2,
+    1,
+    2400,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=1711,turnToTarget=1,deathClear=0,label=doAgain; PlayAudio,audioID = 3095,audioType=1; Wait,waitTime=200; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  }
+}
+return config, "ID", key

@@ -1,0 +1,64 @@
+_class("UIS4CollageBtn", UICustomWidget)
+UIS4CollageBtn = UIS4CollageBtn
+
+function UIS4CollageBtn:OnShow()
+end
+
+function UIS4CollageBtn:OnHide()
+end
+
+function UIS4CollageBtn:SetData(seasonId, playAnim)
+  self._seasonId = seasonId
+  local seasonModule = GameGlobal.GetUIModule(SeasonModule)
+  self._collageData = seasonModule:GetCollageData()
+  local isOpen = true
+  if not isOpen then
+    self:GetGameObject():SetActive(false)
+    return
+  end
+  self:_SetFin()
+  self:_CheckPoint()
+  if playAnim then
+    UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", "uieffanim_UIS4_CollageBtn_in", 400, 667)
+  end
+end
+
+function UIS4CollageBtn:_SetFin()
+  local show = true
+  local cur, total
+  cur, total = self._collageData:GetCollectionProgress()
+  show = show and cur == total
+  cur, total = self._collageData:GetCgProgress()
+  show = show and cur == total
+  cur, total = self._collageData:GetMusicProgress()
+  show = show and cur == total
+  self:GetGameObject("_fin"):SetActive(show)
+end
+
+function UIS4CollageBtn:_CalcNew()
+  local new = false
+  new = new or self._collageData:CollectionHasNew()
+  new = new or self._collageData:CGHasNew()
+  new = new or self._collageData:MusicHasNew()
+  return new
+end
+
+function UIS4CollageBtn:_CalcRed()
+  return false
+end
+
+function UIS4CollageBtn:_CheckPoint()
+  local new = self:_CalcNew()
+  local red = self:_CalcRed()
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", "_red")
+end
+
+function UIS4CollageBtn:BtnOnClick()
+  Log.info("UIS4CollageBtn:BtnOnClick")
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
+  if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
+    return
+  end
+  self:_CheckPoint()
+  UISeasonHelper.ShowCurSeasonCollage()
+end

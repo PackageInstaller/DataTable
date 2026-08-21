@@ -1,0 +1,26 @@
+local config = {
+  str_n30_train_day = "{1}일 ",
+  str_n30_train_hour = "{1}시간 ",
+  str_n30_train_minus = "{1}분",
+  str_n30_train_less_one_minus = "<1분",
+  str_n30_train_activity_end = "이벤트가 종료되었습니다.",
+  str_n30_train_activity_remain_time = "이벤트 남은 시간: ",
+  str_n30_train_main_title = "진리의 비밀",
+  str_n30_train_activity_hadchall = "클리어",
+  str_n30_train_locked_prev_popup = "이전 스테이지 클리어 시 개방",
+  str_n30_train_rule_description = "이벤트 설명",
+  str_n30_train_activity_intro_title = "[진리의 비밀] 이벤트 설명",
+  str_n30_train_activity_intro_head_1 = "<size=32><color=#80623b>[진리의 비밀] 이벤트 설명</color></size>",
+  str_n30_train_activity_intro_body_1 = "이벤트 기간에 암귀를 처치해 풍성한 보상을 획득할 수 있습니다.\n이전 스테이지를 클리어하면 다음 스테이지가 개방됩니다.",
+  str_n30_train_1_name = "N1-워밍업",
+  str_n30_train_2_name = "N2-탐색",
+  str_n30_train_3_name = "N3-심취",
+  str_n30_train_4_name = "N4-방종",
+  str_n30_train_5_name = "N5-광기",
+  str_n30_train_1_name_desc = "「널 위해 특별히 준비한 시험에 온 것을 환영한다, 조종사여.」",
+  str_n30_train_2_name_desc = "「계속해라. 전투의 새로운 가능성을 탐색하는 것이다.」",
+  str_n30_train_3_name_desc = "「기분이 어떤가, 이러한 기회는 결코 매일 오는 것이 아니다.」",
+  str_n30_train_4_name_desc = "「두려워하지 말고 마음의 욕망을 따라라. 진리는 바로 네 앞에 있다.」",
+  str_n30_train_5_name_desc = "「화려한 색채로 최후의 시험이 끝나게 하라. 그리하면 세계가 변할 것이다.」"
+}
+return config
