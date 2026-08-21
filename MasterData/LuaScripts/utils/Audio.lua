@@ -1,0 +1,265 @@
+-- --[[ 
+-- -----------------------------------------------------
+-- @filename       : Audio
+-- @Description    : 音效管理器
+-- @date           : 2020-09-21 14:55:28
+-- @Author         : Jacob
+-- @copyright      : (LY) 2020 雷焰网络
+-- -----------------------------------------------------
+-- ]] module('game.utils.Audio', Class.impl())
+
+-- -- 构造
+-- function ctor(self)
+--     -- super.ctor(self)
+--     self.m_heroCVPlayDict = {}
+-- end
+
+-- -- 析构
+-- function dtor(self)
+-- end
+
+-- -- 解析音乐音效配置
+-- function parseAudioConfigData(self)
+--     self.mAudioData = {}
+--     local baseData = RefMgr:getData("music_data")
+--     for key, data in pairs(baseData) do
+--         self.mAudioData[key] = data
+--     end
+-- end
+
+-- -- 获取音乐音效配置数据
+-- function getAudioData(self, cusId)
+--     if not cusId then
+--         return
+--     end
+--     if not self.mAudioData then
+--         self:parseAudioConfigData()
+--     end
+--     local data = self.mAudioData[cusId]
+--     if not data then
+--         Debug:log_error("Audio", "不存在AudioData: " .. cusId)
+--     end
+--     return data
+-- end
+
+-- -- 解析cv配置
+-- function parseCVConfigData(self)
+--     self.mCVData = {}
+--     local baseData = RefMgr:getData("cv_data")
+--     for key, data in pairs(baseData) do
+--         self.mCVData[key] = data
+--     end
+-- end
+
+-- -- 获取cv配置数据
+-- function getCVData(self, cusId)
+--     if not cusId then
+--         return
+--     end
+--     if not self.mCVData then
+--         self:parseCVConfigData()
+--     end
+--     local data = self.mCVData[cusId]
+--     if not data then
+--         Debug:log_error("Audio", "不存在cv Data: " .. cusId)
+--     end
+--     return data
+-- end
+
+-- -------------------------------------------------
+-- -- 播放音乐
+-- function playMusic(self, cusId)
+--     -- self:startMusic()
+--     local data = self:getAudioData(cusId)
+--     if data then
+--         AudioGoPlayer:playMusic(UrlManager:getMusicPath(data.voice))
+--     end
+-- end
+-- -- 播放一次音乐
+-- -- isFinishPlay 决定音乐播放完后，是否继续播放原有的音乐
+-- function playMusicOne(self, cusId, isFinishPlay)
+--     -- self:startMusic()
+--     local data = self:getAudioData(cusId)
+--     if data then
+--         AudioGoPlayer:playMusicOne(UrlManager:getMusicPath(data.voice), isFinishPlay)
+--     end
+-- end
+
+-- function playMusicList(self, ids, type)
+--     local lst = {}
+--     for index, value in ipairs(ids) do
+--         local data = self:getAudioData(value)
+--         if data then
+--             table.insert(lst, UrlManager:getMusicPath(data.voice))
+--         end
+--     end
+--     AudioGoPlayer:playMusic01(lst, type)
+-- end
+-- -- 开始播放音乐
+-- function startMusic(self)
+--     AudioGoPlayer:startMusic()
+-- end
+-- -- 停止播放音乐
+-- function stopMusic(self)
+--     AudioGoPlayer:stopMusic()
+-- end
+-- -- 设置背景音乐音量
+-- function setMusicVolume(self, value)
+--     gs.AudioManager.MusicVolume = value
+--     AudioGoPlayer:setMusicVolume(value)
+-- end
+-- -- 获取当前背景音乐音量
+-- function getMusicVolume(self)
+--     return gs.AudioManager.MusicVolume
+-- end
+
+-- --------------------------------------------------------
+-- -- 播放音效
+-- function playEffct(self, cusId)
+--     local data = self:getAudioData(cusId)
+--     if data then
+--         AudioGoPlayer:playAudio(UrlManager:getEffectSoundPath(data.voice))
+--     end
+-- end
+
+-- -- 停止播放音效
+-- function stopEffect(self)
+--     gs.AudioManager:StopEffect()
+-- end
+
+-- -- 设置音效音量
+-- function setEffectVolume(self, value)
+--     gs.AudioManager.EffcetVolume = value
+-- end
+
+-- -- 获取当前音效音量
+-- function getEffectVolume(self)
+--     return gs.AudioManager.EffcetVolume
+-- end
+
+-- --------------------------------------------------------
+-- -- 播放Cv
+-- function playCv(self, cusId, finishCall)
+--     local data = self:getCVData(cusId)
+--     if data then
+--         if(data.voice ~= "")then
+--             AudioGoPlayer:playAudioCV(UrlManager:getCVSoundPath(data.voice), nil, nil, finishCall)
+--             return data
+--         end
+--     end
+
+--     if finishCall then
+--         finishCall()
+--     end
+-- end
+
+-- function playCvOnce(self, cusId, finishCall)
+--     self:stopCv()
+--     local data = self:getCVData(cusId)
+--     if data then
+--         if self.lastData then
+--             AudioGoPlayer:stopAudio(self.lastData)
+--         end
+
+--         self.lastData = AudioGoPlayer:playAudioCV(UrlManager:getCVSoundPath(data.voice), true, nil, finishCall)
+--     else
+--         if finishCall then
+--             finishCall()
+--         end
+--     end
+--     return data
+-- end
+
+-- -- 停止播放音效
+-- function stopCv(self)
+--     gs.AudioManager:StopCv()
+-- end
+
+-- -- 设置音效音量
+-- function setCvVolume(self, value)
+--     gs.AudioManager.CvVolume = value
+-- end
+
+-- -- 获取当前音效音量
+-- function getCvVolume(self)
+--     return gs.AudioManager.CvVolume
+-- end
+
+-- --------------------------------------------------------
+-- -- 播放Pcm
+-- function playPcm(self, pcmFilePath)
+--     gs.AudioManager:PlayPcm(pcmFilePath, sdk.XunFeiParam.SampleRate, nil)
+-- end
+-- -- 停止播放Pcm
+-- function stopPcm(self)
+--     gs.AudioManager:StopPcm()
+-- end
+-- -- 设置Pcm音量
+-- function setPcmVolume(self, value)
+--     gs.AudioManager.PcmVolume = value
+-- end
+-- -- 获取当前Pcm音量
+-- function getPcmVolume(self)
+--     return gs.AudioManager.PcmVolume
+-- end
+
+-- ----------------------------------------------------------------
+-- function playHeroCV(self, heroTID, cvID, finishCall)
+--     if not heroTID then
+--         if finishCall then
+--             finishCall()
+--         end
+--         return
+--     end
+--     for _, v in pairs(self.m_heroCVPlayDict) do
+--         -- 有人在cv播放中
+--         if finishCall then
+--             finishCall()
+--         end
+--         return
+--     end
+--     -- if self.m_heroCVPlayDict[heroTID] then
+--     --     -- 正常播放中
+--     --     if finishCall then finishCall() end
+--     --     return
+--     -- end
+--     self.m_heroCVPlayDict[heroTID] = cvID
+--     local function _finish()
+--         self.m_heroCVPlayDict[heroTID] = nil
+--         if finishCall then
+--             finishCall()
+--         end
+--     end
+--     return self:playCv(cvID, _finish)
+-- end
+
+-- -- heroTID 英雄模板 ID
+-- function playHeroCV01(self, heroTID, field, finishCall)
+--     if not field then
+--         return
+--     end
+--     local vo = hero.HeroManager:getHeroConfigVo(heroTID)
+--     if vo then
+--         local orgData = vo:getOrgData()
+--         if orgData and orgData[field] then
+--             return Audio:playHeroCV(vo.tid, orgData[field])
+--         end
+--     else
+--         local monVo = monster.MonsterManager:getMonsterVo01(heroTID)
+--         if monVo then 
+--             local orgData = monVo:getOrgData()
+--             if orgData and orgData[field] then
+--                 return Audio:playHeroCV(heroTID, orgData[field])
+--             end
+--         end
+--     end
+-- end
+-- -- heroID 英雄唯一 ID
+-- function playHeroCV02(self, heroID, field, finishCall)
+--     local heroVo = hero.HeroManager:getHeroVo(heroID)
+--     if heroVo then
+--         return self:playHeroCV01(heroVo.tid, field, finishCall)
+--     end
+-- end
+
+-- return _M

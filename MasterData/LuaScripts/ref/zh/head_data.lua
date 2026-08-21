@@ -1,0 +1,14 @@
+-- from 024 外观配置表.xlsx
+
+local head_data=
+
+{
+	[2001]={ unlock_type=0, unlock_list={0}, get_description="默认解锁的头像", icon="1", sort=1
+},
+	[2002]={ unlock_type=1, unlock_list={12102}, get_description="周年庆解锁获得！", icon="2", sort=2
+},
+	[2003]={ unlock_type=2, unlock_list={1001}, get_description="战员克拉伦斯的专属头像", icon="3", sort=3
+}
+}
+
+return head_data
