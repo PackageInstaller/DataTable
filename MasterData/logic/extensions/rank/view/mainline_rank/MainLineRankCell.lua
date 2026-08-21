@@ -1,0 +1,36 @@
+﻿-- chunkname: @/Users/baioo/builds/866EVqtU/3/spacex/spacex-client/UnityProj/Assets/Scripts/Lua/logic/extensions/rank/view/mainline_rank/MainLineRankCell.lua
+
+module("logic.extensions.rank.view.mainline_rank.MainLineRankCell", package.seeall)
+
+local M = class("MainLineRankCell", ListBinderCell)
+
+function M:Awake()
+	self._text_progress = goutil.findChildTextComponent(self._go, "stateZX/layout/txtLevel")
+	self._text_round = goutil.findChildTextComponent(self._go, "stateZX/layout/other/txtNum1")
+	self._text_stepCount = goutil.findChildTextComponent(self._go, "stateZX/layout/other/txtNum2")
+	self._text_no_team = goutil.findChild(self._go, "stateZX/txtTips")
+	self._go_user = goutil.findChild(self._go, "player_ranking_common_item")
+	self._go_rankTeam = goutil.findChild(self._go, "stateZX/rank_team")
+	self._rankUserCell = Astral.LuaComponentContainer.Add(self._go_user, RankUserCell)
+	self._rankTeamItem = Astral.LuaComponentContainer.Add(self._go_rankTeam, RankTeamItem)
+end
+
+function M:updateData(data)
+	if not data then
+		return
+	end
+
+	self._rankUserCell:updateData(data)
+
+	local team = data:getTeam()
+	local progress = data:getProgress()
+
+	goutil.setActive(self._text_no_team, progress and team == nil)
+	self._rankTeamItem:updateData(data)
+
+	self._text_progress.text = progress or lang("rank_no_ranking")
+	self._text_round.text = data:getRound() or RankConfig.noDataShow
+	self._text_stepCount.text = data:getStep() or RankConfig.noDataShow
+end
+
+return M

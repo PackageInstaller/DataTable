@@ -1,0 +1,3836 @@
+﻿-- chunkname: @/Users/baioo/builds/866EVqtU/3/spacex/spacex-client/UnityProj/Assets/Scripts/Lua/logic/proto/RoguelikeExtension_pb.lua
+
+local protobuf = require("protobuf.protobuf")
+local dependencies = {}
+
+dependencies.TaskExtension = require("logic.proto.TaskExtension_pb")
+
+module("logic.proto.RoguelikeExtension_pb", package.seeall)
+
+local enum_item_descriptors = {}
+local field_descriptors = {}
+
+type_descriptors = {}
+type_descriptors.AttrType = protobuf.EnumDescriptor()
+enum_item_descriptors.AttrType_POWER = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_AGILITY = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_LORE = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_CHAT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_INSIGHT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_LUCK = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_HP = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_HP_LIMIT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SAN = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_R_GOLD = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SUCCESS_1 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SUCCESS_2 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SUCCESS_3 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SUCCESS_4 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SUCCESS_5 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SUCCESS_6 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_BLEED_1 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_BLEED_2 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_BLEED_3 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_BLEED_4 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_BLEED_5 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_BLEED_6 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_TRANCE_1 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_TRANCE_2 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_TRANCE_3 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_TRANCE_4 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_TRANCE_5 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_TRANCE_6 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SACRIFICE_1 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SACRIFICE_2 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SACRIFICE_3 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SACRIFICE_4 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SACRIFICE_5 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_SACRIFICE_6 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_ECLIPSE_1 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_ECLIPSE_2 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_ECLIPSE_3 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_ECLIPSE_4 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_ECLIPSE_5 = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AttrType_ECLIPSE_6 = protobuf.EnumValueDescriptor()
+type_descriptors.CardParam = protobuf.EnumDescriptor()
+enum_item_descriptors.CardParam_DICE_SUCCESS = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_DICE_SACRIFICE = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_DICE_ECLIPSE = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_DICE_BLEED = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_DICE_TRANCE = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_THROW_RESULT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_MAKE_DAMAGE = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_MAKE_SHIELD = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_MAKE_BATTER = protobuf.EnumValueDescriptor()
+enum_item_descriptors.CardParam_GET_EFFECT_ID = protobuf.EnumValueDescriptor()
+type_descriptors.JudgeType = protobuf.EnumDescriptor()
+enum_item_descriptors.JudgeType_NOT_IN_JUDGE = protobuf.EnumValueDescriptor()
+enum_item_descriptors.JudgeType_FIGHT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.JudgeType_SINGLE_EVENT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.JudgeType_MUTIL_EVENT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.JudgeType_EMERGENCY_EVENT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.JudgeType_PLOT_EVENT = protobuf.EnumValueDescriptor()
+type_descriptors.RoomType = protobuf.EnumDescriptor()
+enum_item_descriptors.RoomType_Blank = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_INIT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_EVENT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_MONSTER = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_PROPS = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_MALL = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_GAMBLE = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_NEXT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_BOSS = protobuf.EnumValueDescriptor()
+enum_item_descriptors.RoomType_ENTRANCE = protobuf.EnumValueDescriptor()
+type_descriptors.Vision = protobuf.EnumDescriptor()
+enum_item_descriptors.Vision_BLIND = protobuf.EnumValueDescriptor()
+enum_item_descriptors.Vision_UNKNOWN = protobuf.EnumValueDescriptor()
+enum_item_descriptors.Vision_DEFAULT_CLEAR = protobuf.EnumValueDescriptor()
+enum_item_descriptors.Vision_CLEAR = protobuf.EnumValueDescriptor()
+type_descriptors.AdditionEnum = protobuf.EnumDescriptor()
+enum_item_descriptors.AdditionEnum_ADD_GAMBLE = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AdditionEnum_ADD_MALL = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AdditionEnum_ADD_EVENT = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AdditionEnum_ADD_MONSTER = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AdditionEnum_ADD_BIG_SUCCESS = protobuf.EnumValueDescriptor()
+enum_item_descriptors.AdditionEnum_ADD_MOVE_SAN = protobuf.EnumValueDescriptor()
+type_descriptors.EffectSourceType = protobuf.EnumDescriptor()
+enum_item_descriptors.EffectSourceType_ES_props = protobuf.EnumValueDescriptor()
+enum_item_descriptors.EffectSourceType_ES_equip = protobuf.EnumValueDescriptor()
+enum_item_descriptors.EffectSourceType_ES_script = protobuf.EnumValueDescriptor()
+type_descriptors.AddPropsReply = protobuf.Descriptor()
+type_descriptors.UpgradeEquipReply = protobuf.Descriptor()
+field_descriptors.UpgradeEquipReply_id = protobuf.FieldDescriptor()
+field_descriptors.UpgradeEquipReply_lv = protobuf.FieldDescriptor()
+type_descriptors.FaceNO = protobuf.Descriptor()
+field_descriptors.FaceNO_face = protobuf.FieldDescriptor()
+field_descriptors.FaceNO_num = protobuf.FieldDescriptor()
+type_descriptors.ScriptPush = protobuf.Descriptor()
+field_descriptors.ScriptPush_info = protobuf.FieldDescriptor()
+type_descriptors.TouchRequest = protobuf.Descriptor()
+field_descriptors.TouchRequest_id = protobuf.FieldDescriptor()
+field_descriptors.TouchRequest_heroId = protobuf.FieldDescriptor()
+field_descriptors.TouchRequest_attr = protobuf.FieldDescriptor()
+field_descriptors.TouchRequest_card = protobuf.FieldDescriptor()
+type_descriptors.EndJudgeReply = protobuf.Descriptor()
+type_descriptors.CardNO = protobuf.Descriptor()
+field_descriptors.CardNO_index = protobuf.FieldDescriptor()
+field_descriptors.CardNO_cardId = protobuf.FieldDescriptor()
+field_descriptors.CardNO_cd = protobuf.FieldDescriptor()
+field_descriptors.CardNO_entry = protobuf.FieldDescriptor()
+type_descriptors.LoadInfoReply = protobuf.Descriptor()
+field_descriptors.LoadInfoReply_info = protobuf.FieldDescriptor()
+field_descriptors.LoadInfoReply_mapConfig = protobuf.FieldDescriptor()
+type_descriptors.EndSelectCardRequest = protobuf.Descriptor()
+field_descriptors.EndSelectCardRequest_index = protobuf.FieldDescriptor()
+type_descriptors.MoveReply = protobuf.Descriptor()
+type_descriptors.GetCluePush = protobuf.Descriptor()
+field_descriptors.GetCluePush_id = protobuf.FieldDescriptor()
+type_descriptors.QuitReply = protobuf.Descriptor()
+type_descriptors.TakeEffectReply = protobuf.Descriptor()
+type_descriptors.GuessDiceResultReply = protobuf.Descriptor()
+field_descriptors.GuessDiceResultReply_result = protobuf.FieldDescriptor()
+type_descriptors.SelectPropsPush = protobuf.Descriptor()
+field_descriptors.SelectPropsPush_code = protobuf.FieldDescriptor()
+field_descriptors.SelectPropsPush_slId = protobuf.FieldDescriptor()
+type_descriptors.TakeEffectRequest = protobuf.Descriptor()
+field_descriptors.TakeEffectRequest_effects = protobuf.FieldDescriptor()
+field_descriptors.TakeEffectRequest_heroId = protobuf.FieldDescriptor()
+field_descriptors.TakeEffectRequest_attr = protobuf.FieldDescriptor()
+field_descriptors.TakeEffectRequest_card = protobuf.FieldDescriptor()
+field_descriptors.TakeEffectRequest_x = protobuf.FieldDescriptor()
+type_descriptors.GuessDiceRequest = protobuf.Descriptor()
+field_descriptors.GuessDiceRequest_type = protobuf.FieldDescriptor()
+type_descriptors.MapUpdatePush = protobuf.Descriptor()
+field_descriptors.MapUpdatePush_rooms = protobuf.FieldDescriptor()
+field_descriptors.MapUpdatePush_curRoom = protobuf.FieldDescriptor()
+field_descriptors.MapUpdatePush_isInMap2 = protobuf.FieldDescriptor()
+type_descriptors.SortReply = protobuf.Descriptor()
+type_descriptors.StartJudgeRequest = protobuf.Descriptor()
+field_descriptors.StartJudgeRequest_byGm = protobuf.FieldDescriptor()
+field_descriptors.StartJudgeRequest_type = protobuf.FieldDescriptor()
+field_descriptors.StartJudgeRequest_enemyId = protobuf.FieldDescriptor()
+field_descriptors.StartJudgeRequest_eventId = protobuf.FieldDescriptor()
+type_descriptors.MallBuyReply = protobuf.Descriptor()
+type_descriptors.RoguelikeTaskRewardRequest = protobuf.Descriptor()
+field_descriptors.RoguelikeTaskRewardRequest_id = protobuf.FieldDescriptor()
+type_descriptors.RoomPrizesNO = protobuf.Descriptor()
+field_descriptors.RoomPrizesNO_room = protobuf.FieldDescriptor()
+field_descriptors.RoomPrizesNO_prize = protobuf.FieldDescriptor()
+field_descriptors.RoomPrizesNO_increment = protobuf.FieldDescriptor()
+type_descriptors.RoleChangeValue = protobuf.Descriptor()
+field_descriptors.RoleChangeValue_hp = protobuf.FieldDescriptor()
+field_descriptors.RoleChangeValue_san = protobuf.FieldDescriptor()
+field_descriptors.RoleChangeValue_heroId = protobuf.FieldDescriptor()
+type_descriptors.RoguelikeListTaskReply = protobuf.Descriptor()
+field_descriptors.RoguelikeListTaskReply_tasks = protobuf.FieldDescriptor()
+type_descriptors.Shape = protobuf.Descriptor()
+field_descriptors.Shape_point = protobuf.FieldDescriptor()
+field_descriptors.Shape_shapeId = protobuf.FieldDescriptor()
+type_descriptors.PrizeNO = protobuf.Descriptor()
+field_descriptors.PrizeNO_id = protobuf.FieldDescriptor()
+field_descriptors.PrizeNO_price = protobuf.FieldDescriptor()
+field_descriptors.PrizeNO_taken = protobuf.FieldDescriptor()
+type_descriptors.EndRoundReply = protobuf.Descriptor()
+field_descriptors.EndRoundReply_team = protobuf.FieldDescriptor()
+type_descriptors.EquipNO = protobuf.Descriptor()
+field_descriptors.EquipNO_id = protobuf.FieldDescriptor()
+field_descriptors.EquipNO_lv = protobuf.FieldDescriptor()
+field_descriptors.EquipNO_cd = protobuf.FieldDescriptor()
+type_descriptors.GuessDiceResultRequest = protobuf.Descriptor()
+field_descriptors.GuessDiceResultRequest_type = protobuf.FieldDescriptor()
+type_descriptors.EndRoundRequest = protobuf.Descriptor()
+type_descriptors.StartEventRequest = protobuf.Descriptor()
+field_descriptors.StartEventRequest_id = protobuf.FieldDescriptor()
+type_descriptors.GetGuessNumRequest = protobuf.Descriptor()
+type_descriptors.GuessDiceReply = protobuf.Descriptor()
+type_descriptors.DropPropsRequest = protobuf.Descriptor()
+field_descriptors.DropPropsRequest_id = protobuf.FieldDescriptor()
+type_descriptors.CardValue = protobuf.Descriptor()
+field_descriptors.CardValue_id = protobuf.FieldDescriptor()
+field_descriptors.CardValue_value = protobuf.FieldDescriptor()
+type_descriptors.CutRoom = protobuf.Descriptor()
+field_descriptors.CutRoom_ab = protobuf.FieldDescriptor()
+type_descriptors.EndSelectReply = protobuf.Descriptor()
+type_descriptors.AddPropsRequest = protobuf.Descriptor()
+field_descriptors.AddPropsRequest_code = protobuf.FieldDescriptor()
+field_descriptors.AddPropsRequest_heroId = protobuf.FieldDescriptor()
+field_descriptors.AddPropsRequest_attr = protobuf.FieldDescriptor()
+field_descriptors.AddPropsRequest_card = protobuf.FieldDescriptor()
+field_descriptors.AddPropsRequest_slId = protobuf.FieldDescriptor()
+type_descriptors.WearEquipRequest = protobuf.Descriptor()
+field_descriptors.WearEquipRequest_id = protobuf.FieldDescriptor()
+type_descriptors.EffectPush = protobuf.Descriptor()
+field_descriptors.EffectPush_changes = protobuf.FieldDescriptor()
+type_descriptors.SetCardCdRequest = protobuf.Descriptor()
+field_descriptors.SetCardCdRequest_hero = protobuf.FieldDescriptor()
+field_descriptors.SetCardCdRequest_card = protobuf.FieldDescriptor()
+field_descriptors.SetCardCdRequest_cd = protobuf.FieldDescriptor()
+type_descriptors.StartReply = protobuf.Descriptor()
+field_descriptors.StartReply_script = protobuf.FieldDescriptor()
+type_descriptors.UseSkillReply = protobuf.Descriptor()
+type_descriptors.MallBuyRequest = protobuf.Descriptor()
+field_descriptors.MallBuyRequest_id = protobuf.FieldDescriptor()
+type_descriptors.LoadInfoRequest = protobuf.Descriptor()
+type_descriptors.JudgeArchiveRequest = protobuf.Descriptor()
+field_descriptors.JudgeArchiveRequest_archive = protobuf.FieldDescriptor()
+type_descriptors.RoguelikeTaskRewardReply = protobuf.Descriptor()
+field_descriptors.RoguelikeTaskRewardReply_tasks = protobuf.FieldDescriptor()
+type_descriptors.MapNO = protobuf.Descriptor()
+field_descriptors.MapNO_id = protobuf.FieldDescriptor()
+field_descriptors.MapNO_rooms = protobuf.FieldDescriptor()
+field_descriptors.MapNO_cuts = protobuf.FieldDescriptor()
+type_descriptors.StartEventReply = protobuf.Descriptor()
+field_descriptors.StartEventReply_reply = protobuf.FieldDescriptor()
+field_descriptors.StartEventReply_ashReply = protobuf.FieldDescriptor()
+type_descriptors.SeedPush = protobuf.Descriptor()
+field_descriptors.SeedPush_seed = protobuf.FieldDescriptor()
+type_descriptors.Cell = protobuf.Descriptor()
+field_descriptors.Cell_point = protobuf.FieldDescriptor()
+field_descriptors.Cell_up = protobuf.FieldDescriptor()
+field_descriptors.Cell_right = protobuf.FieldDescriptor()
+field_descriptors.Cell_down = protobuf.FieldDescriptor()
+field_descriptors.Cell_left = protobuf.FieldDescriptor()
+type_descriptors.Addition = protobuf.Descriptor()
+field_descriptors.Addition_addition = protobuf.FieldDescriptor()
+field_descriptors.Addition_num = protobuf.FieldDescriptor()
+type_descriptors.ScriptInfo = protobuf.Descriptor()
+field_descriptors.ScriptInfo_scriptId = protobuf.FieldDescriptor()
+field_descriptors.ScriptInfo_unlockedDifficulty = protobuf.FieldDescriptor()
+field_descriptors.ScriptInfo_passCount = protobuf.FieldDescriptor()
+field_descriptors.ScriptInfo_touchIds = protobuf.FieldDescriptor()
+field_descriptors.ScriptInfo_options = protobuf.FieldDescriptor()
+field_descriptors.ScriptInfo_startSelectId = protobuf.FieldDescriptor()
+field_descriptors.ScriptInfo_startCard = protobuf.FieldDescriptor()
+field_descriptors.ScriptInfo_failCount = protobuf.FieldDescriptor()
+field_descriptors.ScriptInfo_totalCount = protobuf.FieldDescriptor()
+type_descriptors.ChangeCollector = protobuf.Descriptor()
+field_descriptors.ChangeCollector_type = protobuf.FieldDescriptor()
+field_descriptors.ChangeCollector_num = protobuf.FieldDescriptor()
+field_descriptors.ChangeCollector_heroId = protobuf.FieldDescriptor()
+field_descriptors.ChangeCollector_id = protobuf.FieldDescriptor()
+type_descriptors.GuessDiceGetRewardReply = protobuf.Descriptor()
+type_descriptors.StartCardSelectHeroReply = protobuf.Descriptor()
+type_descriptors.QuitRequest = protobuf.Descriptor()
+type_descriptors.EndSelectRequest = protobuf.Descriptor()
+field_descriptors.EndSelectRequest_id = protobuf.FieldDescriptor()
+type_descriptors.LoadAllRoomPrizesRequest = protobuf.Descriptor()
+type_descriptors.EffectSourceNO = protobuf.Descriptor()
+field_descriptors.EffectSourceNO_type = protobuf.FieldDescriptor()
+field_descriptors.EffectSourceNO_sourceId = protobuf.FieldDescriptor()
+field_descriptors.EffectSourceNO_effectId = protobuf.FieldDescriptor()
+type_descriptors.LoadLogsRequest = protobuf.Descriptor()
+type_descriptors.RoguelikeListTaskRequest = protobuf.Descriptor()
+type_descriptors.GuessDiceGetRewardRequest = protobuf.Descriptor()
+field_descriptors.GuessDiceGetRewardRequest_index = protobuf.FieldDescriptor()
+field_descriptors.GuessDiceGetRewardRequest_id = protobuf.FieldDescriptor()
+type_descriptors.MonsterPush = protobuf.Descriptor()
+field_descriptors.MonsterPush_id = protobuf.FieldDescriptor()
+type_descriptors.RoomNO = protobuf.Descriptor()
+field_descriptors.RoomNO_point = protobuf.FieldDescriptor()
+field_descriptors.RoomNO_id = protobuf.FieldDescriptor()
+field_descriptors.RoomNO_type = protobuf.FieldDescriptor()
+field_descriptors.RoomNO_content = protobuf.FieldDescriptor()
+field_descriptors.RoomNO_vision = protobuf.FieldDescriptor()
+field_descriptors.RoomNO_finished = protobuf.FieldDescriptor()
+type_descriptors.PlayerInfoUpdatePush = protobuf.Descriptor()
+field_descriptors.PlayerInfoUpdatePush_info = protobuf.FieldDescriptor()
+type_descriptors.LuckyDiceReply = protobuf.Descriptor()
+type_descriptors.ArchiveNO = protobuf.Descriptor()
+field_descriptors.ArchiveNO_type = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_enemyId = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_eventId = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_enemyOuterHp = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_enemyInnerHp = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_enemyOption = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_round = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_roleWall = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_heroId = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_enemyFace = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_selectedAttr = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_isJudged = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_curFeature = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_features = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_entry = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_entryNext = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_lossValue = protobuf.FieldDescriptor()
+field_descriptors.ArchiveNO_cardUseInfo = protobuf.FieldDescriptor()
+type_descriptors.LoadScriptRequest = protobuf.Descriptor()
+type_descriptors.EndJudgeRequest = protobuf.Descriptor()
+field_descriptors.EndJudgeRequest_success = protobuf.FieldDescriptor()
+type_descriptors.EquipPush = protobuf.Descriptor()
+field_descriptors.EquipPush_equip = protobuf.FieldDescriptor()
+type_descriptors.GetAllEquipRequest = protobuf.Descriptor()
+type_descriptors.LuckyDiceRequest = protobuf.Descriptor()
+field_descriptors.LuckyDiceRequest_id = protobuf.FieldDescriptor()
+type_descriptors.JudgeArchiveReply = protobuf.Descriptor()
+field_descriptors.JudgeArchiveReply_archive = protobuf.FieldDescriptor()
+type_descriptors.ExploreInfo = protobuf.Descriptor()
+field_descriptors.ExploreInfo_map = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_scriptId = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_difficulty = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_layer = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_curRoom = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_team = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_gold = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_props = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_equip = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_map2 = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_isInMap2 = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_isCampOpen = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_additions = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_source = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_sight = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_targetText = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_san = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_goldCount = protobuf.FieldDescriptor()
+field_descriptors.ExploreInfo_state = protobuf.FieldDescriptor()
+type_descriptors.GameOverPush = protobuf.Descriptor()
+field_descriptors.GameOverPush_state = protobuf.FieldDescriptor()
+field_descriptors.GameOverPush_option = protobuf.FieldDescriptor()
+field_descriptors.GameOverPush_script = protobuf.FieldDescriptor()
+type_descriptors.MoveRequest = protobuf.Descriptor()
+field_descriptors.MoveRequest_p = protobuf.FieldDescriptor()
+field_descriptors.MoveRequest_s = protobuf.FieldDescriptor()
+type_descriptors.StartCardSelectHeroRequest = protobuf.Descriptor()
+field_descriptors.StartCardSelectHeroRequest_hero = protobuf.FieldDescriptor()
+type_descriptors.DropPropsReply = protobuf.Descriptor()
+type_descriptors.R_HeroNO = protobuf.Descriptor()
+field_descriptors.R_HeroNO_code = protobuf.FieldDescriptor()
+field_descriptors.R_HeroNO_attr = protobuf.FieldDescriptor()
+field_descriptors.R_HeroNO_card = protobuf.FieldDescriptor()
+field_descriptors.R_HeroNO_no = protobuf.FieldDescriptor()
+type_descriptors.PropsNO = protobuf.Descriptor()
+field_descriptors.PropsNO_id = protobuf.FieldDescriptor()
+field_descriptors.PropsNO_code = protobuf.FieldDescriptor()
+field_descriptors.PropsNO_ing = protobuf.FieldDescriptor()
+field_descriptors.PropsNO_ash = protobuf.FieldDescriptor()
+field_descriptors.PropsNO_heroId = protobuf.FieldDescriptor()
+type_descriptors.MapConfig = protobuf.Descriptor()
+field_descriptors.MapConfig_mapId = protobuf.FieldDescriptor()
+field_descriptors.MapConfig_coordinate = protobuf.FieldDescriptor()
+field_descriptors.MapConfig_shapes = protobuf.FieldDescriptor()
+field_descriptors.MapConfig_cells = protobuf.FieldDescriptor()
+type_descriptors.RoomUpdateNO = protobuf.Descriptor()
+field_descriptors.RoomUpdateNO_index = protobuf.FieldDescriptor()
+field_descriptors.RoomUpdateNO_vision = protobuf.FieldDescriptor()
+field_descriptors.RoomUpdateNO_finished = protobuf.FieldDescriptor()
+type_descriptors.StartJudgeReply = protobuf.Descriptor()
+type_descriptors.LoadLogsReply = protobuf.Descriptor()
+field_descriptors.LoadLogsReply_clue = protobuf.FieldDescriptor()
+field_descriptors.LoadLogsReply_monster = protobuf.FieldDescriptor()
+field_descriptors.LoadLogsReply_props = protobuf.FieldDescriptor()
+field_descriptors.LoadLogsReply_reply = protobuf.FieldDescriptor()
+type_descriptors.LoadScriptReply = protobuf.Descriptor()
+field_descriptors.LoadScriptReply_infos = protobuf.FieldDescriptor()
+field_descriptors.LoadScriptReply_guideFail = protobuf.FieldDescriptor()
+type_descriptors.RoomPrizesUpdatePush = protobuf.Descriptor()
+field_descriptors.RoomPrizesUpdatePush_room = protobuf.FieldDescriptor()
+field_descriptors.RoomPrizesUpdatePush_prize = protobuf.FieldDescriptor()
+type_descriptors.UseSkillRequest = protobuf.Descriptor()
+field_descriptors.UseSkillRequest_heroId = protobuf.FieldDescriptor()
+field_descriptors.UseSkillRequest_attr = protobuf.FieldDescriptor()
+field_descriptors.UseSkillRequest_card = protobuf.FieldDescriptor()
+type_descriptors.GoldUpdatePush = protobuf.Descriptor()
+field_descriptors.GoldUpdatePush_num = protobuf.FieldDescriptor()
+type_descriptors.GetAllEquipReply = protobuf.Descriptor()
+field_descriptors.GetAllEquipReply_equip = protobuf.FieldDescriptor()
+type_descriptors.TouchReply = protobuf.Descriptor()
+field_descriptors.TouchReply_touchIds = protobuf.FieldDescriptor()
+type_descriptors.NextLayerReply = protobuf.Descriptor()
+field_descriptors.NextLayerReply_map = protobuf.FieldDescriptor()
+type_descriptors.StoryPush = protobuf.Descriptor()
+field_descriptors.StoryPush_id = protobuf.FieldDescriptor()
+type_descriptors.LoadAllRoomPrizesReply = protobuf.Descriptor()
+field_descriptors.LoadAllRoomPrizesReply_roomPrize = protobuf.FieldDescriptor()
+type_descriptors.GetGuessNumReply = protobuf.Descriptor()
+field_descriptors.GetGuessNumReply_num = protobuf.FieldDescriptor()
+type_descriptors.UpgradeEquipRequest = protobuf.Descriptor()
+field_descriptors.UpgradeEquipRequest_id = protobuf.FieldDescriptor()
+type_descriptors.RoguelikeRefreshTaskPush = protobuf.Descriptor()
+field_descriptors.RoguelikeRefreshTaskPush_refresh = protobuf.FieldDescriptor()
+type_descriptors.NextLayerRequest = protobuf.Descriptor()
+type_descriptors.SortRequest = protobuf.Descriptor()
+field_descriptors.SortRequest_hero = protobuf.FieldDescriptor()
+type_descriptors.SetCardCdReply = protobuf.Descriptor()
+field_descriptors.SetCardCdReply_team = protobuf.FieldDescriptor()
+type_descriptors.StartRequest = protobuf.Descriptor()
+field_descriptors.StartRequest_equip = protobuf.FieldDescriptor()
+field_descriptors.StartRequest_hero = protobuf.FieldDescriptor()
+field_descriptors.StartRequest_script = protobuf.FieldDescriptor()
+field_descriptors.StartRequest_level = protobuf.FieldDescriptor()
+type_descriptors.WearEquipReply = protobuf.Descriptor()
+type_descriptors.EventPush = protobuf.Descriptor()
+field_descriptors.EventPush_id = protobuf.FieldDescriptor()
+type_descriptors.MapConfigPush = protobuf.Descriptor()
+field_descriptors.MapConfigPush_mapConfig = protobuf.FieldDescriptor()
+type_descriptors.EndSelectCardReply = protobuf.Descriptor()
+enum_item_descriptors.AttrType_POWER.name = "POWER"
+enum_item_descriptors.AttrType_POWER.index = 0
+enum_item_descriptors.AttrType_POWER.number = 0
+enum_item_descriptors.AttrType_AGILITY.name = "AGILITY"
+enum_item_descriptors.AttrType_AGILITY.index = 1
+enum_item_descriptors.AttrType_AGILITY.number = 1
+enum_item_descriptors.AttrType_LORE.name = "LORE"
+enum_item_descriptors.AttrType_LORE.index = 2
+enum_item_descriptors.AttrType_LORE.number = 2
+enum_item_descriptors.AttrType_CHAT.name = "CHAT"
+enum_item_descriptors.AttrType_CHAT.index = 3
+enum_item_descriptors.AttrType_CHAT.number = 3
+enum_item_descriptors.AttrType_INSIGHT.name = "INSIGHT"
+enum_item_descriptors.AttrType_INSIGHT.index = 4
+enum_item_descriptors.AttrType_INSIGHT.number = 4
+enum_item_descriptors.AttrType_LUCK.name = "LUCK"
+enum_item_descriptors.AttrType_LUCK.index = 5
+enum_item_descriptors.AttrType_LUCK.number = 5
+enum_item_descriptors.AttrType_HP.name = "HP"
+enum_item_descriptors.AttrType_HP.index = 6
+enum_item_descriptors.AttrType_HP.number = 6
+enum_item_descriptors.AttrType_HP_LIMIT.name = "HP_LIMIT"
+enum_item_descriptors.AttrType_HP_LIMIT.index = 7
+enum_item_descriptors.AttrType_HP_LIMIT.number = 7
+enum_item_descriptors.AttrType_SAN.name = "SAN"
+enum_item_descriptors.AttrType_SAN.index = 8
+enum_item_descriptors.AttrType_SAN.number = 98
+enum_item_descriptors.AttrType_R_GOLD.name = "R_GOLD"
+enum_item_descriptors.AttrType_R_GOLD.index = 9
+enum_item_descriptors.AttrType_R_GOLD.number = 99
+enum_item_descriptors.AttrType_SUCCESS_1.name = "SUCCESS_1"
+enum_item_descriptors.AttrType_SUCCESS_1.index = 10
+enum_item_descriptors.AttrType_SUCCESS_1.number = 111
+enum_item_descriptors.AttrType_SUCCESS_2.name = "SUCCESS_2"
+enum_item_descriptors.AttrType_SUCCESS_2.index = 11
+enum_item_descriptors.AttrType_SUCCESS_2.number = 112
+enum_item_descriptors.AttrType_SUCCESS_3.name = "SUCCESS_3"
+enum_item_descriptors.AttrType_SUCCESS_3.index = 12
+enum_item_descriptors.AttrType_SUCCESS_3.number = 113
+enum_item_descriptors.AttrType_SUCCESS_4.name = "SUCCESS_4"
+enum_item_descriptors.AttrType_SUCCESS_4.index = 13
+enum_item_descriptors.AttrType_SUCCESS_4.number = 114
+enum_item_descriptors.AttrType_SUCCESS_5.name = "SUCCESS_5"
+enum_item_descriptors.AttrType_SUCCESS_5.index = 14
+enum_item_descriptors.AttrType_SUCCESS_5.number = 115
+enum_item_descriptors.AttrType_SUCCESS_6.name = "SUCCESS_6"
+enum_item_descriptors.AttrType_SUCCESS_6.index = 15
+enum_item_descriptors.AttrType_SUCCESS_6.number = 116
+enum_item_descriptors.AttrType_BLEED_1.name = "BLEED_1"
+enum_item_descriptors.AttrType_BLEED_1.index = 16
+enum_item_descriptors.AttrType_BLEED_1.number = 121
+enum_item_descriptors.AttrType_BLEED_2.name = "BLEED_2"
+enum_item_descriptors.AttrType_BLEED_2.index = 17
+enum_item_descriptors.AttrType_BLEED_2.number = 122
+enum_item_descriptors.AttrType_BLEED_3.name = "BLEED_3"
+enum_item_descriptors.AttrType_BLEED_3.index = 18
+enum_item_descriptors.AttrType_BLEED_3.number = 123
+enum_item_descriptors.AttrType_BLEED_4.name = "BLEED_4"
+enum_item_descriptors.AttrType_BLEED_4.index = 19
+enum_item_descriptors.AttrType_BLEED_4.number = 124
+enum_item_descriptors.AttrType_BLEED_5.name = "BLEED_5"
+enum_item_descriptors.AttrType_BLEED_5.index = 20
+enum_item_descriptors.AttrType_BLEED_5.number = 125
+enum_item_descriptors.AttrType_BLEED_6.name = "BLEED_6"
+enum_item_descriptors.AttrType_BLEED_6.index = 21
+enum_item_descriptors.AttrType_BLEED_6.number = 126
+enum_item_descriptors.AttrType_TRANCE_1.name = "TRANCE_1"
+enum_item_descriptors.AttrType_TRANCE_1.index = 22
+enum_item_descriptors.AttrType_TRANCE_1.number = 131
+enum_item_descriptors.AttrType_TRANCE_2.name = "TRANCE_2"
+enum_item_descriptors.AttrType_TRANCE_2.index = 23
+enum_item_descriptors.AttrType_TRANCE_2.number = 132
+enum_item_descriptors.AttrType_TRANCE_3.name = "TRANCE_3"
+enum_item_descriptors.AttrType_TRANCE_3.index = 24
+enum_item_descriptors.AttrType_TRANCE_3.number = 133
+enum_item_descriptors.AttrType_TRANCE_4.name = "TRANCE_4"
+enum_item_descriptors.AttrType_TRANCE_4.index = 25
+enum_item_descriptors.AttrType_TRANCE_4.number = 134
+enum_item_descriptors.AttrType_TRANCE_5.name = "TRANCE_5"
+enum_item_descriptors.AttrType_TRANCE_5.index = 26
+enum_item_descriptors.AttrType_TRANCE_5.number = 135
+enum_item_descriptors.AttrType_TRANCE_6.name = "TRANCE_6"
+enum_item_descriptors.AttrType_TRANCE_6.index = 27
+enum_item_descriptors.AttrType_TRANCE_6.number = 136
+enum_item_descriptors.AttrType_SACRIFICE_1.name = "SACRIFICE_1"
+enum_item_descriptors.AttrType_SACRIFICE_1.index = 28
+enum_item_descriptors.AttrType_SACRIFICE_1.number = 141
+enum_item_descriptors.AttrType_SACRIFICE_2.name = "SACRIFICE_2"
+enum_item_descriptors.AttrType_SACRIFICE_2.index = 29
+enum_item_descriptors.AttrType_SACRIFICE_2.number = 142
+enum_item_descriptors.AttrType_SACRIFICE_3.name = "SACRIFICE_3"
+enum_item_descriptors.AttrType_SACRIFICE_3.index = 30
+enum_item_descriptors.AttrType_SACRIFICE_3.number = 143
+enum_item_descriptors.AttrType_SACRIFICE_4.name = "SACRIFICE_4"
+enum_item_descriptors.AttrType_SACRIFICE_4.index = 31
+enum_item_descriptors.AttrType_SACRIFICE_4.number = 144
+enum_item_descriptors.AttrType_SACRIFICE_5.name = "SACRIFICE_5"
+enum_item_descriptors.AttrType_SACRIFICE_5.index = 32
+enum_item_descriptors.AttrType_SACRIFICE_5.number = 145
+enum_item_descriptors.AttrType_SACRIFICE_6.name = "SACRIFICE_6"
+enum_item_descriptors.AttrType_SACRIFICE_6.index = 33
+enum_item_descriptors.AttrType_SACRIFICE_6.number = 146
+enum_item_descriptors.AttrType_ECLIPSE_1.name = "ECLIPSE_1"
+enum_item_descriptors.AttrType_ECLIPSE_1.index = 34
+enum_item_descriptors.AttrType_ECLIPSE_1.number = 151
+enum_item_descriptors.AttrType_ECLIPSE_2.name = "ECLIPSE_2"
+enum_item_descriptors.AttrType_ECLIPSE_2.index = 35
+enum_item_descriptors.AttrType_ECLIPSE_2.number = 152
+enum_item_descriptors.AttrType_ECLIPSE_3.name = "ECLIPSE_3"
+enum_item_descriptors.AttrType_ECLIPSE_3.index = 36
+enum_item_descriptors.AttrType_ECLIPSE_3.number = 153
+enum_item_descriptors.AttrType_ECLIPSE_4.name = "ECLIPSE_4"
+enum_item_descriptors.AttrType_ECLIPSE_4.index = 37
+enum_item_descriptors.AttrType_ECLIPSE_4.number = 154
+enum_item_descriptors.AttrType_ECLIPSE_5.name = "ECLIPSE_5"
+enum_item_descriptors.AttrType_ECLIPSE_5.index = 38
+enum_item_descriptors.AttrType_ECLIPSE_5.number = 155
+enum_item_descriptors.AttrType_ECLIPSE_6.name = "ECLIPSE_6"
+enum_item_descriptors.AttrType_ECLIPSE_6.index = 39
+enum_item_descriptors.AttrType_ECLIPSE_6.number = 156
+type_descriptors.AttrType.name = "AttrType"
+type_descriptors.AttrType.full_name = ".AttrType"
+type_descriptors.AttrType.values = {
+	enum_item_descriptors.AttrType_POWER,
+	enum_item_descriptors.AttrType_AGILITY,
+	enum_item_descriptors.AttrType_LORE,
+	enum_item_descriptors.AttrType_CHAT,
+	enum_item_descriptors.AttrType_INSIGHT,
+	enum_item_descriptors.AttrType_LUCK,
+	enum_item_descriptors.AttrType_HP,
+	enum_item_descriptors.AttrType_HP_LIMIT,
+	enum_item_descriptors.AttrType_SAN,
+	enum_item_descriptors.AttrType_R_GOLD,
+	enum_item_descriptors.AttrType_SUCCESS_1,
+	enum_item_descriptors.AttrType_SUCCESS_2,
+	enum_item_descriptors.AttrType_SUCCESS_3,
+	enum_item_descriptors.AttrType_SUCCESS_4,
+	enum_item_descriptors.AttrType_SUCCESS_5,
+	enum_item_descriptors.AttrType_SUCCESS_6,
+	enum_item_descriptors.AttrType_BLEED_1,
+	enum_item_descriptors.AttrType_BLEED_2,
+	enum_item_descriptors.AttrType_BLEED_3,
+	enum_item_descriptors.AttrType_BLEED_4,
+	enum_item_descriptors.AttrType_BLEED_5,
+	enum_item_descriptors.AttrType_BLEED_6,
+	enum_item_descriptors.AttrType_TRANCE_1,
+	enum_item_descriptors.AttrType_TRANCE_2,
+	enum_item_descriptors.AttrType_TRANCE_3,
+	enum_item_descriptors.AttrType_TRANCE_4,
+	enum_item_descriptors.AttrType_TRANCE_5,
+	enum_item_descriptors.AttrType_TRANCE_6,
+	enum_item_descriptors.AttrType_SACRIFICE_1,
+	enum_item_descriptors.AttrType_SACRIFICE_2,
+	enum_item_descriptors.AttrType_SACRIFICE_3,
+	enum_item_descriptors.AttrType_SACRIFICE_4,
+	enum_item_descriptors.AttrType_SACRIFICE_5,
+	enum_item_descriptors.AttrType_SACRIFICE_6,
+	enum_item_descriptors.AttrType_ECLIPSE_1,
+	enum_item_descriptors.AttrType_ECLIPSE_2,
+	enum_item_descriptors.AttrType_ECLIPSE_3,
+	enum_item_descriptors.AttrType_ECLIPSE_4,
+	enum_item_descriptors.AttrType_ECLIPSE_5,
+	enum_item_descriptors.AttrType_ECLIPSE_6
+}
+enum_item_descriptors.CardParam_DICE_SUCCESS.name = "DICE_SUCCESS"
+enum_item_descriptors.CardParam_DICE_SUCCESS.index = 0
+enum_item_descriptors.CardParam_DICE_SUCCESS.number = 101
+enum_item_descriptors.CardParam_DICE_SACRIFICE.name = "DICE_SACRIFICE"
+enum_item_descriptors.CardParam_DICE_SACRIFICE.index = 1
+enum_item_descriptors.CardParam_DICE_SACRIFICE.number = 102
+enum_item_descriptors.CardParam_DICE_ECLIPSE.name = "DICE_ECLIPSE"
+enum_item_descriptors.CardParam_DICE_ECLIPSE.index = 2
+enum_item_descriptors.CardParam_DICE_ECLIPSE.number = 103
+enum_item_descriptors.CardParam_DICE_BLEED.name = "DICE_BLEED"
+enum_item_descriptors.CardParam_DICE_BLEED.index = 3
+enum_item_descriptors.CardParam_DICE_BLEED.number = 104
+enum_item_descriptors.CardParam_DICE_TRANCE.name = "DICE_TRANCE"
+enum_item_descriptors.CardParam_DICE_TRANCE.index = 4
+enum_item_descriptors.CardParam_DICE_TRANCE.number = 105
+enum_item_descriptors.CardParam_THROW_RESULT.name = "THROW_RESULT"
+enum_item_descriptors.CardParam_THROW_RESULT.index = 5
+enum_item_descriptors.CardParam_THROW_RESULT.number = 201
+enum_item_descriptors.CardParam_MAKE_DAMAGE.name = "MAKE_DAMAGE"
+enum_item_descriptors.CardParam_MAKE_DAMAGE.index = 6
+enum_item_descriptors.CardParam_MAKE_DAMAGE.number = 202
+enum_item_descriptors.CardParam_MAKE_SHIELD.name = "MAKE_SHIELD"
+enum_item_descriptors.CardParam_MAKE_SHIELD.index = 7
+enum_item_descriptors.CardParam_MAKE_SHIELD.number = 203
+enum_item_descriptors.CardParam_MAKE_BATTER.name = "MAKE_BATTER"
+enum_item_descriptors.CardParam_MAKE_BATTER.index = 8
+enum_item_descriptors.CardParam_MAKE_BATTER.number = 204
+enum_item_descriptors.CardParam_GET_EFFECT_ID.name = "GET_EFFECT_ID"
+enum_item_descriptors.CardParam_GET_EFFECT_ID.index = 9
+enum_item_descriptors.CardParam_GET_EFFECT_ID.number = 205
+type_descriptors.CardParam.name = "CardParam"
+type_descriptors.CardParam.full_name = ".CardParam"
+type_descriptors.CardParam.values = {
+	enum_item_descriptors.CardParam_DICE_SUCCESS,
+	enum_item_descriptors.CardParam_DICE_SACRIFICE,
+	enum_item_descriptors.CardParam_DICE_ECLIPSE,
+	enum_item_descriptors.CardParam_DICE_BLEED,
+	enum_item_descriptors.CardParam_DICE_TRANCE,
+	enum_item_descriptors.CardParam_THROW_RESULT,
+	enum_item_descriptors.CardParam_MAKE_DAMAGE,
+	enum_item_descriptors.CardParam_MAKE_SHIELD,
+	enum_item_descriptors.CardParam_MAKE_BATTER,
+	enum_item_descriptors.CardParam_GET_EFFECT_ID
+}
+enum_item_descriptors.JudgeType_NOT_IN_JUDGE.name = "NOT_IN_JUDGE"
+enum_item_descriptors.JudgeType_NOT_IN_JUDGE.index = 0
+enum_item_descriptors.JudgeType_NOT_IN_JUDGE.number = 0
+enum_item_descriptors.JudgeType_FIGHT.name = "FIGHT"
+enum_item_descriptors.JudgeType_FIGHT.index = 1
+enum_item_descriptors.JudgeType_FIGHT.number = 1
+enum_item_descriptors.JudgeType_SINGLE_EVENT.name = "SINGLE_EVENT"
+enum_item_descriptors.JudgeType_SINGLE_EVENT.index = 2
+enum_item_descriptors.JudgeType_SINGLE_EVENT.number = 2
+enum_item_descriptors.JudgeType_MUTIL_EVENT.name = "MUTIL_EVENT"
+enum_item_descriptors.JudgeType_MUTIL_EVENT.index = 3
+enum_item_descriptors.JudgeType_MUTIL_EVENT.number = 3
+enum_item_descriptors.JudgeType_EMERGENCY_EVENT.name = "EMERGENCY_EVENT"
+enum_item_descriptors.JudgeType_EMERGENCY_EVENT.index = 4
+enum_item_descriptors.JudgeType_EMERGENCY_EVENT.number = 4
+enum_item_descriptors.JudgeType_PLOT_EVENT.name = "PLOT_EVENT"
+enum_item_descriptors.JudgeType_PLOT_EVENT.index = 5
+enum_item_descriptors.JudgeType_PLOT_EVENT.number = 6
+type_descriptors.JudgeType.name = "JudgeType"
+type_descriptors.JudgeType.full_name = ".JudgeType"
+type_descriptors.JudgeType.values = {
+	enum_item_descriptors.JudgeType_NOT_IN_JUDGE,
+	enum_item_descriptors.JudgeType_FIGHT,
+	enum_item_descriptors.JudgeType_SINGLE_EVENT,
+	enum_item_descriptors.JudgeType_MUTIL_EVENT,
+	enum_item_descriptors.JudgeType_EMERGENCY_EVENT,
+	enum_item_descriptors.JudgeType_PLOT_EVENT
+}
+enum_item_descriptors.RoomType_Blank.name = "Blank"
+enum_item_descriptors.RoomType_Blank.index = 0
+enum_item_descriptors.RoomType_Blank.number = 0
+enum_item_descriptors.RoomType_INIT.name = "INIT"
+enum_item_descriptors.RoomType_INIT.index = 1
+enum_item_descriptors.RoomType_INIT.number = 1
+enum_item_descriptors.RoomType_EVENT.name = "EVENT"
+enum_item_descriptors.RoomType_EVENT.index = 2
+enum_item_descriptors.RoomType_EVENT.number = 2
+enum_item_descriptors.RoomType_MONSTER.name = "MONSTER"
+enum_item_descriptors.RoomType_MONSTER.index = 3
+enum_item_descriptors.RoomType_MONSTER.number = 3
+enum_item_descriptors.RoomType_PROPS.name = "PROPS"
+enum_item_descriptors.RoomType_PROPS.index = 4
+enum_item_descriptors.RoomType_PROPS.number = 4
+enum_item_descriptors.RoomType_MALL.name = "MALL"
+enum_item_descriptors.RoomType_MALL.index = 5
+enum_item_descriptors.RoomType_MALL.number = 5
+enum_item_descriptors.RoomType_GAMBLE.name = "GAMBLE"
+enum_item_descriptors.RoomType_GAMBLE.index = 6
+enum_item_descriptors.RoomType_GAMBLE.number = 6
+enum_item_descriptors.RoomType_NEXT.name = "NEXT"
+enum_item_descriptors.RoomType_NEXT.index = 7
+enum_item_descriptors.RoomType_NEXT.number = 7
+enum_item_descriptors.RoomType_BOSS.name = "BOSS"
+enum_item_descriptors.RoomType_BOSS.index = 8
+enum_item_descriptors.RoomType_BOSS.number = 8
+enum_item_descriptors.RoomType_ENTRANCE.name = "ENTRANCE"
+enum_item_descriptors.RoomType_ENTRANCE.index = 9
+enum_item_descriptors.RoomType_ENTRANCE.number = 9
+type_descriptors.RoomType.name = "RoomType"
+type_descriptors.RoomType.full_name = ".RoomType"
+type_descriptors.RoomType.values = {
+	enum_item_descriptors.RoomType_Blank,
+	enum_item_descriptors.RoomType_INIT,
+	enum_item_descriptors.RoomType_EVENT,
+	enum_item_descriptors.RoomType_MONSTER,
+	enum_item_descriptors.RoomType_PROPS,
+	enum_item_descriptors.RoomType_MALL,
+	enum_item_descriptors.RoomType_GAMBLE,
+	enum_item_descriptors.RoomType_NEXT,
+	enum_item_descriptors.RoomType_BOSS,
+	enum_item_descriptors.RoomType_ENTRANCE
+}
+enum_item_descriptors.Vision_BLIND.name = "BLIND"
+enum_item_descriptors.Vision_BLIND.index = 0
+enum_item_descriptors.Vision_BLIND.number = 0
+enum_item_descriptors.Vision_UNKNOWN.name = "UNKNOWN"
+enum_item_descriptors.Vision_UNKNOWN.index = 1
+enum_item_descriptors.Vision_UNKNOWN.number = 1
+enum_item_descriptors.Vision_DEFAULT_CLEAR.name = "DEFAULT_CLEAR"
+enum_item_descriptors.Vision_DEFAULT_CLEAR.index = 2
+enum_item_descriptors.Vision_DEFAULT_CLEAR.number = 2
+enum_item_descriptors.Vision_CLEAR.name = "CLEAR"
+enum_item_descriptors.Vision_CLEAR.index = 3
+enum_item_descriptors.Vision_CLEAR.number = 3
+type_descriptors.Vision.name = "Vision"
+type_descriptors.Vision.full_name = ".Vision"
+type_descriptors.Vision.values = {
+	enum_item_descriptors.Vision_BLIND,
+	enum_item_descriptors.Vision_UNKNOWN,
+	enum_item_descriptors.Vision_DEFAULT_CLEAR,
+	enum_item_descriptors.Vision_CLEAR
+}
+enum_item_descriptors.AdditionEnum_ADD_GAMBLE.name = "ADD_GAMBLE"
+enum_item_descriptors.AdditionEnum_ADD_GAMBLE.index = 0
+enum_item_descriptors.AdditionEnum_ADD_GAMBLE.number = 1
+enum_item_descriptors.AdditionEnum_ADD_MALL.name = "ADD_MALL"
+enum_item_descriptors.AdditionEnum_ADD_MALL.index = 1
+enum_item_descriptors.AdditionEnum_ADD_MALL.number = 2
+enum_item_descriptors.AdditionEnum_ADD_EVENT.name = "ADD_EVENT"
+enum_item_descriptors.AdditionEnum_ADD_EVENT.index = 2
+enum_item_descriptors.AdditionEnum_ADD_EVENT.number = 3
+enum_item_descriptors.AdditionEnum_ADD_MONSTER.name = "ADD_MONSTER"
+enum_item_descriptors.AdditionEnum_ADD_MONSTER.index = 3
+enum_item_descriptors.AdditionEnum_ADD_MONSTER.number = 4
+enum_item_descriptors.AdditionEnum_ADD_BIG_SUCCESS.name = "ADD_BIG_SUCCESS"
+enum_item_descriptors.AdditionEnum_ADD_BIG_SUCCESS.index = 4
+enum_item_descriptors.AdditionEnum_ADD_BIG_SUCCESS.number = 5
+enum_item_descriptors.AdditionEnum_ADD_MOVE_SAN.name = "ADD_MOVE_SAN"
+enum_item_descriptors.AdditionEnum_ADD_MOVE_SAN.index = 5
+enum_item_descriptors.AdditionEnum_ADD_MOVE_SAN.number = 6
+type_descriptors.AdditionEnum.name = "AdditionEnum"
+type_descriptors.AdditionEnum.full_name = ".AdditionEnum"
+type_descriptors.AdditionEnum.values = {
+	enum_item_descriptors.AdditionEnum_ADD_GAMBLE,
+	enum_item_descriptors.AdditionEnum_ADD_MALL,
+	enum_item_descriptors.AdditionEnum_ADD_EVENT,
+	enum_item_descriptors.AdditionEnum_ADD_MONSTER,
+	enum_item_descriptors.AdditionEnum_ADD_BIG_SUCCESS,
+	enum_item_descriptors.AdditionEnum_ADD_MOVE_SAN
+}
+enum_item_descriptors.EffectSourceType_ES_props.name = "ES_props"
+enum_item_descriptors.EffectSourceType_ES_props.index = 0
+enum_item_descriptors.EffectSourceType_ES_props.number = 1
+enum_item_descriptors.EffectSourceType_ES_equip.name = "ES_equip"
+enum_item_descriptors.EffectSourceType_ES_equip.index = 1
+enum_item_descriptors.EffectSourceType_ES_equip.number = 2
+enum_item_descriptors.EffectSourceType_ES_script.name = "ES_script"
+enum_item_descriptors.EffectSourceType_ES_script.index = 2
+enum_item_descriptors.EffectSourceType_ES_script.number = 5
+type_descriptors.EffectSourceType.name = "EffectSourceType"
+type_descriptors.EffectSourceType.full_name = ".EffectSourceType"
+type_descriptors.EffectSourceType.values = {
+	enum_item_descriptors.EffectSourceType_ES_props,
+	enum_item_descriptors.EffectSourceType_ES_equip,
+	enum_item_descriptors.EffectSourceType_ES_script
+}
+type_descriptors.AddPropsReply.name = "AddPropsReply"
+type_descriptors.AddPropsReply.full_name = ".AddPropsReply"
+type_descriptors.AddPropsReply.nested_types = {}
+type_descriptors.AddPropsReply.enum_types = {}
+type_descriptors.AddPropsReply.fields = {}
+type_descriptors.AddPropsReply.is_extendable = false
+type_descriptors.AddPropsReply.extensions = {}
+field_descriptors.UpgradeEquipReply_id.name = "id"
+field_descriptors.UpgradeEquipReply_id.full_name = ".UpgradeEquipReply.id"
+field_descriptors.UpgradeEquipReply_id.number = 1
+field_descriptors.UpgradeEquipReply_id.index = 0
+field_descriptors.UpgradeEquipReply_id.label = 1
+field_descriptors.UpgradeEquipReply_id.has_default_value = false
+field_descriptors.UpgradeEquipReply_id.default_value = 0
+field_descriptors.UpgradeEquipReply_id.type = 5
+field_descriptors.UpgradeEquipReply_id.cpp_type = 1
+field_descriptors.UpgradeEquipReply_lv.name = "lv"
+field_descriptors.UpgradeEquipReply_lv.full_name = ".UpgradeEquipReply.lv"
+field_descriptors.UpgradeEquipReply_lv.number = 2
+field_descriptors.UpgradeEquipReply_lv.index = 1
+field_descriptors.UpgradeEquipReply_lv.label = 1
+field_descriptors.UpgradeEquipReply_lv.has_default_value = false
+field_descriptors.UpgradeEquipReply_lv.default_value = 0
+field_descriptors.UpgradeEquipReply_lv.type = 5
+field_descriptors.UpgradeEquipReply_lv.cpp_type = 1
+type_descriptors.UpgradeEquipReply.name = "UpgradeEquipReply"
+type_descriptors.UpgradeEquipReply.full_name = ".UpgradeEquipReply"
+type_descriptors.UpgradeEquipReply.nested_types = {}
+type_descriptors.UpgradeEquipReply.enum_types = {}
+type_descriptors.UpgradeEquipReply.fields = {
+	field_descriptors.UpgradeEquipReply_id,
+	field_descriptors.UpgradeEquipReply_lv
+}
+type_descriptors.UpgradeEquipReply.is_extendable = false
+type_descriptors.UpgradeEquipReply.extensions = {}
+field_descriptors.FaceNO_face.name = "face"
+field_descriptors.FaceNO_face.full_name = ".FaceNO.face"
+field_descriptors.FaceNO_face.number = 1
+field_descriptors.FaceNO_face.index = 0
+field_descriptors.FaceNO_face.label = 1
+field_descriptors.FaceNO_face.has_default_value = false
+field_descriptors.FaceNO_face.default_value = nil
+field_descriptors.FaceNO_face.enum_type = type_descriptors.AttrType
+field_descriptors.FaceNO_face.type = 14
+field_descriptors.FaceNO_face.cpp_type = 8
+field_descriptors.FaceNO_num.name = "num"
+field_descriptors.FaceNO_num.full_name = ".FaceNO.num"
+field_descriptors.FaceNO_num.number = 2
+field_descriptors.FaceNO_num.index = 1
+field_descriptors.FaceNO_num.label = 1
+field_descriptors.FaceNO_num.has_default_value = false
+field_descriptors.FaceNO_num.default_value = 0
+field_descriptors.FaceNO_num.type = 5
+field_descriptors.FaceNO_num.cpp_type = 1
+type_descriptors.FaceNO.name = "FaceNO"
+type_descriptors.FaceNO.full_name = ".FaceNO"
+type_descriptors.FaceNO.nested_types = {}
+type_descriptors.FaceNO.enum_types = {}
+type_descriptors.FaceNO.fields = {
+	field_descriptors.FaceNO_face,
+	field_descriptors.FaceNO_num
+}
+type_descriptors.FaceNO.is_extendable = false
+type_descriptors.FaceNO.extensions = {}
+field_descriptors.ScriptPush_info.name = "info"
+field_descriptors.ScriptPush_info.full_name = ".ScriptPush.info"
+field_descriptors.ScriptPush_info.number = 1
+field_descriptors.ScriptPush_info.index = 0
+field_descriptors.ScriptPush_info.label = 1
+field_descriptors.ScriptPush_info.has_default_value = false
+field_descriptors.ScriptPush_info.default_value = nil
+field_descriptors.ScriptPush_info.message_type = type_descriptors.ScriptInfo
+field_descriptors.ScriptPush_info.type = 11
+field_descriptors.ScriptPush_info.cpp_type = 10
+type_descriptors.ScriptPush.name = "ScriptPush"
+type_descriptors.ScriptPush.full_name = ".ScriptPush"
+type_descriptors.ScriptPush.nested_types = {}
+type_descriptors.ScriptPush.enum_types = {}
+type_descriptors.ScriptPush.fields = {
+	field_descriptors.ScriptPush_info
+}
+type_descriptors.ScriptPush.is_extendable = false
+type_descriptors.ScriptPush.extensions = {}
+field_descriptors.TouchRequest_id.name = "id"
+field_descriptors.TouchRequest_id.full_name = ".TouchRequest.id"
+field_descriptors.TouchRequest_id.number = 1
+field_descriptors.TouchRequest_id.index = 0
+field_descriptors.TouchRequest_id.label = 1
+field_descriptors.TouchRequest_id.has_default_value = false
+field_descriptors.TouchRequest_id.default_value = 0
+field_descriptors.TouchRequest_id.type = 5
+field_descriptors.TouchRequest_id.cpp_type = 1
+field_descriptors.TouchRequest_heroId.name = "heroId"
+field_descriptors.TouchRequest_heroId.full_name = ".TouchRequest.heroId"
+field_descriptors.TouchRequest_heroId.number = 2
+field_descriptors.TouchRequest_heroId.index = 1
+field_descriptors.TouchRequest_heroId.label = 1
+field_descriptors.TouchRequest_heroId.has_default_value = false
+field_descriptors.TouchRequest_heroId.default_value = 0
+field_descriptors.TouchRequest_heroId.type = 5
+field_descriptors.TouchRequest_heroId.cpp_type = 1
+field_descriptors.TouchRequest_attr.name = "attr"
+field_descriptors.TouchRequest_attr.full_name = ".TouchRequest.attr"
+field_descriptors.TouchRequest_attr.number = 3
+field_descriptors.TouchRequest_attr.index = 2
+field_descriptors.TouchRequest_attr.label = 1
+field_descriptors.TouchRequest_attr.has_default_value = false
+field_descriptors.TouchRequest_attr.default_value = nil
+field_descriptors.TouchRequest_attr.enum_type = type_descriptors.AttrType
+field_descriptors.TouchRequest_attr.type = 14
+field_descriptors.TouchRequest_attr.cpp_type = 8
+field_descriptors.TouchRequest_card.name = "card"
+field_descriptors.TouchRequest_card.full_name = ".TouchRequest.card"
+field_descriptors.TouchRequest_card.number = 4
+field_descriptors.TouchRequest_card.index = 3
+field_descriptors.TouchRequest_card.label = 1
+field_descriptors.TouchRequest_card.has_default_value = false
+field_descriptors.TouchRequest_card.default_value = 0
+field_descriptors.TouchRequest_card.type = 5
+field_descriptors.TouchRequest_card.cpp_type = 1
+type_descriptors.TouchRequest.name = "TouchRequest"
+type_descriptors.TouchRequest.full_name = ".TouchRequest"
+type_descriptors.TouchRequest.nested_types = {}
+type_descriptors.TouchRequest.enum_types = {}
+type_descriptors.TouchRequest.fields = {
+	field_descriptors.TouchRequest_id,
+	field_descriptors.TouchRequest_heroId,
+	field_descriptors.TouchRequest_attr,
+	field_descriptors.TouchRequest_card
+}
+type_descriptors.TouchRequest.is_extendable = false
+type_descriptors.TouchRequest.extensions = {}
+type_descriptors.EndJudgeReply.name = "EndJudgeReply"
+type_descriptors.EndJudgeReply.full_name = ".EndJudgeReply"
+type_descriptors.EndJudgeReply.nested_types = {}
+type_descriptors.EndJudgeReply.enum_types = {}
+type_descriptors.EndJudgeReply.fields = {}
+type_descriptors.EndJudgeReply.is_extendable = false
+type_descriptors.EndJudgeReply.extensions = {}
+field_descriptors.CardNO_index.name = "index"
+field_descriptors.CardNO_index.full_name = ".CardNO.index"
+field_descriptors.CardNO_index.number = 1
+field_descriptors.CardNO_index.index = 0
+field_descriptors.CardNO_index.label = 1
+field_descriptors.CardNO_index.has_default_value = false
+field_descriptors.CardNO_index.default_value = 0
+field_descriptors.CardNO_index.type = 5
+field_descriptors.CardNO_index.cpp_type = 1
+field_descriptors.CardNO_cardId.name = "cardId"
+field_descriptors.CardNO_cardId.full_name = ".CardNO.cardId"
+field_descriptors.CardNO_cardId.number = 2
+field_descriptors.CardNO_cardId.index = 1
+field_descriptors.CardNO_cardId.label = 1
+field_descriptors.CardNO_cardId.has_default_value = false
+field_descriptors.CardNO_cardId.default_value = 0
+field_descriptors.CardNO_cardId.type = 5
+field_descriptors.CardNO_cardId.cpp_type = 1
+field_descriptors.CardNO_cd.name = "cd"
+field_descriptors.CardNO_cd.full_name = ".CardNO.cd"
+field_descriptors.CardNO_cd.number = 3
+field_descriptors.CardNO_cd.index = 2
+field_descriptors.CardNO_cd.label = 1
+field_descriptors.CardNO_cd.has_default_value = false
+field_descriptors.CardNO_cd.default_value = 0
+field_descriptors.CardNO_cd.type = 5
+field_descriptors.CardNO_cd.cpp_type = 1
+field_descriptors.CardNO_entry.name = "entry"
+field_descriptors.CardNO_entry.full_name = ".CardNO.entry"
+field_descriptors.CardNO_entry.number = 4
+field_descriptors.CardNO_entry.index = 3
+field_descriptors.CardNO_entry.label = 3
+field_descriptors.CardNO_entry.has_default_value = false
+field_descriptors.CardNO_entry.default_value = {}
+field_descriptors.CardNO_entry.type = 5
+field_descriptors.CardNO_entry.cpp_type = 1
+type_descriptors.CardNO.name = "CardNO"
+type_descriptors.CardNO.full_name = ".CardNO"
+type_descriptors.CardNO.nested_types = {}
+type_descriptors.CardNO.enum_types = {}
+type_descriptors.CardNO.fields = {
+	field_descriptors.CardNO_index,
+	field_descriptors.CardNO_cardId,
+	field_descriptors.CardNO_cd,
+	field_descriptors.CardNO_entry
+}
+type_descriptors.CardNO.is_extendable = false
+type_descriptors.CardNO.extensions = {}
+field_descriptors.LoadInfoReply_info.name = "info"
+field_descriptors.LoadInfoReply_info.full_name = ".LoadInfoReply.info"
+field_descriptors.LoadInfoReply_info.number = 1
+field_descriptors.LoadInfoReply_info.index = 0
+field_descriptors.LoadInfoReply_info.label = 1
+field_descriptors.LoadInfoReply_info.has_default_value = false
+field_descriptors.LoadInfoReply_info.default_value = nil
+field_descriptors.LoadInfoReply_info.message_type = type_descriptors.ExploreInfo
+field_descriptors.LoadInfoReply_info.type = 11
+field_descriptors.LoadInfoReply_info.cpp_type = 10
+field_descriptors.LoadInfoReply_mapConfig.name = "mapConfig"
+field_descriptors.LoadInfoReply_mapConfig.full_name = ".LoadInfoReply.mapConfig"
+field_descriptors.LoadInfoReply_mapConfig.number = 2
+field_descriptors.LoadInfoReply_mapConfig.index = 1
+field_descriptors.LoadInfoReply_mapConfig.label = 1
+field_descriptors.LoadInfoReply_mapConfig.has_default_value = false
+field_descriptors.LoadInfoReply_mapConfig.default_value = nil
+field_descriptors.LoadInfoReply_mapConfig.message_type = type_descriptors.MapConfig
+field_descriptors.LoadInfoReply_mapConfig.type = 11
+field_descriptors.LoadInfoReply_mapConfig.cpp_type = 10
+type_descriptors.LoadInfoReply.name = "LoadInfoReply"
+type_descriptors.LoadInfoReply.full_name = ".LoadInfoReply"
+type_descriptors.LoadInfoReply.nested_types = {}
+type_descriptors.LoadInfoReply.enum_types = {}
+type_descriptors.LoadInfoReply.fields = {
+	field_descriptors.LoadInfoReply_info,
+	field_descriptors.LoadInfoReply_mapConfig
+}
+type_descriptors.LoadInfoReply.is_extendable = false
+type_descriptors.LoadInfoReply.extensions = {}
+field_descriptors.EndSelectCardRequest_index.name = "index"
+field_descriptors.EndSelectCardRequest_index.full_name = ".EndSelectCardRequest.index"
+field_descriptors.EndSelectCardRequest_index.number = 1
+field_descriptors.EndSelectCardRequest_index.index = 0
+field_descriptors.EndSelectCardRequest_index.label = 1
+field_descriptors.EndSelectCardRequest_index.has_default_value = false
+field_descriptors.EndSelectCardRequest_index.default_value = 0
+field_descriptors.EndSelectCardRequest_index.type = 5
+field_descriptors.EndSelectCardRequest_index.cpp_type = 1
+type_descriptors.EndSelectCardRequest.name = "EndSelectCardRequest"
+type_descriptors.EndSelectCardRequest.full_name = ".EndSelectCardRequest"
+type_descriptors.EndSelectCardRequest.nested_types = {}
+type_descriptors.EndSelectCardRequest.enum_types = {}
+type_descriptors.EndSelectCardRequest.fields = {
+	field_descriptors.EndSelectCardRequest_index
+}
+type_descriptors.EndSelectCardRequest.is_extendable = false
+type_descriptors.EndSelectCardRequest.extensions = {}
+type_descriptors.MoveReply.name = "MoveReply"
+type_descriptors.MoveReply.full_name = ".MoveReply"
+type_descriptors.MoveReply.nested_types = {}
+type_descriptors.MoveReply.enum_types = {}
+type_descriptors.MoveReply.fields = {}
+type_descriptors.MoveReply.is_extendable = false
+type_descriptors.MoveReply.extensions = {}
+field_descriptors.GetCluePush_id.name = "id"
+field_descriptors.GetCluePush_id.full_name = ".GetCluePush.id"
+field_descriptors.GetCluePush_id.number = 1
+field_descriptors.GetCluePush_id.index = 0
+field_descriptors.GetCluePush_id.label = 1
+field_descriptors.GetCluePush_id.has_default_value = false
+field_descriptors.GetCluePush_id.default_value = 0
+field_descriptors.GetCluePush_id.type = 5
+field_descriptors.GetCluePush_id.cpp_type = 1
+type_descriptors.GetCluePush.name = "GetCluePush"
+type_descriptors.GetCluePush.full_name = ".GetCluePush"
+type_descriptors.GetCluePush.nested_types = {}
+type_descriptors.GetCluePush.enum_types = {}
+type_descriptors.GetCluePush.fields = {
+	field_descriptors.GetCluePush_id
+}
+type_descriptors.GetCluePush.is_extendable = false
+type_descriptors.GetCluePush.extensions = {}
+type_descriptors.QuitReply.name = "QuitReply"
+type_descriptors.QuitReply.full_name = ".QuitReply"
+type_descriptors.QuitReply.nested_types = {}
+type_descriptors.QuitReply.enum_types = {}
+type_descriptors.QuitReply.fields = {}
+type_descriptors.QuitReply.is_extendable = false
+type_descriptors.QuitReply.extensions = {}
+type_descriptors.TakeEffectReply.name = "TakeEffectReply"
+type_descriptors.TakeEffectReply.full_name = ".TakeEffectReply"
+type_descriptors.TakeEffectReply.nested_types = {}
+type_descriptors.TakeEffectReply.enum_types = {}
+type_descriptors.TakeEffectReply.fields = {}
+type_descriptors.TakeEffectReply.is_extendable = false
+type_descriptors.TakeEffectReply.extensions = {}
+field_descriptors.GuessDiceResultReply_result.name = "result"
+field_descriptors.GuessDiceResultReply_result.full_name = ".GuessDiceResultReply.result"
+field_descriptors.GuessDiceResultReply_result.number = 1
+field_descriptors.GuessDiceResultReply_result.index = 0
+field_descriptors.GuessDiceResultReply_result.label = 1
+field_descriptors.GuessDiceResultReply_result.has_default_value = false
+field_descriptors.GuessDiceResultReply_result.default_value = false
+field_descriptors.GuessDiceResultReply_result.type = 8
+field_descriptors.GuessDiceResultReply_result.cpp_type = 7
+type_descriptors.GuessDiceResultReply.name = "GuessDiceResultReply"
+type_descriptors.GuessDiceResultReply.full_name = ".GuessDiceResultReply"
+type_descriptors.GuessDiceResultReply.nested_types = {}
+type_descriptors.GuessDiceResultReply.enum_types = {}
+type_descriptors.GuessDiceResultReply.fields = {
+	field_descriptors.GuessDiceResultReply_result
+}
+type_descriptors.GuessDiceResultReply.is_extendable = false
+type_descriptors.GuessDiceResultReply.extensions = {}
+field_descriptors.SelectPropsPush_code.name = "code"
+field_descriptors.SelectPropsPush_code.full_name = ".SelectPropsPush.code"
+field_descriptors.SelectPropsPush_code.number = 1
+field_descriptors.SelectPropsPush_code.index = 0
+field_descriptors.SelectPropsPush_code.label = 3
+field_descriptors.SelectPropsPush_code.has_default_value = false
+field_descriptors.SelectPropsPush_code.default_value = {}
+field_descriptors.SelectPropsPush_code.type = 5
+field_descriptors.SelectPropsPush_code.cpp_type = 1
+field_descriptors.SelectPropsPush_slId.name = "slId"
+field_descriptors.SelectPropsPush_slId.full_name = ".SelectPropsPush.slId"
+field_descriptors.SelectPropsPush_slId.number = 2
+field_descriptors.SelectPropsPush_slId.index = 1
+field_descriptors.SelectPropsPush_slId.label = 1
+field_descriptors.SelectPropsPush_slId.has_default_value = false
+field_descriptors.SelectPropsPush_slId.default_value = 0
+field_descriptors.SelectPropsPush_slId.type = 5
+field_descriptors.SelectPropsPush_slId.cpp_type = 1
+type_descriptors.SelectPropsPush.name = "SelectPropsPush"
+type_descriptors.SelectPropsPush.full_name = ".SelectPropsPush"
+type_descriptors.SelectPropsPush.nested_types = {}
+type_descriptors.SelectPropsPush.enum_types = {}
+type_descriptors.SelectPropsPush.fields = {
+	field_descriptors.SelectPropsPush_code,
+	field_descriptors.SelectPropsPush_slId
+}
+type_descriptors.SelectPropsPush.is_extendable = false
+type_descriptors.SelectPropsPush.extensions = {}
+field_descriptors.TakeEffectRequest_effects.name = "effects"
+field_descriptors.TakeEffectRequest_effects.full_name = ".TakeEffectRequest.effects"
+field_descriptors.TakeEffectRequest_effects.number = 1
+field_descriptors.TakeEffectRequest_effects.index = 0
+field_descriptors.TakeEffectRequest_effects.label = 3
+field_descriptors.TakeEffectRequest_effects.has_default_value = false
+field_descriptors.TakeEffectRequest_effects.default_value = {}
+field_descriptors.TakeEffectRequest_effects.type = 9
+field_descriptors.TakeEffectRequest_effects.cpp_type = 9
+field_descriptors.TakeEffectRequest_heroId.name = "heroId"
+field_descriptors.TakeEffectRequest_heroId.full_name = ".TakeEffectRequest.heroId"
+field_descriptors.TakeEffectRequest_heroId.number = 2
+field_descriptors.TakeEffectRequest_heroId.index = 1
+field_descriptors.TakeEffectRequest_heroId.label = 1
+field_descriptors.TakeEffectRequest_heroId.has_default_value = false
+field_descriptors.TakeEffectRequest_heroId.default_value = 0
+field_descriptors.TakeEffectRequest_heroId.type = 5
+field_descriptors.TakeEffectRequest_heroId.cpp_type = 1
+field_descriptors.TakeEffectRequest_attr.name = "attr"
+field_descriptors.TakeEffectRequest_attr.full_name = ".TakeEffectRequest.attr"
+field_descriptors.TakeEffectRequest_attr.number = 3
+field_descriptors.TakeEffectRequest_attr.index = 2
+field_descriptors.TakeEffectRequest_attr.label = 1
+field_descriptors.TakeEffectRequest_attr.has_default_value = false
+field_descriptors.TakeEffectRequest_attr.default_value = nil
+field_descriptors.TakeEffectRequest_attr.enum_type = type_descriptors.AttrType
+field_descriptors.TakeEffectRequest_attr.type = 14
+field_descriptors.TakeEffectRequest_attr.cpp_type = 8
+field_descriptors.TakeEffectRequest_card.name = "card"
+field_descriptors.TakeEffectRequest_card.full_name = ".TakeEffectRequest.card"
+field_descriptors.TakeEffectRequest_card.number = 4
+field_descriptors.TakeEffectRequest_card.index = 3
+field_descriptors.TakeEffectRequest_card.label = 1
+field_descriptors.TakeEffectRequest_card.has_default_value = false
+field_descriptors.TakeEffectRequest_card.default_value = 0
+field_descriptors.TakeEffectRequest_card.type = 5
+field_descriptors.TakeEffectRequest_card.cpp_type = 1
+field_descriptors.TakeEffectRequest_x.name = "x"
+field_descriptors.TakeEffectRequest_x.full_name = ".TakeEffectRequest.x"
+field_descriptors.TakeEffectRequest_x.number = 5
+field_descriptors.TakeEffectRequest_x.index = 4
+field_descriptors.TakeEffectRequest_x.label = 1
+field_descriptors.TakeEffectRequest_x.has_default_value = false
+field_descriptors.TakeEffectRequest_x.default_value = 0
+field_descriptors.TakeEffectRequest_x.type = 5
+field_descriptors.TakeEffectRequest_x.cpp_type = 1
+type_descriptors.TakeEffectRequest.name = "TakeEffectRequest"
+type_descriptors.TakeEffectRequest.full_name = ".TakeEffectRequest"
+type_descriptors.TakeEffectRequest.nested_types = {}
+type_descriptors.TakeEffectRequest.enum_types = {}
+type_descriptors.TakeEffectRequest.fields = {
+	field_descriptors.TakeEffectRequest_effects,
+	field_descriptors.TakeEffectRequest_heroId,
+	field_descriptors.TakeEffectRequest_attr,
+	field_descriptors.TakeEffectRequest_card,
+	field_descriptors.TakeEffectRequest_x
+}
+type_descriptors.TakeEffectRequest.is_extendable = false
+type_descriptors.TakeEffectRequest.extensions = {}
+field_descriptors.GuessDiceRequest_type.name = "type"
+field_descriptors.GuessDiceRequest_type.full_name = ".GuessDiceRequest.type"
+field_descriptors.GuessDiceRequest_type.number = 1
+field_descriptors.GuessDiceRequest_type.index = 0
+field_descriptors.GuessDiceRequest_type.label = 1
+field_descriptors.GuessDiceRequest_type.has_default_value = false
+field_descriptors.GuessDiceRequest_type.default_value = nil
+field_descriptors.GuessDiceRequest_type.enum_type = type_descriptors.AttrType
+field_descriptors.GuessDiceRequest_type.type = 14
+field_descriptors.GuessDiceRequest_type.cpp_type = 8
+type_descriptors.GuessDiceRequest.name = "GuessDiceRequest"
+type_descriptors.GuessDiceRequest.full_name = ".GuessDiceRequest"
+type_descriptors.GuessDiceRequest.nested_types = {}
+type_descriptors.GuessDiceRequest.enum_types = {}
+type_descriptors.GuessDiceRequest.fields = {
+	field_descriptors.GuessDiceRequest_type
+}
+type_descriptors.GuessDiceRequest.is_extendable = false
+type_descriptors.GuessDiceRequest.extensions = {}
+field_descriptors.MapUpdatePush_rooms.name = "rooms"
+field_descriptors.MapUpdatePush_rooms.full_name = ".MapUpdatePush.rooms"
+field_descriptors.MapUpdatePush_rooms.number = 1
+field_descriptors.MapUpdatePush_rooms.index = 0
+field_descriptors.MapUpdatePush_rooms.label = 3
+field_descriptors.MapUpdatePush_rooms.has_default_value = false
+field_descriptors.MapUpdatePush_rooms.default_value = {}
+field_descriptors.MapUpdatePush_rooms.message_type = type_descriptors.RoomUpdateNO
+field_descriptors.MapUpdatePush_rooms.type = 11
+field_descriptors.MapUpdatePush_rooms.cpp_type = 10
+field_descriptors.MapUpdatePush_curRoom.name = "curRoom"
+field_descriptors.MapUpdatePush_curRoom.full_name = ".MapUpdatePush.curRoom"
+field_descriptors.MapUpdatePush_curRoom.number = 2
+field_descriptors.MapUpdatePush_curRoom.index = 1
+field_descriptors.MapUpdatePush_curRoom.label = 1
+field_descriptors.MapUpdatePush_curRoom.has_default_value = false
+field_descriptors.MapUpdatePush_curRoom.default_value = ""
+field_descriptors.MapUpdatePush_curRoom.type = 9
+field_descriptors.MapUpdatePush_curRoom.cpp_type = 9
+field_descriptors.MapUpdatePush_isInMap2.name = "isInMap2"
+field_descriptors.MapUpdatePush_isInMap2.full_name = ".MapUpdatePush.isInMap2"
+field_descriptors.MapUpdatePush_isInMap2.number = 3
+field_descriptors.MapUpdatePush_isInMap2.index = 2
+field_descriptors.MapUpdatePush_isInMap2.label = 1
+field_descriptors.MapUpdatePush_isInMap2.has_default_value = false
+field_descriptors.MapUpdatePush_isInMap2.default_value = false
+field_descriptors.MapUpdatePush_isInMap2.type = 8
+field_descriptors.MapUpdatePush_isInMap2.cpp_type = 7
+type_descriptors.MapUpdatePush.name = "MapUpdatePush"
+type_descriptors.MapUpdatePush.full_name = ".MapUpdatePush"
+type_descriptors.MapUpdatePush.nested_types = {}
+type_descriptors.MapUpdatePush.enum_types = {}
+type_descriptors.MapUpdatePush.fields = {
+	field_descriptors.MapUpdatePush_rooms,
+	field_descriptors.MapUpdatePush_curRoom,
+	field_descriptors.MapUpdatePush_isInMap2
+}
+type_descriptors.MapUpdatePush.is_extendable = false
+type_descriptors.MapUpdatePush.extensions = {}
+type_descriptors.SortReply.name = "SortReply"
+type_descriptors.SortReply.full_name = ".SortReply"
+type_descriptors.SortReply.nested_types = {}
+type_descriptors.SortReply.enum_types = {}
+type_descriptors.SortReply.fields = {}
+type_descriptors.SortReply.is_extendable = false
+type_descriptors.SortReply.extensions = {}
+field_descriptors.StartJudgeRequest_byGm.name = "byGm"
+field_descriptors.StartJudgeRequest_byGm.full_name = ".StartJudgeRequest.byGm"
+field_descriptors.StartJudgeRequest_byGm.number = 1
+field_descriptors.StartJudgeRequest_byGm.index = 0
+field_descriptors.StartJudgeRequest_byGm.label = 1
+field_descriptors.StartJudgeRequest_byGm.has_default_value = false
+field_descriptors.StartJudgeRequest_byGm.default_value = false
+field_descriptors.StartJudgeRequest_byGm.type = 8
+field_descriptors.StartJudgeRequest_byGm.cpp_type = 7
+field_descriptors.StartJudgeRequest_type.name = "type"
+field_descriptors.StartJudgeRequest_type.full_name = ".StartJudgeRequest.type"
+field_descriptors.StartJudgeRequest_type.number = 2
+field_descriptors.StartJudgeRequest_type.index = 1
+field_descriptors.StartJudgeRequest_type.label = 1
+field_descriptors.StartJudgeRequest_type.has_default_value = false
+field_descriptors.StartJudgeRequest_type.default_value = nil
+field_descriptors.StartJudgeRequest_type.enum_type = type_descriptors.JudgeType
+field_descriptors.StartJudgeRequest_type.type = 14
+field_descriptors.StartJudgeRequest_type.cpp_type = 8
+field_descriptors.StartJudgeRequest_enemyId.name = "enemyId"
+field_descriptors.StartJudgeRequest_enemyId.full_name = ".StartJudgeRequest.enemyId"
+field_descriptors.StartJudgeRequest_enemyId.number = 3
+field_descriptors.StartJudgeRequest_enemyId.index = 2
+field_descriptors.StartJudgeRequest_enemyId.label = 1
+field_descriptors.StartJudgeRequest_enemyId.has_default_value = false
+field_descriptors.StartJudgeRequest_enemyId.default_value = 0
+field_descriptors.StartJudgeRequest_enemyId.type = 5
+field_descriptors.StartJudgeRequest_enemyId.cpp_type = 1
+field_descriptors.StartJudgeRequest_eventId.name = "eventId"
+field_descriptors.StartJudgeRequest_eventId.full_name = ".StartJudgeRequest.eventId"
+field_descriptors.StartJudgeRequest_eventId.number = 4
+field_descriptors.StartJudgeRequest_eventId.index = 3
+field_descriptors.StartJudgeRequest_eventId.label = 1
+field_descriptors.StartJudgeRequest_eventId.has_default_value = false
+field_descriptors.StartJudgeRequest_eventId.default_value = 0
+field_descriptors.StartJudgeRequest_eventId.type = 5
+field_descriptors.StartJudgeRequest_eventId.cpp_type = 1
+type_descriptors.StartJudgeRequest.name = "StartJudgeRequest"
+type_descriptors.StartJudgeRequest.full_name = ".StartJudgeRequest"
+type_descriptors.StartJudgeRequest.nested_types = {}
+type_descriptors.StartJudgeRequest.enum_types = {}
+type_descriptors.StartJudgeRequest.fields = {
+	field_descriptors.StartJudgeRequest_byGm,
+	field_descriptors.StartJudgeRequest_type,
+	field_descriptors.StartJudgeRequest_enemyId,
+	field_descriptors.StartJudgeRequest_eventId
+}
+type_descriptors.StartJudgeRequest.is_extendable = false
+type_descriptors.StartJudgeRequest.extensions = {}
+type_descriptors.MallBuyReply.name = "MallBuyReply"
+type_descriptors.MallBuyReply.full_name = ".MallBuyReply"
+type_descriptors.MallBuyReply.nested_types = {}
+type_descriptors.MallBuyReply.enum_types = {}
+type_descriptors.MallBuyReply.fields = {}
+type_descriptors.MallBuyReply.is_extendable = false
+type_descriptors.MallBuyReply.extensions = {}
+field_descriptors.RoguelikeTaskRewardRequest_id.name = "id"
+field_descriptors.RoguelikeTaskRewardRequest_id.full_name = ".RoguelikeTaskRewardRequest.id"
+field_descriptors.RoguelikeTaskRewardRequest_id.number = 1
+field_descriptors.RoguelikeTaskRewardRequest_id.index = 0
+field_descriptors.RoguelikeTaskRewardRequest_id.label = 3
+field_descriptors.RoguelikeTaskRewardRequest_id.has_default_value = false
+field_descriptors.RoguelikeTaskRewardRequest_id.default_value = {}
+field_descriptors.RoguelikeTaskRewardRequest_id.type = 5
+field_descriptors.RoguelikeTaskRewardRequest_id.cpp_type = 1
+type_descriptors.RoguelikeTaskRewardRequest.name = "RoguelikeTaskRewardRequest"
+type_descriptors.RoguelikeTaskRewardRequest.full_name = ".RoguelikeTaskRewardRequest"
+type_descriptors.RoguelikeTaskRewardRequest.nested_types = {}
+type_descriptors.RoguelikeTaskRewardRequest.enum_types = {}
+type_descriptors.RoguelikeTaskRewardRequest.fields = {
+	field_descriptors.RoguelikeTaskRewardRequest_id
+}
+type_descriptors.RoguelikeTaskRewardRequest.is_extendable = false
+type_descriptors.RoguelikeTaskRewardRequest.extensions = {}
+field_descriptors.RoomPrizesNO_room.name = "room"
+field_descriptors.RoomPrizesNO_room.full_name = ".RoomPrizesNO.room"
+field_descriptors.RoomPrizesNO_room.number = 1
+field_descriptors.RoomPrizesNO_room.index = 0
+field_descriptors.RoomPrizesNO_room.label = 1
+field_descriptors.RoomPrizesNO_room.has_default_value = false
+field_descriptors.RoomPrizesNO_room.default_value = ""
+field_descriptors.RoomPrizesNO_room.type = 9
+field_descriptors.RoomPrizesNO_room.cpp_type = 9
+field_descriptors.RoomPrizesNO_prize.name = "prize"
+field_descriptors.RoomPrizesNO_prize.full_name = ".RoomPrizesNO.prize"
+field_descriptors.RoomPrizesNO_prize.number = 2
+field_descriptors.RoomPrizesNO_prize.index = 1
+field_descriptors.RoomPrizesNO_prize.label = 3
+field_descriptors.RoomPrizesNO_prize.has_default_value = false
+field_descriptors.RoomPrizesNO_prize.default_value = {}
+field_descriptors.RoomPrizesNO_prize.message_type = type_descriptors.PrizeNO
+field_descriptors.RoomPrizesNO_prize.type = 11
+field_descriptors.RoomPrizesNO_prize.cpp_type = 10
+field_descriptors.RoomPrizesNO_increment.name = "increment"
+field_descriptors.RoomPrizesNO_increment.full_name = ".RoomPrizesNO.increment"
+field_descriptors.RoomPrizesNO_increment.number = 3
+field_descriptors.RoomPrizesNO_increment.index = 2
+field_descriptors.RoomPrizesNO_increment.label = 1
+field_descriptors.RoomPrizesNO_increment.has_default_value = false
+field_descriptors.RoomPrizesNO_increment.default_value = 0
+field_descriptors.RoomPrizesNO_increment.type = 5
+field_descriptors.RoomPrizesNO_increment.cpp_type = 1
+type_descriptors.RoomPrizesNO.name = "RoomPrizesNO"
+type_descriptors.RoomPrizesNO.full_name = ".RoomPrizesNO"
+type_descriptors.RoomPrizesNO.nested_types = {}
+type_descriptors.RoomPrizesNO.enum_types = {}
+type_descriptors.RoomPrizesNO.fields = {
+	field_descriptors.RoomPrizesNO_room,
+	field_descriptors.RoomPrizesNO_prize,
+	field_descriptors.RoomPrizesNO_increment
+}
+type_descriptors.RoomPrizesNO.is_extendable = false
+type_descriptors.RoomPrizesNO.extensions = {}
+field_descriptors.RoleChangeValue_hp.name = "hp"
+field_descriptors.RoleChangeValue_hp.full_name = ".RoleChangeValue.hp"
+field_descriptors.RoleChangeValue_hp.number = 1
+field_descriptors.RoleChangeValue_hp.index = 0
+field_descriptors.RoleChangeValue_hp.label = 1
+field_descriptors.RoleChangeValue_hp.has_default_value = false
+field_descriptors.RoleChangeValue_hp.default_value = 0
+field_descriptors.RoleChangeValue_hp.type = 5
+field_descriptors.RoleChangeValue_hp.cpp_type = 1
+field_descriptors.RoleChangeValue_san.name = "san"
+field_descriptors.RoleChangeValue_san.full_name = ".RoleChangeValue.san"
+field_descriptors.RoleChangeValue_san.number = 2
+field_descriptors.RoleChangeValue_san.index = 1
+field_descriptors.RoleChangeValue_san.label = 1
+field_descriptors.RoleChangeValue_san.has_default_value = false
+field_descriptors.RoleChangeValue_san.default_value = 0
+field_descriptors.RoleChangeValue_san.type = 5
+field_descriptors.RoleChangeValue_san.cpp_type = 1
+field_descriptors.RoleChangeValue_heroId.name = "heroId"
+field_descriptors.RoleChangeValue_heroId.full_name = ".RoleChangeValue.heroId"
+field_descriptors.RoleChangeValue_heroId.number = 3
+field_descriptors.RoleChangeValue_heroId.index = 2
+field_descriptors.RoleChangeValue_heroId.label = 1
+field_descriptors.RoleChangeValue_heroId.has_default_value = false
+field_descriptors.RoleChangeValue_heroId.default_value = 0
+field_descriptors.RoleChangeValue_heroId.type = 5
+field_descriptors.RoleChangeValue_heroId.cpp_type = 1
+type_descriptors.RoleChangeValue.name = "RoleChangeValue"
+type_descriptors.RoleChangeValue.full_name = ".RoleChangeValue"
+type_descriptors.RoleChangeValue.nested_types = {}
+type_descriptors.RoleChangeValue.enum_types = {}
+type_descriptors.RoleChangeValue.fields = {
+	field_descriptors.RoleChangeValue_hp,
+	field_descriptors.RoleChangeValue_san,
+	field_descriptors.RoleChangeValue_heroId
+}
+type_descriptors.RoleChangeValue.is_extendable = false
+type_descriptors.RoleChangeValue.extensions = {}
+field_descriptors.RoguelikeListTaskReply_tasks.name = "tasks"
+field_descriptors.RoguelikeListTaskReply_tasks.full_name = ".RoguelikeListTaskReply.tasks"
+field_descriptors.RoguelikeListTaskReply_tasks.number = 1
+field_descriptors.RoguelikeListTaskReply_tasks.index = 0
+field_descriptors.RoguelikeListTaskReply_tasks.label = 3
+field_descriptors.RoguelikeListTaskReply_tasks.has_default_value = false
+field_descriptors.RoguelikeListTaskReply_tasks.default_value = {}
+field_descriptors.RoguelikeListTaskReply_tasks.message_type = dependencies.TaskExtension.type_descriptors.TaskNO
+field_descriptors.RoguelikeListTaskReply_tasks.type = 11
+field_descriptors.RoguelikeListTaskReply_tasks.cpp_type = 10
+type_descriptors.RoguelikeListTaskReply.name = "RoguelikeListTaskReply"
+type_descriptors.RoguelikeListTaskReply.full_name = ".RoguelikeListTaskReply"
+type_descriptors.RoguelikeListTaskReply.nested_types = {}
+type_descriptors.RoguelikeListTaskReply.enum_types = {}
+type_descriptors.RoguelikeListTaskReply.fields = {
+	field_descriptors.RoguelikeListTaskReply_tasks
+}
+type_descriptors.RoguelikeListTaskReply.is_extendable = false
+type_descriptors.RoguelikeListTaskReply.extensions = {}
+field_descriptors.Shape_point.name = "point"
+field_descriptors.Shape_point.full_name = ".Shape.point"
+field_descriptors.Shape_point.number = 1
+field_descriptors.Shape_point.index = 0
+field_descriptors.Shape_point.label = 1
+field_descriptors.Shape_point.has_default_value = false
+field_descriptors.Shape_point.default_value = ""
+field_descriptors.Shape_point.type = 9
+field_descriptors.Shape_point.cpp_type = 9
+field_descriptors.Shape_shapeId.name = "shapeId"
+field_descriptors.Shape_shapeId.full_name = ".Shape.shapeId"
+field_descriptors.Shape_shapeId.number = 2
+field_descriptors.Shape_shapeId.index = 1
+field_descriptors.Shape_shapeId.label = 1
+field_descriptors.Shape_shapeId.has_default_value = false
+field_descriptors.Shape_shapeId.default_value = 0
+field_descriptors.Shape_shapeId.type = 5
+field_descriptors.Shape_shapeId.cpp_type = 1
+type_descriptors.Shape.name = "Shape"
+type_descriptors.Shape.full_name = ".Shape"
+type_descriptors.Shape.nested_types = {}
+type_descriptors.Shape.enum_types = {}
+type_descriptors.Shape.fields = {
+	field_descriptors.Shape_point,
+	field_descriptors.Shape_shapeId
+}
+type_descriptors.Shape.is_extendable = false
+type_descriptors.Shape.extensions = {}
+field_descriptors.PrizeNO_id.name = "id"
+field_descriptors.PrizeNO_id.full_name = ".PrizeNO.id"
+field_descriptors.PrizeNO_id.number = 1
+field_descriptors.PrizeNO_id.index = 0
+field_descriptors.PrizeNO_id.label = 1
+field_descriptors.PrizeNO_id.has_default_value = false
+field_descriptors.PrizeNO_id.default_value = 0
+field_descriptors.PrizeNO_id.type = 5
+field_descriptors.PrizeNO_id.cpp_type = 1
+field_descriptors.PrizeNO_price.name = "price"
+field_descriptors.PrizeNO_price.full_name = ".PrizeNO.price"
+field_descriptors.PrizeNO_price.number = 2
+field_descriptors.PrizeNO_price.index = 1
+field_descriptors.PrizeNO_price.label = 1
+field_descriptors.PrizeNO_price.has_default_value = false
+field_descriptors.PrizeNO_price.default_value = 0
+field_descriptors.PrizeNO_price.type = 5
+field_descriptors.PrizeNO_price.cpp_type = 1
+field_descriptors.PrizeNO_taken.name = "taken"
+field_descriptors.PrizeNO_taken.full_name = ".PrizeNO.taken"
+field_descriptors.PrizeNO_taken.number = 3
+field_descriptors.PrizeNO_taken.index = 2
+field_descriptors.PrizeNO_taken.label = 1
+field_descriptors.PrizeNO_taken.has_default_value = false
+field_descriptors.PrizeNO_taken.default_value = false
+field_descriptors.PrizeNO_taken.type = 8
+field_descriptors.PrizeNO_taken.cpp_type = 7
+type_descriptors.PrizeNO.name = "PrizeNO"
+type_descriptors.PrizeNO.full_name = ".PrizeNO"
+type_descriptors.PrizeNO.nested_types = {}
+type_descriptors.PrizeNO.enum_types = {}
+type_descriptors.PrizeNO.fields = {
+	field_descriptors.PrizeNO_id,
+	field_descriptors.PrizeNO_price,
+	field_descriptors.PrizeNO_taken
+}
+type_descriptors.PrizeNO.is_extendable = false
+type_descriptors.PrizeNO.extensions = {}
+field_descriptors.EndRoundReply_team.name = "team"
+field_descriptors.EndRoundReply_team.full_name = ".EndRoundReply.team"
+field_descriptors.EndRoundReply_team.number = 1
+field_descriptors.EndRoundReply_team.index = 0
+field_descriptors.EndRoundReply_team.label = 3
+field_descriptors.EndRoundReply_team.has_default_value = false
+field_descriptors.EndRoundReply_team.default_value = {}
+field_descriptors.EndRoundReply_team.message_type = type_descriptors.R_HeroNO
+field_descriptors.EndRoundReply_team.type = 11
+field_descriptors.EndRoundReply_team.cpp_type = 10
+type_descriptors.EndRoundReply.name = "EndRoundReply"
+type_descriptors.EndRoundReply.full_name = ".EndRoundReply"
+type_descriptors.EndRoundReply.nested_types = {}
+type_descriptors.EndRoundReply.enum_types = {}
+type_descriptors.EndRoundReply.fields = {
+	field_descriptors.EndRoundReply_team
+}
+type_descriptors.EndRoundReply.is_extendable = false
+type_descriptors.EndRoundReply.extensions = {}
+field_descriptors.EquipNO_id.name = "id"
+field_descriptors.EquipNO_id.full_name = ".EquipNO.id"
+field_descriptors.EquipNO_id.number = 1
+field_descriptors.EquipNO_id.index = 0
+field_descriptors.EquipNO_id.label = 1
+field_descriptors.EquipNO_id.has_default_value = false
+field_descriptors.EquipNO_id.default_value = 0
+field_descriptors.EquipNO_id.type = 5
+field_descriptors.EquipNO_id.cpp_type = 1
+field_descriptors.EquipNO_lv.name = "lv"
+field_descriptors.EquipNO_lv.full_name = ".EquipNO.lv"
+field_descriptors.EquipNO_lv.number = 2
+field_descriptors.EquipNO_lv.index = 1
+field_descriptors.EquipNO_lv.label = 1
+field_descriptors.EquipNO_lv.has_default_value = false
+field_descriptors.EquipNO_lv.default_value = 0
+field_descriptors.EquipNO_lv.type = 5
+field_descriptors.EquipNO_lv.cpp_type = 1
+field_descriptors.EquipNO_cd.name = "cd"
+field_descriptors.EquipNO_cd.full_name = ".EquipNO.cd"
+field_descriptors.EquipNO_cd.number = 3
+field_descriptors.EquipNO_cd.index = 2
+field_descriptors.EquipNO_cd.label = 1
+field_descriptors.EquipNO_cd.has_default_value = false
+field_descriptors.EquipNO_cd.default_value = 0
+field_descriptors.EquipNO_cd.type = 5
+field_descriptors.EquipNO_cd.cpp_type = 1
+type_descriptors.EquipNO.name = "EquipNO"
+type_descriptors.EquipNO.full_name = ".EquipNO"
+type_descriptors.EquipNO.nested_types = {}
+type_descriptors.EquipNO.enum_types = {}
+type_descriptors.EquipNO.fields = {
+	field_descriptors.EquipNO_id,
+	field_descriptors.EquipNO_lv,
+	field_descriptors.EquipNO_cd
+}
+type_descriptors.EquipNO.is_extendable = false
+type_descriptors.EquipNO.extensions = {}
+field_descriptors.GuessDiceResultRequest_type.name = "type"
+field_descriptors.GuessDiceResultRequest_type.full_name = ".GuessDiceResultRequest.type"
+field_descriptors.GuessDiceResultRequest_type.number = 1
+field_descriptors.GuessDiceResultRequest_type.index = 0
+field_descriptors.GuessDiceResultRequest_type.label = 1
+field_descriptors.GuessDiceResultRequest_type.has_default_value = false
+field_descriptors.GuessDiceResultRequest_type.default_value = nil
+field_descriptors.GuessDiceResultRequest_type.enum_type = type_descriptors.AttrType
+field_descriptors.GuessDiceResultRequest_type.type = 14
+field_descriptors.GuessDiceResultRequest_type.cpp_type = 8
+type_descriptors.GuessDiceResultRequest.name = "GuessDiceResultRequest"
+type_descriptors.GuessDiceResultRequest.full_name = ".GuessDiceResultRequest"
+type_descriptors.GuessDiceResultRequest.nested_types = {}
+type_descriptors.GuessDiceResultRequest.enum_types = {}
+type_descriptors.GuessDiceResultRequest.fields = {
+	field_descriptors.GuessDiceResultRequest_type
+}
+type_descriptors.GuessDiceResultRequest.is_extendable = false
+type_descriptors.GuessDiceResultRequest.extensions = {}
+type_descriptors.EndRoundRequest.name = "EndRoundRequest"
+type_descriptors.EndRoundRequest.full_name = ".EndRoundRequest"
+type_descriptors.EndRoundRequest.nested_types = {}
+type_descriptors.EndRoundRequest.enum_types = {}
+type_descriptors.EndRoundRequest.fields = {}
+type_descriptors.EndRoundRequest.is_extendable = false
+type_descriptors.EndRoundRequest.extensions = {}
+field_descriptors.StartEventRequest_id.name = "id"
+field_descriptors.StartEventRequest_id.full_name = ".StartEventRequest.id"
+field_descriptors.StartEventRequest_id.number = 1
+field_descriptors.StartEventRequest_id.index = 0
+field_descriptors.StartEventRequest_id.label = 1
+field_descriptors.StartEventRequest_id.has_default_value = false
+field_descriptors.StartEventRequest_id.default_value = 0
+field_descriptors.StartEventRequest_id.type = 5
+field_descriptors.StartEventRequest_id.cpp_type = 1
+type_descriptors.StartEventRequest.name = "StartEventRequest"
+type_descriptors.StartEventRequest.full_name = ".StartEventRequest"
+type_descriptors.StartEventRequest.nested_types = {}
+type_descriptors.StartEventRequest.enum_types = {}
+type_descriptors.StartEventRequest.fields = {
+	field_descriptors.StartEventRequest_id
+}
+type_descriptors.StartEventRequest.is_extendable = false
+type_descriptors.StartEventRequest.extensions = {}
+type_descriptors.GetGuessNumRequest.name = "GetGuessNumRequest"
+type_descriptors.GetGuessNumRequest.full_name = ".GetGuessNumRequest"
+type_descriptors.GetGuessNumRequest.nested_types = {}
+type_descriptors.GetGuessNumRequest.enum_types = {}
+type_descriptors.GetGuessNumRequest.fields = {}
+type_descriptors.GetGuessNumRequest.is_extendable = false
+type_descriptors.GetGuessNumRequest.extensions = {}
+type_descriptors.GuessDiceReply.name = "GuessDiceReply"
+type_descriptors.GuessDiceReply.full_name = ".GuessDiceReply"
+type_descriptors.GuessDiceReply.nested_types = {}
+type_descriptors.GuessDiceReply.enum_types = {}
+type_descriptors.GuessDiceReply.fields = {}
+type_descriptors.GuessDiceReply.is_extendable = false
+type_descriptors.GuessDiceReply.extensions = {}
+field_descriptors.DropPropsRequest_id.name = "id"
+field_descriptors.DropPropsRequest_id.full_name = ".DropPropsRequest.id"
+field_descriptors.DropPropsRequest_id.number = 1
+field_descriptors.DropPropsRequest_id.index = 0
+field_descriptors.DropPropsRequest_id.label = 1
+field_descriptors.DropPropsRequest_id.has_default_value = false
+field_descriptors.DropPropsRequest_id.default_value = 0
+field_descriptors.DropPropsRequest_id.type = 5
+field_descriptors.DropPropsRequest_id.cpp_type = 1
+type_descriptors.DropPropsRequest.name = "DropPropsRequest"
+type_descriptors.DropPropsRequest.full_name = ".DropPropsRequest"
+type_descriptors.DropPropsRequest.nested_types = {}
+type_descriptors.DropPropsRequest.enum_types = {}
+type_descriptors.DropPropsRequest.fields = {
+	field_descriptors.DropPropsRequest_id
+}
+type_descriptors.DropPropsRequest.is_extendable = false
+type_descriptors.DropPropsRequest.extensions = {}
+field_descriptors.CardValue_id.name = "id"
+field_descriptors.CardValue_id.full_name = ".CardValue.id"
+field_descriptors.CardValue_id.number = 1
+field_descriptors.CardValue_id.index = 0
+field_descriptors.CardValue_id.label = 1
+field_descriptors.CardValue_id.has_default_value = false
+field_descriptors.CardValue_id.default_value = 0
+field_descriptors.CardValue_id.type = 5
+field_descriptors.CardValue_id.cpp_type = 1
+field_descriptors.CardValue_value.name = "value"
+field_descriptors.CardValue_value.full_name = ".CardValue.value"
+field_descriptors.CardValue_value.number = 2
+field_descriptors.CardValue_value.index = 1
+field_descriptors.CardValue_value.label = 1
+field_descriptors.CardValue_value.has_default_value = false
+field_descriptors.CardValue_value.default_value = 0
+field_descriptors.CardValue_value.type = 5
+field_descriptors.CardValue_value.cpp_type = 1
+type_descriptors.CardValue.name = "CardValue"
+type_descriptors.CardValue.full_name = ".CardValue"
+type_descriptors.CardValue.nested_types = {}
+type_descriptors.CardValue.enum_types = {}
+type_descriptors.CardValue.fields = {
+	field_descriptors.CardValue_id,
+	field_descriptors.CardValue_value
+}
+type_descriptors.CardValue.is_extendable = false
+type_descriptors.CardValue.extensions = {}
+field_descriptors.CutRoom_ab.name = "ab"
+field_descriptors.CutRoom_ab.full_name = ".CutRoom.ab"
+field_descriptors.CutRoom_ab.number = 1
+field_descriptors.CutRoom_ab.index = 0
+field_descriptors.CutRoom_ab.label = 3
+field_descriptors.CutRoom_ab.has_default_value = false
+field_descriptors.CutRoom_ab.default_value = {}
+field_descriptors.CutRoom_ab.type = 9
+field_descriptors.CutRoom_ab.cpp_type = 9
+type_descriptors.CutRoom.name = "CutRoom"
+type_descriptors.CutRoom.full_name = ".CutRoom"
+type_descriptors.CutRoom.nested_types = {}
+type_descriptors.CutRoom.enum_types = {}
+type_descriptors.CutRoom.fields = {
+	field_descriptors.CutRoom_ab
+}
+type_descriptors.CutRoom.is_extendable = false
+type_descriptors.CutRoom.extensions = {}
+type_descriptors.EndSelectReply.name = "EndSelectReply"
+type_descriptors.EndSelectReply.full_name = ".EndSelectReply"
+type_descriptors.EndSelectReply.nested_types = {}
+type_descriptors.EndSelectReply.enum_types = {}
+type_descriptors.EndSelectReply.fields = {}
+type_descriptors.EndSelectReply.is_extendable = false
+type_descriptors.EndSelectReply.extensions = {}
+field_descriptors.AddPropsRequest_code.name = "code"
+field_descriptors.AddPropsRequest_code.full_name = ".AddPropsRequest.code"
+field_descriptors.AddPropsRequest_code.number = 1
+field_descriptors.AddPropsRequest_code.index = 0
+field_descriptors.AddPropsRequest_code.label = 1
+field_descriptors.AddPropsRequest_code.has_default_value = false
+field_descriptors.AddPropsRequest_code.default_value = ""
+field_descriptors.AddPropsRequest_code.type = 9
+field_descriptors.AddPropsRequest_code.cpp_type = 9
+field_descriptors.AddPropsRequest_heroId.name = "heroId"
+field_descriptors.AddPropsRequest_heroId.full_name = ".AddPropsRequest.heroId"
+field_descriptors.AddPropsRequest_heroId.number = 2
+field_descriptors.AddPropsRequest_heroId.index = 1
+field_descriptors.AddPropsRequest_heroId.label = 1
+field_descriptors.AddPropsRequest_heroId.has_default_value = false
+field_descriptors.AddPropsRequest_heroId.default_value = 0
+field_descriptors.AddPropsRequest_heroId.type = 5
+field_descriptors.AddPropsRequest_heroId.cpp_type = 1
+field_descriptors.AddPropsRequest_attr.name = "attr"
+field_descriptors.AddPropsRequest_attr.full_name = ".AddPropsRequest.attr"
+field_descriptors.AddPropsRequest_attr.number = 3
+field_descriptors.AddPropsRequest_attr.index = 2
+field_descriptors.AddPropsRequest_attr.label = 1
+field_descriptors.AddPropsRequest_attr.has_default_value = false
+field_descriptors.AddPropsRequest_attr.default_value = nil
+field_descriptors.AddPropsRequest_attr.enum_type = type_descriptors.AttrType
+field_descriptors.AddPropsRequest_attr.type = 14
+field_descriptors.AddPropsRequest_attr.cpp_type = 8
+field_descriptors.AddPropsRequest_card.name = "card"
+field_descriptors.AddPropsRequest_card.full_name = ".AddPropsRequest.card"
+field_descriptors.AddPropsRequest_card.number = 4
+field_descriptors.AddPropsRequest_card.index = 3
+field_descriptors.AddPropsRequest_card.label = 1
+field_descriptors.AddPropsRequest_card.has_default_value = false
+field_descriptors.AddPropsRequest_card.default_value = 0
+field_descriptors.AddPropsRequest_card.type = 5
+field_descriptors.AddPropsRequest_card.cpp_type = 1
+field_descriptors.AddPropsRequest_slId.name = "slId"
+field_descriptors.AddPropsRequest_slId.full_name = ".AddPropsRequest.slId"
+field_descriptors.AddPropsRequest_slId.number = 5
+field_descriptors.AddPropsRequest_slId.index = 4
+field_descriptors.AddPropsRequest_slId.label = 1
+field_descriptors.AddPropsRequest_slId.has_default_value = false
+field_descriptors.AddPropsRequest_slId.default_value = 0
+field_descriptors.AddPropsRequest_slId.type = 5
+field_descriptors.AddPropsRequest_slId.cpp_type = 1
+type_descriptors.AddPropsRequest.name = "AddPropsRequest"
+type_descriptors.AddPropsRequest.full_name = ".AddPropsRequest"
+type_descriptors.AddPropsRequest.nested_types = {}
+type_descriptors.AddPropsRequest.enum_types = {}
+type_descriptors.AddPropsRequest.fields = {
+	field_descriptors.AddPropsRequest_code,
+	field_descriptors.AddPropsRequest_heroId,
+	field_descriptors.AddPropsRequest_attr,
+	field_descriptors.AddPropsRequest_card,
+	field_descriptors.AddPropsRequest_slId
+}
+type_descriptors.AddPropsRequest.is_extendable = false
+type_descriptors.AddPropsRequest.extensions = {}
+field_descriptors.WearEquipRequest_id.name = "id"
+field_descriptors.WearEquipRequest_id.full_name = ".WearEquipRequest.id"
+field_descriptors.WearEquipRequest_id.number = 1
+field_descriptors.WearEquipRequest_id.index = 0
+field_descriptors.WearEquipRequest_id.label = 1
+field_descriptors.WearEquipRequest_id.has_default_value = false
+field_descriptors.WearEquipRequest_id.default_value = 0
+field_descriptors.WearEquipRequest_id.type = 5
+field_descriptors.WearEquipRequest_id.cpp_type = 1
+type_descriptors.WearEquipRequest.name = "WearEquipRequest"
+type_descriptors.WearEquipRequest.full_name = ".WearEquipRequest"
+type_descriptors.WearEquipRequest.nested_types = {}
+type_descriptors.WearEquipRequest.enum_types = {}
+type_descriptors.WearEquipRequest.fields = {
+	field_descriptors.WearEquipRequest_id
+}
+type_descriptors.WearEquipRequest.is_extendable = false
+type_descriptors.WearEquipRequest.extensions = {}
+field_descriptors.EffectPush_changes.name = "changes"
+field_descriptors.EffectPush_changes.full_name = ".EffectPush.changes"
+field_descriptors.EffectPush_changes.number = 1
+field_descriptors.EffectPush_changes.index = 0
+field_descriptors.EffectPush_changes.label = 3
+field_descriptors.EffectPush_changes.has_default_value = false
+field_descriptors.EffectPush_changes.default_value = {}
+field_descriptors.EffectPush_changes.message_type = type_descriptors.ChangeCollector
+field_descriptors.EffectPush_changes.type = 11
+field_descriptors.EffectPush_changes.cpp_type = 10
+type_descriptors.EffectPush.name = "EffectPush"
+type_descriptors.EffectPush.full_name = ".EffectPush"
+type_descriptors.EffectPush.nested_types = {}
+type_descriptors.EffectPush.enum_types = {}
+type_descriptors.EffectPush.fields = {
+	field_descriptors.EffectPush_changes
+}
+type_descriptors.EffectPush.is_extendable = false
+type_descriptors.EffectPush.extensions = {}
+field_descriptors.SetCardCdRequest_hero.name = "hero"
+field_descriptors.SetCardCdRequest_hero.full_name = ".SetCardCdRequest.hero"
+field_descriptors.SetCardCdRequest_hero.number = 1
+field_descriptors.SetCardCdRequest_hero.index = 0
+field_descriptors.SetCardCdRequest_hero.label = 1
+field_descriptors.SetCardCdRequest_hero.has_default_value = false
+field_descriptors.SetCardCdRequest_hero.default_value = 0
+field_descriptors.SetCardCdRequest_hero.type = 5
+field_descriptors.SetCardCdRequest_hero.cpp_type = 1
+field_descriptors.SetCardCdRequest_card.name = "card"
+field_descriptors.SetCardCdRequest_card.full_name = ".SetCardCdRequest.card"
+field_descriptors.SetCardCdRequest_card.number = 2
+field_descriptors.SetCardCdRequest_card.index = 1
+field_descriptors.SetCardCdRequest_card.label = 1
+field_descriptors.SetCardCdRequest_card.has_default_value = false
+field_descriptors.SetCardCdRequest_card.default_value = 0
+field_descriptors.SetCardCdRequest_card.type = 5
+field_descriptors.SetCardCdRequest_card.cpp_type = 1
+field_descriptors.SetCardCdRequest_cd.name = "cd"
+field_descriptors.SetCardCdRequest_cd.full_name = ".SetCardCdRequest.cd"
+field_descriptors.SetCardCdRequest_cd.number = 3
+field_descriptors.SetCardCdRequest_cd.index = 2
+field_descriptors.SetCardCdRequest_cd.label = 1
+field_descriptors.SetCardCdRequest_cd.has_default_value = false
+field_descriptors.SetCardCdRequest_cd.default_value = 0
+field_descriptors.SetCardCdRequest_cd.type = 5
+field_descriptors.SetCardCdRequest_cd.cpp_type = 1
+type_descriptors.SetCardCdRequest.name = "SetCardCdRequest"
+type_descriptors.SetCardCdRequest.full_name = ".SetCardCdRequest"
+type_descriptors.SetCardCdRequest.nested_types = {}
+type_descriptors.SetCardCdRequest.enum_types = {}
+type_descriptors.SetCardCdRequest.fields = {
+	field_descriptors.SetCardCdRequest_hero,
+	field_descriptors.SetCardCdRequest_card,
+	field_descriptors.SetCardCdRequest_cd
+}
+type_descriptors.SetCardCdRequest.is_extendable = false
+type_descriptors.SetCardCdRequest.extensions = {}
+field_descriptors.StartReply_script.name = "script"
+field_descriptors.StartReply_script.full_name = ".StartReply.script"
+field_descriptors.StartReply_script.number = 1
+field_descriptors.StartReply_script.index = 0
+field_descriptors.StartReply_script.label = 1
+field_descriptors.StartReply_script.has_default_value = false
+field_descriptors.StartReply_script.default_value = nil
+field_descriptors.StartReply_script.message_type = type_descriptors.ScriptInfo
+field_descriptors.StartReply_script.type = 11
+field_descriptors.StartReply_script.cpp_type = 10
+type_descriptors.StartReply.name = "StartReply"
+type_descriptors.StartReply.full_name = ".StartReply"
+type_descriptors.StartReply.nested_types = {}
+type_descriptors.StartReply.enum_types = {}
+type_descriptors.StartReply.fields = {
+	field_descriptors.StartReply_script
+}
+type_descriptors.StartReply.is_extendable = false
+type_descriptors.StartReply.extensions = {}
+type_descriptors.UseSkillReply.name = "UseSkillReply"
+type_descriptors.UseSkillReply.full_name = ".UseSkillReply"
+type_descriptors.UseSkillReply.nested_types = {}
+type_descriptors.UseSkillReply.enum_types = {}
+type_descriptors.UseSkillReply.fields = {}
+type_descriptors.UseSkillReply.is_extendable = false
+type_descriptors.UseSkillReply.extensions = {}
+field_descriptors.MallBuyRequest_id.name = "id"
+field_descriptors.MallBuyRequest_id.full_name = ".MallBuyRequest.id"
+field_descriptors.MallBuyRequest_id.number = 1
+field_descriptors.MallBuyRequest_id.index = 0
+field_descriptors.MallBuyRequest_id.label = 1
+field_descriptors.MallBuyRequest_id.has_default_value = false
+field_descriptors.MallBuyRequest_id.default_value = 0
+field_descriptors.MallBuyRequest_id.type = 5
+field_descriptors.MallBuyRequest_id.cpp_type = 1
+type_descriptors.MallBuyRequest.name = "MallBuyRequest"
+type_descriptors.MallBuyRequest.full_name = ".MallBuyRequest"
+type_descriptors.MallBuyRequest.nested_types = {}
+type_descriptors.MallBuyRequest.enum_types = {}
+type_descriptors.MallBuyRequest.fields = {
+	field_descriptors.MallBuyRequest_id
+}
+type_descriptors.MallBuyRequest.is_extendable = false
+type_descriptors.MallBuyRequest.extensions = {}
+type_descriptors.LoadInfoRequest.name = "LoadInfoRequest"
+type_descriptors.LoadInfoRequest.full_name = ".LoadInfoRequest"
+type_descriptors.LoadInfoRequest.nested_types = {}
+type_descriptors.LoadInfoRequest.enum_types = {}
+type_descriptors.LoadInfoRequest.fields = {}
+type_descriptors.LoadInfoRequest.is_extendable = false
+type_descriptors.LoadInfoRequest.extensions = {}
+field_descriptors.JudgeArchiveRequest_archive.name = "archive"
+field_descriptors.JudgeArchiveRequest_archive.full_name = ".JudgeArchiveRequest.archive"
+field_descriptors.JudgeArchiveRequest_archive.number = 1
+field_descriptors.JudgeArchiveRequest_archive.index = 0
+field_descriptors.JudgeArchiveRequest_archive.label = 1
+field_descriptors.JudgeArchiveRequest_archive.has_default_value = false
+field_descriptors.JudgeArchiveRequest_archive.default_value = nil
+field_descriptors.JudgeArchiveRequest_archive.message_type = type_descriptors.ArchiveNO
+field_descriptors.JudgeArchiveRequest_archive.type = 11
+field_descriptors.JudgeArchiveRequest_archive.cpp_type = 10
+type_descriptors.JudgeArchiveRequest.name = "JudgeArchiveRequest"
+type_descriptors.JudgeArchiveRequest.full_name = ".JudgeArchiveRequest"
+type_descriptors.JudgeArchiveRequest.nested_types = {}
+type_descriptors.JudgeArchiveRequest.enum_types = {}
+type_descriptors.JudgeArchiveRequest.fields = {
+	field_descriptors.JudgeArchiveRequest_archive
+}
+type_descriptors.JudgeArchiveRequest.is_extendable = false
+type_descriptors.JudgeArchiveRequest.extensions = {}
+field_descriptors.RoguelikeTaskRewardReply_tasks.name = "tasks"
+field_descriptors.RoguelikeTaskRewardReply_tasks.full_name = ".RoguelikeTaskRewardReply.tasks"
+field_descriptors.RoguelikeTaskRewardReply_tasks.number = 1
+field_descriptors.RoguelikeTaskRewardReply_tasks.index = 0
+field_descriptors.RoguelikeTaskRewardReply_tasks.label = 3
+field_descriptors.RoguelikeTaskRewardReply_tasks.has_default_value = false
+field_descriptors.RoguelikeTaskRewardReply_tasks.default_value = {}
+field_descriptors.RoguelikeTaskRewardReply_tasks.message_type = dependencies.TaskExtension.type_descriptors.TaskNO
+field_descriptors.RoguelikeTaskRewardReply_tasks.type = 11
+field_descriptors.RoguelikeTaskRewardReply_tasks.cpp_type = 10
+type_descriptors.RoguelikeTaskRewardReply.name = "RoguelikeTaskRewardReply"
+type_descriptors.RoguelikeTaskRewardReply.full_name = ".RoguelikeTaskRewardReply"
+type_descriptors.RoguelikeTaskRewardReply.nested_types = {}
+type_descriptors.RoguelikeTaskRewardReply.enum_types = {}
+type_descriptors.RoguelikeTaskRewardReply.fields = {
+	field_descriptors.RoguelikeTaskRewardReply_tasks
+}
+type_descriptors.RoguelikeTaskRewardReply.is_extendable = false
+type_descriptors.RoguelikeTaskRewardReply.extensions = {}
+field_descriptors.MapNO_id.name = "id"
+field_descriptors.MapNO_id.full_name = ".MapNO.id"
+field_descriptors.MapNO_id.number = 1
+field_descriptors.MapNO_id.index = 0
+field_descriptors.MapNO_id.label = 1
+field_descriptors.MapNO_id.has_default_value = false
+field_descriptors.MapNO_id.default_value = 0
+field_descriptors.MapNO_id.type = 5
+field_descriptors.MapNO_id.cpp_type = 1
+field_descriptors.MapNO_rooms.name = "rooms"
+field_descriptors.MapNO_rooms.full_name = ".MapNO.rooms"
+field_descriptors.MapNO_rooms.number = 2
+field_descriptors.MapNO_rooms.index = 1
+field_descriptors.MapNO_rooms.label = 3
+field_descriptors.MapNO_rooms.has_default_value = false
+field_descriptors.MapNO_rooms.default_value = {}
+field_descriptors.MapNO_rooms.message_type = type_descriptors.RoomNO
+field_descriptors.MapNO_rooms.type = 11
+field_descriptors.MapNO_rooms.cpp_type = 10
+field_descriptors.MapNO_cuts.name = "cuts"
+field_descriptors.MapNO_cuts.full_name = ".MapNO.cuts"
+field_descriptors.MapNO_cuts.number = 3
+field_descriptors.MapNO_cuts.index = 2
+field_descriptors.MapNO_cuts.label = 3
+field_descriptors.MapNO_cuts.has_default_value = false
+field_descriptors.MapNO_cuts.default_value = {}
+field_descriptors.MapNO_cuts.message_type = type_descriptors.CutRoom
+field_descriptors.MapNO_cuts.type = 11
+field_descriptors.MapNO_cuts.cpp_type = 10
+type_descriptors.MapNO.name = "MapNO"
+type_descriptors.MapNO.full_name = ".MapNO"
+type_descriptors.MapNO.nested_types = {}
+type_descriptors.MapNO.enum_types = {}
+type_descriptors.MapNO.fields = {
+	field_descriptors.MapNO_id,
+	field_descriptors.MapNO_rooms,
+	field_descriptors.MapNO_cuts
+}
+type_descriptors.MapNO.is_extendable = false
+type_descriptors.MapNO.extensions = {}
+field_descriptors.StartEventReply_reply.name = "reply"
+field_descriptors.StartEventReply_reply.full_name = ".StartEventReply.reply"
+field_descriptors.StartEventReply_reply.number = 1
+field_descriptors.StartEventReply_reply.index = 0
+field_descriptors.StartEventReply_reply.label = 3
+field_descriptors.StartEventReply_reply.has_default_value = false
+field_descriptors.StartEventReply_reply.default_value = {}
+field_descriptors.StartEventReply_reply.type = 5
+field_descriptors.StartEventReply_reply.cpp_type = 1
+field_descriptors.StartEventReply_ashReply.name = "ashReply"
+field_descriptors.StartEventReply_ashReply.full_name = ".StartEventReply.ashReply"
+field_descriptors.StartEventReply_ashReply.number = 2
+field_descriptors.StartEventReply_ashReply.index = 1
+field_descriptors.StartEventReply_ashReply.label = 3
+field_descriptors.StartEventReply_ashReply.has_default_value = false
+field_descriptors.StartEventReply_ashReply.default_value = {}
+field_descriptors.StartEventReply_ashReply.type = 5
+field_descriptors.StartEventReply_ashReply.cpp_type = 1
+type_descriptors.StartEventReply.name = "StartEventReply"
+type_descriptors.StartEventReply.full_name = ".StartEventReply"
+type_descriptors.StartEventReply.nested_types = {}
+type_descriptors.StartEventReply.enum_types = {}
+type_descriptors.StartEventReply.fields = {
+	field_descriptors.StartEventReply_reply,
+	field_descriptors.StartEventReply_ashReply
+}
+type_descriptors.StartEventReply.is_extendable = false
+type_descriptors.StartEventReply.extensions = {}
+field_descriptors.SeedPush_seed.name = "seed"
+field_descriptors.SeedPush_seed.full_name = ".SeedPush.seed"
+field_descriptors.SeedPush_seed.number = 1
+field_descriptors.SeedPush_seed.index = 0
+field_descriptors.SeedPush_seed.label = 1
+field_descriptors.SeedPush_seed.has_default_value = false
+field_descriptors.SeedPush_seed.default_value = 0
+field_descriptors.SeedPush_seed.type = 3
+field_descriptors.SeedPush_seed.cpp_type = 2
+type_descriptors.SeedPush.name = "SeedPush"
+type_descriptors.SeedPush.full_name = ".SeedPush"
+type_descriptors.SeedPush.nested_types = {}
+type_descriptors.SeedPush.enum_types = {}
+type_descriptors.SeedPush.fields = {
+	field_descriptors.SeedPush_seed
+}
+type_descriptors.SeedPush.is_extendable = false
+type_descriptors.SeedPush.extensions = {}
+field_descriptors.Cell_point.name = "point"
+field_descriptors.Cell_point.full_name = ".Cell.point"
+field_descriptors.Cell_point.number = 1
+field_descriptors.Cell_point.index = 0
+field_descriptors.Cell_point.label = 1
+field_descriptors.Cell_point.has_default_value = false
+field_descriptors.Cell_point.default_value = ""
+field_descriptors.Cell_point.type = 9
+field_descriptors.Cell_point.cpp_type = 9
+field_descriptors.Cell_up.name = "up"
+field_descriptors.Cell_up.full_name = ".Cell.up"
+field_descriptors.Cell_up.number = 2
+field_descriptors.Cell_up.index = 1
+field_descriptors.Cell_up.label = 1
+field_descriptors.Cell_up.has_default_value = false
+field_descriptors.Cell_up.default_value = ""
+field_descriptors.Cell_up.type = 9
+field_descriptors.Cell_up.cpp_type = 9
+field_descriptors.Cell_right.name = "right"
+field_descriptors.Cell_right.full_name = ".Cell.right"
+field_descriptors.Cell_right.number = 3
+field_descriptors.Cell_right.index = 2
+field_descriptors.Cell_right.label = 1
+field_descriptors.Cell_right.has_default_value = false
+field_descriptors.Cell_right.default_value = ""
+field_descriptors.Cell_right.type = 9
+field_descriptors.Cell_right.cpp_type = 9
+field_descriptors.Cell_down.name = "down"
+field_descriptors.Cell_down.full_name = ".Cell.down"
+field_descriptors.Cell_down.number = 4
+field_descriptors.Cell_down.index = 3
+field_descriptors.Cell_down.label = 1
+field_descriptors.Cell_down.has_default_value = false
+field_descriptors.Cell_down.default_value = ""
+field_descriptors.Cell_down.type = 9
+field_descriptors.Cell_down.cpp_type = 9
+field_descriptors.Cell_left.name = "left"
+field_descriptors.Cell_left.full_name = ".Cell.left"
+field_descriptors.Cell_left.number = 5
+field_descriptors.Cell_left.index = 4
+field_descriptors.Cell_left.label = 1
+field_descriptors.Cell_left.has_default_value = false
+field_descriptors.Cell_left.default_value = ""
+field_descriptors.Cell_left.type = 9
+field_descriptors.Cell_left.cpp_type = 9
+type_descriptors.Cell.name = "Cell"
+type_descriptors.Cell.full_name = ".Cell"
+type_descriptors.Cell.nested_types = {}
+type_descriptors.Cell.enum_types = {}
+type_descriptors.Cell.fields = {
+	field_descriptors.Cell_point,
+	field_descriptors.Cell_up,
+	field_descriptors.Cell_right,
+	field_descriptors.Cell_down,
+	field_descriptors.Cell_left
+}
+type_descriptors.Cell.is_extendable = false
+type_descriptors.Cell.extensions = {}
+field_descriptors.Addition_addition.name = "addition"
+field_descriptors.Addition_addition.full_name = ".Addition.addition"
+field_descriptors.Addition_addition.number = 1
+field_descriptors.Addition_addition.index = 0
+field_descriptors.Addition_addition.label = 1
+field_descriptors.Addition_addition.has_default_value = false
+field_descriptors.Addition_addition.default_value = nil
+field_descriptors.Addition_addition.enum_type = type_descriptors.AdditionEnum
+field_descriptors.Addition_addition.type = 14
+field_descriptors.Addition_addition.cpp_type = 8
+field_descriptors.Addition_num.name = "num"
+field_descriptors.Addition_num.full_name = ".Addition.num"
+field_descriptors.Addition_num.number = 2
+field_descriptors.Addition_num.index = 1
+field_descriptors.Addition_num.label = 1
+field_descriptors.Addition_num.has_default_value = false
+field_descriptors.Addition_num.default_value = 0
+field_descriptors.Addition_num.type = 5
+field_descriptors.Addition_num.cpp_type = 1
+type_descriptors.Addition.name = "Addition"
+type_descriptors.Addition.full_name = ".Addition"
+type_descriptors.Addition.nested_types = {}
+type_descriptors.Addition.enum_types = {}
+type_descriptors.Addition.fields = {
+	field_descriptors.Addition_addition,
+	field_descriptors.Addition_num
+}
+type_descriptors.Addition.is_extendable = false
+type_descriptors.Addition.extensions = {}
+field_descriptors.ScriptInfo_scriptId.name = "scriptId"
+field_descriptors.ScriptInfo_scriptId.full_name = ".ScriptInfo.scriptId"
+field_descriptors.ScriptInfo_scriptId.number = 1
+field_descriptors.ScriptInfo_scriptId.index = 0
+field_descriptors.ScriptInfo_scriptId.label = 1
+field_descriptors.ScriptInfo_scriptId.has_default_value = false
+field_descriptors.ScriptInfo_scriptId.default_value = 0
+field_descriptors.ScriptInfo_scriptId.type = 5
+field_descriptors.ScriptInfo_scriptId.cpp_type = 1
+field_descriptors.ScriptInfo_unlockedDifficulty.name = "unlockedDifficulty"
+field_descriptors.ScriptInfo_unlockedDifficulty.full_name = ".ScriptInfo.unlockedDifficulty"
+field_descriptors.ScriptInfo_unlockedDifficulty.number = 2
+field_descriptors.ScriptInfo_unlockedDifficulty.index = 1
+field_descriptors.ScriptInfo_unlockedDifficulty.label = 1
+field_descriptors.ScriptInfo_unlockedDifficulty.has_default_value = false
+field_descriptors.ScriptInfo_unlockedDifficulty.default_value = 0
+field_descriptors.ScriptInfo_unlockedDifficulty.type = 5
+field_descriptors.ScriptInfo_unlockedDifficulty.cpp_type = 1
+field_descriptors.ScriptInfo_passCount.name = "passCount"
+field_descriptors.ScriptInfo_passCount.full_name = ".ScriptInfo.passCount"
+field_descriptors.ScriptInfo_passCount.number = 3
+field_descriptors.ScriptInfo_passCount.index = 2
+field_descriptors.ScriptInfo_passCount.label = 1
+field_descriptors.ScriptInfo_passCount.has_default_value = false
+field_descriptors.ScriptInfo_passCount.default_value = 0
+field_descriptors.ScriptInfo_passCount.type = 5
+field_descriptors.ScriptInfo_passCount.cpp_type = 1
+field_descriptors.ScriptInfo_touchIds.name = "touchIds"
+field_descriptors.ScriptInfo_touchIds.full_name = ".ScriptInfo.touchIds"
+field_descriptors.ScriptInfo_touchIds.number = 4
+field_descriptors.ScriptInfo_touchIds.index = 3
+field_descriptors.ScriptInfo_touchIds.label = 3
+field_descriptors.ScriptInfo_touchIds.has_default_value = false
+field_descriptors.ScriptInfo_touchIds.default_value = {}
+field_descriptors.ScriptInfo_touchIds.type = 5
+field_descriptors.ScriptInfo_touchIds.cpp_type = 1
+field_descriptors.ScriptInfo_options.name = "options"
+field_descriptors.ScriptInfo_options.full_name = ".ScriptInfo.options"
+field_descriptors.ScriptInfo_options.number = 5
+field_descriptors.ScriptInfo_options.index = 4
+field_descriptors.ScriptInfo_options.label = 3
+field_descriptors.ScriptInfo_options.has_default_value = false
+field_descriptors.ScriptInfo_options.default_value = {}
+field_descriptors.ScriptInfo_options.type = 5
+field_descriptors.ScriptInfo_options.cpp_type = 1
+field_descriptors.ScriptInfo_startSelectId.name = "startSelectId"
+field_descriptors.ScriptInfo_startSelectId.full_name = ".ScriptInfo.startSelectId"
+field_descriptors.ScriptInfo_startSelectId.number = 6
+field_descriptors.ScriptInfo_startSelectId.index = 5
+field_descriptors.ScriptInfo_startSelectId.label = 1
+field_descriptors.ScriptInfo_startSelectId.has_default_value = false
+field_descriptors.ScriptInfo_startSelectId.default_value = 0
+field_descriptors.ScriptInfo_startSelectId.type = 5
+field_descriptors.ScriptInfo_startSelectId.cpp_type = 1
+field_descriptors.ScriptInfo_startCard.name = "startCard"
+field_descriptors.ScriptInfo_startCard.full_name = ".ScriptInfo.startCard"
+field_descriptors.ScriptInfo_startCard.number = 7
+field_descriptors.ScriptInfo_startCard.index = 6
+field_descriptors.ScriptInfo_startCard.label = 3
+field_descriptors.ScriptInfo_startCard.has_default_value = false
+field_descriptors.ScriptInfo_startCard.default_value = {}
+field_descriptors.ScriptInfo_startCard.message_type = type_descriptors.CardNO
+field_descriptors.ScriptInfo_startCard.type = 11
+field_descriptors.ScriptInfo_startCard.cpp_type = 10
+field_descriptors.ScriptInfo_failCount.name = "failCount"
+field_descriptors.ScriptInfo_failCount.full_name = ".ScriptInfo.failCount"
+field_descriptors.ScriptInfo_failCount.number = 8
+field_descriptors.ScriptInfo_failCount.index = 7
+field_descriptors.ScriptInfo_failCount.label = 1
+field_descriptors.ScriptInfo_failCount.has_default_value = false
+field_descriptors.ScriptInfo_failCount.default_value = 0
+field_descriptors.ScriptInfo_failCount.type = 5
+field_descriptors.ScriptInfo_failCount.cpp_type = 1
+field_descriptors.ScriptInfo_totalCount.name = "totalCount"
+field_descriptors.ScriptInfo_totalCount.full_name = ".ScriptInfo.totalCount"
+field_descriptors.ScriptInfo_totalCount.number = 9
+field_descriptors.ScriptInfo_totalCount.index = 8
+field_descriptors.ScriptInfo_totalCount.label = 1
+field_descriptors.ScriptInfo_totalCount.has_default_value = false
+field_descriptors.ScriptInfo_totalCount.default_value = 0
+field_descriptors.ScriptInfo_totalCount.type = 5
+field_descriptors.ScriptInfo_totalCount.cpp_type = 1
+type_descriptors.ScriptInfo.name = "ScriptInfo"
+type_descriptors.ScriptInfo.full_name = ".ScriptInfo"
+type_descriptors.ScriptInfo.nested_types = {}
+type_descriptors.ScriptInfo.enum_types = {}
+type_descriptors.ScriptInfo.fields = {
+	field_descriptors.ScriptInfo_scriptId,
+	field_descriptors.ScriptInfo_unlockedDifficulty,
+	field_descriptors.ScriptInfo_passCount,
+	field_descriptors.ScriptInfo_touchIds,
+	field_descriptors.ScriptInfo_options,
+	field_descriptors.ScriptInfo_startSelectId,
+	field_descriptors.ScriptInfo_startCard,
+	field_descriptors.ScriptInfo_failCount,
+	field_descriptors.ScriptInfo_totalCount
+}
+type_descriptors.ScriptInfo.is_extendable = false
+type_descriptors.ScriptInfo.extensions = {}
+field_descriptors.ChangeCollector_type.name = "type"
+field_descriptors.ChangeCollector_type.full_name = ".ChangeCollector.type"
+field_descriptors.ChangeCollector_type.number = 1
+field_descriptors.ChangeCollector_type.index = 0
+field_descriptors.ChangeCollector_type.label = 1
+field_descriptors.ChangeCollector_type.has_default_value = false
+field_descriptors.ChangeCollector_type.default_value = nil
+field_descriptors.ChangeCollector_type.enum_type = type_descriptors.AttrType
+field_descriptors.ChangeCollector_type.type = 14
+field_descriptors.ChangeCollector_type.cpp_type = 8
+field_descriptors.ChangeCollector_num.name = "num"
+field_descriptors.ChangeCollector_num.full_name = ".ChangeCollector.num"
+field_descriptors.ChangeCollector_num.number = 2
+field_descriptors.ChangeCollector_num.index = 1
+field_descriptors.ChangeCollector_num.label = 1
+field_descriptors.ChangeCollector_num.has_default_value = false
+field_descriptors.ChangeCollector_num.default_value = 0
+field_descriptors.ChangeCollector_num.type = 5
+field_descriptors.ChangeCollector_num.cpp_type = 1
+field_descriptors.ChangeCollector_heroId.name = "heroId"
+field_descriptors.ChangeCollector_heroId.full_name = ".ChangeCollector.heroId"
+field_descriptors.ChangeCollector_heroId.number = 3
+field_descriptors.ChangeCollector_heroId.index = 2
+field_descriptors.ChangeCollector_heroId.label = 1
+field_descriptors.ChangeCollector_heroId.has_default_value = false
+field_descriptors.ChangeCollector_heroId.default_value = 0
+field_descriptors.ChangeCollector_heroId.type = 5
+field_descriptors.ChangeCollector_heroId.cpp_type = 1
+field_descriptors.ChangeCollector_id.name = "id"
+field_descriptors.ChangeCollector_id.full_name = ".ChangeCollector.id"
+field_descriptors.ChangeCollector_id.number = 4
+field_descriptors.ChangeCollector_id.index = 3
+field_descriptors.ChangeCollector_id.label = 1
+field_descriptors.ChangeCollector_id.has_default_value = false
+field_descriptors.ChangeCollector_id.default_value = 0
+field_descriptors.ChangeCollector_id.type = 5
+field_descriptors.ChangeCollector_id.cpp_type = 1
+type_descriptors.ChangeCollector.name = "ChangeCollector"
+type_descriptors.ChangeCollector.full_name = ".ChangeCollector"
+type_descriptors.ChangeCollector.nested_types = {}
+type_descriptors.ChangeCollector.enum_types = {}
+type_descriptors.ChangeCollector.fields = {
+	field_descriptors.ChangeCollector_type,
+	field_descriptors.ChangeCollector_num,
+	field_descriptors.ChangeCollector_heroId,
+	field_descriptors.ChangeCollector_id
+}
+type_descriptors.ChangeCollector.is_extendable = false
+type_descriptors.ChangeCollector.extensions = {}
+type_descriptors.GuessDiceGetRewardReply.name = "GuessDiceGetRewardReply"
+type_descriptors.GuessDiceGetRewardReply.full_name = ".GuessDiceGetRewardReply"
+type_descriptors.GuessDiceGetRewardReply.nested_types = {}
+type_descriptors.GuessDiceGetRewardReply.enum_types = {}
+type_descriptors.GuessDiceGetRewardReply.fields = {}
+type_descriptors.GuessDiceGetRewardReply.is_extendable = false
+type_descriptors.GuessDiceGetRewardReply.extensions = {}
+type_descriptors.StartCardSelectHeroReply.name = "StartCardSelectHeroReply"
+type_descriptors.StartCardSelectHeroReply.full_name = ".StartCardSelectHeroReply"
+type_descriptors.StartCardSelectHeroReply.nested_types = {}
+type_descriptors.StartCardSelectHeroReply.enum_types = {}
+type_descriptors.StartCardSelectHeroReply.fields = {}
+type_descriptors.StartCardSelectHeroReply.is_extendable = false
+type_descriptors.StartCardSelectHeroReply.extensions = {}
+type_descriptors.QuitRequest.name = "QuitRequest"
+type_descriptors.QuitRequest.full_name = ".QuitRequest"
+type_descriptors.QuitRequest.nested_types = {}
+type_descriptors.QuitRequest.enum_types = {}
+type_descriptors.QuitRequest.fields = {}
+type_descriptors.QuitRequest.is_extendable = false
+type_descriptors.QuitRequest.extensions = {}
+field_descriptors.EndSelectRequest_id.name = "id"
+field_descriptors.EndSelectRequest_id.full_name = ".EndSelectRequest.id"
+field_descriptors.EndSelectRequest_id.number = 1
+field_descriptors.EndSelectRequest_id.index = 0
+field_descriptors.EndSelectRequest_id.label = 1
+field_descriptors.EndSelectRequest_id.has_default_value = false
+field_descriptors.EndSelectRequest_id.default_value = 0
+field_descriptors.EndSelectRequest_id.type = 5
+field_descriptors.EndSelectRequest_id.cpp_type = 1
+type_descriptors.EndSelectRequest.name = "EndSelectRequest"
+type_descriptors.EndSelectRequest.full_name = ".EndSelectRequest"
+type_descriptors.EndSelectRequest.nested_types = {}
+type_descriptors.EndSelectRequest.enum_types = {}
+type_descriptors.EndSelectRequest.fields = {
+	field_descriptors.EndSelectRequest_id
+}
+type_descriptors.EndSelectRequest.is_extendable = false
+type_descriptors.EndSelectRequest.extensions = {}
+type_descriptors.LoadAllRoomPrizesRequest.name = "LoadAllRoomPrizesRequest"
+type_descriptors.LoadAllRoomPrizesRequest.full_name = ".LoadAllRoomPrizesRequest"
+type_descriptors.LoadAllRoomPrizesRequest.nested_types = {}
+type_descriptors.LoadAllRoomPrizesRequest.enum_types = {}
+type_descriptors.LoadAllRoomPrizesRequest.fields = {}
+type_descriptors.LoadAllRoomPrizesRequest.is_extendable = false
+type_descriptors.LoadAllRoomPrizesRequest.extensions = {}
+field_descriptors.EffectSourceNO_type.name = "type"
+field_descriptors.EffectSourceNO_type.full_name = ".EffectSourceNO.type"
+field_descriptors.EffectSourceNO_type.number = 1
+field_descriptors.EffectSourceNO_type.index = 0
+field_descriptors.EffectSourceNO_type.label = 1
+field_descriptors.EffectSourceNO_type.has_default_value = false
+field_descriptors.EffectSourceNO_type.default_value = nil
+field_descriptors.EffectSourceNO_type.enum_type = type_descriptors.EffectSourceType
+field_descriptors.EffectSourceNO_type.type = 14
+field_descriptors.EffectSourceNO_type.cpp_type = 8
+field_descriptors.EffectSourceNO_sourceId.name = "sourceId"
+field_descriptors.EffectSourceNO_sourceId.full_name = ".EffectSourceNO.sourceId"
+field_descriptors.EffectSourceNO_sourceId.number = 2
+field_descriptors.EffectSourceNO_sourceId.index = 1
+field_descriptors.EffectSourceNO_sourceId.label = 1
+field_descriptors.EffectSourceNO_sourceId.has_default_value = false
+field_descriptors.EffectSourceNO_sourceId.default_value = 0
+field_descriptors.EffectSourceNO_sourceId.type = 5
+field_descriptors.EffectSourceNO_sourceId.cpp_type = 1
+field_descriptors.EffectSourceNO_effectId.name = "effectId"
+field_descriptors.EffectSourceNO_effectId.full_name = ".EffectSourceNO.effectId"
+field_descriptors.EffectSourceNO_effectId.number = 3
+field_descriptors.EffectSourceNO_effectId.index = 2
+field_descriptors.EffectSourceNO_effectId.label = 3
+field_descriptors.EffectSourceNO_effectId.has_default_value = false
+field_descriptors.EffectSourceNO_effectId.default_value = {}
+field_descriptors.EffectSourceNO_effectId.type = 5
+field_descriptors.EffectSourceNO_effectId.cpp_type = 1
+type_descriptors.EffectSourceNO.name = "EffectSourceNO"
+type_descriptors.EffectSourceNO.full_name = ".EffectSourceNO"
+type_descriptors.EffectSourceNO.nested_types = {}
+type_descriptors.EffectSourceNO.enum_types = {}
+type_descriptors.EffectSourceNO.fields = {
+	field_descriptors.EffectSourceNO_type,
+	field_descriptors.EffectSourceNO_sourceId,
+	field_descriptors.EffectSourceNO_effectId
+}
+type_descriptors.EffectSourceNO.is_extendable = false
+type_descriptors.EffectSourceNO.extensions = {}
+type_descriptors.LoadLogsRequest.name = "LoadLogsRequest"
+type_descriptors.LoadLogsRequest.full_name = ".LoadLogsRequest"
+type_descriptors.LoadLogsRequest.nested_types = {}
+type_descriptors.LoadLogsRequest.enum_types = {}
+type_descriptors.LoadLogsRequest.fields = {}
+type_descriptors.LoadLogsRequest.is_extendable = false
+type_descriptors.LoadLogsRequest.extensions = {}
+type_descriptors.RoguelikeListTaskRequest.name = "RoguelikeListTaskRequest"
+type_descriptors.RoguelikeListTaskRequest.full_name = ".RoguelikeListTaskRequest"
+type_descriptors.RoguelikeListTaskRequest.nested_types = {}
+type_descriptors.RoguelikeListTaskRequest.enum_types = {}
+type_descriptors.RoguelikeListTaskRequest.fields = {}
+type_descriptors.RoguelikeListTaskRequest.is_extendable = false
+type_descriptors.RoguelikeListTaskRequest.extensions = {}
+field_descriptors.GuessDiceGetRewardRequest_index.name = "index"
+field_descriptors.GuessDiceGetRewardRequest_index.full_name = ".GuessDiceGetRewardRequest.index"
+field_descriptors.GuessDiceGetRewardRequest_index.number = 1
+field_descriptors.GuessDiceGetRewardRequest_index.index = 0
+field_descriptors.GuessDiceGetRewardRequest_index.label = 1
+field_descriptors.GuessDiceGetRewardRequest_index.has_default_value = false
+field_descriptors.GuessDiceGetRewardRequest_index.default_value = 0
+field_descriptors.GuessDiceGetRewardRequest_index.type = 5
+field_descriptors.GuessDiceGetRewardRequest_index.cpp_type = 1
+field_descriptors.GuessDiceGetRewardRequest_id.name = "id"
+field_descriptors.GuessDiceGetRewardRequest_id.full_name = ".GuessDiceGetRewardRequest.id"
+field_descriptors.GuessDiceGetRewardRequest_id.number = 2
+field_descriptors.GuessDiceGetRewardRequest_id.index = 1
+field_descriptors.GuessDiceGetRewardRequest_id.label = 1
+field_descriptors.GuessDiceGetRewardRequest_id.has_default_value = false
+field_descriptors.GuessDiceGetRewardRequest_id.default_value = 0
+field_descriptors.GuessDiceGetRewardRequest_id.type = 5
+field_descriptors.GuessDiceGetRewardRequest_id.cpp_type = 1
+type_descriptors.GuessDiceGetRewardRequest.name = "GuessDiceGetRewardRequest"
+type_descriptors.GuessDiceGetRewardRequest.full_name = ".GuessDiceGetRewardRequest"
+type_descriptors.GuessDiceGetRewardRequest.nested_types = {}
+type_descriptors.GuessDiceGetRewardRequest.enum_types = {}
+type_descriptors.GuessDiceGetRewardRequest.fields = {
+	field_descriptors.GuessDiceGetRewardRequest_index,
+	field_descriptors.GuessDiceGetRewardRequest_id
+}
+type_descriptors.GuessDiceGetRewardRequest.is_extendable = false
+type_descriptors.GuessDiceGetRewardRequest.extensions = {}
+field_descriptors.MonsterPush_id.name = "id"
+field_descriptors.MonsterPush_id.full_name = ".MonsterPush.id"
+field_descriptors.MonsterPush_id.number = 1
+field_descriptors.MonsterPush_id.index = 0
+field_descriptors.MonsterPush_id.label = 1
+field_descriptors.MonsterPush_id.has_default_value = false
+field_descriptors.MonsterPush_id.default_value = 0
+field_descriptors.MonsterPush_id.type = 5
+field_descriptors.MonsterPush_id.cpp_type = 1
+type_descriptors.MonsterPush.name = "MonsterPush"
+type_descriptors.MonsterPush.full_name = ".MonsterPush"
+type_descriptors.MonsterPush.nested_types = {}
+type_descriptors.MonsterPush.enum_types = {}
+type_descriptors.MonsterPush.fields = {
+	field_descriptors.MonsterPush_id
+}
+type_descriptors.MonsterPush.is_extendable = false
+type_descriptors.MonsterPush.extensions = {}
+field_descriptors.RoomNO_point.name = "point"
+field_descriptors.RoomNO_point.full_name = ".RoomNO.point"
+field_descriptors.RoomNO_point.number = 1
+field_descriptors.RoomNO_point.index = 0
+field_descriptors.RoomNO_point.label = 1
+field_descriptors.RoomNO_point.has_default_value = false
+field_descriptors.RoomNO_point.default_value = ""
+field_descriptors.RoomNO_point.type = 9
+field_descriptors.RoomNO_point.cpp_type = 9
+field_descriptors.RoomNO_id.name = "id"
+field_descriptors.RoomNO_id.full_name = ".RoomNO.id"
+field_descriptors.RoomNO_id.number = 2
+field_descriptors.RoomNO_id.index = 1
+field_descriptors.RoomNO_id.label = 1
+field_descriptors.RoomNO_id.has_default_value = false
+field_descriptors.RoomNO_id.default_value = 0
+field_descriptors.RoomNO_id.type = 5
+field_descriptors.RoomNO_id.cpp_type = 1
+field_descriptors.RoomNO_type.name = "type"
+field_descriptors.RoomNO_type.full_name = ".RoomNO.type"
+field_descriptors.RoomNO_type.number = 3
+field_descriptors.RoomNO_type.index = 2
+field_descriptors.RoomNO_type.label = 1
+field_descriptors.RoomNO_type.has_default_value = false
+field_descriptors.RoomNO_type.default_value = nil
+field_descriptors.RoomNO_type.enum_type = type_descriptors.RoomType
+field_descriptors.RoomNO_type.type = 14
+field_descriptors.RoomNO_type.cpp_type = 8
+field_descriptors.RoomNO_content.name = "content"
+field_descriptors.RoomNO_content.full_name = ".RoomNO.content"
+field_descriptors.RoomNO_content.number = 4
+field_descriptors.RoomNO_content.index = 3
+field_descriptors.RoomNO_content.label = 1
+field_descriptors.RoomNO_content.has_default_value = false
+field_descriptors.RoomNO_content.default_value = ""
+field_descriptors.RoomNO_content.type = 9
+field_descriptors.RoomNO_content.cpp_type = 9
+field_descriptors.RoomNO_vision.name = "vision"
+field_descriptors.RoomNO_vision.full_name = ".RoomNO.vision"
+field_descriptors.RoomNO_vision.number = 5
+field_descriptors.RoomNO_vision.index = 4
+field_descriptors.RoomNO_vision.label = 1
+field_descriptors.RoomNO_vision.has_default_value = false
+field_descriptors.RoomNO_vision.default_value = nil
+field_descriptors.RoomNO_vision.enum_type = type_descriptors.Vision
+field_descriptors.RoomNO_vision.type = 14
+field_descriptors.RoomNO_vision.cpp_type = 8
+field_descriptors.RoomNO_finished.name = "finished"
+field_descriptors.RoomNO_finished.full_name = ".RoomNO.finished"
+field_descriptors.RoomNO_finished.number = 6
+field_descriptors.RoomNO_finished.index = 5
+field_descriptors.RoomNO_finished.label = 1
+field_descriptors.RoomNO_finished.has_default_value = false
+field_descriptors.RoomNO_finished.default_value = false
+field_descriptors.RoomNO_finished.type = 8
+field_descriptors.RoomNO_finished.cpp_type = 7
+type_descriptors.RoomNO.name = "RoomNO"
+type_descriptors.RoomNO.full_name = ".RoomNO"
+type_descriptors.RoomNO.nested_types = {}
+type_descriptors.RoomNO.enum_types = {}
+type_descriptors.RoomNO.fields = {
+	field_descriptors.RoomNO_point,
+	field_descriptors.RoomNO_id,
+	field_descriptors.RoomNO_type,
+	field_descriptors.RoomNO_content,
+	field_descriptors.RoomNO_vision,
+	field_descriptors.RoomNO_finished
+}
+type_descriptors.RoomNO.is_extendable = false
+type_descriptors.RoomNO.extensions = {}
+field_descriptors.PlayerInfoUpdatePush_info.name = "info"
+field_descriptors.PlayerInfoUpdatePush_info.full_name = ".PlayerInfoUpdatePush.info"
+field_descriptors.PlayerInfoUpdatePush_info.number = 1
+field_descriptors.PlayerInfoUpdatePush_info.index = 0
+field_descriptors.PlayerInfoUpdatePush_info.label = 1
+field_descriptors.PlayerInfoUpdatePush_info.has_default_value = false
+field_descriptors.PlayerInfoUpdatePush_info.default_value = nil
+field_descriptors.PlayerInfoUpdatePush_info.message_type = type_descriptors.ExploreInfo
+field_descriptors.PlayerInfoUpdatePush_info.type = 11
+field_descriptors.PlayerInfoUpdatePush_info.cpp_type = 10
+type_descriptors.PlayerInfoUpdatePush.name = "PlayerInfoUpdatePush"
+type_descriptors.PlayerInfoUpdatePush.full_name = ".PlayerInfoUpdatePush"
+type_descriptors.PlayerInfoUpdatePush.nested_types = {}
+type_descriptors.PlayerInfoUpdatePush.enum_types = {}
+type_descriptors.PlayerInfoUpdatePush.fields = {
+	field_descriptors.PlayerInfoUpdatePush_info
+}
+type_descriptors.PlayerInfoUpdatePush.is_extendable = false
+type_descriptors.PlayerInfoUpdatePush.extensions = {}
+type_descriptors.LuckyDiceReply.name = "LuckyDiceReply"
+type_descriptors.LuckyDiceReply.full_name = ".LuckyDiceReply"
+type_descriptors.LuckyDiceReply.nested_types = {}
+type_descriptors.LuckyDiceReply.enum_types = {}
+type_descriptors.LuckyDiceReply.fields = {}
+type_descriptors.LuckyDiceReply.is_extendable = false
+type_descriptors.LuckyDiceReply.extensions = {}
+field_descriptors.ArchiveNO_type.name = "type"
+field_descriptors.ArchiveNO_type.full_name = ".ArchiveNO.type"
+field_descriptors.ArchiveNO_type.number = 1
+field_descriptors.ArchiveNO_type.index = 0
+field_descriptors.ArchiveNO_type.label = 1
+field_descriptors.ArchiveNO_type.has_default_value = false
+field_descriptors.ArchiveNO_type.default_value = nil
+field_descriptors.ArchiveNO_type.enum_type = type_descriptors.JudgeType
+field_descriptors.ArchiveNO_type.type = 14
+field_descriptors.ArchiveNO_type.cpp_type = 8
+field_descriptors.ArchiveNO_enemyId.name = "enemyId"
+field_descriptors.ArchiveNO_enemyId.full_name = ".ArchiveNO.enemyId"
+field_descriptors.ArchiveNO_enemyId.number = 2
+field_descriptors.ArchiveNO_enemyId.index = 1
+field_descriptors.ArchiveNO_enemyId.label = 1
+field_descriptors.ArchiveNO_enemyId.has_default_value = false
+field_descriptors.ArchiveNO_enemyId.default_value = 0
+field_descriptors.ArchiveNO_enemyId.type = 5
+field_descriptors.ArchiveNO_enemyId.cpp_type = 1
+field_descriptors.ArchiveNO_eventId.name = "eventId"
+field_descriptors.ArchiveNO_eventId.full_name = ".ArchiveNO.eventId"
+field_descriptors.ArchiveNO_eventId.number = 3
+field_descriptors.ArchiveNO_eventId.index = 2
+field_descriptors.ArchiveNO_eventId.label = 1
+field_descriptors.ArchiveNO_eventId.has_default_value = false
+field_descriptors.ArchiveNO_eventId.default_value = 0
+field_descriptors.ArchiveNO_eventId.type = 5
+field_descriptors.ArchiveNO_eventId.cpp_type = 1
+field_descriptors.ArchiveNO_enemyOuterHp.name = "enemyOuterHp"
+field_descriptors.ArchiveNO_enemyOuterHp.full_name = ".ArchiveNO.enemyOuterHp"
+field_descriptors.ArchiveNO_enemyOuterHp.number = 4
+field_descriptors.ArchiveNO_enemyOuterHp.index = 3
+field_descriptors.ArchiveNO_enemyOuterHp.label = 1
+field_descriptors.ArchiveNO_enemyOuterHp.has_default_value = false
+field_descriptors.ArchiveNO_enemyOuterHp.default_value = 0
+field_descriptors.ArchiveNO_enemyOuterHp.type = 5
+field_descriptors.ArchiveNO_enemyOuterHp.cpp_type = 1
+field_descriptors.ArchiveNO_enemyInnerHp.name = "enemyInnerHp"
+field_descriptors.ArchiveNO_enemyInnerHp.full_name = ".ArchiveNO.enemyInnerHp"
+field_descriptors.ArchiveNO_enemyInnerHp.number = 5
+field_descriptors.ArchiveNO_enemyInnerHp.index = 4
+field_descriptors.ArchiveNO_enemyInnerHp.label = 1
+field_descriptors.ArchiveNO_enemyInnerHp.has_default_value = false
+field_descriptors.ArchiveNO_enemyInnerHp.default_value = 0
+field_descriptors.ArchiveNO_enemyInnerHp.type = 5
+field_descriptors.ArchiveNO_enemyInnerHp.cpp_type = 1
+field_descriptors.ArchiveNO_enemyOption.name = "enemyOption"
+field_descriptors.ArchiveNO_enemyOption.full_name = ".ArchiveNO.enemyOption"
+field_descriptors.ArchiveNO_enemyOption.number = 6
+field_descriptors.ArchiveNO_enemyOption.index = 5
+field_descriptors.ArchiveNO_enemyOption.label = 1
+field_descriptors.ArchiveNO_enemyOption.has_default_value = false
+field_descriptors.ArchiveNO_enemyOption.default_value = 0
+field_descriptors.ArchiveNO_enemyOption.type = 5
+field_descriptors.ArchiveNO_enemyOption.cpp_type = 1
+field_descriptors.ArchiveNO_round.name = "round"
+field_descriptors.ArchiveNO_round.full_name = ".ArchiveNO.round"
+field_descriptors.ArchiveNO_round.number = 7
+field_descriptors.ArchiveNO_round.index = 6
+field_descriptors.ArchiveNO_round.label = 1
+field_descriptors.ArchiveNO_round.has_default_value = false
+field_descriptors.ArchiveNO_round.default_value = 0
+field_descriptors.ArchiveNO_round.type = 5
+field_descriptors.ArchiveNO_round.cpp_type = 1
+field_descriptors.ArchiveNO_roleWall.name = "roleWall"
+field_descriptors.ArchiveNO_roleWall.full_name = ".ArchiveNO.roleWall"
+field_descriptors.ArchiveNO_roleWall.number = 8
+field_descriptors.ArchiveNO_roleWall.index = 7
+field_descriptors.ArchiveNO_roleWall.label = 1
+field_descriptors.ArchiveNO_roleWall.has_default_value = false
+field_descriptors.ArchiveNO_roleWall.default_value = 0
+field_descriptors.ArchiveNO_roleWall.type = 5
+field_descriptors.ArchiveNO_roleWall.cpp_type = 1
+field_descriptors.ArchiveNO_heroId.name = "heroId"
+field_descriptors.ArchiveNO_heroId.full_name = ".ArchiveNO.heroId"
+field_descriptors.ArchiveNO_heroId.number = 9
+field_descriptors.ArchiveNO_heroId.index = 8
+field_descriptors.ArchiveNO_heroId.label = 1
+field_descriptors.ArchiveNO_heroId.has_default_value = false
+field_descriptors.ArchiveNO_heroId.default_value = 0
+field_descriptors.ArchiveNO_heroId.type = 5
+field_descriptors.ArchiveNO_heroId.cpp_type = 1
+field_descriptors.ArchiveNO_enemyFace.name = "enemyFace"
+field_descriptors.ArchiveNO_enemyFace.full_name = ".ArchiveNO.enemyFace"
+field_descriptors.ArchiveNO_enemyFace.number = 10
+field_descriptors.ArchiveNO_enemyFace.index = 9
+field_descriptors.ArchiveNO_enemyFace.label = 1
+field_descriptors.ArchiveNO_enemyFace.has_default_value = false
+field_descriptors.ArchiveNO_enemyFace.default_value = nil
+field_descriptors.ArchiveNO_enemyFace.message_type = type_descriptors.FaceNO
+field_descriptors.ArchiveNO_enemyFace.type = 11
+field_descriptors.ArchiveNO_enemyFace.cpp_type = 10
+field_descriptors.ArchiveNO_selectedAttr.name = "selectedAttr"
+field_descriptors.ArchiveNO_selectedAttr.full_name = ".ArchiveNO.selectedAttr"
+field_descriptors.ArchiveNO_selectedAttr.number = 11
+field_descriptors.ArchiveNO_selectedAttr.index = 10
+field_descriptors.ArchiveNO_selectedAttr.label = 1
+field_descriptors.ArchiveNO_selectedAttr.has_default_value = false
+field_descriptors.ArchiveNO_selectedAttr.default_value = nil
+field_descriptors.ArchiveNO_selectedAttr.enum_type = type_descriptors.AttrType
+field_descriptors.ArchiveNO_selectedAttr.type = 14
+field_descriptors.ArchiveNO_selectedAttr.cpp_type = 8
+field_descriptors.ArchiveNO_isJudged.name = "isJudged"
+field_descriptors.ArchiveNO_isJudged.full_name = ".ArchiveNO.isJudged"
+field_descriptors.ArchiveNO_isJudged.number = 12
+field_descriptors.ArchiveNO_isJudged.index = 11
+field_descriptors.ArchiveNO_isJudged.label = 1
+field_descriptors.ArchiveNO_isJudged.has_default_value = false
+field_descriptors.ArchiveNO_isJudged.default_value = false
+field_descriptors.ArchiveNO_isJudged.type = 8
+field_descriptors.ArchiveNO_isJudged.cpp_type = 7
+field_descriptors.ArchiveNO_curFeature.name = "curFeature"
+field_descriptors.ArchiveNO_curFeature.full_name = ".ArchiveNO.curFeature"
+field_descriptors.ArchiveNO_curFeature.number = 13
+field_descriptors.ArchiveNO_curFeature.index = 12
+field_descriptors.ArchiveNO_curFeature.label = 1
+field_descriptors.ArchiveNO_curFeature.has_default_value = false
+field_descriptors.ArchiveNO_curFeature.default_value = 0
+field_descriptors.ArchiveNO_curFeature.type = 5
+field_descriptors.ArchiveNO_curFeature.cpp_type = 1
+field_descriptors.ArchiveNO_features.name = "features"
+field_descriptors.ArchiveNO_features.full_name = ".ArchiveNO.features"
+field_descriptors.ArchiveNO_features.number = 14
+field_descriptors.ArchiveNO_features.index = 13
+field_descriptors.ArchiveNO_features.label = 3
+field_descriptors.ArchiveNO_features.has_default_value = false
+field_descriptors.ArchiveNO_features.default_value = {}
+field_descriptors.ArchiveNO_features.type = 5
+field_descriptors.ArchiveNO_features.cpp_type = 1
+field_descriptors.ArchiveNO_entry.name = "entry"
+field_descriptors.ArchiveNO_entry.full_name = ".ArchiveNO.entry"
+field_descriptors.ArchiveNO_entry.number = 15
+field_descriptors.ArchiveNO_entry.index = 14
+field_descriptors.ArchiveNO_entry.label = 3
+field_descriptors.ArchiveNO_entry.has_default_value = false
+field_descriptors.ArchiveNO_entry.default_value = {}
+field_descriptors.ArchiveNO_entry.type = 5
+field_descriptors.ArchiveNO_entry.cpp_type = 1
+field_descriptors.ArchiveNO_entryNext.name = "entryNext"
+field_descriptors.ArchiveNO_entryNext.full_name = ".ArchiveNO.entryNext"
+field_descriptors.ArchiveNO_entryNext.number = 16
+field_descriptors.ArchiveNO_entryNext.index = 15
+field_descriptors.ArchiveNO_entryNext.label = 3
+field_descriptors.ArchiveNO_entryNext.has_default_value = false
+field_descriptors.ArchiveNO_entryNext.default_value = {}
+field_descriptors.ArchiveNO_entryNext.type = 5
+field_descriptors.ArchiveNO_entryNext.cpp_type = 1
+field_descriptors.ArchiveNO_lossValue.name = "lossValue"
+field_descriptors.ArchiveNO_lossValue.full_name = ".ArchiveNO.lossValue"
+field_descriptors.ArchiveNO_lossValue.number = 17
+field_descriptors.ArchiveNO_lossValue.index = 16
+field_descriptors.ArchiveNO_lossValue.label = 3
+field_descriptors.ArchiveNO_lossValue.has_default_value = false
+field_descriptors.ArchiveNO_lossValue.default_value = {}
+field_descriptors.ArchiveNO_lossValue.message_type = type_descriptors.RoleChangeValue
+field_descriptors.ArchiveNO_lossValue.type = 11
+field_descriptors.ArchiveNO_lossValue.cpp_type = 10
+field_descriptors.ArchiveNO_cardUseInfo.name = "cardUseInfo"
+field_descriptors.ArchiveNO_cardUseInfo.full_name = ".ArchiveNO.cardUseInfo"
+field_descriptors.ArchiveNO_cardUseInfo.number = 18
+field_descriptors.ArchiveNO_cardUseInfo.index = 17
+field_descriptors.ArchiveNO_cardUseInfo.label = 3
+field_descriptors.ArchiveNO_cardUseInfo.has_default_value = false
+field_descriptors.ArchiveNO_cardUseInfo.default_value = {}
+field_descriptors.ArchiveNO_cardUseInfo.message_type = type_descriptors.CardValue
+field_descriptors.ArchiveNO_cardUseInfo.type = 11
+field_descriptors.ArchiveNO_cardUseInfo.cpp_type = 10
+type_descriptors.ArchiveNO.name = "ArchiveNO"
+type_descriptors.ArchiveNO.full_name = ".ArchiveNO"
+type_descriptors.ArchiveNO.nested_types = {}
+type_descriptors.ArchiveNO.enum_types = {}
+type_descriptors.ArchiveNO.fields = {
+	field_descriptors.ArchiveNO_type,
+	field_descriptors.ArchiveNO_enemyId,
+	field_descriptors.ArchiveNO_eventId,
+	field_descriptors.ArchiveNO_enemyOuterHp,
+	field_descriptors.ArchiveNO_enemyInnerHp,
+	field_descriptors.ArchiveNO_enemyOption,
+	field_descriptors.ArchiveNO_round,
+	field_descriptors.ArchiveNO_roleWall,
+	field_descriptors.ArchiveNO_heroId,
+	field_descriptors.ArchiveNO_enemyFace,
+	field_descriptors.ArchiveNO_selectedAttr,
+	field_descriptors.ArchiveNO_isJudged,
+	field_descriptors.ArchiveNO_curFeature,
+	field_descriptors.ArchiveNO_features,
+	field_descriptors.ArchiveNO_entry,
+	field_descriptors.ArchiveNO_entryNext,
+	field_descriptors.ArchiveNO_lossValue,
+	field_descriptors.ArchiveNO_cardUseInfo
+}
+type_descriptors.ArchiveNO.is_extendable = false
+type_descriptors.ArchiveNO.extensions = {}
+type_descriptors.LoadScriptRequest.name = "LoadScriptRequest"
+type_descriptors.LoadScriptRequest.full_name = ".LoadScriptRequest"
+type_descriptors.LoadScriptRequest.nested_types = {}
+type_descriptors.LoadScriptRequest.enum_types = {}
+type_descriptors.LoadScriptRequest.fields = {}
+type_descriptors.LoadScriptRequest.is_extendable = false
+type_descriptors.LoadScriptRequest.extensions = {}
+field_descriptors.EndJudgeRequest_success.name = "success"
+field_descriptors.EndJudgeRequest_success.full_name = ".EndJudgeRequest.success"
+field_descriptors.EndJudgeRequest_success.number = 1
+field_descriptors.EndJudgeRequest_success.index = 0
+field_descriptors.EndJudgeRequest_success.label = 1
+field_descriptors.EndJudgeRequest_success.has_default_value = false
+field_descriptors.EndJudgeRequest_success.default_value = 0
+field_descriptors.EndJudgeRequest_success.type = 5
+field_descriptors.EndJudgeRequest_success.cpp_type = 1
+type_descriptors.EndJudgeRequest.name = "EndJudgeRequest"
+type_descriptors.EndJudgeRequest.full_name = ".EndJudgeRequest"
+type_descriptors.EndJudgeRequest.nested_types = {}
+type_descriptors.EndJudgeRequest.enum_types = {}
+type_descriptors.EndJudgeRequest.fields = {
+	field_descriptors.EndJudgeRequest_success
+}
+type_descriptors.EndJudgeRequest.is_extendable = false
+type_descriptors.EndJudgeRequest.extensions = {}
+field_descriptors.EquipPush_equip.name = "equip"
+field_descriptors.EquipPush_equip.full_name = ".EquipPush.equip"
+field_descriptors.EquipPush_equip.number = 1
+field_descriptors.EquipPush_equip.index = 0
+field_descriptors.EquipPush_equip.label = 3
+field_descriptors.EquipPush_equip.has_default_value = false
+field_descriptors.EquipPush_equip.default_value = {}
+field_descriptors.EquipPush_equip.message_type = type_descriptors.EquipNO
+field_descriptors.EquipPush_equip.type = 11
+field_descriptors.EquipPush_equip.cpp_type = 10
+type_descriptors.EquipPush.name = "EquipPush"
+type_descriptors.EquipPush.full_name = ".EquipPush"
+type_descriptors.EquipPush.nested_types = {}
+type_descriptors.EquipPush.enum_types = {}
+type_descriptors.EquipPush.fields = {
+	field_descriptors.EquipPush_equip
+}
+type_descriptors.EquipPush.is_extendable = false
+type_descriptors.EquipPush.extensions = {}
+type_descriptors.GetAllEquipRequest.name = "GetAllEquipRequest"
+type_descriptors.GetAllEquipRequest.full_name = ".GetAllEquipRequest"
+type_descriptors.GetAllEquipRequest.nested_types = {}
+type_descriptors.GetAllEquipRequest.enum_types = {}
+type_descriptors.GetAllEquipRequest.fields = {}
+type_descriptors.GetAllEquipRequest.is_extendable = false
+type_descriptors.GetAllEquipRequest.extensions = {}
+field_descriptors.LuckyDiceRequest_id.name = "id"
+field_descriptors.LuckyDiceRequest_id.full_name = ".LuckyDiceRequest.id"
+field_descriptors.LuckyDiceRequest_id.number = 1
+field_descriptors.LuckyDiceRequest_id.index = 0
+field_descriptors.LuckyDiceRequest_id.label = 1
+field_descriptors.LuckyDiceRequest_id.has_default_value = false
+field_descriptors.LuckyDiceRequest_id.default_value = 0
+field_descriptors.LuckyDiceRequest_id.type = 5
+field_descriptors.LuckyDiceRequest_id.cpp_type = 1
+type_descriptors.LuckyDiceRequest.name = "LuckyDiceRequest"
+type_descriptors.LuckyDiceRequest.full_name = ".LuckyDiceRequest"
+type_descriptors.LuckyDiceRequest.nested_types = {}
+type_descriptors.LuckyDiceRequest.enum_types = {}
+type_descriptors.LuckyDiceRequest.fields = {
+	field_descriptors.LuckyDiceRequest_id
+}
+type_descriptors.LuckyDiceRequest.is_extendable = false
+type_descriptors.LuckyDiceRequest.extensions = {}
+field_descriptors.JudgeArchiveReply_archive.name = "archive"
+field_descriptors.JudgeArchiveReply_archive.full_name = ".JudgeArchiveReply.archive"
+field_descriptors.JudgeArchiveReply_archive.number = 1
+field_descriptors.JudgeArchiveReply_archive.index = 0
+field_descriptors.JudgeArchiveReply_archive.label = 1
+field_descriptors.JudgeArchiveReply_archive.has_default_value = false
+field_descriptors.JudgeArchiveReply_archive.default_value = nil
+field_descriptors.JudgeArchiveReply_archive.message_type = type_descriptors.ArchiveNO
+field_descriptors.JudgeArchiveReply_archive.type = 11
+field_descriptors.JudgeArchiveReply_archive.cpp_type = 10
+type_descriptors.JudgeArchiveReply.name = "JudgeArchiveReply"
+type_descriptors.JudgeArchiveReply.full_name = ".JudgeArchiveReply"
+type_descriptors.JudgeArchiveReply.nested_types = {}
+type_descriptors.JudgeArchiveReply.enum_types = {}
+type_descriptors.JudgeArchiveReply.fields = {
+	field_descriptors.JudgeArchiveReply_archive
+}
+type_descriptors.JudgeArchiveReply.is_extendable = false
+type_descriptors.JudgeArchiveReply.extensions = {}
+field_descriptors.ExploreInfo_map.name = "map"
+field_descriptors.ExploreInfo_map.full_name = ".ExploreInfo.map"
+field_descriptors.ExploreInfo_map.number = 1
+field_descriptors.ExploreInfo_map.index = 0
+field_descriptors.ExploreInfo_map.label = 1
+field_descriptors.ExploreInfo_map.has_default_value = false
+field_descriptors.ExploreInfo_map.default_value = nil
+field_descriptors.ExploreInfo_map.message_type = type_descriptors.MapNO
+field_descriptors.ExploreInfo_map.type = 11
+field_descriptors.ExploreInfo_map.cpp_type = 10
+field_descriptors.ExploreInfo_scriptId.name = "scriptId"
+field_descriptors.ExploreInfo_scriptId.full_name = ".ExploreInfo.scriptId"
+field_descriptors.ExploreInfo_scriptId.number = 2
+field_descriptors.ExploreInfo_scriptId.index = 1
+field_descriptors.ExploreInfo_scriptId.label = 1
+field_descriptors.ExploreInfo_scriptId.has_default_value = false
+field_descriptors.ExploreInfo_scriptId.default_value = 0
+field_descriptors.ExploreInfo_scriptId.type = 5
+field_descriptors.ExploreInfo_scriptId.cpp_type = 1
+field_descriptors.ExploreInfo_difficulty.name = "difficulty"
+field_descriptors.ExploreInfo_difficulty.full_name = ".ExploreInfo.difficulty"
+field_descriptors.ExploreInfo_difficulty.number = 3
+field_descriptors.ExploreInfo_difficulty.index = 2
+field_descriptors.ExploreInfo_difficulty.label = 1
+field_descriptors.ExploreInfo_difficulty.has_default_value = false
+field_descriptors.ExploreInfo_difficulty.default_value = 0
+field_descriptors.ExploreInfo_difficulty.type = 5
+field_descriptors.ExploreInfo_difficulty.cpp_type = 1
+field_descriptors.ExploreInfo_layer.name = "layer"
+field_descriptors.ExploreInfo_layer.full_name = ".ExploreInfo.layer"
+field_descriptors.ExploreInfo_layer.number = 4
+field_descriptors.ExploreInfo_layer.index = 3
+field_descriptors.ExploreInfo_layer.label = 1
+field_descriptors.ExploreInfo_layer.has_default_value = false
+field_descriptors.ExploreInfo_layer.default_value = 0
+field_descriptors.ExploreInfo_layer.type = 5
+field_descriptors.ExploreInfo_layer.cpp_type = 1
+field_descriptors.ExploreInfo_curRoom.name = "curRoom"
+field_descriptors.ExploreInfo_curRoom.full_name = ".ExploreInfo.curRoom"
+field_descriptors.ExploreInfo_curRoom.number = 5
+field_descriptors.ExploreInfo_curRoom.index = 4
+field_descriptors.ExploreInfo_curRoom.label = 1
+field_descriptors.ExploreInfo_curRoom.has_default_value = false
+field_descriptors.ExploreInfo_curRoom.default_value = ""
+field_descriptors.ExploreInfo_curRoom.type = 9
+field_descriptors.ExploreInfo_curRoom.cpp_type = 9
+field_descriptors.ExploreInfo_team.name = "team"
+field_descriptors.ExploreInfo_team.full_name = ".ExploreInfo.team"
+field_descriptors.ExploreInfo_team.number = 6
+field_descriptors.ExploreInfo_team.index = 5
+field_descriptors.ExploreInfo_team.label = 3
+field_descriptors.ExploreInfo_team.has_default_value = false
+field_descriptors.ExploreInfo_team.default_value = {}
+field_descriptors.ExploreInfo_team.message_type = type_descriptors.R_HeroNO
+field_descriptors.ExploreInfo_team.type = 11
+field_descriptors.ExploreInfo_team.cpp_type = 10
+field_descriptors.ExploreInfo_gold.name = "gold"
+field_descriptors.ExploreInfo_gold.full_name = ".ExploreInfo.gold"
+field_descriptors.ExploreInfo_gold.number = 7
+field_descriptors.ExploreInfo_gold.index = 6
+field_descriptors.ExploreInfo_gold.label = 1
+field_descriptors.ExploreInfo_gold.has_default_value = false
+field_descriptors.ExploreInfo_gold.default_value = 0
+field_descriptors.ExploreInfo_gold.type = 5
+field_descriptors.ExploreInfo_gold.cpp_type = 1
+field_descriptors.ExploreInfo_props.name = "props"
+field_descriptors.ExploreInfo_props.full_name = ".ExploreInfo.props"
+field_descriptors.ExploreInfo_props.number = 9
+field_descriptors.ExploreInfo_props.index = 7
+field_descriptors.ExploreInfo_props.label = 3
+field_descriptors.ExploreInfo_props.has_default_value = false
+field_descriptors.ExploreInfo_props.default_value = {}
+field_descriptors.ExploreInfo_props.message_type = type_descriptors.PropsNO
+field_descriptors.ExploreInfo_props.type = 11
+field_descriptors.ExploreInfo_props.cpp_type = 10
+field_descriptors.ExploreInfo_equip.name = "equip"
+field_descriptors.ExploreInfo_equip.full_name = ".ExploreInfo.equip"
+field_descriptors.ExploreInfo_equip.number = 10
+field_descriptors.ExploreInfo_equip.index = 8
+field_descriptors.ExploreInfo_equip.label = 1
+field_descriptors.ExploreInfo_equip.has_default_value = false
+field_descriptors.ExploreInfo_equip.default_value = nil
+field_descriptors.ExploreInfo_equip.message_type = type_descriptors.EquipNO
+field_descriptors.ExploreInfo_equip.type = 11
+field_descriptors.ExploreInfo_equip.cpp_type = 10
+field_descriptors.ExploreInfo_map2.name = "map2"
+field_descriptors.ExploreInfo_map2.full_name = ".ExploreInfo.map2"
+field_descriptors.ExploreInfo_map2.number = 14
+field_descriptors.ExploreInfo_map2.index = 9
+field_descriptors.ExploreInfo_map2.label = 1
+field_descriptors.ExploreInfo_map2.has_default_value = false
+field_descriptors.ExploreInfo_map2.default_value = nil
+field_descriptors.ExploreInfo_map2.message_type = type_descriptors.MapNO
+field_descriptors.ExploreInfo_map2.type = 11
+field_descriptors.ExploreInfo_map2.cpp_type = 10
+field_descriptors.ExploreInfo_isInMap2.name = "isInMap2"
+field_descriptors.ExploreInfo_isInMap2.full_name = ".ExploreInfo.isInMap2"
+field_descriptors.ExploreInfo_isInMap2.number = 15
+field_descriptors.ExploreInfo_isInMap2.index = 10
+field_descriptors.ExploreInfo_isInMap2.label = 1
+field_descriptors.ExploreInfo_isInMap2.has_default_value = false
+field_descriptors.ExploreInfo_isInMap2.default_value = false
+field_descriptors.ExploreInfo_isInMap2.type = 8
+field_descriptors.ExploreInfo_isInMap2.cpp_type = 7
+field_descriptors.ExploreInfo_isCampOpen.name = "isCampOpen"
+field_descriptors.ExploreInfo_isCampOpen.full_name = ".ExploreInfo.isCampOpen"
+field_descriptors.ExploreInfo_isCampOpen.number = 16
+field_descriptors.ExploreInfo_isCampOpen.index = 11
+field_descriptors.ExploreInfo_isCampOpen.label = 1
+field_descriptors.ExploreInfo_isCampOpen.has_default_value = false
+field_descriptors.ExploreInfo_isCampOpen.default_value = false
+field_descriptors.ExploreInfo_isCampOpen.type = 8
+field_descriptors.ExploreInfo_isCampOpen.cpp_type = 7
+field_descriptors.ExploreInfo_additions.name = "additions"
+field_descriptors.ExploreInfo_additions.full_name = ".ExploreInfo.additions"
+field_descriptors.ExploreInfo_additions.number = 17
+field_descriptors.ExploreInfo_additions.index = 12
+field_descriptors.ExploreInfo_additions.label = 3
+field_descriptors.ExploreInfo_additions.has_default_value = false
+field_descriptors.ExploreInfo_additions.default_value = {}
+field_descriptors.ExploreInfo_additions.message_type = type_descriptors.Addition
+field_descriptors.ExploreInfo_additions.type = 11
+field_descriptors.ExploreInfo_additions.cpp_type = 10
+field_descriptors.ExploreInfo_source.name = "source"
+field_descriptors.ExploreInfo_source.full_name = ".ExploreInfo.source"
+field_descriptors.ExploreInfo_source.number = 19
+field_descriptors.ExploreInfo_source.index = 13
+field_descriptors.ExploreInfo_source.label = 3
+field_descriptors.ExploreInfo_source.has_default_value = false
+field_descriptors.ExploreInfo_source.default_value = {}
+field_descriptors.ExploreInfo_source.message_type = type_descriptors.EffectSourceNO
+field_descriptors.ExploreInfo_source.type = 11
+field_descriptors.ExploreInfo_source.cpp_type = 10
+field_descriptors.ExploreInfo_sight.name = "sight"
+field_descriptors.ExploreInfo_sight.full_name = ".ExploreInfo.sight"
+field_descriptors.ExploreInfo_sight.number = 20
+field_descriptors.ExploreInfo_sight.index = 14
+field_descriptors.ExploreInfo_sight.label = 1
+field_descriptors.ExploreInfo_sight.has_default_value = false
+field_descriptors.ExploreInfo_sight.default_value = 0
+field_descriptors.ExploreInfo_sight.type = 5
+field_descriptors.ExploreInfo_sight.cpp_type = 1
+field_descriptors.ExploreInfo_targetText.name = "targetText"
+field_descriptors.ExploreInfo_targetText.full_name = ".ExploreInfo.targetText"
+field_descriptors.ExploreInfo_targetText.number = 22
+field_descriptors.ExploreInfo_targetText.index = 15
+field_descriptors.ExploreInfo_targetText.label = 1
+field_descriptors.ExploreInfo_targetText.has_default_value = false
+field_descriptors.ExploreInfo_targetText.default_value = ""
+field_descriptors.ExploreInfo_targetText.type = 9
+field_descriptors.ExploreInfo_targetText.cpp_type = 9
+field_descriptors.ExploreInfo_san.name = "san"
+field_descriptors.ExploreInfo_san.full_name = ".ExploreInfo.san"
+field_descriptors.ExploreInfo_san.number = 23
+field_descriptors.ExploreInfo_san.index = 16
+field_descriptors.ExploreInfo_san.label = 1
+field_descriptors.ExploreInfo_san.has_default_value = false
+field_descriptors.ExploreInfo_san.default_value = 0
+field_descriptors.ExploreInfo_san.type = 5
+field_descriptors.ExploreInfo_san.cpp_type = 1
+field_descriptors.ExploreInfo_goldCount.name = "goldCount"
+field_descriptors.ExploreInfo_goldCount.full_name = ".ExploreInfo.goldCount"
+field_descriptors.ExploreInfo_goldCount.number = 24
+field_descriptors.ExploreInfo_goldCount.index = 17
+field_descriptors.ExploreInfo_goldCount.label = 1
+field_descriptors.ExploreInfo_goldCount.has_default_value = false
+field_descriptors.ExploreInfo_goldCount.default_value = 0
+field_descriptors.ExploreInfo_goldCount.type = 5
+field_descriptors.ExploreInfo_goldCount.cpp_type = 1
+field_descriptors.ExploreInfo_state.name = "state"
+field_descriptors.ExploreInfo_state.full_name = ".ExploreInfo.state"
+field_descriptors.ExploreInfo_state.number = 25
+field_descriptors.ExploreInfo_state.index = 18
+field_descriptors.ExploreInfo_state.label = 1
+field_descriptors.ExploreInfo_state.has_default_value = false
+field_descriptors.ExploreInfo_state.default_value = 0
+field_descriptors.ExploreInfo_state.type = 5
+field_descriptors.ExploreInfo_state.cpp_type = 1
+type_descriptors.ExploreInfo.name = "ExploreInfo"
+type_descriptors.ExploreInfo.full_name = ".ExploreInfo"
+type_descriptors.ExploreInfo.nested_types = {}
+type_descriptors.ExploreInfo.enum_types = {}
+type_descriptors.ExploreInfo.fields = {
+	field_descriptors.ExploreInfo_map,
+	field_descriptors.ExploreInfo_scriptId,
+	field_descriptors.ExploreInfo_difficulty,
+	field_descriptors.ExploreInfo_layer,
+	field_descriptors.ExploreInfo_curRoom,
+	field_descriptors.ExploreInfo_team,
+	field_descriptors.ExploreInfo_gold,
+	field_descriptors.ExploreInfo_props,
+	field_descriptors.ExploreInfo_equip,
+	field_descriptors.ExploreInfo_map2,
+	field_descriptors.ExploreInfo_isInMap2,
+	field_descriptors.ExploreInfo_isCampOpen,
+	field_descriptors.ExploreInfo_additions,
+	field_descriptors.ExploreInfo_source,
+	field_descriptors.ExploreInfo_sight,
+	field_descriptors.ExploreInfo_targetText,
+	field_descriptors.ExploreInfo_san,
+	field_descriptors.ExploreInfo_goldCount,
+	field_descriptors.ExploreInfo_state
+}
+type_descriptors.ExploreInfo.is_extendable = false
+type_descriptors.ExploreInfo.extensions = {}
+field_descriptors.GameOverPush_state.name = "state"
+field_descriptors.GameOverPush_state.full_name = ".GameOverPush.state"
+field_descriptors.GameOverPush_state.number = 1
+field_descriptors.GameOverPush_state.index = 0
+field_descriptors.GameOverPush_state.label = 1
+field_descriptors.GameOverPush_state.has_default_value = false
+field_descriptors.GameOverPush_state.default_value = 0
+field_descriptors.GameOverPush_state.type = 5
+field_descriptors.GameOverPush_state.cpp_type = 1
+field_descriptors.GameOverPush_option.name = "option"
+field_descriptors.GameOverPush_option.full_name = ".GameOverPush.option"
+field_descriptors.GameOverPush_option.number = 2
+field_descriptors.GameOverPush_option.index = 1
+field_descriptors.GameOverPush_option.label = 3
+field_descriptors.GameOverPush_option.has_default_value = false
+field_descriptors.GameOverPush_option.default_value = {}
+field_descriptors.GameOverPush_option.type = 5
+field_descriptors.GameOverPush_option.cpp_type = 1
+field_descriptors.GameOverPush_script.name = "script"
+field_descriptors.GameOverPush_script.full_name = ".GameOverPush.script"
+field_descriptors.GameOverPush_script.number = 3
+field_descriptors.GameOverPush_script.index = 2
+field_descriptors.GameOverPush_script.label = 1
+field_descriptors.GameOverPush_script.has_default_value = false
+field_descriptors.GameOverPush_script.default_value = nil
+field_descriptors.GameOverPush_script.message_type = type_descriptors.ScriptInfo
+field_descriptors.GameOverPush_script.type = 11
+field_descriptors.GameOverPush_script.cpp_type = 10
+type_descriptors.GameOverPush.name = "GameOverPush"
+type_descriptors.GameOverPush.full_name = ".GameOverPush"
+type_descriptors.GameOverPush.nested_types = {}
+type_descriptors.GameOverPush.enum_types = {}
+type_descriptors.GameOverPush.fields = {
+	field_descriptors.GameOverPush_state,
+	field_descriptors.GameOverPush_option,
+	field_descriptors.GameOverPush_script
+}
+type_descriptors.GameOverPush.is_extendable = false
+type_descriptors.GameOverPush.extensions = {}
+field_descriptors.MoveRequest_p.name = "p"
+field_descriptors.MoveRequest_p.full_name = ".MoveRequest.p"
+field_descriptors.MoveRequest_p.number = 1
+field_descriptors.MoveRequest_p.index = 0
+field_descriptors.MoveRequest_p.label = 1
+field_descriptors.MoveRequest_p.has_default_value = false
+field_descriptors.MoveRequest_p.default_value = ""
+field_descriptors.MoveRequest_p.type = 9
+field_descriptors.MoveRequest_p.cpp_type = 9
+field_descriptors.MoveRequest_s.name = "s"
+field_descriptors.MoveRequest_s.full_name = ".MoveRequest.s"
+field_descriptors.MoveRequest_s.number = 2
+field_descriptors.MoveRequest_s.index = 1
+field_descriptors.MoveRequest_s.label = 1
+field_descriptors.MoveRequest_s.has_default_value = false
+field_descriptors.MoveRequest_s.default_value = ""
+field_descriptors.MoveRequest_s.type = 9
+field_descriptors.MoveRequest_s.cpp_type = 9
+type_descriptors.MoveRequest.name = "MoveRequest"
+type_descriptors.MoveRequest.full_name = ".MoveRequest"
+type_descriptors.MoveRequest.nested_types = {}
+type_descriptors.MoveRequest.enum_types = {}
+type_descriptors.MoveRequest.fields = {
+	field_descriptors.MoveRequest_p,
+	field_descriptors.MoveRequest_s
+}
+type_descriptors.MoveRequest.is_extendable = false
+type_descriptors.MoveRequest.extensions = {}
+field_descriptors.StartCardSelectHeroRequest_hero.name = "hero"
+field_descriptors.StartCardSelectHeroRequest_hero.full_name = ".StartCardSelectHeroRequest.hero"
+field_descriptors.StartCardSelectHeroRequest_hero.number = 1
+field_descriptors.StartCardSelectHeroRequest_hero.index = 0
+field_descriptors.StartCardSelectHeroRequest_hero.label = 1
+field_descriptors.StartCardSelectHeroRequest_hero.has_default_value = false
+field_descriptors.StartCardSelectHeroRequest_hero.default_value = 0
+field_descriptors.StartCardSelectHeroRequest_hero.type = 5
+field_descriptors.StartCardSelectHeroRequest_hero.cpp_type = 1
+type_descriptors.StartCardSelectHeroRequest.name = "StartCardSelectHeroRequest"
+type_descriptors.StartCardSelectHeroRequest.full_name = ".StartCardSelectHeroRequest"
+type_descriptors.StartCardSelectHeroRequest.nested_types = {}
+type_descriptors.StartCardSelectHeroRequest.enum_types = {}
+type_descriptors.StartCardSelectHeroRequest.fields = {
+	field_descriptors.StartCardSelectHeroRequest_hero
+}
+type_descriptors.StartCardSelectHeroRequest.is_extendable = false
+type_descriptors.StartCardSelectHeroRequest.extensions = {}
+type_descriptors.DropPropsReply.name = "DropPropsReply"
+type_descriptors.DropPropsReply.full_name = ".DropPropsReply"
+type_descriptors.DropPropsReply.nested_types = {}
+type_descriptors.DropPropsReply.enum_types = {}
+type_descriptors.DropPropsReply.fields = {}
+type_descriptors.DropPropsReply.is_extendable = false
+type_descriptors.DropPropsReply.extensions = {}
+field_descriptors.R_HeroNO_code.name = "code"
+field_descriptors.R_HeroNO_code.full_name = ".R_HeroNO.code"
+field_descriptors.R_HeroNO_code.number = 1
+field_descriptors.R_HeroNO_code.index = 0
+field_descriptors.R_HeroNO_code.label = 1
+field_descriptors.R_HeroNO_code.has_default_value = false
+field_descriptors.R_HeroNO_code.default_value = 0
+field_descriptors.R_HeroNO_code.type = 5
+field_descriptors.R_HeroNO_code.cpp_type = 1
+field_descriptors.R_HeroNO_attr.name = "attr"
+field_descriptors.R_HeroNO_attr.full_name = ".R_HeroNO.attr"
+field_descriptors.R_HeroNO_attr.number = 2
+field_descriptors.R_HeroNO_attr.index = 1
+field_descriptors.R_HeroNO_attr.label = 3
+field_descriptors.R_HeroNO_attr.has_default_value = false
+field_descriptors.R_HeroNO_attr.default_value = {}
+field_descriptors.R_HeroNO_attr.type = 5
+field_descriptors.R_HeroNO_attr.cpp_type = 1
+field_descriptors.R_HeroNO_card.name = "card"
+field_descriptors.R_HeroNO_card.full_name = ".R_HeroNO.card"
+field_descriptors.R_HeroNO_card.number = 3
+field_descriptors.R_HeroNO_card.index = 2
+field_descriptors.R_HeroNO_card.label = 3
+field_descriptors.R_HeroNO_card.has_default_value = false
+field_descriptors.R_HeroNO_card.default_value = {}
+field_descriptors.R_HeroNO_card.message_type = type_descriptors.CardNO
+field_descriptors.R_HeroNO_card.type = 11
+field_descriptors.R_HeroNO_card.cpp_type = 10
+field_descriptors.R_HeroNO_no.name = "no"
+field_descriptors.R_HeroNO_no.full_name = ".R_HeroNO.no"
+field_descriptors.R_HeroNO_no.number = 4
+field_descriptors.R_HeroNO_no.index = 3
+field_descriptors.R_HeroNO_no.label = 1
+field_descriptors.R_HeroNO_no.has_default_value = false
+field_descriptors.R_HeroNO_no.default_value = 0
+field_descriptors.R_HeroNO_no.type = 5
+field_descriptors.R_HeroNO_no.cpp_type = 1
+type_descriptors.R_HeroNO.name = "R_HeroNO"
+type_descriptors.R_HeroNO.full_name = ".R_HeroNO"
+type_descriptors.R_HeroNO.nested_types = {}
+type_descriptors.R_HeroNO.enum_types = {}
+type_descriptors.R_HeroNO.fields = {
+	field_descriptors.R_HeroNO_code,
+	field_descriptors.R_HeroNO_attr,
+	field_descriptors.R_HeroNO_card,
+	field_descriptors.R_HeroNO_no
+}
+type_descriptors.R_HeroNO.is_extendable = false
+type_descriptors.R_HeroNO.extensions = {}
+field_descriptors.PropsNO_id.name = "id"
+field_descriptors.PropsNO_id.full_name = ".PropsNO.id"
+field_descriptors.PropsNO_id.number = 1
+field_descriptors.PropsNO_id.index = 0
+field_descriptors.PropsNO_id.label = 1
+field_descriptors.PropsNO_id.has_default_value = false
+field_descriptors.PropsNO_id.default_value = 0
+field_descriptors.PropsNO_id.type = 5
+field_descriptors.PropsNO_id.cpp_type = 1
+field_descriptors.PropsNO_code.name = "code"
+field_descriptors.PropsNO_code.full_name = ".PropsNO.code"
+field_descriptors.PropsNO_code.number = 2
+field_descriptors.PropsNO_code.index = 1
+field_descriptors.PropsNO_code.label = 1
+field_descriptors.PropsNO_code.has_default_value = false
+field_descriptors.PropsNO_code.default_value = 0
+field_descriptors.PropsNO_code.type = 5
+field_descriptors.PropsNO_code.cpp_type = 1
+field_descriptors.PropsNO_ing.name = "ing"
+field_descriptors.PropsNO_ing.full_name = ".PropsNO.ing"
+field_descriptors.PropsNO_ing.number = 3
+field_descriptors.PropsNO_ing.index = 2
+field_descriptors.PropsNO_ing.label = 1
+field_descriptors.PropsNO_ing.has_default_value = false
+field_descriptors.PropsNO_ing.default_value = false
+field_descriptors.PropsNO_ing.type = 8
+field_descriptors.PropsNO_ing.cpp_type = 7
+field_descriptors.PropsNO_ash.name = "ash"
+field_descriptors.PropsNO_ash.full_name = ".PropsNO.ash"
+field_descriptors.PropsNO_ash.number = 4
+field_descriptors.PropsNO_ash.index = 3
+field_descriptors.PropsNO_ash.label = 1
+field_descriptors.PropsNO_ash.has_default_value = false
+field_descriptors.PropsNO_ash.default_value = false
+field_descriptors.PropsNO_ash.type = 8
+field_descriptors.PropsNO_ash.cpp_type = 7
+field_descriptors.PropsNO_heroId.name = "heroId"
+field_descriptors.PropsNO_heroId.full_name = ".PropsNO.heroId"
+field_descriptors.PropsNO_heroId.number = 5
+field_descriptors.PropsNO_heroId.index = 4
+field_descriptors.PropsNO_heroId.label = 1
+field_descriptors.PropsNO_heroId.has_default_value = false
+field_descriptors.PropsNO_heroId.default_value = 0
+field_descriptors.PropsNO_heroId.type = 5
+field_descriptors.PropsNO_heroId.cpp_type = 1
+type_descriptors.PropsNO.name = "PropsNO"
+type_descriptors.PropsNO.full_name = ".PropsNO"
+type_descriptors.PropsNO.nested_types = {}
+type_descriptors.PropsNO.enum_types = {}
+type_descriptors.PropsNO.fields = {
+	field_descriptors.PropsNO_id,
+	field_descriptors.PropsNO_code,
+	field_descriptors.PropsNO_ing,
+	field_descriptors.PropsNO_ash,
+	field_descriptors.PropsNO_heroId
+}
+type_descriptors.PropsNO.is_extendable = false
+type_descriptors.PropsNO.extensions = {}
+field_descriptors.MapConfig_mapId.name = "mapId"
+field_descriptors.MapConfig_mapId.full_name = ".MapConfig.mapId"
+field_descriptors.MapConfig_mapId.number = 1
+field_descriptors.MapConfig_mapId.index = 0
+field_descriptors.MapConfig_mapId.label = 1
+field_descriptors.MapConfig_mapId.has_default_value = false
+field_descriptors.MapConfig_mapId.default_value = 0
+field_descriptors.MapConfig_mapId.type = 5
+field_descriptors.MapConfig_mapId.cpp_type = 1
+field_descriptors.MapConfig_coordinate.name = "coordinate"
+field_descriptors.MapConfig_coordinate.full_name = ".MapConfig.coordinate"
+field_descriptors.MapConfig_coordinate.number = 2
+field_descriptors.MapConfig_coordinate.index = 1
+field_descriptors.MapConfig_coordinate.label = 1
+field_descriptors.MapConfig_coordinate.has_default_value = false
+field_descriptors.MapConfig_coordinate.default_value = ""
+field_descriptors.MapConfig_coordinate.type = 9
+field_descriptors.MapConfig_coordinate.cpp_type = 9
+field_descriptors.MapConfig_shapes.name = "shapes"
+field_descriptors.MapConfig_shapes.full_name = ".MapConfig.shapes"
+field_descriptors.MapConfig_shapes.number = 3
+field_descriptors.MapConfig_shapes.index = 2
+field_descriptors.MapConfig_shapes.label = 3
+field_descriptors.MapConfig_shapes.has_default_value = false
+field_descriptors.MapConfig_shapes.default_value = {}
+field_descriptors.MapConfig_shapes.message_type = type_descriptors.Shape
+field_descriptors.MapConfig_shapes.type = 11
+field_descriptors.MapConfig_shapes.cpp_type = 10
+field_descriptors.MapConfig_cells.name = "cells"
+field_descriptors.MapConfig_cells.full_name = ".MapConfig.cells"
+field_descriptors.MapConfig_cells.number = 4
+field_descriptors.MapConfig_cells.index = 3
+field_descriptors.MapConfig_cells.label = 3
+field_descriptors.MapConfig_cells.has_default_value = false
+field_descriptors.MapConfig_cells.default_value = {}
+field_descriptors.MapConfig_cells.message_type = type_descriptors.Cell
+field_descriptors.MapConfig_cells.type = 11
+field_descriptors.MapConfig_cells.cpp_type = 10
+type_descriptors.MapConfig.name = "MapConfig"
+type_descriptors.MapConfig.full_name = ".MapConfig"
+type_descriptors.MapConfig.nested_types = {}
+type_descriptors.MapConfig.enum_types = {}
+type_descriptors.MapConfig.fields = {
+	field_descriptors.MapConfig_mapId,
+	field_descriptors.MapConfig_coordinate,
+	field_descriptors.MapConfig_shapes,
+	field_descriptors.MapConfig_cells
+}
+type_descriptors.MapConfig.is_extendable = false
+type_descriptors.MapConfig.extensions = {}
+field_descriptors.RoomUpdateNO_index.name = "index"
+field_descriptors.RoomUpdateNO_index.full_name = ".RoomUpdateNO.index"
+field_descriptors.RoomUpdateNO_index.number = 1
+field_descriptors.RoomUpdateNO_index.index = 0
+field_descriptors.RoomUpdateNO_index.label = 1
+field_descriptors.RoomUpdateNO_index.has_default_value = false
+field_descriptors.RoomUpdateNO_index.default_value = 0
+field_descriptors.RoomUpdateNO_index.type = 5
+field_descriptors.RoomUpdateNO_index.cpp_type = 1
+field_descriptors.RoomUpdateNO_vision.name = "vision"
+field_descriptors.RoomUpdateNO_vision.full_name = ".RoomUpdateNO.vision"
+field_descriptors.RoomUpdateNO_vision.number = 2
+field_descriptors.RoomUpdateNO_vision.index = 1
+field_descriptors.RoomUpdateNO_vision.label = 1
+field_descriptors.RoomUpdateNO_vision.has_default_value = false
+field_descriptors.RoomUpdateNO_vision.default_value = nil
+field_descriptors.RoomUpdateNO_vision.enum_type = type_descriptors.Vision
+field_descriptors.RoomUpdateNO_vision.type = 14
+field_descriptors.RoomUpdateNO_vision.cpp_type = 8
+field_descriptors.RoomUpdateNO_finished.name = "finished"
+field_descriptors.RoomUpdateNO_finished.full_name = ".RoomUpdateNO.finished"
+field_descriptors.RoomUpdateNO_finished.number = 3
+field_descriptors.RoomUpdateNO_finished.index = 2
+field_descriptors.RoomUpdateNO_finished.label = 1
+field_descriptors.RoomUpdateNO_finished.has_default_value = false
+field_descriptors.RoomUpdateNO_finished.default_value = false
+field_descriptors.RoomUpdateNO_finished.type = 8
+field_descriptors.RoomUpdateNO_finished.cpp_type = 7
+type_descriptors.RoomUpdateNO.name = "RoomUpdateNO"
+type_descriptors.RoomUpdateNO.full_name = ".RoomUpdateNO"
+type_descriptors.RoomUpdateNO.nested_types = {}
+type_descriptors.RoomUpdateNO.enum_types = {}
+type_descriptors.RoomUpdateNO.fields = {
+	field_descriptors.RoomUpdateNO_index,
+	field_descriptors.RoomUpdateNO_vision,
+	field_descriptors.RoomUpdateNO_finished
+}
+type_descriptors.RoomUpdateNO.is_extendable = false
+type_descriptors.RoomUpdateNO.extensions = {}
+type_descriptors.StartJudgeReply.name = "StartJudgeReply"
+type_descriptors.StartJudgeReply.full_name = ".StartJudgeReply"
+type_descriptors.StartJudgeReply.nested_types = {}
+type_descriptors.StartJudgeReply.enum_types = {}
+type_descriptors.StartJudgeReply.fields = {}
+type_descriptors.StartJudgeReply.is_extendable = false
+type_descriptors.StartJudgeReply.extensions = {}
+field_descriptors.LoadLogsReply_clue.name = "clue"
+field_descriptors.LoadLogsReply_clue.full_name = ".LoadLogsReply.clue"
+field_descriptors.LoadLogsReply_clue.number = 1
+field_descriptors.LoadLogsReply_clue.index = 0
+field_descriptors.LoadLogsReply_clue.label = 3
+field_descriptors.LoadLogsReply_clue.has_default_value = false
+field_descriptors.LoadLogsReply_clue.default_value = {}
+field_descriptors.LoadLogsReply_clue.type = 5
+field_descriptors.LoadLogsReply_clue.cpp_type = 1
+field_descriptors.LoadLogsReply_monster.name = "monster"
+field_descriptors.LoadLogsReply_monster.full_name = ".LoadLogsReply.monster"
+field_descriptors.LoadLogsReply_monster.number = 2
+field_descriptors.LoadLogsReply_monster.index = 1
+field_descriptors.LoadLogsReply_monster.label = 3
+field_descriptors.LoadLogsReply_monster.has_default_value = false
+field_descriptors.LoadLogsReply_monster.default_value = {}
+field_descriptors.LoadLogsReply_monster.type = 5
+field_descriptors.LoadLogsReply_monster.cpp_type = 1
+field_descriptors.LoadLogsReply_props.name = "props"
+field_descriptors.LoadLogsReply_props.full_name = ".LoadLogsReply.props"
+field_descriptors.LoadLogsReply_props.number = 3
+field_descriptors.LoadLogsReply_props.index = 2
+field_descriptors.LoadLogsReply_props.label = 3
+field_descriptors.LoadLogsReply_props.has_default_value = false
+field_descriptors.LoadLogsReply_props.default_value = {}
+field_descriptors.LoadLogsReply_props.type = 5
+field_descriptors.LoadLogsReply_props.cpp_type = 1
+field_descriptors.LoadLogsReply_reply.name = "reply"
+field_descriptors.LoadLogsReply_reply.full_name = ".LoadLogsReply.reply"
+field_descriptors.LoadLogsReply_reply.number = 4
+field_descriptors.LoadLogsReply_reply.index = 3
+field_descriptors.LoadLogsReply_reply.label = 3
+field_descriptors.LoadLogsReply_reply.has_default_value = false
+field_descriptors.LoadLogsReply_reply.default_value = {}
+field_descriptors.LoadLogsReply_reply.type = 5
+field_descriptors.LoadLogsReply_reply.cpp_type = 1
+type_descriptors.LoadLogsReply.name = "LoadLogsReply"
+type_descriptors.LoadLogsReply.full_name = ".LoadLogsReply"
+type_descriptors.LoadLogsReply.nested_types = {}
+type_descriptors.LoadLogsReply.enum_types = {}
+type_descriptors.LoadLogsReply.fields = {
+	field_descriptors.LoadLogsReply_clue,
+	field_descriptors.LoadLogsReply_monster,
+	field_descriptors.LoadLogsReply_props,
+	field_descriptors.LoadLogsReply_reply
+}
+type_descriptors.LoadLogsReply.is_extendable = false
+type_descriptors.LoadLogsReply.extensions = {}
+field_descriptors.LoadScriptReply_infos.name = "infos"
+field_descriptors.LoadScriptReply_infos.full_name = ".LoadScriptReply.infos"
+field_descriptors.LoadScriptReply_infos.number = 1
+field_descriptors.LoadScriptReply_infos.index = 0
+field_descriptors.LoadScriptReply_infos.label = 3
+field_descriptors.LoadScriptReply_infos.has_default_value = false
+field_descriptors.LoadScriptReply_infos.default_value = {}
+field_descriptors.LoadScriptReply_infos.message_type = type_descriptors.ScriptInfo
+field_descriptors.LoadScriptReply_infos.type = 11
+field_descriptors.LoadScriptReply_infos.cpp_type = 10
+field_descriptors.LoadScriptReply_guideFail.name = "guideFail"
+field_descriptors.LoadScriptReply_guideFail.full_name = ".LoadScriptReply.guideFail"
+field_descriptors.LoadScriptReply_guideFail.number = 2
+field_descriptors.LoadScriptReply_guideFail.index = 1
+field_descriptors.LoadScriptReply_guideFail.label = 1
+field_descriptors.LoadScriptReply_guideFail.has_default_value = false
+field_descriptors.LoadScriptReply_guideFail.default_value = false
+field_descriptors.LoadScriptReply_guideFail.type = 8
+field_descriptors.LoadScriptReply_guideFail.cpp_type = 7
+type_descriptors.LoadScriptReply.name = "LoadScriptReply"
+type_descriptors.LoadScriptReply.full_name = ".LoadScriptReply"
+type_descriptors.LoadScriptReply.nested_types = {}
+type_descriptors.LoadScriptReply.enum_types = {}
+type_descriptors.LoadScriptReply.fields = {
+	field_descriptors.LoadScriptReply_infos,
+	field_descriptors.LoadScriptReply_guideFail
+}
+type_descriptors.LoadScriptReply.is_extendable = false
+type_descriptors.LoadScriptReply.extensions = {}
+field_descriptors.RoomPrizesUpdatePush_room.name = "room"
+field_descriptors.RoomPrizesUpdatePush_room.full_name = ".RoomPrizesUpdatePush.room"
+field_descriptors.RoomPrizesUpdatePush_room.number = 1
+field_descriptors.RoomPrizesUpdatePush_room.index = 0
+field_descriptors.RoomPrizesUpdatePush_room.label = 1
+field_descriptors.RoomPrizesUpdatePush_room.has_default_value = false
+field_descriptors.RoomPrizesUpdatePush_room.default_value = ""
+field_descriptors.RoomPrizesUpdatePush_room.type = 9
+field_descriptors.RoomPrizesUpdatePush_room.cpp_type = 9
+field_descriptors.RoomPrizesUpdatePush_prize.name = "prize"
+field_descriptors.RoomPrizesUpdatePush_prize.full_name = ".RoomPrizesUpdatePush.prize"
+field_descriptors.RoomPrizesUpdatePush_prize.number = 2
+field_descriptors.RoomPrizesUpdatePush_prize.index = 1
+field_descriptors.RoomPrizesUpdatePush_prize.label = 3
+field_descriptors.RoomPrizesUpdatePush_prize.has_default_value = false
+field_descriptors.RoomPrizesUpdatePush_prize.default_value = {}
+field_descriptors.RoomPrizesUpdatePush_prize.message_type = type_descriptors.PrizeNO
+field_descriptors.RoomPrizesUpdatePush_prize.type = 11
+field_descriptors.RoomPrizesUpdatePush_prize.cpp_type = 10
+type_descriptors.RoomPrizesUpdatePush.name = "RoomPrizesUpdatePush"
+type_descriptors.RoomPrizesUpdatePush.full_name = ".RoomPrizesUpdatePush"
+type_descriptors.RoomPrizesUpdatePush.nested_types = {}
+type_descriptors.RoomPrizesUpdatePush.enum_types = {}
+type_descriptors.RoomPrizesUpdatePush.fields = {
+	field_descriptors.RoomPrizesUpdatePush_room,
+	field_descriptors.RoomPrizesUpdatePush_prize
+}
+type_descriptors.RoomPrizesUpdatePush.is_extendable = false
+type_descriptors.RoomPrizesUpdatePush.extensions = {}
+field_descriptors.UseSkillRequest_heroId.name = "heroId"
+field_descriptors.UseSkillRequest_heroId.full_name = ".UseSkillRequest.heroId"
+field_descriptors.UseSkillRequest_heroId.number = 1
+field_descriptors.UseSkillRequest_heroId.index = 0
+field_descriptors.UseSkillRequest_heroId.label = 1
+field_descriptors.UseSkillRequest_heroId.has_default_value = false
+field_descriptors.UseSkillRequest_heroId.default_value = 0
+field_descriptors.UseSkillRequest_heroId.type = 5
+field_descriptors.UseSkillRequest_heroId.cpp_type = 1
+field_descriptors.UseSkillRequest_attr.name = "attr"
+field_descriptors.UseSkillRequest_attr.full_name = ".UseSkillRequest.attr"
+field_descriptors.UseSkillRequest_attr.number = 2
+field_descriptors.UseSkillRequest_attr.index = 1
+field_descriptors.UseSkillRequest_attr.label = 1
+field_descriptors.UseSkillRequest_attr.has_default_value = false
+field_descriptors.UseSkillRequest_attr.default_value = nil
+field_descriptors.UseSkillRequest_attr.enum_type = type_descriptors.AttrType
+field_descriptors.UseSkillRequest_attr.type = 14
+field_descriptors.UseSkillRequest_attr.cpp_type = 8
+field_descriptors.UseSkillRequest_card.name = "card"
+field_descriptors.UseSkillRequest_card.full_name = ".UseSkillRequest.card"
+field_descriptors.UseSkillRequest_card.number = 3
+field_descriptors.UseSkillRequest_card.index = 2
+field_descriptors.UseSkillRequest_card.label = 1
+field_descriptors.UseSkillRequest_card.has_default_value = false
+field_descriptors.UseSkillRequest_card.default_value = 0
+field_descriptors.UseSkillRequest_card.type = 5
+field_descriptors.UseSkillRequest_card.cpp_type = 1
+type_descriptors.UseSkillRequest.name = "UseSkillRequest"
+type_descriptors.UseSkillRequest.full_name = ".UseSkillRequest"
+type_descriptors.UseSkillRequest.nested_types = {}
+type_descriptors.UseSkillRequest.enum_types = {}
+type_descriptors.UseSkillRequest.fields = {
+	field_descriptors.UseSkillRequest_heroId,
+	field_descriptors.UseSkillRequest_attr,
+	field_descriptors.UseSkillRequest_card
+}
+type_descriptors.UseSkillRequest.is_extendable = false
+type_descriptors.UseSkillRequest.extensions = {}
+field_descriptors.GoldUpdatePush_num.name = "num"
+field_descriptors.GoldUpdatePush_num.full_name = ".GoldUpdatePush.num"
+field_descriptors.GoldUpdatePush_num.number = 1
+field_descriptors.GoldUpdatePush_num.index = 0
+field_descriptors.GoldUpdatePush_num.label = 1
+field_descriptors.GoldUpdatePush_num.has_default_value = false
+field_descriptors.GoldUpdatePush_num.default_value = 0
+field_descriptors.GoldUpdatePush_num.type = 5
+field_descriptors.GoldUpdatePush_num.cpp_type = 1
+type_descriptors.GoldUpdatePush.name = "GoldUpdatePush"
+type_descriptors.GoldUpdatePush.full_name = ".GoldUpdatePush"
+type_descriptors.GoldUpdatePush.nested_types = {}
+type_descriptors.GoldUpdatePush.enum_types = {}
+type_descriptors.GoldUpdatePush.fields = {
+	field_descriptors.GoldUpdatePush_num
+}
+type_descriptors.GoldUpdatePush.is_extendable = false
+type_descriptors.GoldUpdatePush.extensions = {}
+field_descriptors.GetAllEquipReply_equip.name = "equip"
+field_descriptors.GetAllEquipReply_equip.full_name = ".GetAllEquipReply.equip"
+field_descriptors.GetAllEquipReply_equip.number = 1
+field_descriptors.GetAllEquipReply_equip.index = 0
+field_descriptors.GetAllEquipReply_equip.label = 3
+field_descriptors.GetAllEquipReply_equip.has_default_value = false
+field_descriptors.GetAllEquipReply_equip.default_value = {}
+field_descriptors.GetAllEquipReply_equip.message_type = type_descriptors.EquipNO
+field_descriptors.GetAllEquipReply_equip.type = 11
+field_descriptors.GetAllEquipReply_equip.cpp_type = 10
+type_descriptors.GetAllEquipReply.name = "GetAllEquipReply"
+type_descriptors.GetAllEquipReply.full_name = ".GetAllEquipReply"
+type_descriptors.GetAllEquipReply.nested_types = {}
+type_descriptors.GetAllEquipReply.enum_types = {}
+type_descriptors.GetAllEquipReply.fields = {
+	field_descriptors.GetAllEquipReply_equip
+}
+type_descriptors.GetAllEquipReply.is_extendable = false
+type_descriptors.GetAllEquipReply.extensions = {}
+field_descriptors.TouchReply_touchIds.name = "touchIds"
+field_descriptors.TouchReply_touchIds.full_name = ".TouchReply.touchIds"
+field_descriptors.TouchReply_touchIds.number = 1
+field_descriptors.TouchReply_touchIds.index = 0
+field_descriptors.TouchReply_touchIds.label = 3
+field_descriptors.TouchReply_touchIds.has_default_value = false
+field_descriptors.TouchReply_touchIds.default_value = {}
+field_descriptors.TouchReply_touchIds.type = 5
+field_descriptors.TouchReply_touchIds.cpp_type = 1
+type_descriptors.TouchReply.name = "TouchReply"
+type_descriptors.TouchReply.full_name = ".TouchReply"
+type_descriptors.TouchReply.nested_types = {}
+type_descriptors.TouchReply.enum_types = {}
+type_descriptors.TouchReply.fields = {
+	field_descriptors.TouchReply_touchIds
+}
+type_descriptors.TouchReply.is_extendable = false
+type_descriptors.TouchReply.extensions = {}
+field_descriptors.NextLayerReply_map.name = "map"
+field_descriptors.NextLayerReply_map.full_name = ".NextLayerReply.map"
+field_descriptors.NextLayerReply_map.number = 1
+field_descriptors.NextLayerReply_map.index = 0
+field_descriptors.NextLayerReply_map.label = 1
+field_descriptors.NextLayerReply_map.has_default_value = false
+field_descriptors.NextLayerReply_map.default_value = nil
+field_descriptors.NextLayerReply_map.message_type = type_descriptors.MapNO
+field_descriptors.NextLayerReply_map.type = 11
+field_descriptors.NextLayerReply_map.cpp_type = 10
+type_descriptors.NextLayerReply.name = "NextLayerReply"
+type_descriptors.NextLayerReply.full_name = ".NextLayerReply"
+type_descriptors.NextLayerReply.nested_types = {}
+type_descriptors.NextLayerReply.enum_types = {}
+type_descriptors.NextLayerReply.fields = {
+	field_descriptors.NextLayerReply_map
+}
+type_descriptors.NextLayerReply.is_extendable = false
+type_descriptors.NextLayerReply.extensions = {}
+field_descriptors.StoryPush_id.name = "id"
+field_descriptors.StoryPush_id.full_name = ".StoryPush.id"
+field_descriptors.StoryPush_id.number = 1
+field_descriptors.StoryPush_id.index = 0
+field_descriptors.StoryPush_id.label = 1
+field_descriptors.StoryPush_id.has_default_value = false
+field_descriptors.StoryPush_id.default_value = 0
+field_descriptors.StoryPush_id.type = 5
+field_descriptors.StoryPush_id.cpp_type = 1
+type_descriptors.StoryPush.name = "StoryPush"
+type_descriptors.StoryPush.full_name = ".StoryPush"
+type_descriptors.StoryPush.nested_types = {}
+type_descriptors.StoryPush.enum_types = {}
+type_descriptors.StoryPush.fields = {
+	field_descriptors.StoryPush_id
+}
+type_descriptors.StoryPush.is_extendable = false
+type_descriptors.StoryPush.extensions = {}
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.name = "roomPrize"
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.full_name = ".LoadAllRoomPrizesReply.roomPrize"
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.number = 1
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.index = 0
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.label = 3
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.has_default_value = false
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.default_value = {}
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.message_type = type_descriptors.RoomPrizesNO
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.type = 11
+field_descriptors.LoadAllRoomPrizesReply_roomPrize.cpp_type = 10
+type_descriptors.LoadAllRoomPrizesReply.name = "LoadAllRoomPrizesReply"
+type_descriptors.LoadAllRoomPrizesReply.full_name = ".LoadAllRoomPrizesReply"
+type_descriptors.LoadAllRoomPrizesReply.nested_types = {}
+type_descriptors.LoadAllRoomPrizesReply.enum_types = {}
+type_descriptors.LoadAllRoomPrizesReply.fields = {
+	field_descriptors.LoadAllRoomPrizesReply_roomPrize
+}
+type_descriptors.LoadAllRoomPrizesReply.is_extendable = false
+type_descriptors.LoadAllRoomPrizesReply.extensions = {}
+field_descriptors.GetGuessNumReply_num.name = "num"
+field_descriptors.GetGuessNumReply_num.full_name = ".GetGuessNumReply.num"
+field_descriptors.GetGuessNumReply_num.number = 1
+field_descriptors.GetGuessNumReply_num.index = 0
+field_descriptors.GetGuessNumReply_num.label = 1
+field_descriptors.GetGuessNumReply_num.has_default_value = false
+field_descriptors.GetGuessNumReply_num.default_value = 0
+field_descriptors.GetGuessNumReply_num.type = 5
+field_descriptors.GetGuessNumReply_num.cpp_type = 1
+type_descriptors.GetGuessNumReply.name = "GetGuessNumReply"
+type_descriptors.GetGuessNumReply.full_name = ".GetGuessNumReply"
+type_descriptors.GetGuessNumReply.nested_types = {}
+type_descriptors.GetGuessNumReply.enum_types = {}
+type_descriptors.GetGuessNumReply.fields = {
+	field_descriptors.GetGuessNumReply_num
+}
+type_descriptors.GetGuessNumReply.is_extendable = false
+type_descriptors.GetGuessNumReply.extensions = {}
+field_descriptors.UpgradeEquipRequest_id.name = "id"
+field_descriptors.UpgradeEquipRequest_id.full_name = ".UpgradeEquipRequest.id"
+field_descriptors.UpgradeEquipRequest_id.number = 1
+field_descriptors.UpgradeEquipRequest_id.index = 0
+field_descriptors.UpgradeEquipRequest_id.label = 1
+field_descriptors.UpgradeEquipRequest_id.has_default_value = false
+field_descriptors.UpgradeEquipRequest_id.default_value = 0
+field_descriptors.UpgradeEquipRequest_id.type = 5
+field_descriptors.UpgradeEquipRequest_id.cpp_type = 1
+type_descriptors.UpgradeEquipRequest.name = "UpgradeEquipRequest"
+type_descriptors.UpgradeEquipRequest.full_name = ".UpgradeEquipRequest"
+type_descriptors.UpgradeEquipRequest.nested_types = {}
+type_descriptors.UpgradeEquipRequest.enum_types = {}
+type_descriptors.UpgradeEquipRequest.fields = {
+	field_descriptors.UpgradeEquipRequest_id
+}
+type_descriptors.UpgradeEquipRequest.is_extendable = false
+type_descriptors.UpgradeEquipRequest.extensions = {}
+field_descriptors.RoguelikeRefreshTaskPush_refresh.name = "refresh"
+field_descriptors.RoguelikeRefreshTaskPush_refresh.full_name = ".RoguelikeRefreshTaskPush.refresh"
+field_descriptors.RoguelikeRefreshTaskPush_refresh.number = 1
+field_descriptors.RoguelikeRefreshTaskPush_refresh.index = 0
+field_descriptors.RoguelikeRefreshTaskPush_refresh.label = 1
+field_descriptors.RoguelikeRefreshTaskPush_refresh.has_default_value = false
+field_descriptors.RoguelikeRefreshTaskPush_refresh.default_value = false
+field_descriptors.RoguelikeRefreshTaskPush_refresh.type = 8
+field_descriptors.RoguelikeRefreshTaskPush_refresh.cpp_type = 7
+type_descriptors.RoguelikeRefreshTaskPush.name = "RoguelikeRefreshTaskPush"
+type_descriptors.RoguelikeRefreshTaskPush.full_name = ".RoguelikeRefreshTaskPush"
+type_descriptors.RoguelikeRefreshTaskPush.nested_types = {}
+type_descriptors.RoguelikeRefreshTaskPush.enum_types = {}
+type_descriptors.RoguelikeRefreshTaskPush.fields = {
+	field_descriptors.RoguelikeRefreshTaskPush_refresh
+}
+type_descriptors.RoguelikeRefreshTaskPush.is_extendable = false
+type_descriptors.RoguelikeRefreshTaskPush.extensions = {}
+type_descriptors.NextLayerRequest.name = "NextLayerRequest"
+type_descriptors.NextLayerRequest.full_name = ".NextLayerRequest"
+type_descriptors.NextLayerRequest.nested_types = {}
+type_descriptors.NextLayerRequest.enum_types = {}
+type_descriptors.NextLayerRequest.fields = {}
+type_descriptors.NextLayerRequest.is_extendable = false
+type_descriptors.NextLayerRequest.extensions = {}
+field_descriptors.SortRequest_hero.name = "hero"
+field_descriptors.SortRequest_hero.full_name = ".SortRequest.hero"
+field_descriptors.SortRequest_hero.number = 1
+field_descriptors.SortRequest_hero.index = 0
+field_descriptors.SortRequest_hero.label = 3
+field_descriptors.SortRequest_hero.has_default_value = false
+field_descriptors.SortRequest_hero.default_value = {}
+field_descriptors.SortRequest_hero.type = 5
+field_descriptors.SortRequest_hero.cpp_type = 1
+type_descriptors.SortRequest.name = "SortRequest"
+type_descriptors.SortRequest.full_name = ".SortRequest"
+type_descriptors.SortRequest.nested_types = {}
+type_descriptors.SortRequest.enum_types = {}
+type_descriptors.SortRequest.fields = {
+	field_descriptors.SortRequest_hero
+}
+type_descriptors.SortRequest.is_extendable = false
+type_descriptors.SortRequest.extensions = {}
+field_descriptors.SetCardCdReply_team.name = "team"
+field_descriptors.SetCardCdReply_team.full_name = ".SetCardCdReply.team"
+field_descriptors.SetCardCdReply_team.number = 1
+field_descriptors.SetCardCdReply_team.index = 0
+field_descriptors.SetCardCdReply_team.label = 3
+field_descriptors.SetCardCdReply_team.has_default_value = false
+field_descriptors.SetCardCdReply_team.default_value = {}
+field_descriptors.SetCardCdReply_team.message_type = type_descriptors.R_HeroNO
+field_descriptors.SetCardCdReply_team.type = 11
+field_descriptors.SetCardCdReply_team.cpp_type = 10
+type_descriptors.SetCardCdReply.name = "SetCardCdReply"
+type_descriptors.SetCardCdReply.full_name = ".SetCardCdReply"
+type_descriptors.SetCardCdReply.nested_types = {}
+type_descriptors.SetCardCdReply.enum_types = {}
+type_descriptors.SetCardCdReply.fields = {
+	field_descriptors.SetCardCdReply_team
+}
+type_descriptors.SetCardCdReply.is_extendable = false
+type_descriptors.SetCardCdReply.extensions = {}
+field_descriptors.StartRequest_equip.name = "equip"
+field_descriptors.StartRequest_equip.full_name = ".StartRequest.equip"
+field_descriptors.StartRequest_equip.number = 1
+field_descriptors.StartRequest_equip.index = 0
+field_descriptors.StartRequest_equip.label = 1
+field_descriptors.StartRequest_equip.has_default_value = false
+field_descriptors.StartRequest_equip.default_value = 0
+field_descriptors.StartRequest_equip.type = 5
+field_descriptors.StartRequest_equip.cpp_type = 1
+field_descriptors.StartRequest_hero.name = "hero"
+field_descriptors.StartRequest_hero.full_name = ".StartRequest.hero"
+field_descriptors.StartRequest_hero.number = 2
+field_descriptors.StartRequest_hero.index = 1
+field_descriptors.StartRequest_hero.label = 3
+field_descriptors.StartRequest_hero.has_default_value = false
+field_descriptors.StartRequest_hero.default_value = {}
+field_descriptors.StartRequest_hero.type = 5
+field_descriptors.StartRequest_hero.cpp_type = 1
+field_descriptors.StartRequest_script.name = "script"
+field_descriptors.StartRequest_script.full_name = ".StartRequest.script"
+field_descriptors.StartRequest_script.number = 3
+field_descriptors.StartRequest_script.index = 2
+field_descriptors.StartRequest_script.label = 1
+field_descriptors.StartRequest_script.has_default_value = false
+field_descriptors.StartRequest_script.default_value = 0
+field_descriptors.StartRequest_script.type = 5
+field_descriptors.StartRequest_script.cpp_type = 1
+field_descriptors.StartRequest_level.name = "level"
+field_descriptors.StartRequest_level.full_name = ".StartRequest.level"
+field_descriptors.StartRequest_level.number = 4
+field_descriptors.StartRequest_level.index = 3
+field_descriptors.StartRequest_level.label = 1
+field_descriptors.StartRequest_level.has_default_value = false
+field_descriptors.StartRequest_level.default_value = 0
+field_descriptors.StartRequest_level.type = 5
+field_descriptors.StartRequest_level.cpp_type = 1
+type_descriptors.StartRequest.name = "StartRequest"
+type_descriptors.StartRequest.full_name = ".StartRequest"
+type_descriptors.StartRequest.nested_types = {}
+type_descriptors.StartRequest.enum_types = {}
+type_descriptors.StartRequest.fields = {
+	field_descriptors.StartRequest_equip,
+	field_descriptors.StartRequest_hero,
+	field_descriptors.StartRequest_script,
+	field_descriptors.StartRequest_level
+}
+type_descriptors.StartRequest.is_extendable = false
+type_descriptors.StartRequest.extensions = {}
+type_descriptors.WearEquipReply.name = "WearEquipReply"
+type_descriptors.WearEquipReply.full_name = ".WearEquipReply"
+type_descriptors.WearEquipReply.nested_types = {}
+type_descriptors.WearEquipReply.enum_types = {}
+type_descriptors.WearEquipReply.fields = {}
+type_descriptors.WearEquipReply.is_extendable = false
+type_descriptors.WearEquipReply.extensions = {}
+field_descriptors.EventPush_id.name = "id"
+field_descriptors.EventPush_id.full_name = ".EventPush.id"
+field_descriptors.EventPush_id.number = 1
+field_descriptors.EventPush_id.index = 0
+field_descriptors.EventPush_id.label = 1
+field_descriptors.EventPush_id.has_default_value = false
+field_descriptors.EventPush_id.default_value = 0
+field_descriptors.EventPush_id.type = 5
+field_descriptors.EventPush_id.cpp_type = 1
+type_descriptors.EventPush.name = "EventPush"
+type_descriptors.EventPush.full_name = ".EventPush"
+type_descriptors.EventPush.nested_types = {}
+type_descriptors.EventPush.enum_types = {}
+type_descriptors.EventPush.fields = {
+	field_descriptors.EventPush_id
+}
+type_descriptors.EventPush.is_extendable = false
+type_descriptors.EventPush.extensions = {}
+field_descriptors.MapConfigPush_mapConfig.name = "mapConfig"
+field_descriptors.MapConfigPush_mapConfig.full_name = ".MapConfigPush.mapConfig"
+field_descriptors.MapConfigPush_mapConfig.number = 1
+field_descriptors.MapConfigPush_mapConfig.index = 0
+field_descriptors.MapConfigPush_mapConfig.label = 1
+field_descriptors.MapConfigPush_mapConfig.has_default_value = false
+field_descriptors.MapConfigPush_mapConfig.default_value = nil
+field_descriptors.MapConfigPush_mapConfig.message_type = type_descriptors.MapConfig
+field_descriptors.MapConfigPush_mapConfig.type = 11
+field_descriptors.MapConfigPush_mapConfig.cpp_type = 10
+type_descriptors.MapConfigPush.name = "MapConfigPush"
+type_descriptors.MapConfigPush.full_name = ".MapConfigPush"
+type_descriptors.MapConfigPush.nested_types = {}
+type_descriptors.MapConfigPush.enum_types = {}
+type_descriptors.MapConfigPush.fields = {
+	field_descriptors.MapConfigPush_mapConfig
+}
+type_descriptors.MapConfigPush.is_extendable = false
+type_descriptors.MapConfigPush.extensions = {}
+type_descriptors.EndSelectCardReply.name = "EndSelectCardReply"
+type_descriptors.EndSelectCardReply.full_name = ".EndSelectCardReply"
+type_descriptors.EndSelectCardReply.nested_types = {}
+type_descriptors.EndSelectCardReply.enum_types = {}
+type_descriptors.EndSelectCardReply.fields = {}
+type_descriptors.EndSelectCardReply.is_extendable = false
+type_descriptors.EndSelectCardReply.extensions = {}
+AdditionEnum = {
+	ADD_MONSTER = 4,
+	ADD_MOVE_SAN = 6,
+	ADD_BIG_SUCCESS = 5,
+	ADD_EVENT = 3,
+	ADD_MALL = 2,
+	ADD_GAMBLE = 1
+}
+AttrType = {
+	TRANCE_6 = 136,
+	SUCCESS_1 = 111,
+	SUCCESS_4 = 114,
+	BLEED_2 = 122,
+	BLEED_6 = 126,
+	BLEED_3 = 123,
+	CHAT = 3,
+	SACRIFICE_3 = 143,
+	ECLIPSE_3 = 153,
+	TRANCE_1 = 131,
+	SUCCESS_3 = 113,
+	HP_LIMIT = 7,
+	LUCK = 5,
+	SACRIFICE_6 = 146,
+	SUCCESS_6 = 116,
+	ECLIPSE_4 = 154,
+	ECLIPSE_5 = 155,
+	BLEED_4 = 124,
+	SACRIFICE_1 = 141,
+	ECLIPSE_1 = 151,
+	POWER = 0,
+	SUCCESS_5 = 115,
+	BLEED_5 = 125,
+	TRANCE_2 = 132,
+	R_GOLD = 99,
+	HP = 6,
+	BLEED_1 = 121,
+	TRANCE_4 = 134,
+	TRANCE_3 = 133,
+	SACRIFICE_4 = 144,
+	SACRIFICE_5 = 145,
+	SAN = 98,
+	TRANCE_5 = 135,
+	ECLIPSE_6 = 156,
+	LORE = 2,
+	SACRIFICE_2 = 142,
+	SUCCESS_2 = 112,
+	ECLIPSE_2 = 152,
+	AGILITY = 1,
+	INSIGHT = 4
+}
+CardParam = {
+	THROW_RESULT = 201,
+	MAKE_BATTER = 204,
+	DICE_SUCCESS = 101,
+	MAKE_SHIELD = 203,
+	DICE_BLEED = 104,
+	DICE_TRANCE = 105,
+	DICE_SACRIFICE = 102,
+	GET_EFFECT_ID = 205,
+	DICE_ECLIPSE = 103,
+	MAKE_DAMAGE = 202
+}
+EffectSourceType = {
+	ES_script = 5,
+	ES_props = 1,
+	ES_equip = 2
+}
+JudgeType = {
+	FIGHT = 1,
+	SINGLE_EVENT = 2,
+	EMERGENCY_EVENT = 4,
+	PLOT_EVENT = 6,
+	NOT_IN_JUDGE = 0,
+	MUTIL_EVENT = 3
+}
+RoomType = {
+	INIT = 1,
+	Blank = 0,
+	NEXT = 7,
+	EVENT = 2,
+	MONSTER = 3,
+	BOSS = 8,
+	ENTRANCE = 9,
+	GAMBLE = 6,
+	PROPS = 4,
+	MALL = 5
+}
+Vision = {
+	DEFAULT_CLEAR = 2,
+	CLEAR = 3,
+	BLIND = 0,
+	UNKNOWN = 1
+}
+AddPropsReply = protobuf.Message(type_descriptors.AddPropsReply)
+AddPropsRequest = protobuf.Message(type_descriptors.AddPropsRequest)
+Addition = protobuf.Message(type_descriptors.Addition)
+ArchiveNO = protobuf.Message(type_descriptors.ArchiveNO)
+CardNO = protobuf.Message(type_descriptors.CardNO)
+CardValue = protobuf.Message(type_descriptors.CardValue)
+Cell = protobuf.Message(type_descriptors.Cell)
+ChangeCollector = protobuf.Message(type_descriptors.ChangeCollector)
+CutRoom = protobuf.Message(type_descriptors.CutRoom)
+DropPropsReply = protobuf.Message(type_descriptors.DropPropsReply)
+DropPropsRequest = protobuf.Message(type_descriptors.DropPropsRequest)
+EffectPush = protobuf.Message(type_descriptors.EffectPush)
+EffectSourceNO = protobuf.Message(type_descriptors.EffectSourceNO)
+EndJudgeReply = protobuf.Message(type_descriptors.EndJudgeReply)
+EndJudgeRequest = protobuf.Message(type_descriptors.EndJudgeRequest)
+EndRoundReply = protobuf.Message(type_descriptors.EndRoundReply)
+EndRoundRequest = protobuf.Message(type_descriptors.EndRoundRequest)
+EndSelectCardReply = protobuf.Message(type_descriptors.EndSelectCardReply)
+EndSelectCardRequest = protobuf.Message(type_descriptors.EndSelectCardRequest)
+EndSelectReply = protobuf.Message(type_descriptors.EndSelectReply)
+EndSelectRequest = protobuf.Message(type_descriptors.EndSelectRequest)
+EquipNO = protobuf.Message(type_descriptors.EquipNO)
+EquipPush = protobuf.Message(type_descriptors.EquipPush)
+EventPush = protobuf.Message(type_descriptors.EventPush)
+ExploreInfo = protobuf.Message(type_descriptors.ExploreInfo)
+FaceNO = protobuf.Message(type_descriptors.FaceNO)
+GameOverPush = protobuf.Message(type_descriptors.GameOverPush)
+GetAllEquipReply = protobuf.Message(type_descriptors.GetAllEquipReply)
+GetAllEquipRequest = protobuf.Message(type_descriptors.GetAllEquipRequest)
+GetCluePush = protobuf.Message(type_descriptors.GetCluePush)
+GetGuessNumReply = protobuf.Message(type_descriptors.GetGuessNumReply)
+GetGuessNumRequest = protobuf.Message(type_descriptors.GetGuessNumRequest)
+GoldUpdatePush = protobuf.Message(type_descriptors.GoldUpdatePush)
+GuessDiceGetRewardReply = protobuf.Message(type_descriptors.GuessDiceGetRewardReply)
+GuessDiceGetRewardRequest = protobuf.Message(type_descriptors.GuessDiceGetRewardRequest)
+GuessDiceReply = protobuf.Message(type_descriptors.GuessDiceReply)
+GuessDiceRequest = protobuf.Message(type_descriptors.GuessDiceRequest)
+GuessDiceResultReply = protobuf.Message(type_descriptors.GuessDiceResultReply)
+GuessDiceResultRequest = protobuf.Message(type_descriptors.GuessDiceResultRequest)
+JudgeArchiveReply = protobuf.Message(type_descriptors.JudgeArchiveReply)
+JudgeArchiveRequest = protobuf.Message(type_descriptors.JudgeArchiveRequest)
+LoadAllRoomPrizesReply = protobuf.Message(type_descriptors.LoadAllRoomPrizesReply)
+LoadAllRoomPrizesRequest = protobuf.Message(type_descriptors.LoadAllRoomPrizesRequest)
+LoadInfoReply = protobuf.Message(type_descriptors.LoadInfoReply)
+LoadInfoRequest = protobuf.Message(type_descriptors.LoadInfoRequest)
+LoadLogsReply = protobuf.Message(type_descriptors.LoadLogsReply)
+LoadLogsRequest = protobuf.Message(type_descriptors.LoadLogsRequest)
+LoadScriptReply = protobuf.Message(type_descriptors.LoadScriptReply)
+LoadScriptRequest = protobuf.Message(type_descriptors.LoadScriptRequest)
+LuckyDiceReply = protobuf.Message(type_descriptors.LuckyDiceReply)
+LuckyDiceRequest = protobuf.Message(type_descriptors.LuckyDiceRequest)
+MallBuyReply = protobuf.Message(type_descriptors.MallBuyReply)
+MallBuyRequest = protobuf.Message(type_descriptors.MallBuyRequest)
+MapConfig = protobuf.Message(type_descriptors.MapConfig)
+MapConfigPush = protobuf.Message(type_descriptors.MapConfigPush)
+MapNO = protobuf.Message(type_descriptors.MapNO)
+MapUpdatePush = protobuf.Message(type_descriptors.MapUpdatePush)
+MonsterPush = protobuf.Message(type_descriptors.MonsterPush)
+MoveReply = protobuf.Message(type_descriptors.MoveReply)
+MoveRequest = protobuf.Message(type_descriptors.MoveRequest)
+NextLayerReply = protobuf.Message(type_descriptors.NextLayerReply)
+NextLayerRequest = protobuf.Message(type_descriptors.NextLayerRequest)
+PlayerInfoUpdatePush = protobuf.Message(type_descriptors.PlayerInfoUpdatePush)
+PrizeNO = protobuf.Message(type_descriptors.PrizeNO)
+PropsNO = protobuf.Message(type_descriptors.PropsNO)
+QuitReply = protobuf.Message(type_descriptors.QuitReply)
+QuitRequest = protobuf.Message(type_descriptors.QuitRequest)
+R_HeroNO = protobuf.Message(type_descriptors.R_HeroNO)
+RoguelikeListTaskReply = protobuf.Message(type_descriptors.RoguelikeListTaskReply)
+RoguelikeListTaskRequest = protobuf.Message(type_descriptors.RoguelikeListTaskRequest)
+RoguelikeRefreshTaskPush = protobuf.Message(type_descriptors.RoguelikeRefreshTaskPush)
+RoguelikeTaskRewardReply = protobuf.Message(type_descriptors.RoguelikeTaskRewardReply)
+RoguelikeTaskRewardRequest = protobuf.Message(type_descriptors.RoguelikeTaskRewardRequest)
+RoleChangeValue = protobuf.Message(type_descriptors.RoleChangeValue)
+RoomNO = protobuf.Message(type_descriptors.RoomNO)
+RoomPrizesNO = protobuf.Message(type_descriptors.RoomPrizesNO)
+RoomPrizesUpdatePush = protobuf.Message(type_descriptors.RoomPrizesUpdatePush)
+RoomUpdateNO = protobuf.Message(type_descriptors.RoomUpdateNO)
+ScriptInfo = protobuf.Message(type_descriptors.ScriptInfo)
+ScriptPush = protobuf.Message(type_descriptors.ScriptPush)
+SeedPush = protobuf.Message(type_descriptors.SeedPush)
+SelectPropsPush = protobuf.Message(type_descriptors.SelectPropsPush)
+SetCardCdReply = protobuf.Message(type_descriptors.SetCardCdReply)
+SetCardCdRequest = protobuf.Message(type_descriptors.SetCardCdRequest)
+Shape = protobuf.Message(type_descriptors.Shape)
+SortReply = protobuf.Message(type_descriptors.SortReply)
+SortRequest = protobuf.Message(type_descriptors.SortRequest)
+StartCardSelectHeroReply = protobuf.Message(type_descriptors.StartCardSelectHeroReply)
+StartCardSelectHeroRequest = protobuf.Message(type_descriptors.StartCardSelectHeroRequest)
+StartEventReply = protobuf.Message(type_descriptors.StartEventReply)
+StartEventRequest = protobuf.Message(type_descriptors.StartEventRequest)
+StartJudgeReply = protobuf.Message(type_descriptors.StartJudgeReply)
+StartJudgeRequest = protobuf.Message(type_descriptors.StartJudgeRequest)
+StartReply = protobuf.Message(type_descriptors.StartReply)
+StartRequest = protobuf.Message(type_descriptors.StartRequest)
+StoryPush = protobuf.Message(type_descriptors.StoryPush)
+TakeEffectReply = protobuf.Message(type_descriptors.TakeEffectReply)
+TakeEffectRequest = protobuf.Message(type_descriptors.TakeEffectRequest)
+TouchReply = protobuf.Message(type_descriptors.TouchReply)
+TouchRequest = protobuf.Message(type_descriptors.TouchRequest)
+UpgradeEquipReply = protobuf.Message(type_descriptors.UpgradeEquipReply)
+UpgradeEquipRequest = protobuf.Message(type_descriptors.UpgradeEquipRequest)
+UseSkillReply = protobuf.Message(type_descriptors.UseSkillReply)
+UseSkillRequest = protobuf.Message(type_descriptors.UseSkillRequest)
+WearEquipReply = protobuf.Message(type_descriptors.WearEquipReply)
+WearEquipRequest = protobuf.Message(type_descriptors.WearEquipRequest)
+
+return _G["logic.proto.RoguelikeExtension_pb"]

@@ -1,0 +1,40 @@
+﻿-- chunkname: @/Users/baioo/builds/866EVqtU/3/spacex/spacex-client/UnityProj/Assets/Scripts/Lua/logic/extensions/task/util/impl/tacit/TaskHeroMoveInRound.lua
+
+module("logic.extensions.task.util.impl.tacit.TaskHeroMoveInRound", package.seeall)
+
+local M = class("TaskHeroMoveInRound")
+
+function M:parseContent(code, desc, param, heroId)
+	local tempStr = desc
+	local maxCount = 1
+	local paramArray = string.split(param, "#")
+
+	if paramArray and #paramArray ~= 3 then
+		if enableErrorLog then
+			printError("Invalid parameter length with code:", code)
+		end
+
+		return tempStr, maxCount
+	end
+
+	local distance = tonumber(paramArray[1])
+	local id = tonumber(paramArray[2])
+	local round = tonumber(paramArray[3])
+
+	id = id == -1 and heroId or id
+
+	local name = ""
+	local heroInfoCO = PastInfoConfig.instance:getCharacterInfo(id)
+
+	if heroInfoCO then
+		name = heroInfoCO.name
+	end
+
+	tempStr = string.gsub(tempStr, "#1#", distance)
+	tempStr = string.gsub(tempStr, "#2#", name)
+	tempStr = string.gsub(tempStr, "#3#", round)
+
+	return tempStr, maxCount
+end
+
+return M
