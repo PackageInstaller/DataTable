@@ -1,0 +1,126 @@
+{
+  "name": "",
+  "others_num": 0,
+  "triggerName": "怪物警觉",
+  "others": [],
+  "trigger": 26,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "30203a;100000;5000",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "设置CD"
+    },
+    {
+      "value": "3020303;100000;5000",
+      "ptype": "是",
+      "index": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "target": 1,
+      "codeType": 2,
+      "type": "设置CD"
+    },
+    {
+      "value": "3020303_hold;0;6;2000;9;3020303_hold;spell_1;4000;;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 3,
+      "index": 2,
+      "codeType": 2,
+      "type": "蓄力"
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "ifs": [
+    {
+      "value": "30203",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 0,
+      "index": 0,
+      "codeType": 1,
+      "type": "怪物bid"
+    },
+    {
+      "value": "3020303",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "target": 1,
+      "codeType": 1,
+      "index": 1,
+      "type": "检查CD"
+    },
+    {
+      "value": "<=;60",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "target": 1,
+      "codeType": 1,
+      "index": 2,
+      "type": "玩家距离"
+    },
+    {
+      "value": "<;2500",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "index": 3,
+      "id": -1,
+      "ii": 3,
+      "target": 1,
+      "codeType": 1,
+      "type": "生命比例"
+    },
+    {
+      "value": "1",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 4,
+      "index": 4,
+      "codeType": 1,
+      "type": "调试模式"
+    },
+    {
+      "value": "3",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 5,
+      "index": 5,
+      "codeType": 1,
+      "type": "AI优先级"
+    }
+  ]
+}

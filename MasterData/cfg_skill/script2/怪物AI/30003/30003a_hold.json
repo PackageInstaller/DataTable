@@ -1,0 +1,85 @@
+{
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "value": "30003",
+      "ii": 0,
+      "index": 0,
+      "codeType": 1,
+      "type": "怪物bid"
+    },
+    {
+      "target": 1,
+      "value": "30003a_hold",
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "id": -1,
+      "ii": 1,
+      "index": 1,
+      "codeType": 1,
+      "type": "蓄力事件"
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "target": 1,
+      "value": "30003a;0;2000",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "ii": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "设置CD"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ptype": "是",
+      "value": "0;0;200;0;10;0;333;0",
+      "ii": 2,
+      "index": 1,
+      "codeType": 2,
+      "type": "动作移动"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ptype": "是",
+      "value": "0;0;100;0;5;0;33;0",
+      "ii": 3,
+      "index": 2,
+      "codeType": 2,
+      "type": "动作移动"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ptype": "是",
+      "value": "0#0;0;0;3;82000_30003_1_atk;30003a1|30003a2|30003a3#0;0;0;;0",
+      "ii": 4,
+      "index": 3,
+      "codeType": 2,
+      "type": "场景特效"
+    }
+  ],
+  "trigger": 30,
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "others": [],
+  "ifs_or": [],
+  "others_id": 0
+}

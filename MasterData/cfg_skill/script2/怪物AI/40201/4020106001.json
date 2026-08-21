@@ -1,0 +1,116 @@
+{
+  "ifs": [
+    {
+      "value": "4020106001",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "target": 1,
+      "index": 0,
+      "codeType": 1,
+      "type": "监听消息"
+    },
+    {
+      "value": "1",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "term": "and",
+      "target": 1,
+      "index": 1,
+      "codeType": 1,
+      "type": "调试模式"
+    },
+    {
+      "value": "40201",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "term": "and",
+      "target": 1,
+      "index": 2,
+      "codeType": 1,
+      "type": "怪物bid"
+    }
+  ],
+  "others": [
+    {
+      "ifs": [],
+      "id": 0,
+      "ifs_or": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    },
+    {
+      "ifs": [],
+      "id": 1,
+      "ifs_or": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    },
+    null,
+    {
+      "ifs": [],
+      "id": 3,
+      "ifs_or": [],
+      "parentid": 2,
+      "actions": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    }
+  ],
+  "trigger": 32,
+  "others_id": 2,
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1,
+    2
+  ],
+  "triggerName": "消息事件",
+  "name": "",
+  "actions": [
+    {
+      "value": "85000_4020105_2_a;1;1;0#0#0;1|2|3;60000;0;0;0;0;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "index": 0,
+      "target": 1,
+      "codeType": 2,
+      "type": "生成标记特效"
+    },
+    {
+      "value": "85000_4020105_2_b;0;1;0#0#0;1|2|3;60000;0;0;0;4020105_hurt_01;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "index": 1,
+      "target": 1,
+      "codeType": 2,
+      "type": "生成标记特效"
+    },
+    {
+      "value": 16,
+      "t": 1,
+      "index": 2,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "others_num": 1,
+  "elses": []
+}

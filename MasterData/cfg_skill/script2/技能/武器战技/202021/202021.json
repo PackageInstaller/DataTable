@@ -1,0 +1,175 @@
+{
+  "ifs": [
+    {
+      "value": "202021",
+      "type": "技能ID",
+      "t": 1,
+      "target": 1,
+      "term": "and",
+      "ptype": "判断",
+      "codeType": 1,
+      "ii": 0,
+      "index": 0,
+      "id": -1
+    }
+  ],
+  "others": [
+    null,
+    null,
+    null,
+    {
+      "ifs": [
+        {
+          "value": "count;>;4",
+          "type": "人物变量",
+          "t": 3,
+          "target": 1,
+          "term": "and",
+          "ptype": "判断",
+          "codeType": 1,
+          "ii": 0,
+          "index": 0,
+          "id": 3
+        }
+      ],
+      "elses": [
+        {
+          "value": "count;=;count;+;1",
+          "codeType": 3,
+          "t": 3,
+          "index": 0,
+          "id": 3,
+          "ptype": "否",
+          "type": "运算变量",
+          "ii": 1,
+          "target": 1
+        },
+        {
+          "value": "空",
+          "codeType": 3,
+          "t": 3,
+          "index": 1,
+          "id": 3,
+          "ptype": "否",
+          "type": "空",
+          "ii": 2,
+          "target": 1
+        }
+      ],
+      "parentid": -1,
+      "id": 3,
+      "actions": [
+        {
+          "value": "count;=;0",
+          "type": "人物变量",
+          "t": 3,
+          "id": 3,
+          "ptype": "是",
+          "codeType": 2,
+          "ii": 1,
+          "index": 0,
+          "target": 1
+        },
+        {
+          "value": "1;0#2#202021c;0;3;83100_202021_4;202021d",
+          "type": "场景特效",
+          "t": 3,
+          "id": 3,
+          "ptype": "是",
+          "codeType": 2,
+          "ii": 2,
+          "index": 1,
+          "target": 1
+        },
+        {
+          "value": "空",
+          "type": "空",
+          "t": 3,
+          "id": 3,
+          "ptype": "是",
+          "codeType": 2,
+          "ii": 3,
+          "index": 2,
+          "target": 1
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "ifs_or": []
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "0;0;0;3;83100_202021_1;202021a",
+      "type": "场景特效",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "1;4;0;0;0;1;50;1;200;83100_202021_2;202021b",
+      "type": "发射特效",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    },
+    {
+      "value": "1;0#1#202021b;0;3;83100_202021_3;202021c",
+      "type": "场景特效",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 3,
+      "index": 2,
+      "target": 1
+    },
+    {
+      "value": "空",
+      "type": "空",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 4,
+      "index": 3,
+      "target": 1
+    },
+    {
+      "value": 3,
+      "type": "分支",
+      "codeType": 2,
+      "t": 1,
+      "index": 4
+    },
+    {
+      "value": "空",
+      "type": "空",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 6,
+      "index": 5,
+      "target": 1
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "others_num": 1,
+  "trigger": 25,
+  "others_id": 3,
+  "ifs_or": []
+}

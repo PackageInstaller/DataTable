@@ -1,0 +1,98 @@
+{
+  "others_id": 0,
+  "triggerName": "怪物警觉",
+  "name": "",
+  "ifs": [
+    {
+      "target": 1,
+      "value": "8",
+      "t": 1,
+      "codeType": 1,
+      "ptype": "判断",
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "index": 0,
+      "type": "AI优先级"
+    },
+    {
+      "target": 1,
+      "value": "30202",
+      "t": 1,
+      "codeType": 1,
+      "ptype": "判断",
+      "id": -1,
+      "ii": 1,
+      "term": "and",
+      "index": 1,
+      "type": "怪物bid"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 1,
+      "ptype": "判断",
+      "value": "3020201",
+      "ii": 2,
+      "term": "and",
+      "index": 2,
+      "type": "检查CD"
+    }
+  ],
+  "trigger": 26,
+  "others": [],
+  "actions": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "3020201_hold;0;6;2000;7;3020201_hold;spell_1;4000;;",
+      "ii": 1,
+      "ptype": "是",
+      "index": 0,
+      "type": "蓄力"
+    },
+    {
+      "target": 1,
+      "value": "0#0;2500;0;0#10#0;82000_3020201_1_b;;",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "codeType": 2,
+      "value": "0#0;500;0;0#10#0;82000_3020201_1_a;;",
+      "ii": 3,
+      "ptype": "是",
+      "index": 2,
+      "type": "场景特效"
+    },
+    {
+      "target": 1,
+      "value": "3020201;1000000000;100000000",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "ii": 4,
+      "ptype": "是",
+      "index": 3,
+      "type": "设置CD"
+    }
+  ],
+  "others_num": 0,
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1,
+    2
+  ]
+}

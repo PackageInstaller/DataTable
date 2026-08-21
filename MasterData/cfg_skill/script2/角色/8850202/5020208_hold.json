@@ -1,0 +1,60 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "actions": [
+    {
+      "value": "5020201;10000;10000",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "target": 1,
+      "index": 0,
+      "ii": 1,
+      "type": "设置CD"
+    },
+    {
+      "value": "5020201;0;5;2000;9;5020201a;hunwen_spell;1000;0;0",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "target": 1,
+      "index": 1,
+      "ii": 2,
+      "type": "蓄力"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "5020201",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "ptype": "判断",
+      "target": 1,
+      "index": 0,
+      "term": "and",
+      "type": "检查CD"
+    },
+    {
+      "value": "5020201",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "ptype": "判断",
+      "target": 1,
+      "index": 1,
+      "term": "and",
+      "type": "技能ID"
+    }
+  ],
+  "trigger": 25,
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1
+  ]
+}

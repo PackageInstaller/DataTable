@@ -1,0 +1,39 @@
+{
+  "others_num": 0,
+  "ifs_or": [],
+  "name": "",
+  "actions": [
+    {
+      "value": "4000",
+      "target": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "index": 0,
+      "ptype": "是",
+      "type": "恢复血量"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "90020",
+      "target": 1,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ii": 0,
+      "codeType": 1,
+      "term": "and",
+      "ptype": "判断",
+      "type": "使用物品id"
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "trigger": 28,
+  "others_id": 0,
+  "triggerName": "使用道具",
+  "others": []
+}

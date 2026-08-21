@@ -1,0 +1,57 @@
+{
+  "ifs": [
+    {
+      "value": "202004",
+      "type": "技能ID",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ptype": "判断",
+      "term": "and",
+      "codeType": 1,
+      "ii": 0,
+      "target": 1
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "0;0;0;3;83100_202004_1;202004a",
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ptype": "是",
+      "type": "场景特效",
+      "ii": 1,
+      "target": 1
+    },
+    {
+      "value": "0;0#2#202004a;0;3;83100_202004_2;202004b",
+      "codeType": 2,
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "场景特效",
+      "ii": 2,
+      "target": 1
+    },
+    {
+      "value": "0;0#2#202004b;0;1;83100_202004_3;202004c",
+      "codeType": 2,
+      "t": 1,
+      "index": 2,
+      "id": -1,
+      "ptype": "是",
+      "type": "场景特效",
+      "ii": 3,
+      "target": 1
+    }
+  ],
+  "ifs_or": [],
+  "trigger": 25
+}

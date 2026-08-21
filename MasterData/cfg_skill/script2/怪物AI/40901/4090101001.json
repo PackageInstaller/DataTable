@@ -1,0 +1,164 @@
+{
+  "triggerName": "消息事件",
+  "ifs": [
+    {
+      "value": "1",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 1,
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "type": "调试模式"
+    },
+    {
+      "value": "7500",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "index": 1,
+      "codeType": 1,
+      "ii": 1,
+      "ptype": "判断",
+      "target": 1,
+      "type": "概率"
+    },
+    {
+      "value": "0#-45#45",
+      "term": "and",
+      "ii": 2,
+      "t": 1,
+      "index": 2,
+      "id": -1,
+      "codeType": 1,
+      "ptype": "判断",
+      "target": 1,
+      "type": "目标方位"
+    },
+    {
+      "value": "4090101001",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "index": 3,
+      "codeType": 1,
+      "ii": 3,
+      "ptype": "判断",
+      "target": 1,
+      "type": "监听消息"
+    },
+    {
+      "value": "40901",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 1,
+      "ii": 4,
+      "ptype": "判断",
+      "index": 4,
+      "type": "怪物bid"
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": 16,
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "type": "分支"
+    },
+    {
+      "value": 2,
+      "codeType": 2,
+      "t": 1,
+      "index": 1,
+      "type": "分支"
+    }
+  ],
+  "others_num": 1,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "others": [
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "id": 0,
+      "ifs_or": []
+    },
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "id": 1,
+      "ifs_or": []
+    },
+    {
+      "codeType": 0,
+      "elses": [
+        {
+          "value": "0;409010302;0;",
+          "t": 3,
+          "id": 2,
+          "index": 0,
+          "codeType": 3,
+          "ii": 1,
+          "ptype": "否",
+          "target": 1,
+          "type": "发送消息"
+        }
+      ],
+      "ifs": [
+        {
+          "value": "5000",
+          "term": "and",
+          "t": 3,
+          "id": 2,
+          "index": 0,
+          "codeType": 1,
+          "ii": 0,
+          "ptype": "判断",
+          "target": 1,
+          "type": "概率"
+        }
+      ],
+      "parentid": -1,
+      "actions": [
+        {
+          "value": "0;4090102;0;",
+          "t": 3,
+          "id": 2,
+          "index": 0,
+          "codeType": 2,
+          "ii": 1,
+          "ptype": "是",
+          "target": 1,
+          "type": "发送消息"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "id": 2,
+      "ifs_or": []
+    }
+  ],
+  "trigger": 32,
+  "others_id": 2,
+  "ifs_or": []
+}

@@ -1,0 +1,160 @@
+{
+  "others": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 8,
+      "elses": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 9,
+      "elses": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 10,
+      "elses": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 11,
+      "elses": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 12,
+      "elses": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 13,
+      "elses": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 14,
+      "elses": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 15,
+      "elses": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "ifs": []
+    }
+  ],
+  "ifs_or": [],
+  "trigger": 25,
+  "name": "",
+  "actions": [
+    {
+      "value": "31000701;-3",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "type": "展示BUFF",
+      "ii": 1,
+      "index": 0,
+      "ptype": "是",
+      "target": 1
+    },
+    {
+      "value": "结果310007#0;=;atk#1;*;250",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "type": "运算变量",
+      "ii": 2,
+      "index": 1,
+      "ptype": "是",
+      "target": 1
+    },
+    {
+      "value": "结果310007;+;500",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "type": "局部变量",
+      "ii": 3,
+      "index": 2,
+      "ptype": "是",
+      "target": 1
+    },
+    {
+      "value": "shanbi;结果310007#0;-3",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "type": "临时属性",
+      "ii": 4,
+      "index": 3,
+      "ptype": "是",
+      "target": 1
+    }
+  ],
+  "others_id": 15,
+  "ifs_and": [
+    0
+  ],
+  "others_num": 9,
+  "ifs": [
+    {
+      "value": "1300",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "type": "技能ID",
+      "term": "and",
+      "ii": 0,
+      "index": 0,
+      "ptype": "判断",
+      "target": 1
+    }
+  ]
+}

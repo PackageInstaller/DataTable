@@ -1,0 +1,46 @@
+{
+  "ifs": [
+    {
+      "value": "201019",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "技能ID",
+      "codeType": 1,
+      "ii": 0,
+      "index": 0,
+      "target": 1
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "1;1;0;0;0;1;0;1;100;83100_201019_1;201019a",
+      "type": "发射特效",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "0;0;500;1;10",
+      "type": "动作移动",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    }
+  ],
+  "ifs_or": [],
+  "trigger": 25
+}

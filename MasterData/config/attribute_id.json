@@ -1,0 +1,2717 @@
+{
+  "columns": [
+    "id",
+    "attributesort",
+    "",
+    "shuxing_name",
+    "shuxing_type",
+    "unit",
+    "model",
+    "explain",
+    "visibility",
+    "icon",
+    "initial",
+    "limit",
+    "txt"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "attributesort": 2,
+      "shuxing_name": "力量",
+      "shuxing_type": "str",
+      "model": 1,
+      "explain": "攻击力提升2点、减伤率提升0.2%、冲击抗性提升0.3%、生命值提升10点",
+      "icon": 1,
+      "limit": 500,
+      "txt": "初值根据创角时选择的职业而定"
+    },
+    {
+      "id": 2,
+      "attributesort": 2,
+      "shuxing_name": "敏捷",
+      "shuxing_type": "agi",
+      "model": 1,
+      "explain": "攻击力提升2点、暴击率提升0.1%、攻击速度提升0.2%、生命值提升5点",
+      "icon": 2,
+      "limit": 500,
+      "txt": "初值根据创角时选择的职业而定"
+    },
+    {
+      "id": 3,
+      "attributesort": 2,
+      "shuxing_name": "智力",
+      "shuxing_type": "int",
+      "model": 1,
+      "explain": "攻击力提升2点、法术伤害提升0.25%、蓄力时间减少0.2%、生命值提升5点",
+      "icon": 3,
+      "limit": 500,
+      "txt": "初值根据创角时选择的职业而定"
+    },
+    {
+      "id": 4,
+      "attributesort": 2,
+      "shuxing_name": "信仰",
+      "shuxing_type": "fai",
+      "model": 1,
+      "explain": "攻击力提升2点、专注值提升0.5点、专注值增加量提升0.2%、生命值提升5点",
+      "icon": 4,
+      "limit": 500,
+      "txt": "初值根据创角时选择的职业而定"
+    },
+    {
+      "id": 5,
+      "attributesort": 1,
+      "shuxing_name": "攻击力",
+      "shuxing_type": "atk",
+      "model": 2,
+      "explain": "影响普攻/法术造成的伤害",
+      "icon": 5,
+      "txt": "一切伤害公式的基础"
+    },
+    {
+      "id": 6,
+      "attributesort": 3,
+      "shuxing_name": "减伤率",
+      "shuxing_type": "damage_sub",
+      "unit": 1,
+      "explain": "减伤的比例，最高减少受到60%的伤害。\n堆叠有衰减机制，减伤率越高，减少的伤害越少。",
+      "icon": 6,
+      "txt": "游戏没有设计防御力\n①1-10%，100%加成\n②11-20%，55%加成\n③21-30%，40%加成\n④31-40%，30%加成\n⑤41-50%，20%加成\n⑥51-60%，10%加成\n一共需求200%减伤率才能达到60%减伤"
+    },
+    {
+      "id": 7,
+      "attributesort": 1,
+      "shuxing_name": "生命值",
+      "shuxing_type": "maxhp",
+      "model": 5,
+      "explain": "生命值为0时就会死亡。",
+      "icon": 7,
+      "limit": 10000,
+      "txt": "最大上限为10000生命值(超出无效)"
+    },
+    {
+      "id": 8,
+      "attributesort": 1,
+      "shuxing_name": "专注值",
+      "shuxing_type": "maxmp",
+      "explain": "释放武器战技、余烬战技时所需要消耗的专注值。\n可通过普通攻击来进行恢复。",
+      "icon": 8,
+      "limit": 1000,
+      "txt": "出生时默认为0点，专注值存在小数点\n主角获得专注值时，所有配角必定会获得其专注值的一半"
+    },
+    {
+      "id": 9,
+      "attributesort": 4,
+      "shuxing_name": "魂纹值",
+      "shuxing_type": "soulmp",
+      "explain": "释放魂纹战技时所需要消耗的魂纹值。\n可通过普通攻击来进行恢复。",
+      "icon": 9,
+      "txt": "禁忌属性，默认不投产，魂纹值存在小数点"
+    },
+    {
+      "id": 10,
+      "attributesort": 1,
+      "shuxing_name": "暴击率",
+      "shuxing_type": "crit",
+      "unit": 1,
+      "explain": "触发暴击的概率。任何伤害都能触发暴击。",
+      "visibility": 1,
+      "icon": 10,
+      "txt": "默认自带5%暴击率"
+    },
+    {
+      "id": 11,
+      "attributesort": 1,
+      "shuxing_name": "暴击伤害",
+      "shuxing_type": "crit_hurt",
+      "unit": 1,
+      "explain": "触发暴击时，追加对敌人追加单次伤害*暴击伤害的伤害",
+      "icon": 11,
+      "txt": "默认自带50%暴击伤害"
+    },
+    {
+      "id": 12,
+      "attributesort": 1,
+      "shuxing_name": "法术伤害",
+      "shuxing_type": "magic_hurt",
+      "unit": 1,
+      "explain": "影响法术造成的伤害比例。不通过普通攻击造成的伤害，一律视为法术伤害。",
+      "visibility": 1,
+      "icon": 12
+    },
+    {
+      "id": 13,
+      "attributesort": 3,
+      "shuxing_name": "普攻穿刺",
+      "shuxing_type": "normal_puncture",
+      "unit": 1,
+      "explain": "造成普攻伤害时无视敌人的减伤率",
+      "visibility": 1,
+      "icon": 13,
+      "txt": "减伤率不会变为负数"
+    },
+    {
+      "id": 14,
+      "attributesort": 3,
+      "shuxing_name": "法术穿刺",
+      "shuxing_type": "magic_puncture",
+      "unit": 1,
+      "explain": "造成法术伤害时无视敌人的减伤率",
+      "visibility": 1,
+      "icon": 14,
+      "txt": "减伤率不会变为负数"
+    },
+    {
+      "id": 15,
+      "attributesort": 3,
+      "shuxing_name": "暴击穿刺（new）",
+      "shuxing_type": "crit_puncture",
+      "unit": 1,
+      "explain": "无视敌人的暴击抗性率",
+      "icon": 15,
+      "txt": "真实伤害不会进入减伤率、属性抗性环节\n例如对玩家造成100真实伤害，那么无论如何也会受到100的真实伤害。"
+    },
+    {
+      "id": 16,
+      "attributesort": 3,
+      "shuxing_name": "增伤率",
+      "shuxing_type": "damage_add",
+      "unit": 1,
+      "explain": "提升造成的所有伤害",
+      "icon": 16,
+      "txt": "先计算完一切伤害，再计算增伤率"
+    },
+    {
+      "id": 17,
+      "attributesort": 3,
+      "shuxing_name": "攻击速度",
+      "shuxing_type": "normal_speed",
+      "unit": 1,
+      "explain": "减少攻击的前摇时间比例，最高减少50%",
+      "icon": 17
+    },
+    {
+      "id": 18,
+      "attributesort": 3,
+      "shuxing_name": "魂纹战技伤害",
+      "shuxing_type": "soul_skill_damage",
+      "unit": 1,
+      "explain": "影响所有谒魂者的魂纹战技造成的伤害万分比",
+      "icon": 18,
+      "txt": "影响该数值的伤害系数，在计算伤害倍率得环节上，未进入到增伤率环节"
+    },
+    {
+      "id": 19,
+      "attributesort": 3,
+      "shuxing_name": "武器战技伤害",
+      "shuxing_type": "weapon_skill_damage",
+      "unit": 1,
+      "explain": "影响武器战技造成的伤害万分比",
+      "icon": 19,
+      "txt": "影响该数值的伤害系数，在计算伤害倍率得环节上，未进入到增伤率环节"
+    },
+    {
+      "id": 20,
+      "attributesort": 3,
+      "shuxing_name": "余烬战技伤害",
+      "shuxing_type": "skill_damage",
+      "unit": 1,
+      "explain": "影响余烬战技造成的伤害万分比",
+      "icon": 20,
+      "txt": "影响该数值的伤害系数，在计算伤害倍率得环节上，未进入到增伤率环节"
+    },
+    {
+      "id": 21,
+      "attributesort": 3,
+      "shuxing_name": "魂纹战技冷却缩减",
+      "shuxing_type": "soul_skill_cd",
+      "unit": 1,
+      "explain": "影响魂纹战技的冷却时间，最高减少50%",
+      "icon": 21
+    },
+    {
+      "id": 22,
+      "attributesort": 3,
+      "shuxing_name": "武器战技冷却缩减",
+      "shuxing_type": "weapon_skill_cd",
+      "unit": 1,
+      "explain": "影响武器战技的冷却时间，最高减少50%",
+      "icon": 22
+    },
+    {
+      "id": 23,
+      "attributesort": 3,
+      "shuxing_name": "余烬战技冷却缩减",
+      "shuxing_type": "skill_cd",
+      "unit": 1,
+      "explain": "影响余烬战技的冷却时间，最高减少50%",
+      "icon": 23
+    },
+    {
+      "id": 24,
+      "attributesort": 3,
+      "shuxing_name": "暴击抗性率（new）",
+      "shuxing_type": "crit_res",
+      "unit": 1,
+      "explain": "受到伤害时减少攻击者的暴击率",
+      "icon": 37,
+      "txt": "默认失衡时间为3秒"
+    },
+    {
+      "id": 25,
+      "attributesort": 3,
+      "shuxing_name": "抗魔率",
+      "shuxing_type": "skill_dodge",
+      "unit": 1,
+      "explain": "受到法术伤害时有概率免疫，最高概率50%",
+      "visibility": 1,
+      "icon": 25
+    },
+    {
+      "id": 26,
+      "attributesort": 3,
+      "shuxing_name": "治疗效果加成",
+      "shuxing_type": "heal_add",
+      "unit": 1,
+      "explain": "影响受到治疗效果的比例，比如契泪圣露瓶、莺歌魂纹战技、食物等途径产生的治疗效果。",
+      "icon": 26
+    },
+    {
+      "id": 27,
+      "attributesort": 3,
+      "shuxing_name": "护盾效果加成",
+      "shuxing_type": "shield_add",
+      "unit": 1,
+      "explain": "影响受到护盾效果的比例",
+      "icon": 27
+    },
+    {
+      "id": 28,
+      "attributesort": 3,
+      "shuxing_name": "击退加成",
+      "shuxing_type": "defeat_add",
+      "unit": 1,
+      "explain": "影响击退敌人的距离，最高提升100%",
+      "icon": 28
+    },
+    {
+      "id": 29,
+      "attributesort": 3,
+      "shuxing_name": "削韧值加成",
+      "shuxing_type": "stun_add",
+      "unit": 1,
+      "explain": "提升削韧值的比例，最高提升100%",
+      "visibility": 1,
+      "icon": 29
+    },
+    {
+      "id": 30,
+      "attributesort": 3,
+      "shuxing_name": "冲击值加成",
+      "shuxing_type": "impact_add",
+      "unit": 1,
+      "explain": "提升冲击值的比例，最高提升100%\n冲击值上限值为100000（10级），不能溢出。",
+      "visibility": 1,
+      "icon": 30
+    },
+    {
+      "id": 31,
+      "attributesort": 3,
+      "shuxing_name": "生命值低于35%时，每秒恢复生命值",
+      "shuxing_type": "restore_hp",
+      "unit": 1,
+      "explain": "生命值低于35%时，每秒恢复万分比生命值",
+      "icon": 31
+    },
+    {
+      "id": 32,
+      "attributesort": 3,
+      "shuxing_name": "专注值低于35%时，每秒恢复专注值",
+      "shuxing_type": "restore_mp",
+      "unit": 1,
+      "explain": "专注值低于35%时，每秒恢复万分比专注值",
+      "icon": 32
+    },
+    {
+      "id": 33,
+      "attributesort": 3,
+      "shuxing_name": "魂纹值低于35%时，每秒恢复魂纹值",
+      "shuxing_type": "restore_soulmp",
+      "unit": 1,
+      "explain": "魂纹值低于35%时，每秒恢复万分比魂纹值",
+      "icon": 33
+    },
+    {
+      "id": 34,
+      "attributesort": 3,
+      "shuxing_name": "击退抗性",
+      "shuxing_type": "defeat_res",
+      "unit": 1,
+      "explain": "减少被击退的距离，最高减少90%",
+      "icon": 34
+    },
+    {
+      "id": 35,
+      "attributesort": 3,
+      "shuxing_name": "冲击抗性",
+      "shuxing_type": "impact_res",
+      "unit": 1,
+      "explain": "减少因敌人攻击造成的硬直持续时间，最多减少75%",
+      "visibility": 1,
+      "icon": 35
+    },
+    {
+      "id": 36,
+      "attributesort": 3,
+      "shuxing_name": "抗冲击值",
+      "shuxing_type": "impact_pass",
+      "unit": 1,
+      "explain": "免疫X级以下的冲击，最多填10000",
+      "icon": 36,
+      "txt": "默认抗冲击值，普攻、引导技能、蓄力技能等等抗冲击值都是相同之间独立的。\n永远都是取最大值，比如如果普攻给的抗冲击值不如默认抗冲击值，那么还算取默认抗冲击值。"
+    },
+    {
+      "id": 37,
+      "attributesort": 3,
+      "shuxing_name": "属性异常状态持续时间",
+      "shuxing_type": "debuff_add",
+      "unit": 1,
+      "explain": "延长属性异常状态时的持续时间\n延长施加给敌人的灼烧、冻伤、感电、剧毒、惩戒属性异常状态持续时间。",
+      "icon": 38
+    },
+    {
+      "id": 38,
+      "attributesort": 3,
+      "shuxing_name": "减少属性异常状态持续时间",
+      "shuxing_type": "buff_res",
+      "unit": 1,
+      "explain": "减少受到属性异常状态时的持续时间\n缩短敌人施加给自身的灼烧、冻伤、感电、剧毒、惩戒属性异常状态持续时间。",
+      "icon": 38
+    },
+    {
+      "id": 39,
+      "attributesort": 3,
+      "shuxing_name": "物理增伤率",
+      "shuxing_type": "physical_damage_add",
+      "unit": 1,
+      "explain": "影响对应属性的伤害比例,游戏一共有七种属性类型,与增伤率为加法叠加",
+      "icon": 39
+    },
+    {
+      "id": 40,
+      "attributesort": 3,
+      "shuxing_name": "魔力增伤率",
+      "shuxing_type": "ability_damage_add",
+      "unit": 1,
+      "explain": "影响对应属性的伤害比例,游戏一共有七种属性类型,与增伤率为加法叠加",
+      "icon": 40
+    },
+    {
+      "id": 41,
+      "attributesort": 3,
+      "shuxing_name": "火属性增伤率",
+      "shuxing_type": "fire_damage_add",
+      "unit": 1,
+      "explain": "影响对应属性的伤害比例,游戏一共有七种属性类型,与增伤率为加法叠加",
+      "icon": 41
+    },
+    {
+      "id": 42,
+      "attributesort": 3,
+      "shuxing_name": "冰属性增伤率",
+      "shuxing_type": "ice_damage_add",
+      "unit": 1,
+      "explain": "影响对应属性的伤害比例,游戏一共有七种属性类型,与增伤率为加法叠加",
+      "icon": 42
+    },
+    {
+      "id": 43,
+      "attributesort": 3,
+      "shuxing_name": "雷属性增伤率",
+      "shuxing_type": "electric_damage_add",
+      "unit": 1,
+      "explain": "影响对应属性的伤害比例,游戏一共有七种属性类型,与增伤率为加法叠加",
+      "icon": 43
+    },
+    {
+      "id": 44,
+      "attributesort": 3,
+      "shuxing_name": "毒属性增伤率",
+      "shuxing_type": "poison_damage_add",
+      "unit": 1,
+      "explain": "影响对应属性的伤害比例,游戏一共有七种属性类型,与增伤率为加法叠加",
+      "icon": 44
+    },
+    {
+      "id": 45,
+      "attributesort": 3,
+      "shuxing_name": "圣属性增伤率",
+      "shuxing_type": "holy_damage_add",
+      "unit": 1,
+      "explain": "影响对应属性的伤害比例,游戏一共有七种属性类型,与增伤率为加法叠加",
+      "icon": 45
+    },
+    {
+      "id": 46,
+      "attributesort": 3,
+      "shuxing_name": "物理抗性率",
+      "shuxing_type": "physical_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，减少的伤害比例",
+      "icon": 46,
+      "txt": "先计算减伤率再计算属性抗性，具体参考伤害计算环节表格\n堆叠有衰减机制，属性抗性越高，减少的伤害越少，\n需要200%减伤率才能达到全额减伤。\n①1-10%，100%加成\n②11-20%，55%加成\n③21-30%，40%加成\n④31-40%，30%加成\n⑤41-50%，20%加成\n⑥51-60%，10%加成\n一共需求200%减伤率才能达到60%减伤"
+    },
+    {
+      "id": 47,
+      "attributesort": 3,
+      "shuxing_name": "魔力抗性率",
+      "shuxing_type": "ability_damage_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，减少的伤害比例",
+      "icon": 47
+    },
+    {
+      "id": 48,
+      "attributesort": 3,
+      "shuxing_name": "火属性抗性率",
+      "shuxing_type": "fire_damage_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，减少的伤害比例",
+      "icon": 48,
+      "txt": 40
+    },
+    {
+      "id": 49,
+      "attributesort": 3,
+      "shuxing_name": "冰属性抗性率",
+      "shuxing_type": "ice_damage_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，减少的伤害比例",
+      "icon": 49
+    },
+    {
+      "id": 50,
+      "attributesort": 3,
+      "shuxing_name": "雷属性抗性率",
+      "shuxing_type": "electric_damage_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，减少的伤害比例",
+      "icon": 50
+    },
+    {
+      "id": 51,
+      "attributesort": 3,
+      "shuxing_name": "毒属性抗性率",
+      "shuxing_type": "poison_damage_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，减少的伤害比例",
+      "icon": 51
+    },
+    {
+      "id": 52,
+      "attributesort": 3,
+      "shuxing_name": "圣属性抗性率",
+      "shuxing_type": "holy_damage_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，减少的伤害比例",
+      "icon": 52
+    },
+    {
+      "id": 53,
+      "attributesort": 3,
+      "shuxing_name": "召唤物攻击加成",
+      "shuxing_type": "summon_atk_add",
+      "unit": 1,
+      "explain": "影响召唤物的攻击力比例",
+      "icon": 53,
+      "txt": "召唤时进行一次快照机制"
+    },
+    {
+      "id": 54,
+      "attributesort": 3,
+      "shuxing_name": "召唤物生命加成",
+      "shuxing_type": "summon_hp_add",
+      "unit": 1,
+      "explain": "影响召唤物的生命力比例",
+      "icon": 54,
+      "txt": "召唤时进行一次快照机制"
+    },
+    {
+      "id": 55,
+      "attributesort": 3,
+      "shuxing_name": "召唤物继承主角的基础属性比例",
+      "shuxing_type": "summon_inherit_add",
+      "unit": 1,
+      "explain": "影响召唤物获得主角的攻击力、生命值",
+      "visibility": 1,
+      "icon": 55,
+      "txt": "禁忌属性，默认不投产"
+    },
+    {
+      "id": 56,
+      "attributesort": 3,
+      "shuxing_name": "召唤物持续时间加成",
+      "shuxing_type": "summon_time_add",
+      "unit": 1,
+      "explain": "影响召唤物的持续时间比例",
+      "visibility": 1,
+      "icon": 56,
+      "txt": "召唤时进行一次快照机制"
+    },
+    {
+      "id": 57,
+      "attributesort": 3,
+      "shuxing_name": "灵魂增加量",
+      "shuxing_type": "souldrop_add",
+      "unit": 1,
+      "explain": "影响击败敌人时，获取灵魂的数量比例",
+      "visibility": 1,
+      "icon": 57,
+      "txt": "直接乘于drop表的物品类型为101的物品掉落数量"
+    },
+    {
+      "id": 58,
+      "attributesort": 3,
+      "shuxing_name": "回响灵魂增加量",
+      "shuxing_type": "dmjsouldrop_add",
+      "unit": 1,
+      "explain": "影响击败敌人时，获取灵魂的数量比例",
+      "visibility": 1,
+      "icon": 58,
+      "txt": "直接乘于drop表的物品类型为112的物品掉落数量"
+    },
+    {
+      "id": 59,
+      "attributesort": 3,
+      "shuxing_name": "幸运",
+      "shuxing_type": "drop_add",
+      "unit": 1,
+      "explain": "影响敌人掉落高稀有度战利品的概率",
+      "visibility": 1,
+      "icon": 59,
+      "txt": "直接乘于drop表的rare字段为1的百分比掉落概率"
+    },
+    {
+      "id": 60,
+      "attributesort": 3,
+      "shuxing_name": "挂机获取的神躯碎片提升",
+      "shuxing_type": "godexp_add",
+      "unit": 1,
+      "explain": "挂机获取的神躯碎片提升",
+      "visibility": 1,
+      "icon": 60,
+      "txt": "与幸运是同一个乘区"
+    },
+    {
+      "id": 61,
+      "attributesort": 3,
+      "shuxing_name": "移速加成",
+      "shuxing_type": "speed_add",
+      "unit": 1,
+      "explain": "影响移动速度的比例，最高提升100%",
+      "icon": 61,
+      "txt": "默认角色移动速度为每秒25格"
+    },
+    {
+      "id": 62,
+      "attributesort": 4,
+      "shuxing_name": "最终增伤率",
+      "shuxing_type": "last_damage_add",
+      "unit": 1,
+      "explain": "在增伤率之后，提升造成的所有伤害",
+      "icon": 62,
+      "txt": "先计算完增伤率，再计算最终增伤率，最高贵乘区"
+    },
+    {
+      "id": 63,
+      "attributesort": 4,
+      "shuxing_name": "无昼回响最终增伤率",
+      "shuxing_type": "dmj_last_damage_add",
+      "unit": 1,
+      "explain": "在最终增伤率之后，提升造成的所有伤害",
+      "icon": 62,
+      "txt": "先计算完最终增伤率，再计算多一次增伤率，无昼回响才会产出的属性。"
+    },
+    {
+      "id": 64,
+      "attributesort": 4,
+      "shuxing_name": "无昼回响最终生命值",
+      "shuxing_type": "dmj_last_hp_add",
+      "unit": 1,
+      "explain": "在当前生命值+额外生命值加成之后，提升生命值。",
+      "icon": 63
+    },
+    {
+      "id": 65,
+      "attributesort": 4,
+      "shuxing_name": "无昼回响产出的嫣色瞳印提升",
+      "shuxing_type": "dmjexp_add",
+      "unit": 1,
+      "explain": "无昼回响产出的嫣色瞳印提升",
+      "icon": 64,
+      "txt": "远程武器自带攻击范围数值，例如150，再受该值加成\n影响远程普攻范围包含三种类型：弹幕·群体、弹幕·贯穿、光束·贯穿"
+    },
+    {
+      "id": 66,
+      "attributesort": 4,
+      "shuxing_name": "远程普攻射距加成",
+      "shuxing_type": "remotenormal_distance_add",
+      "unit": 1,
+      "explain": "影响远程普攻的射距万分比，最高提升100%",
+      "icon": 65,
+      "txt": "远程武器自带攻击射距数值，例如500，再受该值加成\n影响远程普攻范围包含六种类型：弹幕·群体、弹幕·贯穿、单体·弹幕、光束·单体、光束·贯穿、瞬发"
+    },
+    {
+      "id": 67,
+      "attributesort": 4,
+      "shuxing_name": "近程战技范围加成",
+      "shuxing_type": "meleeskill_range_add",
+      "unit": 1,
+      "explain": "影响所有近战战技的伤害范围万分比",
+      "icon": 66,
+      "txt": "战技自带伤害范围数值，例如300，再受该值加成"
+    },
+    {
+      "id": 68,
+      "attributesort": 4,
+      "shuxing_name": "远程战技范围加成",
+      "shuxing_type": "remoteskill_range_add",
+      "unit": 1,
+      "explain": "影响所有远程战技的伤害范围万分比",
+      "icon": 67,
+      "txt": "战技自带伤害范围数值，例如300，再受该值加成"
+    },
+    {
+      "id": 69,
+      "attributesort": 4,
+      "shuxing_name": "闪避距离加成",
+      "shuxing_type": "roll_distance_add",
+      "unit": 1,
+      "explain": "影响闪避的位移距离万分比，最高提升100%",
+      "icon": 68
+    },
+    {
+      "id": 70,
+      "attributesort": 4,
+      "shuxing_name": "闪避冷却时间缩短",
+      "shuxing_type": "roll_cd_add",
+      "unit": 1,
+      "explain": "影响闪避的冷却时间，最高减少50%",
+      "icon": 69
+    },
+    {
+      "id": 71,
+      "attributesort": 4,
+      "shuxing_name": "闪避无敌时间延长",
+      "shuxing_type": "roll_time_add",
+      "unit": 1,
+      "explain": "影响闪避免疫伤害的万分比时间，最高提升50%",
+      "icon": 70
+    },
+    {
+      "id": 72,
+      "attributesort": 4,
+      "shuxing_name": "异常属性状态伤害提升",
+      "shuxing_type": "overtime_damage_add",
+      "unit": 1,
+      "explain": "影响异常属性增状态的造成伤害。包含剧毒与灼烧。",
+      "icon": 71,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 73,
+      "attributesort": 4,
+      "shuxing_name": "蓄力时间减少",
+      "shuxing_type": "chargetime_sub",
+      "unit": 1,
+      "explain": "减少所有战技的蓄力时间，最高减少50%",
+      "icon": 72,
+      "txt": "只会影响有蓄力时间机制的战技，包括定位蓄力和移动蓄力\n也会按照比例加快角色的蓄力动作的动画播放速度"
+    },
+    {
+      "id": 74,
+      "attributesort": 4,
+      "shuxing_name": "无伤时增伤率",
+      "shuxing_type": "maxhp_damage_add",
+      "unit": 1,
+      "explain": "生命值在100%时，提升增伤率",
+      "icon": 73,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 75,
+      "attributesort": 4,
+      "shuxing_name": "无伤时减伤率",
+      "shuxing_type": "maxhp_damage_sub",
+      "unit": 1,
+      "explain": "生命值在100%时，提升减伤率",
+      "icon": 74,
+      "txt": "与减伤率同个乘区"
+    },
+    {
+      "id": 76,
+      "attributesort": 4,
+      "shuxing_name": "受到的增益持续时间加成",
+      "shuxing_type": "buff_add",
+      "unit": 1,
+      "explain": "影响部分增益状态的持续时间比例，最高提升100%",
+      "icon": 75
+    },
+    {
+      "id": 77,
+      "attributesort": 4,
+      "shuxing_name": "弹幕速度加成",
+      "shuxing_type": "barrage_speed_add",
+      "unit": 1,
+      "explain": "影响所有弹幕的速度比例",
+      "icon": 76,
+      "txt": "属于独立乘区，最低减少至10%，上不封顶;\n默认弹幕速率100%=1秒/4格位移速度"
+    },
+    {
+      "id": 78,
+      "attributesort": 4,
+      "shuxing_name": "弹幕近距离增伤率",
+      "shuxing_type": "barrage_melee_damage_add",
+      "unit": 1,
+      "explain": "敌人受到弹幕伤害时，距离发射弹幕者越近，增伤率提高比例增幅越高。\n1-15格以内：100%完整增伤、16-30格以内：50%完整增伤",
+      "icon": 77,
+      "txt": "与增伤率同个乘区,例如填10%，玩家与敌人在5格以内，就只有5%的增伤率"
+    },
+    {
+      "id": 79,
+      "attributesort": 4,
+      "shuxing_name": "光束近距离增伤率",
+      "shuxing_type": "light_melee_damage_add",
+      "unit": 1,
+      "explain": "敌人受到光束伤害时，距离发射光束者越近，增伤率提高比例增幅越高。\n1-15格以内：100%完整增伤、16-30格以内：50%完整增伤",
+      "icon": 78,
+      "txt": "与增伤率同个乘区,例如填10%，玩家与敌人在5格以内，就只有5%的增伤率"
+    },
+    {
+      "id": 80,
+      "attributesort": 4,
+      "shuxing_name": "瞬发近距离增伤率",
+      "shuxing_type": "moment_melee_damage_add",
+      "unit": 1,
+      "explain": "敌人受到瞬发伤害时，距离发射瞬发者越近，增伤率提高比例增幅越高。\n1-15格以内：100%完整增伤、16-30格以内：50%完整增伤",
+      "icon": 79,
+      "txt": "与增伤率同个乘区,例如填10%，玩家与敌人在5格以内，就只有5%的增伤率"
+    },
+    {
+      "id": 81,
+      "attributesort": 4,
+      "shuxing_name": "触发概率加成",
+      "shuxing_type": "probability_add",
+      "unit": 1,
+      "explain": "所有存在概率的效果，都提升百分比概率，最高提升100%",
+      "icon": 80,
+      "txt": "采用乘法而不是加法，最高乘以1倍的触发概率"
+    },
+    {
+      "id": 82,
+      "attributesort": 4,
+      "shuxing_name": "二重魂纹战技释放(瞬发)",
+      "shuxing_type": "soul_skill_double",
+      "unit": 1,
+      "explain": "释放魂纹战技(瞬间)时，有概率在蓄力完成后额外再释放一次，存在10秒冷却；\n二次释放技能为无消耗。",
+      "icon": 81,
+      "txt": "额外释放会无视当前战技的后摇时间，将自己的朝向修正为当前锁定的敌人再次进行释放"
+    },
+    {
+      "id": 83,
+      "attributesort": 4,
+      "shuxing_name": "二重武器战技释放(瞬发)",
+      "shuxing_type": "weapon_skill_double",
+      "unit": 1,
+      "explain": "释放武器战技(瞬间)时，有概率在蓄力完成后额外再释放一次，存在10秒冷却；\n二次释放技能为无消耗。",
+      "icon": 82
+    },
+    {
+      "id": 84,
+      "attributesort": 4,
+      "shuxing_name": "二重余烬战技释放(瞬发)",
+      "shuxing_type": "skill_double",
+      "unit": 1,
+      "explain": "释放余烬战技(瞬间)时，有概率在蓄力完成后额外再释放一次，存在10秒冷却；\n二次释放技能为无消耗。",
+      "icon": 83
+    },
+    {
+      "id": 85,
+      "attributesort": 4,
+      "shuxing_name": "魂纹战技等级提升",
+      "shuxing_type": "soul_skill_lv_add",
+      "unit": 1,
+      "explain": "提升所有谒魂者的魂纹技能等级",
+      "icon": 84,
+      "txt": "即技能等级的极限为40级,每个技能等级提升10%的技能系数"
+    },
+    {
+      "id": 86,
+      "attributesort": 4,
+      "shuxing_name": "战斗天赋等级提升",
+      "shuxing_type": "lead_skill_lv_add",
+      "unit": 1,
+      "explain": "提升所有谒魂者的战斗天赋等级",
+      "icon": 85,
+      "txt": "即技能等级的极限为40级,每个技能等级提升10%的技能系数"
+    },
+    {
+      "id": 87,
+      "attributesort": 4,
+      "shuxing_name": "支援天赋等级提升",
+      "shuxing_type": "supe_skill_lv_add",
+      "unit": 1,
+      "explain": "提升所有谒魂者的支援天赋等级",
+      "icon": 86,
+      "txt": "即技能等级的极限为40级,每个技能等级提升10%的技能系数"
+    },
+    {
+      "id": 88,
+      "attributesort": 4,
+      "shuxing_name": "饮用契泪圣露瓶时，恢复生命值",
+      "shuxing_type": "drug_hp_add",
+      "unit": 1,
+      "explain": "使用契泪圣露瓶时，恢复比例的生命值",
+      "icon": 87,
+      "initial": 3000,
+      "txt": "不是强化契泪圣露瓶的恢复万分比，而是直接额外恢复角色的万分比生命，相当于是加法"
+    },
+    {
+      "id": 89,
+      "attributesort": 4,
+      "shuxing_name": "赐福所需的装备数量降低1件",
+      "shuxing_type": "god",
+      "unit": 1,
+      "explain": "赐福所需的装备数量降低1件",
+      "icon": 88,
+      "txt": "等于或大于1就生效"
+    },
+    {
+      "id": 90,
+      "attributesort": 4,
+      "shuxing_name": "饮用契泪圣露瓶时，恢复专注值",
+      "shuxing_type": "drug_mp_add",
+      "unit": 1,
+      "explain": "使用契泪圣露瓶时，恢复比例的专注值",
+      "icon": 89
+    },
+    {
+      "id": 91,
+      "attributesort": 4,
+      "shuxing_name": "额外普攻伤害",
+      "shuxing_type": "normal_ew",
+      "unit": 1,
+      "explain": "普攻命中敌人时，有概率对当前锁定的敌人额外发动一次普通攻击（可触发暴击，不当作普攻处理）",
+      "icon": 90,
+      "txt": "不会播放玩家的攻击动画，也不占用玩家的攻击相关任何参数，比如冷却、前摇、后摇等"
+    },
+    {
+      "id": 92,
+      "attributesort": 4,
+      "shuxing_name": "攻击失衡中的敌人时，最终增伤率",
+      "shuxing_type": "stuning_last_damage_add",
+      "unit": 1,
+      "explain": "对失衡中的敌人造成伤害时，提升的最终增伤率",
+      "icon": 91
+    },
+    {
+      "id": 93,
+      "attributesort": 4,
+      "shuxing_name": "攻击没有护盾的敌人时，增伤率",
+      "shuxing_type": "enemy_shield_damage_add",
+      "unit": 1,
+      "explain": "对没有护盾的敌人造成伤害时，提升的增伤率",
+      "icon": 92,
+      "txt": "禁忌属性，默认不投产"
+    },
+    {
+      "id": 94,
+      "attributesort": 4,
+      "shuxing_name": "攻击有护盾的敌人时，增伤率",
+      "shuxing_type": "enemy_unshield_damage_add",
+      "unit": 1,
+      "explain": "对有护盾的敌人造成伤害时，提升的增伤率",
+      "icon": 93,
+      "txt": "禁忌属性，默认不投产"
+    },
+    {
+      "id": 95,
+      "attributesort": 4,
+      "shuxing_name": "拥有护盾时增伤率",
+      "shuxing_type": "shield_damage_add",
+      "unit": 1,
+      "explain": "对没有护盾的敌人造成伤害时，提升的增伤率",
+      "icon": 94
+    },
+    {
+      "id": 96,
+      "attributesort": 4,
+      "shuxing_name": "反击概率",
+      "shuxing_type": "counter_normal",
+      "unit": 1,
+      "explain": "受到伤害时，有概率对当前锁定的敌人发动一次普通攻击（可触发暴击，不当作普攻处理），有0.1秒的内置冷却",
+      "icon": 95,
+      "txt": "不会播放玩家的攻击动画，也不占用玩家的攻击相关任何参数，比如冷却、前摇、后摇等"
+    },
+    {
+      "id": 97,
+      "attributesort": 4,
+      "shuxing_name": "普通攻击时，根据其伤害倍率的X%转化为当前的生命值",
+      "shuxing_type": "normal_suckhp",
+      "unit": 1,
+      "explain": "基于当前普攻给予的伤害倍率，按比例转化为自身生命值\n比如大剑的伤害倍率是500%，那攻击一次恢复5%生命值(该属性为1%的时候)",
+      "icon": 96,
+      "txt": "禁忌属性，默认不投产"
+    },
+    {
+      "id": 98,
+      "attributesort": 4,
+      "shuxing_name": "技能伤害时，根据其伤害倍率的1%转化为当前的生命值",
+      "shuxing_type": "magic_suckhp",
+      "unit": 1,
+      "explain": "基于当前法术给予的伤害倍率，按比例转化为自身生命值",
+      "icon": 97,
+      "txt": "禁忌属性，默认不投产"
+    },
+    {
+      "id": 99,
+      "attributesort": 4,
+      "shuxing_name": "对首领增伤率",
+      "shuxing_type": "boss_damage_add",
+      "unit": 1,
+      "explain": "对首领造成伤害时，提供的增伤率",
+      "icon": 98,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 100,
+      "attributesort": 4,
+      "shuxing_name": "对非首领增伤率",
+      "shuxing_type": "xiaoguai_damage_add",
+      "unit": 1,
+      "explain": "对非首领造成伤害时，提供的增伤率",
+      "icon": 99,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 101,
+      "attributesort": 4,
+      "shuxing_name": "对首领减伤率",
+      "shuxing_type": "boss_damage_sub",
+      "unit": 1,
+      "explain": "受到首领的伤害时，提供的减伤率",
+      "icon": 100,
+      "txt": "与减伤率同个乘区"
+    },
+    {
+      "id": 102,
+      "attributesort": 4,
+      "shuxing_name": "对非首领减伤率",
+      "shuxing_type": "xiaoguai_damage_sub",
+      "unit": 1,
+      "explain": "受到非首领的伤害时，提供的减伤率",
+      "icon": 101,
+      "txt": "与减伤率同个乘区"
+    },
+    {
+      "id": 103,
+      "attributesort": 4,
+      "shuxing_name": "专注值增加量",
+      "shuxing_type": "eff_mp",
+      "unit": 1,
+      "explain": "提升攻击敌人获取专注值的万分比",
+      "icon": 102
+    },
+    {
+      "id": 104,
+      "attributesort": 4,
+      "shuxing_name": "魂纹值增加量",
+      "shuxing_type": "eff_soulmp",
+      "unit": 1,
+      "explain": "提升攻击敌人获取魂纹值的万分比",
+      "icon": 103
+    },
+    {
+      "id": 105,
+      "attributesort": 4,
+      "shuxing_name": "击败敌人恢复生命值",
+      "shuxing_type": "kill_hp",
+      "unit": 1,
+      "explain": "击败任意敌人恢复万分比生命值",
+      "icon": 104
+    },
+    {
+      "id": 106,
+      "attributesort": 4,
+      "shuxing_name": "击败敌人恢复专注值",
+      "shuxing_type": "kill_mp",
+      "unit": 1,
+      "explain": "击败任意敌人恢复万分比专注值",
+      "icon": 105
+    },
+    {
+      "id": 107,
+      "attributesort": 4,
+      "shuxing_name": "击败敌人恢复魂纹值",
+      "shuxing_type": "kill_soulmp",
+      "unit": 1,
+      "explain": "击败任意敌人恢复万分比魂纹值",
+      "icon": 106
+    },
+    {
+      "id": 108,
+      "attributesort": 4,
+      "shuxing_name": "攻击力",
+      "shuxing_type": "atk_add",
+      "unit": 1,
+      "explain": "影响攻击力的万分比，提供额外攻击力",
+      "icon": 107,
+      "txt": "默认不投产"
+    },
+    {
+      "id": 109,
+      "attributesort": 4,
+      "shuxing_name": "生命值",
+      "shuxing_type": "hp_add",
+      "unit": 1,
+      "explain": "影响生命值的万分比，提供额外生命值",
+      "icon": 108,
+      "txt": "默认不投产"
+    },
+    {
+      "id": 110,
+      "attributesort": 4,
+      "shuxing_name": "专注值",
+      "shuxing_type": "mp_add",
+      "unit": 1,
+      "explain": "影响专注值的万分比，提供额外专注值",
+      "icon": 109,
+      "txt": "默认不投产"
+    },
+    {
+      "id": 111,
+      "attributesort": 4,
+      "shuxing_name": "魂纹值",
+      "shuxing_type": "soulmp_add",
+      "unit": 1,
+      "explain": "影响魂纹值的万分比，提供额外魂纹值",
+      "icon": 110,
+      "txt": "默认不投产"
+    },
+    {
+      "id": 112,
+      "attributesort": 4,
+      "shuxing_name": "力量",
+      "shuxing_type": "str_add",
+      "unit": 1,
+      "explain": "影响力量的万分比，提供额外力量",
+      "icon": 111
+    },
+    {
+      "id": 113,
+      "attributesort": 4,
+      "shuxing_name": "敏捷",
+      "shuxing_type": "agi_add",
+      "unit": 1,
+      "explain": "影响敏捷的万分比，提供额外敏捷",
+      "icon": 112
+    },
+    {
+      "id": 114,
+      "attributesort": 4,
+      "shuxing_name": "智力",
+      "shuxing_type": "int_add",
+      "unit": 1,
+      "explain": "影响智力的万分比，提供额外智力",
+      "icon": 113
+    },
+    {
+      "id": 115,
+      "attributesort": 4,
+      "shuxing_name": "信仰",
+      "shuxing_type": "fai_add",
+      "unit": 1,
+      "explain": "影响信仰的万分比，提供额外信仰",
+      "icon": 114
+    },
+    {
+      "id": 116,
+      "attributesort": 4,
+      "shuxing_name": "额外攻击力",
+      "shuxing_type": "atk_ew",
+      "explain": "不会加入任何加成公式、直接加在面板上的攻击力",
+      "icon": 115
+    },
+    {
+      "id": 117,
+      "attributesort": 4,
+      "shuxing_name": "额外生命值",
+      "shuxing_type": "hp_ew",
+      "explain": "不会加入任何加成公式、直接加在面板上的生命值",
+      "icon": 116
+    },
+    {
+      "id": 118,
+      "attributesort": 4,
+      "shuxing_name": "额外专注值",
+      "shuxing_type": "mp_ew",
+      "explain": "不会加入任何加成公式、直接加在面板上的专注值",
+      "icon": 117
+    },
+    {
+      "id": 119,
+      "attributesort": 4,
+      "shuxing_name": "额外魂纹值",
+      "shuxing_type": "soulmp_ew",
+      "explain": "不会加入任何加成公式、直接加在面板上的魂纹值",
+      "icon": 118
+    },
+    {
+      "id": 120,
+      "attributesort": 4,
+      "shuxing_name": "额外力量",
+      "shuxing_type": "str_ew",
+      "explain": "不会加入任何加成公式、直接加在面板上的力量",
+      "icon": 119
+    },
+    {
+      "id": 121,
+      "attributesort": 4,
+      "shuxing_name": "额外敏捷",
+      "shuxing_type": "agi_ew",
+      "explain": "不会加入任何加成公式、直接加在面板上的敏捷",
+      "icon": 120
+    },
+    {
+      "id": 122,
+      "attributesort": 4,
+      "shuxing_name": "额外智力",
+      "shuxing_type": "int_ew",
+      "explain": "不会加入任何加成公式、直接加在面板上的智力",
+      "icon": 121
+    },
+    {
+      "id": 123,
+      "attributesort": 4,
+      "shuxing_name": "额外信仰",
+      "shuxing_type": "fai_ew",
+      "explain": "不会加入任何加成公式、直接加在面板上的信仰",
+      "icon": 122
+    },
+    {
+      "id": 124,
+      "attributesort": 4,
+      "shuxing_name": "契泪圣露瓶携带上限",
+      "shuxing_type": "drug_number",
+      "explain": "该值每有100就增加1次契泪圣露瓶上限",
+      "icon": 123,
+      "initial": 3
+    },
+    {
+      "id": 125,
+      "attributesort": 4,
+      "shuxing_name": "基础移速",
+      "shuxing_type": "speed",
+      "explain": "默认角色移动速度，每100为1格",
+      "icon": 124,
+      "initial": 350
+    },
+    {
+      "id": 126,
+      "attributesort": 4,
+      "shuxing_name": "奔跑状态下，增加移动速度",
+      "shuxing_type": "speed_add_rest",
+      "unit": 1,
+      "explain": "奔跑状态下，影响移动速度的比例，最高提升100%",
+      "icon": 125,
+      "txt": "与speed_add为同个乘区"
+    },
+    {
+      "id": 127,
+      "attributesort": 4,
+      "shuxing_name": "所有商品所需的灵魂减少",
+      "shuxing_type": "goods_gold_res",
+      "unit": 1,
+      "explain": "所有需求货币是灵魂的商品，都百分比减少百分比灵魂值，最高减少90%",
+      "icon": 126
+    },
+    {
+      "id": 128,
+      "attributesort": 4,
+      "shuxing_name": "合成战斗用的消耗品时，有概率获得2倍产出",
+      "shuxing_type": "forge_hc_add",
+      "unit": 1,
+      "explain": "合成战斗用的消耗品一类别的道具时，有概率获得2倍产出",
+      "icon": 127
+    },
+    {
+      "id": 129,
+      "attributesort": 4,
+      "shuxing_name": "死亡时，有概率立即拾取失去的灵魂",
+      "shuxing_type": "death_pickup",
+      "unit": 1,
+      "explain": "死亡时，有概率立即拾取所失去的灵魂。(相当于一复活就已经拾取了尸体)",
+      "icon": 128
+    },
+    {
+      "id": 130,
+      "attributesort": 4,
+      "shuxing_name": "留下的谏言数量上限增加",
+      "shuxing_type": "admonition_add",
+      "explain": "留下的谏言数量上限增加，最多增加至100个",
+      "icon": 129
+    },
+    {
+      "id": 131,
+      "attributesort": 4,
+      "shuxing_name": "谏言被赞赏时会恢复生命值",
+      "shuxing_type": "admonition_hp_add",
+      "unit": 1,
+      "explain": "谏言被赞赏时，恢复比例的生命值",
+      "icon": 130,
+      "txt": "直接额外恢复角色的万分比生命"
+    },
+    {
+      "id": 132,
+      "attributesort": 4,
+      "shuxing_name": "拾取武器时，有概率再额外复制1件",
+      "shuxing_type": "copy_weapon_add",
+      "unit": 1,
+      "explain": "拾取武器（类型1001）时，有概率再额外复制1件（重新随机词条以及赐福等…）",
+      "icon": 131,
+      "txt": "拾取指的是拾取由击杀怪物掉落的道具"
+    },
+    {
+      "id": 133,
+      "attributesort": 4,
+      "shuxing_name": "拾取铠甲时，有概率再额外复制1件",
+      "shuxing_type": "copy_armor_add",
+      "unit": 1,
+      "explain": "拾取铠甲（类型1002）时，有概率再额外复制1件（重新随机词条以及赐福等…）",
+      "icon": 132,
+      "txt": "拾取指的是拾取由击杀怪物掉落的道具"
+    },
+    {
+      "id": 134,
+      "attributesort": 4,
+      "shuxing_name": "拾取头盔时，有概率再额外复制1件",
+      "shuxing_type": "copy_helmet_add",
+      "unit": 1,
+      "explain": "拾取头盔（类型1003）时，有概率再额外复制1件（重新随机词条以及赐福等…）",
+      "icon": 133,
+      "txt": "拾取指的是拾取由击杀怪物掉落的道具"
+    },
+    {
+      "id": 135,
+      "attributesort": 4,
+      "shuxing_name": "拾取戒指时，有概率再额外复制1件",
+      "shuxing_type": "copy_ring_add",
+      "unit": 1,
+      "explain": "拾取戒指（类型1004）时，有概率再额外复制1件（重新随机词条以及赐福等…）",
+      "icon": 134,
+      "txt": "拾取指的是拾取由击杀怪物掉落的道具"
+    },
+    {
+      "id": 136,
+      "attributesort": 4,
+      "shuxing_name": "拾取项链时，有概率再额外复制1件",
+      "shuxing_type": "copy_necklace_add",
+      "unit": 1,
+      "explain": "拾取项链（类型1005）时，有概率再额外复制1件（重新随机词条以及赐福等…）",
+      "icon": 135,
+      "txt": "拾取指的是拾取由击杀怪物掉落的道具"
+    },
+    {
+      "id": 137,
+      "attributesort": 4,
+      "shuxing_name": "与采集物交互的时间缩短",
+      "shuxing_type": "gather_time_res",
+      "unit": 1,
+      "explain": "与采集物交互的时间缩短",
+      "icon": 136
+    },
+    {
+      "id": 138,
+      "attributesort": 4,
+      "shuxing_name": "采集物交互完毕后，有概率获得2倍的采集物",
+      "shuxing_type": "gather_goods_add",
+      "unit": 1,
+      "explain": "采集物交互完毕后，有概率获得2倍的采集物",
+      "icon": 137
+    },
+    {
+      "id": 139,
+      "attributesort": 4,
+      "shuxing_name": "角色的好感度增涨速度提升",
+      "shuxing_type": "love_add",
+      "unit": 1,
+      "explain": "角色的好感度增涨速度提升",
+      "icon": 138
+    },
+    {
+      "id": 140,
+      "attributesort": 4,
+      "shuxing_name": "戾魂怪物的出现概率提升",
+      "shuxing_type": "soul_monster_add",
+      "unit": 1,
+      "explain": "戾魂怪物的出现概率提升",
+      "icon": 139,
+      "txt": "戾魂是精英怪"
+    },
+    {
+      "id": 141,
+      "attributesort": 4,
+      "shuxing_name": "巨大戾魂怪物的出现概率提升",
+      "shuxing_type": "soul_big_monster_add",
+      "unit": 1,
+      "explain": "巨大戾魂怪物的出现概率提升",
+      "icon": 140,
+      "txt": "巨大戾魂是超级精英怪"
+    },
+    {
+      "id": 142,
+      "attributesort": 4,
+      "shuxing_name": "装备背包容纳上限增加",
+      "shuxing_type": "weapon_pack_add",
+      "unit": 1,
+      "explain": "武器页卡的背包容纳上限增加",
+      "icon": 141
+    },
+    {
+      "id": 143,
+      "attributesort": 4,
+      "shuxing_name": "开启宝箱获取更高稀有度的道具概率增加",
+      "shuxing_type": "box_luck",
+      "unit": 1,
+      "explain": "开启宝箱获取更高稀有度的道具概率增加",
+      "icon": 142
+    },
+    {
+      "id": 144,
+      "attributesort": 3,
+      "shuxing_name": "魔力异常累积值加成",
+      "shuxing_type": "ability_damage_debuff_add",
+      "unit": 1,
+      "explain": "造成对应属性的伤害时，异常累积值加成",
+      "icon": 143
+    },
+    {
+      "id": 145,
+      "attributesort": 3,
+      "shuxing_name": "火属性异常累积值加成",
+      "shuxing_type": "fire_damage_debuff_add",
+      "unit": 1,
+      "explain": "造成对应属性的伤害时，异常累积值加成",
+      "icon": 144
+    },
+    {
+      "id": 146,
+      "attributesort": 3,
+      "shuxing_name": "冰属性异常累积值加成",
+      "shuxing_type": "ice_damage_debuff_add",
+      "unit": 1,
+      "explain": "造成对应属性的伤害时，异常累积值加成",
+      "icon": 145
+    },
+    {
+      "id": 147,
+      "attributesort": 3,
+      "shuxing_name": "雷属性异常累积值加成",
+      "shuxing_type": "electric_damage_debuff_add",
+      "unit": 1,
+      "explain": "造成对应属性的伤害时，异常累积值加成",
+      "icon": 146
+    },
+    {
+      "id": 148,
+      "attributesort": 3,
+      "shuxing_name": "毒属性异常累积值加成",
+      "shuxing_type": "poison_damage_debuff_add",
+      "unit": 1,
+      "explain": "造成对应属性的伤害时，异常累积值加成",
+      "icon": 147
+    },
+    {
+      "id": 149,
+      "attributesort": 3,
+      "shuxing_name": "圣属性异常累积值加成",
+      "shuxing_type": "holy_damage_debuff_add",
+      "unit": 1,
+      "explain": "造成对应属性的伤害时，异常累积值加成",
+      "icon": 148
+    },
+    {
+      "id": 150,
+      "attributesort": 3,
+      "shuxing_name": "魔力异常累积值抗性",
+      "shuxing_type": "ability_damage_debuff_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，异常累积值减少",
+      "icon": 149
+    },
+    {
+      "id": 151,
+      "attributesort": 3,
+      "shuxing_name": "火属性异常累积值抗性",
+      "shuxing_type": "fire_damage_debuff_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，异常累积值减少",
+      "icon": 150
+    },
+    {
+      "id": 152,
+      "attributesort": 3,
+      "shuxing_name": "冰属性异常累积值抗性",
+      "shuxing_type": "ice_damage_debuff_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，异常累积值减少",
+      "icon": 151
+    },
+    {
+      "id": 153,
+      "attributesort": 3,
+      "shuxing_name": "雷属性异常累积值抗性",
+      "shuxing_type": "electric_damage_debuff_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，异常累积值减少",
+      "icon": 152
+    },
+    {
+      "id": 154,
+      "attributesort": 3,
+      "shuxing_name": "毒属性异常累积值抗性",
+      "shuxing_type": "poison_damage_debuff_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，异常累积值减少",
+      "icon": 153
+    },
+    {
+      "id": 155,
+      "attributesort": 3,
+      "shuxing_name": "圣属性异常累积值抗性",
+      "shuxing_type": "holy_damage_debuff_res",
+      "unit": 1,
+      "explain": "受到对应属性的伤害时，异常累积值减少",
+      "icon": 154
+    },
+    {
+      "id": 156,
+      "attributesort": 3,
+      "shuxing_name": "对火属性异常的敌人增伤率",
+      "shuxing_type": "fire_damage_debuff_damage_add",
+      "unit": 1,
+      "explain": "对陷入灼烧异常状态的敌人造成伤害时，提供的增伤率",
+      "icon": 155,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 157,
+      "attributesort": 3,
+      "shuxing_name": "对冰属性异常的敌人增伤率",
+      "shuxing_type": "ice_damage_debuff_damage_add",
+      "unit": 1,
+      "explain": "对陷入冻伤异常状态的敌人造成伤害时，提供的增伤率",
+      "icon": 156,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 158,
+      "attributesort": 3,
+      "shuxing_name": "对雷属性异常的敌人增伤率",
+      "shuxing_type": "electric_damage_debuff_damage_add",
+      "unit": 1,
+      "explain": "对陷入缠雷异常状态的敌人造成伤害时，提供的增伤率",
+      "icon": 157,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 159,
+      "attributesort": 3,
+      "shuxing_name": "对毒属性异常的敌人增伤率",
+      "shuxing_type": "poison_damage_debuff_damage_add",
+      "unit": 1,
+      "explain": "对陷入剧毒异常状态的敌人造成伤害时，提供的增伤率",
+      "icon": 158,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 160,
+      "attributesort": 3,
+      "shuxing_name": "对圣属性异常的敌人增伤率",
+      "shuxing_type": "holy_damage_debuff_damage_add",
+      "unit": 1,
+      "explain": "对陷入惩戒异常状态的敌人造成伤害时，提供的增伤率",
+      "icon": 159,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 161,
+      "attributesort": 4,
+      "shuxing_name": "残血时增伤率",
+      "shuxing_type": "hpdown_damage_add",
+      "unit": 1,
+      "explain": "生命值低于25%时，提升增伤率",
+      "icon": 160,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 162,
+      "attributesort": 4,
+      "shuxing_name": "残血时减伤率",
+      "shuxing_type": "hpdown_damage_sub",
+      "unit": 1,
+      "explain": "生命值低于25%时，提升减伤率",
+      "icon": 161,
+      "txt": "与减伤率同个乘区"
+    },
+    {
+      "id": 163,
+      "attributesort": 4,
+      "shuxing_name": "对生命低于一半的敌人增伤率提升",
+      "shuxing_type": "foehpdown_crit_sub",
+      "unit": 1,
+      "explain": "对生命值低于50%以下的敌人造成伤害时，提供的增伤率",
+      "icon": 162
+    },
+    {
+      "id": 164,
+      "attributesort": 4,
+      "shuxing_name": "残血时移动速度提升",
+      "shuxing_type": "hpdown_speed_add",
+      "unit": 1,
+      "explain": "生命值低于25%时，提升移动速度",
+      "icon": 163
+    },
+    {
+      "id": 165,
+      "attributesort": 4,
+      "shuxing_name": "专注值为满时法术伤害",
+      "shuxing_type": "mpmax_magic_hurt",
+      "unit": 1,
+      "explain": "专注值等于100%时，提升法术伤害",
+      "icon": 164
+    },
+    {
+      "id": 166,
+      "attributesort": 4,
+      "shuxing_name": "契泪圣露瓶为0时，增伤率提升",
+      "shuxing_type": "drug_damage_add",
+      "unit": 1,
+      "explain": "契泪圣露瓶使用次数为0时，增伤率提升",
+      "icon": 165
+    },
+    {
+      "id": 167,
+      "attributesort": 4,
+      "shuxing_name": "契泪圣露瓶为0时，减伤率提升",
+      "shuxing_type": "drug_damage_sub",
+      "unit": 1,
+      "explain": "契泪圣露瓶使用次数为0时，减伤率提升",
+      "icon": 166
+    },
+    {
+      "id": 168,
+      "attributesort": 3,
+      "shuxing_name": "魂纹战技消耗降低",
+      "shuxing_type": "soul_skill_res",
+      "unit": 1,
+      "explain": "释放魂纹战技时，消耗的魂纹值减少。最多减少50%。",
+      "icon": 167
+    },
+    {
+      "id": 169,
+      "attributesort": 3,
+      "shuxing_name": "武器战技消耗降低",
+      "shuxing_type": "weapon_skill_res",
+      "unit": 1,
+      "explain": "释放武器战技时，消耗的专注值减少。最多减少50%。",
+      "icon": 168,
+      "txt": 25
+    },
+    {
+      "id": 170,
+      "attributesort": 3,
+      "shuxing_name": "余烬战技消耗降低",
+      "shuxing_type": "skill_res",
+      "unit": 1,
+      "explain": "释放余烬战技时，消耗的专注值减少。最多减少50%。",
+      "icon": 169
+    },
+    {
+      "id": 171,
+      "attributesort": 4,
+      "shuxing_name": "暴击伤害总加成",
+      "shuxing_type": "crit_hurt_add",
+      "unit": 1,
+      "explain": "暴击伤害总加成，公式：1+1*X",
+      "icon": 170
+    },
+    {
+      "id": 172,
+      "attributesort": 4,
+      "shuxing_name": "法术伤害总加成",
+      "shuxing_type": "magic_hurt_add",
+      "unit": 1,
+      "explain": "技能伤害总加成，公式：1+1*X",
+      "icon": 171
+    },
+    {
+      "id": 173,
+      "attributesort": 4,
+      "shuxing_name": "二重魂纹战技释放(蓄力)",
+      "shuxing_type": "soul_skill_double_hold",
+      "unit": 1,
+      "explain": "释放魂纹战技(蓄力)时，有概率在蓄力完成后额外再释放一次，存在10秒冷却；\n二次释放技能为无消耗。",
+      "icon": 172
+    },
+    {
+      "id": 174,
+      "attributesort": 4,
+      "shuxing_name": "二重武器战技释放(蓄力)",
+      "shuxing_type": "weapon_skill_double_hold",
+      "unit": 1,
+      "explain": "释放武器战技(蓄力)时，有概率在蓄力完成后额外再释放一次，存在10秒冷却；\n二次释放技能为无消耗。",
+      "icon": 173
+    },
+    {
+      "id": 175,
+      "attributesort": 4,
+      "shuxing_name": "二重余烬战技释放(蓄力)",
+      "shuxing_type": "skill_double_hold",
+      "unit": 1,
+      "explain": "释放余烬战技(蓄力)时，有概率在蓄力完成后额外再释放一次，存在10秒冷却；\n二次释放技能为无消耗。",
+      "icon": 174
+    },
+    {
+      "id": 176,
+      "attributesort": 4,
+      "shuxing_name": "施加敌人的减益持续时间加成",
+      "shuxing_type": "debuff_add",
+      "unit": 1,
+      "explain": "影响部分施加于敌人减益状态的持续时间比例，最高提升100%",
+      "icon": 175
+    },
+    {
+      "id": 177,
+      "attributesort": 4,
+      "shuxing_name": "弹幕远距离增伤率",
+      "shuxing_type": "barrage_ranged_damage_add",
+      "unit": 1,
+      "explain": "敌人受到弹幕伤害时，距离发射点越远，增伤率提高比例增幅越高。\n30格以上：100%完整增伤、30-16格以内：50%完整增伤",
+      "icon": 176,
+      "txt": "与增伤率同个乘区,例如填10%，玩家与敌人在5格以内，就只有5%的增伤率"
+    },
+    {
+      "id": 178,
+      "attributesort": 4,
+      "shuxing_name": "光束远距离增伤率",
+      "shuxing_type": "light_ranged_damage_add",
+      "unit": 1,
+      "explain": "敌人受到光束伤害时，距离发射点越远，增伤率提高比例增幅越高。\n30格以上：100%完整增伤、30-16格以内：50%完整增伤",
+      "icon": 177,
+      "txt": "与增伤率同个乘区,例如填10%，玩家与敌人在5格以内，就只有5%的增伤率"
+    },
+    {
+      "id": 179,
+      "attributesort": 4,
+      "shuxing_name": "瞬发远距离增伤率",
+      "shuxing_type": "moment_ranged_damage_add",
+      "unit": 1,
+      "explain": "敌人受到瞬发伤害时，距离发射点越远，增伤率提高比例增幅越高。\n30格以上：100%完整增伤、30-16格以内：50%完整增伤",
+      "icon": 178,
+      "txt": "与增伤率同个乘区,例如填10%，玩家与敌人在5格以内，就只有5%的增伤率"
+    },
+    {
+      "id": 180,
+      "attributesort": 4,
+      "shuxing_name": "远距离增伤率",
+      "shuxing_type": "ranged_damage_add",
+      "unit": 1,
+      "explain": "敌人受到远程伤害时，距离发射点越远，增伤率提高比例增幅越高。\n30格以上：100%完整增伤、30-16格以内：50%完整增伤",
+      "icon": 179,
+      "txt": "与增伤率同个乘区,例如填10%，玩家与敌人在5格以内，就只有5%的增伤率"
+    },
+    {
+      "id": 181,
+      "attributesort": 4,
+      "shuxing_name": "魔力属性抗性穿刺",
+      "shuxing_type": "normal_ability_puncture",
+      "unit": 1,
+      "explain": "造成魔力属性伤害时，无视敌人对应属性抗性率的比例",
+      "icon": 180,
+      "txt": "减伤率不会变为负数"
+    },
+    {
+      "id": 182,
+      "attributesort": 4,
+      "shuxing_name": "火属性抗性穿刺",
+      "shuxing_type": "magic_fire_puncture",
+      "unit": 1,
+      "explain": "造成火属性伤害时，无视敌人对应属性抗性率的比例",
+      "icon": 181,
+      "txt": "减伤率不会变为负数"
+    },
+    {
+      "id": 183,
+      "attributesort": 4,
+      "shuxing_name": "冰属性抗性穿刺",
+      "shuxing_type": "normal_ice_puncture",
+      "unit": 1,
+      "explain": "造成冰属性伤害时，无视敌人对应属性抗性率的比例",
+      "icon": 182,
+      "txt": "减伤率不会变为负数"
+    },
+    {
+      "id": 184,
+      "attributesort": 4,
+      "shuxing_name": "雷属性抗性穿刺",
+      "shuxing_type": "normal_electric_puncture",
+      "unit": 1,
+      "explain": "造成雷属性伤害时，无视敌人对应属性抗性率的比例",
+      "icon": 183,
+      "txt": "减伤率不会变为负数"
+    },
+    {
+      "id": 185,
+      "attributesort": 4,
+      "shuxing_name": "毒属性抗性穿刺",
+      "shuxing_type": "normal_poison_puncture",
+      "unit": 1,
+      "explain": "造成毒属性伤害时，无视敌人对应属性抗性率的比例",
+      "icon": 184,
+      "txt": "减伤率不会变为负数"
+    },
+    {
+      "id": 186,
+      "attributesort": 4,
+      "shuxing_name": "圣属性抗性穿刺",
+      "shuxing_type": "magic_holy_puncture",
+      "unit": 1,
+      "explain": "造成圣属性伤害时，无视敌人对应属性抗性率的比例",
+      "icon": 185,
+      "txt": "减伤率不会变为负数"
+    },
+    {
+      "id": 187,
+      "attributesort": 3,
+      "shuxing_name": "瞬发类战技伤害",
+      "shuxing_type": "moment_skill_damage",
+      "unit": 1,
+      "explain": "影响瞬发类魂纹战技、武器战技、余烬战技造成的伤害比例",
+      "visibility": 1,
+      "icon": 186,
+      "txt": "影响该数值的伤害系数，在计算伤害倍率得环节上，未进入到增伤率环节"
+    },
+    {
+      "id": 188,
+      "attributesort": 3,
+      "shuxing_name": "引导类战技伤害",
+      "shuxing_type": "hold1_skill_damage",
+      "unit": 1,
+      "explain": "影响引导类魂纹战技、武器战技、余烬战技造成的伤害比例",
+      "visibility": 1,
+      "icon": 187,
+      "txt": "影响该数值的伤害系数，在计算伤害倍率得环节上，未进入到增伤率环节"
+    },
+    {
+      "id": 189,
+      "attributesort": 3,
+      "shuxing_name": "蓄力类战技伤害",
+      "shuxing_type": "hold2_skill_damage",
+      "unit": 1,
+      "explain": "影响蓄力类魂纹战技、武器战技、余烬战技造成的伤害比例",
+      "visibility": 1,
+      "icon": 188,
+      "txt": "影响该数值的伤害系数，在计算伤害倍率得环节上，未进入到增伤率环节"
+    },
+    {
+      "id": 190,
+      "attributesort": 3,
+      "shuxing_name": "毒属性异常状态【剧毒】的伤害提升",
+      "shuxing_type": "extremely_poison_damage_add",
+      "unit": 1,
+      "explain": "影响毒属性异常状态【剧毒】的伤害比例",
+      "visibility": 1,
+      "icon": 189
+    },
+    {
+      "id": 191,
+      "attributesort": 3,
+      "shuxing_name": "火属性异常状态【灼烧】的伤害提升",
+      "shuxing_type": "fire_poison_damage_add",
+      "unit": 1,
+      "explain": "影响火属性异常状态【灼烧】的伤害比例",
+      "visibility": 1,
+      "icon": 190
+    },
+    {
+      "id": 192,
+      "attributesort": 3,
+      "shuxing_name": "当敌人处于【剧毒】状态时，攻击力提升",
+      "shuxing_type": "extremely_buffatk_add",
+      "unit": 1,
+      "explain": "当攻击的敌人正处于剧毒属性异常状态时，攻击力提升",
+      "icon": 191
+    },
+    {
+      "id": 193,
+      "attributesort": 3,
+      "shuxing_name": "当敌人处于【灼烧】状态时，攻击力提升",
+      "shuxing_type": "fire_buffatk_add",
+      "unit": 1,
+      "explain": "当攻击的敌人正处于灼烧属性异常状态时，攻击力提升",
+      "icon": 192
+    },
+    {
+      "id": 194,
+      "attributesort": 3,
+      "shuxing_name": "造成普攻伤害时，有概率造成双倍伤害",
+      "shuxing_type": "double_normal_damage",
+      "unit": 1,
+      "explain": "造成普攻伤害时，有概率造成翻倍伤害（跳两次伤害）",
+      "icon": 193
+    },
+    {
+      "id": 195,
+      "attributesort": 3,
+      "shuxing_name": "若伤害未造成暴击，则有概率再进行多一次暴击的判定",
+      "shuxing_type": "crit_again",
+      "unit": 1,
+      "explain": "若伤害未造成暴击，则有概率再进行多一次暴击的判定",
+      "icon": 194,
+      "txt": "单个伤害只会进行一次计算，不会套娃"
+    },
+    {
+      "id": 196,
+      "attributesort": 3,
+      "shuxing_name": "魔力属性异常效果【魔爆】伤害提升",
+      "shuxing_type": "ability_boom_damage_add",
+      "unit": 1,
+      "explain": "魔力属性异常效果【魔爆】伤害提升",
+      "icon": 195
+    },
+    {
+      "id": 197,
+      "attributesort": 3,
+      "shuxing_name": "普通攻击时提升抗冲击值",
+      "shuxing_type": "normal_impact_pass",
+      "unit": 1,
+      "explain": "普通攻击时提升X%的抗冲击值",
+      "icon": 196
+    },
+    {
+      "id": 198,
+      "attributesort": 3,
+      "shuxing_name": "蓄力时提升抗冲击值",
+      "shuxing_type": "hold1_impact_pass",
+      "unit": 1,
+      "explain": "蓄力时提升X%的抗冲击值",
+      "icon": 197
+    },
+    {
+      "id": 199,
+      "attributesort": 3,
+      "shuxing_name": "引导时提升抗冲击值",
+      "shuxing_type": "hold2_impact_pass",
+      "unit": 1,
+      "explain": "引导时提升X%的抗冲击值",
+      "icon": 198
+    },
+    {
+      "id": 200,
+      "attributesort": 3,
+      "shuxing_name": "烹饪物的恢复量提升",
+      "shuxing_type": "food_hp_add",
+      "unit": 1,
+      "explain": "烹饪物的恢复量提升",
+      "icon": 199
+    },
+    {
+      "id": 201,
+      "attributesort": 3,
+      "shuxing_name": "烹饪物的增益时间延长",
+      "shuxing_type": "food_buff_add",
+      "unit": 1,
+      "explain": "烹饪物的增益时间延长",
+      "icon": 200
+    },
+    {
+      "id": 202,
+      "attributesort": 3,
+      "shuxing_name": "开启宝箱时，有概率获得双倍的奖励",
+      "shuxing_type": "box_double",
+      "unit": 1,
+      "explain": "开启宝箱时，有概率获得双倍的奖励",
+      "icon": 201,
+      "txt": "优先计算三倍奖励，若触发了三倍奖励，就不会触发两倍奖励"
+    },
+    {
+      "id": 203,
+      "attributesort": 3,
+      "shuxing_name": "开启宝箱时，有概率获得三倍的奖励",
+      "shuxing_type": "box_triple",
+      "unit": 1,
+      "explain": "开启宝箱时，有概率获得三倍的奖励",
+      "icon": 202,
+      "txt": "优先计算三倍奖励，若触发了三倍奖励，就不会触发两倍奖励"
+    },
+    {
+      "id": 204,
+      "attributesort": 3,
+      "shuxing_name": "蓄力类武器战技蓄力时间减少",
+      "shuxing_type": "weapon_skill_chargetime_sub",
+      "unit": 1,
+      "explain": "减少蓄力类武器战技的蓄力时间，最高减少50%",
+      "icon": 203,
+      "txt": "与减少蓄力时间（chargetime_sub）属性是重叠的"
+    },
+    {
+      "id": 205,
+      "attributesort": 3,
+      "shuxing_name": "蓄力类余烬战技蓄力时间减少",
+      "shuxing_type": "skill_chargetime_sub",
+      "unit": 1,
+      "explain": "减少蓄力类余烬战技蓄力时间，最高减少50%",
+      "icon": 204,
+      "txt": "与减少蓄力时间（chargetime_sub）属性是重叠的"
+    },
+    {
+      "id": 206,
+      "attributesort": 3,
+      "shuxing_name": "武器属性映射的攻击提升",
+      "shuxing_type": "weapon_atk_1",
+      "unit": 1,
+      "explain": "提升玩家当前武器的所有属性映射攻击比例",
+      "icon": 205
+    },
+    {
+      "id": 207,
+      "attributesort": 3,
+      "shuxing_name": "武器面板攻击力提升",
+      "shuxing_type": "weapon_atk_2",
+      "unit": 1,
+      "explain": "提升玩家当前武器的武器面板攻击力比例",
+      "icon": 206,
+      "txt": "与武器精炼、突破同个乘区"
+    },
+    {
+      "id": 208,
+      "attributesort": 4,
+      "shuxing_name": "对无伤敌人时增伤率",
+      "shuxing_type": "enemy_hpmax_damage_add",
+      "unit": 1,
+      "explain": "敌人生命值等于100%时，提升增伤率",
+      "icon": 207,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 209,
+      "attributesort": 4,
+      "shuxing_name": "对半血敌人时增伤率",
+      "shuxing_type": "enemy_hpdwon_damage_add",
+      "unit": 1,
+      "explain": "敌人生命值低于或等于50%时，提升增伤率",
+      "icon": 208,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 210,
+      "attributesort": 4,
+      "shuxing_name": "复活后，增伤率暂时提升",
+      "shuxing_type": "soulgh_damage_add",
+      "unit": 1,
+      "explain": "灵魂回归后，增伤率在120秒内提升",
+      "icon": 209,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 211,
+      "attributesort": 4,
+      "shuxing_name": "复活后，减伤率暂时提升",
+      "shuxing_type": "soulgh_damage_sub",
+      "unit": 1,
+      "explain": "灵魂回归后，减伤率在120秒内提升",
+      "icon": 210,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 212,
+      "attributesort": 4,
+      "shuxing_name": "连续普攻时攻击力提升",
+      "shuxing_type": "perpetual_normal_atk_add",
+      "unit": 1,
+      "explain": "普攻命中敌人时，攻击力提升X%，最多提升15次。（效果持续10秒，每次命中敌人刷新效果持续时间）",
+      "icon": 211,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 213,
+      "attributesort": 4,
+      "shuxing_name": "连续释放战技时攻击力提升",
+      "shuxing_type": "perpetual_skill_atk_add",
+      "unit": 1,
+      "explain": "释放任意战技时，攻击力提升X%，最多提升至5次。（效果持续20秒，每次释放战技刷新效果持续时间）",
+      "icon": 212,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 214,
+      "attributesort": 4,
+      "shuxing_name": "精准闪避时物理穿刺提升",
+      "shuxing_type": "roll_normal_puncture_add",
+      "unit": 1,
+      "explain": "触发精准闪避后，在10秒内物理穿刺提升X%。（重复触发刷新效果持续时间）",
+      "icon": 213,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 215,
+      "attributesort": 4,
+      "shuxing_name": "战斗时攻击力缓慢提升",
+      "shuxing_type": "time_atk_add",
+      "unit": 1,
+      "explain": "进入战斗后，每秒攻击力提升X%，最多增加12次。受到伤害时损失所有加成，并重新开始计时。脱离战斗时也会损失所有加成。",
+      "icon": 214,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 216,
+      "attributesort": 4,
+      "shuxing_name": "触发任意属性异常时，攻击力暂时提升",
+      "shuxing_type": "debuff_atk_add",
+      "unit": 1,
+      "explain": "触发任意属性异常时，在30秒内攻击力提升X%。（重复触发刷新效果持续时间）",
+      "icon": 215,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 217,
+      "attributesort": 4,
+      "shuxing_name": "受到伤害时暴击伤害提升",
+      "shuxing_type": "hit_crit_hurt_add",
+      "unit": 1,
+      "explain": "受到伤害时，暴击伤害提升X%，持续15秒（重复触发刷新效果持续时间）",
+      "icon": 216,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 218,
+      "attributesort": 4,
+      "shuxing_name": "受到伤害时每秒恢复专注值",
+      "shuxing_type": "hit_mp_add",
+      "unit": 1,
+      "explain": "受到伤害时，每秒恢复X%专注值，持续5秒（重复触发刷新效果持续时间）",
+      "icon": 217,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 219,
+      "attributesort": 4,
+      "shuxing_name": "连续释放武器战技时武器战技冷却缩减提升",
+      "shuxing_type": "perpetual_weapon_skill_cd",
+      "unit": 1,
+      "explain": "释放武器战技时，武器战技冷却缩减提升X%，最多提升5次（效果持续20秒，每次释放武器刷新效果持续时间）",
+      "icon": 218
+    },
+    {
+      "id": 220,
+      "attributesort": 4,
+      "shuxing_name": "普攻累计命中100次敌人时，恢复契泪圣露瓶的使用次数",
+      "shuxing_type": "drug_add",
+      "model": 1,
+      "explain": "普攻累计命中100次敌人时，恢复1次契泪圣露瓶的使用次数（恢复使用次数不能超过当前携带上限）",
+      "icon": 219
+    },
+    {
+      "id": 221,
+      "attributesort": 4,
+      "shuxing_name": "战斗时余烬战技冷却缩减提升",
+      "shuxing_type": "time_skill_cd",
+      "unit": 1,
+      "explain": "进入战斗后，每秒余烬战技冷却缩减提升X%，最多增加10次。受到伤害时损失所有加成，并重新开始计时。脱离战斗时也会损失所有加成。",
+      "icon": 220,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 222,
+      "attributesort": 4,
+      "shuxing_name": "受到致命伤害时，免疫该伤害，并且在一段时间内免疫任何伤害。该效果一次战斗只能触发一次。",
+      "shuxing_type": "fuya_help",
+      "explain": "低贱之女的眷顾:受到致命伤害时，免疫该伤害，并且在X秒内免疫任何伤害。该效果一次战斗只能触发一次。（X值为毫秒单位）",
+      "icon": 221
+    },
+    {
+      "id": 223,
+      "attributesort": 4,
+      "shuxing_name": "首领的生命值低于20%时，随机召唤1个种类的戒魂为你战斗（monster表id为1001~1006的一个），其等级与施法者一致，并且额外加上施法者一定比例的所有属性（基础属性、进阶属性、隐藏属性），持续15秒。该效果一次战斗只能触发一次。",
+      "shuxing_type": "jiehun",
+      "unit": 1,
+      "explain": "首领的生命值低于20%时，随机召唤1个种类的戒魂为你战斗（monster表id为1001~1006的一个），其等级与施法者一致，并且额外加上施法者X%的所有属性（基础属性、进阶属性、隐藏属性），持续15秒。该效果一次战斗只能触发一次。",
+      "icon": 222
+    },
+    {
+      "id": 224,
+      "attributesort": 4,
+      "shuxing_name": "饮用契泪圣露瓶有概率不消耗该次契泪圣露瓶",
+      "shuxing_type": "drug_num",
+      "unit": 1,
+      "explain": "饮用契泪圣露瓶后，能有X%概率不消耗该次契泪圣露瓶",
+      "icon": 223
+    },
+    {
+      "id": 225,
+      "attributesort": 4,
+      "shuxing_name": "触发精准闪避时攻击力提升",
+      "shuxing_type": "roll_atk_add",
+      "unit": 1,
+      "explain": "触发精准闪避后，在10秒内攻击力提升X%。（重复触发刷新效果持续时间）",
+      "icon": 224,
+      "txt": "与增伤率同个乘区"
+    },
+    {
+      "id": 226,
+      "attributesort": 4,
+      "shuxing_name": "生命值大于一半时增伤率提升",
+      "shuxing_type": "hpup50_damage_add",
+      "unit": 1,
+      "explain": "生命值大于50%时，增伤率提升X%",
+      "icon": 225
+    },
+    {
+      "id": 227,
+      "attributesort": 4,
+      "shuxing_name": "生命值低于一半时减伤率提升",
+      "shuxing_type": "hpdown50_damage_sub",
+      "unit": 1,
+      "explain": "生命值低于或等于50%时，减伤率提升X%",
+      "icon": 226
+    },
+    {
+      "id": 228,
+      "attributesort": 4,
+      "shuxing_name": "受到伤害后，攻击力提升",
+      "shuxing_type": "hit_atk_add",
+      "unit": 1,
+      "explain": "受到任意伤害后，攻击力增加X%，持续5秒。（重复触发刷新效果持续时间）",
+      "icon": 227
+    },
+    {
+      "id": 229,
+      "attributesort": 4,
+      "shuxing_name": "残血时专注值增加量",
+      "shuxing_type": "hpdown_eff_mp_add",
+      "unit": 1,
+      "explain": "生命值低于25%时，提升专注值增加量",
+      "icon": 228
+    },
+    {
+      "id": 230,
+      "attributesort": 4,
+      "shuxing_name": "残血时魂纹值增加量",
+      "shuxing_type": "hpdown_eff_soulmp_sub",
+      "unit": 1,
+      "explain": "生命值低于25%时，提升魂纹值增加量",
+      "icon": 229
+    },
+    {
+      "id": 231,
+      "attributesort": 4,
+      "shuxing_name": "从背后攻击敌人时增伤率提升",
+      "shuxing_type": "sneakatk_damage_add",
+      "unit": 1,
+      "explain": "从敌人的背后造成伤害时，提升增伤率",
+      "icon": 230
+    },
+    {
+      "id": 232,
+      "attributesort": 4,
+      "shuxing_name": "攻击动作期间内减伤率提升",
+      "shuxing_type": "atking_damage_sub",
+      "unit": 1,
+      "explain": "普攻的前摇期间内受到伤害，提升减伤率",
+      "icon": 231
+    },
+    {
+      "id": 233,
+      "attributesort": 4,
+      "shuxing_name": "释放魂纹战技有概率不消耗魂纹值",
+      "shuxing_type": "soul_skill_res",
+      "unit": 1,
+      "explain": "释放魂纹战技有概率不消耗魂纹值",
+      "icon": 232
+    },
+    {
+      "id": 234,
+      "attributesort": 4,
+      "shuxing_name": "释放武器战技有概率不消耗专注值",
+      "shuxing_type": "weapon_skill_res",
+      "unit": 1,
+      "explain": "武器战技消耗有概率不消耗专注值",
+      "icon": 233
+    },
+    {
+      "id": 235,
+      "attributesort": 4,
+      "shuxing_name": "释放余烬战技有概率不消耗专注值",
+      "shuxing_type": "skill_res",
+      "unit": 1,
+      "explain": "余烬战技消耗有概率不消耗专注值",
+      "icon": 234
+    },
+    {
+      "id": 236,
+      "attributesort": 4,
+      "shuxing_name": "受到来自背后的伤害时减少率提升",
+      "shuxing_type": "sneakatk1_damage_sub",
+      "unit": 1,
+      "explain": "受到敌人的伤害时，若敌人在自身的背后，提升减伤率",
+      "icon": 230
+    },
+    {
+      "id": 237,
+      "attributesort": 4,
+      "shuxing_name": "受到来自正面的伤害时减少率提升",
+      "shuxing_type": "sneakatk2_damage_sub",
+      "unit": 1,
+      "explain": "受到敌人的伤害时，若敌人在自身的前面，提升减伤率",
+      "icon": 230
+    },
+    {
+      "id": 238,
+      "attributesort": 4,
+      "shuxing_name": "饮用契泪圣露瓶时，为附近队友恢复其回复量的一定比例",
+      "shuxing_type": "drug_aoe",
+      "unit": 1,
+      "explain": "饮用契泪圣露瓶时，为附近队友恢复其回复量的X%",
+      "icon": 235
+    },
+    {
+      "id": 301,
+      "attributesort": 4,
+      "shuxing_name": "直线·双",
+      "shuxing_type": "weapon_style_1",
+      "explain": "读取weapon_style表1类型的攻击方式",
+      "icon": 236,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 302,
+      "attributesort": 4,
+      "shuxing_name": "直线·长",
+      "shuxing_type": "weapon_style_2",
+      "explain": "读取weapon_style表2类型的攻击方式",
+      "icon": 237,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 303,
+      "attributesort": 4,
+      "shuxing_name": "半月·三",
+      "shuxing_type": "weapon_style_3",
+      "explain": "读取weapon_style表3类型的攻击方式",
+      "icon": 238,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 304,
+      "attributesort": 4,
+      "shuxing_name": "半月",
+      "shuxing_type": "weapon_style_4",
+      "explain": "读取weapon_style表4类型的攻击方式",
+      "icon": 239,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 305,
+      "attributesort": 4,
+      "shuxing_name": "全圆",
+      "shuxing_type": "weapon_style_5",
+      "explain": "读取weapon_style表5类型的攻击方式",
+      "icon": 240,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 306,
+      "attributesort": 4,
+      "shuxing_name": "光束·近战",
+      "shuxing_type": "weapon_style_6",
+      "explain": "读取weapon_style表6类型的攻击方式",
+      "icon": 241,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 307,
+      "attributesort": 4,
+      "shuxing_name": "光束·贯穿·快",
+      "shuxing_type": "weapon_style_7",
+      "explain": "读取weapon_style表7类型的攻击方式",
+      "icon": 242,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 308,
+      "attributesort": 4,
+      "shuxing_name": "光束·贯穿·慢",
+      "shuxing_type": "weapon_style_8",
+      "explain": "读取weapon_style表8类型的攻击方式",
+      "icon": 243,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 309,
+      "attributesort": 4,
+      "shuxing_name": "弹幕·单体(弓)",
+      "shuxing_type": "weapon_style_9",
+      "explain": "读取weapon_style表9类型的攻击方式",
+      "icon": 244,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 310,
+      "attributesort": 4,
+      "shuxing_name": "弹幕·群体",
+      "shuxing_type": "weapon_style_10",
+      "explain": "读取weapon_style表10类型的攻击方式",
+      "icon": 245,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 311,
+      "attributesort": 4,
+      "shuxing_name": "弹幕·贯穿",
+      "shuxing_type": "weapon_style_11",
+      "explain": "读取weapon_style表11类型的攻击方式",
+      "icon": 246,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 312,
+      "attributesort": 4,
+      "shuxing_name": "瞬发",
+      "shuxing_type": "weapon_style_12",
+      "explain": "读取weapon_style表12类型的攻击方式",
+      "icon": 247,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 313,
+      "attributesort": 4,
+      "shuxing_name": "瞬发·群体",
+      "shuxing_type": "weapon_style_13",
+      "explain": "读取weapon_style表13类型的攻击方式",
+      "icon": 248,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 314,
+      "attributesort": 4,
+      "shuxing_name": "直线·四",
+      "shuxing_type": "weapon_style_14",
+      "explain": "读取weapon_style表14类型的攻击方式",
+      "icon": 249,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 315,
+      "attributesort": 4,
+      "shuxing_name": "全圆·三",
+      "shuxing_type": "weapon_style_15",
+      "explain": "读取weapon_style表15类型的攻击方式",
+      "icon": 250,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 316,
+      "attributesort": 4,
+      "shuxing_name": "半月·四",
+      "shuxing_type": "weapon_style_16",
+      "explain": "读取weapon_style表16类型的攻击方式",
+      "icon": 251,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 317,
+      "attributesort": 4,
+      "shuxing_name": "弹幕·单体(弩)",
+      "shuxing_type": "weapon_style_17",
+      "explain": "读取weapon_style表17类型的攻击方式",
+      "icon": 252,
+      "txt": "关联weapon_style表的攻击方式，同一时间只会存在一条该属性"
+    },
+    {
+      "id": 401,
+      "attributesort": 4,
+      "shuxing_name": "物理·优先1",
+      "shuxing_type": "physical_1",
+      "explain": "将普攻属性类型更改为物理，优先级为1，会被更高优先级的属性类型覆盖\n(无任何其他属性类型时，物理为默认的属性类型)",
+      "icon": 253,
+      "txt": "全部永久,词条"
+    },
+    {
+      "id": 402,
+      "attributesort": 4,
+      "shuxing_name": "魔力·优先1",
+      "shuxing_type": "ability_1",
+      "explain": "将普攻属性类型更改为魔力，优先级为1，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 254,
+      "txt": "全部永久,词条"
+    },
+    {
+      "id": 403,
+      "attributesort": 4,
+      "shuxing_name": "火属性·优先1",
+      "shuxing_type": "fire_1",
+      "explain": "将普攻属性类型更改为火属性，优先级为1，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 255,
+      "txt": "全部永久,词条"
+    },
+    {
+      "id": 404,
+      "attributesort": 4,
+      "shuxing_name": "冰属性·优先1",
+      "shuxing_type": "ice_1",
+      "explain": "将普攻属性类型更改为冰属性，优先级为1，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 256,
+      "txt": "全部永久,词条"
+    },
+    {
+      "id": 405,
+      "attributesort": 4,
+      "shuxing_name": "雷属性·优先1",
+      "shuxing_type": "electric_1",
+      "explain": "将普攻属性类型更改为雷属性，优先级为1，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 257,
+      "txt": "全部永久,词条"
+    },
+    {
+      "id": 406,
+      "attributesort": 4,
+      "shuxing_name": "毒属性·优先1",
+      "shuxing_type": "poison_1",
+      "explain": "将普攻属性类型更改为毒属性，优先级为1，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 258,
+      "txt": "全部永久,词条"
+    },
+    {
+      "id": 407,
+      "attributesort": 4,
+      "shuxing_name": "圣属性·优先1",
+      "shuxing_type": "holy_1",
+      "explain": "将普攻属性类型更改为圣属性，优先级为1，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 259,
+      "txt": "全部永久,词条"
+    },
+    {
+      "id": 408,
+      "attributesort": 4,
+      "shuxing_name": "物理·优先2",
+      "shuxing_type": "physical_2",
+      "explain": "将普攻属性类型更改为物理，优先级为2，会被更高优先级的属性类型覆盖\n(无任何其他属性类型时，物理为默认的属性类型)",
+      "icon": 260,
+      "txt": "大于1就会生效\n同时存在多种同级的属性类型时，首先看哪个属性类型的该值最高就选择哪个属性类型，若都一样则以最新获取的那个属性类型为最高优先级。"
+    },
+    {
+      "id": 409,
+      "attributesort": 4,
+      "shuxing_name": "魔力·优先2",
+      "shuxing_type": "ability_2",
+      "explain": "将普攻属性类型更改为魔力，优先级为2，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 261
+    },
+    {
+      "id": 410,
+      "attributesort": 4,
+      "shuxing_name": "火属性·优先2",
+      "shuxing_type": "fire_2",
+      "explain": "将普攻属性类型更改为火属性，优先级为2，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 262
+    },
+    {
+      "id": 411,
+      "attributesort": 4,
+      "shuxing_name": "冰属性·优先2",
+      "shuxing_type": "ice_2",
+      "explain": "将普攻属性类型更改为冰属性，优先级为2，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 263
+    },
+    {
+      "id": 412,
+      "attributesort": 4,
+      "shuxing_name": "雷属性·优先2",
+      "shuxing_type": "electric_2",
+      "explain": "将普攻属性类型更改为雷属性，优先级为2，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 264
+    },
+    {
+      "id": 413,
+      "attributesort": 4,
+      "shuxing_name": "毒属性·优先2",
+      "shuxing_type": "poison_2",
+      "explain": "将普攻属性类型更改为毒属性，优先级为2，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 265
+    },
+    {
+      "id": 414,
+      "attributesort": 4,
+      "shuxing_name": "圣属性·优先2",
+      "shuxing_type": "holy_2",
+      "explain": "将普攻属性类型更改为圣属性，优先级为2，会被更高优先级的属性类型覆盖\n提升10%最终增伤率",
+      "icon": 266
+    },
+    {
+      "id": 415,
+      "attributesort": 4,
+      "shuxing_name": "物理·优先3",
+      "shuxing_type": "physical_3",
+      "explain": "将普攻属性类型更改为物理，优先级为3，最高优先级\n(无任何其他属性类型时，物理为默认的属性类型)",
+      "icon": 267
+    },
+    {
+      "id": 416,
+      "attributesort": 4,
+      "shuxing_name": "魔力·优先3",
+      "shuxing_type": "ability_3",
+      "explain": "将普攻属性类型更改为魔力，优先级为3，最高优先级\n提升10%最终增伤率",
+      "icon": 268
+    },
+    {
+      "id": 417,
+      "attributesort": 4,
+      "shuxing_name": "火属性·优先3",
+      "shuxing_type": "fire_3",
+      "explain": "将普攻属性类型更改为火属性，优先级为3，最高优先级\n提升10%最终增伤率",
+      "icon": 269
+    },
+    {
+      "id": 418,
+      "attributesort": 4,
+      "shuxing_name": "冰属性·优先3",
+      "shuxing_type": "ice_3",
+      "explain": "将普攻属性类型更改为冰属性，优先级为3，最高优先级\n提升10%最终增伤率",
+      "icon": 270
+    },
+    {
+      "id": 419,
+      "attributesort": 4,
+      "shuxing_name": "雷属性·优先3",
+      "shuxing_type": "electric_3",
+      "explain": "将普攻属性类型更改为雷属性，优先级为3，最高优先级\n提升10%最终增伤率",
+      "icon": 271
+    },
+    {
+      "id": 420,
+      "attributesort": 4,
+      "shuxing_name": "毒属性·优先3",
+      "shuxing_type": "poison_3",
+      "explain": "将普攻属性类型更改为毒属性，优先级为3，最高优先级\n提升10%最终增伤率",
+      "icon": 272
+    },
+    {
+      "id": 421,
+      "attributesort": 4,
+      "shuxing_name": "圣属性·优先3",
+      "shuxing_type": "holy_3",
+      "explain": "将普攻属性类型更改为圣属性，优先级为3，最高优先级\n提升10%最终增伤率",
+      "icon": 273
+    },
+    {
+      "id": 501,
+      "attributesort": 4,
+      "shuxing_name": "神格配置栏位解锁",
+      "shuxing_type": "godfield_add",
+      "explain": "每增加1点，解锁一个神格配置栏位",
+      "icon": 274,
+      "initial": 2,
+      "limit": 6,
+      "txt": "各角色独立计算，默认自带2点，最高为6点"
+    },
+    {
+      "id": 502,
+      "attributesort": 4,
+      "shuxing_name": "神力值数量",
+      "shuxing_type": "divine_power",
+      "explain": "每增加1点，神力值数量+1",
+      "icon": 275,
+      "initial": 5,
+      "limit": 15,
+      "txt": "各角色独立计算，默认为5，最高为15"
+    },
+    {
+      "id": 503,
+      "attributesort": 4,
+      "shuxing_name": "日之印记配置栏位解锁",
+      "shuxing_type": "sun_mark",
+      "explain": "每有1点，即解锁1个装备配置界面的日之印记配置栏位",
+      "icon": 276,
+      "initial": 1,
+      "limit": 5,
+      "txt": "默认为2，最高为5"
+    },
+    {
+      "id": 504,
+      "attributesort": 4,
+      "shuxing_name": "月之印记配置栏位解锁",
+      "shuxing_type": "moon_mark",
+      "explain": "每有1点，即解锁1个装备配置界面的月之印记配置栏位",
+      "icon": 277,
+      "initial": 1,
+      "limit": 5,
+      "txt": "默认为2，最高为5"
+    },
+    {
+      "id": 1001,
+      "attributesort": 4,
+      "shuxing_name": "角色的魂纹战技基础等级",
+      "shuxing_type": "role_soul_skill_lv",
+      "explain": "每增加一点，魂纹战技基础等级+1",
+      "icon": 278,
+      "txt": "各角色独立计算，初始值为1"
+    },
+    {
+      "id": 1002,
+      "attributesort": 4,
+      "shuxing_name": "角色的战斗天赋基础等级",
+      "shuxing_type": "role_lead_skill_lv",
+      "explain": "每增加一点，战斗天赋基础等级+1",
+      "icon": 279,
+      "txt": "各角色独立计算，初始值为1"
+    },
+    {
+      "id": 1003,
+      "attributesort": 4,
+      "shuxing_name": "角色的支援天赋基础等级",
+      "shuxing_type": "role_supe_skill_lv",
+      "explain": "每增加一点，支援天赋基础等级+1",
+      "icon": 280,
+      "txt": "各角色独立计算，初始值为1"
+    },
+    {
+      "id": 1004,
+      "attributesort": 4,
+      "shuxing_name": "角色的魂纹战技额外等级",
+      "shuxing_type": "role_soul_skill_lv_ew",
+      "explain": "每增加一点，魂纹战技额外等级+1",
+      "icon": 281,
+      "txt": "各角色独立计算，初始值为0"
+    },
+    {
+      "id": 1005,
+      "attributesort": 4,
+      "shuxing_name": "角色的战斗天赋额外等级",
+      "shuxing_type": "role_lead_skill_lv_ew",
+      "explain": "每增加一点，战斗天赋额外等级+1",
+      "icon": 282,
+      "txt": "各角色独立计算，初始值为0"
+    },
+    {
+      "id": 1006,
+      "attributesort": 4,
+      "shuxing_name": "角色的支援天赋额外等级",
+      "shuxing_type": "role_supe_skill_lv_ew",
+      "explain": "每增加一点，支援天赋额外等级+1",
+      "icon": 283,
+      "txt": "各角色独立计算，初始值为0"
+    }
+  ]
+}

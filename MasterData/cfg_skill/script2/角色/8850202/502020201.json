@@ -1,0 +1,150 @@
+{
+  "triggerName": "消息事件",
+  "name": "",
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "502020201",
+      "codeType": 1,
+      "ptype": "判断",
+      "id": -1,
+      "ii": 0,
+      "t": 1,
+      "target": 1,
+      "index": 0,
+      "term": "and",
+      "type": "监听消息"
+    }
+  ],
+  "others_id": 0,
+  "trigger": 32,
+  "ifs_and": [
+    0
+  ],
+  "ifs_or": [],
+  "others": [
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 0,
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;20;201;0",
+          "codeType": 1,
+          "t": 3,
+          "id": 0,
+          "ii": 0,
+          "ptype": "判断",
+          "target": 1,
+          "index": 0,
+          "term": "and",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "crit|5020202|0;0;10000;0;84000_5020209_1_b;0;0;2;5#1000#25#502020204#electric_damage_res_5020202",
+          "t": 3,
+          "id": 0,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "临时属性"
+        }
+      ]
+    },
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 1,
+      "ifs": [
+        {
+          "value": "atk_add_5020202;=;0",
+          "codeType": 1,
+          "ptype": "判断",
+          "id": 1,
+          "ii": 0,
+          "t": 3,
+          "target": 1,
+          "index": 0,
+          "term": "and",
+          "type": "处于状态"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "0#0;0;0;1;0#84000_5020202_2;0;0;0;;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "场景特效"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "atk_add|5020202|0;0|2|2000|20|201;10000;0;84000_5020202_3_b;0;0;2;3#502020601#0",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": "electric_3|5020202|0;1;10000;0;;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "index": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": 0,
+      "t": 1,
+      "index": 3,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "electric_damage_add|5020202|0;0|2|2000|20|201;10000;0;84000_5020202_3_a;0;0;5;0",
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "codeType": 2,
+      "index": 4,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    }
+  ]
+}

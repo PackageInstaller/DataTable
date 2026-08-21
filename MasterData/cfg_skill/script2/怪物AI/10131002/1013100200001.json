@@ -1,0 +1,149 @@
+{
+  "others": [
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 0,
+      "actions": [],
+      "parentid": -1,
+      "ifs_and": [],
+      "elses": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 1,
+      "actions": [],
+      "parentid": -1,
+      "ifs_and": [],
+      "elses": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 2,
+      "actions": [
+        {
+          "value": "0;0;200;3#1#0#0#17;0;0;0;0",
+          "ptype": "是",
+          "t": 3,
+          "id": 2,
+          "ii": 1,
+          "codeType": 2,
+          "type": "动作移动",
+          "index": 0,
+          "target": 1
+        }
+      ],
+      "parentid": -1,
+      "ifs_and": [
+        0
+      ],
+      "elses": [
+        {
+          "value": "0;0;200;0;10;0;0;0",
+          "ptype": "否",
+          "t": 3,
+          "id": 2,
+          "ii": 1,
+          "codeType": 3,
+          "type": "动作移动",
+          "index": 0,
+          "target": 1
+        }
+      ],
+      "ifs": [
+        {
+          "value": "0",
+          "ptype": "判断",
+          "t": 3,
+          "id": 2,
+          "ii": 0,
+          "codeType": 1,
+          "type": "目标方位",
+          "term": "and",
+          "index": 0,
+          "target": 1
+        }
+      ]
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 3,
+      "actions": [],
+      "parentid": 2,
+      "ifs_and": [],
+      "elses": [],
+      "ifs": []
+    }
+  ],
+  "ifs_or": [],
+  "trigger": 32,
+  "ifs_and": [
+    0,
+    1,
+    2
+  ],
+  "triggerName": "消息事件",
+  "ifs": [
+    {
+      "value": "1013100200001",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "codeType": 1,
+      "type": "监听消息",
+      "term": "and",
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "1",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 1,
+      "type": "调试模式",
+      "term": "and",
+      "index": 1,
+      "target": 1
+    },
+    {
+      "value": "10131002",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 1,
+      "type": "怪物bid",
+      "term": "and",
+      "index": 2,
+      "target": 1
+    }
+  ],
+  "actions": [
+    {
+      "value": 16,
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "type": "分支"
+    },
+    {
+      "value": 2,
+      "codeType": 2,
+      "t": 1,
+      "index": 1,
+      "type": "分支"
+    }
+  ],
+  "name": "",
+  "others_num": 1,
+  "elses": [],
+  "others_id": 2
+}

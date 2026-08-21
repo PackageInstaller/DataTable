@@ -1,0 +1,100 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "group",
+    "sort",
+    "icon",
+    "enum_name",
+    "prohibit",
+    "bind"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "地图",
+      "group": 1,
+      "sort": 1,
+      "icon": "func_1",
+      "enum_name": "evt_clickDituBtn",
+      "bind": 6
+    },
+    {
+      "id": 2,
+      "name": "冒险手册",
+      "group": 1,
+      "sort": 2,
+      "icon": "func_2",
+      "enum_name": "evt_clickShengwangBtn",
+      "bind": 6
+    },
+    {
+      "id": 3,
+      "name": "仓库",
+      "group": 1,
+      "sort": 3,
+      "icon": "func_3",
+      "enum_name": "bagBtnFun"
+    },
+    {
+      "id": 4,
+      "name": "装备",
+      "group": 1,
+      "sort": 4,
+      "icon": "func_4",
+      "enum_name": "evt_clickEquipBtn"
+    },
+    {
+      "id": 5,
+      "name": "角色",
+      "group": 1,
+      "sort": 5,
+      "icon": "func_5",
+      "enum_name": "evt_clickAllRoleBtn"
+    },
+    {
+      "id": 6,
+      "name": "多功能面板",
+      "group": 1,
+      "sort": 6,
+      "icon": "func_6",
+      "enum_name": "evt_openExpandwin"
+    },
+    {
+      "id": 7,
+      "name": "活动",
+      "group": 2,
+      "sort": 1,
+      "icon": "func_7",
+      "enum_name": "evt_clickHuodongBtn",
+      "prohibit": 1
+    },
+    {
+      "id": 9,
+      "name": "抽卡",
+      "group": 1,
+      "sort": 3,
+      "icon": "func_9",
+      "enum_name": "evt_clickKachiBtn",
+      "prohibit": 1
+    },
+    {
+      "id": 10,
+      "name": "商城",
+      "group": 1,
+      "sort": 4,
+      "icon": "func_10",
+      "enum_name": "evt_clickShopBtn",
+      "prohibit": 1
+    },
+    {
+      "id": 11,
+      "name": "无昼回响",
+      "group": 2,
+      "sort": 1,
+      "icon": "func_8",
+      "enum_name": "evt_clickNightTowerBtn",
+      "prohibit": 1
+    }
+  ]
+}

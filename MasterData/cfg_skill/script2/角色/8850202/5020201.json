@@ -1,0 +1,118 @@
+{
+  "triggerName": "蓄力事件",
+  "name": "",
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "5020201a;1",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "ptype": "判断",
+      "type": "蓄力事件"
+    }
+  ],
+  "others_id": 0,
+  "trigger": 30,
+  "ifs_and": [
+    0
+  ],
+  "ifs_or": [],
+  "others": [
+    {
+      "elses": [],
+      "parentid": 1,
+      "ifs_or": [],
+      "id": 0,
+      "ifs": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "actions": []
+    },
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 1,
+      "ifs": [
+        {
+          "value": "atk_add_5020202;=;1",
+          "t": 3,
+          "id": 1,
+          "ii": 0,
+          "term": "and",
+          "codeType": 1,
+          "index": 0,
+          "target": 1,
+          "ptype": "判断",
+          "type": "处于状态"
+        },
+        {
+          "value": "ming_yun_level;>=;30;201;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "term": "and",
+          "codeType": 1,
+          "target": 1,
+          "index": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_and": [
+        0,
+        1
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "0;502020201;0;1",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "发送消息"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": "1.125;150;50;400",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "ptype": "是",
+      "target": 1,
+      "index": 0,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": 1,
+      "t": 1,
+      "index": 1,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "0#0;0;0;1;84000_5010101_1;role_5020201_hurt;0;1;;0",
+      "codeType": 2,
+      "ptype": "是",
+      "id": -1,
+      "ii": 3,
+      "t": 1,
+      "index": 2,
+      "target": 1,
+      "type": "场景特效"
+    }
+  ]
+}

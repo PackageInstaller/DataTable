@@ -1,0 +1,74 @@
+{
+  "ifs": [
+    {
+      "value": "30702",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "怪物bid",
+      "codeType": 1,
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "term": "and"
+    },
+    {
+      "value": "30702a_hold;1",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "蓄力事件",
+      "codeType": 1,
+      "ii": 1,
+      "target": 1,
+      "index": 1,
+      "term": "and"
+    }
+  ],
+  "name": "",
+  "ifs_or": [],
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "others": [],
+  "trigger": 30,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0;;200;3#0#-45#45;5;;380;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "动作移动"
+    },
+    {
+      "value": "0;;100;3#0#-45#45;5;;80;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;0;0;1#0#0;82000_30702_1_atk;30702a1_hurt|30702a2_hurt|30702a3_hurt;0;1;;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 3,
+      "target": 1,
+      "index": 2,
+      "type": "场景特效"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ]
+}

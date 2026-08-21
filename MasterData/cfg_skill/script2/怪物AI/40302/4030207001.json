@@ -1,0 +1,139 @@
+{
+  "triggerName": "消息事件",
+  "ifs": [
+    {
+      "value": "1",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "term": "and",
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "type": "调试模式"
+    },
+    {
+      "value": "4030207001",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "term": "and",
+      "ii": 1,
+      "target": 1,
+      "index": 1,
+      "type": "监听消息"
+    },
+    {
+      "value": "40302",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "term": "and",
+      "ii": 2,
+      "index": 2,
+      "target": 1,
+      "type": "怪物bid"
+    }
+  ],
+  "name": "",
+  "ifs_and": [
+    0,
+    1,
+    2
+  ],
+  "others_num": 1,
+  "ifs_or": [],
+  "others": [
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "ifs_and": [],
+      "ifs_or": [],
+      "id": 0,
+      "actions": []
+    },
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "ifs_and": [],
+      "ifs_or": [],
+      "id": 1,
+      "actions": []
+    },
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [
+        {
+          "value": "5000",
+          "t": 3,
+          "id": 2,
+          "ptype": "判断",
+          "codeType": 1,
+          "term": "and",
+          "ii": 0,
+          "index": 0,
+          "target": 1,
+          "type": "概率"
+        },
+        {
+          "value": "<=;3000;0",
+          "t": 3,
+          "id": 2,
+          "ptype": "判断",
+          "codeType": 1,
+          "term": "and",
+          "ii": 1,
+          "target": 1,
+          "index": 1,
+          "type": "生命比例"
+        }
+      ],
+      "parentid": -1,
+      "ifs_and": [
+        0,
+        1
+      ],
+      "ifs_or": [],
+      "id": 2,
+      "actions": [
+        {
+          "value": "0;4030208;0;",
+          "t": 3,
+          "id": 2,
+          "index": 0,
+          "codeType": 2,
+          "ii": 1,
+          "ptype": "是",
+          "target": 1,
+          "type": "发送消息"
+        }
+      ]
+    }
+  ],
+  "trigger": 32,
+  "others_id": 2,
+  "actions": [
+    {
+      "value": 16,
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "type": "分支"
+    },
+    {
+      "value": 2,
+      "codeType": 2,
+      "t": 1,
+      "index": 1,
+      "type": "分支"
+    }
+  ]
+}

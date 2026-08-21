@@ -1,0 +1,220 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "5010701",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "ptype": "判断",
+      "type": "检查CD"
+    },
+    {
+      "value": "5010701",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 1,
+      "target": 1,
+      "index": 1,
+      "ptype": "判断",
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 0,
+  "trigger": 25,
+  "ifs_or": [],
+  "others": [
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 0,
+      "ifs": [
+        {
+          "value": "weaponType;in;1|2|5|6;0;0",
+          "term": "and",
+          "t": 3,
+          "id": 0,
+          "ii": 0,
+          "codeType": 1,
+          "target": 1,
+          "index": 0,
+          "ptype": "判断",
+          "type": "角色属性"
+        },
+        {
+          "value": "role_skill_level;>=;1;107;4",
+          "term": "and",
+          "ptype": "判断",
+          "id": 0,
+          "ii": 1,
+          "codeType": 1,
+          "index": 1,
+          "target": 1,
+          "t": 3,
+          "type": "角色属性"
+        }
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "speed_add|5010701|0;1000;12000;0;;0;0;0;0",
+          "t": 3,
+          "id": 0,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "临时属性"
+        }
+      ],
+      "ifs_and": [
+        0,
+        1
+      ]
+    },
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 1,
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;10;107;0",
+          "term": "and",
+          "t": 3,
+          "id": 1,
+          "ii": 0,
+          "codeType": 1,
+          "target": 1,
+          "index": 0,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "magic_hurt|5010701|0;2250;12000;0;;0;0;0;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "临时属性"
+        }
+      ],
+      "ifs_and": [
+        0
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": "hunwen_spell;0;0;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "index": 0,
+      "target": 1,
+      "ptype": "是",
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;0;0;2;84000_5010701_1_b;0;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;0;5;84000_5010701_1_a;0;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "index": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "stun_add|5010701|0;0|1|2000|20|107;12000;0;;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "codeType": 2,
+      "index": 3,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": "anger_add|5010701|0;0|1|10000|20|107;12000;0;;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "codeType": 2,
+      "index": 4,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": 1,
+      "t": 1,
+      "index": 5,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": 0,
+      "t": 1,
+      "index": 6,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "ability_3|5010701|0;1;12000;0;84000_5010701_2;0;0;5;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 8,
+      "codeType": 2,
+      "index": 7,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": "5010701;24000;0;0",
+      "ptype": "是",
+      "id": -1,
+      "ii": 9,
+      "target": 1,
+      "t": 1,
+      "codeType": 2,
+      "index": 8,
+      "type": "设置CD"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ]
+}

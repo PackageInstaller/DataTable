@@ -1,0 +1,72 @@
+{
+  "ifs_and": [
+    0
+  ],
+  "name": "",
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "others": [],
+  "trigger": 30,
+  "others_id": 0,
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "spell_ad4;0;0;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#6#0;5#1;250;-1;15#-37.5;6;50;9999999;100;83500_300016_2#83500_300016_1;17_hurt;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "type": "发射特效"
+    },
+    {
+      "value": "1.125;150;50;300",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 3,
+      "index": 2,
+      "target": 1,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "0#0;250;0;1#0#0;83500_300017_1;0#0;0;0;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 4,
+      "target": 1,
+      "index": 3,
+      "type": "场景特效"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "17_hold_finish;1",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "term": "and",
+      "index": 0,
+      "target": 1,
+      "type": "蓄力事件"
+    }
+  ]
+}

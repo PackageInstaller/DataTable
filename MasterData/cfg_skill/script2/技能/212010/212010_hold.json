@@ -1,0 +1,114 @@
+{
+  "ifs": [
+    {
+      "value": "212010",
+      "type": "检查CD",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "term": "and"
+    },
+    {
+      "value": "212010",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "技能ID",
+      "ii": 1,
+      "target": 1,
+      "index": 1,
+      "term": "and"
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "actions": [
+    {
+      "value": "212010;10000;0;0;",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "设置CD",
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "212010;2;0;5000;2;212010a;guide_ap1b;500;",
+      "type": "蓄力",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    },
+    {
+      "value": "空;212010d;5100;",
+      "type": "延时",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 3,
+      "index": 2,
+      "target": 1
+    },
+    {
+      "value": "空;212010;5100;",
+      "type": "延时",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 4,
+      "index": 3,
+      "target": 1
+    },
+    {
+      "value": "1;200;1;0",
+      "codeType": 2,
+      "t": 1,
+      "index": 4,
+      "id": -1,
+      "ptype": "是",
+      "type": "屏幕抖动",
+      "ii": 5,
+      "target": 1
+    },
+    {
+      "value": "500;5100;",
+      "type": "设置后摇",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 6,
+      "index": 5,
+      "target": 1
+    },
+    {
+      "value": "空;212010d;5100;",
+      "type": "延时",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 5,
+      "index": 6,
+      "target": 1
+    }
+  ],
+  "name": "",
+  "trigger": 25
+}

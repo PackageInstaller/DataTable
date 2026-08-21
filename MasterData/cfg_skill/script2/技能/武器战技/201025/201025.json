@@ -1,0 +1,46 @@
+{
+  "ifs": [
+    {
+      "value": "201025a;1",
+      "type": "蓄力事件",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ptype": "判断",
+      "codeType": 1,
+      "term": "and",
+      "ii": 0,
+      "index": 0
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "0;0;0;3;83100_201025_1;201025a",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "场景特效",
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "3#40;0#1#201025a;0;3;83100_201025_2;201025b",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "场景特效",
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0
+  ],
+  "trigger": 30
+}

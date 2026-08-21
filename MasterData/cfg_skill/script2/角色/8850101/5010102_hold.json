@@ -1,0 +1,177 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "ifs_and": [
+    0,
+    1
+  ],
+  "trigger": 25,
+  "ifs": [
+    {
+      "value": "5010102",
+      "ptype": "判断",
+      "id": -1,
+      "term": "and",
+      "ii": 0,
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "t": 1,
+      "type": "检查CD"
+    },
+    {
+      "value": "5010102",
+      "ptype": "判断",
+      "id": -1,
+      "term": "and",
+      "ii": 1,
+      "codeType": 1,
+      "target": 1,
+      "index": 1,
+      "t": 1,
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 0,
+  "ifs_or": [],
+  "others": [
+    {
+      "elses": [],
+      "parentid": -1,
+      "id": 0,
+      "ifs_and": [
+        0
+      ],
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;20;101;0",
+          "t": 3,
+          "id": 0,
+          "term": "and",
+          "ii": 0,
+          "codeType": 1,
+          "index": 0,
+          "target": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_or": [],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "5;1",
+          "t": 3,
+          "id": 0,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "恢复专注值"
+        }
+      ]
+    },
+    {
+      "elses": [
+        {
+          "value": "5010102;20000;20000",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 3,
+          "index": 0,
+          "target": 1,
+          "ptype": "否",
+          "type": "设置CD"
+        }
+      ],
+      "parentid": -1,
+      "id": 1,
+      "ifs_and": [
+        0,
+        1
+      ],
+      "ifs": [
+        {
+          "value": "weaponType;in;15|20|21|22;0;0",
+          "t": 3,
+          "id": 1,
+          "term": "and",
+          "ii": 0,
+          "codeType": 1,
+          "index": 0,
+          "target": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        },
+        {
+          "value": "role_skill_level;>=;1;101;4",
+          "t": 3,
+          "id": 1,
+          "term": "and",
+          "ii": 1,
+          "codeType": 1,
+          "index": 1,
+          "target": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_or": [],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "5010102;15000;15000",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "设置CD"
+        }
+      ]
+    }
+  ],
+  "others_num": 1,
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "300|1|1200|20|101;0",
+      "ptype": "是",
+      "id": -1,
+      "ii": 2,
+      "target": 1,
+      "t": 1,
+      "codeType": 2,
+      "index": 1,
+      "type": "恢复血量"
+    },
+    {
+      "value": "0#0;0;0;5;84000_5010102_1;;0;0;;0",
+      "ptype": "是",
+      "id": -1,
+      "ii": 3,
+      "index": 2,
+      "t": 1,
+      "codeType": 2,
+      "target": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": 0,
+      "t": 1,
+      "index": 3,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ]
+}

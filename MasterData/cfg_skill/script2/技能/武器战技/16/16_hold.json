@@ -1,0 +1,82 @@
+{
+  "name": "",
+  "triggerName": "玩家主动技能",
+  "trigger": 25,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "actions": [
+    {
+      "value": "16;1500;1500",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "设置CD"
+    },
+    {
+      "value": "0#2#5;1#0#-30#30;250;4000;0#0;1;50;99999;150;83500_300016_2#83500_300016_1;simplehurt;1,6,3,21000,10000,10000,0,0,0,1,300,0,0,,,0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "type": "发射特效"
+    },
+    {
+      "value": "1.125;150;50;300",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 3,
+      "target": 1,
+      "index": 2,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "spell_ad4;0;0;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 4,
+      "index": 3,
+      "target": 1,
+      "type": "动作移动"
+    }
+  ],
+  "ifs_or": [],
+  "ifs": [
+    {
+      "value": "16",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "type": "检查CD",
+      "target": 1,
+      "index": 0,
+      "term": "and"
+    },
+    {
+      "value": "16",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "codeType": 1,
+      "ii": 1,
+      "type": "技能ID",
+      "target": 1,
+      "index": 1,
+      "term": "and"
+    }
+  ]
+}

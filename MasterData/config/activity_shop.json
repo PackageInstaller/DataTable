@@ -1,0 +1,374 @@
+{
+  "columns": [
+    "id",
+    "shop_id",
+    "name",
+    "gift",
+    "number",
+    "refresh",
+    "cost",
+    "restriction",
+    "discount",
+    "prohibit",
+    "dk"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "shop_id": 101,
+      "name": "谒魂者免费礼包",
+      "gift": 141001,
+      "number": 1,
+      "refresh": 1,
+      "dk": "y_re3"
+    },
+    {
+      "id": 2,
+      "shop_id": 101,
+      "name": "谒魂者冲刺礼包1",
+      "gift": 141002,
+      "number": 3,
+      "cost": "1|104;268",
+      "restriction": "playerlevel;>=;5",
+      "discount": 4,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 3,
+      "shop_id": 101,
+      "name": "谒魂者冲刺礼包2",
+      "gift": 141003,
+      "number": 3,
+      "cost": "2|401",
+      "discount": 1,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 4,
+      "shop_id": 101,
+      "name": "谒魂者冲刺礼包3",
+      "gift": 141004,
+      "number": 3,
+      "cost": "1|104;688",
+      "discount": 5,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 5,
+      "shop_id": 101,
+      "name": "谒魂者冲刺礼包4",
+      "gift": 141005,
+      "number": 3,
+      "cost": "2|402",
+      "discount": 2,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 6,
+      "shop_id": 101,
+      "name": "谒魂者冲刺礼包5",
+      "gift": 141006,
+      "number": 5,
+      "cost": "1|104;1588",
+      "discount": 6,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 7,
+      "shop_id": 101,
+      "name": "谒魂者冲刺礼包6",
+      "gift": 141007,
+      "number": 5,
+      "cost": "1|104;2288",
+      "discount": 7,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 8,
+      "shop_id": 101,
+      "name": "谒魂者冲刺礼包7",
+      "gift": 141008,
+      "number": 5,
+      "cost": "2|403",
+      "discount": 3,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 9,
+      "shop_id": 101,
+      "name": "谒魂者冲刺礼包8",
+      "gift": 141009,
+      "number": 3,
+      "cost": "1|104;4888",
+      "discount": 8,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 11,
+      "shop_id": 201,
+      "name": "神格免费礼包",
+      "gift": 142001,
+      "number": 1,
+      "refresh": 1,
+      "dk": "y_re3"
+    },
+    {
+      "id": 12,
+      "shop_id": 201,
+      "name": "神格冲刺礼包1",
+      "gift": 142002,
+      "number": 5,
+      "cost": "1|104;288",
+      "discount": 3,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 13,
+      "shop_id": 201,
+      "name": "神格冲刺礼包2",
+      "gift": 142003,
+      "number": 3,
+      "cost": "2|411",
+      "discount": 1,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 14,
+      "shop_id": 201,
+      "name": "神格冲刺礼包3",
+      "gift": 142004,
+      "number": 5,
+      "cost": "1|104;888",
+      "discount": 3,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 15,
+      "shop_id": 201,
+      "name": "神格冲刺礼包4",
+      "gift": 142005,
+      "number": 3,
+      "cost": "2|412",
+      "discount": 1,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 16,
+      "shop_id": 201,
+      "name": "神格冲刺礼包5",
+      "gift": 142006,
+      "number": 5,
+      "cost": "1|104;1888",
+      "discount": 4,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 17,
+      "shop_id": 201,
+      "name": "神格冲刺礼包6",
+      "gift": 142007,
+      "number": 4,
+      "cost": "1|104;3188",
+      "discount": 4,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 18,
+      "shop_id": 201,
+      "name": "神格冲刺礼包7",
+      "gift": 142008,
+      "number": 1,
+      "cost": "2|413",
+      "discount": 1,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 19,
+      "shop_id": 201,
+      "name": "神格冲刺礼包8",
+      "gift": 142009,
+      "number": 5,
+      "cost": "1|104;5888",
+      "discount": 5,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 21,
+      "shop_id": 202,
+      "name": "神驱免费礼包",
+      "gift": 143001,
+      "number": 1,
+      "refresh": 1,
+      "dk": "y_re3"
+    },
+    {
+      "id": 22,
+      "shop_id": 202,
+      "name": "神驱冲刺礼包1",
+      "gift": 143002,
+      "number": 3,
+      "cost": "1|104;168",
+      "discount": 2,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 23,
+      "shop_id": 202,
+      "name": "神驱冲刺礼包2",
+      "gift": 143003,
+      "number": 3,
+      "cost": "2|421",
+      "discount": 1,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 24,
+      "shop_id": 202,
+      "name": "神驱冲刺礼包3",
+      "gift": 143004,
+      "number": 5,
+      "cost": "1|104;528",
+      "discount": 3,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 25,
+      "shop_id": 202,
+      "name": "神驱冲刺礼包4",
+      "gift": 143005,
+      "number": 3,
+      "cost": "2|422",
+      "discount": 2,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 26,
+      "shop_id": 202,
+      "name": "神驱冲刺礼包5",
+      "gift": 143006,
+      "number": 5,
+      "cost": "1|104;1388",
+      "discount": 3,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 27,
+      "shop_id": 202,
+      "name": "神驱冲刺礼包6",
+      "gift": 143007,
+      "number": 3,
+      "cost": "1|104;2988",
+      "discount": 4,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 28,
+      "shop_id": 202,
+      "name": "神驱冲刺礼包7",
+      "gift": 143008,
+      "number": 3,
+      "cost": "2|423",
+      "discount": 3,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 29,
+      "shop_id": 202,
+      "name": "神驱冲刺礼包8",
+      "gift": 143009,
+      "number": 10,
+      "cost": "1|104;5488",
+      "discount": 5,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 31,
+      "shop_id": 203,
+      "name": "谒魂者免费礼包",
+      "gift": 144001,
+      "number": 1,
+      "refresh": 1,
+      "dk": "y_re3"
+    },
+    {
+      "id": 32,
+      "shop_id": 203,
+      "name": "谒魂者冲刺礼包1",
+      "gift": 144002,
+      "number": 3,
+      "cost": "1|104;268",
+      "discount": 4,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 33,
+      "shop_id": 203,
+      "name": "谒魂者冲刺礼包2",
+      "gift": 144003,
+      "number": 3,
+      "cost": "2|431",
+      "discount": 1,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 34,
+      "shop_id": 203,
+      "name": "谒魂者冲刺礼包3",
+      "gift": 144004,
+      "number": 5,
+      "cost": "1|104;688",
+      "discount": 5,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 35,
+      "shop_id": 203,
+      "name": "谒魂者冲刺礼包4",
+      "gift": 144005,
+      "number": 4,
+      "cost": "2|432",
+      "discount": 2,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 36,
+      "shop_id": 203,
+      "name": "谒魂者冲刺礼包5",
+      "gift": 144006,
+      "number": 3,
+      "cost": "1|104;1588",
+      "discount": 6,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 37,
+      "shop_id": 203,
+      "name": "谒魂者冲刺礼包6",
+      "gift": 144007,
+      "number": 3,
+      "cost": "1|104;2288",
+      "discount": 7,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 38,
+      "shop_id": 203,
+      "name": "谒魂者冲刺礼包7",
+      "gift": 144008,
+      "number": 3,
+      "cost": "2|433",
+      "discount": 3,
+      "dk": "y_re3_2"
+    },
+    {
+      "id": 39,
+      "shop_id": 203,
+      "name": "谒魂者冲刺礼包8",
+      "gift": 144009,
+      "number": 3,
+      "cost": "1|104;4888",
+      "discount": 8,
+      "dk": "y_re3_2"
+    }
+  ]
+}

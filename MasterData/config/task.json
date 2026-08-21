@@ -1,0 +1,472 @@
+{
+  "columns": [
+    "id",
+    "type",
+    "conditions"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "type": "玩家等级达到X级",
+      "conditions": "1|playerlevel"
+    },
+    {
+      "id": 2,
+      "type": "灵魂等级（世界等级）达到X级",
+      "conditions": "1|worldlevel"
+    },
+    {
+      "id": 3,
+      "type": "任意X个谒魂者等级达到Y级",
+      "conditions": "1|rolelevel"
+    },
+    {
+      "id": 4,
+      "type": "累计对谒魂者进行升级X次",
+      "conditions": "1|role_upgrade"
+    },
+    {
+      "id": 5,
+      "type": "单日对任意谒魂者进行升级X次",
+      "conditions": "1|todayrole_upgrade"
+    },
+    {
+      "id": 6,
+      "type": "持有谒魂者中，任意一个爱慕达到X级",
+      "conditions": "1|rolefavorability"
+    },
+    {
+      "id": 7,
+      "type": "至少一个谒魂者的神格配置上，消耗的cost值大于X",
+      "conditions": "1|godhoodcost"
+    },
+    {
+      "id": 8,
+      "type": "玩家累计激活神像数量X个",
+      "conditions": "1|joss_activate"
+    },
+    {
+      "id": 9,
+      "type": "玩家累计击杀首领级怪物数量X个",
+      "conditions": "1|kill_eventtype7"
+    },
+    {
+      "id": 10,
+      "type": "玩家单日累计击杀首领级怪物数量X个",
+      "conditions": "1|todaykill_eventtype7"
+    },
+    {
+      "id": 11,
+      "type": "玩家累计开启宝箱X个",
+      "conditions": "1|open_box"
+    },
+    {
+      "id": 12,
+      "type": "玩家单日累计开启宝箱X个",
+      "conditions": "1|todayopen_box"
+    },
+    {
+      "id": 13,
+      "type": "玩家累计发布谏言X条",
+      "conditions": "1|admonition_count"
+    },
+    {
+      "id": 14,
+      "type": "玩家单日发布谏言的数量是否超过X条",
+      "conditions": "1|todayadmonition_count"
+    },
+    {
+      "id": 15,
+      "type": "玩家发布的谏言，累计获得的点赞X个",
+      "conditions": "1|admonition_getlike"
+    },
+    {
+      "id": 16,
+      "type": "累计和X个NPC进行交谈",
+      "conditions": "1|talkwith_eventtype3"
+    },
+    {
+      "id": 17,
+      "type": "特殊NPC渊眼女王对玩家的好感度达到X级",
+      "conditions": "1|npcfavorability_yynw"
+    },
+    {
+      "id": 18,
+      "type": "玩家累计遣返森灵X个",
+      "conditions": "1|interactive_sl"
+    },
+    {
+      "id": 19,
+      "type": "玩家累计完成谜题塔解密X次",
+      "conditions": "1|interactive_mtt"
+    },
+    {
+      "id": 20,
+      "type": "玩家累计捉住艾莉丝X次",
+      "conditions": "1|interactive_alice"
+    },
+    {
+      "id": 21,
+      "type": "玩家累计召唤盟友进行协助作战X次",
+      "conditions": "1|interactive_callfriends"
+    },
+    {
+      "id": 22,
+      "type": "玩家累计收集到的遗物X个",
+      "conditions": "1|relics_count"
+    },
+    {
+      "id": 23,
+      "type": "玩家的神躯等级达到X级",
+      "conditions": "1|fyzxlevel"
+    },
+    {
+      "id": 24,
+      "type": "玩家契泪圣露瓶的精粹等级达到X级",
+      "conditions": "1|elixir_jclevel"
+    },
+    {
+      "id": 25,
+      "type": "玩家契泪圣露瓶的魂屑等级达到X级",
+      "conditions": "1|elixir_hxlevel"
+    },
+    {
+      "id": 26,
+      "type": "累计进行角色招募X次",
+      "conditions": "1|role_recruitment"
+    },
+    {
+      "id": 27,
+      "type": "单日累计进行角色招募X次",
+      "conditions": "1|todayrole_recruitment"
+    },
+    {
+      "id": 28,
+      "type": "累计进行神格召唤的X次",
+      "conditions": "1|godhood_recruitment"
+    },
+    {
+      "id": 29,
+      "type": "累计洗炼神格(涤魂)X次",
+      "conditions": "1|godhood_refining"
+    },
+    {
+      "id": 30,
+      "type": "累计重铸神格（转生）X次",
+      "conditions": "1|godhood_remould"
+    },
+    {
+      "id": 31,
+      "type": "累计进行神格合成（升格）X次",
+      "conditions": "1|godhood_synthesis"
+    },
+    {
+      "id": 32,
+      "type": "累计进行武器洗炼X次",
+      "conditions": "1|equipment_refining"
+    },
+    {
+      "id": 33,
+      "type": "单日进行武器洗炼X次",
+      "conditions": "1|todayequipment_refining"
+    },
+    {
+      "id": 34,
+      "type": "累计进行X次武器升级行为",
+      "conditions": "1|weapon_upgrade"
+    },
+    {
+      "id": 35,
+      "type": "单日对武器进行升级行为X次",
+      "conditions": "1|todayweapon_upgrade"
+    },
+    {
+      "id": 36,
+      "type": "任意X把武器强化至Y级",
+      "conditions": "1|weaponlevel"
+    },
+    {
+      "id": 37,
+      "type": "id=X的地图，其探索度大于Y",
+      "conditions": "1|map_exploration"
+    },
+    {
+      "id": 38,
+      "type": "累计进行烹饪X次",
+      "conditions": "1|cooking_frequency"
+    },
+    {
+      "id": 39,
+      "type": "单日进行烹饪X次",
+      "conditions": "1|todaycooking_frequency"
+    },
+    {
+      "id": 40,
+      "type": "累计进行炼金术X次",
+      "conditions": "1|alchemy_frequency"
+    },
+    {
+      "id": 41,
+      "type": "单日进行炼金术X次",
+      "conditions": "1|todayalchemy_frequency"
+    },
+    {
+      "id": 42,
+      "type": "累计习得烹饪方法X个",
+      "conditions": "1|master_cooking"
+    },
+    {
+      "id": 43,
+      "type": "累计习得炼金术X个",
+      "conditions": "1|master_alchemy"
+    },
+    {
+      "id": 44,
+      "type": "累计收集的神之躯体X个",
+      "conditions": "1|godbody_count"
+    },
+    {
+      "id": 45,
+      "type": "日之印栏位累计解锁X个",
+      "conditions": "1|sum_mrak"
+    },
+    {
+      "id": 46,
+      "type": "月之印栏位累计解锁X个",
+      "conditions": "1|moon_mark"
+    },
+    {
+      "id": 47,
+      "type": "当前无昼回响层数达到X层",
+      "conditions": "1|dmjfloors"
+    },
+    {
+      "id": 48,
+      "type": "累计进行分解操作X次",
+      "conditions": "1|decomposing_count"
+    },
+    {
+      "id": 49,
+      "type": "单日进行分解操作X次",
+      "conditions": "1|todaydecomposing_count"
+    },
+    {
+      "id": 50,
+      "type": "累计为武器铭刻余烬X次",
+      "conditions": "1|inlay_yujin"
+    },
+    {
+      "id": 51,
+      "type": "累计为装备镶嵌符文石X次",
+      "conditions": "1|inlay_rune"
+    },
+    {
+      "id": 52,
+      "type": "当前出战角色X个",
+      "conditions": "1|battlerole"
+    },
+    {
+      "id": 53,
+      "type": "是否至少穿戴了X件防具",
+      "conditions": "1|wear_armor"
+    },
+    {
+      "id": 54,
+      "type": "是否至少穿戴了X件日之印",
+      "conditions": "1|wear_sum_mrak"
+    },
+    {
+      "id": 55,
+      "type": "是否至少穿戴了X件月之印",
+      "conditions": "1|wear_moon_mark"
+    },
+    {
+      "id": 56,
+      "type": "是否至少穿戴了X件契约",
+      "conditions": "1|wear_contract"
+    },
+    {
+      "id": 57,
+      "type": "是否至少配置了X个契魂",
+      "conditions": "1|wear_qh"
+    },
+    {
+      "id": 58,
+      "type": "玩家所持有的所有谒魂者，累计穿戴了至少X个神格",
+      "conditions": "1|wear_godhood"
+    },
+    {
+      "id": 59,
+      "type": "玩家所持有的所有谒魂者中，至少有1个谒魂者穿戴了X个以上数量的神格",
+      "conditions": "1|rolewear_godhood"
+    },
+    {
+      "id": 60,
+      "type": "玩家当前的成就积分，是否达到了X分",
+      "conditions": "1|achievement_score"
+    },
+    {
+      "id": 61,
+      "type": "完成声望表（task_reputation）内指定全部任务",
+      "conditions": "1|completetask1_(X1_X2_X3)"
+    },
+    {
+      "id": 62,
+      "type": "完成成就表内指定全部任务",
+      "conditions": "1|completetask2_(X1_X2_X3)"
+    },
+    {
+      "id": 63,
+      "type": "玩家每日活跃值",
+      "conditions": "1|activity_value"
+    },
+    {
+      "id": 64,
+      "type": "累计激活悲歌结界X个",
+      "conditions": "1|interactive_bgjt"
+    },
+    {
+      "id": 65,
+      "type": "玩家进入过map表id=X的地图区域所对应mapkey字段包含的全部地图模块中的任意位置",
+      "conditions": "1|entermap"
+    },
+    {
+      "id": 66,
+      "type": "攻击力达到X",
+      "conditions": "2|5"
+    },
+    {
+      "id": 67,
+      "type": "拥有X个技能达到Y级",
+      "conditions": "1|roleskill_level"
+    },
+    {
+      "id": 68,
+      "type": "累计进行谒魂者技能升级X次",
+      "conditions": "1|roleskill_upgrade"
+    },
+    {
+      "id": 69,
+      "type": "单日进行谒魂者技能升级X次",
+      "conditions": "1|todayroleskill_upgrade"
+    },
+    {
+      "id": 70,
+      "type": "地图探索率达到X%的数量，是否大于Y个",
+      "conditions": "1|map_explorationcount"
+    },
+    {
+      "id": 71,
+      "type": "玩家在指定期间内挑战大秘境的次数",
+      "conditions": "1|dmj_count"
+    },
+    {
+      "id": 72,
+      "type": "玩家在指定期间内进行神躯洗炼的次数",
+      "conditions": "1|fyzx_refining"
+    },
+    {
+      "id": 73,
+      "type": "服务器开启后，累计度过时间",
+      "conditions": "1|serverlaunched_time"
+    },
+    {
+      "id": 74,
+      "type": "玩家创建账号后，累计度过时间",
+      "conditions": "1|logindays"
+    },
+    {
+      "id": 75,
+      "type": "玩家七日活跃值",
+      "conditions": "1|seven_value"
+    },
+    {
+      "id": 76,
+      "type": "玩家在第X天完成了Y个当天清单任务",
+      "conditions": "1|sevenday_taskcount"
+    },
+    {
+      "id": 77,
+      "type": "玩家穿戴了X件穿普通及以上的武器",
+      "conditions": "1|wear_weaponrarity1"
+    },
+    {
+      "id": 78,
+      "type": "玩家穿戴了X件穿戴精良(蓝色)及以上的武器",
+      "conditions": "1|wear_weaponrarity2"
+    },
+    {
+      "id": 79,
+      "type": "玩家穿戴了X件穿戴史诗(紫色)及以上的武器",
+      "conditions": "1|wear_weaponrarity3"
+    },
+    {
+      "id": 80,
+      "type": "玩家穿戴了X件穿戴传说(橙色)及以上的武器",
+      "conditions": "1|wear_weaponrarity4"
+    },
+    {
+      "id": 81,
+      "type": "玩家穿戴了X件穿戴神话(红色)及以上的武器",
+      "conditions": "1|wear_weaponrarity5"
+    },
+    {
+      "id": 82,
+      "type": "玩家穿戴了X件穿戴不朽及以上的武器",
+      "conditions": "1|wear_weaponrarity6"
+    },
+    {
+      "id": 83,
+      "type": "玩家穿戴了X件穿戴至宝及以上的武器",
+      "conditions": "1|wear_weaponrarity7"
+    },
+    {
+      "id": 84,
+      "type": "玩家累计通过抽取神格获得的神格冲刺分数",
+      "conditions": "1|godhood_recruitmentscore"
+    },
+    {
+      "id": 85,
+      "type": "玩家累计洗炼神躯消耗对应材料（109）的数量",
+      "conditions": "1|fyzx_cost"
+    },
+    {
+      "id": 86,
+      "type": "玩家创号至今，经历的天数",
+      "conditions": "1|giftpack_monthlygift"
+    },
+    {
+      "id": 87,
+      "type": "玩家今日是否登录",
+      "conditions": "1|todaylogin"
+    },
+    {
+      "id": 88,
+      "type": "单日神躯累计洗炼次数",
+      "conditions": "1|todayfyzx_refining"
+    },
+    {
+      "id": 89,
+      "type": "玩家单日内累计进行神格召唤的次数",
+      "conditions": "1|todaygodhood_recruitment"
+    },
+    {
+      "id": 90,
+      "type": "玩家单日挑战大秘境玩法的次数",
+      "conditions": "1|todaydmj_count"
+    },
+    {
+      "id": 91,
+      "type": "玩家指定时间内累计充值金额",
+      "conditions": "1|recharge_amount"
+    },
+    {
+      "id": 9998,
+      "type": "自如判定属性"
+    },
+    {
+      "id": 9999,
+      "type": "自如判定变量"
+    }
+  ]
+}

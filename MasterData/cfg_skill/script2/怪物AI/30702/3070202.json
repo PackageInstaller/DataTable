@@ -1,0 +1,147 @@
+{
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "ptype": "判断",
+      "t": 1,
+      "ii": 0,
+      "value": "<=;35",
+      "codeType": 1,
+      "term": "and",
+      "index": 0,
+      "type": "玩家距离"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "term": "and",
+      "t": 1,
+      "type": "检查CD",
+      "value": "3070202",
+      "codeType": 1,
+      "ptype": "判断",
+      "index": 1,
+      "ii": 1
+    },
+    {
+      "target": 1,
+      "value": "30702",
+      "term": "and",
+      "t": 1,
+      "type": "怪物bid",
+      "id": -1,
+      "codeType": 1,
+      "ptype": "判断",
+      "index": 2,
+      "ii": 2
+    },
+    {
+      "target": 1,
+      "value": "4",
+      "term": "and",
+      "t": 1,
+      "type": "AI优先级",
+      "id": -1,
+      "codeType": 1,
+      "ptype": "判断",
+      "index": 3,
+      "ii": 3
+    }
+  ],
+  "name": "怪物警觉",
+  "others_id": 1,
+  "others": [
+    null,
+    {
+      "id": 1,
+      "ifs": [
+        {
+          "target": 1,
+          "id": 1,
+          "term": "and",
+          "t": 3,
+          "ii": 0,
+          "value": "0",
+          "codeType": 1,
+          "ptype": "判断",
+          "index": 0,
+          "type": "目标方位"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "elses": [
+        {
+          "target": 1,
+          "id": 1,
+          "ptype": "否",
+          "t": 3,
+          "ii": 1,
+          "value": "spell_2;;500;3#0;-30;;;",
+          "codeType": 3,
+          "index": 0,
+          "type": "动作移动"
+        }
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "target": 1,
+          "id": 1,
+          "ptype": "是",
+          "t": 3,
+          "ii": 1,
+          "value": "spell_2;;500;0;-30;;;",
+          "codeType": 2,
+          "index": 0,
+          "type": "动作移动"
+        }
+      ],
+      "parentid": -1,
+      "ifs_or": []
+    }
+  ],
+  "others_num": 1,
+  "triggerName": "怪物警觉",
+  "actions": [
+    {
+      "value": 1,
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "type": "分支"
+    },
+    {
+      "target": 1,
+      "value": "500;3070203;0;",
+      "ptype": "是",
+      "t": 1,
+      "type": "发送消息",
+      "id": -1,
+      "codeType": 2,
+      "index": 1,
+      "ii": 2
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "ptype": "是",
+      "t": 1,
+      "type": "设置CD",
+      "value": "3070202;11000;17000",
+      "codeType": 2,
+      "index": 2,
+      "ii": 3
+    }
+  ],
+  "trigger": 26,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "ifs_or": []
+}

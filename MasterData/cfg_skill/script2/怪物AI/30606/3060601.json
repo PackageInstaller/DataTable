@@ -1,0 +1,135 @@
+{
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "ifs": [
+    {
+      "value": "3060601",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 0,
+      "id": -1,
+      "index": 0,
+      "type": "检查CD"
+    },
+    {
+      "value": "<=;20",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 1,
+      "id": -1,
+      "index": 1,
+      "type": "玩家距离"
+    },
+    {
+      "value": "30606",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 2,
+      "id": -1,
+      "index": 2,
+      "type": "怪物bid"
+    },
+    {
+      "value": "0",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 3,
+      "id": -1,
+      "index": 3,
+      "type": "目标方位"
+    },
+    {
+      "value": "6",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 4,
+      "id": -1,
+      "index": 4,
+      "type": "AI优先级"
+    }
+  ],
+  "name": "怪物警觉",
+  "ifs_or": [],
+  "others_num": 0,
+  "triggerName": "怪物警觉",
+  "others": [],
+  "trigger": 26,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0;;1250;3#0#-60#60;10;;0;",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "动作移动"
+    },
+    {
+      "value": "0;;2500;3#0#-60#60;40;;1250;",
+      "t": 1,
+      "ptype": "是",
+      "target": 1,
+      "codeType": 2,
+      "ii": 2,
+      "id": -1,
+      "index": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;1250;0;5;82000_3060601_1;3060601_hurt|3060601_hurt|3060601_hurt|3060601_hurt|3060601_hurt;;1;;0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 3,
+      "target": 1,
+      "index": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "3060601_hold;3;3;3750;8;3060601_hold;spell_2;3000;;",
+      "t": 1,
+      "ptype": "是",
+      "target": 1,
+      "codeType": 2,
+      "ii": 4,
+      "id": -1,
+      "index": 3,
+      "type": "蓄力"
+    },
+    {
+      "value": "3060601;12500;20000",
+      "t": 1,
+      "ptype": "是",
+      "target": 1,
+      "codeType": 2,
+      "ii": 5,
+      "id": -1,
+      "index": 4,
+      "type": "设置CD"
+    }
+  ]
+}

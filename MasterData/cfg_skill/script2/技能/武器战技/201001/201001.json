@@ -1,0 +1,50 @@
+{
+  "ifs": [
+    {
+      "value": "201001_hold_finish;1",
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "type": "蓄力事件",
+      "codeType": 1,
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "id": -1
+    }
+  ],
+  "name": "",
+  "ifs_or": [],
+  "ifs_and": [
+    0
+  ],
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "others": [],
+  "trigger": 30,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0.75;150;50;0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "0#0;0;0;5;83100_201001_1;201001_hurt1|201001_hurt2|201001_hurt3|201001_hurt4;0;1;;0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "type": "场景特效"
+    }
+  ]
+}

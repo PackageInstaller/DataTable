@@ -1,0 +1,474 @@
+{
+  "columns": [
+    "id",
+    "view_name",
+    "chinese",
+    "enum_name",
+    "param",
+    "prohibit"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "view_name": "tiejiangpu",
+      "chinese": "铁匠铺",
+      "enum_name": "TieJiangPuMainView"
+    },
+    {
+      "id": 2,
+      "view_name": "shengeqianghua",
+      "chinese": "神格强化",
+      "enum_name": "SgReinforceView"
+    },
+    {
+      "id": 3,
+      "view_name": "shangcheng",
+      "chinese": "打开付费商城"
+    },
+    {
+      "id": 4,
+      "view_name": "yujinduihuan",
+      "chinese": "遗物战灰兑换余烬界面"
+    },
+    {
+      "id": 5,
+      "view_name": "yiwujianding",
+      "chinese": "遗物鉴定界面"
+    },
+    {
+      "id": 6,
+      "view_name": "jitanchongzhi",
+      "chinese": "悲歌祭坛重置界面",
+      "enum_name": "beigejitanSjView"
+    },
+    {
+      "id": 7,
+      "view_name": "citiaoxilian",
+      "chinese": "词条洗炼界面（武器词条和祝福词条）"
+    },
+    {
+      "id": 8,
+      "view_name": "wuqiqianghua",
+      "chinese": "武器强化界面",
+      "enum_name": "WeaponUpgradeView"
+    },
+    {
+      "id": 9,
+      "view_name": "yujinzhanji",
+      "chinese": "余烬战技注入界面",
+      "enum_name": "YujinView"
+    },
+    {
+      "id": 10,
+      "view_name": "jiadianchongzhi",
+      "chinese": "玩家加点重置界面",
+      "enum_name": "UpgradationView"
+    },
+    {
+      "id": 11,
+      "view_name": "shenzhiyujin",
+      "chinese": "神之余烬"
+    },
+    {
+      "id": 12,
+      "view_name": "pobaironglian",
+      "chinese": "破败熔炼/怨恨破败熔炼"
+    },
+    {
+      "id": 13,
+      "view_name": "evt_clickDituBtn",
+      "chinese": "打开世界地图",
+      "enum_name": "evt_clickDituBtn"
+    },
+    {
+      "id": 14,
+      "view_name": "evt_clickShengwangBtn",
+      "chinese": "打开冒险手册-声望分页",
+      "enum_name": "evt_clickShengwangBtn"
+    },
+    {
+      "id": 15,
+      "view_name": "evt_clickMeiriBtn",
+      "chinese": "打开冒险手册-每日任务",
+      "enum_name": "evt_clickMeiriBtn"
+    },
+    {
+      "id": 16,
+      "view_name": "bagBtnFun",
+      "chinese": "打开仓库界面",
+      "enum_name": "bagBtnFun"
+    },
+    {
+      "id": 17,
+      "view_name": "evt_clickEquipBtn",
+      "chinese": "打开装备界面",
+      "enum_name": "evt_clickEquipBtn"
+    },
+    {
+      "id": 18,
+      "view_name": "evt_clickAllRoleBtn",
+      "chinese": "打开角色选择界面",
+      "enum_name": "evt_clickAllRoleBtn"
+    },
+    {
+      "id": 19,
+      "view_name": "evt_openExpandwin",
+      "chinese": "调出多功能面板",
+      "enum_name": "evt_openExpandwin"
+    },
+    {
+      "id": 20,
+      "view_name": "evt_clickHuodongBtn",
+      "chinese": "打开活动界面",
+      "enum_name": "evt_clickHuodongBtn"
+    },
+    {
+      "id": 21,
+      "view_name": "evt_clickchongciBtn",
+      "chinese": "打开冲刺界面",
+      "enum_name": "evt_clickchongciBtn"
+    },
+    {
+      "id": 22,
+      "view_name": "evt_clickKachiBtn",
+      "chinese": "打开抽卡界面",
+      "enum_name": "evt_clickKachiBtn"
+    },
+    {
+      "id": 23,
+      "view_name": "evt_clickShopBtn",
+      "chinese": "打开魂纹商城界面",
+      "enum_name": "evt_clickShopBtn"
+    },
+    {
+      "id": 24,
+      "view_name": "tehui",
+      "chinese": "打开特惠界面",
+      "enum_name": "tehui"
+    },
+    {
+      "id": 25,
+      "view_name": "libao",
+      "chinese": "打开礼包界面",
+      "enum_name": "libao"
+    },
+    {
+      "id": 26,
+      "chinese": "打开买断特权"
+    },
+    {
+      "id": 27,
+      "chinese": "打开成就界面"
+    },
+    {
+      "id": 28,
+      "chinese": "打开兑换界面"
+    },
+    {
+      "id": 29,
+      "view_name": "message",
+      "chinese": "打开留言查看界面",
+      "enum_name": "message"
+    },
+    {
+      "id": 30,
+      "chinese": "打开新赛季情报"
+    },
+    {
+      "id": 31,
+      "chinese": "打开签到界面"
+    },
+    {
+      "id": 32,
+      "view_name": "mail",
+      "chinese": "打开邮箱界面",
+      "enum_name": "mail"
+    },
+    {
+      "id": 33,
+      "view_name": "gonggao",
+      "chinese": "打开公告界面",
+      "enum_name": "gonggao"
+    },
+    {
+      "id": 34,
+      "view_name": "setting",
+      "chinese": "打开设置界面",
+      "enum_name": "setting"
+    },
+    {
+      "id": 35,
+      "chinese": "打开遗物收藏品界面"
+    },
+    {
+      "id": 36,
+      "view_name": "evt_openFuyaheart",
+      "chinese": "打开庇佑界面"
+    },
+    {
+      "id": 37,
+      "view_name": "evt_godhoodKachi",
+      "chinese": "打开神格抽取界面"
+    },
+    {
+      "id": 38,
+      "view_name": "bag_useitem",
+      "chinese": "打开仓库，并跳转至【道具/可使用道具】分页页签处",
+      "enum_name": "openBag_useitem"
+    },
+    {
+      "id": 39,
+      "view_name": "sum_mrak",
+      "chinese": "打开场上角色对应的装备穿戴界面，并切换到日之印记页签",
+      "enum_name": "openEquip_summrak"
+    },
+    {
+      "id": 40,
+      "view_name": "moon_mrak",
+      "chinese": "打开场上角色对应的装备穿戴界面，并切换到月之印记页签",
+      "enum_name": "openEquip_moonmrak"
+    },
+    {
+      "id": 41,
+      "view_name": "joss_1001002",
+      "chinese": "打开地图，并定位至王座之间神像（神像id:1001002）",
+      "enum_name": "openDitu_joss_1001002"
+    },
+    {
+      "id": 42,
+      "view_name": "decomposing",
+      "chinese": "打开分解界面",
+      "enum_name": "openDecomposing"
+    },
+    {
+      "id": 43,
+      "view_name": "contract",
+      "chinese": "打开场上角色对应的穿戴界面，并切换到契约页卡",
+      "enum_name": "openEquip_contract"
+    },
+    {
+      "id": 44,
+      "view_name": "bloodvial",
+      "chinese": "打开契泪圣露瓶界面",
+      "enum_name": "openBloodVial"
+    },
+    {
+      "id": 45,
+      "view_name": "nearbyjoss",
+      "chinese": "打开地图，定位至最近的已解锁神像",
+      "enum_name": "openDitu_nearbyjoss"
+    },
+    {
+      "id": 46,
+      "view_name": "monster_coordinates",
+      "chinese": "打开地图，定位至任意首领怪物坐标\n（map_event表type字段=7的怪物对应的坐标，随机抽取一个进行定位）",
+      "enum_name": "openDitu_monster"
+    },
+    {
+      "id": 47,
+      "view_name": "qirirenwu",
+      "chinese": "打开七日任务界面",
+      "enum_name": "QiRiRenWuView"
+    },
+    {
+      "id": 48,
+      "view_name": "evt_clickchongciBtn",
+      "chinese": "跳转至冲刺活动选择页面",
+      "enum_name": "evt_clickchongciBtn"
+    },
+    {
+      "id": 49,
+      "view_name": "sprint_xr_aim",
+      "chinese": "跳转至新手谒魂者冲刺的冲刺目标页面",
+      "enum_name": "sprint_xr_aim"
+    },
+    {
+      "id": 50,
+      "view_name": "sprint_xr_gift",
+      "chinese": "跳转至新手谒魂者冲刺的冲刺礼包页面",
+      "enum_name": "sprint_xr_gift"
+    },
+    {
+      "id": 51,
+      "view_name": "sprint_xr_ranking",
+      "chinese": "跳转至新手谒魂者冲刺的冲刺排行页面",
+      "enum_name": "sprint_xr_ranking"
+    },
+    {
+      "id": 52,
+      "view_name": "sprint_xr_task",
+      "chinese": "跳转至新手谒魂者冲刺的冲刺任务页面",
+      "enum_name": "sprint_xr_task"
+    },
+    {
+      "id": 53,
+      "view_name": "sprint_sg_aim",
+      "chinese": "跳转至神格冲刺的冲刺目标页面",
+      "enum_name": "sprint_sg_aim"
+    },
+    {
+      "id": 54,
+      "view_name": "sprint_sg_gift",
+      "chinese": "跳转至神格冲刺的冲刺礼包页面",
+      "enum_name": "sprint_sg_gift"
+    },
+    {
+      "id": 55,
+      "view_name": "sprint_sg_ranking",
+      "chinese": "跳转至神格冲刺的冲刺排行页面",
+      "enum_name": "sprint_sg_ranking"
+    },
+    {
+      "id": 56,
+      "view_name": "sprint_sg_task",
+      "chinese": "跳转至神格冲刺的冲刺任务页面",
+      "enum_name": "sprint_sg_task"
+    },
+    {
+      "id": 57,
+      "view_name": "sprint_fyzx_aim",
+      "chinese": "跳转至庇佑冲刺的冲刺目标页面",
+      "enum_name": "sprint_fyzx_aim"
+    },
+    {
+      "id": 58,
+      "view_name": "sprint_fyzx_gift",
+      "chinese": "跳转至庇佑冲刺的冲刺礼包页面",
+      "enum_name": "sprint_fyzx_gift"
+    },
+    {
+      "id": 59,
+      "view_name": "sprint_fyzx_ranking",
+      "chinese": "跳转至庇佑冲刺的冲刺排行页面",
+      "enum_name": "sprint_fyzx_ranking"
+    },
+    {
+      "id": 60,
+      "view_name": "sprint_fyzx_task",
+      "chinese": "跳转至庇佑冲刺的冲刺任务页面",
+      "enum_name": "sprint_fyzx_task"
+    },
+    {
+      "id": 61,
+      "view_name": "sprint_role_aim",
+      "chinese": "跳转至谒魂者冲刺的冲刺目标页面",
+      "enum_name": "sprint_role_aim"
+    },
+    {
+      "id": 62,
+      "view_name": "sprint_role_gift",
+      "chinese": "跳转至谒魂者冲刺的冲刺礼包页面",
+      "enum_name": "sprint_role_gift"
+    },
+    {
+      "id": 63,
+      "view_name": "sprint_role_ranking",
+      "chinese": "跳转至谒魂者冲刺的冲刺排行页面",
+      "enum_name": "sprint_role_ranking"
+    },
+    {
+      "id": 64,
+      "view_name": "sprint_role_task",
+      "chinese": "跳转至谒魂者冲刺的冲刺任务页面",
+      "enum_name": "sprint_role_task"
+    },
+    {
+      "id": 65,
+      "view_name": "portable_backpack",
+      "chinese": "打开随身包裹界面"
+    },
+    {
+      "id": 66,
+      "view_name": "zuanshi",
+      "chinese": "打开钻石充值界面",
+      "enum_name": "zuanshi"
+    },
+    {
+      "id": 67,
+      "view_name": "trial_orange",
+      "chinese": "跳转至橙色谒魂者试炼界面"
+    },
+    {
+      "id": 68,
+      "view_name": "trial_red1",
+      "chinese": "跳转至红色谒魂者试炼1期界面"
+    },
+    {
+      "id": 69,
+      "view_name": "trial_red2",
+      "chinese": "跳转至橙色谒魂者试炼2期界面"
+    },
+    {
+      "id": 70,
+      "view_name": "trial_xiya_main",
+      "chinese": "跳转至希雅试炼-谒魂者试炼页签"
+    },
+    {
+      "id": 71,
+      "view_name": "trial_xiya_draw",
+      "chinese": "跳转至希雅试炼-神木特训页签"
+    },
+    {
+      "id": 72,
+      "view_name": "trial_xiya_task",
+      "chinese": "跳转至希雅试炼-试炼任务页签"
+    },
+    {
+      "id": 73,
+      "view_name": "activity_promotion_yueka",
+      "chinese": "跳转至月卡页签"
+    },
+    {
+      "id": 74,
+      "view_name": "activity_promotion_zhouka",
+      "chinese": "跳转至周卡页签"
+    },
+    {
+      "id": 75,
+      "view_name": "activity_promotion_tiaozhanzhanling",
+      "chinese": "跳转至挑战战令页签"
+    },
+    {
+      "id": 76,
+      "view_name": "activity_promotion_wuzhouhuixiangzhanling",
+      "chinese": "跳转至无昼回响战令页签"
+    },
+    {
+      "id": 77,
+      "view_name": "activity_promotion_chengzhangjijin",
+      "chinese": "跳转至成长基金页签"
+    },
+    {
+      "id": 78,
+      "view_name": "activity_giftpack_fengraolibao",
+      "chinese": "跳转至丰饶礼包页签"
+    },
+    {
+      "id": 79,
+      "view_name": "activity_giftpack_meirizhenxuan",
+      "chinese": "跳转至每日臻选页签"
+    },
+    {
+      "id": 80,
+      "view_name": "activity_giftpack_zhurixunli",
+      "chinese": "跳转至逐日巡礼页签"
+    },
+    {
+      "id": 81,
+      "view_name": "activity_giftpack_leichongrongdian",
+      "chinese": "跳转至累充荣典页签"
+    },
+    {
+      "id": 82,
+      "view_name": "shouchong",
+      "chinese": "打首充界面",
+      "enum_name": "shouchong"
+    },
+    {
+      "id": 83,
+      "view_name": "evt_clickNightTowerBtn",
+      "chinese": "打开无昼回响界面",
+      "enum_name": "evt_clickNightTowerBtn"
+    }
+  ]
+}

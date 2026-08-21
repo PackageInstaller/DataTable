@@ -1,0 +1,60 @@
+{
+  "triggerName": "伤害事件",
+  "name": "",
+  "actions": [
+    {
+      "value": "hurtTime;+;1",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ii": 1,
+      "type": "局部变量",
+      "ptype": "是",
+      "target": 1,
+      "codeType": 2
+    },
+    {
+      "value": "0;0;0;3;83100_202014_1;202014a",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "target": 1,
+      "type": "造成伤害",
+      "ptype": "是",
+      "codeType": 2,
+      "index": 1
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs": [
+    {
+      "value": "hurtTime;<;2",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ii": 0,
+      "type": "局部变量",
+      "term": "and",
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1
+    },
+    {
+      "value": "202014d",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 1,
+      "type": "伤害事件",
+      "term": "and",
+      "ptype": "判断",
+      "index": 1,
+      "target": 1
+    }
+  ],
+  "trigger": 29,
+  "ifs_or": []
+}

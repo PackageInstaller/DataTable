@@ -1,0 +1,58 @@
+{
+  "ifs": [
+    {
+      "value": "202024a;1",
+      "ptype": "判断",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "term": "and",
+      "target": 1,
+      "codeType": 1,
+      "ii": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "ifs_or": [],
+  "name": "",
+  "trigger": 29,
+  "triggerName": "伤害事件",
+  "actions": [
+    {
+      "value": "spell_ap1;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0;0;0;3;83100_202024_1;202024a",
+      "ptype": "是",
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "0;0#2#202024a;0;0#-10#-4;83100_202024_2;202024b",
+      "ptype": "是",
+      "t": 1,
+      "index": 2,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 3,
+      "type": "场景特效"
+    }
+  ],
+  "ifs_and": [
+    0
+  ]
+}

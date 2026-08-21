@@ -1,0 +1,233 @@
+{
+  "others_num": 2,
+  "name": "",
+  "ifs_or": [],
+  "ifs": [
+    {
+      "value": "1",
+      "index": 0,
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "调试模式",
+      "codeType": 1,
+      "target": 1,
+      "ii": 0,
+      "term": "and"
+    },
+    {
+      "value": "3500",
+      "target": 1,
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "概率",
+      "codeType": 1,
+      "index": 1,
+      "ii": 1,
+      "term": "and"
+    },
+    {
+      "value": "<=;20",
+      "target": 1,
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "玩家距离",
+      "codeType": 1,
+      "index": 2,
+      "ii": 2,
+      "term": "and"
+    },
+    {
+      "value": "4010205",
+      "index": 3,
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "检查CD",
+      "codeType": 1,
+      "target": 1,
+      "ii": 3,
+      "term": "and"
+    },
+    {
+      "value": "0",
+      "t": 1,
+      "index": 4,
+      "id": -1,
+      "ptype": "判断",
+      "term": "and",
+      "codeType": 1,
+      "target": 1,
+      "ii": 4,
+      "type": "目标方位"
+    },
+    {
+      "value": "40102",
+      "index": 5,
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "怪物bid",
+      "codeType": 1,
+      "target": 1,
+      "ii": 5,
+      "term": "and"
+    },
+    {
+      "value": "1",
+      "index": 6,
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "type": "AI优先级",
+      "codeType": 1,
+      "target": 1,
+      "ii": 6,
+      "term": "and"
+    }
+  ],
+  "others": [
+    {
+      "codeType": 0,
+      "id": 0,
+      "elses": [],
+      "ifs_and": [],
+      "ifs_or": [],
+      "ifs": [],
+      "actions": [],
+      "parentid": -1
+    },
+    {
+      "codeType": 0,
+      "id": 1,
+      "elses": [],
+      "ifs_and": [],
+      "ifs_or": [],
+      "ifs": [],
+      "actions": [],
+      "parentid": -1
+    },
+    {
+      "codeType": 0,
+      "id": 2,
+      "elses": [],
+      "ifs_and": [
+        0
+      ],
+      "ifs_or": [],
+      "ifs": [
+        {
+          "value": "7500",
+          "target": 1,
+          "t": 3,
+          "id": 2,
+          "ptype": "判断",
+          "type": "概率",
+          "codeType": 1,
+          "index": 0,
+          "ii": 0,
+          "term": "and"
+        }
+      ],
+      "actions": [
+        {
+          "value": "1000;4010206;0;0",
+          "index": 0,
+          "t": 3,
+          "id": 2,
+          "ptype": "是",
+          "codeType": 2,
+          "target": 1,
+          "ii": 1,
+          "type": "发送消息"
+        }
+      ],
+      "parentid": -1
+    },
+    {
+      "codeType": 0,
+      "id": 3,
+      "elses": [],
+      "ifs_and": [],
+      "ifs_or": [],
+      "ifs": [],
+      "actions": [],
+      "parentid": 2
+    }
+  ],
+  "others_id": 2,
+  "elses": [],
+  "triggerName": "怪物警觉",
+  "trigger": 26,
+  "actions": [
+    {
+      "value": "attack_5_1;0;0;0;0;0;0",
+      "index": 0,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "target": 1,
+      "ii": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;960;0;1;85000_4010205_1_a;4010205_hurt",
+      "index": 1,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "target": 1,
+      "ii": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": 2,
+      "t": 1,
+      "index": 2,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "4010205;0;0;866;7;4010205_hold_finish;;;",
+      "index": 3,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "target": 1,
+      "ii": 4,
+      "type": "蓄力"
+    },
+    {
+      "value": "4010205;1000;2000",
+      "index": 4,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "target": 1,
+      "ii": 5,
+      "type": "设置CD"
+    },
+    {
+      "value": 16,
+      "t": 1,
+      "index": 5,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

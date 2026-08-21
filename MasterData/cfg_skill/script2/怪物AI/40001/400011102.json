@@ -1,0 +1,251 @@
+{
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "ifs": [
+    {
+      "value": "1",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "index": 0,
+      "codeType": 1,
+      "ii": 0,
+      "id": -1,
+      "target": 1,
+      "type": "调试模式"
+    },
+    {
+      "value": "40001",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "index": 1,
+      "codeType": 1,
+      "ii": 1,
+      "id": -1,
+      "target": 1,
+      "type": "怪物bid"
+    },
+    {
+      "value": "400011102",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 2,
+      "id": -1,
+      "index": 2,
+      "type": "检查CD"
+    },
+    {
+      "value": "5000",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "index": 3,
+      "codeType": 1,
+      "ii": 3,
+      "id": -1,
+      "target": 1,
+      "type": "概率"
+    },
+    {
+      "value": "9",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "index": 4,
+      "codeType": 1,
+      "ii": 4,
+      "id": -1,
+      "target": 1,
+      "type": "AI优先级"
+    },
+    {
+      "value": "<=;1000",
+      "term": "and",
+      "t": 1,
+      "ptype": "判断",
+      "target": 1,
+      "codeType": 1,
+      "ii": 5,
+      "id": -1,
+      "index": 5,
+      "type": "生命比例"
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "flying_2;0;0;0;0;0;0;0",
+      "t": 1,
+      "ptype": "是",
+      "index": 0,
+      "codeType": 2,
+      "ii": 1,
+      "id": -1,
+      "target": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0;0;2000;3#1;0;0;2333;0",
+      "t": 1,
+      "ptype": "是",
+      "target": 1,
+      "codeType": 2,
+      "ii": 2,
+      "id": -1,
+      "index": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0;0;200;3#1;0;0;4833;0",
+      "t": 1,
+      "ptype": "是",
+      "index": 2,
+      "codeType": 2,
+      "ii": 3,
+      "id": -1,
+      "target": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;2333;0;0;85000_4000111_2_a;4000111_hurt",
+      "t": 1,
+      "ptype": "是",
+      "index": 3,
+      "codeType": 2,
+      "ii": 4,
+      "id": -1,
+      "target": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;5033;0;0;85000_4000111_1_b;",
+      "t": 1,
+      "ptype": "是",
+      "index": 4,
+      "codeType": 2,
+      "ii": 5,
+      "id": -1,
+      "target": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;5033;0;1;85000_4000111_1_a;4000111_hurt_02",
+      "t": 1,
+      "ptype": "是",
+      "target": 1,
+      "codeType": 2,
+      "ii": 6,
+      "id": -1,
+      "index": 5,
+      "type": "场景特效"
+    },
+    {
+      "value": "1000;1294;2000",
+      "t": 1,
+      "ptype": "是",
+      "index": 6,
+      "codeType": 2,
+      "ii": 7,
+      "id": -1,
+      "target": 1,
+      "type": "伸缩镜头"
+    },
+    {
+      "value": "4833;650;200",
+      "t": 1,
+      "ptype": "是",
+      "index": 7,
+      "codeType": 2,
+      "ii": 8,
+      "id": -1,
+      "target": 1,
+      "type": "伸缩镜头"
+    },
+    {
+      "value": "400011102;0;0;2500;10;400011102_hold_finish;;;;",
+      "t": 1,
+      "ptype": "是",
+      "index": 8,
+      "codeType": 2,
+      "ii": 9,
+      "id": -1,
+      "target": 1,
+      "type": "蓄力"
+    },
+    {
+      "value": 16,
+      "codeType": 2,
+      "t": 1,
+      "index": 9,
+      "type": "分支"
+    },
+    {
+      "value": "400011102;999999999;999999999",
+      "t": 1,
+      "ptype": "是",
+      "target": 1,
+      "codeType": 2,
+      "ii": 11,
+      "id": -1,
+      "index": 10,
+      "type": "设置CD"
+    }
+  ],
+  "others_num": 3,
+  "triggerName": "怪物警觉",
+  "others": [
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "id": 0,
+      "ifs_or": []
+    },
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "id": 1,
+      "ifs_or": []
+    },
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "id": 2,
+      "ifs_or": []
+    },
+    {
+      "codeType": 0,
+      "elses": [],
+      "ifs": [],
+      "parentid": -1,
+      "actions": [],
+      "ifs_and": [],
+      "id": 3,
+      "ifs_or": []
+    }
+  ],
+  "trigger": 26,
+  "others_id": 3,
+  "ifs_or": []
+}

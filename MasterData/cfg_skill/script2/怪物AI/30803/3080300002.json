@@ -1,0 +1,94 @@
+{
+  "ifs": [
+    {
+      "value": "3080300002",
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "type": "监听消息",
+      "codeType": 1,
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "id": -1
+    }
+  ],
+  "name": "",
+  "others_num": 0,
+  "ifs_or": [],
+  "triggerName": "消息事件",
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "trigger": 32,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0;0;0;0;0",
+      "ii": 1,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "target": 1,
+      "type": "隐身"
+    },
+    {
+      "value": "attack_1;0;0;3#0;0.01;0;0;0",
+      "t": 1,
+      "id": -1,
+      "index": 1,
+      "codeType": 2,
+      "ii": 2,
+      "ptype": "是",
+      "target": 1,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;1200;0;1;82000_3080300_1;3080300_hurt;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 3,
+      "target": 1,
+      "index": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "1000;3080300001;0;",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 4,
+      "index": 3,
+      "target": 1,
+      "type": "发送消息"
+    },
+    {
+      "value": "3080300;0;0;1000;6;3080300_hold_finish;;;;",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 5,
+      "ptype": "是",
+      "index": 4,
+      "type": "蓄力"
+    },
+    {
+      "value": "3080300;0000;2000",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 6,
+      "index": 5,
+      "target": 1,
+      "type": "设置CD"
+    }
+  ]
+}

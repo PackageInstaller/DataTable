@@ -1,0 +1,98 @@
+{
+  "triggerName": "消息事件",
+  "name": "",
+  "others_num": 1,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs": [
+    {
+      "value": "502020203",
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "ii": 0,
+      "codeType": 1,
+      "index": 0,
+      "target": 1,
+      "ptype": "判断",
+      "type": "检查CD"
+    },
+    {
+      "value": "502020203",
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "ii": 1,
+      "codeType": 1,
+      "target": 1,
+      "index": 1,
+      "ptype": "判断",
+      "type": "监听消息"
+    }
+  ],
+  "others_id": 1,
+  "ifs_or": [],
+  "trigger": 32,
+  "others": [
+    null,
+    {
+      "elses": [],
+      "parentid": -1,
+      "id": 1,
+      "ifs_and": [
+        0
+      ],
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;30;201;0",
+          "ptype": "判断",
+          "id": 1,
+          "term": "and",
+          "ii": 0,
+          "codeType": 1,
+          "target": 1,
+          "index": 0,
+          "t": 3,
+          "type": "角色属性"
+        }
+      ],
+      "ifs_or": [],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "5020201;30000;-5000;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "设置CD"
+        },
+        {
+          "value": "502020203;10000;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 2,
+          "codeType": 2,
+          "index": 1,
+          "target": 1,
+          "ptype": "是",
+          "type": "设置CD"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ]
+}

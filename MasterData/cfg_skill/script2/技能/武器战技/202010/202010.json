@@ -1,0 +1,72 @@
+{
+  "ifs": [
+    {
+      "value": "202010_hold_finish;1",
+      "ptype": "判断",
+      "t": 1,
+      "index": 0,
+      "target": 1,
+      "term": "and",
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "ifs_or": [],
+  "name": "",
+  "trigger": 30,
+  "triggerName": "蓄力事件",
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "others_num": 0,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0#0;0;0;1;83100_202010_1;0;0;0;;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 0,
+      "target": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "spell_ad9;0;0;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 1,
+      "target": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 2,
+      "type": "动作移动"
+    },
+    {
+      "value": "fire_3|202010_fire|0;1;30000;0;83100_202010_2;0;0;0;1#2020100001#1000",
+      "ptype": "是",
+      "t": 1,
+      "index": 2,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 3,
+      "type": "临时属性"
+    },
+    {
+      "value": "fire_damage_add|202010_damage|0;1500;30000;0;;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 3,
+      "target": 1,
+      "id": -1,
+      "codeType": 2,
+      "ii": 4,
+      "type": "临时属性"
+    }
+  ]
+}

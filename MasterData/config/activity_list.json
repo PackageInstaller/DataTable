@@ -1,0 +1,299 @@
+{
+  "columns": [
+    "id",
+    "name1",
+    "name2",
+    "activity_id",
+    "appear",
+    "bg",
+    "icon1",
+    "icon2",
+    "enum_name",
+    "prohibit"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name1": "谒魂者冲刺",
+      "name2": "冲刺目标",
+      "activity_id": 101,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccmb_0;ccmb_1",
+      "enum_name": "sprint_xr_aim"
+    },
+    {
+      "id": 2,
+      "name1": "谒魂者冲刺",
+      "name2": "冲刺礼包",
+      "activity_id": 101,
+      "appear": "serverlaunched_time;>=;8",
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "cclb_0;cclb_1",
+      "enum_name": "sprint_xr_gift"
+    },
+    {
+      "id": 3,
+      "name1": "谒魂者冲刺",
+      "name2": "冲刺排行",
+      "activity_id": 101,
+      "appear": "serverlaunched_time;>=;8",
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccph_0;ccph_1",
+      "enum_name": "sprint_xr_ranking"
+    },
+    {
+      "id": 4,
+      "name1": "谒魂者冲刺",
+      "name2": "冲刺任务",
+      "activity_id": 101,
+      "appear": "serverlaunched_time;>=;8",
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccrw_0;ccrw_1",
+      "enum_name": "sprint_xr_task"
+    },
+    {
+      "id": 5,
+      "name1": "神格冲刺",
+      "name2": "冲刺目标",
+      "activity_id": 201,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccmb_0;ccmb_1",
+      "enum_name": "sprint_sg_aim"
+    },
+    {
+      "id": 6,
+      "name1": "神格冲刺",
+      "name2": "冲刺礼包",
+      "activity_id": 201,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "cclb_0;cclb_1",
+      "enum_name": "sprint_sg_gift"
+    },
+    {
+      "id": 7,
+      "name1": "神格冲刺",
+      "name2": "冲刺排行",
+      "activity_id": 201,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccph_0;ccph_1",
+      "enum_name": "sprint_sg_ranking"
+    },
+    {
+      "id": 8,
+      "name1": "神格冲刺",
+      "name2": "冲刺任务",
+      "activity_id": 201,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccrw_0;ccrw_1",
+      "enum_name": "sprint_sg_task"
+    },
+    {
+      "id": 9,
+      "name1": "庇佑冲刺",
+      "name2": "冲刺目标",
+      "activity_id": 202,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccmb_0;ccmb_1",
+      "enum_name": "sprint_fyzx_aim"
+    },
+    {
+      "id": 10,
+      "name1": "庇佑冲刺",
+      "name2": "冲刺礼包",
+      "activity_id": 202,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "cclb_0;cclb_1",
+      "enum_name": "sprint_fyzx_gift"
+    },
+    {
+      "id": 11,
+      "name1": "庇佑冲刺",
+      "name2": "冲刺排行",
+      "activity_id": 202,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccph_0;ccph_1",
+      "enum_name": "sprint_fyzx_ranking"
+    },
+    {
+      "id": 12,
+      "name1": "庇佑冲刺",
+      "name2": "冲刺任务",
+      "activity_id": 202,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccrw_0;ccrw_1",
+      "enum_name": "sprint_fyzx_task"
+    },
+    {
+      "id": 13,
+      "name1": "谒魂者冲刺",
+      "name2": "冲刺目标",
+      "activity_id": 203,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccmb_0;ccmb_1",
+      "enum_name": "sprint_role_aim"
+    },
+    {
+      "id": 14,
+      "name1": "谒魂者冲刺",
+      "name2": "冲刺礼包",
+      "activity_id": 203,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "cclb_0;cclb_1",
+      "enum_name": "sprint_role_gift"
+    },
+    {
+      "id": 15,
+      "name1": "谒魂者冲刺",
+      "name2": "冲刺排行",
+      "activity_id": 203,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccph_0;ccph_1",
+      "enum_name": "sprint_role_ranking"
+    },
+    {
+      "id": 16,
+      "name1": "谒魂者冲刺",
+      "name2": "冲刺任务",
+      "activity_id": 203,
+      "bg": "chbg",
+      "icon1": "cc",
+      "icon2": "ccrw_0;ccrw_1",
+      "enum_name": "sprint_role_task"
+    },
+    {
+      "id": 101,
+      "name1": "特惠",
+      "name2": "月卡",
+      "activity_id": 301,
+      "bg": "chbg",
+      "enum_name": "activity_promotion_yueka"
+    },
+    {
+      "id": 102,
+      "name1": "特惠",
+      "name2": "周卡",
+      "activity_id": 301,
+      "bg": "chbg",
+      "enum_name": "activity_promotion_zhouka"
+    },
+    {
+      "id": 103,
+      "name1": "特惠",
+      "name2": "挑战战令",
+      "activity_id": 301,
+      "bg": "chbg",
+      "enum_name": "activity_promotion_tiaozhanzhanling"
+    },
+    {
+      "id": 104,
+      "name1": "特惠",
+      "name2": "无昼回响战令",
+      "activity_id": 301,
+      "bg": "chbg",
+      "enum_name": "activity_promotion_wuzhouhuixiangzhanling"
+    },
+    {
+      "id": 105,
+      "name1": "特惠",
+      "name2": "成长基金",
+      "activity_id": 301,
+      "bg": "chbg",
+      "enum_name": "activity_promotion_chengzhangjijin"
+    },
+    {
+      "id": 201,
+      "name1": "礼包",
+      "name2": "丰饶礼包",
+      "activity_id": 401,
+      "bg": "chbg",
+      "enum_name": "activity_giftpack_fengraolibao"
+    },
+    {
+      "id": 202,
+      "name1": "礼包",
+      "name2": "每日臻选",
+      "activity_id": 401,
+      "bg": "chbg",
+      "enum_name": "activity_giftpack_meirizhenxuan"
+    },
+    {
+      "id": 203,
+      "name1": "礼包",
+      "name2": "逐日巡礼",
+      "activity_id": 401,
+      "bg": "chbg",
+      "enum_name": "activity_giftpack_zhurixunli"
+    },
+    {
+      "id": 204,
+      "name1": "礼包",
+      "name2": "累充荣典",
+      "activity_id": 401,
+      "bg": "chbg",
+      "enum_name": "activity_giftpack_leichongrongdian"
+    },
+    {
+      "id": 1001,
+      "name1": "谒魂者试炼",
+      "name2": "谒魂者试炼",
+      "activity_id": 1001,
+      "bg": "slbg",
+      "enum_name": "trial_orange"
+    },
+    {
+      "id": 1002,
+      "name1": "谒魂者试炼",
+      "name2": "谒魂者试炼",
+      "activity_id": 1002,
+      "bg": "slbg",
+      "enum_name": "trial_red1"
+    },
+    {
+      "id": 1003,
+      "name1": "谒魂者试炼",
+      "name2": "谒魂者试炼",
+      "activity_id": 1003,
+      "bg": "slbg",
+      "enum_name": "trial_red2"
+    },
+    {
+      "id": 1101,
+      "name1": "谒魂者试炼",
+      "name2": "谒魂者试炼",
+      "activity_id": 1101,
+      "bg": "slbg",
+      "enum_name": "trial_xiya_main"
+    },
+    {
+      "id": 1102,
+      "name1": "谒魂者试炼",
+      "name2": "神木特训",
+      "activity_id": 1101,
+      "bg": "slbg",
+      "enum_name": "trial_xiya_draw"
+    },
+    {
+      "id": 1103,
+      "name1": "谒魂者试炼",
+      "name2": "试炼任务",
+      "activity_id": 1101,
+      "bg": "slbg",
+      "enum_name": "trial_xiya_task"
+    }
+  ]
+}

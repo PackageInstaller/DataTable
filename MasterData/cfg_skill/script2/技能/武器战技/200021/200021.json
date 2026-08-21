@@ -1,0 +1,149 @@
+{
+  "ifs_and": [
+    0
+  ],
+  "others": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "ifs_and": [],
+      "elses": [],
+      "parentid": -1,
+      "id": 8,
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "ifs_or": []
+    },
+    {
+      "ifs_and": [],
+      "elses": [],
+      "parentid": -1,
+      "id": 9,
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "ifs_or": []
+    },
+    {
+      "ifs_and": [],
+      "elses": [],
+      "parentid": -1,
+      "id": 10,
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "ifs_or": []
+    },
+    {
+      "ifs_and": [],
+      "elses": [],
+      "parentid": -1,
+      "id": 11,
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "ifs_or": []
+    },
+    {
+      "ifs_and": [],
+      "elses": [],
+      "parentid": -1,
+      "id": 12,
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "ifs_or": []
+    },
+    {
+      "ifs_and": [],
+      "elses": [],
+      "parentid": -1,
+      "id": 13,
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "ifs_or": []
+    },
+    {
+      "ifs_and": [],
+      "elses": [],
+      "parentid": -1,
+      "id": 14,
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "ifs_or": []
+    },
+    {
+      "ifs_and": [],
+      "elses": [],
+      "parentid": -1,
+      "id": 15,
+      "actions": [],
+      "ifs": [],
+      "codeType": 0,
+      "ifs_or": []
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "0;0;10000;3;83100_200021_1;200021a",
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ptype": "是",
+      "type": "场景特效",
+      "ii": 1,
+      "target": 1
+    },
+    {
+      "value": "0;0;4;15000;7;100;83100_200021_3;200021b",
+      "codeType": 2,
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "旋转特效",
+      "ii": 2,
+      "target": 1
+    },
+    {
+      "value": "1;0#1#200021b;0;3;83100_200021_2;200021c",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "type": "场景特效",
+      "ii": 3,
+      "target": 1,
+      "index": 2
+    }
+  ],
+  "ifs": [
+    {
+      "value": "200021",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "ptype": "判断",
+      "type": "技能ID",
+      "ii": 0,
+      "target": 1,
+      "index": 0
+    }
+  ],
+  "others_num": 9,
+  "trigger": 25,
+  "others_id": 15,
+  "ifs_or": []
+}

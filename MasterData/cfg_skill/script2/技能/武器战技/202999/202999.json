@@ -1,0 +1,39 @@
+{
+  "ifs": [
+    {
+      "value": "202999_hold_finish;1",
+      "ptype": "判断",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "term": "and",
+      "target": 1,
+      "codeType": 1,
+      "ii": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0
+  ],
+  "name": "",
+  "trigger": 30,
+  "triggerName": "蓄力事件",
+  "actions": [
+    {
+      "value": "0#0;0;2000;5;83100_202011_1;202999_hurt1;0;1;;0",
+      "ptype": "是",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "target": 1,
+      "index": 0,
+      "ii": 1,
+      "type": "场景特效"
+    }
+  ],
+  "others": [],
+  "others_id": 0,
+  "others_num": 0
+}

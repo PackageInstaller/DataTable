@@ -1,0 +1,191 @@
+{
+  "triggerName": "玩家主动技能",
+  "ifs_or": [],
+  "name": "",
+  "others_num": 0,
+  "ifs": [
+    {
+      "value": "5010702",
+      "term": "and",
+      "id": -1,
+      "ii": 0,
+      "target": 1,
+      "ptype": "判断",
+      "codeType": 1,
+      "index": 0,
+      "t": 1,
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 1,
+  "others": [
+    {
+      "elses": [
+        {
+          "value": 1,
+          "t": 3,
+          "index": 0,
+          "codeType": 3,
+          "type": "分支"
+        }
+      ],
+      "parentid": -1,
+      "id": 0,
+      "ifs_and": [
+        0
+      ],
+      "ifs": [
+        {
+          "value": "role_anger;>=;100;",
+          "term": "and",
+          "id": 0,
+          "ii": 0,
+          "target": 1,
+          "t": 3,
+          "codeType": 1,
+          "index": 0,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_or": [],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "role_anger;0;0;1;0",
+          "t": 3,
+          "id": 0,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "角色属性"
+        },
+        {
+          "value": "0;501070201;0;1",
+          "t": 3,
+          "id": 0,
+          "ii": 2,
+          "codeType": 2,
+          "index": 1,
+          "target": 1,
+          "ptype": "是",
+          "type": "发送消息"
+        }
+      ]
+    },
+    {
+      "elses": [
+        {
+          "value": "role_anger;0;10;0;2",
+          "t": 5,
+          "id": 1,
+          "ii": 1,
+          "codeType": 3,
+          "index": 0,
+          "target": 1,
+          "ptype": "否",
+          "type": "角色属性"
+        }
+      ],
+      "parentid": 0,
+      "id": 1,
+      "ifs_and": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "ifs": [
+        {
+          "value": "2000",
+          "t": 5,
+          "id": 1,
+          "ii": 0,
+          "index": 0,
+          "term": "and",
+          "codeType": 1,
+          "target": 1,
+          "ptype": "判断",
+          "type": "概率"
+        },
+        {
+          "value": "weaponType;in;1|2|5|6;0;0",
+          "codeType": 1,
+          "term": "and",
+          "id": 1,
+          "ii": 1,
+          "t": 5,
+          "index": 1,
+          "target": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        },
+        {
+          "value": "ming_yun_level;>=;30;107;0",
+          "ptype": "判断",
+          "id": 1,
+          "ii": 2,
+          "target": 1,
+          "term": "and",
+          "codeType": 1,
+          "index": 2,
+          "t": 5,
+          "type": "角色属性"
+        },
+        {
+          "value": "501070201",
+          "term": "and",
+          "id": 1,
+          "ii": 3,
+          "ptype": "判断",
+          "codeType": 1,
+          "index": 3,
+          "target": 1,
+          "t": 5,
+          "type": "检查CD"
+        }
+      ],
+      "ifs_or": [],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "0;501070201;0;1",
+          "t": 5,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "发送消息"
+        },
+        {
+          "value": "501070201;10000;0;0",
+          "t": 5,
+          "id": 1,
+          "ii": 2,
+          "codeType": 2,
+          "index": 1,
+          "target": 1,
+          "ptype": "是",
+          "type": "设置CD"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": 0,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "trigger": 25,
+  "ifs_and": [
+    0
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "others_id": 0,
+  "name": "",
+  "others_num": 0,
+  "triggerName": "玩家主动技能",
+  "others": [],
+  "trigger": 25,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "200007;5000;5000",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "设置CD"
+    },
+    {
+      "value": "200007;3;0;1500;3;;guide_ad4a;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 2,
+      "index": 1,
+      "codeType": 2,
+      "type": "蓄力"
+    },
+    {
+      "value": "0;0;1066;0;0.01;0;1200;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "ii": 3,
+      "index": 2,
+      "codeType": 2,
+      "type": "动作移动"
+    },
+    {
+      "value": "0.75;150;50;100",
+      "ptype": "是",
+      "t": 1,
+      "index": 3,
+      "id": -1,
+      "ii": 4,
+      "target": 1,
+      "codeType": 2,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "0.5;150;50;650",
+      "ptype": "是",
+      "t": 1,
+      "index": 4,
+      "id": -1,
+      "ii": 5,
+      "target": 1,
+      "codeType": 2,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "1.5;150;50;1400",
+      "ptype": "是",
+      "t": 1,
+      "index": 5,
+      "id": -1,
+      "ii": 6,
+      "target": 1,
+      "codeType": 2,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "0#0;200;0;5;83100_200007_1;200007_hurt1|200007_hurt1|200007_hurt2;0;1;;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "index": 6,
+      "ii": 7,
+      "target": 1,
+      "codeType": 2,
+      "type": "场景特效"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "200007",
+      "ptype": "判断",
+      "target": 1,
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "ii": 0,
+      "index": 0,
+      "codeType": 1,
+      "type": "检查CD"
+    },
+    {
+      "value": "200007",
+      "ptype": "判断",
+      "index": 1,
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "ii": 1,
+      "target": 1,
+      "codeType": 1,
+      "type": "技能ID"
+    }
+  ]
+}

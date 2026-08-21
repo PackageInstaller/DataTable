@@ -1,0 +1,427 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "des",
+    "bodyAniName",
+    "handAniName",
+    "weaponAniName",
+    "slot",
+    "isBody",
+    "type"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "a_stand",
+      "des": "非战斗站立(只控制身体)",
+      "bodyAniName": "stand_rest",
+      "handAniName": 255,
+      "weaponAniName": 255,
+      "isBody": 1,
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "a_move",
+      "des": "非战斗移动(只控制身体)",
+      "bodyAniName": "move_rest",
+      "handAniName": 255,
+      "weaponAniName": 255,
+      "isBody": 1,
+      "type": 1
+    },
+    {
+      "id": 3,
+      "name": "a_hand",
+      "des": "战斗控制手统一指令",
+      "bodyAniName": 255,
+      "weaponAniName": 255,
+      "type": 2
+    },
+    {
+      "id": 4,
+      "name": "a_stand_hand",
+      "des": "战斗站立(只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "stand_rest",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 5,
+      "name": "a_move_hand",
+      "des": "战斗移动(只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "stand_rest",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 6,
+      "name": "b_hand",
+      "des": "战斗控制手统一指令",
+      "bodyAniName": 255,
+      "weaponAniName": "idle",
+      "type": 2
+    },
+    {
+      "id": 7,
+      "name": "b_stand",
+      "des": "战斗站立(只控制身体)",
+      "bodyAniName": "stand_1",
+      "handAniName": 255,
+      "weaponAniName": 255,
+      "isBody": 1,
+      "type": 1
+    },
+    {
+      "id": 8,
+      "name": "b_move",
+      "des": "战斗移动(只控制身体)",
+      "bodyAniName": "move_1",
+      "handAniName": 255,
+      "weaponAniName": 255,
+      "isBody": 1,
+      "type": 1
+    },
+    {
+      "id": 9,
+      "name": "b_stand_hand",
+      "des": "战斗站立(只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "stand_x",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 10,
+      "name": "b_move_hand",
+      "des": "战斗移动(只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "move_x",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 11,
+      "name": "attack1",
+      "des": "普通攻击第一击(跟武器种类，只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "attack_1_x",
+      "weaponAniName": "attack",
+      "type": 1
+    },
+    {
+      "id": 12,
+      "name": "attack2",
+      "des": "普通攻击第二击(跟武器种类，只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "attack_2_x",
+      "weaponAniName": "attack",
+      "type": 1
+    },
+    {
+      "id": 13,
+      "name": "attack3",
+      "des": "普通攻击第三击(跟武器种类，只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "attack_3_x",
+      "weaponAniName": "attack",
+      "type": 1
+    },
+    {
+      "id": 14,
+      "name": "u_stand",
+      "des": "站立使用道具(只控制身体)",
+      "bodyAniName": "stand_1",
+      "handAniName": 255,
+      "slot": "items",
+      "isBody": 1,
+      "type": 1
+    },
+    {
+      "id": 15,
+      "name": "u_hand",
+      "des": "使用道具控制手统一指令",
+      "bodyAniName": 255,
+      "slot": "items",
+      "type": 2
+    },
+    {
+      "id": 16,
+      "name": "u_move",
+      "des": "移动使用道具(只控制身体)",
+      "bodyAniName": "move_1",
+      "handAniName": 255,
+      "slot": "items",
+      "isBody": 1,
+      "type": 1
+    },
+    {
+      "id": 17,
+      "name": "u_stand_hand",
+      "des": "站立使用道具(只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "use",
+      "slot": "items",
+      "type": 1
+    },
+    {
+      "id": 18,
+      "name": "u_move_hand",
+      "des": "移动使用道具(只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "use",
+      "slot": "items",
+      "type": 1
+    },
+    {
+      "id": 19,
+      "name": "d_hand",
+      "des": "喝药控制手统一指令",
+      "bodyAniName": 255,
+      "slot": "medicine",
+      "type": 2
+    },
+    {
+      "id": 20,
+      "name": "d_stand",
+      "des": "站立喝药(只控制身体)",
+      "bodyAniName": "stand_1",
+      "handAniName": 255,
+      "slot": "medicine",
+      "isBody": 1,
+      "type": 1
+    },
+    {
+      "id": 21,
+      "name": "d_move",
+      "des": "移动喝药(只控制身体)",
+      "bodyAniName": "move_1",
+      "handAniName": 255,
+      "slot": "medicine",
+      "isBody": 1,
+      "type": 1
+    },
+    {
+      "id": 22,
+      "name": "d_stand_hand",
+      "des": "站立喝药(只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "drink",
+      "slot": "medicine",
+      "type": 1
+    },
+    {
+      "id": 23,
+      "name": "d_move_hand",
+      "des": "移动喝药(只控制手)",
+      "bodyAniName": 255,
+      "handAniName": "drink",
+      "slot": "medicine",
+      "type": 1
+    },
+    {
+      "id": 24,
+      "name": "hit",
+      "des": "受击(固定)",
+      "bodyAniName": "hit",
+      "handAniName": "hit",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 25,
+      "name": "stun",
+      "des": "晕眩(固定)",
+      "bodyAniName": "stun",
+      "handAniName": "stun",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 26,
+      "name": "yxskill1",
+      "des": "技能-移动蓄力(跟武器种类远近)",
+      "bodyAniName": 255,
+      "handAniName": "yxskill1_x",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 27,
+      "name": "yxskill2",
+      "des": "技能-移动蓄力释放(跟武器种类远近)",
+      "bodyAniName": 255,
+      "handAniName": "yxskill2_x",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 28,
+      "name": "dxskill1",
+      "des": "技能-定位蓄力(跟武器种类远近)",
+      "bodyAniName": 255,
+      "handAniName": "dxskill1_x",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 29,
+      "name": "dxskill2",
+      "des": "技能-定位蓄力释放(跟武器种类远近)",
+      "bodyAniName": 255,
+      "handAniName": "dxskill2_x",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 30,
+      "name": "dyskill",
+      "des": "技能-定位引导(跟武器种类远近)",
+      "bodyAniName": 255,
+      "handAniName": "dyskill_x",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 31,
+      "name": "yyskill",
+      "des": "技能-移动引导(跟武器种类远近)",
+      "bodyAniName": 255,
+      "handAniName": "yyskill_x",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 32,
+      "name": "gather",
+      "des": "采集(固定 )",
+      "bodyAniName": "gather",
+      "handAniName": "gather",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 33,
+      "name": "gsuc",
+      "des": "采集-成功(固定)",
+      "bodyAniName": "gather_success",
+      "handAniName": "gather_success",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 34,
+      "name": "ghunt",
+      "des": "采集-捕获(固定)",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 35,
+      "name": "gcut",
+      "des": "采集-伐木(固定)",
+      "bodyAniName": "gather_logging",
+      "handAniName": "gather_logging",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 36,
+      "name": "gflower",
+      "des": "采集-采花(固定)",
+      "bodyAniName": "gather_flowers",
+      "handAniName": "gather_flowers",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 37,
+      "name": "gdig",
+      "des": "采集-挖矿(固定)",
+      "bodyAniName": "gather_mining",
+      "handAniName": "gather_mining",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 38,
+      "name": "happy",
+      "des": "表情-开心(固定)",
+      "bodyAniName": "happy",
+      "handAniName": "happy",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 39,
+      "name": "sayhi",
+      "des": "表情-打招呼(固定)",
+      "bodyAniName": "sayhi",
+      "handAniName": "sayhi",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 40,
+      "name": "sdown",
+      "des": "神像-坐下(固定)",
+      "bodyAniName": "god_down",
+      "handAniName": "god_down",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 41,
+      "name": "ssit",
+      "des": "神像-坐着休息(固定)",
+      "bodyAniName": "god_sit",
+      "handAniName": "god_sit",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 42,
+      "name": "sup",
+      "des": "神像-站起(固定)",
+      "bodyAniName": "god_up",
+      "handAniName": "god_up",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 43,
+      "name": "open",
+      "des": "打开宝箱(固定)",
+      "bodyAniName": "open",
+      "handAniName": "open",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 44,
+      "name": "roll",
+      "des": "翻滚(固定)",
+      "bodyAniName": "roll",
+      "handAniName": "roll",
+      "weaponAniName": "idle",
+      "type": 1
+    },
+    {
+      "id": 45,
+      "name": "hunwen_spell",
+      "des": "瞬发",
+      "bodyAniName": "hunwen_spell",
+      "handAniName": "hunwen_spell",
+      "type": 1
+    },
+    {
+      "id": 46,
+      "name": "spell_ad1",
+      "bodyAniName": "spell_ad1",
+      "handAniName": "spell_ad1"
+    }
+  ]
+}

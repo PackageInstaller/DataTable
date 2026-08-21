@@ -1,0 +1,83 @@
+{
+  "ifs": [
+    {
+      "value": "300021_hold_finish;1",
+      "ptype": "判断",
+      "t": 1,
+      "codeType": 1,
+      "id": -1,
+      "term": "and",
+      "target": 1,
+      "index": 0,
+      "ii": 0,
+      "type": "蓄力事件"
+    }
+  ],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "magic_hurt_add|300021_hurt|0;1000;30000;0;83500_300021_2_b;0;0;0;0",
+      "target": 1,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "type": "临时属性"
+    },
+    {
+      "value": "ability_3|300021_ability|0;1;30000;0;83500_300021_2_a;0;0;5;0",
+      "target": 1,
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "type": "临时属性"
+    },
+    {
+      "value": "0#0;0;0;2;83500_300021_2_b;0#0;0;0;;0",
+      "ptype": "是",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "target": 1,
+      "index": 2,
+      "ii": 3,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;0;5;83500_300021_1;0#0;0;0;;0",
+      "ptype": "是",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "target": 1,
+      "index": 3,
+      "ii": 4,
+      "type": "场景特效"
+    },
+    {
+      "value": "spell_ad9;0;0;0;0;0;0;0",
+      "ptype": "是",
+      "t": 1,
+      "codeType": 2,
+      "id": -1,
+      "target": 1,
+      "index": 4,
+      "ii": 5,
+      "type": "动作移动"
+    }
+  ],
+  "name": "",
+  "trigger": 30,
+  "triggerName": "蓄力事件",
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "others_id": 0,
+  "others_num": 0
+}

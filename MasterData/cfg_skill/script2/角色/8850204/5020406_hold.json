@@ -1,0 +1,113 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "5020406",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "codeType": 1,
+      "index": 0,
+      "target": 1,
+      "t": 1,
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 2,
+  "trigger": 25,
+  "ifs_or": [],
+  "others": [
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 0,
+      "ifs": [
+        {
+          "value": "role_anger;<;100;;0",
+          "t": 3,
+          "id": 0,
+          "ii": 0,
+          "term": "and",
+          "codeType": 1,
+          "index": 0,
+          "target": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        },
+        {
+          "value": "ming_yun_level;>=;5;204;0",
+          "t": 3,
+          "id": 0,
+          "ii": 1,
+          "term": "and",
+          "codeType": 1,
+          "index": 1,
+          "target": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": 1,
+          "t": 3,
+          "index": 0,
+          "codeType": 2,
+          "type": "分支"
+        },
+        {
+          "value": 2,
+          "t": 3,
+          "index": 1,
+          "codeType": 2,
+          "type": "分支"
+        },
+        {
+          "value": "role_anger;;20;0;0",
+          "t": 3,
+          "index": 2,
+          "id": 0,
+          "ii": 3,
+          "codeType": 2,
+          "target": 1,
+          "ptype": "是",
+          "type": "角色属性"
+        },
+        {
+          "value": "0;502040201;0;",
+          "t": 3,
+          "id": 0,
+          "ii": 4,
+          "codeType": 2,
+          "index": 3,
+          "target": 1,
+          "ptype": "是",
+          "type": "发送消息"
+        }
+      ],
+      "ifs_and": [
+        0,
+        1
+      ]
+    },
+    null,
+    null
+  ],
+  "actions": [
+    {
+      "value": 0,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "ifs_and": [
+    0
+  ]
+}

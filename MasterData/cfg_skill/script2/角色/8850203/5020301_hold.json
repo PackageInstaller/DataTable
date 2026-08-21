@@ -1,0 +1,141 @@
+{
+  "triggerName": "玩家主动技能",
+  "ifs_and": [
+    0,
+    1
+  ],
+  "others_num": 1,
+  "ifs_or": [],
+  "ifs": [
+    {
+      "value": "5020301",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "t": 1,
+      "type": "检查CD"
+    },
+    {
+      "value": "5020301",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 1,
+      "term": "and",
+      "codeType": 1,
+      "target": 1,
+      "index": 1,
+      "t": 1,
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 0,
+  "name": "",
+  "others": [
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_and": [
+        0
+      ],
+      "id": 0,
+      "ifs_or": [],
+      "ifs": [
+        {
+          "value": "ming_yun_level;>=;30;203;0",
+          "t": 3,
+          "id": 1,
+          "ii": 0,
+          "term": "and",
+          "codeType": 1,
+          "target": 1,
+          "index": 0,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "soul_skill_damage|5020301|0;3000;20000;0;;0;0;0;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "临时属性"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "value": 0,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "hunwen_spell;0;0;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "target": 1,
+      "ptype": "是",
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;0;0;0;84000_5020301_1_b;0;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "index": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;0;0;84000_5020301_1_a;role_5020301_hurt;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "codeType": 2,
+      "index": 3,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "atk_add|5020301|0;3000;20000;0;84000_5020301_2_a;0;200;2#0#18;7#50203012#0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "codeType": 2,
+      "index": 4,
+      "target": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": "5020301;30000;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 6,
+      "codeType": 2,
+      "index": 5,
+      "target": 1,
+      "ptype": "是",
+      "type": "设置CD"
+    }
+  ],
+  "trigger": 25
+}

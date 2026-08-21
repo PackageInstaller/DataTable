@@ -1,0 +1,74 @@
+{
+  "others_id": 0,
+  "name": "",
+  "others_num": 0,
+  "triggerName": "玩家主动技能",
+  "others": [],
+  "trigger": 25,
+  "ifs_and": [
+    0,
+    1
+  ],
+  "actions": [
+    {
+      "value": "0#0#4;1#0#-20#20;0;-1;0#0;1;70;99999;100;83100_202023_2#83100_202023_3;2020230001_hurt;",
+      "ptype": "是",
+      "index": 0,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "target": 1,
+      "codeType": 2,
+      "type": "发射特效"
+    },
+    {
+      "value": "0.75;150;50;0",
+      "ptype": "是",
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "ii": 2,
+      "target": 1,
+      "codeType": 2,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "2020230001;2000;2000",
+      "ptype": "是",
+      "index": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "target": 1,
+      "codeType": 2,
+      "type": "设置CD"
+    }
+  ],
+  "ifs_or": [],
+  "ifs": [
+    {
+      "value": "2020230001",
+      "ptype": "判断",
+      "index": 0,
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "type": "技能ID",
+      "target": 1,
+      "codeType": 1,
+      "term": "and"
+    },
+    {
+      "value": "2020230001",
+      "ptype": "判断",
+      "target": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "type": "检查CD",
+      "index": 1,
+      "codeType": 1,
+      "term": "and"
+    }
+  ]
+}

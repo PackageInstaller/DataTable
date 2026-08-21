@@ -1,0 +1,108 @@
+{
+  "elses": [],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "name": "",
+  "others_id": 0,
+  "others_num": 0,
+  "ifs_or": [],
+  "triggerName": "玩家主动技能",
+  "others": [],
+  "trigger": 25,
+  "ifs": [
+    {
+      "value": "300014",
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "type": "检查CD",
+      "codeType": 1,
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "id": -1
+    },
+    {
+      "value": "300014",
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "type": "技能ID",
+      "codeType": 1,
+      "ii": 1,
+      "index": 1,
+      "target": 1,
+      "id": -1
+    }
+  ],
+  "actions": [
+    {
+      "value": "spell_ap6;0;0;0;0;0;0;0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;0;0;1#6#4;83500_300014_3;300014_hurt#0;0;0;;",
+      "t": 1,
+      "ptype": "是",
+      "index": 1,
+      "codeType": 2,
+      "ii": 2,
+      "id": -1,
+      "target": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;0;1#6#4;83500_300014_1;0#0;0;0;;",
+      "t": 1,
+      "ptype": "是",
+      "index": 2,
+      "codeType": 2,
+      "ii": 3,
+      "id": -1,
+      "target": 1,
+      "type": "场景特效"
+    },
+    {
+      "value": "0#0;0;0;1#50#4;83500_300014_2;0#0;0;0;;",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 4,
+      "target": 1,
+      "index": 3,
+      "type": "场景特效"
+    },
+    {
+      "value": "0.75;150;50;0",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 5,
+      "target": 1,
+      "index": 4,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "300014;1000;1000",
+      "t": 1,
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "ii": 6,
+      "target": 1,
+      "index": 5,
+      "type": "设置CD"
+    }
+  ]
+}

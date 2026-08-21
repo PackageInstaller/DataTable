@@ -1,0 +1,72 @@
+{
+  "trigger": 28,
+  "name": "",
+  "ifs": [
+    {
+      "value": "90099",
+      "target": 1,
+      "t": 1,
+      "ii": 0,
+      "codeType": 1,
+      "id": -1,
+      "ptype": "判断",
+      "index": 0,
+      "term": "and",
+      "type": "使用物品id"
+    }
+  ],
+  "others_num": 0,
+  "ifs_or": [],
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "str_add|90099_1|0;500;600000;0;eat_ef99_buff;0;0;5;0",
+      "id": -1,
+      "t": 1,
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 0,
+      "type": "临时属性"
+    },
+    {
+      "value": "agi_add|90099_2|0;500;600000;0;0;0;0;5;0",
+      "id": -1,
+      "t": 1,
+      "ii": 2,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 1,
+      "type": "临时属性"
+    },
+    {
+      "value": "int_add|90099_3|0;500;600000;0;0;0;0;5;0",
+      "id": -1,
+      "t": 1,
+      "ii": 3,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "index": 2,
+      "type": "临时属性"
+    },
+    {
+      "value": "fai_add|90099_4|0;500;600000;0;0;0;0;5;0",
+      "target": 1,
+      "t": 1,
+      "ii": 4,
+      "codeType": 2,
+      "id": -1,
+      "ptype": "是",
+      "index": 3,
+      "type": "临时属性"
+    }
+  ],
+  "triggerName": "使用道具",
+  "others": [],
+  "ifs_and": [
+    0
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "triggerName": "蓄力事件",
+  "ifs": [
+    {
+      "value": "300010_hold_finish;1",
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "type": "蓄力事件",
+      "codeType": 1,
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "ptype": "判断"
+    }
+  ],
+  "name": "",
+  "others_num": 0,
+  "ifs_or": [],
+  "ifs_and": [
+    0
+  ],
+  "others": [],
+  "trigger": 30,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "0#0;0;0;1;83500_300010_1;0;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "场景特效"
+    },
+    {
+      "value": "ice_damage_res|300010|0;2500;60000;0;83500_300010_2;0;0;5#0#0;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "type": "临时属性"
+    },
+    {
+      "value": "spell_ad9;0;0;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "index": 2,
+      "codeType": 2,
+      "ii": 3,
+      "ptype": "是",
+      "target": 1,
+      "type": "动作移动"
+    }
+  ]
+}

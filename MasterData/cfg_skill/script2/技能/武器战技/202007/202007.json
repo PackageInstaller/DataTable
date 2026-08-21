@@ -1,0 +1,72 @@
+{
+  "ifs_and": [
+    0
+  ],
+  "ifs": [
+    {
+      "value": "202007_hold_finish;1",
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "index": 0,
+      "codeType": 1,
+      "ii": 0,
+      "ptype": "判断",
+      "target": 1,
+      "type": "蓄力事件"
+    }
+  ],
+  "name": "",
+  "ifs_or": [],
+  "others_num": 0,
+  "triggerName": "蓄力事件",
+  "others": [],
+  "trigger": 30,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "spell_ad7;0;0;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "type": "动作移动"
+    },
+    {
+      "value": "83100_202007_2;1;0;0;1|2;20000;2;0;0;0;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "type": "生成标记特效"
+    },
+    {
+      "value": "83100_202007_2_b;0;0;0;1|2;20000;2;0;0;202007_heal;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 3,
+      "index": 2,
+      "target": 1,
+      "type": "生成标记特效"
+    },
+    {
+      "value": "0#0;0;0;0;83100_202007_1_b;202007_hurt;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "index": 3,
+      "codeType": 2,
+      "ii": 4,
+      "ptype": "是",
+      "target": 1,
+      "type": "场景特效"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "others": [
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 0,
+      "actions": [],
+      "parentid": -1,
+      "ifs_and": [],
+      "elses": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 1,
+      "actions": [],
+      "parentid": -1,
+      "ifs_and": [],
+      "elses": [],
+      "ifs": []
+    },
+    {
+      "codeType": 0,
+      "ifs_or": [],
+      "id": 2,
+      "actions": [],
+      "parentid": -1,
+      "ifs_and": [],
+      "elses": [],
+      "ifs": []
+    }
+  ],
+  "ifs_or": [],
+  "trigger": 26,
+  "others_num": 2,
+  "triggerName": "怪物警觉",
+  "ifs": [
+    {
+      "value": "1",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "type": "调试模式",
+      "ptype": "判断",
+      "term": "and",
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "10231003",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "type": "怪物bid",
+      "ptype": "判断",
+      "term": "and",
+      "index": 1,
+      "target": 1
+    },
+    {
+      "value": "<=;40",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "type": "玩家距离",
+      "ptype": "判断",
+      "term": "and",
+      "index": 2,
+      "target": 1
+    },
+    {
+      "value": "1023100302",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "type": "检查CD",
+      "ptype": "判断",
+      "term": "and",
+      "index": 3,
+      "target": 1
+    },
+    {
+      "value": "5000",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "type": "概率",
+      "ptype": "判断",
+      "term": "and",
+      "index": 4,
+      "target": 1
+    },
+    {
+      "value": "3",
+      "codeType": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "type": "AI优先级",
+      "ptype": "判断",
+      "term": "and",
+      "index": 5,
+      "target": 1
+    }
+  ],
+  "actions": [
+    {
+      "value": "spell_2;0;0;3#0;0.01;0;0;0",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "type": "动作移动",
+      "ptype": "是",
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "0#0;2250;0;1;82000_3100302_1_a;0;0;0;;0",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "type": "场景特效",
+      "ptype": "是",
+      "index": 1,
+      "target": 1
+    },
+    {
+      "value": "0#0;2250;0;0;82000_3100302_1_b;1023100302_hurt;0;0;;0",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "type": "场景特效",
+      "ptype": "是",
+      "index": 2,
+      "target": 1
+    },
+    {
+      "value": "82000_3100301_2;0;0;1#60#6#35;0|2|3;0;2;0;0;1023100302_hurt1;0;2250;0;0;0",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "type": "生成标记特效",
+      "ptype": "是",
+      "index": 3,
+      "target": 1
+    },
+    {
+      "value": "1023100302;0;0;2250;9;1023100302_hold_finish;;;;",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "type": "蓄力",
+      "ptype": "是",
+      "index": 4,
+      "target": 1
+    },
+    {
+      "value": 16,
+      "type": "分支",
+      "t": 1,
+      "index": 5,
+      "codeType": 2
+    },
+    {
+      "value": "1023100302;7500;12500",
+      "codeType": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 7,
+      "type": "设置CD",
+      "ptype": "是",
+      "index": 6,
+      "target": 1
+    }
+  ],
+  "name": "",
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "others_id": 2
+}

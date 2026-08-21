@@ -1,0 +1,133 @@
+{
+  "triggerName": "玩家主动技能",
+  "ifs_and": [
+    0,
+    1
+  ],
+  "name": "",
+  "trigger": 25,
+  "others_num": 1,
+  "ifs": [
+    {
+      "value": "50203012",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "t": 1,
+      "type": "检查CD"
+    },
+    {
+      "value": "50203012",
+      "ptype": "判断",
+      "id": -1,
+      "ii": 1,
+      "term": "and",
+      "codeType": 1,
+      "target": 1,
+      "index": 1,
+      "t": 1,
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 1,
+  "others": [
+    null,
+    {
+      "elses": [],
+      "parentid": -1,
+      "id": 1,
+      "ifs": [
+        {
+          "value": "50203013",
+          "t": 3,
+          "id": 1,
+          "ii": 0,
+          "term": "and",
+          "codeType": 1,
+          "index": 0,
+          "target": 1,
+          "ptype": "判断",
+          "type": "检查CD"
+        },
+        {
+          "value": "ming_yun_level;>=;5;203;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "term": "and",
+          "codeType": 1,
+          "target": 1,
+          "index": 1,
+          "ptype": "判断",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_and": [
+        0,
+        1
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "50203013;250;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "设置CD"
+        },
+        {
+          "value": "1;1;2",
+          "t": 3,
+          "id": 1,
+          "ii": 2,
+          "codeType": 2,
+          "index": 1,
+          "target": 1,
+          "ptype": "是",
+          "type": "恢复专注值"
+        }
+      ],
+      "ifs_or": []
+    }
+  ],
+  "actions": [
+    {
+      "value": "1#0;0;0;0#-5;84000_5020301_3_a;role_50203012_hurt;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "index": 0,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    },
+    {
+      "value": "50203012;1000;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "target": 1,
+      "ptype": "是",
+      "type": "设置CD"
+    },
+    {
+      "value": 1,
+      "t": 1,
+      "index": 2,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "ifs_or": []
+}

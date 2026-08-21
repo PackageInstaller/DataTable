@@ -1,0 +1,61 @@
+{
+  "others_num": 0,
+  "ifs_or": [],
+  "name": "",
+  "actions": [
+    {
+      "value": "crit_hurt|90019|0;1500;120000;0;eat_ef1_buff;0;0;5;0",
+      "id": -1,
+      "t": 1,
+      "target": 1,
+      "ii": 1,
+      "codeType": 2,
+      "index": 0,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": "2",
+      "target": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "ptype": "是",
+      "type": "触发debuff异常"
+    },
+    {
+      "value": "4000",
+      "target": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "index": 2,
+      "ptype": "是",
+      "type": "恢复血量"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "90019",
+      "target": 1,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ii": 0,
+      "codeType": 1,
+      "term": "and",
+      "ptype": "判断",
+      "type": "使用物品id"
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "trigger": 28,
+  "others_id": 0,
+  "triggerName": "使用道具",
+  "others": []
+}

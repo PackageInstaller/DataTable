@@ -1,0 +1,35 @@
+{
+  "ifs": [
+    {
+      "value": "201025b",
+      "codeType": 1,
+      "term": "and",
+      "index": 0,
+      "id": -1,
+      "ii": 0,
+      "ptype": "判断",
+      "type": "伤害事件",
+      "t": 1,
+      "target": 1
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "value": "3;6;2;13400;0;0;0;200000",
+      "codeType": 2,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ptype": "是",
+      "type": "造成伤害",
+      "ii": 1,
+      "target": 1
+    }
+  ],
+  "ifs_or": [],
+  "ifs_and": [
+    0
+  ],
+  "trigger": 29
+}

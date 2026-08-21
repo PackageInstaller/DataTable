@@ -1,0 +1,39 @@
+{
+  "ifs_or": [],
+  "ifs": [
+    {
+      "value": "201003_heal",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "term": "and",
+      "ii": 0,
+      "index": 0,
+      "target": 1,
+      "type": "伤害事件"
+    }
+  ],
+  "name": "",
+  "ifs_and": [
+    0
+  ],
+  "others_num": 0,
+  "triggerName": "伤害事件",
+  "others": [],
+  "trigger": 29,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "1;5;1000;0;10000",
+      "ii": 1,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "target": 1,
+      "type": "持续恢复"
+    }
+  ]
+}

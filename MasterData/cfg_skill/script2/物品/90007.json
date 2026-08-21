@@ -1,0 +1,61 @@
+{
+  "trigger": 28,
+  "triggerName": "使用道具",
+  "name": "",
+  "actions": [
+    {
+      "value": "6",
+      "ptype": "是",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "type": "清空debuff异常值"
+    },
+    {
+      "value": "6",
+      "ptype": "是",
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "target": 1,
+      "type": "移除debuff状态"
+    },
+    {
+      "value": "1000",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "index": 2,
+      "target": 1,
+      "type": "恢复血量"
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "others_num": 0,
+  "ifs_or": [],
+  "others_id": 0,
+  "ifs": [
+    {
+      "value": "90007",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "codeType": 1,
+      "index": 0,
+      "target": 1,
+      "type": "使用物品id"
+    }
+  ],
+  "others": []
+}

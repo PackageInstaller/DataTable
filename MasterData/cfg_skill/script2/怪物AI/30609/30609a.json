@@ -1,0 +1,135 @@
+{
+  "name": "怪物警觉",
+  "others_num": 0,
+  "triggerName": "怪物警觉",
+  "others": [],
+  "trigger": 26,
+  "others_id": 0,
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "0;;150;3#0#-45#45;5;;700;",
+      "ptype": "是",
+      "index": 0,
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "target": 1,
+      "codeType": 2,
+      "type": "动作移动"
+    },
+    {
+      "value": "0;;100;3#0#-45#45;5;;500;",
+      "ptype": "是",
+      "index": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "target": 1,
+      "codeType": 2,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;500;0;3;82000_30609_1_atk;30609a1_hurt|30609a2_hurt|30609a3_hurt;;1;;0",
+      "ptype": "是",
+      "index": 2,
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "target": 1,
+      "codeType": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "30609a_hold;0;5;500;3;30609a_hold;attack_1;1000;;",
+      "ptype": "是",
+      "index": 3,
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "target": 1,
+      "codeType": 2,
+      "type": "蓄力"
+    },
+    {
+      "value": "30609a;0;2000",
+      "ptype": "是",
+      "index": 4,
+      "t": 1,
+      "id": -1,
+      "ii": 5,
+      "target": 1,
+      "codeType": 2,
+      "type": "设置CD"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "ifs": [
+    {
+      "value": "30609a",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "target": 1,
+      "codeType": 1,
+      "index": 0,
+      "type": "检查CD"
+    },
+    {
+      "value": "30609",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "target": 1,
+      "codeType": 1,
+      "index": 1,
+      "type": "怪物bid"
+    },
+    {
+      "value": "<=;20",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "target": 1,
+      "codeType": 1,
+      "index": 2,
+      "type": "玩家距离"
+    },
+    {
+      "value": "0",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "target": 1,
+      "codeType": 1,
+      "index": 3,
+      "type": "目标方位"
+    },
+    {
+      "value": "3",
+      "ptype": "判断",
+      "term": "and",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "target": 1,
+      "codeType": 1,
+      "index": 4,
+      "type": "AI优先级"
+    }
+  ]
+}

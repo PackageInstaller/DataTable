@@ -1,0 +1,151 @@
+{
+  "ifs": [
+    {
+      "value": "402010502",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "term": "and",
+      "index": 0,
+      "target": 1,
+      "codeType": 1,
+      "type": "监听消息"
+    },
+    {
+      "value": "4500",
+      "ptype": "判断",
+      "t": 1,
+      "index": 1,
+      "id": -1,
+      "ii": 1,
+      "term": "and",
+      "target": 1,
+      "codeType": 1,
+      "type": "概率"
+    },
+    {
+      "value": "1",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "term": "and",
+      "index": 2,
+      "target": 1,
+      "codeType": 1,
+      "type": "调试模式"
+    },
+    {
+      "value": "40201",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "term": "and",
+      "index": 3,
+      "target": 1,
+      "codeType": 1,
+      "type": "怪物bid"
+    }
+  ],
+  "others": [
+    {
+      "ifs": [],
+      "id": 0,
+      "actions": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    },
+    {
+      "ifs": [],
+      "id": 1,
+      "actions": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    },
+    null,
+    {
+      "ifs": [],
+      "id": 3,
+      "actions": [],
+      "parentid": 2,
+      "ifs_or": [],
+      "ifs_and": [],
+      "codeType": 0,
+      "elses": []
+    }
+  ],
+  "trigger": 32,
+  "others_id": 2,
+  "ifs_or": [],
+  "others_num": 1,
+  "triggerName": "消息事件",
+  "name": "",
+  "actions": [
+    {
+      "value": "special_spell_1_2;0;0;3;0.01;0;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "target": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;1200;0;1;85000_4020105_1;4020105_hurt",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "target": 1,
+      "index": 1,
+      "codeType": 2,
+      "type": "场景特效"
+    },
+    {
+      "value": "402010502;0;0;1266;7;402010502_hold_finish;;",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "target": 1,
+      "index": 2,
+      "codeType": 2,
+      "type": "蓄力"
+    },
+    {
+      "value": "1266;402010602;0;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 4,
+      "index": 3,
+      "target": 1,
+      "codeType": 2,
+      "type": "发送消息"
+    },
+    {
+      "value": 16,
+      "t": 1,
+      "index": 4,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "elses": []
+}

@@ -1,0 +1,128 @@
+{
+  "actions": [
+    {
+      "value": "3020101;100000;5000",
+      "t": 1,
+      "target": 1,
+      "id": -1,
+      "type": "设置CD",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "ptype": "是"
+    },
+    {
+      "value": "30201_hold;0;6;1500;9;30201_hold;spell_1;2500;;0",
+      "t": 1,
+      "target": 1,
+      "id": -1,
+      "type": "蓄力",
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "ptype": "是"
+    }
+  ],
+  "others_id": 0,
+  "name": "",
+  "others_num": 0,
+  "others": [],
+  "triggerName": "怪物警觉",
+  "ifs_or": [],
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "trigger": 26,
+  "ifs": [
+    {
+      "value": "30201",
+      "t": 1,
+      "id": -1,
+      "index": 0,
+      "codeType": 1,
+      "term": "and",
+      "type": "怪物bid",
+      "target": 1,
+      "ii": 0,
+      "ptype": "判断"
+    },
+    {
+      "value": "3020101",
+      "t": 1,
+      "id": -1,
+      "index": 1,
+      "codeType": 1,
+      "term": "and",
+      "type": "检查CD",
+      "target": 1,
+      "ii": 1,
+      "ptype": "判断"
+    },
+    {
+      "value": ">=;50",
+      "t": 1,
+      "id": -1,
+      "index": 2,
+      "codeType": 1,
+      "term": "and",
+      "type": "玩家距离",
+      "target": 1,
+      "ii": 2,
+      "ptype": "判断"
+    },
+    {
+      "value": "1",
+      "t": 1,
+      "id": -1,
+      "index": 3,
+      "codeType": 1,
+      "term": "and",
+      "type": "调试模式",
+      "target": 1,
+      "ii": 3,
+      "ptype": "判断"
+    },
+    {
+      "value": "<=;2500",
+      "t": 1,
+      "id": -1,
+      "index": 4,
+      "codeType": 1,
+      "term": "and",
+      "type": "生命比例",
+      "target": 1,
+      "ii": 4,
+      "ptype": "判断"
+    },
+    {
+      "value": "1500",
+      "t": 1,
+      "id": -1,
+      "index": 5,
+      "codeType": 1,
+      "term": "and",
+      "type": "概率",
+      "target": 1,
+      "ii": 5,
+      "ptype": "判断"
+    },
+    {
+      "value": "5",
+      "t": 1,
+      "id": -1,
+      "index": 6,
+      "codeType": 1,
+      "term": "and",
+      "type": "AI优先级",
+      "target": 1,
+      "ii": 6,
+      "ptype": "判断"
+    }
+  ]
+}

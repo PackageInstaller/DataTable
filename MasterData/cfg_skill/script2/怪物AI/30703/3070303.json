@@ -1,0 +1,63 @@
+{
+  "others": [],
+  "others_id": 0,
+  "name": "",
+  "ifs_or": [],
+  "others_num": 0,
+  "trigger": 32,
+  "ifs": [
+    {
+      "target": 1,
+      "value": "3500",
+      "t": 1,
+      "ii": 0,
+      "id": -1,
+      "codeType": 1,
+      "ptype": "判断",
+      "index": 0,
+      "term": "and",
+      "type": "概率"
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ii": 1,
+      "value": "3070303",
+      "codeType": 1,
+      "ptype": "判断",
+      "index": 1,
+      "term": "and",
+      "type": "监听消息"
+    }
+  ],
+  "triggerName": "消息事件",
+  "actions": [
+    {
+      "target": 1,
+      "value": "3070301;10500;10500",
+      "t": 1,
+      "ii": 1,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "index": 0,
+      "type": "设置CD"
+    },
+    {
+      "target": 1,
+      "value": "3070301_hold;0;5;1100;6;3070301_hold;spell_1_1;1000;;",
+      "t": 1,
+      "ii": 2,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "蓄力"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "ifs": [
+    {
+      "target": 1,
+      "value": "30607",
+      "term": "and",
+      "t": 1,
+      "type": "怪物bid",
+      "id": -1,
+      "ii": 0,
+      "ptype": "判断",
+      "index": 0,
+      "codeType": 1
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "term": "and",
+      "t": 1,
+      "type": "蓄力事件",
+      "value": "30607a_hold;1",
+      "ii": 1,
+      "ptype": "判断",
+      "index": 1,
+      "codeType": 1
+    }
+  ],
+  "others_num": 0,
+  "name": "",
+  "ifs_or": [],
+  "actions": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "type": "发射特效",
+      "value": "0#0#5;1#0#-30#30;0;3000;0#0;1;150;10000;250;82000_30607_1_atk#82000_30607_2_atk;30607a_hurt",
+      "ii": 1,
+      "ptype": "是",
+      "index": 0,
+      "codeType": 2
+    }
+  ],
+  "triggerName": "蓄力事件",
+  "others": [],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "others_id": 0,
+  "trigger": 30
+}

@@ -1,0 +1,63 @@
+{
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "ifs_or": [],
+  "others_num": 0,
+  "ifs": [
+    {
+      "value": "50203023",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ii": 0,
+      "codeType": 1,
+      "target": 1,
+      "term": "and",
+      "ptype": "判断",
+      "type": "检查CD"
+    },
+    {
+      "value": "50203023",
+      "ptype": "判断",
+      "id": -1,
+      "term": "and",
+      "ii": 1,
+      "codeType": 1,
+      "index": 1,
+      "target": 1,
+      "t": 1,
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 0,
+  "others": [],
+  "actions": [
+    {
+      "value": "50203023;2000;0;0",
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "ptype": "是",
+      "type": "设置CD"
+    },
+    {
+      "value": "0#0;0;0;0;84000_5020309_1_a;simplehurt;0;0;1,4,6,11200;0",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "target": 1,
+      "ptype": "是",
+      "type": "场景特效"
+    }
+  ],
+  "trigger": 25,
+  "ifs_and": [
+    0,
+    1
+  ]
+}

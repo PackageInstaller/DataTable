@@ -1,0 +1,121 @@
+{
+  "trigger": 30,
+  "triggerName": "蓄力事件",
+  "name": "",
+  "ifs_and": [
+    0,
+    1
+  ],
+  "ifs": [
+    {
+      "value": "30603",
+      "term": "and",
+      "id": -1,
+      "ii": 0,
+      "target": 1,
+      "t": 1,
+      "codeType": 1,
+      "index": 0,
+      "ptype": "判断",
+      "type": "怪物bid"
+    },
+    {
+      "value": "3060301_hold;1",
+      "term": "and",
+      "id": -1,
+      "ii": 1,
+      "target": 1,
+      "t": 1,
+      "codeType": 1,
+      "index": 1,
+      "ptype": "判断",
+      "type": "蓄力事件"
+    }
+  ],
+  "others_id": 1,
+  "ifs_or": [],
+  "others": [
+    null,
+    {
+      "elses": [
+        {
+          "value": "0;0;850;0;10;0;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 3,
+          "index": 0,
+          "target": 1,
+          "ptype": "否",
+          "type": "动作移动"
+        }
+      ],
+      "parentid": -1,
+      "id": 1,
+      "ifs_and": [
+        0
+      ],
+      "ifs": [
+        {
+          "value": "0#-35#35",
+          "term": "and",
+          "id": 1,
+          "ii": 0,
+          "index": 0,
+          "t": 3,
+          "codeType": 1,
+          "target": 1,
+          "ptype": "判断",
+          "type": "目标方位"
+        }
+      ],
+      "ifs_or": [],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "0;0;850;3#0#-30#30;10;0;0;0",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "动作移动"
+        }
+      ]
+    }
+  ],
+  "others_num": 1,
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "306030101;0;0;850;6;;;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "target": 1,
+      "ptype": "是",
+      "type": "蓄力"
+    },
+    {
+      "value": "0#0;300;0;1;82000_3060301_1_a;3060301_hurt;;0;;0",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "codeType": 2,
+      "target": 1,
+      "index": 2,
+      "ptype": "是",
+      "type": "场景特效"
+    }
+  ]
+}

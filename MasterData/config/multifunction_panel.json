@@ -1,0 +1,131 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "group",
+    "sort",
+    "enum_name",
+    "icon",
+    "restriction",
+    "prohibit"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "特惠",
+      "group": 1,
+      "sort": 1,
+      "enum_name": "tehui",
+      "icon": "mb_core1",
+      "prohibit": 1
+    },
+    {
+      "id": 2,
+      "name": "活动",
+      "group": 1,
+      "sort": 2,
+      "icon": "mb_core2",
+      "prohibit": 1
+    },
+    {
+      "id": 3,
+      "name": "冲刺",
+      "group": 1,
+      "sort": 3,
+      "enum_name": "evt_clickchongciBtn",
+      "icon": "mb_core3",
+      "restriction": "serverlaunched_time;>=;5",
+      "prohibit": 1
+    },
+    {
+      "id": 4,
+      "name": "试炼",
+      "group": 1,
+      "sort": 4,
+      "icon": "mb_core4",
+      "restriction": "trial_open;=;1",
+      "prohibit": 1
+    },
+    {
+      "id": 5,
+      "name": "七日任务",
+      "group": 1,
+      "sort": 5,
+      "enum_name": "qirirenwu",
+      "icon": "mb_core5",
+      "prohibit": 1
+    },
+    {
+      "id": 6,
+      "name": "商城",
+      "group": 1,
+      "sort": 6,
+      "enum_name": "shangcheng",
+      "icon": "mb_core6",
+      "prohibit": 1
+    },
+    {
+      "id": 7,
+      "name": "打赏",
+      "group": 1,
+      "sort": 7,
+      "enum_name": "zuanshi",
+      "icon": "mb_core7",
+      "prohibit": 1
+    },
+    {
+      "id": 8,
+      "name": "谏言查看",
+      "group": 1,
+      "sort": 8,
+      "enum_name": "message",
+      "icon": "mb_core8"
+    },
+    {
+      "id": 9,
+      "name": "签到",
+      "group": 1,
+      "sort": 9,
+      "icon": "mb_core9",
+      "prohibit": 1
+    },
+    {
+      "id": 10,
+      "name": "邮箱",
+      "sort": 1,
+      "enum_name": "mail",
+      "icon": "mb_assistant1"
+    },
+    {
+      "id": 11,
+      "name": "公告",
+      "sort": 2,
+      "enum_name": "gonggao",
+      "icon": "mb_assistant2"
+    },
+    {
+      "id": 12,
+      "name": "设置",
+      "sort": 3,
+      "enum_name": "setting",
+      "icon": "mb_assistant3"
+    },
+    {
+      "id": 13,
+      "name": "成就",
+      "group": 1,
+      "sort": 10,
+      "icon": "mb_core10",
+      "prohibit": 1
+    },
+    {
+      "id": 14,
+      "name": "首充",
+      "group": 1,
+      "sort": 11,
+      "enum_name": "shouchong",
+      "icon": "mb_core3",
+      "prohibit": 1
+    }
+  ]
+}

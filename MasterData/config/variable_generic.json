@@ -1,0 +1,1014 @@
+{
+  "columns": [
+    "id",
+    "name",
+    "set_type",
+    "function",
+    "change_conditions",
+    "flag",
+    "format"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "enter_area_X",
+      "set_type": 2,
+      "function": "判断玩家是否进入指定区域",
+      "change_conditions": "玩家进入指定区域后，赋值为1",
+      "flag": 1,
+      "format": "enter_area_X;对应的地图mapkey/（字符串）指定名称;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 2,
+      "name": "talkfyxr_first",
+      "set_type": 2,
+      "function": "判断玩家是否完成了在刑罚湖神像（id=100106）与芙娅的最初对话",
+      "change_conditions": "在神弃之地的刑罚湖外围存档点（id=100106），首次通过存档点与芙娅对话，完成对话后，变量由0变为1。\n\n变量为0时，周围区域需要进行阻挡，玩家无法前进。\n需要在变量为1后，才撤销对玩家的探索限制。\n\n该完成需要玩家完成为芙娅取名流程，并获得道具奖励才算。",
+      "format": "talkfyxr_first;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 3,
+      "name": "change_fyname",
+      "set_type": 2,
+      "function": "判断玩家是否给芙娅更改了姓名",
+      "change_conditions": "默认为0。\n玩家取了非“芙娅”的名称，change_fyname赋值为1；\n若玩家选择【芙娅就是芙娅】（取消选项）或进行改名但最终依旧为“芙娅”时，change_fyname赋值为2。",
+      "format": "change_fyname;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 4,
+      "name": "gender",
+      "set_type": 1,
+      "function": "判断玩家创建谒魂者的性别",
+      "change_conditions": "①玩家若选择男主，则gender赋值为1；\n②若玩家选择女主，则gender赋值为0。",
+      "format": "gender;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 5,
+      "name": "have_X",
+      "set_type": 1,
+      "function": "判断玩家是否持有X道具Y个",
+      "change_conditions": "变量默认为0，对应道具每持有1个，则+1",
+      "flag": 1,
+      "format": "have_X;对应物品的id;逻辑判断符号;持有数量比较值"
+    },
+    {
+      "id": 6,
+      "name": "bossdead_X",
+      "set_type": 2,
+      "function": "判断对应id的怪物是否已经死亡，\n一般用于只刷新1只且死亡后不会重复刷新的主线BOSS判断",
+      "change_conditions": "若XXX对象被击杀，则变量由0变更为1。",
+      "flag": 1,
+      "format": "bossdead_X;对应怪物事件的事件id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 7,
+      "name": "7god_kill",
+      "set_type": 4,
+      "function": "判断玩家击杀7神的数量",
+      "change_conditions": "初始为0，每杀死一个七神+1；\n七神对应ID待定",
+      "format": "7god_kill;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 8,
+      "name": "battle_X",
+      "set_type": 2,
+      "function": "判断是否触发与对应怪物的战斗",
+      "change_conditions": "只要触发战斗，变量就由0变为1，不论战斗结果。\n（应该是依据是否进入怪物的索敌范围来判断）",
+      "flag": 1,
+      "format": "battle_X;对应怪物事件的事件id（也可能是怪物名称字符串？）;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 9,
+      "name": "playerlevel",
+      "set_type": 1,
+      "function": "判断玩家是否达到对应等级（玩家等级）",
+      "change_conditions": "统计当前玩家的实际等级，玩家多少级，playerlevel的值就为多少。",
+      "format": "playerlevel;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 10,
+      "name": "entermap",
+      "set_type": 2,
+      "function": "判断玩家是否首次进入指定地图区域",
+      "change_conditions": "entermap变量初始赋值为0，当玩家首次进入指定地图区域中的模块后（map表对应id时的mapkey字段包含的全部地图模块），entermap变量赋值为1",
+      "flag": 1,
+      "format": "entermap;地图区域id;逻辑判断符号;计数数值\n\n*地图区域id对应map表id字段"
+    },
+    {
+      "id": 11,
+      "name": "entermap_count",
+      "set_type": 4,
+      "function": "判断玩家从首次进入指定地图区域后开始，已经经历过几次存档点",
+      "change_conditions": "entermap_count变量初始赋值为0，当玩家首次进入指定地图区域后（map表对应id时的mapkey字段包含的全部地图模块），统计累计使用存档点的次数，每使用1次entermap_count变量值+1",
+      "flag": 1,
+      "format": "entermap_count;地图区域id;逻辑判断符号;计数数值\n\n*地图区域id对应map表id字段"
+    },
+    {
+      "id": 12,
+      "name": "map_exploration",
+      "set_type": 2,
+      "function": "判断玩家指定地图的探索度达成率是否满足",
+      "change_conditions": "需要读取玩家在指定地图的实际探索完成率，然后赋值给map_exploration变量，进行判断",
+      "flag": 1,
+      "format": "map_exploration;地图区域id;逻辑判断符号;计数数值（填写万分比）\n\n*地图区域id对应map表id字段"
+    },
+    {
+      "id": 13,
+      "name": "talkwith_X",
+      "set_type": 2,
+      "function": "判断玩家是否完成了和对应NPC的对话",
+      "change_conditions": "初始为0，当完成了和对应NPC的完整对话后，赋值为1",
+      "flag": 1,
+      "format": "talkwith_X;对应NPC的id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 14,
+      "name": "talkwith_(X1-X2-X3)",
+      "set_type": 2,
+      "function": "判断玩家是否至少完成了多个指定NPC中的其中一个的完整对话。\n（或逻辑）",
+      "change_conditions": "非赋值变量，而是作为判断条件。\n判断talkwith_X1、talkwith_X2、talkwith_X3......是否至少有1个满足=比较数值。\n若至少有1个满足=比较数值，则条件满足。\n\ntalkwith_X1、talkwith_X2、talkwith_X3逻辑和talkwith_X一致；",
+      "flag": 1,
+      "format": "talkwith_(X1-X2-X3);对应NPC的id1;对应NPC的id2;......;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 15,
+      "name": "talkwith_(X1_X2_X3)",
+      "set_type": 2,
+      "function": "判断玩家是否同时完成了多个指定NPC的完整对话。\n（与逻辑）",
+      "change_conditions": "非赋值变量，而是作为判断条件。\n判断talkwith_X1、talkwith_X2、talkwith_X3......是否全都满足=比较数值。\n若全都满足=比较数值，则条件满足。\n\ntalkwith_X1、talkwith_X2、talkwith_X3逻辑和talkwith_X一致；",
+      "flag": 1,
+      "format": "talkwith_(X1_X2_X3);对应NPC的id1;对应NPC的id2;......;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 16,
+      "name": "save_X",
+      "set_type": 4,
+      "function": "判断与指定NPC对话后，经过的存档点次数（时间），用于控制各区域刷新情况，",
+      "change_conditions": "初始为0，和X所对应id的NPC完成对话后，累计使用存档点的次数，每使用1次+1",
+      "flag": 1,
+      "format": "save_X;对应事件的唯一标识（字符串或id）;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 17,
+      "name": "save_(X1-X2-X3)",
+      "set_type": 4,
+      "function": "判断玩家是否至少完成了多个指定NPC中的其中一个的完整对话，并在完成对话后，使用了对应次数的存档点。\n（或逻辑）",
+      "change_conditions": "初始为0，和X1、X2、X3...中任意一个所对应id的NPC完成了对话后，累计使用存档点的次数，每使用1次+1",
+      "flag": 1,
+      "format": "save_(X1-X2-X3);对应NPC的id1;对应NPC的id2;......;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 18,
+      "name": "save_(X1_X2_X3)",
+      "set_type": 4,
+      "function": "判断玩家是否同时完成了多个指定NPC的完整对话，并在完成对话后，使用了对应次数的存档点。\n（与逻辑）",
+      "change_conditions": "初始为0，和X1、X2、X3...所有对应id的NPC完成了对话后，累计使用存档点的次数，每使用1次+1",
+      "flag": 1,
+      "format": "save_(X1_X2_X3);对应NPC的id1;对应NPC的id2;......;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 19,
+      "name": "interactive_bgjt",
+      "set_type": 4,
+      "function": "判断玩家累计激活的悲歌祭坛数量",
+      "change_conditions": "interactive_bgjt变量初始赋值为0，玩家每在大世界和1个新的悲歌祭坛进行交互（对应map_event表type字段=8的事件，每个事件仅记录1次，重复交互不再记录），interactive_bgjt变量+1。",
+      "format": "interactive_bgjt;逻辑判断符号;计数数值"
+    },
+    {
+      "id": 20,
+      "name": "choice_killPrincess",
+      "set_type": 2,
+      "function": "判断玩家是否在对斩龙血姬的选择中，选择处死斩龙血姬",
+      "change_conditions": "初值为0，\n①若玩家选择【处死斩龙血姬】，则choice_killPrincess赋值为1；\n②若玩家选择【放过斩龙血姬】，则choice_killPrincess赋值为2。",
+      "format": "choice_killPrincess;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 21,
+      "name": "killboss_X",
+      "set_type": 4,
+      "function": "统计玩家累计击杀特定怪物的数量",
+      "change_conditions": "初始为0，每击杀对应事件id的怪物1个，该变量值+1",
+      "flag": 1,
+      "format": "killboss_X;对应BOSS事件的事件id1;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 22,
+      "name": "monkill_var_X",
+      "set_type": 2,
+      "function": "判断是否击杀对应战斗事件",
+      "change_conditions": "初始为0，完成对应事件id的对象击杀后，该变量值复制为1",
+      "flag": 1,
+      "format": "monkill_var_X;对应事件的唯一标识（事件id）;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 23,
+      "name": "END_X",
+      "set_type": 2,
+      "function": "结局变量，用于根据对应事件该变量在判断时的具体参数，来判断需要进入哪个对应结局分支",
+      "change_conditions": "初始为0，参数变化靠各字段赋值",
+      "flag": 1,
+      "format": "END_X;对应事件统称（字符串）;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 24,
+      "name": "event_X",
+      "set_type": 2,
+      "function": "事件变量，用于记录事件进行程度，方便在对应时刻进行条件判断",
+      "change_conditions": "初始为0，根据npc等其它表格实际情况进行赋值",
+      "flag": 1,
+      "format": "event_X;event_事件名称（字符串）;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 25,
+      "name": "rolelevel",
+      "set_type": 4,
+      "function": "判断玩家持有的谒魂者中，是否有任意X个谒魂者等级达到Y等级",
+      "change_conditions": "需要遍历玩家持有的全部角色，将所有角色按等级由高到低排序，等级超过Y的数量，将该值赋值给rolelevel_X变量，进行判断",
+      "flag": 1,
+      "format": "rolelevel;需求等级判断;逻辑判断符号;比较数值(需求数量)"
+    },
+    {
+      "id": 26,
+      "name": "worldlevel",
+      "set_type": 2,
+      "function": "判断玩家当前的灵魂等级（世界等级）是否达到对应等级",
+      "change_conditions": "读取玩家的当前灵魂等级（世界等级），并赋值给worldlevel_X变量，进行判断",
+      "format": "worldlevel;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 27,
+      "name": "reputationlevel",
+      "set_type": 4,
+      "function": "判断玩家在“冒险手册”系统中的当前声望等级，是否达到对应等级",
+      "change_conditions": "reputationlevel变量初始赋值为1，每当玩家完成提升声望等级所要求的全部任务（判断为task表usage_scenario字段=2，type_1字段X参数=reputationlevel变量当前值，Y参数=2时所对应的任务是否完成），且已经领取了对应奖励时，其变量值+1。\n\n该变量值存在累加上限，暂定为10。",
+      "format": "reputationlevel;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 28,
+      "name": "rolefavorability",
+      "set_type": 2,
+      "function": "判断玩家持有的谒魂者中，是否有任意谒魂者的爱慕度达到对应等级",
+      "change_conditions": "需要遍历玩家持有的全部角色，取所有角色中爱慕值最大的值，将该值赋值给rolefavorability变量，进行判断",
+      "format": "reputationlevel;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 29,
+      "name": "rolefavorability_X",
+      "set_type": 2,
+      "function": "判断玩家持有的谒魂者中，指定谒魂者的爱慕度是否达到对应等级",
+      "change_conditions": "需要进行两重判断：\n1.判断玩家是否拥有指定角色\n2.若玩家拥有指定角色，判断该角色的爱慕值是否满足需求",
+      "flag": 1,
+      "format": "reputationlevel_X;对应角色的角色id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 30,
+      "name": "godhoodcost",
+      "set_type": 3,
+      "function": "判断玩家是否有至少一个谒魂者的神格配置上，消耗的cost值大于指定数值",
+      "change_conditions": "需要遍历玩家持有的全部角色，取得各个角色的神格配置数据，取cost值消费最大的值，将该值赋值给rolelevel变量，进行判断",
+      "format": "godhoodcost;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 31,
+      "name": "rolesixvein_X",
+      "set_type": 2,
+      "function": "判断指定谒魂者的六祗纹等级是否达到对应等级",
+      "change_conditions": "需要进行两重判断：\n1.判断玩家是否拥有指定角色\n2.若玩家拥有指定角色，判断该角色的六祗纹等级是否满足需求",
+      "flag": 1,
+      "format": "rolesixvein_X;对应角色的角色id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 32,
+      "name": "joss_activate",
+      "set_type": 4,
+      "function": "判断玩家累计激活的神像的总数是否达到对应数量",
+      "change_conditions": "获取玩家累计激活的神像的总数，并赋值给joss_activate变量，进行判断",
+      "format": "joss_activate;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 33,
+      "name": "kill_eventtype7",
+      "set_type": 4,
+      "function": "判断玩家是否累计击杀超过对应数量的首领怪物（对应map_event表type字段=7）",
+      "change_conditions": "获取玩家累计击杀的首领怪物（对应map_event表type字段=7）的总数，并赋值给kill_eventtype7变量，进行判断",
+      "format": "killevent_type7;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 34,
+      "name": "todaykill_eventtype7",
+      "set_type": 4,
+      "function": "判断玩家是否在单日累计击杀超过对应数量的首领怪物（对应map_event表type字段=7）",
+      "change_conditions": "获取玩家在单日累计击杀的首领怪物（对应map_event表type字段=7）的总数，并赋值给kill_eventtype7变量，进行判断\n\n该变量每日需要重置",
+      "format": "todaykill_eventtype7;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 35,
+      "name": "open_box",
+      "set_type": 4,
+      "function": "判断玩家是否累计开启了超过对应数量的宝箱（对应map_event表type字段=4）",
+      "change_conditions": "获取玩家累计开启的宝箱（对应map_event表type字段=7）的总数，并赋值给open_box变量，进行判断",
+      "format": "open_box;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 36,
+      "name": "todayopen_box",
+      "set_type": 4,
+      "function": "判断玩家是否在单日累计开启了超过对应数量的宝箱（对应map_event表type字段=4）",
+      "change_conditions": "获取玩家单日累计开启的宝箱（对应map_event表type字段=7）的总数，并赋值给open_box变量，进行判断",
+      "format": "todayopen_box;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 37,
+      "name": "admonition_count",
+      "set_type": 4,
+      "function": "判断玩家累计发布谏言的数量是否达到对应数量",
+      "change_conditions": "获取玩家累计发布谏言的总次数，并赋值给admonition_count变量，进行判断",
+      "format": "admonition_count;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 38,
+      "name": "admonition_getlike",
+      "set_type": 4,
+      "function": "判断玩家发布的谏言，累计获得的点赞数量是否达到指定值",
+      "change_conditions": "玩家发布的所有谏言，在未被因满数量而被清除前，每次获得其它玩家的点赞，就会给admonition_getlike变量的值+1。\n(即便后续该谏言被系统删除，被点赞的记录也留在该变量计数中)",
+      "format": "admonition_getlike;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 39,
+      "name": "talkwith_eventtype3",
+      "set_type": 4,
+      "function": "判断玩家累计与多少个NPC进行过交流",
+      "change_conditions": "1.talkwith_eventtype3变量初始赋值为0；\n玩家每和一个map_event表type字段=3，且buding字段=0的事件对象（NPC）完成对话，talkwith_eventtype3变量的值+1。\n2.每个map_event表type字段=3的事件对象（NPC），只记录1次完成结果，多次记录无效\n3.还需要根据对应的eid字段，定位至npc表，判断npc_type字段。在相同大地图区域(所在mapkey对应map表id字段)，且npc_type字段相同的，合起来仅记录1次。",
+      "format": "talkwith_eventtype3;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 40,
+      "name": "talkfrequency_X",
+      "set_type": 4,
+      "function": "判断玩家是否和指定NPC进行了对应次数的交谈",
+      "change_conditions": "talkfrequency_X变量初始赋值为0，每和指定的NPC进行一次交谈，talkfrequency_X变量值+1。",
+      "flag": 1,
+      "format": "talkfrequency_X;对应NPC的id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 41,
+      "name": "npcfavorability_yynw",
+      "set_type": 2,
+      "function": "判断特殊NPC渊眼女王对玩家的好感度是否达到指定值",
+      "change_conditions": "特殊处理：\n涉及一个特殊NPC，该NPC会持有其它NPC没有的好感度系统。\n且这个好感度不会随着赛季更新而更新。\n\n需要时刻记录其好感度的变化，并将数据赋值给npcfavorability_yynw变量",
+      "format": "npcfavorability_yynw;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 42,
+      "name": "interactive_sl",
+      "set_type": 4,
+      "function": "判断玩家累计遣返森灵数量是否达到指定值",
+      "change_conditions": "interactive_sl变量初始赋值为0，每完成1个森林的遣返（对应map_event表type字段=9的事件），interactive_sl变量值+1。",
+      "format": "interactive_sl;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 43,
+      "name": "interactive_mtt",
+      "set_type": 4,
+      "function": "判断玩家累计完成谜题塔解密次数是否达到指定值",
+      "change_conditions": "interactive_mtt变量初始赋值为0，玩家每在大世界完成一个谜题塔事件（对应map_event表type字段=10的事件），interactive_mtt变量+1。",
+      "format": "interactive_mtt;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 44,
+      "name": "interactive_alice",
+      "set_type": 4,
+      "function": "判断玩家累计捉住艾莉丝数量是否达到指定值",
+      "change_conditions": "interactive_alice变量初始赋值为0，每完成1个艾莉丝的捕捉（对应map_event表type字段=13的事件），interactive_alice变量值+1。",
+      "format": "interactive_alice;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 45,
+      "name": "interactive_callfriends",
+      "set_type": 4,
+      "function": "判断玩家累计召唤盟友进行协助作战的次数是否达到指定值",
+      "change_conditions": "应该是指的玩家使用交互物唤灵蜡烛召唤助战的次数（map_interactive表interactive_type字段参数=29）",
+      "format": "interactive_callfriends;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 46,
+      "name": "relics_count",
+      "set_type": 4,
+      "function": "判断玩家累计收集到的遗物总数量是否达到指定值",
+      "change_conditions": "需要遍历玩家持有的遗物收集品道具数量，将其赋值给relics_count变量，进行判断",
+      "format": "relics_count;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 47,
+      "name": "fyzxlevel",
+      "set_type": 2,
+      "function": "判断玩家的芙娅之心等级是否达到指定等级",
+      "change_conditions": "读取玩家在芙娅之心系统中的芙娅之心等级，将其赋值给fyzxlevel变量，进行判断",
+      "format": "fyzxlevel;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 48,
+      "name": "elixir_jclevel",
+      "set_type": 2,
+      "function": "判断玩家契泪圣露瓶的精粹等级是否达到指定等级",
+      "change_conditions": "elixir_jclevel变量初始赋值为0，玩家每在契泪圣露瓶界面，对契泪圣露瓶进行一次灵药使用上限突破（对应elixir_limit表），elixir_jclevel变量值+1。",
+      "format": "elixir_jclevel;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 49,
+      "name": "elixir_hxlevel",
+      "set_type": 2,
+      "function": "判断玩家契泪圣露瓶的魂屑等级是否达到指定等级",
+      "change_conditions": "elixir_hxlevel变量初始赋值为0，玩家每在契泪圣露瓶界面，对契泪圣露瓶进行一次灵药效果强化（对应elixir_strengthen表），elixir_hxlevel变量值+1。",
+      "format": "elixir_hxlevel;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 50,
+      "name": "role_recruitment",
+      "set_type": 4,
+      "function": "判断玩家累计进行角色招募的次数是否达到指定次数",
+      "change_conditions": "role_recruitment变量初始赋值为0，玩家每在角色招募的界面进行1次角色招募，role_recruitment变量值+1。",
+      "format": "role_recruitment;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 51,
+      "name": "godhood_recruitment",
+      "set_type": 4,
+      "function": "判断玩家累计进行神格召唤的次数是否达到指定次数",
+      "change_conditions": "godhood_recruitment变量初始赋值为0，玩家每在神格召唤的界面进行1次神格召唤，godhood_recruitment变量值+1。",
+      "format": "godhood_recruitment;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 52,
+      "name": "godhood_refining",
+      "set_type": 4,
+      "function": "判断玩家累计洗炼神格的次数是否达到指定次数",
+      "change_conditions": "godhood_refining变量初始赋值为0，玩家每在神格强化界面进行1次神格洗炼，godhood_refining变量值+1。",
+      "format": "godhood_refining;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 53,
+      "name": "godhood_remould",
+      "set_type": 4,
+      "function": "判断玩家累计重铸神格的次数是否达到指定次数",
+      "change_conditions": "godhood_remould变量初始赋值为0，玩家每在神格强化界面进行1次神格重铸，godhood_remould变量值+1。",
+      "format": "godhood_remould;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 54,
+      "name": "godhood_synthesis",
+      "set_type": 4,
+      "function": "判断玩家累计转生神格的次数是否达到指定次数",
+      "change_conditions": "godhood_synthesis变量初始赋值为0，玩家每在神格强化界面进行1次神格转生，godhood_synthesis变量值+1。",
+      "format": "godhood_synthesis;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 55,
+      "name": "weaponlevel",
+      "set_type": 4,
+      "function": "判断玩家持有的武器中，是否有指定数量的武器，强化到了指定等级",
+      "change_conditions": "1.先根据“需求判断的武器数量”，从玩家持有的武器中，按照武器等级由高到底提取出对应数量的武器。\n2.依次判断提取出的武器，是否都满足等级需求",
+      "flag": 1,
+      "format": "weaponlevel;需求等级;逻辑判断符号;比较数值(需求判断的武器数量)"
+    },
+    {
+      "id": 56,
+      "name": "equipment_refining",
+      "set_type": 4,
+      "function": "判断玩家累计进行武器洗炼的次数，是否达到对应次数",
+      "change_conditions": "equipment_refining变量初始赋值为0，玩家每在装备洗炼界面进行1次装备洗炼，equipment_refining变量值+1。",
+      "format": "equipment_refining;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 57,
+      "name": "cooking_frequency",
+      "set_type": 4,
+      "function": "判断玩家累计进行烹饪的次数，是否达到对应次数",
+      "change_conditions": "cooking_frequency变量初始赋值为0，玩家每在神像的烹饪系统界面中，进行一次烹饪，cooking_frequency变量值+1。",
+      "format": "cooking_frequency;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 58,
+      "name": "todaycooking_frequency",
+      "set_type": 4,
+      "function": "判断玩家单日进行烹饪的次数，是否达到对应次数",
+      "change_conditions": "1.todaycooking_frequency变量初始赋值为0，玩家每在神像的烹饪系统界面中，进行一次烹饪，todaycooking_frequency变量值+1。\n2.todaycooking_frequency变量，每日需进行重置，重新赋值为0。",
+      "format": "todaycooking_frequency;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 59,
+      "name": "alchemy_frequency",
+      "set_type": 4,
+      "function": "判断玩家累计进行炼金术的次数，是否达到对应次数",
+      "change_conditions": "alchemy_frequency变量初始赋值为0，玩家每在神像的烹饪系统界面中，进行一次烹饪，alchemy_frequency变量值+1。",
+      "format": "alchemy_frequency;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 60,
+      "name": "todayalchemy_frequency",
+      "set_type": 4,
+      "function": "判断玩家单日进行炼金术的次数，是否达到对应次数",
+      "change_conditions": "1.todayalchemy_frequency变量初始赋值为0，玩家每在神像的烹饪系统界面中，进行一次烹饪，todayalchemy_frequency变量值+1。\n2.todayalchemy_frequency变量，每日需进行重置，重新赋值为0。",
+      "format": "todayalchemy_frequency;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 61,
+      "name": "master_cooking",
+      "set_type": 4,
+      "function": "判断玩家习得烹饪方法的数量",
+      "change_conditions": "读取玩家在神像-烹饪系统中，已解锁的烹饪配方数量，并将其赋值给master_cooking变量，进行判断",
+      "format": "master_cooking;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 62,
+      "name": "master_alchemy",
+      "set_type": 4,
+      "function": "判断玩家习得炼金术的数量",
+      "change_conditions": "读取玩家在神像-炼金术系统中，已解锁的炼金术配方数量，并将其赋值给master_alchemy变量，进行判断",
+      "format": "master_alchemy;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 63,
+      "name": "godbody_count",
+      "set_type": 4,
+      "function": "判定玩家累计收集的神之躯体的数量",
+      "change_conditions": "godbody_count变量初始赋值为0，玩家每获得一个神之躯体（goods表type字段=1011），godbody_count变量值+1。",
+      "format": "godbody_count;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 64,
+      "name": "sum_mrak",
+      "set_type": 1,
+      "function": "判断玩家日之印栏位解锁情况",
+      "change_conditions": "attribute_id表做属性时似乎已经做了个sum_mrak变量（id=503），用于判断日之印栏位当前解锁数量。\n直接调用那个变量的实际数据进行判断即可。",
+      "format": "sum_mrak;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 65,
+      "name": "moon_mark",
+      "set_type": 1,
+      "function": "判断玩家月之印栏位解锁情况",
+      "change_conditions": "attribute_id表做属性时似乎已经做了个moon_mrak变量(id=504)，用于判断日之印栏位当前解锁数量。\n直接调用那个变量的实际数据进行判断即可。",
+      "format": "moon_mark;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 66,
+      "name": "dmjfloors",
+      "set_type": 2,
+      "function": "判断玩家大秘境层数是否达到要求层数",
+      "change_conditions": "需要读取玩家当前的大秘境层数，并赋值给dmjfloors变量，进行判断",
+      "format": "dmjfloors;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 67,
+      "name": "decomposing_count",
+      "set_type": 4,
+      "function": "判断玩家累计进行分解操作的次数",
+      "change_conditions": "decomposing_count变量初始赋值为0，玩家每完成一次分解行为（不论一次分解多少装备，进行一次分解并得到返回物，算1次），decomposing_count变量值+1。",
+      "format": "decomposing_count;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 68,
+      "name": "todaydecomposing_count",
+      "set_type": 4,
+      "function": "判断玩家当日累计进行分解操作的次数",
+      "change_conditions": "1.todaydecomposing_count变量初始赋值为0，玩家每完成一次分解行为（不论一次分解多少装备，进行一次分解并得到返回物，算1次），todaydecomposing_count变量值+1。\n2.todaydecomposing_count字段每日会进行重置，重新赋值为0。",
+      "format": "todaydecomposing_count;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 69,
+      "name": "inlay_yujin",
+      "set_type": 4,
+      "function": "判断玩家累计为武器铭刻余烬战技的次数",
+      "change_conditions": "inlay_yujin变量初始赋值为0，每当玩家为武器铭刻1次余烬战技，inlay_yujin变量值+1。",
+      "format": "inlay_yujin;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 70,
+      "name": "inlay_rune",
+      "set_type": 4,
+      "function": "判断玩家是否累计为装备进行了指定次数的符文石镶嵌",
+      "change_conditions": "inlay_rune变量初始赋值为0，每当玩家为任意装备进行了1次符文石镶嵌，inlay_rune变量值+1。",
+      "format": "inlay_rune;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 71,
+      "name": "battlerole",
+      "set_type": 1,
+      "function": "判断玩家的出战队伍，是否满足指定出战角色数量",
+      "change_conditions": "当玩家在角色出战界面，点击“出战”或关闭该界面时，进行判断，判断是否满足需求。",
+      "format": "battlerole;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 72,
+      "name": "wear_armor",
+      "set_type": 2,
+      "function": "判断玩家是否穿戴了指定数量的防具",
+      "change_conditions": "需要在玩家进行装备配置时进行判断，看玩家操控的角色此时佩戴的防具数量是否符合。\n防具：goods表type字段=1002、1003、1004、1005",
+      "format": "wear_armor;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 73,
+      "name": "wear_sum_mrak",
+      "set_type": 2,
+      "function": "判断玩家是否穿戴了指定数量的日之印",
+      "change_conditions": "需要在玩家进行装备配置时进行判断，看玩家操控的角色此时佩戴的日之印数量是否符合。\n日之印：goods表type字段=1007",
+      "format": "wear_sum_mrak;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 74,
+      "name": "wear_moon_mark",
+      "set_type": 2,
+      "function": "判断玩家是否穿戴了指定数量的月之印",
+      "change_conditions": "需要在玩家进行装备配置时进行判断，看玩家操控的角色此时佩戴的防具数量是否符合。\n月之印：goods表type字段=1008",
+      "format": "wear_moon_mark;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 75,
+      "name": "wear_contract",
+      "set_type": 2,
+      "function": "判断玩家是否穿戴了指定数量的契约",
+      "change_conditions": "需要在玩家进行装备配置时进行判断，看玩家操控的角色此时佩戴的防具数量是否符合。\n契约：goods表type字段=1010",
+      "format": "wear_contract;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 76,
+      "name": "wear_qh",
+      "set_type": 2,
+      "function": "判断玩家是否为契泪圣露瓶配置了指定数量的契约",
+      "change_conditions": "需要在玩家处于契泪圣露瓶界面，进行契魂配置时进行判断，此时玩家为契泪圣露瓶配置的契魂数量是否符合需求。\n契魂：goods表type字段=1009",
+      "format": "wear_qh;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 77,
+      "name": "wear_godhood",
+      "set_type": 2,
+      "function": "判断玩家所持有的全部角色，累计穿戴神格的数量",
+      "change_conditions": "需要遍历玩家所持有的全部角色，她们穿戴神格的信息，统计她们一共穿戴的神格数量，将该数值赋值给wear_godhood变量，进行判断",
+      "format": "wear_godhood;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 78,
+      "name": "rolewear_godhood",
+      "set_type": 3,
+      "function": "判断玩家所持有的全部角色中，单个角色最大穿戴的神格数量",
+      "change_conditions": "需要遍历玩家所持有的全部角色，从中提取出穿戴神格数量最多的角色，取她穿戴神格的具体数量的数值，将该数值赋值给rolewear_godhood变量，进行判断",
+      "format": "rolewear_godhood;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 79,
+      "name": "achievement_score",
+      "set_type": 2,
+      "function": "判断玩家累计获得的成就积分，是否达到了指定数值",
+      "change_conditions": "需要读取玩家当前的成就积分，将其赋值给achievement_score变量，进行判断",
+      "format": "achievement_score;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 80,
+      "name": "completetask_X",
+      "set_type": 2,
+      "function": "判断玩家是否已完成全部指定的任务",
+      "change_conditions": "completetask_X变量初始赋值为0，当中间给予的全部任务（对应task表id字段）都完成后，completetask_X变量赋值为1",
+      "flag": 1,
+      "format": "completetask_X;对应task表任务id1;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 81,
+      "name": "todayadmonition_count",
+      "set_type": 4,
+      "function": "判断玩家单日发布谏言的数量是否达到对应数量",
+      "change_conditions": "todayadmonition_count初始赋值为0，玩家发布1条谏言，todayadmonition_count变量值+1。\n该变量第二日需要重置，重新赋值为0。",
+      "format": "todayadmonition_count;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 82,
+      "name": "role_upgrade",
+      "set_type": 4,
+      "function": "判断玩家是否累计对任意角色进行了一定次数的升级行为",
+      "change_conditions": "role_upgrade初始赋值为0，玩家每对任意角色进行1次升级行为（不论升多少级，点一次升级弹窗弹窗算1次），role_upgrade变量值+1。",
+      "format": "role_upgrade;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 83,
+      "name": "todayrole_upgrade",
+      "set_type": 4,
+      "function": "判断玩家是否在单日对任意角色进行了一定次数的升级行为",
+      "change_conditions": "todayrole_upgrade初始赋值为0，玩家每对任意角色进行1次升级行为（不论升多少级，点一次升级弹窗弹窗算1次），todayrole_upgrade变量值+1。\n该变量第二日需要重置，重新赋值为0。",
+      "format": "todayrole_upgrade;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 84,
+      "name": "weapon_upgrade",
+      "set_type": 4,
+      "function": "判断玩家是否累计对任意武器进行了一定次数的升级行为",
+      "change_conditions": "weapon_upgrade初始赋值为0，玩家每对任意武器进行1次升级行为（不论升多少级，点一次升级弹窗弹窗算1次），weapon_upgrade变量值+1。",
+      "format": "weapon_upgrade;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 85,
+      "name": "todayweapon_upgrade",
+      "set_type": 4,
+      "function": "判断玩家是否在单日对任意武器进行了一定次数的升级行为",
+      "change_conditions": "todayweapon_upgrade初始赋值为0，玩家每对任意武器进行1次升级行为（不论升多少级，点一次升级弹窗弹窗算1次），todayweapon_upgrade变量值+1。\n该变量第二日需要重置，重新赋值为0。",
+      "format": "todayweapon_upgrade;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 86,
+      "name": "todayrole_recruitment",
+      "set_type": 4,
+      "function": "判断玩家单日进行角色招募的次数是否达到指定次数",
+      "change_conditions": "todayrole_recruitment变量初始赋值为0，玩家每在角色招募的界面进行1次角色招募，todayrole_recruitment变量值+1。\n该变量第二日需要重置，重新赋值为0。",
+      "format": "todayrole_recruitment;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 87,
+      "name": "todayequipment_refining",
+      "set_type": 4,
+      "function": "判断玩家单日进行武器洗炼的次数，是否达到对应次数",
+      "change_conditions": "todayequipment_refining变量初始赋值为0，玩家每在装备洗炼界面进行1次装备洗炼，todayequipment_refining变量值+1。\n该变量第二日需要重置，重新赋值为0。",
+      "format": "todayequipment_refining;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 88,
+      "name": "completetask1_(X1_X2_X3)",
+      "set_type": 2,
+      "function": "判断玩家是否同时完成了声望表（task_reputation）中多个指定任务。\n（与逻辑）",
+      "change_conditions": "初始赋值为0.\n判断task_reputation表中指定id的多个任务，是否全都已经完成，若全部完成，则赋值为1",
+      "flag": 1,
+      "format": "completetask1_(X1_X2_X3);对应声望表（task_reputation）内的任务id1;对应声望表内的任务id2;......;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 89,
+      "name": "completetask2_(X1_X2_X3)",
+      "set_type": 2,
+      "function": "判断玩家是否同时完成了成就表（）中多个指定任务。\n（与逻辑）",
+      "change_conditions": "初始赋值为0.\n判断成就表（）中指定id的多个任务，是否全都已经完成，若全部完成，则赋值为1",
+      "flag": 1,
+      "format": "completetask2_(X1_X2_X3);对应成就表内的任务id1;对应成就表的任务id2;......;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 90,
+      "name": "activity_value",
+      "set_type": 4,
+      "function": "判断玩家单日活跃度",
+      "change_conditions": "1.初始赋值为0，通过完成对应任务进行变量值的增加（task_daily表gift2字段）；\n2.每日4点该变量进行重置，重新赋值为0",
+      "format": "activity_value;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 91,
+      "name": "completetask1_X",
+      "set_type": 2,
+      "function": "判断玩家是否完成了声望表（task_reputation）中指定的任务。",
+      "change_conditions": "初始赋值为0.\n判断task_reputation表中指定id的单个任务，是否已经完成，若已经完成，则赋值为1",
+      "flag": 1,
+      "format": "completetask1_X;对应声望表（task_reputation）内的任务id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 92,
+      "name": "completetask2_X",
+      "set_type": 2,
+      "function": "判断玩家是否完成了成就表（）中指定的任务。",
+      "change_conditions": "初始赋值为0.\n判断成就表（）中指定id的单个任务，是否已经完成，若已经完成，则赋值为1",
+      "flag": 1,
+      "format": "completetask2_X;对应成就表（）内的任务id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 93,
+      "name": "roleskill_level",
+      "set_type": 4,
+      "function": "判断玩家持有的谒魂者包含的技能中，是否有任意X个技能的等级高于Y级\n（这个等级计算总等级，不区分基础等级和加成等级）",
+      "change_conditions": "需要遍历玩家持有的全部角色及他们的技能等级情况，将所有技能按等级由高到低排序，等级超过Y的数量，将该值赋值给roleskill_level变量，进行判断",
+      "flag": 1,
+      "format": "roleskill_level;需求等级判断;逻辑判断符号;比较数值(需求数量)"
+    },
+    {
+      "id": 94,
+      "name": "roleskill_upgrade",
+      "set_type": 4,
+      "function": "判断玩家累计为角色升级角色技能的次数，是否达到对应次数\n（任意角色的任意技能都算）\n（指的是玩家主动强化技能，六祗纹、声望等额外途径获得的等级提升不算）",
+      "change_conditions": "roleskill_upgrade初始赋值为0，玩家每通过技能升级，对任意技能进行1次升级行为（不论升多少级，点一次升级弹窗弹窗算1次），roleskill_upgrade变量值+1。",
+      "format": "roleskill_upgrade;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 95,
+      "name": "todayroleskill_upgrade",
+      "set_type": 4,
+      "function": "判断玩家单日累计为角色升级角色技能的次数，是否达到对应次数\n（任意角色的任意技能都算）\n（指的是玩家主动强化技能，六祗纹、声望等额外途径获得的等级提升不算）",
+      "change_conditions": "todayroleskill_upgrade初始赋值为0，玩家每通过技能升级，对任意技能进行1次升级行为（不论升多少级，点一次升级弹窗弹窗算1次），todayroleskill_upgrade变量值+1。\n该变量第二日需要重置，重新赋值为0。",
+      "format": "todayroleskill_upgrade;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 96,
+      "name": "map_explorationcount",
+      "set_type": 2,
+      "function": "判断玩家地图探索度在X%以上的数量，是否大于Y个",
+      "change_conditions": "需要读取玩家在各个地图区域的探索度，将探索度在X%以上的数量，赋值给map_explorationcount变量，再进行判断",
+      "flag": 1,
+      "format": "map_explorationcount;需求完成率（填写万分比）;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 97,
+      "name": "dmj_count",
+      "set_type": 4,
+      "function": "统计玩家挑战大秘境玩法的次数，是否已达到指定次数",
+      "change_conditions": "读取玩家在对应任务期间内（任务是永久那时间就是永久，任务是1周那时间就是一周），累计挑战大秘境玩法的次数，将次数赋值给变量进行判断",
+      "format": "dmj_count;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 98,
+      "name": "serverlaunched_time",
+      "set_type": 2,
+      "function": "当前服务器开服至今的时间，是否达到了X天",
+      "change_conditions": "各个区服需要分开计算，计算从正式开启服务器，到当前时间，一共过去了多少天（按系统时间计算），并将该值赋值给变量进行判断",
+      "format": "serverlaunched_time;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 99,
+      "name": "fyzx_refining",
+      "set_type": 4,
+      "function": "芙娅之心累计洗炼次数，是否达到了指定次数",
+      "change_conditions": "读取玩家在对应任务期间内（任务是永久那时间就是永久，任务是1周那时间就是一周），累计进行芙娅之心洗炼的次数，将次数赋值给变量进行判断",
+      "format": "fyzx_refining;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 100,
+      "name": "seven_value",
+      "set_type": 4,
+      "function": "判断玩家七日活跃度",
+      "change_conditions": "初始赋值为0，通过完成七日任务进行变量值的增加（task_sevenday表gift2字段）。",
+      "format": "seven_value;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 101,
+      "name": "logindays",
+      "set_type": 4,
+      "function": "判断玩家从正式创号开始，至今一共累计登录了多少天，按天数计算，每个账号独立计算",
+      "change_conditions": "logindays变量初始赋值为0，从账号正式创建开始，每个账号独立计算。\n每当度过24小时，logindays变量值增加1。",
+      "format": "logindays;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 102,
+      "name": "sevenday_taskcount",
+      "set_type": 4,
+      "function": "判断玩家指定天数的任务清单内已完成的任务数量，是否达到目标次数",
+      "change_conditions": "变量初始赋值为0，判断task_sevenday表中对应天数的任务完成数是否达到目标次数，若已经完成，则赋值为1。",
+      "flag": 1,
+      "format": "sevenday_taskcount;需求天数判断;逻辑判断符号;比较数值(完成任务数量)"
+    },
+    {
+      "id": 103,
+      "name": "wear_weaponrarity1",
+      "set_type": 3,
+      "function": "判断当前玩家穿戴普通及以上的武器件数",
+      "change_conditions": "变量初始赋值为0，当玩家穿戴普通/卓越/史诗/传说及以上的武器件数达到目标件数时，赋值为1。",
+      "format": "wear_weaponsrarity1;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 104,
+      "name": "wear_weaponrarity2",
+      "set_type": 3,
+      "function": "判断当前玩家穿戴精良及以上的武器件数",
+      "change_conditions": "变量初始赋值为0，当玩家穿戴卓越/史诗/传说/神话/不朽/至宝及以上的武器件数达到目标件数时，赋值为1。",
+      "format": "wear_weaponsrarity2;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 105,
+      "name": "wear_weaponrarity3",
+      "set_type": 3,
+      "function": "判断当前玩家穿戴史诗及以上的武器件数",
+      "change_conditions": "变量初始赋值为0，当玩家穿戴史诗/传说/神话/不朽/至宝及以上的武器件数达到目标件数时，赋值为1。",
+      "format": "wear_weaponsrarity3;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 106,
+      "name": "wear_weaponrarity4",
+      "set_type": 3,
+      "function": "判断当前玩家穿戴传说及以上的武器件数",
+      "change_conditions": "变量初始赋值为0，当玩家穿戴传说/神话/不朽/至宝及以上的武器件数达到目标件数时，赋值为1。",
+      "format": "wear_weaponsrarity4;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 107,
+      "name": "wear_weaponrarity5",
+      "set_type": 3,
+      "function": "判断当前玩家穿戴神话及以上的武器件数",
+      "change_conditions": "变量初始赋值为0，当玩家穿戴神话/不朽/至宝及以上的武器件数达到目标件数时，赋值为1。",
+      "format": "wear_weaponsrarity5;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 108,
+      "name": "wear_weaponrarity6",
+      "set_type": 3,
+      "function": "判断当前玩家穿戴不朽及以上的武器件数",
+      "change_conditions": "变量初始赋值为0，当玩家穿戴不朽/至宝及以上的武器件数达到目标件数时，赋值为1。",
+      "format": "wear_weaponsrarity6;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 109,
+      "name": "wear_weaponrarity7",
+      "set_type": 3,
+      "function": "判断当前玩家穿戴至宝及以上的武器件数",
+      "change_conditions": "变量初始赋值为0，当玩家穿戴至宝及以上的武器件数达到目标件数时，赋值为1。",
+      "format": "wear_weaponsrarity7;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 110,
+      "name": "godhood_recruitmentscore",
+      "set_type": 4,
+      "function": "判断玩家抽取神格累计获得的分数",
+      "change_conditions": "初始赋值为0，当用goods表id=115的道具抽取神格时，变量值+1，当用goods表id=116的道具抽取神格时，变量值+5。\n\n用于排行榜时，活动结束时需要进行清空；\n用于冲刺目标任务时，每轮需要单独统计。",
+      "format": "godhood_recruitmentscore;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 111,
+      "name": "fyzx_cost",
+      "set_type": 4,
+      "function": "判断玩家累计消耗芙娅之心的洗炼材料（goods表id=109)的数量",
+      "change_conditions": "初始赋值为0，每当玩家消耗goods表id=109的道具X个后，变量值增加X。\n\n用于排行榜时，活动结束时需要进行清空；\n用于冲刺目标任务时，每轮需要单独统计。",
+      "format": "fyzx_cost;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 112,
+      "name": "giftpack_monthlygift",
+      "set_type": 4,
+      "function": "判断玩家从正式创号开始，至今一共经过了多少天，按天数计算，每个账号独立计算",
+      "change_conditions": "giftpack_monthlygift变量初始赋值为0，从账号正式创建开始，每个账号独立计算。\n每当度过24小时，logindays变量值增加1。",
+      "format": "giftpack_monthlygift;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 113,
+      "name": "todaylogin",
+      "set_type": 2,
+      "function": "判断玩家今日是否登录",
+      "change_conditions": "todaylogin初始赋值为0，当玩家今日登录游戏后，赋值为1。\n当服务器跨天时，该变量重新赋值为0，并对玩家是否登录进行重新判断和重新赋值。（需要考虑跨天但是没有下线的情况，也要算玩家进行了登录）",
+      "format": "todaylogin;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 114,
+      "name": "todayfyzx_refining",
+      "set_type": 4,
+      "function": "单日芙娅之心累计洗炼次数，是否达到了指定次数",
+      "change_conditions": "todayfyzx_refining变量初始赋值为0，玩家单日内每在神格召唤的界面进行1次神格召唤，todayfyzx_refining变量值+1。\n服务器跨天后，数据进行重置，重新给todayfyzx_refining变量赋值为0。",
+      "format": "todayfyzx_refining;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 115,
+      "name": "todaygodhood_recruitment",
+      "set_type": 4,
+      "function": "判断玩家单日内累计进行神格召唤的次数是否达到指定次数",
+      "change_conditions": "todaygodhood_recruitment变量初始赋值为0，玩家单日内每在神格召唤的界面进行1次神格召唤，todaygodhood_recruitment变量值+1。\n服务器跨天后，数据进行重置，重新给todaygodhood_recruitment变量赋值为0。",
+      "format": "todaygodhood_recruitment;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 116,
+      "name": "todaydmj_count",
+      "set_type": 4,
+      "function": "统计玩家单日挑战大秘境玩法的次数，是否已达到指定次数",
+      "change_conditions": "读取玩家在单日内，累计挑战大秘境玩法的次数，将次数赋值给变量进行判断\n该变量每日需要跟随服务器跨天而重置",
+      "format": "todaydmj_count;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 117,
+      "name": "recharge_amount",
+      "set_type": 4,
+      "function": "判断玩家指定时间内累计充值金额是否超过指定金额",
+      "change_conditions": "recharge_amount变量需跟随对应活动进行判断，读取玩家在对应活动期间累计充值的金额数，将充值的金额赋值给recharge_amount变量进行判断。\n在对应活动结束后，recharge_amount重置为0。\n可能还涉及一个货币金额的转换",
+      "format": "recharge_amount;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 118,
+      "name": "hero",
+      "set_type": 2,
+      "function": "判定玩家是否激活过对应id的英雄",
+      "change_conditions": "拥有过该英雄就会变量设为1",
+      "flag": 1,
+      "format": "hero;goods表物品英雄id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 119,
+      "name": "trial_open",
+      "set_type": 1,
+      "function": "判断当前账号在当前时间段，是否至少存在1个试炼活动处于开启状态",
+      "change_conditions": "trial_open初始赋值为0，当存在任意试炼活动开启时（开启条件见activity_trial表condition字段），trial_open临时赋值为1，当无任何试炼活动开启时，trial_open将再度赋值为0",
+      "format": "trial_open;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 998,
+      "name": "attribute_requirements",
+      "set_type": 1,
+      "function": "判断玩家的X属性是否达到了Y以上",
+      "change_conditions": "1.需要判断玩家对应属性是否满足了要求（判断实时情况，且只要满足一次要求就算完成，后续不满足了依旧算完成）\n2.比较数值需要根据属性在attribute_id表的unit字段，判断填写的是数值还是万分比",
+      "flag": 1,
+      "format": "attribute_requirements;对应attribute_id表属性id;逻辑判断符号;比较数值"
+    },
+    {
+      "id": 999,
+      "name": "variable_requirements",
+      "set_type": 1,
+      "function": "判断X变量是否达到了Y需求",
+      "change_conditions": "作为万能钥匙用的",
+      "flag": 1,
+      "format": "variable_requirements;对应变量的变量id;逻辑判断符号;比较数值"
+    }
+  ]
+}

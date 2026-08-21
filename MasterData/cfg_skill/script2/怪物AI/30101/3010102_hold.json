@@ -1,0 +1,109 @@
+{
+  "ifs_or": [],
+  "name": "",
+  "others_num": 1,
+  "triggerName": "蓄力事件",
+  "others_id": 1,
+  "actions": [
+    {
+      "value": 1,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    },
+    {
+      "value": "0;;1350;3#0#-45#45;80;;;",
+      "ptype": "是",
+      "t": 1,
+      "ii": 2,
+      "id": -1,
+      "index": 1,
+      "target": 1,
+      "codeType": 2,
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;0;0;3#0#0;82000_3010102_1;3010102_hurt;0;1;;0",
+      "ptype": "是",
+      "t": 1,
+      "id": -1,
+      "ii": 3,
+      "index": 2,
+      "target": 1,
+      "codeType": 2,
+      "type": "场景特效"
+    }
+  ],
+  "ifs_and": [
+    0,
+    1
+  ],
+  "others": [
+    null,
+    {
+      "ifs_or": [],
+      "id": 1,
+      "parentid": -1,
+      "actions": [
+        {
+          "value": "1400;3010103;1;",
+          "ptype": "是",
+          "t": 3,
+          "id": 1,
+          "ii": 1,
+          "index": 0,
+          "target": 1,
+          "codeType": 2,
+          "type": "发送消息"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "elses": [],
+      "ifs": [
+        {
+          "value": "3500",
+          "ptype": "判断",
+          "t": 3,
+          "ii": 0,
+          "id": 1,
+          "index": 0,
+          "target": 1,
+          "codeType": 1,
+          "term": "and",
+          "type": "概率"
+        }
+      ]
+    }
+  ],
+  "trigger": 30,
+  "ifs": [
+    {
+      "value": "30101",
+      "ptype": "判断",
+      "t": 1,
+      "ii": 0,
+      "id": -1,
+      "codeType": 1,
+      "target": 1,
+      "index": 0,
+      "term": "and",
+      "type": "怪物bid"
+    },
+    {
+      "value": "3010102_hold;1",
+      "ptype": "判断",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 1,
+      "target": 1,
+      "index": 1,
+      "term": "and",
+      "type": "蓄力事件"
+    }
+  ]
+}

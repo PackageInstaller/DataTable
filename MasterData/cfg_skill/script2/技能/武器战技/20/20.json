@@ -1,0 +1,50 @@
+{
+  "ifs_and": [
+    0
+  ],
+  "triggerName": "蓄力事件",
+  "name": "",
+  "others_num": 0,
+  "trigger": 30,
+  "ifs": [
+    {
+      "value": "20a;1",
+      "t": 1,
+      "id": -1,
+      "term": "and",
+      "ii": 0,
+      "codeType": 1,
+      "index": 0,
+      "target": 1,
+      "ptype": "判断",
+      "type": "蓄力事件"
+    }
+  ],
+  "others_id": 0,
+  "others": [],
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": "spell_ad10;0;0;0;0;0;0;0",
+      "t": 1,
+      "id": -1,
+      "ii": 1,
+      "codeType": 2,
+      "target": 1,
+      "index": 0,
+      "ptype": "是",
+      "type": "动作移动"
+    },
+    {
+      "value": "0#0;300;0;1;83500_300020_1;100012a;0;0;1,8,2,24100;0",
+      "ptype": "是",
+      "id": -1,
+      "codeType": 2,
+      "t": 1,
+      "index": 1,
+      "target": 1,
+      "ii": 2,
+      "type": "场景特效"
+    }
+  ]
+}

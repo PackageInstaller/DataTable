@@ -1,0 +1,50 @@
+{
+  "triggerName": "消息事件",
+  "ifs_and": [
+    0
+  ],
+  "name": "",
+  "others_num": 0,
+  "ifs_or": [],
+  "ifs": [
+    {
+      "value": "300002001",
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "id": -1,
+      "codeType": 1,
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "type": "监听消息"
+    }
+  ],
+  "others": [],
+  "trigger": 32,
+  "others_id": 0,
+  "actions": [
+    {
+      "value": "1.125;150;50;0",
+      "ii": 1,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "codeType": 2,
+      "ptype": "是",
+      "target": 1,
+      "type": "屏幕抖动"
+    },
+    {
+      "value": "1#0;0;0;0;83500_300002_2;300002_hurt1;0;0;;0",
+      "t": 1,
+      "id": -1,
+      "target": 1,
+      "codeType": 2,
+      "ii": 2,
+      "ptype": "是",
+      "index": 1,
+      "type": "场景特效"
+    }
+  ]
+}

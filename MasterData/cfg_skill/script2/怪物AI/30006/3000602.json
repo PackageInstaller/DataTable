@@ -1,0 +1,102 @@
+{
+  "ifs": [
+    {
+      "target": 1,
+      "value": "3000602",
+      "t": 1,
+      "term": "and",
+      "id": -1,
+      "ii": 0,
+      "type": "检查CD",
+      "ptype": "判断",
+      "index": 0,
+      "codeType": 1
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "term": "and",
+      "value": "3",
+      "ii": 1,
+      "type": "AI优先级",
+      "ptype": "判断",
+      "index": 1,
+      "codeType": 1
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "term": "and",
+      "value": "0#-30#30",
+      "ii": 2,
+      "type": "目标方位",
+      "ptype": "判断",
+      "index": 2,
+      "codeType": 1
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "term": "and",
+      "value": "30006",
+      "ii": 3,
+      "type": "怪物bid",
+      "ptype": "判断",
+      "index": 3,
+      "codeType": 1
+    },
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "term": "and",
+      "value": ">=;35",
+      "ii": 4,
+      "type": "玩家距离",
+      "ptype": "判断",
+      "index": 4,
+      "codeType": 1
+    }
+  ],
+  "others_num": 0,
+  "name": "怪物警觉",
+  "ifs_or": [],
+  "actions": [
+    {
+      "target": 1,
+      "value": "3000602;0;0;1800;4;3000602_arrow;spell_2;2200",
+      "t": 1,
+      "type": "蓄力",
+      "id": -1,
+      "ii": 1,
+      "ptype": "是",
+      "index": 0,
+      "codeType": 2
+    },
+    {
+      "target": 1,
+      "value": "3000602;8000;8000;",
+      "t": 1,
+      "type": "设置CD",
+      "id": -1,
+      "ii": 2,
+      "ptype": "是",
+      "index": 1,
+      "codeType": 2
+    }
+  ],
+  "triggerName": "怪物警觉",
+  "others": [],
+  "others_id": 0,
+  "trigger": 26,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

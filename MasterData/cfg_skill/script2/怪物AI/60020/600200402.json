@@ -1,0 +1,140 @@
+{
+  "ifs": [
+    {
+      "value": "1",
+      "target": 1,
+      "ptype": "判断",
+      "t": 1,
+      "index": 0,
+      "type": "调试模式",
+      "id": -1,
+      "codeType": 1,
+      "term": "and",
+      "ii": 0
+    },
+    {
+      "value": "600200402",
+      "target": 1,
+      "ptype": "判断",
+      "t": 1,
+      "index": 1,
+      "type": "监听消息",
+      "id": -1,
+      "codeType": 1,
+      "term": "and",
+      "ii": 1
+    },
+    {
+      "value": "60020",
+      "target": 1,
+      "ptype": "判断",
+      "t": 1,
+      "index": 2,
+      "type": "怪物bid",
+      "id": -1,
+      "codeType": 1,
+      "term": "and",
+      "ii": 2
+    },
+    {
+      "value": "1",
+      "target": 1,
+      "ptype": "判断",
+      "t": 1,
+      "term": "and",
+      "ii": 3,
+      "id": -1,
+      "codeType": 1,
+      "index": 3,
+      "type": "目标方位"
+    }
+  ],
+  "name": "",
+  "trigger": 32,
+  "ifs_and": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "others": [
+    {
+      "elses": [],
+      "ifs": [],
+      "ifs_and": [],
+      "id": 0,
+      "codeType": 0,
+      "actions": [],
+      "parentid": -1,
+      "ifs_or": []
+    },
+    {
+      "elses": [],
+      "ifs": [],
+      "ifs_and": [],
+      "id": 1,
+      "codeType": 0,
+      "actions": [],
+      "parentid": -1,
+      "ifs_or": []
+    },
+    null
+  ],
+  "others_num": 2,
+  "actions": [
+    {
+      "value": "attack_3_2;0;0;0;0;0;0;1300",
+      "target": 1,
+      "ptype": "是",
+      "t": 1,
+      "type": "动作移动",
+      "id": -1,
+      "codeType": 2,
+      "index": 0,
+      "ii": 1
+    },
+    {
+      "value": "0#0;1266;0;1;85000_4000104_1_a;",
+      "target": 1,
+      "ptype": "是",
+      "t": 1,
+      "type": "场景特效",
+      "id": -1,
+      "codeType": 2,
+      "index": 1,
+      "ii": 2
+    },
+    {
+      "value": "0#0;1266;0;0;85000_4000104_1_b;6002004_hurt;",
+      "target": 1,
+      "ptype": "是",
+      "t": 1,
+      "type": "场景特效",
+      "id": -1,
+      "codeType": 2,
+      "index": 2,
+      "ii": 3
+    },
+    {
+      "value": "600200402;0;0;1266;9;600200402_hold_finish;;;;",
+      "target": 1,
+      "ptype": "是",
+      "t": 1,
+      "type": "蓄力",
+      "id": -1,
+      "codeType": 2,
+      "index": 3,
+      "ii": 4
+    },
+    {
+      "value": 16,
+      "codeType": 2,
+      "t": 1,
+      "index": 4,
+      "type": "分支"
+    }
+  ],
+  "others_id": 2,
+  "ifs_or": [],
+  "triggerName": "消息事件"
+}

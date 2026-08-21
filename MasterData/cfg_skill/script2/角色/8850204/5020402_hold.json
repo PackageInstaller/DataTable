@@ -1,0 +1,241 @@
+{
+  "ifs_and": [
+    0
+  ],
+  "triggerName": "玩家主动技能",
+  "name": "",
+  "others": [
+    {
+      "elses": [],
+      "parentid": -1,
+      "ifs_or": [],
+      "id": 0,
+      "ifs": [
+        {
+          "value": "role_anger;<;100;;0",
+          "ptype": "判断",
+          "id": 0,
+          "ii": 0,
+          "target": 1,
+          "t": 3,
+          "codeType": 1,
+          "index": 0,
+          "term": "and",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": 1,
+          "t": 3,
+          "index": 0,
+          "codeType": 2,
+          "type": "分支"
+        },
+        {
+          "value": 2,
+          "t": 3,
+          "index": 1,
+          "codeType": 2,
+          "type": "分支"
+        },
+        {
+          "value": "0;502040201;0;",
+          "t": 3,
+          "id": 0,
+          "ii": 3,
+          "codeType": 2,
+          "index": 2,
+          "target": 1,
+          "ptype": "是",
+          "type": "发送消息"
+        },
+        {
+          "value": 3,
+          "t": 3,
+          "index": 3,
+          "codeType": 2,
+          "type": "分支"
+        }
+      ]
+    },
+    {
+      "elses": [
+        {
+          "value": "role_anger;;3;0;2",
+          "t": 5,
+          "id": 1,
+          "ii": 1,
+          "codeType": 3,
+          "index": 0,
+          "target": 1,
+          "ptype": "否",
+          "type": "角色属性"
+        }
+      ],
+      "parentid": 0,
+      "ifs_or": [],
+      "id": 1,
+      "ifs": [
+        {
+          "value": "1#-30#30",
+          "ptype": "判断",
+          "id": 1,
+          "ii": 0,
+          "target": 7,
+          "t": 5,
+          "codeType": 1,
+          "index": 0,
+          "term": "and",
+          "type": "目标方位"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "role_anger;;6;0;2",
+          "t": 5,
+          "id": 1,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "角色属性"
+        }
+      ]
+    },
+    {
+      "elses": [],
+      "parentid": 0,
+      "ifs_or": [],
+      "id": 2,
+      "ifs": [
+        {
+          "value": "role_skill_level;>=;1;204;4",
+          "ptype": "判断",
+          "id": 2,
+          "ii": 0,
+          "target": 1,
+          "t": 5,
+          "codeType": 1,
+          "index": 0,
+          "term": "and",
+          "type": "角色属性"
+        },
+        {
+          "value": "weaponType;in;1|2|4|5|6|7|8;0;0",
+          "ptype": "判断",
+          "id": 2,
+          "ii": 1,
+          "target": 1,
+          "t": 5,
+          "codeType": 1,
+          "index": 1,
+          "term": "and",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_and": [
+        0,
+        1
+      ],
+      "codeType": 0,
+      "actions": [
+        {
+          "value": "role_anger;;2;0;2",
+          "t": 5,
+          "id": 2,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "角色属性"
+        }
+      ]
+    },
+    {
+      "elses": [],
+      "parentid": 0,
+      "codeType": 0,
+      "id": 3,
+      "ifs": [
+        {
+          "value": "role_anger;>=;100;0;0",
+          "codeType": 1,
+          "ptype": "判断",
+          "id": 3,
+          "ii": 0,
+          "t": 5,
+          "index": 0,
+          "target": 1,
+          "term": "and",
+          "type": "角色属性"
+        }
+      ],
+      "ifs_and": [
+        0
+      ],
+      "ifs_or": [],
+      "actions": [
+        {
+          "value": "0#0;0;0;5;84000_5020402_1_a;0;0;0;;0",
+          "t": 5,
+          "id": 3,
+          "ii": 1,
+          "codeType": 2,
+          "index": 0,
+          "target": 1,
+          "ptype": "是",
+          "type": "场景特效"
+        },
+        {
+          "value": "crit_hurt|5020402|0;0;0;0;84000_5020402_2_a;0;0;5;0;0",
+          "t": 5,
+          "index": 1,
+          "id": 3,
+          "ii": 2,
+          "codeType": 2,
+          "target": 1,
+          "ptype": "是",
+          "type": "临时属性"
+        }
+      ]
+    }
+  ],
+  "others_num": 4,
+  "ifs": [
+    {
+      "value": "5020402",
+      "t": 1,
+      "id": -1,
+      "ii": 0,
+      "target": 1,
+      "ptype": "判断",
+      "codeType": 1,
+      "index": 0,
+      "term": "and",
+      "type": "技能ID"
+    }
+  ],
+  "others_id": 3,
+  "trigger": 25,
+  "ifs_or": [],
+  "actions": [
+    {
+      "value": 0,
+      "t": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "分支"
+    }
+  ]
+}

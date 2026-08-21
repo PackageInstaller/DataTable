@@ -1,0 +1,36 @@
+{
+  "ifs_and": [
+    0
+  ],
+  "ifs": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ptype": "判断",
+      "term": "and",
+      "value": "30006_attack",
+      "ii": 0,
+      "index": 0,
+      "codeType": 1,
+      "type": "伤害事件"
+    }
+  ],
+  "name": "",
+  "actions": [
+    {
+      "target": 1,
+      "id": -1,
+      "t": 1,
+      "ptype": "是",
+      "value": "1;5;6;17500;0;0;0;0;0;1;200",
+      "ii": 1,
+      "index": 0,
+      "codeType": 2,
+      "type": "造成伤害"
+    }
+  ],
+  "trigger": 29,
+  "triggerName": "伤害事件",
+  "ifs_or": []
+}

@@ -1,0 +1,46 @@
+{
+  "ifs": [
+    {
+      "value": "212010a",
+      "type": "伤害事件",
+      "t": 1,
+      "id": -1,
+      "ptype": "判断",
+      "codeType": 1,
+      "ii": 0,
+      "target": 1,
+      "index": 0,
+      "term": "and"
+    }
+  ],
+  "name": "",
+  "ifs_and": [
+    0
+  ],
+  "actions": [
+    {
+      "value": "1;0;0;4;83500_320010_1;0",
+      "type": "场景特效",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 1,
+      "index": 0,
+      "target": 1
+    },
+    {
+      "value": "1;1;1;9600;0;0;0;0",
+      "type": "造成伤害",
+      "t": 1,
+      "id": -1,
+      "ptype": "是",
+      "codeType": 2,
+      "ii": 2,
+      "index": 1,
+      "target": 1
+    }
+  ],
+  "ifs_or": [],
+  "trigger": 29
+}

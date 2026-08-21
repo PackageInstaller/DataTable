@@ -1,0 +1,50 @@
+{
+  "others_num": 0,
+  "ifs_or": [],
+  "name": "",
+  "actions": [
+    {
+      "value": "ability_2|90051_1|0;1;600000;0;eat_ef2_buff;0;0;5;0",
+      "id": -1,
+      "t": 1,
+      "target": 1,
+      "ii": 1,
+      "codeType": 2,
+      "index": 0,
+      "ptype": "是",
+      "type": "临时属性"
+    },
+    {
+      "value": "ability_damage_add|90051_2|0;2000;600000;0;0;0;0;0;0",
+      "target": 1,
+      "t": 1,
+      "id": -1,
+      "ii": 2,
+      "codeType": 2,
+      "index": 1,
+      "ptype": "是",
+      "type": "临时属性"
+    }
+  ],
+  "ifs": [
+    {
+      "value": "90051",
+      "target": 1,
+      "t": 1,
+      "index": 0,
+      "id": -1,
+      "ii": 0,
+      "codeType": 1,
+      "term": "and",
+      "ptype": "判断",
+      "type": "使用物品id"
+    }
+  ],
+  "ifs_and": [
+    0
+  ],
+  "trigger": 28,
+  "others_id": 0,
+  "triggerName": "使用道具",
+  "others": []
+}
