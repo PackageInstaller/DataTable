@@ -1,0 +1,1099 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "ProfessionId": 1,
+        "Name": "雷影剑士",
+        "LineFeedName": "雷影剑士",
+        "Icon": "ui/atlas/profession/profession_horizontal_03",
+        "Intro": "擅长<color=#fcbe03>近距离</color>作战，以<color=#fcbe03>镰形长刀</color>为武器。可在镰刀与长刀之间随意切换，拥有出色的<color=#fcbe03>小范围攻击</color>能力。",
+        "Element": 3,
+        "Talent": 1,
+        "TalentColor": "#db8787",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052403,
+                1052411,
+                1052419,
+                1052301,
+                1052304,
+                1052305
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020001
+            ]
+        ],
+        "NormalAttackSkill": [
+            1701
+        ],
+        "SpecialSkill": [
+            1714
+        ],
+        "UltimateSkill": [
+            1713
+        ],
+        "NormalSkill": [
+            1705,
+            1717,
+            1718,
+            1719,
+            1724,
+            1730,
+            1731,
+            1720
+        ],
+        "TalentSkill": [
+            1715,
+            1728,
+            1733,
+            1734,
+            1735,
+            1736,
+            1737,
+            1738
+        ],
+        "ShowTalentStage": [
+            101,
+            102
+        ],
+        "Create": 1,
+        "IsOpen": true,
+        "Index": 7,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_77",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_1",
+        "MainTalentIcon": "ui/textures/weaopn/weapon_icon_4",
+        "MainTalentSelectedIcon": "ui/textures/weaopn/weapon_icon_select_4",
+        "UnlockCondition": [
+            [
+                2,
+                170100,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "每1%精通，使消耗雷之印的技能伤害+2.8%<br>"
+            ],
+            [
+                "1",
+                "每1%精通提供1.2%霹雳连斩、雷霆之镰、神罚之镰伤害<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11330
+            ],
+            [
+                1,
+                11330
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11030
+            ],
+            [
+                1,
+                11030
+            ]
+        ],
+        "RangeType": 0,
+        "WeaponSkinId": 7310002
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "ProfessionId": 2,
+        "Name": "冰魔导师",
+        "LineFeedName": "冰魔导师",
+        "Icon": "ui/atlas/profession/profession_horizontal_05",
+        "Intro": "擅长<color=#fcbe03>远距离</color>作战，以<color=#fcbe03>冰魔杖</color>为武器。掌控寒冰的力量，拥有出色的<color=#fcbe03>大范围攻击</color>和<color=#fcbe03>控制</color>能力。",
+        "Element": 2,
+        "Talent": 1,
+        "TalentColor": "#db8787",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052402,
+                1052410,
+                1052418,
+                1052301,
+                1052307,
+                1052308
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020002
+            ]
+        ],
+        "NormalAttackSkill": [
+            1201
+        ],
+        "SpecialSkill": [
+            1242
+        ],
+        "UltimateSkill": [
+            1248
+        ],
+        "NormalSkill": [
+            1239,
+            1211,
+            1244,
+            1210,
+            1240,
+            1243,
+            1246,
+            1245
+        ],
+        "TalentSkill": [
+            1241
+        ],
+        "ShowTalentStage": [
+            104,
+            105
+        ],
+        "Create": 1,
+        "IsOpen": true,
+        "Index": 4,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_77",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_1",
+        "MainTalentIcon": "ui/textures/weaopn/weapon_icon_3",
+        "MainTalentSelectedIcon": "ui/textures/weaopn/weapon_icon_select_3",
+        "UnlockCondition": [
+            [
+                2,
+                170102,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "每1%精通提供0.65%冰元素加成<br>"
+            ],
+            [
+                "1",
+                "每1%精通提供1%寒冰能量获取效率以及0.4%冰元素加成<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11340
+            ],
+            [
+                1,
+                11340
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11020
+            ],
+            [
+                1,
+                11020
+            ]
+        ],
+        "RangeType": 1,
+        "WeaponSkinId": 7320002
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "ProfessionId": 3,
+        "Name": "赤炎狂战士",
+        "LineFeedName": "赤炎狂战士",
+        "Icon": "ui/atlas/profession/profession_horizontal_01",
+        "Intro": "近距离武器，拥有出色的攻击能力。<br>攻击可以施加<color=#fcbe03>点燃</color>效果，可以造成<color=#fcbe03>特性伤害</color>。<br>通过积攒能量释放<color=#fcbe03>终极技能</color>，进入强大的爆发阶段。追求<color=#fcbe03>攻击速度</color>可以增强在爆发阶段造成的伤害。",
+        "Element": 1,
+        "Talent": 1,
+        "TalentColor": "#db8787",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052401,
+                1052409,
+                1052417,
+                1052301,
+                1052302,
+                1052303
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020003
+            ]
+        ],
+        "NormalAttackSkill": [
+            1601
+        ],
+        "SpecialSkill": [
+            1605
+        ],
+        "UltimateSkill": [
+            1618
+        ],
+        "NormalSkill": [
+            1607,
+            1608,
+            1612,
+            1613,
+            1614,
+            1615,
+            1616,
+            1617
+        ],
+        "TalentSkill": [],
+        "ShowTalentStage": [
+            124,
+            125
+        ],
+        "Create": 0,
+        "IsOpen": false,
+        "Index": 9,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_77",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_1",
+        "MainTalentIcon": "ui/textures/talent_new/talent_icon",
+        "MainTalentSelectedIcon": "ui/textures/talent_new/talent_icon",
+        "UnlockCondition": [
+            [
+                2,
+                170100,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "附加火元素伤害<br>"
+            ],
+            [
+                "1",
+                "附加火元素伤害<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11330
+            ],
+            [
+                1,
+                11330
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11010
+            ],
+            [
+                1,
+                11010
+            ]
+        ],
+        "RangeType": 0,
+        "WeaponSkinId": 7330001
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "ProfessionId": 4,
+        "Name": "青岚骑士",
+        "LineFeedName": "青岚骑士",
+        "Icon": "ui/atlas/profession/profession_horizontal_02",
+        "Intro": "擅长<color=#fcbe03>近距离</color>作战，以<color=#fcbe03>长枪</color>为武器。如风般形态变幻，拥有出色的<color=#fcbe03>小范围攻击</color>能力。",
+        "Element": 5,
+        "Talent": 1,
+        "TalentColor": "#db8787",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052404,
+                1052412,
+                1052420,
+                1052301,
+                1052310,
+                1052303
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020004
+            ]
+        ],
+        "NormalAttackSkill": [
+            1401
+        ],
+        "SpecialSkill": [
+            1418
+        ],
+        "UltimateSkill": [
+            1426
+        ],
+        "NormalSkill": [
+            1420,
+            1421,
+            1422,
+            1425,
+            1424,
+            1430,
+            1431,
+            1423
+        ],
+        "TalentSkill": [
+            1409,
+            1410,
+            1411,
+            1419,
+            1433,
+            1434,
+            1435
+        ],
+        "ShowTalentStage": [
+            107,
+            108
+        ],
+        "Create": 1,
+        "IsOpen": true,
+        "Index": 6,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_77",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_1",
+        "MainTalentIcon": "ui/textures/weaopn/weapon_icon_2",
+        "MainTalentSelectedIcon": "ui/textures/weaopn/weapon_icon_select_2",
+        "UnlockCondition": [
+            [
+                2,
+                170101,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "每1%精通提供0.72%风元素加成<br>"
+            ],
+            [
+                "1",
+                "每1%精通提供0.65%风元素加成<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11330
+            ],
+            [
+                1,
+                11330
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11010
+            ],
+            [
+                1,
+                11010
+            ]
+        ],
+        "RangeType": 0,
+        "WeaponSkinId": 7340002
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "ProfessionId": 5,
+        "Name": "森语者",
+        "LineFeedName": "森语者",
+        "Icon": "ui/atlas/profession/profession_horizontal_04",
+        "Intro": "擅长<color=#fcbe03>远距离治疗</color>，以<color=#fcbe03>法环</color>为武器。运转森之生命的力量，拥有出色的<color=#fcbe03>治疗</color>和<color=#fcbe03>辅助</color>能力。",
+        "Element": 4,
+        "Talent": 2,
+        "TalentColor": "#83c49a",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052406,
+                1052414,
+                1052422,
+                1052301,
+                1052314,
+                1052313
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020005
+            ]
+        ],
+        "NormalAttackSkill": [
+            1501
+        ],
+        "SpecialSkill": [
+            1518
+        ],
+        "UltimateSkill": [
+            1509
+        ],
+        "NormalSkill": [
+            1519,
+            1520,
+            1522,
+            1523,
+            1521,
+            1531,
+            1529,
+            1524
+        ],
+        "TalentSkill": [
+            1507,
+            1525,
+            1527,
+            1528,
+            1541
+        ],
+        "ShowTalentStage": [
+            110,
+            111
+        ],
+        "Create": 1,
+        "IsOpen": true,
+        "Index": 1,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_79",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_2",
+        "MainTalentIcon": "ui/textures/weaopn/weapon_icon_5",
+        "MainTalentSelectedIcon": "ui/textures/weaopn/weapon_icon_select_5",
+        "UnlockCondition": [
+            [
+                2,
+                170104,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "每1%精通提供0.7%森元素加成以及0.3%护盾强度<br>"
+            ],
+            [
+                "1",
+                "每1%精通提供1%治疗强度<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11340
+            ],
+            [
+                1,
+                11340
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11020
+            ],
+            [
+                1,
+                11020
+            ]
+        ],
+        "RangeType": 1,
+        "WeaponSkinId": 7350002
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "ProfessionId": 8,
+        "Name": "雷霆一闪·手炮",
+        "LineFeedName": "雷霆一闪·手炮",
+        "Icon": "ui/atlas/profession/profession_horizontal_01",
+        "Intro": "擅长<color=#fcbe03>远距离</color>作战，拥有出色的攻击能力。<br>可以在远处以高频攻击打击大范围的敌人。追求<color=#fcbe03>刻印几率加成</color>提高触发频率。<br>也可以在近处<color=#fcbe03>蓄力</color>，打出极高的爆发伤害。追求<color=#fcbe03>暴击几率</color>带来的强大收益。",
+        "Element": 3,
+        "Talent": 1,
+        "TalentColor": "#db8787",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052403,
+                1052411,
+                1052419,
+                1052301,
+                1052315,
+                1052312
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020006
+            ]
+        ],
+        "NormalAttackSkill": [
+            1801
+        ],
+        "SpecialSkill": [
+            1806
+        ],
+        "UltimateSkill": [
+            1808
+        ],
+        "NormalSkill": [
+            1807
+        ],
+        "TalentSkill": [],
+        "ShowTalentStage": [],
+        "Create": 0,
+        "IsOpen": false,
+        "Index": 10,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_79",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_2",
+        "MainTalentIcon": "ui/textures/talent_new/talent_icon",
+        "MainTalentSelectedIcon": "ui/textures/talent_new/talent_icon",
+        "UnlockCondition": [
+            [
+                2,
+                170100,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "附加雷元素伤害<br>"
+            ],
+            [
+                "1",
+                "附加雷元素伤害<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11330
+            ],
+            [
+                1,
+                11330
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11030
+            ],
+            [
+                1,
+                11030
+            ]
+        ],
+        "RangeType": 1,
+        "WeaponSkinId": 7360001
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "ProfessionId": 9,
+        "Name": "巨刃守护者",
+        "LineFeedName": "巨刃守护者",
+        "Icon": "ui/atlas/profession/profession_horizontal_06",
+        "Intro": "擅长<color=#fcbe03>近距离</color>作战，以<color=#fcbe03>卫刃</color>为武器。凝聚岩石护体，拥有出色的<color=#fcbe03>防御</color>和<color=#fcbe03>控场</color>能力。",
+        "Element": 6,
+        "Talent": 3,
+        "TalentColor": "#68a6cd",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052405,
+                1052413,
+                1052421,
+                1052301,
+                1052302,
+                1052309
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020006
+            ]
+        ],
+        "NormalAttackSkill": [
+            1901
+        ],
+        "SpecialSkill": [
+            1922
+        ],
+        "UltimateSkill": [
+            1907
+        ],
+        "NormalSkill": [
+            1924,
+            1927,
+            1936,
+            1926,
+            1937,
+            1925,
+            1938,
+            1923
+        ],
+        "TalentSkill": [
+            1932,
+            1933,
+            1939,
+            1940,
+            1941,
+            1942,
+            1943,
+            1944
+        ],
+        "ShowTalentStage": [
+            113,
+            114
+        ],
+        "Create": 1,
+        "IsOpen": true,
+        "Index": 2,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_79",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_2",
+        "MainTalentIcon": "ui/textures/weaopn/weapon_icon_1",
+        "MainTalentSelectedIcon": "ui/textures/weaopn/weapon_icon_select_1",
+        "UnlockCondition": [
+            [
+                2,
+                170105,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "每1%精通提供2.5%护盾强度<br>"
+            ],
+            [
+                "1",
+                "每1%精通提供0.2%格挡减伤、0.2%幸运格挡减伤<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11330
+            ],
+            [
+                1,
+                11330
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11010
+            ],
+            [
+                1,
+                11010
+            ]
+        ],
+        "RangeType": 0,
+        "WeaponSkinId": 7370002
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "ProfessionId": 10,
+        "Name": "暗灵祈舞·仪刀/仪仗",
+        "LineFeedName": "暗灵祈舞·仪刀/仪仗",
+        "Icon": "ui/atlas/profession/profession_horizontal_01",
+        "Intro": "中近距离武器，拥有协同攻击能力。",
+        "Element": 8,
+        "Talent": 1,
+        "TalentColor": "#db8787",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052408,
+                1052416,
+                1052424,
+                1052301,
+                1052307,
+                1052303
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020006
+            ]
+        ],
+        "NormalAttackSkill": [
+            2101
+        ],
+        "SpecialSkill": [
+            2105
+        ],
+        "UltimateSkill": [
+            2108
+        ],
+        "NormalSkill": [
+            2107
+        ],
+        "TalentSkill": [],
+        "ShowTalentStage": [],
+        "Create": 0,
+        "IsOpen": false,
+        "Index": 11,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_78",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_3",
+        "MainTalentIcon": "ui/textures/talent_new/talent_icon",
+        "MainTalentSelectedIcon": "ui/textures/talent_new/talent_icon",
+        "UnlockCondition": [
+            [
+                2,
+                170100,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "附加暗元素伤害<br>"
+            ],
+            [
+                "1",
+                "附加暗元素伤害<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11330
+            ],
+            [
+                1,
+                11330
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11030
+            ],
+            [
+                1,
+                11030
+            ]
+        ],
+        "RangeType": 0,
+        "WeaponSkinId": 7380001
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "ProfessionId": 11,
+        "Name": "神射手",
+        "LineFeedName": "神射手",
+        "Icon": "ui/atlas/profession/profession_horizontal_07",
+        "Intro": "擅长<color=#fcbe03>远距离</color>作战，以<color=#fcbe03>弓箭</color>为武器。与动物伙伴搭档出击，拥有出色的<color=#fcbe03>大范围攻击</color>能力。",
+        "Element": 7,
+        "Talent": 1,
+        "TalentColor": "#db8787",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052407,
+                1052415,
+                1052423,
+                1052301,
+                1052314,
+                1052305
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020005
+            ]
+        ],
+        "NormalAttackSkill": [
+            2201
+        ],
+        "SpecialSkill": [
+            2220
+        ],
+        "UltimateSkill": [
+            2209
+        ],
+        "NormalSkill": [
+            2230,
+            2232,
+            2237,
+            2233,
+            2234,
+            2231,
+            2238,
+            2235
+        ],
+        "TalentSkill": [
+            2224,
+            2240
+        ],
+        "ShowTalentStage": [
+            116,
+            117
+        ],
+        "Create": 1,
+        "IsOpen": true,
+        "Index": 3,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_78",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_3",
+        "MainTalentIcon": "ui/textures/weaopn/weapon_icon_6",
+        "MainTalentSelectedIcon": "ui/textures/weaopn/weapon_icon_select_6",
+        "UnlockCondition": [
+            [
+                2,
+                170103,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "每1%精通提供2.75%宠物伤害<br>"
+            ],
+            [
+                "1",
+                "每1%精通提供0.6%光元素加成<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11330
+            ],
+            [
+                1,
+                11330
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11030
+            ],
+            [
+                1,
+                11030
+            ]
+        ],
+        "RangeType": 1,
+        "WeaponSkinId": 7390002
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "ProfessionId": 12,
+        "Name": "神盾骑士",
+        "LineFeedName": "神盾骑士",
+        "Icon": "ui/atlas/profession/profession_horizontal_01",
+        "Intro": "擅长<color=#fcbe03>近距离</color>作战，以<color=#fcbe03>剑盾</color>为武器。运用光铸造铠甲，拥有出色的<color=#fcbe03>防御</color>和<color=#fcbe03>自愈</color>能力。",
+        "Element": 7,
+        "Talent": 3,
+        "TalentColor": "#68a6cd",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052407,
+                1052415,
+                1052423,
+                1052301,
+                1052310,
+                1052308
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020006
+            ]
+        ],
+        "NormalAttackSkill": [
+            2401
+        ],
+        "SpecialSkill": [
+            2405
+        ],
+        "UltimateSkill": [
+            2407
+        ],
+        "NormalSkill": [
+            2410,
+            2412,
+            2408,
+            2421,
+            2420,
+            2415,
+            2419,
+            2409
+        ],
+        "TalentSkill": [
+            2406,
+            2411,
+            2413,
+            2416,
+            2417,
+            2425
+        ],
+        "ShowTalentStage": [
+            122,
+            123
+        ],
+        "Create": 1,
+        "IsOpen": true,
+        "Index": 5,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_78",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_3",
+        "MainTalentIcon": "ui/textures/weaopn/weapon_icon_7",
+        "MainTalentSelectedIcon": "ui/textures/weaopn/weapon_icon_select_7",
+        "UnlockCondition": [
+            [
+                2,
+                170106,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "每1%精通提供2.5%光明圣盾获取效率和0.2%全元素抵抗<br>"
+            ],
+            [
+                "1",
+                "每1%精通提供3%光铸屏障生命提升效果和0.2%全元素抵抗<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11330
+            ],
+            [
+                1,
+                11330
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11010
+            ],
+            [
+                1,
+                11010
+            ]
+        ],
+        "RangeType": 0,
+        "WeaponSkinId": 7400002
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "ProfessionId": 13,
+        "Name": "灵魂乐手",
+        "LineFeedName": "灵魂乐手",
+        "Icon": "ui/atlas/profession/profession_horizontal_08",
+        "Intro": "擅长<color=#fcbe03>近远距离</color>作战，以<color=#fcbe03>吉他</color>为武器。攻击可以施加<color=#fcbe03>治疗</color>效果，擅长为队友施加<color=#fcbe03>增益</color>，拥有出色的<color=#fcbe03>辅助</color>能力。",
+        "Element": 1,
+        "Talent": 2,
+        "TalentColor": "#83c49a",
+        "ProfessionBrokeExtraItem": [
+            [
+                1052401,
+                1052409,
+                1052417,
+                1052301,
+                1052304,
+                1052306
+            ]
+        ],
+        "ProfessionStarExtraItem": [
+            [
+                1020003
+            ]
+        ],
+        "NormalAttackSkill": [
+            2321
+        ],
+        "SpecialSkill": [
+            2306
+        ],
+        "UltimateSkill": [
+            2314
+        ],
+        "NormalSkill": [
+            2308,
+            2309,
+            2310,
+            2311,
+            2312,
+            2313,
+            2315,
+            2316
+        ],
+        "TalentSkill": [
+            2307,
+            2317,
+            2332,
+            2335,
+            2336
+        ],
+        "ShowTalentStage": [
+            119,
+            120
+        ],
+        "Create": 1,
+        "IsOpen": true,
+        "Index": 8,
+        "SchoolIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_77",
+        "PlayerSchoolIcon": "ui/atlas/talent/talent_tag_small_icon_1",
+        "MainTalentIcon": "ui/textures/weaopn/weapon_icon_8",
+        "MainTalentSelectedIcon": "ui/textures/weaopn/weapon_icon_select_8",
+        "UnlockCondition": [
+            [
+                2,
+                170107,
+                2
+            ]
+        ],
+        "MasteryDes": [
+            [
+                "0",
+                "每1%精通提供1%安和曲转换加成效果<br>"
+            ],
+            [
+                "1",
+                "每1%精通使得鸣奏·愈合乐章衰退速度降低0.35%<br>"
+            ]
+        ],
+        "AttackShow": [
+            [
+                0,
+                11340
+            ],
+            [
+                1,
+                11340
+            ]
+        ],
+        "StrOrIntOrDexShow": [
+            [
+                0,
+                11020
+            ],
+            [
+                1,
+                11020
+            ]
+        ],
+        "RangeType": 0,
+        "WeaponSkinId": 7410002
+    }
+}

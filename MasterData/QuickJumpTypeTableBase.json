@@ -1,0 +1,44 @@
+{
+    "1": {
+        "Key": 1,
+        "Type": 1,
+        "Param": "场景id=跳转类型（1.point 2.npc 3.monster 4.zone 5.object）=编辑器导出的对应表里的UID",
+        "Example": "7=1=21",
+        "RefreshNum": "跳转追踪7号场景里UID为21的点"
+    },
+    "2": {
+        "Key": 2,
+        "Type": 2,
+        "Param": "功能id=场景id",
+        "Example": "100804=7",
+        "RefreshNum": "打开阿斯特里亚平原7号场景的怪物探知界面（100804）功能，如果不需要场景ID参数可以不配置"
+    },
+    "3": {
+        "Key": 3,
+        "Type": 3,
+        "Param": "事件id=场景id",
+        "Example": "1008=7",
+        "RefreshNum": "用于跳转世界事件（若未开启，弹出tips提示；若开启了，选中对应事件；若有多个事件，随机选中1个）"
+    },
+    "4": {
+        "Key": 4,
+        "Type": 4,
+        "Param": "目标类型（1.npc 2.zone 3.object）=地图tag",
+        "Example": "1      2=187  ",
+        "RefreshNum": "用于追踪最近的一个目标（若有多个目标的话）道具获取功能专属，NPC后可不加地图TAG，读最近的NPC坐标，配置1代表反向读取NPC表里对应配置功能ID的NPC的点，配置2或3去找zone表，object表里对应地图TAG的点"
+    },
+    "5": {
+        "Key": 5,
+        "Type": 5,
+        "Param": "mesasgetableID.具体的提示文字",
+        "Example": "1020001",
+        "RefreshNum": "配置5时，点击反馈为弹出飘条提示"
+    },
+    "6": {
+        "Key": 6,
+        "Type": 6,
+        "Param": "无参数",
+        "Example": "",
+        "RefreshNum": "判断是否有协会，协会场景是否建造好，如果是可直接传回协会，如果否弹出对应提示"
+    }
+}

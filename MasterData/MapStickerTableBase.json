@@ -1,0 +1,779 @@
+{
+    "70101": {
+        "Key": 70101,
+        "Id": 70101,
+        "Name": "英雄草",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_2",
+        "Number": 11,
+        "SortId": 1,
+        "Des": "独立战争以后维尔古城生长出英雄草，向着阿斯特里斯的方向蔓延",
+        "TaskId": [
+            7010101
+        ],
+        "AwardId": 10000210
+    },
+    "70102": {
+        "Key": 70102,
+        "Id": 70102,
+        "Name": "巨塔遗迹",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_8",
+        "Number": 1,
+        "SortId": 2,
+        "Des": "据说是布法利亚文明留下来的神族遗迹，伫立在阿斯特里亚平原中央",
+        "TaskId": [
+            7010201,
+            7010202
+        ],
+        "AwardId": 10000220
+    },
+    "70103": {
+        "Key": 70103,
+        "Id": 70103,
+        "Name": "英雄碑林",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_1",
+        "Number": 3,
+        "SortId": 3,
+        "Des": "阿斯特里斯的独立战争被布法利亚教团视为非正义行为，民众自发建造了许多树雕，默默纪念着带来独立与和平的英雄们",
+        "TaskId": [
+            7010301,
+            7010302,
+            7010303
+        ],
+        "AwardId": 10000230
+    },
+    "70104": {
+        "Key": 70104,
+        "Id": 70104,
+        "Name": "安德拉驿站",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_3",
+        "Number": 8,
+        "SortId": 4,
+        "Des": "战后新建的驿站，紧邻安德拉盆地的旧战场，一些“战场拾荒者”居住在这里，搜寻独立战争时期遗留的装备",
+        "TaskId": [
+            7010401
+        ],
+        "AwardId": 10000240
+    },
+    "70105": {
+        "Key": 70105,
+        "Id": 70105,
+        "Name": "安德拉登陆战遗址",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_4",
+        "Number": 2,
+        "SortId": 5,
+        "Des": "一个无人管理的危险区域，是独立战争时期的主战场之一，野蛮生长的自然植物与战争遗留物和谐共存",
+        "TaskId": [
+            7010501
+        ],
+        "AwardId": 10000250
+    },
+    "70106": {
+        "Key": 70106,
+        "Id": 70106,
+        "Name": "安德拉地下隧洞",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_7",
+        "Number": 10,
+        "SortId": 6,
+        "Des": "安德拉盆地的隧洞，在独立战争中班哈尔特的巨型机像被毁，其能源装置遗落在隧洞中，造成了生态剧变",
+        "TaskId": [
+            7010601,
+            7010602
+        ],
+        "AwardId": 10000260
+    },
+    "70107": {
+        "Key": 70107,
+        "Id": 70107,
+        "Name": "明斯特霍恩",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_12",
+        "Number": 6,
+        "SortId": 7,
+        "Des": "明斯特霍恩曾经是个祥和的小村庄，在独立战争时被战火摧毁。战后幸存的村民回到了这里重建家园",
+        "TaskId": [
+            7010701
+        ],
+        "AwardId": 10000270
+    },
+    "70108": {
+        "Key": 70108,
+        "Id": 70108,
+        "Name": "卡尼曼部落入口",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_10",
+        "Number": 5,
+        "SortId": 8,
+        "Des": "卡尼曼部落以狩猎和采集为生，对外保持着不接触、不欢迎的态度，在部落周围设有防御关卡",
+        "TaskId": [
+            7010801
+        ],
+        "AwardId": 10000280
+    },
+    "70109": {
+        "Key": 70109,
+        "Id": 70109,
+        "Name": "长老议事厅",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_11",
+        "Number": 4,
+        "SortId": 9,
+        "Des": "卡尼曼部落的酋长和长老们开会议事的场所",
+        "TaskId": [
+            7010901
+        ],
+        "AwardId": 10000290
+    },
+    "70110": {
+        "Key": 70110,
+        "Id": 70110,
+        "Name": "安德拉废都",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_6",
+        "Number": 9,
+        "SortId": 10,
+        "Des": "神秘的遗迹，是布法利亚教团的圣地之一，似乎很久以前曾有人类聚居在这里",
+        "TaskId": [
+            7011001
+        ],
+        "AwardId": 10000300
+    },
+    "70111": {
+        "Key": 70111,
+        "Id": 70111,
+        "Name": "黯影堡垒",
+        "Icon": "ui/atlas/scenicspot_clock/scenicspot_clock_icon/scenicspot_clock_icon_5",
+        "Number": 7,
+        "SortId": 11,
+        "Des": "以击败阿斯特里斯为目的活动的黯影军团，在安德拉废都内建立的秘密基地",
+        "TaskId": [
+            7011101
+        ],
+        "AwardId": 10000310
+    },
+    "90101": {
+        "Key": 90101,
+        "Id": 90101,
+        "Name": "俯瞰陷落河",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_gaoyuanxice",
+        "Number": 0,
+        "SortId": 12,
+        "Des": "陷落河因流经深谷而得名。河谷底部存在一处浅水湾，呈现出如海底洞窟般的奇异景象。",
+        "TaskId": [
+            9010131,
+            9010101
+        ],
+        "AwardId": 10000461
+    },
+    "90102": {
+        "Key": 90102,
+        "Id": 90102,
+        "Name": "落雷瀑布",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_gaoyuanpubu",
+        "Number": 0,
+        "SortId": 13,
+        "Des": "高原北部水系丰沛，瀑布星罗棋布。它们发轫于高山融雪，最终汇聚成陷落河的命脉，滋养着附近复杂的生态。",
+        "TaskId": [
+            9010132,
+            9010102
+        ],
+        "AwardId": 10000462
+    },
+    "90103": {
+        "Key": 90103,
+        "Id": 90103,
+        "Name": "撼天针岩",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_gaoyuanjushi",
+        "Number": 0,
+        "SortId": 14,
+        "Des": "异种星元改变了高原的生态结构，令这里异石突起。尖锐的岩石破土而出，锋芒直指神悬御柱。",
+        "TaskId": [
+            9010133,
+            9010103
+        ],
+        "AwardId": 10000463
+    },
+    "90104": {
+        "Key": 90104,
+        "Id": 90104,
+        "Name": "故居",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_gaoyuanhedibu",
+        "Number": 0,
+        "SortId": 15,
+        "Des": "往昔的炊烟与人声早已散尽，那些聚落的痕迹，如今只剩岩壁上的空洞，在风中沉默。",
+        "TaskId": [
+            9010134,
+            9010104
+        ],
+        "AwardId": 10000464
+    },
+    "90105": {
+        "Key": 90105,
+        "Id": 90105,
+        "Name": "陷落河石室",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_gaoyuanshouling",
+        "Number": 0,
+        "SortId": 16,
+        "Des": "在河道隐蔽的崖壁上，藏有通往废弃遗迹的路径。如今这里已经被怪物占据，沦为晦暗滋生之地。",
+        "TaskId": [
+            9010135,
+            9010105
+        ],
+        "AwardId": 10000465
+    },
+    "90106": {
+        "Key": 90106,
+        "Id": 90106,
+        "Name": "倒悬的幻幻花",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_gaoyuanhedihuanhuanhua",
+        "Number": 0,
+        "SortId": 17,
+        "Des": "巴哈马尔高原遍布着一种色泽艳丽、如梦似幻的结晶体——幻幻花。虽绚丽得像梦中之物，却暗藏危险。",
+        "TaskId": [
+            9010136,
+            9010106
+        ],
+        "AwardId": 10000466
+    },
+    "90107": {
+        "Key": 90107,
+        "Id": 90107,
+        "Name": "石缝中绽开的岩石",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_gaoyuanhedi",
+        "Number": 0,
+        "SortId": 18,
+        "Des": "据学者考据，这些石缝中绽开的尖锐岩石有清晰的生长分层，至今仍以非常细微的速度生长着。",
+        "TaskId": [
+            9010137,
+            9010107
+        ],
+        "AwardId": 10000467
+    },
+    "90108": {
+        "Key": 90108,
+        "Id": 90108,
+        "Name": "拉尔帕尔村",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_cunzhuangquanjing",
+        "Number": 0,
+        "SortId": 19,
+        "Des": "高原物资贫瘠，但来此地瞻仰神悬御柱的巡礼者却络绎不绝。他们在此地种出了粮食，最终发展成为村庄。",
+        "TaskId": [
+            9010138,
+            9010108
+        ],
+        "AwardId": 10000468
+    },
+    "90109": {
+        "Key": 90109,
+        "Id": 90109,
+        "Name": "神悬御柱",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yuzhujiaoxia",
+        "Number": 0,
+        "SortId": 20,
+        "Des": "神悬御柱作为麦格纳大陆最大的遗迹，始终被教团严密封锁与守护。虽然禁止进入内部，但无数巡礼者仍慕名前来。",
+        "TaskId": [
+            9010139,
+            9010109
+        ],
+        "AwardId": 10000469
+    },
+    "90110": {
+        "Key": 90110,
+        "Id": 90110,
+        "Name": "矿场吊塔",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_kuangchangfushi",
+        "Number": 0,
+        "SortId": 21,
+        "Des": "因受异种星元影响，高原的矿物资源异常丰富。班哈尔特公国为此设立西斯莱萨矿场，并派驻军队管理开采。",
+        "TaskId": [
+            9010140,
+            9010110
+        ],
+        "AwardId": 10000470
+    },
+    "90111": {
+        "Key": 90111,
+        "Id": 90111,
+        "Name": "遗忘花甸",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_kuangchangziran",
+        "Number": 0,
+        "SortId": 22,
+        "Des": "经年累月的挖掘，令露天区域的矿藏近乎消耗殆尽。为维持矿区产出，黑石军团建立了地下矿区。",
+        "TaskId": [
+            9010141,
+            9010111
+        ],
+        "AwardId": 10000471
+    },
+    "90112": {
+        "Key": 90112,
+        "Id": 90112,
+        "Name": "矿场隘口",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_kuagnchang",
+        "Number": 0,
+        "SortId": 23,
+        "Des": "西斯莱萨矿场产出的矿石，会经由矿道运往贝克马尔运输站进行初筛，之后通过重装车辆运回班哈尔特公国。",
+        "TaskId": [
+            9010142,
+            9010112
+        ],
+        "AwardId": 10000472
+    },
+    "90113": {
+        "Key": 90113,
+        "Id": 90113,
+        "Name": "运输站的风车",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yunshudongkou",
+        "Number": 0,
+        "SortId": 24,
+        "Des": "作为矿场的管理者，黑石军团就驻扎在矿场附近的山丘上，盛气凌人的屯兵所如高塔般睥睨着整个矿区。",
+        "TaskId": [
+            9010143,
+            9010113
+        ],
+        "AwardId": 10000473
+    },
+    "90114": {
+        "Key": 90114,
+        "Id": 90114,
+        "Name": "铁轨旁的村庄",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yunshucunzhuang",
+        "Number": 0,
+        "SortId": 25,
+        "Des": "大量矿工的涌入，使得包括商铺、餐馆、瞭望塔在内的整套生态，在矿区内逐步成型。",
+        "TaskId": [
+            9010144,
+            9010114
+        ],
+        "AwardId": 10000474
+    },
+    "90115": {
+        "Key": 90115,
+        "Id": 90115,
+        "Name": "运输站的钢铁巨兽",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yunshuyiqi",
+        "Number": 0,
+        "SortId": 26,
+        "Des": "开采出的原矿需要在运输站进行初筛，军团为此设立了造价不菲的巨型分拣设备。",
+        "TaskId": [
+            9010145,
+            9010115
+        ],
+        "AwardId": 10000475
+    },
+    "90116": {
+        "Key": 90116,
+        "Id": 90116,
+        "Name": "屯兵所",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_tunbingsuo",
+        "Number": 0,
+        "SortId": 27,
+        "Des": "黑石军团用来囤积军团物资，和训练士兵的地方。里面常传出毛骨悚然的兵击与嘶吼声，当地人唯恐避之而不及。",
+        "TaskId": [
+            9010146,
+            9010116
+        ],
+        "AwardId": 10000476
+    },
+    "90117": {
+        "Key": 90117,
+        "Id": 90117,
+        "Name": "山芥垆上层",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_jiuguanshangceng",
+        "Number": 0,
+        "SortId": 28,
+        "Des": "山芥垆紧贴着山崖而建，是士兵们唯一的消遣场所。此地上下层泾渭分明，上层只招待黑石军团的士兵和军官。",
+        "TaskId": [
+            9010147,
+            9010117
+        ],
+        "AwardId": 10000477
+    },
+    "90118": {
+        "Key": 90118,
+        "Id": 90118,
+        "Name": "山芥垆下层",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_jiuguanxiaceng",
+        "Number": 0,
+        "SortId": 29,
+        "Des": "山芥垆下层光线昏暗，不见天日，且不设座位。矿工们只能自行堆砌箱凳，以换取片刻的休憩。",
+        "TaskId": [
+            9010148,
+            9010118
+        ],
+        "AwardId": 10000478
+    },
+    "90119": {
+        "Key": 90119,
+        "Id": 90119,
+        "Name": "运输站一隅",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yunshuxiaolu",
+        "Number": 0,
+        "SortId": 30,
+        "Des": "运输站原本有水陆两种运输方式，可随着地面的矿物开采殆尽，附近的水位也逐渐下降，码头也随之荒废了。",
+        "TaskId": [
+            9010149,
+            9010119
+        ],
+        "AwardId": 10000479
+    },
+    "90120": {
+        "Key": 90120,
+        "Id": 90120,
+        "Name": "神悬御柱下的幻幻花",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_huanhuanhua",
+        "Number": 0,
+        "SortId": 31,
+        "Des": "开放在神悬御柱附近的巨大幻幻花，庞大的根系遮蔽着一处入口。",
+        "TaskId": [
+            9010150,
+            9010120
+        ],
+        "AwardId": 10000480
+    },
+    "90121": {
+        "Key": 90121,
+        "Id": 90121,
+        "Name": "愈合中的矿洞",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiafeiqikuangdong1",
+        "Number": 0,
+        "SortId": 32,
+        "Des": "随着黑石军团的褫夺式开采深入地下，无数矿洞被建立起来。然而开采完毕后，矿洞也随之废弃，再无人问津。",
+        "TaskId": [
+            9010151,
+            9010121
+        ],
+        "AwardId": 10000481
+    },
+    "90122": {
+        "Key": 90122,
+        "Id": 90122,
+        "Name": "遗忘，然后生长",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiafeiqikuangdong2",
+        "Number": 0,
+        "SortId": 33,
+        "Des": "矿洞废弃后，像一道被遗忘的伤疤。虽已无人打理，但在经年累月的荒废下，竟然自行愈合，滋生了绿意。",
+        "TaskId": [
+            9010152,
+            9010122
+        ],
+        "AwardId": 10000482
+    },
+    "90123": {
+        "Key": 90123,
+        "Id": 90123,
+        "Name": "地下矿区的幻幻花",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiayihaokuangdong",
+        "Number": 0,
+        "SortId": 34,
+        "Des": "幻幻花这种奇异晶体有着亲石的特性，矿物和晶体丰饶之处，也是幻幻花盛开之地。",
+        "TaskId": [
+            9010153,
+            9010123
+        ],
+        "AwardId": 10000483
+    },
+    "90124": {
+        "Key": 90124,
+        "Id": 90124,
+        "Name": "幻妄之娜宝",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiayihaonabao",
+        "Number": 0,
+        "SortId": 35,
+        "Des": "地下矿洞中幻幻花丛生，各种怪谈和传闻也络绎不绝。据说，有人会在恍惚间，看到穿行其中的奇异娜宝。",
+        "TaskId": [
+            9010154,
+            9010124
+        ],
+        "AwardId": 10000484
+    },
+    "90125": {
+        "Key": 90125,
+        "Id": 90125,
+        "Name": "转运区的铁轨",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiazhuanyun1",
+        "Number": 0,
+        "SortId": 36,
+        "Des": "在地下开采出来的矿石，会堆积在转运区贮存，等待运往地面。",
+        "TaskId": [
+            9010155,
+            9010125
+        ],
+        "AwardId": 10000485
+    },
+    "90126": {
+        "Key": 90126,
+        "Id": 90126,
+        "Name": "地下城邦",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiazhuanyun2",
+        "Number": 0,
+        "SortId": 37,
+        "Des": "地下矿场的岩蛇十分凶猛，令黑石军团也束手无策，只能修建起厚重的隔离门试图抵御。",
+        "TaskId": [
+            9010156,
+            9010126
+        ],
+        "AwardId": 10000486
+    },
+    "90127": {
+        "Key": 90127,
+        "Id": 90127,
+        "Name": "深层采掘区",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiacaijue",
+        "Number": 0,
+        "SortId": 38,
+        "Des": "错综复杂的采掘区深处，也是矿工失踪率最高的地方。",
+        "TaskId": [
+            9010157,
+            9010127
+        ],
+        "AwardId": 10000487
+    },
+    "90128": {
+        "Key": 90128,
+        "Id": 90128,
+        "Name": "晶石贮存地",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiashuijing",
+        "Number": 0,
+        "SortId": 39,
+        "Des": "地下矿场的最深处，神秘晶石贮存之所……",
+        "TaskId": [
+            9010158,
+            9010128
+        ],
+        "AwardId": 10000488
+    },
+    "90129": {
+        "Key": 90129,
+        "Id": 90129,
+        "Name": "自然的回归",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiakuangqu1",
+        "Number": 0,
+        "SortId": 40,
+        "Des": "暗无天日的矿洞中，亦有阳光渗入之地。",
+        "TaskId": [
+            9010159,
+            9010129
+        ],
+        "AwardId": 10000489
+    },
+    "90130": {
+        "Key": 90130,
+        "Id": 90130,
+        "Name": "缄默之地",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiakuangqu2",
+        "Number": 0,
+        "SortId": 41,
+        "Des": "这些幽暗的石柱表面布满粗粝的纹路，呈现出一种晦涩的灰暗，仿佛经历过某种彻底的毁灭。",
+        "TaskId": [
+            9010160,
+            9010130
+        ],
+        "AwardId": 10000490
+    },
+    "110001": {
+        "Key": 110001,
+        "Id": 110001,
+        "Name": "游星小镇入口",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_kuagnchang",
+        "Number": 0,
+        "SortId": 42,
+        "Des": "所有人登陆岛屿的唯一入口，拥有广场，鲜花，雕塑与巨大的气球。是整个梦幻之岛的起始点。",
+        "TaskId": [
+            11010001,
+            9010161
+        ],
+        "AwardId": 10000492
+    },
+    "110002": {
+        "Key": 110002,
+        "Id": 110002,
+        "Name": "极光舞台",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yunshudongkou",
+        "Number": 0,
+        "SortId": 43,
+        "Des": "整个游星岛中最有活力的地方，大家用自己的舞蹈比拼交流，掌声和舞步互相搭配，成为岛上喝彩声最多的地方。",
+        "TaskId": [
+            11010002,
+            9010162
+        ],
+        "AwardId": 10000493
+    },
+    "110003": {
+        "Key": 110003,
+        "Id": 110003,
+        "Name": "小猪圆舞",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yunshucunzhuang",
+        "Number": 0,
+        "SortId": 44,
+        "Des": "跳出刻板印象的旋转木猪，成为了大家口口相传的奇怪之地，人人都为可爱的小猪发出惊呼声……",
+        "TaskId": [
+            11010003,
+            9010163
+        ],
+        "AwardId": 10000494
+    },
+    "110004": {
+        "Key": 110004,
+        "Id": 110004,
+        "Name": "潮汐之眼",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yunshuyiqi",
+        "Number": 0,
+        "SortId": 45,
+        "Des": "播放着不同音乐的绝大的DJ台，在银鸥海滩边矗立着。贝壳与阳光作为妆点，潮汐也能成为动听的乐曲。",
+        "TaskId": [
+            11010004,
+            9010164
+        ],
+        "AwardId": 10000495
+    },
+    "110005": {
+        "Key": 110005,
+        "Id": 110005,
+        "Name": "樱花林",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_tunbingsuo",
+        "Number": 0,
+        "SortId": 46,
+        "Des": "盛开的樱花林成为了游星岛最美的一角，人们在这里野餐、观景、拍照，也能远眺巨大的环星号。",
+        "TaskId": [
+            11010005,
+            9010165
+        ],
+        "AwardId": 10000496
+    },
+    "110006": {
+        "Key": 110006,
+        "Id": 110006,
+        "Name": "环星号",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_jiuguanshangceng",
+        "Number": 0,
+        "SortId": 47,
+        "Des": "巨大的环星号似乎能够摸到星星，人们能够到达云端，说出藏在心里的话。它已经成为了游星岛上最适合虚度光阴的地方。",
+        "TaskId": [
+            11010006,
+            9010166
+        ],
+        "AwardId": 10000497
+    },
+    "110007": {
+        "Key": 110007,
+        "Id": 110007,
+        "Name": "游星俱乐部",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_jiuguanxiaceng",
+        "Number": 0,
+        "SortId": 48,
+        "Des": "方寸大小的桌面上，不仅仅有决定国家存亡的宏大推演、也有一枚金币当道具，就能进行的输赢较量。游星俱乐部就是这样一个地方，它公平公正，它也充满了胜利者的欢呼与失败者的叹息，可这又有什么关系？只是一场游戏罢了。",
+        "TaskId": [
+            11010007,
+            9010167
+        ],
+        "AwardId": 10000498
+    },
+    "110008": {
+        "Key": 110008,
+        "Id": 110008,
+        "Name": "星之灯 · 俯瞰之处",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_yunshuxiaolu",
+        "Number": 0,
+        "SortId": 49,
+        "Des": "在游星岛的创始人喵可露看来，夜晚的海洋与天空偶尔也会感到寂寞，如果不挂起一盏足够高的灯，那些贪玩的星星说不定会找不到回家的路。于是，便有了这座能够俯瞰全岛的瞭望塔——「星之灯」。",
+        "TaskId": [
+            11010008,
+            9010168
+        ],
+        "AwardId": 10000499
+    },
+    "110009": {
+        "Key": 110009,
+        "Id": 110009,
+        "Name": "心形水面 · 非许愿池",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_huanhuanhua",
+        "Number": 0,
+        "SortId": 50,
+        "Des": "游星岛著名地标之一，由于独特的心形造型，偶尔也会有游客趁工作人员不注意，把硬币丢进去许愿。",
+        "TaskId": [
+            11010009,
+            9010169
+        ],
+        "AwardId": 10000500
+    },
+    "110010": {
+        "Key": 110010,
+        "Id": 110010,
+        "Name": "西沙滩 · 度假气息",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiafeiqikuangdong1",
+        "Number": 0,
+        "SortId": 51,
+        "Des": "得益于游星岛毗邻海洋的独特设计，这里的沙滩和大海都货真价实，适合那些想要暂时逃离喧闹，以慢节奏休假的游客。",
+        "TaskId": [
+            11010010,
+            9010170
+        ],
+        "AwardId": 10000501
+    },
+    "110011": {
+        "Key": 110011,
+        "Id": 110011,
+        "Name": "小伊鼓乐队",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiafeiqikuangdong2",
+        "Number": 0,
+        "SortId": 52,
+        "Des": "游星岛的主路之一，常被游客当做会合地点。热度不减的原因或许在于：这里是观赏小伊鼓乐队的最佳位置。",
+        "TaskId": [
+            11010011,
+            9010171
+        ],
+        "AwardId": 10000502
+    },
+    "110012": {
+        "Key": 110012,
+        "Id": 110012,
+        "Name": "异世界讯号接收器！",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiayihaokuangdong",
+        "Number": 0,
+        "SortId": 53,
+        "Des": "极光舞台的光不仅仅是照明的工具，更是承载信息的信使。<br>这源于创始人喵可露的大胆设想，如果能像捕捉极光那样，捕捉来自遥远异世界的讯号，便有机会打破梦境孤岛的界限。",
+        "TaskId": [
+            11010012,
+            9010172
+        ],
+        "AwardId": 10000503
+    },
+    "110013": {
+        "Key": 110013,
+        "Id": 110013,
+        "Name": "娜宝游戏区 · 按时发薪",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiayihaonabao",
+        "Number": 0,
+        "SortId": 54,
+        "Des": "游星岛最热闹的游戏区之一，通常会开展娜宝主题的各种活动，是与娜宝亲近的最佳时刻。——若要问这里的娜宝，会不会掏出武器突然攻击游客？那恐怕取决于喵露克斯商会是否按时支付报酬。",
+        "TaskId": [
+            11010013,
+            9010173
+        ],
+        "AwardId": 10000504
+    },
+    "110014": {
+        "Key": 110014,
+        "Id": 110014,
+        "Name": "西侧桥面 · 滴滴叭叭号",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiazhuanyun1",
+        "Number": 0,
+        "SortId": 55,
+        "Des": "最初观光车的设计图豪华得足以容纳半个商会，但却被喵可露大小姐以“车厢只会拖后腿”而否决。于是滴滴叭叭号最终只保留一节车头。虽然略显拥挤，却让旅程多了一份奇妙的温馨。",
+        "TaskId": [
+            11010014,
+            9010174
+        ],
+        "AwardId": 10000505
+    },
+    "110015": {
+        "Key": 110015,
+        "Id": 110015,
+        "Name": "西沙滩 · 海风秘闻",
+        "Icon": "ui/textures/scenicspot/pic_scenicspotreputation_dixiazhuanyun2",
+        "Number": 0,
+        "SortId": 56,
+        "Des": "西沙滩的一角，看似安静，却因靠近「不可思议之馆」而成为游星岛怪谈最密集区域。<br>如果你想偶遇牵着蟹蛛散步的怪人，或是捏着小瓶检测梦境的侦探等怪咖……不妨来这里收获独属于你的传闻和怪谈。",
+        "TaskId": [
+            11010015,
+            9010175
+        ],
+        "AwardId": 10000506
+    }
+}

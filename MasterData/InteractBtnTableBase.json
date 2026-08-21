@@ -1,0 +1,7913 @@
+{
+    "100": {
+        "Key": 100,
+        "Id": 100,
+        "Name": "报名",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_box",
+        "FunctionOrder": []
+    },
+    "101": {
+        "Key": 101,
+        "Id": 101,
+        "Name": "加100分",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_box",
+        "FunctionOrder": []
+    },
+    "102": {
+        "Key": 102,
+        "Id": 102,
+        "Name": "扣50分",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_box",
+        "FunctionOrder": []
+    },
+    "103": {
+        "Key": 103,
+        "Id": 103,
+        "Name": "淘汰",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_box",
+        "FunctionOrder": []
+    },
+    "1001": {
+        "Key": 1001,
+        "Id": 1001,
+        "Name": "开启宝箱",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_box",
+        "FunctionOrder": []
+    },
+    "1002": {
+        "Key": 1002,
+        "Id": 1002,
+        "Name": "启动",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1003": {
+        "Key": 1003,
+        "Id": 1003,
+        "Name": "交互",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1004": {
+        "Key": 1004,
+        "Id": 1004,
+        "Name": "使用",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1005": {
+        "Key": 1005,
+        "Id": 1005,
+        "Name": "开启风扇",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1006": {
+        "Key": 1006,
+        "Id": 1006,
+        "Name": "移动上半部分",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1007": {
+        "Key": 1007,
+        "Id": 1007,
+        "Name": "移动下半部分",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1008": {
+        "Key": 1008,
+        "Id": 1008,
+        "Name": "启动主控装置",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1009": {
+        "Key": 1009,
+        "Id": 1009,
+        "Name": "尝试开启大门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1010": {
+        "Key": 1010,
+        "Id": 1010,
+        "Name": "触碰",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1011": {
+        "Key": 1011,
+        "Id": 1011,
+        "Name": "共鸣",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1012": {
+        "Key": 1012,
+        "Id": 1012,
+        "Name": "触发警报",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1013": {
+        "Key": 1013,
+        "Id": 1013,
+        "Name": "安装能源残片",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1014": {
+        "Key": 1014,
+        "Id": 1014,
+        "Name": "观察",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1015": {
+        "Key": 1015,
+        "Id": 1015,
+        "Name": "触碰柜子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1016": {
+        "Key": 1016,
+        "Id": 1016,
+        "Name": "打开柜子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1017": {
+        "Key": 1017,
+        "Id": 1017,
+        "Name": "修复",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1018": {
+        "Key": 1018,
+        "Id": 1018,
+        "Name": "调整角度",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1019": {
+        "Key": 1019,
+        "Id": 1019,
+        "Name": "开火",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1020": {
+        "Key": 1020,
+        "Id": 1020,
+        "Name": "坐下",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_sit",
+        "FunctionOrder": []
+    },
+    "1021": {
+        "Key": 1021,
+        "Id": 1021,
+        "Name": "开启时空穿梭！（跳转至卡尼曼森林流程）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1022": {
+        "Key": 1022,
+        "Id": 1022,
+        "Name": "点燃",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1023": {
+        "Key": 1023,
+        "Id": 1023,
+        "Name": "触碰记忆残渣",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1024": {
+        "Key": 1024,
+        "Id": 1024,
+        "Name": "查看地图",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1025": {
+        "Key": 1025,
+        "Id": 1025,
+        "Name": "打开",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1026": {
+        "Key": 1026,
+        "Id": 1026,
+        "Name": "查看展柜",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1027": {
+        "Key": 1027,
+        "Id": 1027,
+        "Name": "制服",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1028": {
+        "Key": 1028,
+        "Id": 1028,
+        "Name": "激活守护塔",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1029": {
+        "Key": 1029,
+        "Id": 1029,
+        "Name": "关闭越肩",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1030": {
+        "Key": 1030,
+        "Id": 1030,
+        "Name": "禁用跑步",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1031": {
+        "Key": 1031,
+        "Id": 1031,
+        "Name": "开启跑步",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1032": {
+        "Key": 1032,
+        "Id": 1032,
+        "Name": "直接传送到首领区域",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1033": {
+        "Key": 1033,
+        "Id": 1033,
+        "Name": "快捷去议会大厅",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1034": {
+        "Key": 1034,
+        "Id": 1034,
+        "Name": "拾起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1035": {
+        "Key": 1035,
+        "Id": 1035,
+        "Name": "查看",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1036": {
+        "Key": 1036,
+        "Id": 1036,
+        "Name": "向上旋转",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1037": {
+        "Key": 1037,
+        "Id": 1037,
+        "Name": "向下旋转",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1038": {
+        "Key": 1038,
+        "Id": 1038,
+        "Name": "前往安德拉战场",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1039": {
+        "Key": 1039,
+        "Id": 1039,
+        "Name": "前往卡尼曼森林",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1040": {
+        "Key": 1040,
+        "Id": 1040,
+        "Name": "回到议会大厅",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1041": {
+        "Key": 1041,
+        "Id": 1041,
+        "Name": "注入星脉能量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1042": {
+        "Key": 1042,
+        "Id": 1042,
+        "Name": "前往安德拉战场",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1043": {
+        "Key": 1043,
+        "Id": 1043,
+        "Name": "前往卡尼曼森林",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1044": {
+        "Key": 1044,
+        "Id": 1044,
+        "Name": "前往议会大厅",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1045": {
+        "Key": 1045,
+        "Id": 1045,
+        "Name": "前往坍塌的议会大厅",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1046": {
+        "Key": 1046,
+        "Id": 1046,
+        "Name": "躲进旋转舵轮亭",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1047": {
+        "Key": 1047,
+        "Id": 1047,
+        "Name": "{*coll.name(coll.Id)*}",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1048": {
+        "Key": 1048,
+        "Id": 1048,
+        "Name": "拉动操纵杆",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1049": {
+        "Key": 1049,
+        "Id": 1049,
+        "Name": "前往矿洞深处",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1050": {
+        "Key": 1050,
+        "Id": 1050,
+        "Name": "互动",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1051": {
+        "Key": 1051,
+        "Id": 1051,
+        "Name": "检查文书",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1052": {
+        "Key": 1052,
+        "Id": 1052,
+        "Name": "制服",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1053": {
+        "Key": 1053,
+        "Id": 1053,
+        "Name": "设置谈判胜利",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1054": {
+        "Key": 1054,
+        "Id": 1054,
+        "Name": "设置谈判失败",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1055": {
+        "Key": 1055,
+        "Id": 1055,
+        "Name": "查看信件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1056": {
+        "Key": 1056,
+        "Id": 1056,
+        "Name": "查看墙上的照片",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1057": {
+        "Key": 1057,
+        "Id": 1057,
+        "Name": "查看桌上的照片",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1058": {
+        "Key": 1058,
+        "Id": 1058,
+        "Name": "前往安德拉战场",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1059": {
+        "Key": 1059,
+        "Id": 1059,
+        "Name": "查看地上的照片",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1060": {
+        "Key": 1060,
+        "Id": 1060,
+        "Name": "向左旋转",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1061": {
+        "Key": 1061,
+        "Id": 1061,
+        "Name": "向右旋转",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1062": {
+        "Key": 1062,
+        "Id": 1062,
+        "Name": "前往小屋",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1063": {
+        "Key": 1063,
+        "Id": 1063,
+        "Name": "和蒂娜一起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1064": {
+        "Key": 1064,
+        "Id": 1064,
+        "Name": "触摸蒂娜的记忆(移动至首领区域)",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1065": {
+        "Key": 1065,
+        "Id": 1065,
+        "Name": "救援",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1066": {
+        "Key": 1066,
+        "Id": 1066,
+        "Name": "卡里克斯的信件（1）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1067": {
+        "Key": 1067,
+        "Id": 1067,
+        "Name": "卡里克斯的信件（2）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1068": {
+        "Key": 1068,
+        "Id": 1068,
+        "Name": "卡里克斯的信件（3）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1069": {
+        "Key": 1069,
+        "Id": 1069,
+        "Name": "制作传单",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1070": {
+        "Key": 1070,
+        "Id": 1070,
+        "Name": "对话",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1071": {
+        "Key": 1071,
+        "Id": 1071,
+        "Name": "吹泡泡",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1072": {
+        "Key": 1072,
+        "Id": 1072,
+        "Name": "水花魔法",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1074": {
+        "Key": 1074,
+        "Id": 1074,
+        "Name": "露丝",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1080": {
+        "Key": 1080,
+        "Id": 1080,
+        "Name": "回去",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1081": {
+        "Key": 1081,
+        "Id": 1081,
+        "Name": "开始进攻测试",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1082": {
+        "Key": 1082,
+        "Id": 1082,
+        "Name": "开始守卫测试",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1083": {
+        "Key": 1083,
+        "Id": 1083,
+        "Name": "开始辅助测试",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1084": {
+        "Key": 1084,
+        "Id": 1084,
+        "Name": "再想想",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1085": {
+        "Key": 1085,
+        "Id": 1085,
+        "Name": "躲避",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1086": {
+        "Key": 1086,
+        "Id": 1086,
+        "Name": "打开牢门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1087": {
+        "Key": 1087,
+        "Id": 1087,
+        "Name": "激活风力通道",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1095": {
+        "Key": 1095,
+        "Id": 1095,
+        "Name": "艾露娜",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1096": {
+        "Key": 1096,
+        "Id": 1096,
+        "Name": "{*coll.name(coll.Id)*}（采集）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_mine",
+        "FunctionOrder": []
+    },
+    "1097": {
+        "Key": 1097,
+        "Id": 1097,
+        "Name": "{*coll.name(coll.Id)*}（采集）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1098": {
+        "Key": 1098,
+        "Id": 1098,
+        "Name": "{*coll.name(coll.Id)*}（专注采集）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_mine_energy",
+        "FunctionOrder": []
+    },
+    "1099": {
+        "Key": 1099,
+        "Id": 1099,
+        "Name": "{*sceneObj.name(sceneObj.Id)*}",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1100": {
+        "Key": 1100,
+        "Id": 1100,
+        "Name": "跳跃",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1101": {
+        "Key": 1101,
+        "Id": 1101,
+        "Name": "前往遗迹中心",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1102": {
+        "Key": 1102,
+        "Id": 1102,
+        "Name": "{*coll.name(coll.Id)*}（专注采集）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand_energy",
+        "FunctionOrder": []
+    },
+    "1103": {
+        "Key": 1103,
+        "Id": 1103,
+        "Name": "{*npc.name(npc.Id)*}",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1104": {
+        "Key": 1104,
+        "Id": 1104,
+        "Name": "{*sceneObj.name(sceneObj.Id)*}",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_box",
+        "FunctionOrder": []
+    },
+    "1105": {
+        "Key": 1105,
+        "Id": 1105,
+        "Name": "复活：{*player.name*}",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_revive",
+        "FunctionOrder": []
+    },
+    "1106": {
+        "Key": 1106,
+        "Id": 1106,
+        "Name": "坐下",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_sit",
+        "FunctionOrder": []
+    },
+    "1107": {
+        "Key": 1107,
+        "Id": 1107,
+        "Name": "起来",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1108": {
+        "Key": 1108,
+        "Id": 1108,
+        "Name": "烹饪",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_cook",
+        "FunctionOrder": [
+            "OpenCookView",
+            "cook",
+            "4000"
+        ]
+    },
+    "1109": {
+        "Key": 1109,
+        "Id": 1109,
+        "Name": "烹饪",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_cook",
+        "FunctionOrder": [
+            "OpenCookView",
+            "cook",
+            "4005"
+        ]
+    },
+    "1110": {
+        "Key": 1110,
+        "Id": 1110,
+        "Name": "调查仪器",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1111": {
+        "Key": 1111,
+        "Id": 1111,
+        "Name": "开始事件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1112": {
+        "Key": 1112,
+        "Id": 1112,
+        "Name": "齐舞！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/emote_icon/emo_icon_action_dance",
+        "FunctionOrder": []
+    },
+    "1113": {
+        "Key": 1113,
+        "Id": 1113,
+        "Name": "炼金",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_35",
+        "FunctionOrder": []
+    },
+    "1114": {
+        "Key": 1114,
+        "Id": 1114,
+        "Name": "铸造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_32",
+        "FunctionOrder": []
+    },
+    "1115": {
+        "Key": 1115,
+        "Id": 1115,
+        "Name": "激活：【暴击】增益",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1116": {
+        "Key": 1116,
+        "Id": 1116,
+        "Name": "激活：【幸运】增益",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1117": {
+        "Key": 1117,
+        "Id": 1117,
+        "Name": "激活：【急速】增益",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1118": {
+        "Key": 1118,
+        "Id": 1118,
+        "Name": "激活：【精通】增益",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1119": {
+        "Key": 1119,
+        "Id": 1119,
+        "Name": "释放幻觉能量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1120": {
+        "Key": 1120,
+        "Id": 1120,
+        "Name": "前往遗迹戒备区",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1121": {
+        "Key": 1121,
+        "Id": 1121,
+        "Name": "前往遗迹传输室",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1122": {
+        "Key": 1122,
+        "Id": 1122,
+        "Name": "前往中央通道",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1123": {
+        "Key": 1123,
+        "Id": 1123,
+        "Name": "前往机械墓场",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1124": {
+        "Key": 1124,
+        "Id": 1124,
+        "Name": "启动矿车",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1130": {
+        "Key": 1130,
+        "Id": 1130,
+        "Name": "前往协会活动中心",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_18",
+        "FunctionOrder": []
+    },
+    "1131": {
+        "Key": 1131,
+        "Id": 1131,
+        "Name": "升级活动中心",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_05",
+        "FunctionOrder": []
+    },
+    "1132": {
+        "Key": 1132,
+        "Id": 1132,
+        "Name": "升级祝祷之泉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_07",
+        "FunctionOrder": []
+    },
+    "1133": {
+        "Key": 1133,
+        "Id": 1133,
+        "Name": "升级练习室",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_08",
+        "FunctionOrder": []
+    },
+    "1134": {
+        "Key": 1134,
+        "Id": 1134,
+        "Name": "升级休闲区",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_09",
+        "FunctionOrder": []
+    },
+    "1135": {
+        "Key": 1135,
+        "Id": 1135,
+        "Name": "升级协会杂货铺",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_11",
+        "FunctionOrder": []
+    },
+    "1136": {
+        "Key": 1136,
+        "Id": 1136,
+        "Name": "升级动画栏",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_13",
+        "FunctionOrder": []
+    },
+    "1137": {
+        "Key": 1137,
+        "Id": 1137,
+        "Name": "退出协会活动中心",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_23",
+        "FunctionOrder": []
+    },
+    "1138": {
+        "Key": 1138,
+        "Id": 1138,
+        "Name": "协会狩猎普通",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_26",
+        "FunctionOrder": []
+    },
+    "1139": {
+        "Key": 1139,
+        "Id": 1139,
+        "Name": "协会狩猎",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_26",
+        "FunctionOrder": []
+    },
+    "1140": {
+        "Key": 1140,
+        "Id": 1140,
+        "Name": "协会杂货铺兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_10",
+        "FunctionOrder": []
+    },
+    "1141": {
+        "Key": 1141,
+        "Id": 1141,
+        "Name": "开启祝祷之泉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_06",
+        "FunctionOrder": []
+    },
+    "1142": {
+        "Key": 1142,
+        "Id": 1142,
+        "Name": "协会货运任务",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_15",
+        "FunctionOrder": []
+    },
+    "1143": {
+        "Key": 1143,
+        "Id": 1143,
+        "Name": "协会打卡任务",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_01",
+        "FunctionOrder": []
+    },
+    "1144": {
+        "Key": 1144,
+        "Id": 1144,
+        "Name": "设置动画栏1",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_12",
+        "FunctionOrder": []
+    },
+    "1145": {
+        "Key": 1145,
+        "Id": 1145,
+        "Name": "设置动画栏2",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_12",
+        "FunctionOrder": []
+    },
+    "1146": {
+        "Key": 1146,
+        "Id": 1146,
+        "Name": "拍头像",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_21",
+        "FunctionOrder": []
+    },
+    "1147": {
+        "Key": 1147,
+        "Id": 1147,
+        "Name": "拍名片",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_22",
+        "FunctionOrder": []
+    },
+    "1151": {
+        "Key": 1151,
+        "Id": 1151,
+        "Name": "{*item.name(item.Id)*}",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1152": {
+        "Key": 1152,
+        "Id": 1152,
+        "Name": "全部拾取",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1153": {
+        "Key": 1153,
+        "Id": 1153,
+        "Name": "开启精英宝箱",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1154": {
+        "Key": 1154,
+        "Id": 1154,
+        "Name": "开启首领宝箱",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1161": {
+        "Key": 1161,
+        "Id": 1161,
+        "Name": "{*dungeon.name*}",
+        "BtnType": 2,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1162": {
+        "Key": 1162,
+        "Id": 1162,
+        "Name": "{*heroNormalDungeon.name*}",
+        "BtnType": 3,
+        "IconPath": "ui/atlas/npc/talk_icon_herodungeon",
+        "FunctionOrder": []
+    },
+    "1163": {
+        "Key": 1163,
+        "Id": 1163,
+        "Name": "{*heroChallengeDungeon.name*}",
+        "BtnType": 4,
+        "IconPath": "ui/atlas/npc/talk_icon_herodungeon",
+        "FunctionOrder": []
+    },
+    "1164": {
+        "Key": 1164,
+        "Id": 1164,
+        "Name": "打开宝藏",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1165": {
+        "Key": 1165,
+        "Id": 1165,
+        "Name": "工艺",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_31",
+        "FunctionOrder": []
+    },
+    "1166": {
+        "Key": 1166,
+        "Id": 1166,
+        "Name": "木作",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_70",
+        "FunctionOrder": []
+    },
+    "1167": {
+        "Key": 1167,
+        "Id": 1167,
+        "Name": "开拓者嘉奖",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_88",
+        "FunctionOrder": []
+    },
+    "1168": {
+        "Key": 1168,
+        "Id": 1168,
+        "Name": "织造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_72",
+        "FunctionOrder": []
+    },
+    "1201": {
+        "Key": 1201,
+        "Id": 1201,
+        "Name": "卡尼曼火场记忆片段",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1202": {
+        "Key": 1202,
+        "Id": 1202,
+        "Name": "安德拉战场记忆片段",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1203": {
+        "Key": 1203,
+        "Id": 1203,
+        "Name": "议会厅记忆片段",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1204": {
+        "Key": 1204,
+        "Id": 1204,
+        "Name": "首领战：蒂娜的回忆",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1205": {
+        "Key": 1205,
+        "Id": 1205,
+        "Name": "蒂娜的记忆碎片",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1206": {
+        "Key": 1206,
+        "Id": 1206,
+        "Name": "风暴编织者试炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1207": {
+        "Key": 1207,
+        "Id": 1207,
+        "Name": "挑战意志试炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1208": {
+        "Key": 1208,
+        "Id": 1208,
+        "Name": "挑战信仰试炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1209": {
+        "Key": 1209,
+        "Id": 1209,
+        "Name": "暗曜双灵试炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1210": {
+        "Key": 1210,
+        "Id": 1210,
+        "Name": "挑战终极试炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1211": {
+        "Key": 1211,
+        "Id": 1211,
+        "Name": "挑战神秘的传说试炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1212": {
+        "Key": 1212,
+        "Id": 1212,
+        "Name": "抓住！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1213": {
+        "Key": 1213,
+        "Id": 1213,
+        "Name": "拾取元素盾",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1214": {
+        "Key": 1214,
+        "Id": 1214,
+        "Name": "开启战利品",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1215": {
+        "Key": 1215,
+        "Id": 1215,
+        "Name": "变身野猪",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1216": {
+        "Key": 1216,
+        "Id": 1216,
+        "Name": "获取光域指针",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1217": {
+        "Key": 1217,
+        "Id": 1217,
+        "Name": "放回火种",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1218": {
+        "Key": 1218,
+        "Id": 1218,
+        "Name": "开启护罩",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1219": {
+        "Key": 1219,
+        "Id": 1219,
+        "Name": "传送到海岛",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1220": {
+        "Key": 1220,
+        "Id": 1220,
+        "Name": "一把摁住",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1221": {
+        "Key": 1221,
+        "Id": 1221,
+        "Name": "开启光域",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1222": {
+        "Key": 1222,
+        "Id": 1222,
+        "Name": "下潜",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1250": {
+        "Key": 1250,
+        "Id": 1250,
+        "Name": "启动",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1251": {
+        "Key": 1251,
+        "Id": 1251,
+        "Name": "操作",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1252": {
+        "Key": 1252,
+        "Id": 1252,
+        "Name": "完成前面所有副本目标",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1257": {
+        "Key": 1257,
+        "Id": 1257,
+        "Name": "传送到最新检查点",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1258": {
+        "Key": 1258,
+        "Id": 1258,
+        "Name": "驾驶近战机像",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1259": {
+        "Key": 1259,
+        "Id": 1259,
+        "Name": "驾驶远程机像",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1260": {
+        "Key": 1260,
+        "Id": 1260,
+        "Name": "驾驶机像3型",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1261": {
+        "Key": 1261,
+        "Id": 1261,
+        "Name": "驾驶机像4型",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1262": {
+        "Key": 1262,
+        "Id": 1262,
+        "Name": "获得机像",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1263": {
+        "Key": 1263,
+        "Id": 1263,
+        "Name": "开启挑战",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1270": {
+        "Key": 1270,
+        "Id": 1270,
+        "Name": "创建前方光桥",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1271": {
+        "Key": 1271,
+        "Id": 1271,
+        "Name": "显示提示路线",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1300": {
+        "Key": 1300,
+        "Id": 1300,
+        "Name": "激活【主战机像99型】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1301": {
+        "Key": 1301,
+        "Id": 1301,
+        "Name": "激活【副战机像03型】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1302": {
+        "Key": 1302,
+        "Id": 1302,
+        "Name": "激活【前线机像第7部队】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1303": {
+        "Key": 1303,
+        "Id": 1303,
+        "Name": "拾取风灵能量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1304": {
+        "Key": 1304,
+        "Id": 1304,
+        "Name": "拾取雷蚀能量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1305": {
+        "Key": 1305,
+        "Id": 1305,
+        "Name": "触摸时空之晶",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1306": {
+        "Key": 1306,
+        "Id": 1306,
+        "Name": "触摸时空裂隙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1310": {
+        "Key": 1310,
+        "Id": 1310,
+        "Name": "开炮！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1400": {
+        "Key": 1400,
+        "Id": 1400,
+        "Name": "沉梦林谷",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/map_season_02",
+        "FunctionOrder": []
+    },
+    "1500": {
+        "Key": 1500,
+        "Id": 1500,
+        "Name": "《阿斯特里斯花卉志》",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1501": {
+        "Key": 1501,
+        "Id": 1501,
+        "Name": "《三言二语，鲜花故事》",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1502": {
+        "Key": 1502,
+        "Id": 1502,
+        "Name": "《艾露娜传奇-豪华特别版》",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1503": {
+        "Key": 1503,
+        "Id": 1503,
+        "Name": "《战后纪要·人物篇》",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1504": {
+        "Key": 1504,
+        "Id": 1504,
+        "Name": "《未名纪闻汇编》",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1505": {
+        "Key": 1505,
+        "Id": 1505,
+        "Name": "草药学书籍",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1506": {
+        "Key": 1506,
+        "Id": 1506,
+        "Name": "旧笔记本",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1507": {
+        "Key": 1507,
+        "Id": 1507,
+        "Name": "旧肖像画",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1508": {
+        "Key": 1508,
+        "Id": 1508,
+        "Name": "视野层级1",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2001": {
+        "Key": 2001,
+        "Id": 2001,
+        "Name": "火焰兽人（主动）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2002": {
+        "Key": 2002,
+        "Id": 2002,
+        "Name": "哥布林（被动）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2003": {
+        "Key": 2003,
+        "Id": 2003,
+        "Name": "伊格尼索尔（主动）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2004": {
+        "Key": 2004,
+        "Id": 2004,
+        "Name": "伊格尼索尔（被动）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2005": {
+        "Key": 2005,
+        "Id": 2005,
+        "Name": "哥布林*9（被动）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2006": {
+        "Key": 2006,
+        "Id": 2006,
+        "Name": "哥布林*9（主动）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2007": {
+        "Key": 2007,
+        "Id": 2007,
+        "Name": "删除全场魔物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2008": {
+        "Key": 2008,
+        "Id": 2008,
+        "Name": "增加变量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2009": {
+        "Key": 2009,
+        "Id": 2009,
+        "Name": "减少变量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2010": {
+        "Key": 2010,
+        "Id": 2010,
+        "Name": "增加变量上限",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2011": {
+        "Key": 2011,
+        "Id": 2011,
+        "Name": "减少变量上限",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2012": {
+        "Key": 2012,
+        "Id": 2012,
+        "Name": "完成副本目标",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2013": {
+        "Key": 2013,
+        "Id": 2013,
+        "Name": "武器锻造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_forging",
+        "FunctionOrder": [
+            "OpenWeaponBuildView",
+            "weapon"
+        ]
+    },
+    "2015": {
+        "Key": 2015,
+        "Id": 2015,
+        "Name": "开拓局委托",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "2016": {
+        "Key": 2016,
+        "Id": 2016,
+        "Name": "选择选项A",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "2017": {
+        "Key": 2017,
+        "Id": 2017,
+        "Name": "选择选项B",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "2018": {
+        "Key": 2018,
+        "Id": 2018,
+        "Name": "选择选项C",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "2019": {
+        "Key": 2019,
+        "Id": 2019,
+        "Name": "选择选项D",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "2020": {
+        "Key": 2020,
+        "Id": 2020,
+        "Name": "显示问题",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2093": {
+        "Key": 2093,
+        "Id": 2093,
+        "Name": "开关灯",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_85",
+        "FunctionOrder": []
+    },
+    "2094": {
+        "Key": 2094,
+        "Id": 2094,
+        "Name": "清理杂物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_77",
+        "FunctionOrder": []
+    },
+    "2095": {
+        "Key": 2095,
+        "Id": 2095,
+        "Name": "一键清理",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_77",
+        "FunctionOrder": []
+    },
+    "2096": {
+        "Key": 2096,
+        "Id": 2096,
+        "Name": "查看委托",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_76",
+        "FunctionOrder": []
+    },
+    "2097": {
+        "Key": 2097,
+        "Id": 2097,
+        "Name": "查看商店",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_74",
+        "FunctionOrder": []
+    },
+    "2098": {
+        "Key": 2098,
+        "Id": 2098,
+        "Name": "共享仓库",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_24",
+        "FunctionOrder": []
+    },
+    "2099": {
+        "Key": 2099,
+        "Id": 2099,
+        "Name": "家园制造台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_83",
+        "FunctionOrder": []
+    },
+    "2101": {
+        "Key": 2101,
+        "Id": 2101,
+        "Name": "开始关卡",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": [
+            "PivotInteraction",
+            "pivot"
+        ]
+    },
+    "2102": {
+        "Key": 2102,
+        "Id": 2102,
+        "Name": "战斗开始",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2150": {
+        "Key": 2150,
+        "Id": 2150,
+        "Name": "接下此击！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2153": {
+        "Key": 2153,
+        "Id": 2153,
+        "Name": "凝聚幻想碎片！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "2290": {
+        "Key": 2290,
+        "Id": 2290,
+        "Name": "委托采集",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "2295": {
+        "Key": 2295,
+        "Id": 2295,
+        "Name": "家园铸造台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_32",
+        "FunctionOrder": []
+    },
+    "2296": {
+        "Key": 2296,
+        "Id": 2296,
+        "Name": "家园炼金台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_35",
+        "FunctionOrder": []
+    },
+    "2297": {
+        "Key": 2297,
+        "Id": 2297,
+        "Name": "家园工艺台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_31",
+        "FunctionOrder": []
+    },
+    "2298": {
+        "Key": 2298,
+        "Id": 2298,
+        "Name": "家园木作台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_70",
+        "FunctionOrder": []
+    },
+    "2299": {
+        "Key": 2299,
+        "Id": 2299,
+        "Name": "家园织造台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_72",
+        "FunctionOrder": []
+    },
+    "3000": {
+        "Key": 3000,
+        "Id": 3000,
+        "Name": "传送-中(起始点)",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3001": {
+        "Key": 3001,
+        "Id": 3001,
+        "Name": "传送-东(小怪测试)",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3002": {
+        "Key": 3002,
+        "Id": 3002,
+        "Name": "传送-南(场景物件测试)",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3003": {
+        "Key": 3003,
+        "Id": 3003,
+        "Name": "传送-西(测试)",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3004": {
+        "Key": 3004,
+        "Id": 3004,
+        "Name": "传送-北(测试)",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3910": {
+        "Key": 3910,
+        "Id": 3910,
+        "Name": "点亮火炬",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4000": {
+        "Key": 4000,
+        "Id": 4000,
+        "Name": "开启事件【埋伏】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4001": {
+        "Key": 4001,
+        "Id": 4001,
+        "Name": "开启事件【歼灭】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4002": {
+        "Key": 4002,
+        "Id": 4002,
+        "Name": "开启事件【精英·埋伏】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4003": {
+        "Key": 4003,
+        "Id": 4003,
+        "Name": "开启事件【精英·歼灭】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4004": {
+        "Key": 4004,
+        "Id": 4004,
+        "Name": "开启事件【星元失衡】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4005": {
+        "Key": 4005,
+        "Id": 4005,
+        "Name": "开启事件【护送】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4006": {
+        "Key": 4006,
+        "Id": 4006,
+        "Name": "开启事件【星尘贤者迷宫】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4007": {
+        "Key": 4007,
+        "Id": 4007,
+        "Name": "开启事件【星脉乱流】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4008": {
+        "Key": 4008,
+        "Id": 4008,
+        "Name": "平息星脉乱流",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4009": {
+        "Key": 4009,
+        "Id": 4009,
+        "Name": "开启事件【营救村民】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4010": {
+        "Key": 4010,
+        "Id": 4010,
+        "Name": "开启事件【抵御哥布林】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4011": {
+        "Key": 4011,
+        "Id": 4011,
+        "Name": "穿上伪装",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "4510": {
+        "Key": 4510,
+        "Id": 4510,
+        "Name": "拾取【暴击】属性球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "4511": {
+        "Key": 4511,
+        "Id": 4511,
+        "Name": "拾取【幸运】属性球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "4512": {
+        "Key": 4512,
+        "Id": 4512,
+        "Name": "拾取【急速】属性球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "4513": {
+        "Key": 4513,
+        "Id": 4513,
+        "Name": "拾取【精通】属性球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "4520": {
+        "Key": 4520,
+        "Id": 4520,
+        "Name": "清理尖刺",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "5001": {
+        "Key": 5001,
+        "Id": 5001,
+        "Name": "星元枢纽",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": [
+            "PivotInteraction",
+            "pivot"
+        ]
+    },
+    "5002": {
+        "Key": 5002,
+        "Id": 5002,
+        "Name": "共鸣",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": [
+            "AsyncPivotPortResonance",
+            "pivot"
+        ]
+    },
+    "5003": {
+        "Key": 5003,
+        "Id": 5003,
+        "Name": "共鸣",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": [
+            "AsyncResonanceSkill",
+            "env"
+        ]
+    },
+    "5004": {
+        "Key": 5004,
+        "Id": 5004,
+        "Name": "捕捉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "5005": {
+        "Key": 5005,
+        "Id": 5005,
+        "Name": "激活传送点",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "5006": {
+        "Key": 5006,
+        "Id": 5006,
+        "Name": "钓鱼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_fishing",
+        "FunctionOrder": []
+    },
+    "5101": {
+        "Key": 5101,
+        "Id": 5101,
+        "Name": "拍照",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_clock",
+        "FunctionOrder": []
+    },
+    "5102": {
+        "Key": 5102,
+        "Id": 5102,
+        "Name": "合影",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_clock",
+        "FunctionOrder": []
+    },
+    "5201": {
+        "Key": 5201,
+        "Id": 5201,
+        "Name": "进入住宅",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/mainui/main_btn_home",
+        "FunctionOrder": []
+    },
+    "5202": {
+        "Key": 5202,
+        "Id": 5202,
+        "Name": "退出住宅",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/mainui/main_btn_home",
+        "FunctionOrder": []
+    },
+    "5203": {
+        "Key": 5203,
+        "Id": 5203,
+        "Name": "种植",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_84",
+        "FunctionOrder": []
+    },
+    "5204": {
+        "Key": 5204,
+        "Id": 5204,
+        "Name": "浇水",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_82",
+        "FunctionOrder": []
+    },
+    "5205": {
+        "Key": 5205,
+        "Id": 5205,
+        "Name": "施肥",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_81",
+        "FunctionOrder": []
+    },
+    "5206": {
+        "Key": 5206,
+        "Id": 5206,
+        "Name": "收获",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "5207": {
+        "Key": 5207,
+        "Id": 5207,
+        "Name": "授粉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_86",
+        "FunctionOrder": []
+    },
+    "5208": {
+        "Key": 5208,
+        "Id": 5208,
+        "Name": "采集花粉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "5209": {
+        "Key": 5209,
+        "Id": 5209,
+        "Name": "铲掉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_96",
+        "FunctionOrder": []
+    },
+    "5210": {
+        "Key": 5210,
+        "Id": 5210,
+        "Name": "协助收获",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "6001": {
+        "Key": 6001,
+        "Id": 6001,
+        "Name": "进入",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6002": {
+        "Key": 6002,
+        "Id": 6002,
+        "Name": "离开",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6003": {
+        "Key": 6003,
+        "Id": 6003,
+        "Name": "开始调饮",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6004": {
+        "Key": 6004,
+        "Id": 6004,
+        "Name": "开始护送",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6005": {
+        "Key": 6005,
+        "Id": 6005,
+        "Name": "进入工坊",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6006": {
+        "Key": 6006,
+        "Id": 6006,
+        "Name": "打开牢门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "6007": {
+        "Key": 6007,
+        "Id": 6007,
+        "Name": "拾起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "6008": {
+        "Key": 6008,
+        "Id": 6008,
+        "Name": "穿过屏障",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "6009": {
+        "Key": 6009,
+        "Id": 6009,
+        "Name": "探查",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6010": {
+        "Key": 6010,
+        "Id": 6010,
+        "Name": "调查",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6011": {
+        "Key": 6011,
+        "Id": 6011,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6012": {
+        "Key": 6012,
+        "Id": 6012,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6013": {
+        "Key": 6013,
+        "Id": 6013,
+        "Name": "进入审讯室",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6014": {
+        "Key": 6014,
+        "Id": 6014,
+        "Name": "搜查",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6015": {
+        "Key": 6015,
+        "Id": 6015,
+        "Name": "交出碎片",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6016": {
+        "Key": 6016,
+        "Id": 6016,
+        "Name": "开始交涉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6017": {
+        "Key": 6017,
+        "Id": 6017,
+        "Name": "进入拉蒙德办公室",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6018": {
+        "Key": 6018,
+        "Id": 6018,
+        "Name": "威尔逊日记",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6019": {
+        "Key": 6019,
+        "Id": 6019,
+        "Name": "工匠守则",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6020": {
+        "Key": 6020,
+        "Id": 6020,
+        "Name": "不明设计图？",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6021": {
+        "Key": 6021,
+        "Id": 6021,
+        "Name": "离开",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6022": {
+        "Key": 6022,
+        "Id": 6022,
+        "Name": "进入地牢",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6023": {
+        "Key": 6023,
+        "Id": 6023,
+        "Name": "调查井口",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6024": {
+        "Key": 6024,
+        "Id": 6024,
+        "Name": "救人",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6025": {
+        "Key": 6025,
+        "Id": 6025,
+        "Name": "蒂娜调饮（跳过玩法）",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6026": {
+        "Key": 6026,
+        "Id": 6026,
+        "Name": "收集星元",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6027": {
+        "Key": 6027,
+        "Id": 6027,
+        "Name": "查阅信件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6028": {
+        "Key": 6028,
+        "Id": 6028,
+        "Name": "辨认吕西安",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6029": {
+        "Key": 6029,
+        "Id": 6029,
+        "Name": "拿起衣物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6030": {
+        "Key": 6030,
+        "Id": 6030,
+        "Name": "添水",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6031": {
+        "Key": 6031,
+        "Id": 6031,
+        "Name": "离开议长办公室",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6032": {
+        "Key": 6032,
+        "Id": 6032,
+        "Name": "救援",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6033": {
+        "Key": 6033,
+        "Id": 6033,
+        "Name": "开始牌局",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6034": {
+        "Key": 6034,
+        "Id": 6034,
+        "Name": "揭穿他！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6035": {
+        "Key": 6035,
+        "Id": 6035,
+        "Name": "放下绳索",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6036": {
+        "Key": 6036,
+        "Id": 6036,
+        "Name": "查看招募文书",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6037": {
+        "Key": 6037,
+        "Id": 6037,
+        "Name": "采集藤条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "6038": {
+        "Key": 6038,
+        "Id": 6038,
+        "Name": "前往放置陷阱",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "6039": {
+        "Key": 6039,
+        "Id": 6039,
+        "Name": "放置陷阱",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "6040": {
+        "Key": 6040,
+        "Id": 6040,
+        "Name": "追上狡猾的姆克",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "6041": {
+        "Key": 6041,
+        "Id": 6041,
+        "Name": "撬开箱子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "6042": {
+        "Key": 6042,
+        "Id": 6042,
+        "Name": "收集",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "6043": {
+        "Key": 6043,
+        "Id": 6043,
+        "Name": "舀水",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "6044": {
+        "Key": 6044,
+        "Id": 6044,
+        "Name": "哄孩子开心",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/emote_icon/emo_icon_action_dance",
+        "FunctionOrder": []
+    },
+    "6048": {
+        "Key": 6048,
+        "Id": 6048,
+        "Name": "掏出瓶子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "6050": {
+        "Key": 6050,
+        "Id": 6050,
+        "Name": "{*sceneObj.name(sceneObj.Id)*}",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "6530": {
+        "Key": 6530,
+        "Id": 6530,
+        "Name": "悬挂灯笼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7001": {
+        "Key": 7001,
+        "Id": 7001,
+        "Name": "查看",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7002": {
+        "Key": 7002,
+        "Id": 7002,
+        "Name": "进入卡尼曼森林",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "7003": {
+        "Key": 7003,
+        "Id": 7003,
+        "Name": "参与第一勇士的试炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "7004": {
+        "Key": 7004,
+        "Id": 7004,
+        "Name": "解放亡灵",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7005": {
+        "Key": 7005,
+        "Id": 7005,
+        "Name": "潜入卡尼曼禁地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7006": {
+        "Key": 7006,
+        "Id": 7006,
+        "Name": "阅读日志",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "7007": {
+        "Key": 7007,
+        "Id": 7007,
+        "Name": "潜入卡尼曼部落",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7008": {
+        "Key": 7008,
+        "Id": 7008,
+        "Name": "取下水罐",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7009": {
+        "Key": 7009,
+        "Id": 7009,
+        "Name": "拾取",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7011": {
+        "Key": 7011,
+        "Id": 7011,
+        "Name": "风元素乱流",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7020": {
+        "Key": 7020,
+        "Id": 7020,
+        "Name": "换防时间表",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7021": {
+        "Key": 7021,
+        "Id": 7021,
+        "Name": "锈蚀的钥匙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7022": {
+        "Key": 7022,
+        "Id": 7022,
+        "Name": "插在地上的断剑",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7023": {
+        "Key": 7023,
+        "Id": 7023,
+        "Name": "尝试开门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7024": {
+        "Key": 7024,
+        "Id": 7024,
+        "Name": "插入钥匙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7025": {
+        "Key": 7025,
+        "Id": 7025,
+        "Name": "熄灭的火堆",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7026": {
+        "Key": 7026,
+        "Id": 7026,
+        "Name": "废弃的绷带",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7027": {
+        "Key": 7027,
+        "Id": 7027,
+        "Name": "破损的干粮口袋",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7028": {
+        "Key": 7028,
+        "Id": 7028,
+        "Name": "杂乱的脚印",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7029": {
+        "Key": 7029,
+        "Id": 7029,
+        "Name": "断剑",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7030": {
+        "Key": 7030,
+        "Id": 7030,
+        "Name": "暗色的土壤",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7031": {
+        "Key": 7031,
+        "Id": 7031,
+        "Name": "松动的石头",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7032": {
+        "Key": 7032,
+        "Id": 7032,
+        "Name": "调查魔物的咬痕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "7033": {
+        "Key": 7033,
+        "Id": 7033,
+        "Name": "特殊共鸣",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7034": {
+        "Key": 7034,
+        "Id": 7034,
+        "Name": "绯红水晶碎块",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7035": {
+        "Key": 7035,
+        "Id": 7035,
+        "Name": "调查车载物品",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7036": {
+        "Key": 7036,
+        "Id": 7036,
+        "Name": "调查水晶流通途径",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7037": {
+        "Key": 7037,
+        "Id": 7037,
+        "Name": "尾随莱纳",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7038": {
+        "Key": 7038,
+        "Id": 7038,
+        "Name": "潜入屯兵所",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7039": {
+        "Key": 7039,
+        "Id": 7039,
+        "Name": "查看星元监测器",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7040": {
+        "Key": 7040,
+        "Id": 7040,
+        "Name": "查看涂鸦",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7041": {
+        "Key": 7041,
+        "Id": 7041,
+        "Name": "抓住偷听者",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "7042": {
+        "Key": 7042,
+        "Id": 7042,
+        "Name": "放下物资",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7043": {
+        "Key": 7043,
+        "Id": 7043,
+        "Name": "敲门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7044": {
+        "Key": 7044,
+        "Id": 7044,
+        "Name": "搜寻",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7101": {
+        "Key": 7101,
+        "Id": 7101,
+        "Name": "偷听",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7102": {
+        "Key": 7102,
+        "Id": 7102,
+        "Name": "翻阅",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7103": {
+        "Key": 7103,
+        "Id": 7103,
+        "Name": "查看",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7104": {
+        "Key": 7104,
+        "Id": 7104,
+        "Name": "探查",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7105": {
+        "Key": 7105,
+        "Id": 7105,
+        "Name": "翻找",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7106": {
+        "Key": 7106,
+        "Id": 7106,
+        "Name": "取下钥匙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7107": {
+        "Key": 7107,
+        "Id": 7107,
+        "Name": "进入巨龙爪痕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "7108": {
+        "Key": 7108,
+        "Id": 7108,
+        "Name": "取下",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "7109": {
+        "Key": 7109,
+        "Id": 7109,
+        "Name": "眼熟的工具？",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7110": {
+        "Key": 7110,
+        "Id": 7110,
+        "Name": "错乱的脚印？",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7111": {
+        "Key": 7111,
+        "Id": 7111,
+        "Name": "地面上的车辙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7112": {
+        "Key": 7112,
+        "Id": 7112,
+        "Name": "散落的货物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7113": {
+        "Key": 7113,
+        "Id": 7113,
+        "Name": "查看",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7114": {
+        "Key": 7114,
+        "Id": 7114,
+        "Name": "野胡萝卜花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7115": {
+        "Key": 7115,
+        "Id": 7115,
+        "Name": "击败可疑的摊贩",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7116": {
+        "Key": 7116,
+        "Id": 7116,
+        "Name": "击败康斯坦丁的手下",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7117": {
+        "Key": 7117,
+        "Id": 7117,
+        "Name": "灭火",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7118": {
+        "Key": 7118,
+        "Id": 7118,
+        "Name": "木桶打水",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7119": {
+        "Key": 7119,
+        "Id": 7119,
+        "Name": "升降机汲水",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7120": {
+        "Key": 7120,
+        "Id": 7120,
+        "Name": "开始挑战",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7121": {
+        "Key": 7121,
+        "Id": 7121,
+        "Name": "军装",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7122": {
+        "Key": 7122,
+        "Id": 7122,
+        "Name": "旗帜",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7123": {
+        "Key": 7123,
+        "Id": 7123,
+        "Name": "甲板木",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7124": {
+        "Key": 7124,
+        "Id": 7124,
+        "Name": "旁听",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7125": {
+        "Key": 7125,
+        "Id": 7125,
+        "Name": "再次挑战",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7126": {
+        "Key": 7126,
+        "Id": 7126,
+        "Name": "调查",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7127": {
+        "Key": 7127,
+        "Id": 7127,
+        "Name": "唤醒",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7131": {
+        "Key": 7131,
+        "Id": 7131,
+        "Name": "脸上的白纸",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7132": {
+        "Key": 7132,
+        "Id": 7132,
+        "Name": "预定牌",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7133": {
+        "Key": 7133,
+        "Id": 7133,
+        "Name": "班哈尔特军械零件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7134": {
+        "Key": 7134,
+        "Id": 7134,
+        "Name": "班哈尔特军旗？",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7135": {
+        "Key": 7135,
+        "Id": 7135,
+        "Name": "进入剧情模式主城",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7136": {
+        "Key": 7136,
+        "Id": 7136,
+        "Name": "拍手",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7137": {
+        "Key": 7137,
+        "Id": 7137,
+        "Name": "救助伤者",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7140": {
+        "Key": 7140,
+        "Id": 7140,
+        "Name": "解放亡灵",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "7141": {
+        "Key": 7141,
+        "Id": 7141,
+        "Name": "最后的夙愿",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7142": {
+        "Key": 7142,
+        "Id": 7142,
+        "Name": "英雄归来",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7143": {
+        "Key": 7143,
+        "Id": 7143,
+        "Name": "进入禁地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7144": {
+        "Key": 7144,
+        "Id": 7144,
+        "Name": "焦黑纸片",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7145": {
+        "Key": 7145,
+        "Id": 7145,
+        "Name": "脏兮兮的玩偶",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7146": {
+        "Key": 7146,
+        "Id": 7146,
+        "Name": "锈蚀的剑",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7147": {
+        "Key": 7147,
+        "Id": 7147,
+        "Name": "幻想种子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7148": {
+        "Key": 7148,
+        "Id": 7148,
+        "Name": "焦黑的吊坠",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7149": {
+        "Key": 7149,
+        "Id": 7149,
+        "Name": "焦黑的工匠锤",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7150": {
+        "Key": 7150,
+        "Id": 7150,
+        "Name": "焚毁的卷轴筒",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7151": {
+        "Key": 7151,
+        "Id": 7151,
+        "Name": "焦黑的小册子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7152": {
+        "Key": 7152,
+        "Id": 7152,
+        "Name": "一枚钱币",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7153": {
+        "Key": 7153,
+        "Id": 7153,
+        "Name": "战场日志",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "7501": {
+        "Key": 7501,
+        "Id": 7501,
+        "Name": "街角快讯·今日号外",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "7502": {
+        "Key": 7502,
+        "Id": 7502,
+        "Name": "净化",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "8001": {
+        "Key": 8001,
+        "Id": 8001,
+        "Name": "尝试降下大门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "9001": {
+        "Key": 9001,
+        "Id": 9001,
+        "Name": "前往永冻的异想天",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9002": {
+        "Key": 9002,
+        "Id": 9002,
+        "Name": "前往阴骨之地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9003": {
+        "Key": 9003,
+        "Id": 9003,
+        "Name": "前往天启的神槛",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9004": {
+        "Key": 9004,
+        "Id": 9004,
+        "Name": "前往天纹研修所",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9005": {
+        "Key": 9005,
+        "Id": 9005,
+        "Name": "前往鸣角之野",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9006": {
+        "Key": 9006,
+        "Id": 9006,
+        "Name": "前往石骸之庭",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9007": {
+        "Key": 9007,
+        "Id": 9007,
+        "Name": "前往蚀影之渊",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9008": {
+        "Key": 9008,
+        "Id": 9008,
+        "Name": "前往幻花零落处",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9009": {
+        "Key": 9009,
+        "Id": 9009,
+        "Name": "输入01",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9010": {
+        "Key": 9010,
+        "Id": 9010,
+        "Name": "输入02",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9011": {
+        "Key": 9011,
+        "Id": 9011,
+        "Name": "输入03",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "12010": {
+        "Key": 12010,
+        "Id": 12010,
+        "Name": "释放净化脉冲",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "12011": {
+        "Key": 12011,
+        "Id": 12011,
+        "Name": "激活事件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "12012": {
+        "Key": 12012,
+        "Id": 12012,
+        "Name": "释放污染脉冲",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "12013": {
+        "Key": 12013,
+        "Id": 12013,
+        "Name": "开启【虚蚀之种】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "12014": {
+        "Key": 12014,
+        "Id": 12014,
+        "Name": "开启【虚蚀战利品】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "12015": {
+        "Key": 12015,
+        "Id": 12015,
+        "Name": "开启宝藏晶簇",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "20001": {
+        "Key": 20001,
+        "Id": 20001,
+        "Name": "开启试炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30101": {
+        "Key": 30101,
+        "Id": 30101,
+        "Name": "翻阅笔记",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30102": {
+        "Key": 30102,
+        "Id": 30102,
+        "Name": "翻查箱子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30201": {
+        "Key": 30201,
+        "Id": 30201,
+        "Name": "捡起笔记",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30202": {
+        "Key": 30202,
+        "Id": 30202,
+        "Name": "取出钥匙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30203": {
+        "Key": 30203,
+        "Id": 30203,
+        "Name": "开门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_23",
+        "FunctionOrder": []
+    },
+    "30204": {
+        "Key": 30204,
+        "Id": 30204,
+        "Name": "共鸣",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "30205": {
+        "Key": 30205,
+        "Id": 30205,
+        "Name": "查看",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30206": {
+        "Key": 30206,
+        "Id": 30206,
+        "Name": "触摸载具",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30207": {
+        "Key": 30207,
+        "Id": 30207,
+        "Name": "敲打载具",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30208": {
+        "Key": 30208,
+        "Id": 30208,
+        "Name": "查看图画",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "30209": {
+        "Key": 30209,
+        "Id": 30209,
+        "Name": "放下绳索",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30210": {
+        "Key": 30210,
+        "Id": 30210,
+        "Name": "设置锚点",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30211": {
+        "Key": 30211,
+        "Id": 30211,
+        "Name": "收集",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30212": {
+        "Key": 30212,
+        "Id": 30212,
+        "Name": "设置陷阱",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30213": {
+        "Key": 30213,
+        "Id": 30213,
+        "Name": "观察",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30214": {
+        "Key": 30214,
+        "Id": 30214,
+        "Name": "整理思路",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30215": {
+        "Key": 30215,
+        "Id": 30215,
+        "Name": "投入材料",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30216": {
+        "Key": 30216,
+        "Id": 30216,
+        "Name": "包扎",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30217": {
+        "Key": 30217,
+        "Id": 30217,
+        "Name": "采集",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30218": {
+        "Key": 30218,
+        "Id": 30218,
+        "Name": "点亮",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30219": {
+        "Key": 30219,
+        "Id": 30219,
+        "Name": "查看公告",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30220": {
+        "Key": 30220,
+        "Id": 30220,
+        "Name": "拿取古卷",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30221": {
+        "Key": 30221,
+        "Id": 30221,
+        "Name": "查看排行榜",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30222": {
+        "Key": 30222,
+        "Id": 30222,
+        "Name": "破坏核心",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30223": {
+        "Key": 30223,
+        "Id": 30223,
+        "Name": "充能",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "30224": {
+        "Key": 30224,
+        "Id": 30224,
+        "Name": "生火",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30225": {
+        "Key": 30225,
+        "Id": 30225,
+        "Name": "收集角羊毛",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30226": {
+        "Key": 30226,
+        "Id": 30226,
+        "Name": "正骨",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30227": {
+        "Key": 30227,
+        "Id": 30227,
+        "Name": "注入星元能量",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30228": {
+        "Key": 30228,
+        "Id": 30228,
+        "Name": "制作雨豆饭",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30300": {
+        "Key": 30300,
+        "Id": 30300,
+        "Name": "合影",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "30400": {
+        "Key": 30400,
+        "Id": 30400,
+        "Name": "采集清创西红花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "30401": {
+        "Key": 30401,
+        "Id": 30401,
+        "Name": "查看「王冠」",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "40501": {
+        "Key": 40501,
+        "Id": 40501,
+        "Name": "净化亡灵",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "54053": {
+        "Key": 54053,
+        "Id": 54053,
+        "Name": "拾取【随机】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54054": {
+        "Key": 54054,
+        "Id": 54054,
+        "Name": "拾取【太刀1】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54055": {
+        "Key": 54055,
+        "Id": 54055,
+        "Name": "拾取【太刀2】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54056": {
+        "Key": 54056,
+        "Id": 54056,
+        "Name": "拾取【魔杖1】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54057": {
+        "Key": 54057,
+        "Id": 54057,
+        "Name": "拾取【魔杖2】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54058": {
+        "Key": 54058,
+        "Id": 54058,
+        "Name": "拾取【法环1】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54059": {
+        "Key": 54059,
+        "Id": 54059,
+        "Name": "拾取【法环2】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54060": {
+        "Key": 54060,
+        "Id": 54060,
+        "Name": "拾取【弓箭1】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54061": {
+        "Key": 54061,
+        "Id": 54061,
+        "Name": "拾取【弓箭2】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54062": {
+        "Key": 54062,
+        "Id": 54062,
+        "Name": "拾取【卫刃1】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54063": {
+        "Key": 54063,
+        "Id": 54063,
+        "Name": "拾取【卫刃2】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54064": {
+        "Key": 54064,
+        "Id": 54064,
+        "Name": "拾取【长枪1】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54065": {
+        "Key": 54065,
+        "Id": 54065,
+        "Name": "拾取【长枪2】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54100": {
+        "Key": 54100,
+        "Id": 54100,
+        "Name": "获得货物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54101": {
+        "Key": 54101,
+        "Id": 54101,
+        "Name": "搬起货物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54102": {
+        "Key": 54102,
+        "Id": 54102,
+        "Name": "拾取【能量罐】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54103": {
+        "Key": 54103,
+        "Id": 54103,
+        "Name": "激活【显影石】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "55010": {
+        "Key": 55010,
+        "Id": 55010,
+        "Name": "退出溺梦之地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "55011": {
+        "Key": 55011,
+        "Id": 55011,
+        "Name": "进入溺梦之地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56001": {
+        "Key": 56001,
+        "Id": 56001,
+        "Name": "点燃白色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56002": {
+        "Key": 56002,
+        "Id": 56002,
+        "Name": "点燃蓝色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56003": {
+        "Key": 56003,
+        "Id": 56003,
+        "Name": "点燃绿色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56004": {
+        "Key": 56004,
+        "Id": 56004,
+        "Name": "点燃粉色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56005": {
+        "Key": 56005,
+        "Id": 56005,
+        "Name": "点燃紫色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56006": {
+        "Key": 56006,
+        "Id": 56006,
+        "Name": "点燃橙色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56007": {
+        "Key": 56007,
+        "Id": 56007,
+        "Name": "点燃黄色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56008": {
+        "Key": 56008,
+        "Id": 56008,
+        "Name": "点燃彩色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56009": {
+        "Key": 56009,
+        "Id": 56009,
+        "Name": "点燃小伊烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56010": {
+        "Key": 56010,
+        "Id": 56010,
+        "Name": "切换上一张",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56011": {
+        "Key": 56011,
+        "Id": 56011,
+        "Name": "切换下一张",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56013": {
+        "Key": 56013,
+        "Id": 56013,
+        "Name": "解除冰冻",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56014": {
+        "Key": 56014,
+        "Id": 56014,
+        "Name": "“沾沾欧气”",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56015": {
+        "Key": 56015,
+        "Id": 56015,
+        "Name": "“沾沾欧气”",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56016": {
+        "Key": 56016,
+        "Id": 56016,
+        "Name": "获取对方麻将",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56017": {
+        "Key": 56017,
+        "Id": 56017,
+        "Name": "获取对方麻将",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56018": {
+        "Key": 56018,
+        "Id": 56018,
+        "Name": "获取对方麻将",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "56019": {
+        "Key": 56019,
+        "Id": 56019,
+        "Name": "获取对方麻将",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57001": {
+        "Key": 57001,
+        "Id": 57001,
+        "Name": "提交【货物】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57002": {
+        "Key": 57002,
+        "Id": 57002,
+        "Name": "提交【特别货物】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57003": {
+        "Key": 57003,
+        "Id": 57003,
+        "Name": "测试-召唤货物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57004": {
+        "Key": 57004,
+        "Id": 57004,
+        "Name": "拾取【货物】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57005": {
+        "Key": 57005,
+        "Id": 57005,
+        "Name": "拾取【特别货物】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57006": {
+        "Key": 57006,
+        "Id": 57006,
+        "Name": "拾取1号铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57007": {
+        "Key": 57007,
+        "Id": 57007,
+        "Name": "拾取2号铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57008": {
+        "Key": 57008,
+        "Id": 57008,
+        "Name": "拾取3号铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57009": {
+        "Key": 57009,
+        "Id": 57009,
+        "Name": "拾取4号铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57010": {
+        "Key": 57010,
+        "Id": 57010,
+        "Name": "共鸣幻像铭文壁",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57011": {
+        "Key": 57011,
+        "Id": 57011,
+        "Name": "测试-召唤幻像铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57012": {
+        "Key": 57012,
+        "Id": 57012,
+        "Name": "测试-召唤动态模板怪",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57013": {
+        "Key": 57013,
+        "Id": 57013,
+        "Name": "共鸣1号铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57014": {
+        "Key": 57014,
+        "Id": 57014,
+        "Name": "共鸣2号铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57015": {
+        "Key": 57015,
+        "Id": 57015,
+        "Name": "共鸣3号铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57016": {
+        "Key": 57016,
+        "Id": 57016,
+        "Name": "共鸣4号铭文",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57017": {
+        "Key": 57017,
+        "Id": 57017,
+        "Name": "开始聚力",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57045": {
+        "Key": 57045,
+        "Id": 57045,
+        "Name": "帮助哥布林",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57046": {
+        "Key": 57046,
+        "Id": 57046,
+        "Name": "帮助姆克",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "70301": {
+        "Key": 70301,
+        "Id": 70301,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "70302": {
+        "Key": 70302,
+        "Id": 70302,
+        "Name": "放上星石",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "100346": {
+        "Key": 100346,
+        "Id": 100346,
+        "Name": "漂浮",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hero_grass",
+        "FunctionOrder": []
+    },
+    "104101": {
+        "Key": 104101,
+        "Id": 104101,
+        "Name": "治疗",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "111101": {
+        "Key": 111101,
+        "Id": 111101,
+        "Name": "激活事件【埋伏】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "111102": {
+        "Key": 111102,
+        "Id": 111102,
+        "Name": "激活事件【星源充能】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "111103": {
+        "Key": 111103,
+        "Id": 111103,
+        "Name": "激活事件【次元通讯】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "111104": {
+        "Key": 111104,
+        "Id": 111104,
+        "Name": "激活事件【激光】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "111105": {
+        "Key": 111105,
+        "Id": 111105,
+        "Name": "激活事件【机械残骸】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "111106": {
+        "Key": 111106,
+        "Id": 111106,
+        "Name": "回到事件区域",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "112601": {
+        "Key": 112601,
+        "Id": 112601,
+        "Name": "激活",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "112602": {
+        "Key": 112602,
+        "Id": 112602,
+        "Name": "拾取能量球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "120101": {
+        "Key": 120101,
+        "Id": 120101,
+        "Name": "共鸣",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "120102": {
+        "Key": 120102,
+        "Id": 120102,
+        "Name": "搭乘升降台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "120201": {
+        "Key": 120201,
+        "Id": 120201,
+        "Name": "传送到高台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "120202": {
+        "Key": 120202,
+        "Id": 120202,
+        "Name": "传送到海岛",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "120203": {
+        "Key": 120203,
+        "Id": 120203,
+        "Name": "传送到风起地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "120204": {
+        "Key": 120204,
+        "Id": 120204,
+        "Name": "传送到山洞",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "120205": {
+        "Key": 120205,
+        "Id": 120205,
+        "Name": "释放能量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "120206": {
+        "Key": 120206,
+        "Id": 120206,
+        "Name": "救助伤者",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "120207": {
+        "Key": 120207,
+        "Id": 120207,
+        "Name": "对话",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121101": {
+        "Key": 121101,
+        "Id": 121101,
+        "Name": "激活事件【护送】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121102": {
+        "Key": 121102,
+        "Id": 121102,
+        "Name": "激活事件【逐风破影】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121103": {
+        "Key": 121103,
+        "Id": 121103,
+        "Name": "激活事件【快速击败】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121104": {
+        "Key": 121104,
+        "Id": 121104,
+        "Name": "激活事件【埋伏·精英】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121105": {
+        "Key": 121105,
+        "Id": 121105,
+        "Name": "激活事件【埋伏】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121106": {
+        "Key": 121106,
+        "Id": 121106,
+        "Name": "拾取【加速球】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121107": {
+        "Key": 121107,
+        "Id": 121107,
+        "Name": "开启副本",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121108": {
+        "Key": 121108,
+        "Id": 121108,
+        "Name": "开启首领战",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121109": {
+        "Key": 121109,
+        "Id": 121109,
+        "Name": "飞往高台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121110": {
+        "Key": 121110,
+        "Id": 121110,
+        "Name": "飞回高台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121111": {
+        "Key": 121111,
+        "Id": 121111,
+        "Name": "飞往山顶",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121112": {
+        "Key": 121112,
+        "Id": 121112,
+        "Name": "飞往风起地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121113": {
+        "Key": 121113,
+        "Id": 121113,
+        "Name": "飞回山谷",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121114": {
+        "Key": 121114,
+        "Id": 121114,
+        "Name": "飞回海边",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "121115": {
+        "Key": 121115,
+        "Id": 121115,
+        "Name": "飞回山洞",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "130103": {
+        "Key": 130103,
+        "Id": 130103,
+        "Name": "触摸",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "130104": {
+        "Key": 130104,
+        "Id": 130104,
+        "Name": "开启装置",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "130150": {
+        "Key": 130150,
+        "Id": 130150,
+        "Name": "躲避",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140201": {
+        "Key": 140201,
+        "Id": 140201,
+        "Name": "提升背包",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "140202": {
+        "Key": 140202,
+        "Id": 140202,
+        "Name": "武器创造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_89",
+        "FunctionOrder": []
+    },
+    "140203": {
+        "Key": 140203,
+        "Id": 140203,
+        "Name": "武器改造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_90",
+        "FunctionOrder": []
+    },
+    "140204": {
+        "Key": 140204,
+        "Id": 140204,
+        "Name": "发明",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_83",
+        "FunctionOrder": []
+    },
+    "140205": {
+        "Key": 140205,
+        "Id": 140205,
+        "Name": "物资",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_27",
+        "FunctionOrder": []
+    },
+    "140206": {
+        "Key": 140206,
+        "Id": 140206,
+        "Name": "食材",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_cook",
+        "FunctionOrder": []
+    },
+    "140207": {
+        "Key": 140207,
+        "Id": 140207,
+        "Name": "烹饪",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_cook",
+        "FunctionOrder": []
+    },
+    "140208": {
+        "Key": 140208,
+        "Id": 140208,
+        "Name": "锻炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "140210": {
+        "Key": 140210,
+        "Id": 140210,
+        "Name": "回到营地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140211": {
+        "Key": 140211,
+        "Id": 140211,
+        "Name": "悬月崖",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140212": {
+        "Key": 140212,
+        "Id": 140212,
+        "Name": "望月坡",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140213": {
+        "Key": 140213,
+        "Id": 140213,
+        "Name": "流月池",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140214": {
+        "Key": 140214,
+        "Id": 140214,
+        "Name": "天中之地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140215": {
+        "Key": 140215,
+        "Id": 140215,
+        "Name": "海无之地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140216": {
+        "Key": 140216,
+        "Id": 140216,
+        "Name": "远荒",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140217": {
+        "Key": 140217,
+        "Id": 140217,
+        "Name": "漠清岭",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "142101": {
+        "Key": 142101,
+        "Id": 142101,
+        "Name": "开启水晶事件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "142102": {
+        "Key": 142102,
+        "Id": 142102,
+        "Name": "开启云朵事件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "142103": {
+        "Key": 142103,
+        "Id": 142103,
+        "Name": "开启拆除炸弹事件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "142104": {
+        "Key": 142104,
+        "Id": 142104,
+        "Name": "开启拦截娜宝事件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "142105": {
+        "Key": 142105,
+        "Id": 142105,
+        "Name": "回到初始之地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "200000": {
+        "Key": 200000,
+        "Id": 200000,
+        "Name": "共享仓库",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_24",
+        "FunctionOrder": []
+    },
+    "200001": {
+        "Key": 200001,
+        "Id": 200001,
+        "Name": "星拓箱和模组兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200002": {
+        "Key": 200002,
+        "Id": 200002,
+        "Name": "海洋垃圾回收",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_27",
+        "FunctionOrder": []
+    },
+    "200003": {
+        "Key": 200003,
+        "Id": 200003,
+        "Name": "时尚商店",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_fashion_stores",
+        "FunctionOrder": []
+    },
+    "200004": {
+        "Key": 200004,
+        "Id": 200004,
+        "Name": "配饰制作",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_exchange_04",
+        "FunctionOrder": []
+    },
+    "200005": {
+        "Key": 200005,
+        "Id": 200005,
+        "Name": "时装回收",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_28",
+        "FunctionOrder": []
+    },
+    "200006": {
+        "Key": 200006,
+        "Id": 200006,
+        "Name": "战斗意志兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_53",
+        "FunctionOrder": []
+    },
+    "200007": {
+        "Key": 200007,
+        "Id": 200007,
+        "Name": "装备兑换商店",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_52",
+        "FunctionOrder": []
+    },
+    "200008": {
+        "Key": 200008,
+        "Id": 200008,
+        "Name": "烹饪材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200009": {
+        "Key": 200009,
+        "Id": 200009,
+        "Name": "进入协会",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "200010": {
+        "Key": 200010,
+        "Id": 200010,
+        "Name": "司第门遗迹",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_climbup",
+        "FunctionOrder": []
+    },
+    "200011": {
+        "Key": 200011,
+        "Id": 200011,
+        "Name": "上交货物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_15",
+        "FunctionOrder": []
+    },
+    "200012": {
+        "Key": 200012,
+        "Id": 200012,
+        "Name": "60装等装备兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_52",
+        "FunctionOrder": []
+    },
+    "200013": {
+        "Key": 200013,
+        "Id": 200013,
+        "Name": "80装等装备兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_52",
+        "FunctionOrder": []
+    },
+    "200014": {
+        "Key": 200014,
+        "Id": 200014,
+        "Name": "铸造材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200015": {
+        "Key": 200015,
+        "Id": 200015,
+        "Name": "工艺材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200016": {
+        "Key": 200016,
+        "Id": 200016,
+        "Name": "材料加工材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200017": {
+        "Key": 200017,
+        "Id": 200017,
+        "Name": "炼金材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200018": {
+        "Key": 200018,
+        "Id": 200018,
+        "Name": "装备重铸",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_67",
+        "FunctionOrder": []
+    },
+    "200019": {
+        "Key": 200019,
+        "Id": 200019,
+        "Name": "装备精炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_65",
+        "FunctionOrder": []
+    },
+    "200020": {
+        "Key": 200020,
+        "Id": 200020,
+        "Name": "装备镶嵌",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_66",
+        "FunctionOrder": []
+    },
+    "200021": {
+        "Key": 200021,
+        "Id": 200021,
+        "Name": "装备分解",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_64",
+        "FunctionOrder": []
+    },
+    "200022": {
+        "Key": 200022,
+        "Id": 200022,
+        "Name": "进入交易中心",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "200023": {
+        "Key": 200023,
+        "Id": 200023,
+        "Name": "扭蛋",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_58",
+        "FunctionOrder": []
+    },
+    "200024": {
+        "Key": 200024,
+        "Id": 200024,
+        "Name": "美容",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_59",
+        "FunctionOrder": []
+    },
+    "200025": {
+        "Key": 200025,
+        "Id": 200025,
+        "Name": "会员等级管理",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_60",
+        "FunctionOrder": []
+    },
+    "200026": {
+        "Key": 200026,
+        "Id": 200026,
+        "Name": "喵露克斯商店",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_shop",
+        "FunctionOrder": []
+    },
+    "200027": {
+        "Key": 200027,
+        "Id": 200027,
+        "Name": "讨伐领主",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_56",
+        "FunctionOrder": []
+    },
+    "200028": {
+        "Key": 200028,
+        "Id": 200028,
+        "Name": "试炼之路",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_55",
+        "FunctionOrder": []
+    },
+    "200029": {
+        "Key": 200029,
+        "Id": 200029,
+        "Name": "幻想制作",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_45",
+        "FunctionOrder": []
+    },
+    "200030": {
+        "Key": 200030,
+        "Id": 200030,
+        "Name": "幻想分解",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_64",
+        "FunctionOrder": []
+    },
+    "200031": {
+        "Key": 200031,
+        "Id": 200031,
+        "Name": "模组链接",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "200032": {
+        "Key": 200032,
+        "Id": 200032,
+        "Name": "模组分解",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_64",
+        "FunctionOrder": []
+    },
+    "200033": {
+        "Key": 200033,
+        "Id": 200033,
+        "Name": "模组兑换商店",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_49",
+        "FunctionOrder": []
+    },
+    "200034": {
+        "Key": 200034,
+        "Id": 200034,
+        "Name": "鲜肉商铺",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_62",
+        "FunctionOrder": []
+    },
+    "200035": {
+        "Key": 200035,
+        "Id": 200035,
+        "Name": "水产商铺",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_61",
+        "FunctionOrder": []
+    },
+    "200036": {
+        "Key": 200036,
+        "Id": 200036,
+        "Name": "晶片商铺",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_63",
+        "FunctionOrder": []
+    },
+    "200037": {
+        "Key": 200037,
+        "Id": 200037,
+        "Name": "家园证明回收",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "200038": {
+        "Key": 200038,
+        "Id": 200038,
+        "Name": "家园商店",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_74",
+        "FunctionOrder": []
+    },
+    "200039": {
+        "Key": 200039,
+        "Id": 200039,
+        "Name": "家园委托",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_76",
+        "FunctionOrder": []
+    },
+    "200040": {
+        "Key": 200040,
+        "Id": 200040,
+        "Name": "一键清理",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_77",
+        "FunctionOrder": []
+    },
+    "200041": {
+        "Key": 200041,
+        "Id": 200041,
+        "Name": "家园仓库",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_24",
+        "FunctionOrder": []
+    },
+    "200042": {
+        "Key": 200042,
+        "Id": 200042,
+        "Name": "花和种子回收",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_75",
+        "FunctionOrder": []
+    },
+    "200043": {
+        "Key": 200043,
+        "Id": 200043,
+        "Name": "职业材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_68",
+        "FunctionOrder": []
+    },
+    "200051": {
+        "Key": 200051,
+        "Id": 200051,
+        "Name": "装备突破",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_90",
+        "FunctionOrder": []
+    },
+    "200052": {
+        "Key": 200052,
+        "Id": 200052,
+        "Name": "装备打造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_89",
+        "FunctionOrder": []
+    },
+    "200053": {
+        "Key": 200053,
+        "Id": 200053,
+        "Name": "意志扭蛋",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_58",
+        "FunctionOrder": []
+    },
+    "200054": {
+        "Key": 200054,
+        "Id": 200054,
+        "Name": "虚空秘宝兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_91",
+        "FunctionOrder": []
+    },
+    "200055": {
+        "Key": 200055,
+        "Id": 200055,
+        "Name": "木作材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_71",
+        "FunctionOrder": []
+    },
+    "200056": {
+        "Key": 200056,
+        "Id": 200056,
+        "Name": "织造材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_73",
+        "FunctionOrder": []
+    },
+    "200057": {
+        "Key": 200057,
+        "Id": 200057,
+        "Name": "植生学材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200058": {
+        "Key": 200058,
+        "Id": 200058,
+        "Name": "采矿材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200059": {
+        "Key": 200059,
+        "Id": 200059,
+        "Name": "采石材料兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "200060": {
+        "Key": 200060,
+        "Id": 200060,
+        "Name": "幻想和意志分解",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_64",
+        "FunctionOrder": []
+    },
+    "200061": {
+        "Key": 200061,
+        "Id": 200061,
+        "Name": "家园",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "200062": {
+        "Key": 200062,
+        "Id": 200062,
+        "Name": "40装等装备兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_52",
+        "FunctionOrder": []
+    },
+    "200063": {
+        "Key": 200063,
+        "Id": 200063,
+        "Name": "60装等装备兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_52",
+        "FunctionOrder": []
+    },
+    "200064": {
+        "Key": 200064,
+        "Id": 200064,
+        "Name": "<style=\"emph-sq\">虚空浮岛·神龙枷所</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_26",
+        "FunctionOrder": []
+    },
+    "200065": {
+        "Key": 200065,
+        "Id": 200065,
+        "Name": "杂物回收",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "200066": {
+        "Key": 200066,
+        "Id": 200066,
+        "Name": "技能重置限时活动",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_skill_reset",
+        "FunctionOrder": []
+    },
+    "200067": {
+        "Key": 200067,
+        "Id": 200067,
+        "Name": "织梦星纱和晶尘商店",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_52",
+        "FunctionOrder": []
+    },
+    "200068": {
+        "Key": 200068,
+        "Id": 200068,
+        "Name": "<style=\"emph-sq\">幻花沉眠之地</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_26",
+        "FunctionOrder": []
+    },
+    "200069": {
+        "Key": 200069,
+        "Id": 200069,
+        "Name": "雀运千结，岭上开花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_mahjong",
+        "FunctionOrder": []
+    },
+    "200070": {
+        "Key": 200070,
+        "Id": 200070,
+        "Name": "喵露糖果屋",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_exchange_05",
+        "FunctionOrder": []
+    },
+    "200071": {
+        "Key": 200071,
+        "Id": 200071,
+        "Name": "领取今日糖果",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_gift",
+        "FunctionOrder": []
+    },
+    "200072": {
+        "Key": 200072,
+        "Id": 200072,
+        "Name": "幻梦秘宝兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_91",
+        "FunctionOrder": []
+    },
+    "200075": {
+        "Key": 200075,
+        "Id": 200075,
+        "Name": "淬炼打造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_89",
+        "FunctionOrder": []
+    },
+    "200076": {
+        "Key": 200076,
+        "Id": 200076,
+        "Name": "坐下",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_94",
+        "FunctionOrder": []
+    },
+    "307021": {
+        "Key": 307021,
+        "Id": 307021,
+        "Name": "雨林寄语兰",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "307022": {
+        "Key": 307022,
+        "Id": 307022,
+        "Name": "晨露蛇尾草",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "327021": {
+        "Key": 327021,
+        "Id": 327021,
+        "Name": "清点",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "327031": {
+        "Key": 327031,
+        "Id": 327031,
+        "Name": "沙土",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "327032": {
+        "Key": 327032,
+        "Id": 327032,
+        "Name": "碎石",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "335021": {
+        "Key": 335021,
+        "Id": 335021,
+        "Name": "放置标石",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "335051": {
+        "Key": 335051,
+        "Id": 335051,
+        "Name": "灌满水壶",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "335081": {
+        "Key": 335081,
+        "Id": 335081,
+        "Name": "浇水",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "335101": {
+        "Key": 335101,
+        "Id": 335101,
+        "Name": "回收标石",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "335111": {
+        "Key": 335111,
+        "Id": 335111,
+        "Name": "探听",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "335112": {
+        "Key": 335112,
+        "Id": 335112,
+        "Name": "制作药物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "335113": {
+        "Key": 335113,
+        "Id": 335113,
+        "Name": "制作料理",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "500101": {
+        "Key": 500101,
+        "Id": 500101,
+        "Name": "报名【镭射回旋】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "500102": {
+        "Key": 500102,
+        "Id": 500102,
+        "Name": "报名【游鱼暴走】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "500103": {
+        "Key": 500103,
+        "Id": 500103,
+        "Name": "报名【一拳大作战】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "500104": {
+        "Key": 500104,
+        "Id": 500104,
+        "Name": "报名【极限落潮】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "500105": {
+        "Key": 500105,
+        "Id": 500105,
+        "Name": "报名【浪花躲避球】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "500106": {
+        "Key": 500106,
+        "Id": 500106,
+        "Name": "报名【异次元惩戒】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "500401": {
+        "Key": 500401,
+        "Id": 500401,
+        "Name": "领取奖励",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "501701": {
+        "Key": 501701,
+        "Id": 501701,
+        "Name": "塔塔",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "511001": {
+        "Key": 511001,
+        "Id": 511001,
+        "Name": "使用黄色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "511002": {
+        "Key": 511002,
+        "Id": 511002,
+        "Name": "使用绿色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "511003": {
+        "Key": 511003,
+        "Id": 511003,
+        "Name": "使用红色烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "530301": {
+        "Key": 530301,
+        "Id": 530301,
+        "Name": "调查",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "530302": {
+        "Key": 530302,
+        "Id": 530302,
+        "Name": "击破屏障",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "552001": {
+        "Key": 552001,
+        "Id": 552001,
+        "Name": "疏散人群",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "553501": {
+        "Key": 553501,
+        "Id": 553501,
+        "Name": "净化",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "553502": {
+        "Key": 553502,
+        "Id": 553502,
+        "Name": "触摸雕像",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "553503": {
+        "Key": 553503,
+        "Id": 553503,
+        "Name": "重新开始",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "553504": {
+        "Key": 553504,
+        "Id": 553504,
+        "Name": "重新连接",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "570301": {
+        "Key": 570301,
+        "Id": 570301,
+        "Name": "一把摁住",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "570401": {
+        "Key": 570401,
+        "Id": 570401,
+        "Name": "放置",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "590101": {
+        "Key": 590101,
+        "Id": 590101,
+        "Name": "箱子A",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "590102": {
+        "Key": 590102,
+        "Id": 590102,
+        "Name": "箱子B",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "590103": {
+        "Key": 590103,
+        "Id": 590103,
+        "Name": "放下",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "600901": {
+        "Key": 600901,
+        "Id": 600901,
+        "Name": "激活事件【踢球】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "600902": {
+        "Key": 600902,
+        "Id": 600902,
+        "Name": "激活事件【清理蟹蛛】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "604001": {
+        "Key": 604001,
+        "Id": 604001,
+        "Name": "拾取",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "604002": {
+        "Key": 604002,
+        "Id": 604002,
+        "Name": "对话",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "604003": {
+        "Key": 604003,
+        "Id": 604003,
+        "Name": "夺取",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "621101": {
+        "Key": 621101,
+        "Id": 621101,
+        "Name": "传送",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "621102": {
+        "Key": 621102,
+        "Id": 621102,
+        "Name": "传送到首领区域",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "621103": {
+        "Key": 621103,
+        "Id": 621103,
+        "Name": "激活事件【迷梦入侵】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "700002": {
+        "Key": 700002,
+        "Id": 700002,
+        "Name": "【哥布林大暴走】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700003": {
+        "Key": 700003,
+        "Id": 700003,
+        "Name": "开始战斗",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700004": {
+        "Key": 700004,
+        "Id": 700004,
+        "Name": "【讨伐哥布林巫师】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700005": {
+        "Key": 700005,
+        "Id": 700005,
+        "Name": "开始战斗",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700006": {
+        "Key": 700006,
+        "Id": 700006,
+        "Name": "【峡谷保卫战】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700007": {
+        "Key": 700007,
+        "Id": 700007,
+        "Name": "开始战斗",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700008": {
+        "Key": 700008,
+        "Id": 700008,
+        "Name": "【接受快递委托】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700009": {
+        "Key": 700009,
+        "Id": 700009,
+        "Name": "开始快递",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700010": {
+        "Key": 700010,
+        "Id": 700010,
+        "Name": "【调查光桥平台】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700011": {
+        "Key": 700011,
+        "Id": 700011,
+        "Name": "启动机关",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700012": {
+        "Key": 700012,
+        "Id": 700012,
+        "Name": "【开始亚人问答】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700013": {
+        "Key": 700013,
+        "Id": 700013,
+        "Name": "开始问答",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700014": {
+        "Key": 700014,
+        "Id": 700014,
+        "Name": "【开始小猪快跑】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700015": {
+        "Key": 700015,
+        "Id": 700015,
+        "Name": "开始抓猪",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700016": {
+        "Key": 700016,
+        "Id": 700016,
+        "Name": "【抑制虚蚀喷涌】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700017": {
+        "Key": 700017,
+        "Id": 700017,
+        "Name": "开始抑制",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700018": {
+        "Key": 700018,
+        "Id": 700018,
+        "Name": "【躲避机器人挑战】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700019": {
+        "Key": 700019,
+        "Id": 700019,
+        "Name": "开始练习",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700020": {
+        "Key": 700020,
+        "Id": 700020,
+        "Name": "【青空试炼】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700021": {
+        "Key": 700021,
+        "Id": 700021,
+        "Name": "开始滑翔",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700022": {
+        "Key": 700022,
+        "Id": 700022,
+        "Name": "开启挑战",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700023": {
+        "Key": 700023,
+        "Id": 700023,
+        "Name": "【村庄保卫战】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700024": {
+        "Key": 700024,
+        "Id": 700024,
+        "Name": "开启裂隙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700025": {
+        "Key": 700025,
+        "Id": 700025,
+        "Name": "【机像擂台】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700026": {
+        "Key": 700026,
+        "Id": 700026,
+        "Name": "开始挑战",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700027": {
+        "Key": 700027,
+        "Id": 700027,
+        "Name": "【快递紧急运输】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700028": {
+        "Key": 700028,
+        "Id": 700028,
+        "Name": "开始快递",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700029": {
+        "Key": 700029,
+        "Id": 700029,
+        "Name": "【快递紧急运输】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700030": {
+        "Key": 700030,
+        "Id": 700030,
+        "Name": "开始快递",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700031": {
+        "Key": 700031,
+        "Id": 700031,
+        "Name": "【亚人对决】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700032": {
+        "Key": 700032,
+        "Id": 700032,
+        "Name": "选择完毕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700033": {
+        "Key": 700033,
+        "Id": 700033,
+        "Name": "【亚人对决】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700034": {
+        "Key": 700034,
+        "Id": 700034,
+        "Name": "选择完毕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "707001": {
+        "Key": 707001,
+        "Id": 707001,
+        "Name": "显示光桥",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "707101": {
+        "Key": 707101,
+        "Id": 707101,
+        "Name": "显示流光路径",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "707301": {
+        "Key": 707301,
+        "Id": 707301,
+        "Name": "重置光桥",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "709001": {
+        "Key": 709001,
+        "Id": 709001,
+        "Name": "注入恩格能量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "709005": {
+        "Key": 709005,
+        "Id": 709005,
+        "Name": "打开随机能量球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "709006": {
+        "Key": 709006,
+        "Id": 709006,
+        "Name": "拾取【加速】技能球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710001": {
+        "Key": 710001,
+        "Id": 710001,
+        "Name": "拾取【火焰机像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710002": {
+        "Key": 710002,
+        "Id": 710002,
+        "Name": "拾取【弹幕机像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710003": {
+        "Key": 710003,
+        "Id": 710003,
+        "Name": "拾取【天火机像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710004": {
+        "Key": 710004,
+        "Id": 710004,
+        "Name": "拾取【减速装置】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710005": {
+        "Key": 710005,
+        "Id": 710005,
+        "Name": "拾取【引力装置】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "720006": {
+        "Key": 720006,
+        "Id": 720006,
+        "Name": "参加魅力鱼获巡游",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "720007": {
+        "Key": 720007,
+        "Id": 720007,
+        "Name": "参加小猪骑士巡游",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "720008": {
+        "Key": 720008,
+        "Id": 720008,
+        "Name": "参加<环城载具赛>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "720009": {
+        "Key": 720009,
+        "Id": 720009,
+        "Name": "参加<废都障碍赛>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "720010": {
+        "Key": 720010,
+        "Id": 720010,
+        "Name": "开始灵舞",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "720011": {
+        "Key": 720011,
+        "Id": 720011,
+        "Name": "参加小伊鼓乐队",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "720013": {
+        "Key": 720013,
+        "Id": 720013,
+        "Name": "加入律动！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "720100": {
+        "Key": 720100,
+        "Id": 720100,
+        "Name": "参加<气球捕获大作战>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "720101": {
+        "Key": 720101,
+        "Id": 720101,
+        "Name": "参加<小伊别盯我！>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "720102": {
+        "Key": 720102,
+        "Id": 720102,
+        "Name": "参加<岁魔来袭>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "721006": {
+        "Key": 721006,
+        "Id": 721006,
+        "Name": "离开魅力鱼获巡游",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "721007": {
+        "Key": 721007,
+        "Id": 721007,
+        "Name": "离开小猪骑士巡游",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "721008": {
+        "Key": 721008,
+        "Id": 721008,
+        "Name": "获取<style=\"emph-gn\">丰收食物</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "721009": {
+        "Key": 721009,
+        "Id": 721009,
+        "Name": "获取<style=\"emph-gn\">神奇食物</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "721010": {
+        "Key": 721010,
+        "Id": 721010,
+        "Name": "幻形",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "730301": {
+        "Key": 730301,
+        "Id": 730301,
+        "Name": "享用宴会美食",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731001": {
+        "Key": 731001,
+        "Id": 731001,
+        "Name": "显示巡逻路线",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731002": {
+        "Key": 731002,
+        "Id": 731002,
+        "Name": "召唤气球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731003": {
+        "Key": 731003,
+        "Id": 731003,
+        "Name": "召唤浮空炸弹",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731004": {
+        "Key": 731004,
+        "Id": 731004,
+        "Name": "召唤云朵粒子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731005": {
+        "Key": 731005,
+        "Id": 731005,
+        "Name": "显示巡游路线",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731016": {
+        "Key": 731016,
+        "Id": 731016,
+        "Name": "参加冰雪节幻形",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731017": {
+        "Key": 731017,
+        "Id": 731017,
+        "Name": "参加冰雪节幻形",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731018": {
+        "Key": 731018,
+        "Id": 731018,
+        "Name": "填充<style=\"emph-gn\">红色</style>烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731019": {
+        "Key": 731019,
+        "Id": 731019,
+        "Name": "填充<style=\"emph-gn\">绿色</style>烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731020": {
+        "Key": 731020,
+        "Id": 731020,
+        "Name": "填充<style=\"emph-gn\">蓝色</style>烟花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731021": {
+        "Key": 731021,
+        "Id": 731021,
+        "Name": "<style=\"emph-gn\">发射烟花</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731022": {
+        "Key": 731022,
+        "Id": 731022,
+        "Name": "获取<style=\"emph-gn\">白色分享福袋</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731023": {
+        "Key": 731023,
+        "Id": 731023,
+        "Name": "获取<style=\"emph-gn\">红色分享福袋</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731024": {
+        "Key": 731024,
+        "Id": 731024,
+        "Name": "获取<style=\"emph-gn\">蓝色分享福袋</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731025": {
+        "Key": 731025,
+        "Id": 731025,
+        "Name": "获取<style=\"emph-gn\">绿色分享福袋</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731026": {
+        "Key": 731026,
+        "Id": 731026,
+        "Name": "获取<style=\"emph-gn\">黄色分享福袋</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731027": {
+        "Key": 731027,
+        "Id": 731027,
+        "Name": "召唤岁魔",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731031": {
+        "Key": 731031,
+        "Id": 731031,
+        "Name": "获取<style=\"emph-gn\">红色爆竹</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731032": {
+        "Key": 731032,
+        "Id": 731032,
+        "Name": "获取<style=\"emph-gn\">绿色爆竹</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731033": {
+        "Key": 731033,
+        "Id": 731033,
+        "Name": "获取<style=\"emph-gn\">蓝色爆竹</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731034": {
+        "Key": 731034,
+        "Id": 731034,
+        "Name": "获取<style=\"emph-gn\">黄色爆竹</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731035": {
+        "Key": 731035,
+        "Id": 731035,
+        "Name": "释放喧春灯笼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731036": {
+        "Key": 731036,
+        "Id": 731036,
+        "Name": "祈岁集市",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_shop",
+        "FunctionOrder": []
+    },
+    "731050": {
+        "Key": 731050,
+        "Id": 731050,
+        "Name": "召唤巡游测试",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732000": {
+        "Key": 732000,
+        "Id": 732000,
+        "Name": "投票给<style=\"emph-gn\">{*player.name*}</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732001": {
+        "Key": 732001,
+        "Id": 732001,
+        "Name": "我要变大",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732002": {
+        "Key": 732002,
+        "Id": 732002,
+        "Name": "我要缩小",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732003": {
+        "Key": 732003,
+        "Id": 732003,
+        "Name": "闪闪金光",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732004": {
+        "Key": 732004,
+        "Id": 732004,
+        "Name": "银光熠熠",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732005": {
+        "Key": 732005,
+        "Id": 732005,
+        "Name": "获取",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732006": {
+        "Key": 732006,
+        "Id": 732006,
+        "Name": "获取丰收食物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "732100": {
+        "Key": 732100,
+        "Id": 732100,
+        "Name": "祈福1次哗啦啦长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732101": {
+        "Key": 732101,
+        "Id": 732101,
+        "Name": "祈福10次哗啦啦长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732102": {
+        "Key": 732102,
+        "Id": 732102,
+        "Name": "祈福1次空空长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732103": {
+        "Key": 732103,
+        "Id": 732103,
+        "Name": "祈福10次空空长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732104": {
+        "Key": 732104,
+        "Id": 732104,
+        "Name": "祈福1次白狼灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732105": {
+        "Key": 732105,
+        "Id": 732105,
+        "Name": "祈福10次白狼灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732106": {
+        "Key": 732106,
+        "Id": 732106,
+        "Name": "祈福1次树菇长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732107": {
+        "Key": 732107,
+        "Id": 732107,
+        "Name": "祈福10次树菇长老灰契",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732120": {
+        "Key": 732120,
+        "Id": 732120,
+        "Name": "交换雪花的礼物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "732121": {
+        "Key": 732121,
+        "Id": 732121,
+        "Name": "打开礼盒",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "739001": {
+        "Key": 739001,
+        "Id": 739001,
+        "Name": "匹配【适格者特训】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "739002": {
+        "Key": 739002,
+        "Id": 739002,
+        "Name": "匹配【千梦织灵】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "739003": {
+        "Key": 739003,
+        "Id": 739003,
+        "Name": "进入【沉梦的裂隙】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "760000": {
+        "Key": 760000,
+        "Id": 760000,
+        "Name": "拾取【100梦心石】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760001": {
+        "Key": 760001,
+        "Id": 760001,
+        "Name": "【500梦心石】变身巨刃",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760002": {
+        "Key": 760002,
+        "Id": 760002,
+        "Name": "【800梦心石】变身法师",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760003": {
+        "Key": 760003,
+        "Id": 760003,
+        "Name": "【300梦心石】变身剑士",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760004": {
+        "Key": 760004,
+        "Id": 760004,
+        "Name": "开启宝箱",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760005": {
+        "Key": 760005,
+        "Id": 760005,
+        "Name": "[+1级]主属性提高100",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760006": {
+        "Key": 760006,
+        "Id": 760006,
+        "Name": "[+1级]防御提高300",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760007": {
+        "Key": 760007,
+        "Id": 760007,
+        "Name": "[+1级]暴击提高300",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760008": {
+        "Key": 760008,
+        "Id": 760008,
+        "Name": "[+1级]急速提高300",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760009": {
+        "Key": 760009,
+        "Id": 760009,
+        "Name": "[+1级]精通提高300",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760010": {
+        "Key": 760010,
+        "Id": 760010,
+        "Name": "[+1级]幸运提高300",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760011": {
+        "Key": 760011,
+        "Id": 760011,
+        "Name": "【50梦心石】史诗词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760012": {
+        "Key": 760012,
+        "Id": 760012,
+        "Name": "【100梦心石】传奇词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760013": {
+        "Key": 760013,
+        "Id": 760013,
+        "Name": "【50梦心石】诅咒词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760014": {
+        "Key": 760014,
+        "Id": 760014,
+        "Name": "【200梦心石】浮梦晶簇",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760015": {
+        "Key": 760015,
+        "Id": 760015,
+        "Name": "高级浮梦晶簇",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760016": {
+        "Key": 760016,
+        "Id": 760016,
+        "Name": "【900梦心石】闪亮的浮梦晶簇",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760017": {
+        "Key": 760017,
+        "Id": 760017,
+        "Name": "开门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "760018": {
+        "Key": 760018,
+        "Id": 760018,
+        "Name": "传送到安全区1",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "760019": {
+        "Key": 760019,
+        "Id": 760019,
+        "Name": "传送到安全区2",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "760020": {
+        "Key": 760020,
+        "Id": 760020,
+        "Name": "传送到安全区3",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "760021": {
+        "Key": 760021,
+        "Id": 760021,
+        "Name": "传送到安全区4",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "800524": {
+        "Key": 800524,
+        "Id": 800524,
+        "Name": "因子分解",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_factorde_compose",
+        "FunctionOrder": []
+    },
+    "800525": {
+        "Key": 800525,
+        "Id": 800525,
+        "Name": "因子兑换商店",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_exchange_05",
+        "FunctionOrder": []
+    },
+    "800526": {
+        "Key": 800526,
+        "Id": 800526,
+        "Name": "印记兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_66",
+        "FunctionOrder": []
+    },
+    "800527": {
+        "Key": 800527,
+        "Id": 800527,
+        "Name": "印记回收",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_64",
+        "FunctionOrder": []
+    },
+    "920001": {
+        "Key": 920001,
+        "Id": 920001,
+        "Name": "【2训练币】暴击+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920002": {
+        "Key": 920002,
+        "Id": 920002,
+        "Name": "【2训练币】急速+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920003": {
+        "Key": 920003,
+        "Id": 920003,
+        "Name": "【2训练币】幸运+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920004": {
+        "Key": 920004,
+        "Id": 920004,
+        "Name": "【2训练币】精通+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920005": {
+        "Key": 920005,
+        "Id": 920005,
+        "Name": "【5训练币】升级技能",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920006": {
+        "Key": 920006,
+        "Id": 920006,
+        "Name": "开启训练",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920010": {
+        "Key": 920010,
+        "Id": 920010,
+        "Name": "【5训练币】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920011": {
+        "Key": 920011,
+        "Id": 920011,
+        "Name": "【5训练币】购买技能",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920101": {
+        "Key": 920101,
+        "Id": 920101,
+        "Name": "【3梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920102": {
+        "Key": 920102,
+        "Id": 920102,
+        "Name": "【5梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920103": {
+        "Key": 920103,
+        "Id": 920103,
+        "Name": "【10梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920104": {
+        "Key": 920104,
+        "Id": 920104,
+        "Name": "【20梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920105": {
+        "Key": 920105,
+        "Id": 920105,
+        "Name": "【30梦尘】购买词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920106": {
+        "Key": 920106,
+        "Id": 920106,
+        "Name": "【10梦尘】购买技能",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920107": {
+        "Key": 920107,
+        "Id": 920107,
+        "Name": "【20梦尘】升级技能",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920108": {
+        "Key": 920108,
+        "Id": 920108,
+        "Name": "【2梦尘】攻击+30 ",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920109": {
+        "Key": 920109,
+        "Id": 920109,
+        "Name": "【2梦尘】生命+1000、物理防御+300",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920110": {
+        "Key": 920110,
+        "Id": 920110,
+        "Name": "进入梦境",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920111": {
+        "Key": 920111,
+        "Id": 920111,
+        "Name": "【2梦尘】暴击+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920112": {
+        "Key": 920112,
+        "Id": 920112,
+        "Name": "【2梦尘】急速+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920113": {
+        "Key": 920113,
+        "Id": 920113,
+        "Name": "【2梦尘】幸运+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920114": {
+        "Key": 920114,
+        "Id": 920114,
+        "Name": "【2梦尘】精通+400",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920115": {
+        "Key": 920115,
+        "Id": 920115,
+        "Name": "选择初始词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920200": {
+        "Key": 920200,
+        "Id": 920200,
+        "Name": "开启梦境",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920201": {
+        "Key": 920201,
+        "Id": 920201,
+        "Name": "梦境苏醒",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920202": {
+        "Key": 920202,
+        "Id": 920202,
+        "Name": "解除沉梦状态【100残像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920203": {
+        "Key": 920203,
+        "Id": 920203,
+        "Name": "开启宝箱",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920204": {
+        "Key": 920204,
+        "Id": 920204,
+        "Name": "开启事件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920205": {
+        "Key": 920205,
+        "Id": 920205,
+        "Name": "开启词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920206": {
+        "Key": 920206,
+        "Id": 920206,
+        "Name": "升级词条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920207": {
+        "Key": 920207,
+        "Id": 920207,
+        "Name": "拾取零件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "920208": {
+        "Key": 920208,
+        "Id": 920208,
+        "Name": "修复装置",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "920209": {
+        "Key": 920209,
+        "Id": 920209,
+        "Name": "佩戴面具",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "920210": {
+        "Key": 920210,
+        "Id": 920210,
+        "Name": "驱散迷雾",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "920211": {
+        "Key": 920211,
+        "Id": 920211,
+        "Name": "摘下面具",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "920212": {
+        "Key": 920212,
+        "Id": 920212,
+        "Name": "拾取节点",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "920213": {
+        "Key": 920213,
+        "Id": 920213,
+        "Name": "解除沉梦状态【不足100残像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920214": {
+        "Key": 920214,
+        "Id": 920214,
+        "Name": "解除屏障",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920215": {
+        "Key": 920215,
+        "Id": 920215,
+        "Name": "进入空间裂痕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920216": {
+        "Key": 920216,
+        "Id": 920216,
+        "Name": "离开空间裂痕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920217": {
+        "Key": 920217,
+        "Id": 920217,
+        "Name": "选择力量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920218": {
+        "Key": 920218,
+        "Id": 920218,
+        "Name": "选择财宝",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920219": {
+        "Key": 920219,
+        "Id": 920219,
+        "Name": "我都要",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "920220": {
+        "Key": 920220,
+        "Id": 920220,
+        "Name": "强行苏醒【损失50%残像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1030049": {
+        "Key": 1030049,
+        "Id": 1030049,
+        "Name": "老旧的信封",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1030050": {
+        "Key": 1030050,
+        "Id": 1030050,
+        "Name": "进入山芥垆",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1030051": {
+        "Key": 1030051,
+        "Id": 1030051,
+        "Name": "和采掘区的人聊聊",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1030052": {
+        "Key": 1030052,
+        "Id": 1030052,
+        "Name": "幻祸怪物来袭",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "1030053": {
+        "Key": 1030053,
+        "Id": 1030053,
+        "Name": "深入洞窟探索",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "1030054": {
+        "Key": 1030054,
+        "Id": 1030054,
+        "Name": "查看岩壁",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1050401": {
+        "Key": 1050401,
+        "Id": 1050401,
+        "Name": "进入黯影堡垒",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1050402": {
+        "Key": 1050402,
+        "Id": 1050402,
+        "Name": "入睡",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1050403": {
+        "Key": 1050403,
+        "Id": 1050403,
+        "Name": "整理思绪",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1050404": {
+        "Key": 1050404,
+        "Id": 1050404,
+        "Name": "共鸣",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1090101": {
+        "Key": 1090101,
+        "Id": 1090101,
+        "Name": "制作餐点",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1090102": {
+        "Key": 1090102,
+        "Id": 1090102,
+        "Name": "敲门",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1090201": {
+        "Key": 1090201,
+        "Id": 1090201,
+        "Name": "完成搬箱子玩法",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1090301": {
+        "Key": 1090301,
+        "Id": 1090301,
+        "Name": "完成幻幻花战斗",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "1090401": {
+        "Key": 1090401,
+        "Id": 1090401,
+        "Name": "大型副本-幻华绽放流月之野",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "1201901": {
+        "Key": 1201901,
+        "Id": 1201901,
+        "Name": "拾起日记",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201902": {
+        "Key": 1201902,
+        "Id": 1201902,
+        "Name": "翻阅文件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201903": {
+        "Key": 1201903,
+        "Id": 1201903,
+        "Name": "翻阅日记",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201904": {
+        "Key": 1201904,
+        "Id": 1201904,
+        "Name": "翻阅计划",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201905": {
+        "Key": 1201905,
+        "Id": 1201905,
+        "Name": "检查包裹",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201906": {
+        "Key": 1201906,
+        "Id": 1201906,
+        "Name": "检查文件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201907": {
+        "Key": 1201907,
+        "Id": 1201907,
+        "Name": "拾起文件",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201908": {
+        "Key": 1201908,
+        "Id": 1201908,
+        "Name": "翻阅笔记",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201909": {
+        "Key": 1201909,
+        "Id": 1201909,
+        "Name": "检查笔记",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201910": {
+        "Key": 1201910,
+        "Id": 1201910,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201911": {
+        "Key": 1201911,
+        "Id": 1201911,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201912": {
+        "Key": 1201912,
+        "Id": 1201912,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201913": {
+        "Key": 1201913,
+        "Id": 1201913,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201914": {
+        "Key": 1201914,
+        "Id": 1201914,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201915": {
+        "Key": 1201915,
+        "Id": 1201915,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201916": {
+        "Key": 1201916,
+        "Id": 1201916,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201917": {
+        "Key": 1201917,
+        "Id": 1201917,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201918": {
+        "Key": 1201918,
+        "Id": 1201918,
+        "Name": "捡起",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201919": {
+        "Key": 1201919,
+        "Id": 1201919,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201920": {
+        "Key": 1201920,
+        "Id": 1201920,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201921": {
+        "Key": 1201921,
+        "Id": 1201921,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201922": {
+        "Key": 1201922,
+        "Id": 1201922,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201923": {
+        "Key": 1201923,
+        "Id": 1201923,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201924": {
+        "Key": 1201924,
+        "Id": 1201924,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201925": {
+        "Key": 1201925,
+        "Id": 1201925,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201926": {
+        "Key": 1201926,
+        "Id": 1201926,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201927": {
+        "Key": 1201927,
+        "Id": 1201927,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201928": {
+        "Key": 1201928,
+        "Id": 1201928,
+        "Name": "击晕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201929": {
+        "Key": 1201929,
+        "Id": 1201929,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201930": {
+        "Key": 1201930,
+        "Id": 1201930,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201931": {
+        "Key": 1201931,
+        "Id": 1201931,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201932": {
+        "Key": 1201932,
+        "Id": 1201932,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201933": {
+        "Key": 1201933,
+        "Id": 1201933,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201934": {
+        "Key": 1201934,
+        "Id": 1201934,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201935": {
+        "Key": 1201935,
+        "Id": 1201935,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201936": {
+        "Key": 1201936,
+        "Id": 1201936,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201937": {
+        "Key": 1201937,
+        "Id": 1201937,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1201938": {
+        "Key": 1201938,
+        "Id": 1201938,
+        "Name": "搜身",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1203001": {
+        "Key": 1203001,
+        "Id": 1203001,
+        "Name": "小伊说明",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1203002": {
+        "Key": 1203002,
+        "Id": 1203002,
+        "Name": "舞台剧开幕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "1203003": {
+        "Key": 1203003,
+        "Id": 1203003,
+        "Name": "化妆",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1203004": {
+        "Key": 1203004,
+        "Id": 1203004,
+        "Name": "卸妆",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1203050": {
+        "Key": 1203050,
+        "Id": 1203050,
+        "Name": "烹饪锅",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_cook",
+        "FunctionOrder": []
+    },
+    "1203051": {
+        "Key": 1203051,
+        "Id": 1203051,
+        "Name": "切菜",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1203052": {
+        "Key": 1203052,
+        "Id": 1203052,
+        "Name": "放上餐桌",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1203053": {
+        "Key": 1203053,
+        "Id": 1203053,
+        "Name": "西红柿",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_75",
+        "FunctionOrder": []
+    },
+    "1203054": {
+        "Key": 1203054,
+        "Id": 1203054,
+        "Name": "鱼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_61",
+        "FunctionOrder": []
+    },
+    "1203055": {
+        "Key": 1203055,
+        "Id": 1203055,
+        "Name": "蘑菇",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "1203056": {
+        "Key": 1203056,
+        "Id": 1203056,
+        "Name": "肉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_62",
+        "FunctionOrder": []
+    },
+    "1203057": {
+        "Key": 1203057,
+        "Id": 1203057,
+        "Name": "蘑菇炒肉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "1203058": {
+        "Key": 1203058,
+        "Id": 1203058,
+        "Name": "切好的蘑菇",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_46",
+        "FunctionOrder": []
+    },
+    "1203059": {
+        "Key": 1203059,
+        "Id": 1203059,
+        "Name": "切好的肉",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_62",
+        "FunctionOrder": []
+    },
+    "1302001": {
+        "Key": 1302001,
+        "Id": 1302001,
+        "Name": "激进者的笔记",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1302002": {
+        "Key": 1302002,
+        "Id": 1302002,
+        "Name": "地上的划痕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1302003": {
+        "Key": 1302003,
+        "Id": 1302003,
+        "Name": "遗落的指环",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1302004": {
+        "Key": 1302004,
+        "Id": 1302004,
+        "Name": "驻防日志残页",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1302005": {
+        "Key": 1302005,
+        "Id": 1302005,
+        "Name": "被撕碎的纸条",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1302006": {
+        "Key": 1302006,
+        "Id": 1302006,
+        "Name": "枯萎的花",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "1331001": {
+        "Key": 1331001,
+        "Id": 1331001,
+        "Name": "激活事件【回收幻想碎片】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1331002": {
+        "Key": 1331002,
+        "Id": 1331002,
+        "Name": "结束【回收幻想碎片】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1331011": {
+        "Key": 1331011,
+        "Id": 1331011,
+        "Name": "激活事件【击破腐化核心】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "1600001": {
+        "Key": 1600001,
+        "Id": 1600001,
+        "Name": "点燃祭台",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "2000101": {
+        "Key": 2000101,
+        "Id": 2000101,
+        "Name": "试炼伙伴",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "2000102": {
+        "Key": 2000102,
+        "Id": 2000102,
+        "Name": "试炼官",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "2002101": {
+        "Key": 2002101,
+        "Id": 2002101,
+        "Name": "使用信号探测器",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3000001": {
+        "Key": 3000001,
+        "Id": 3000001,
+        "Name": "等待天黑",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3000002": {
+        "Key": 3000002,
+        "Id": 3000002,
+        "Name": "被没收的小弓",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3000003": {
+        "Key": 3000003,
+        "Id": 3000003,
+        "Name": "亮晶晶的东西",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3000004": {
+        "Key": 3000004,
+        "Id": 3000004,
+        "Name": "与菲菠商量对策",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3000005": {
+        "Key": 3000005,
+        "Id": 3000005,
+        "Name": "满月安魂草",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3000006": {
+        "Key": 3000006,
+        "Id": 3000006,
+        "Name": "漫步林间",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3000007": {
+        "Key": 3000007,
+        "Id": 3000007,
+        "Name": "历史迷雾",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3000008": {
+        "Key": 3000008,
+        "Id": 3000008,
+        "Name": "早已破损的机像",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3000009": {
+        "Key": 3000009,
+        "Id": 3000009,
+        "Name": "星元构成的角羊",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3000010": {
+        "Key": 3000010,
+        "Id": 3000010,
+        "Name": "卷心菜营救",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3012501": {
+        "Key": 3012501,
+        "Id": 3012501,
+        "Name": "找回的演讲稿",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3014901": {
+        "Key": 3014901,
+        "Id": 3014901,
+        "Name": "被推落的花盆",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3014902": {
+        "Key": 3014902,
+        "Id": 3014902,
+        "Name": "门上的爪痕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3014903": {
+        "Key": 3014903,
+        "Id": 3014903,
+        "Name": "大狗",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3015101": {
+        "Key": 3015101,
+        "Id": 3015101,
+        "Name": "采集水样",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3020401": {
+        "Key": 3020401,
+        "Id": 3020401,
+        "Name": "<style=\"emph-gn\">《海边的苏珊》</style>击退怪物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "3020501": {
+        "Key": 3020501,
+        "Id": 3020501,
+        "Name": "调查痕迹",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3020502": {
+        "Key": 3020502,
+        "Id": 3020502,
+        "Name": "乱石堆",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3020503": {
+        "Key": 3020503,
+        "Id": 3020503,
+        "Name": "浸水的日志",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3020801": {
+        "Key": 3020801,
+        "Id": 3020801,
+        "Name": "<style=\"emph-gn\">《犬吠》</style>击退怪物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "3021001": {
+        "Key": 3021001,
+        "Id": 3021001,
+        "Name": "藏匿猛兽的黑暗裂隙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3021002": {
+        "Key": 3021002,
+        "Id": 3021002,
+        "Name": "封印凶恶的黑暗裂隙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3021003": {
+        "Key": 3021003,
+        "Id": 3021003,
+        "Name": "散发狂乱的黑暗裂隙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3021004": {
+        "Key": 3021004,
+        "Id": 3021004,
+        "Name": "激活装置完成融合",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3021101": {
+        "Key": 3021101,
+        "Id": 3021101,
+        "Name": "《龙的诱惑》",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3040201": {
+        "Key": 3040201,
+        "Id": 3040201,
+        "Name": "信件",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3040202": {
+        "Key": 3040202,
+        "Id": 3040202,
+        "Name": "尖锐的匕首",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3040203": {
+        "Key": 3040203,
+        "Id": 3040203,
+        "Name": "账单",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3040204": {
+        "Key": 3040204,
+        "Id": 3040204,
+        "Name": "装满卢诺的大缸",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3040801": {
+        "Key": 3040801,
+        "Id": 3040801,
+        "Name": "安装测量仪",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3040802": {
+        "Key": 3040802,
+        "Id": 3040802,
+        "Name": "取走测量仪",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3050201": {
+        "Key": 3050201,
+        "Id": 3050201,
+        "Name": "黯蓝海百合",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3051701": {
+        "Key": 3051701,
+        "Id": 3051701,
+        "Name": "偷听",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "3063001": {
+        "Key": 3063001,
+        "Id": 3063001,
+        "Name": "扎营",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3063501": {
+        "Key": 3063501,
+        "Id": 3063501,
+        "Name": "耐心等待",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3070801": {
+        "Key": 3070801,
+        "Id": 3070801,
+        "Name": "树藤",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3070802": {
+        "Key": 3070802,
+        "Id": 3070802,
+        "Name": "等待片刻",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3110901": {
+        "Key": 3110901,
+        "Id": 3110901,
+        "Name": "击退哥布林！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "3110902": {
+        "Key": 3110902,
+        "Id": 3110902,
+        "Name": "击退山贼！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "3113301": {
+        "Key": 3113301,
+        "Id": 3113301,
+        "Name": "驱逐鱼人！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_battle",
+        "FunctionOrder": []
+    },
+    "5010201": {
+        "Key": 5010201,
+        "Id": 5010201,
+        "Name": "贝壳",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "5010202": {
+        "Key": 5010202,
+        "Id": 5010202,
+        "Name": "果子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "5010203": {
+        "Key": 5010203,
+        "Id": 5010203,
+        "Name": "打包礼物",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "5702001": {
+        "Key": 5702001,
+        "Id": 5702001,
+        "Name": "变身雪人！",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_59",
+        "FunctionOrder": []
+    },
+    "6439001": {
+        "Key": 6439001,
+        "Id": 6439001,
+        "Name": "询问",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
+    "17100101": {
+        "Key": 17100101,
+        "Id": 17100101,
+        "Name": "煤炭",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    }
+}

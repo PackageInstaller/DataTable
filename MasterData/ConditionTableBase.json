@@ -1,0 +1,1082 @@
+{
+    "1": {
+        "Key": 1,
+        "Type": 1,
+        "Param": "等级",
+        "ImplStatus": 3,
+        "Example": "1=12=15",
+        "RefreshNum": "玩家身体元等级大于等于12小于等于15级满足条件",
+        "FailureMessage": 1500001,
+        "ShowPurview": ""
+    },
+    "2": {
+        "Key": 2,
+        "Type": 2,
+        "Param": "任务状态",
+        "ImplStatus": 3,
+        "Example": "2=200100=3",
+        "RefreshNum": "玩家完成200100任务后满足条件，2=任务id=状态对比枚举（状态对比枚举：0未下发刷新，1进行中刷新，2已完成刷新，3进行中隐藏，4完成后隐藏）",
+        "FailureMessage": 1500003,
+        "ShowPurview": ""
+    },
+    "3": {
+        "Key": 3,
+        "Type": 3,
+        "Param": "当前使用中的武器已消耗天赋点",
+        "ImplStatus": 2,
+        "Example": "3=5",
+        "RefreshNum": "当前使用中的武器已消耗5点天赋点满足条件（武器天赋功能专属）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "4": {
+        "Key": 4,
+        "Type": 4,
+        "Param": "装备GS",
+        "ImplStatus": 2,
+        "Example": "4=200",
+        "RefreshNum": "玩家装备GS大于等于200满足条件",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "5": {
+        "Key": 5,
+        "Type": 5,
+        "Param": "是否持有某道具n个",
+        "ImplStatus": 2,
+        "Example": "5=1001=2，5=1001=1=1",
+        "RefreshNum": "玩家需要持有2个1001道具才能满足条件，玩家持有小于1个1001道具才能满足条件",
+        "FailureMessage": 0,
+        "ShowPurview": "拥有{*val*}可购买"
+    },
+    "6": {
+        "Key": 6,
+        "Type": 6,
+        "Param": "副本ID",
+        "ImplStatus": 0,
+        "Example": "6=1001",
+        "RefreshNum": "玩家通关1001副本后满足条件",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "7": {
+        "Key": 7,
+        "Type": 7,
+        "Param": "副本分数达标",
+        "ImplStatus": 0,
+        "Example": "7=1001=10000",
+        "RefreshNum": "玩家在1001副本通关分数>=10000分满足条件（目前只有英雄挑战本才有得分）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "8": {
+        "Key": 8,
+        "Type": 8,
+        "Param": "在活动期间",
+        "ImplStatus": 1,
+        "Example": "8=23",
+        "RefreshNum": "当前时间在23这个timerid里的持续时间内",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "9": {
+        "Key": 9,
+        "Type": 9,
+        "Param": "处于开启状态",
+        "ImplStatus": 3,
+        "Example": "9=24",
+        "RefreshNum": "当前时间在24这个timerid里的开始时间-结束时间内",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "11": {
+        "Key": 11,
+        "Type": 11,
+        "Param": "装备GS",
+        "ImplStatus": 0,
+        "Example": "11=200",
+        "RefreshNum": "玩家装备GS大于等于200满足条件",
+        "FailureMessage": 3308,
+        "ShowPurview": ""
+    },
+    "12": {
+        "Key": 12,
+        "Type": 12,
+        "Param": "是否开启洞悉",
+        "ImplStatus": 1,
+        "Example": "12=1",
+        "RefreshNum": "1开启洞悉 0表示关闭洞悉",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "13": {
+        "Key": 13,
+        "Type": 13,
+        "Param": "时间",
+        "ImplStatus": 1,
+        "Example": "13=8=10",
+        "RefreshNum": "时间在8-10点之间",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "14": {
+        "Key": 14,
+        "Type": 14,
+        "Param": "功能id",
+        "ImplStatus": 3,
+        "Example": "14=100101",
+        "RefreshNum": "判断功能开启状态",
+        "FailureMessage": 1500004,
+        "ShowPurview": ""
+    },
+    "17": {
+        "Key": 17,
+        "Type": 17,
+        "Param": "技能等级",
+        "ImplStatus": 2,
+        "Example": "17=1701=2",
+        "RefreshNum": "技能【名字】等级达到2级时满足条件",
+        "FailureMessage": 1500005,
+        "ShowPurview": ""
+    },
+    "18": {
+        "Key": 18,
+        "Type": 18,
+        "Param": "当前场景指定实体状态",
+        "ImplStatus": 1,
+        "Example": "18=2=8178=1=1",
+        "RefreshNum": "判断对应场景内指定实体对象的实体的状态，18=实体类型=实体uid=实体状态=对比符枚举（0等于，1大于，2大于等于，3小于，4小于等于，5不相等，不填为0）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "21": {
+        "Key": 21,
+        "Type": 21,
+        "Param": "受到指定技能攻击",
+        "ImplStatus": 1,
+        "Example": "21=12345",
+        "RefreshNum": "受到技能ID12345的技能攻击",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "22": {
+        "Key": 22,
+        "Type": 22,
+        "Param": "指定当前场景实体死亡",
+        "ImplStatus": 1,
+        "Example": "22=7=1=101",
+        "RefreshNum": "指定当前场景7（当前场景不可跨场景）内怪物类型实例ID101的怪物死亡时",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "23": {
+        "Key": 23,
+        "Type": 23,
+        "Param": "指定当前场景组内死亡",
+        "ImplStatus": 1,
+        "Example": "23=7=1=102",
+        "RefreshNum": "指定当前场景7（当前场景不可跨场景）内怪物类型组ID102内的怪物死亡时",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "24": {
+        "Key": 24,
+        "Type": 24,
+        "Param": "赛季BP等级",
+        "ImplStatus": 2,
+        "Example": "24=10",
+        "RefreshNum": "当前赛季的BP等级到达N",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "25": {
+        "Key": 25,
+        "Type": 25,
+        "Param": "赛季头衔等级",
+        "ImplStatus": 2,
+        "Example": "25=501",
+        "RefreshNum": "当前赛季的头衔到达指定ID（对应SeasonRankTable表中的ID字段-键值ID）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "26": {
+        "Key": 26,
+        "Type": 26,
+        "Param": "赛季开始时间后区间内",
+        "ImplStatus": 2,
+        "Example": "26=1=24=0=0=48=0=0",
+        "RefreshNum": "26为赛季指定时间段类型，1为赛季表赛季ID，后面为时间配置24小时0分0秒。1赛季开始时间是1月1号0点，表示：2号00:00:00-3号00:00:00（第一赛季的第二天到第三天）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "27": {
+        "Key": 27,
+        "Type": 27,
+        "Param": "赛季开启时间持续到赛季结束",
+        "ImplStatus": 2,
+        "Example": "27=1=1=2=3",
+        "RefreshNum": "27为赛季指定时间到赛季结束，1为赛季表赛季ID，后面为时间配置1小时2分3秒。1开始时间是1月1号0点，表示：1号01:02:03（1号的一点两分三秒开始持续到赛季结束）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "28": {
+        "Key": 28,
+        "Type": 28,
+        "Param": "任务步骤状态",
+        "ImplStatus": 3,
+        "Example": "28=101=100001=1",
+        "RefreshNum": "28为类型，完成任务id101的任务步骤id100001，28=任务id=步骤id=状态对比枚举",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "29": {
+        "Key": 29,
+        "Type": 29,
+        "Param": "超过某个时间",
+        "ImplStatus": 2,
+        "Example": "29=2024-03-11 00:00:00",
+        "RefreshNum": "29为类型，超过参数时间",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "30": {
+        "Key": 30,
+        "Type": 30,
+        "Param": "协会建筑达成指定等级",
+        "ImplStatus": 2,
+        "Example": "30=5=2",
+        "RefreshNum": "30为类型，5为协会建筑ID（协会建筑表），2为对应建筑等级",
+        "FailureMessage": 0,
+        "ShowPurview": "{*val1*}等级达{*val2*}"
+    },
+    "35": {
+        "Key": 35,
+        "Type": 35,
+        "Param": "协会等级到达",
+        "ImplStatus": 2,
+        "Example": "35=3",
+        "RefreshNum": "协会等级到达至少3级",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "36": {
+        "Key": 36,
+        "Type": 36,
+        "Param": "协会资金到达",
+        "ImplStatus": 2,
+        "Example": "36=3000",
+        "RefreshNum": "协会资金至少有3000",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "37": {
+        "Key": 37,
+        "Type": 37,
+        "Param": "副本进入人数",
+        "ImplStatus": 0,
+        "Example": "37=100",
+        "RefreshNum": "副本进入人数",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "38": {
+        "Key": 38,
+        "Type": 38,
+        "Param": "当前玩家身上拥有的总天赋点上限",
+        "ImplStatus": 2,
+        "Example": "38=100",
+        "RefreshNum": "玩家身上总天赋点至少有100点",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "39": {
+        "Key": 39,
+        "Type": 39,
+        "Param": "游戏内昼夜时间",
+        "ImplStatus": 1,
+        "Example": "39=8=10",
+        "RefreshNum": "游戏内昼夜时间在8-10点之间",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "40": {
+        "Key": 40,
+        "Type": 40,
+        "Param": "天气",
+        "ImplStatus": 0,
+        "Example": "40=1",
+        "RefreshNum": "当前天气是1",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "41": {
+        "Key": 41,
+        "Type": 41,
+        "Param": "玩家状态",
+        "ImplStatus": 1,
+        "Example": "41=0",
+        "RefreshNum": "玩家状态为指定状态，41=玩家状态枚举",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "42": {
+        "Key": 42,
+        "Type": 42,
+        "Param": "玩家性别",
+        "ImplStatus": 2,
+        "Example": "42=1",
+        "RefreshNum": "限制玩家性别，1为男，2为女",
+        "FailureMessage": 0,
+        "ShowPurview": "{*name*}角色可购买"
+    },
+    "43": {
+        "Key": 43,
+        "Type": 43,
+        "Param": "玩家佩戴武器",
+        "ImplStatus": 0,
+        "Example": "43=1=2",
+        "RefreshNum": "43为类型，格式为43=职业ID=职业ID=……ID是ProfessionSystemTable中的ID",
+        "FailureMessage": 0,
+        "ShowPurview": "{*name*}职业可购买"
+    },
+    "44": {
+        "Key": 44,
+        "Type": 44,
+        "Param": "指定技能的等级是多少",
+        "ImplStatus": 0,
+        "Example": "44=1001=1",
+        "RefreshNum": "需要1001的技能等级达到N；44=0=N，表示改造的时候，对应技能的等级达到N",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "45": {
+        "Key": 45,
+        "Type": 45,
+        "Param": "开服时间限制",
+        "ImplStatus": 2,
+        "Example": "45=2",
+        "RefreshNum": "开服满N天，第一天开服算0，到第二天算1……比如开服地7天，要配成45=6",
+        "FailureMessage": 0,
+        "ShowPurview": "开服时间达到第{*val*}天"
+    },
+    "46": {
+        "Key": 46,
+        "Type": 46,
+        "Param": "世界事件存在",
+        "ImplStatus": 1,
+        "Example": "46=1",
+        "RefreshNum": "id为1的世界事件存在",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "47": {
+        "Key": 47,
+        "Type": 47,
+        "Param": "复活",
+        "ImplStatus": 1,
+        "Example": "47",
+        "RefreshNum": "当前场景是否可以被其他玩家复活",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "48": {
+        "Key": 48,
+        "Type": 48,
+        "Param": "不在指定场景",
+        "ImplStatus": 0,
+        "Example": "48=1",
+        "RefreshNum": "不在指定场景：48=场景ID",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "49": {
+        "Key": 49,
+        "Type": 49,
+        "Param": "在指定场景",
+        "ImplStatus": 0,
+        "Example": "49=1",
+        "RefreshNum": "在指定场景：49=场景ID",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "50": {
+        "Key": 50,
+        "Type": 50,
+        "Param": "不在指定玩法的场景",
+        "ImplStatus": 0,
+        "Example": "50=1",
+        "RefreshNum": "不在指定玩法的场景：50=DungeonsTable中的玩法类型的ID（PlayType玩法类型字段）。",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "51": {
+        "Key": 51,
+        "Type": 51,
+        "Param": "在指定玩法的场景",
+        "ImplStatus": 0,
+        "Example": "51=1",
+        "RefreshNum": "在指定玩法的场景：51=DungeonsTable中的玩法类型的ID（PlayType玩法类型字段）。",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "52": {
+        "Key": 52,
+        "Type": 52,
+        "Param": "有对话",
+        "ImplStatus": 1,
+        "Example": "52",
+        "RefreshNum": "交互的Npc有对话",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "53": {
+        "Key": 53,
+        "Type": 53,
+        "Param": "是否在推荐玩法开启时间内",
+        "ImplStatus": 2,
+        "Example": "53=1",
+        "RefreshNum": "是否在推荐玩法开启时间内: 52=SeasonActTable中的id",
+        "FailureMessage": 16010000,
+        "ShowPurview": ""
+    },
+    "54": {
+        "Key": 54,
+        "Type": 54,
+        "Param": "钓鱼等级",
+        "ImplStatus": 3,
+        "Example": "54=10",
+        "RefreshNum": "满足配置的钓鱼等级",
+        "FailureMessage": 0,
+        "ShowPurview": "钓鱼等级达到{*val*}级"
+    },
+    "55": {
+        "Key": 55,
+        "Type": 55,
+        "Param": "是否骑乘",
+        "ImplStatus": 1,
+        "Example": "55=0",
+        "RefreshNum": "是否在载具或坐骑，55=0（不在骑乘）/1（在骑乘）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "56": {
+        "Key": 56,
+        "Type": 56,
+        "Param": "在血量范围",
+        "ImplStatus": 1,
+        "Example": "56=50=70=1",
+        "RefreshNum": "交互者血量大于等于50%小于等于70%满足条件。52=最小血量=最大血量=实体类型（0被交互者，1交互者）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "57": {
+        "Key": 57,
+        "Type": 57,
+        "Param": "是否指定buff",
+        "ImplStatus": 1,
+        "Example": "57=1=201=1=1",
+        "RefreshNum": "1玩家/0交互对象=BuffId=Buff层数=0小于层数/1大于等于层数（后两个参数不填只判断buff存在）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "58": {
+        "Key": 58,
+        "Type": 58,
+        "Param": "要求最低生活职业等级",
+        "ImplStatus": 0,
+        "Example": "58=1=10",
+        "RefreshNum": "要求植物学等级最少10级  58=LifeProfessionTable中的ProId=最低等级",
+        "FailureMessage": 1500010,
+        "ShowPurview": "{*val1*}达到{*val2*}级"
+    },
+    "59": {
+        "Key": 59,
+        "Type": 59,
+        "Param": "要求最低生活职业专精等级",
+        "ImplStatus": 0,
+        "Example": "59=1=2",
+        "RefreshNum": "要求紫阳花一专精等级达到2级  59=LifeFormulaTable中的GruopId=最低等级",
+        "FailureMessage": 1500012,
+        "ShowPurview": "专精：{*val*}"
+    },
+    "60": {
+        "Key": 60,
+        "Type": 60,
+        "Param": "生活配方是否已解锁",
+        "ImplStatus": 0,
+        "Example": "60=1",
+        "RefreshNum": "生活配方是否已解锁，60=LifeProductionListTable中的Id",
+        "FailureMessage": 0,
+        "ShowPurview": "通过玩法解锁"
+    },
+    "63": {
+        "Key": 63,
+        "Type": 63,
+        "Param": "判断消耗精力",
+        "ImplStatus": 0,
+        "Example": "63=10",
+        "RefreshNum": "消耗10点精力",
+        "FailureMessage": 1001907,
+        "ShowPurview": "生活职业"
+    },
+    "64": {
+        "Key": 64,
+        "Type": 64,
+        "Param": "衣橱会员等级",
+        "ImplStatus": 0,
+        "Example": "64=1",
+        "RefreshNum": "会员等级n级",
+        "FailureMessage": 0,
+        "ShowPurview": "到达{*val*}"
+    },
+    "65": {
+        "Key": 65,
+        "Type": 65,
+        "Param": "是否是召唤物所有者",
+        "ImplStatus": 1,
+        "Example": "65=1",
+        "RefreshNum": "是否是召唤物所有者可交互  参数0表示仅限召唤者 1表示非召唤者（取反）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "66": {
+        "Key": 66,
+        "Type": 66,
+        "Param": "是否满足磁吸吸附条件",
+        "ImplStatus": 1,
+        "Example": "66",
+        "RefreshNum": "无需参数，仅判断属性是否满足条件",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "68": {
+        "Key": 68,
+        "Type": 68,
+        "Param": "不在磁吸连接中",
+        "ImplStatus": 0,
+        "Example": "68=1",
+        "RefreshNum": "1为不在磁吸中（可释放其他坐骑技能）",
+        "FailureMessage": 5712,
+        "ShowPurview": ""
+    },
+    "69": {
+        "Key": 69,
+        "Type": 69,
+        "Param": "是否在玩家可交互列表中",
+        "ImplStatus": 1,
+        "Example": "69=1",
+        "RefreshNum": "1取反，是否不在可交互列表中",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "70": {
+        "Key": 70,
+        "Type": 70,
+        "Param": "判断没有BUFF",
+        "ImplStatus": 0,
+        "Example": "70-112121",
+        "RefreshNum": "当玩家身上没有112121这个BUFF时可以生效",
+        "FailureMessage": 1004110,
+        "ShowPurview": ""
+    },
+    "71": {
+        "Key": 71,
+        "Type": 71,
+        "Param": "是否有家园",
+        "ImplStatus": 2,
+        "Example": "71",
+        "RefreshNum": "无需参数",
+        "FailureMessage": 1044004,
+        "ShowPurview": "当前无房屋或无同居房屋 "
+    },
+    "72": {
+        "Key": 72,
+        "Type": 72,
+        "Param": "家园等级",
+        "ImplStatus": 2,
+        "Example": "72=3",
+        "RefreshNum": "家园等级3",
+        "FailureMessage": 1044018,
+        "ShowPurview": "家园等级3"
+    },
+    "73": {
+        "Key": 73,
+        "Type": 73,
+        "Param": "家园清洁度",
+        "ImplStatus": 2,
+        "Example": "73=800",
+        "RefreshNum": "要求清洁度达到800",
+        "FailureMessage": 0,
+        "ShowPurview": "清洁度达到{*val*}"
+    },
+    "74": {
+        "Key": 74,
+        "Type": 74,
+        "Param": "制造台状态",
+        "ImplStatus": 1,
+        "Example": "74=1=1",
+        "RefreshNum": "状态（1空闲/2制造中/3制造完成未领取）= 制造组",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "75": {
+        "Key": 75,
+        "Type": 75,
+        "Param": "是否在变身状态",
+        "ImplStatus": 3,
+        "Example": "75",
+        "RefreshNum": "不在变身返回true 变身则返回false",
+        "FailureMessage": 1500014,
+        "ShowPurview": ""
+    },
+    "76": {
+        "Key": 76,
+        "Type": 76,
+        "Param": "符合指定运营平台特权展示要求",
+        "ImplStatus": 2,
+        "Example": "76=1001",
+        "RefreshNum": "平台id（1001微信 1002QQ），满足tx内渠包且符合平台对应的账号类型",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "77": {
+        "Key": 77,
+        "Type": 77,
+        "Param": "田地缺水",
+        "ImplStatus": 1,
+        "Example": "77",
+        "RefreshNum": "无需参数",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "78": {
+        "Key": 78,
+        "Type": 78,
+        "Param": "是否采集过当前交互的采集物",
+        "ImplStatus": 1,
+        "Example": "78=0",
+        "RefreshNum": "参数0，没采集过为true，1取反",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "79": {
+        "Key": 79,
+        "Type": 79,
+        "Param": "幸运值条件",
+        "ImplStatus": 0,
+        "Example": "76=101=0=1000",
+        "RefreshNum": "76=幸运值id=(0-大于等于:1=小于等于)=幸运值数值",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "80": {
+        "Key": 80,
+        "Type": 80,
+        "Param": "田地阶段",
+        "ImplStatus": 1,
+        "Example": "80=1",
+        "RefreshNum": "阶段(0空地/1成长/2授粉/3收获)",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "81": {
+        "Key": 81,
+        "Type": 81,
+        "Param": "田地种子的所有者",
+        "ImplStatus": 1,
+        "Example": "81=0",
+        "RefreshNum": "参数0，所有者为true，1取反",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "82": {
+        "Key": 82,
+        "Type": 82,
+        "Param": "有对应花类型的花粉",
+        "ImplStatus": 1,
+        "Example": "82",
+        "RefreshNum": "无需参数",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "83": {
+        "Key": 83,
+        "Type": 83,
+        "Param": "有对应花类型的肥料",
+        "ImplStatus": 1,
+        "Example": "83",
+        "RefreshNum": "无需参数",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "84": {
+        "Key": 84,
+        "Type": 84,
+        "Param": "有授粉次数",
+        "ImplStatus": 1,
+        "Example": "84",
+        "RefreshNum": "无需参数",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "85": {
+        "Key": 85,
+        "Type": 85,
+        "Param": "有施肥次数",
+        "ImplStatus": 1,
+        "Example": "85",
+        "RefreshNum": "无需参数",
+        "FailureMessage": 2491,
+        "ShowPurview": ""
+    },
+    "86": {
+        "Key": 86,
+        "Type": 86,
+        "Param": "持有指定类型道具n个",
+        "ImplStatus": 1,
+        "Example": "86=1112=1",
+        "RefreshNum": "持有1112类型的道具1个",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "87": {
+        "Key": 87,
+        "Type": 87,
+        "Param": "玩家骑乘指定Id的坐骑",
+        "ImplStatus": 1,
+        "Example": "87=1",
+        "RefreshNum": "87=VehicleBase表id，支持多个",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "88": {
+        "Key": 88,
+        "Type": 88,
+        "Param": "玩家正在播放指定Id的动作",
+        "ImplStatus": 1,
+        "Example": "88=1",
+        "RefreshNum": "88=Action表id，支持多个",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "89": {
+        "Key": 89,
+        "Type": 89,
+        "Param": "解锁生活职业配方",
+        "ImplStatus": 1,
+        "Example": "89=102",
+        "RefreshNum": "配置配方ID",
+        "FailureMessage": 2505,
+        "ShowPurview": "解锁配方{*val*}"
+    },
+    "90": {
+        "Key": 90,
+        "Type": 90,
+        "Param": "家园区域解锁",
+        "ImplStatus": 1,
+        "Example": "90=1=0",
+        "RefreshNum": "90=区域id=（0解锁/1未解锁）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "91": {
+        "Key": 91,
+        "Type": 91,
+        "Param": "玩家在线时长大于等于N",
+        "ImplStatus": 3,
+        "Example": "91=100",
+        "RefreshNum": "玩家在线时长大于等于N分钟（向下取整）",
+        "FailureMessage": 1500015,
+        "ShowPurview": ""
+    },
+    "92": {
+        "Key": 92,
+        "Type": 92,
+        "Param": "玩家在线时长小于等于N",
+        "ImplStatus": 3,
+        "Example": "92=100",
+        "RefreshNum": "玩家在线时长小于等于N分钟（向下取整）",
+        "FailureMessage": 1500016,
+        "ShowPurview": ""
+    },
+    "93": {
+        "Key": 93,
+        "Type": 93,
+        "Param": "指定赛季等级",
+        "ImplStatus": 2,
+        "Example": "93=10",
+        "RefreshNum": "大于等于该赛季等级：93=赛季ID=等级",
+        "FailureMessage": 124043,
+        "ShowPurview": "{*val1*}等级到达{*val2*}解锁"
+    },
+    "100": {
+        "Key": 100,
+        "Type": 100,
+        "Param": "是否有家园权限",
+        "ImplStatus": 1,
+        "Example": "100=1",
+        "RefreshNum": "100=家园权限action",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "101": {
+        "Key": 101,
+        "Type": 101,
+        "Param": "是否是家园同居人",
+        "ImplStatus": 1,
+        "Example": "101",
+        "RefreshNum": "无需参数，是同住人",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "102": {
+        "Key": 102,
+        "Type": 102,
+        "Param": "打上萌新标签后的持续时长在X-Y范围内",
+        "ImplStatus": 1,
+        "Example": "102=100=200",
+        "RefreshNum": "打上萌新标签后的持续时长在100-200秒内（单位：秒）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "103": {
+        "Key": 103,
+        "Type": 103,
+        "Param": "当前副本有N个同协会的玩家",
+        "ImplStatus": 0,
+        "Example": "103=1",
+        "RefreshNum": "当前副本有N个同协会的玩家",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "104": {
+        "Key": 104,
+        "Type": 104,
+        "Param": "当前副本中检测是否队长",
+        "ImplStatus": 0,
+        "Example": "",
+        "RefreshNum": "场地标记检测当前是否是队长，只有队长可以摆放场景标记",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "105": {
+        "Key": 105,
+        "Type": 105,
+        "Param": "校验是否当前赛季",
+        "ImplStatus": 3,
+        "Example": "105=2",
+        "RefreshNum": "校验是否当前赛季，2为第二赛季，读取赛季表",
+        "FailureMessage": 1500017,
+        "ShowPurview": ""
+    },
+    "106": {
+        "Key": 106,
+        "Type": 106,
+        "Param": "爬塔最高层数是否小于当前给定层数",
+        "ImplStatus": 0,
+        "Example": "106=5",
+        "RefreshNum": "玩家当前爬塔最大层数是否大于等于5层，大于等于则返回正确",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "107": {
+        "Key": 107,
+        "Type": 107,
+        "Param": "地区的声望等级",
+        "ImplStatus": 2,
+        "Example": "7=5",
+        "RefreshNum": "场景7的声望等级是否大于等于5级，大于等于则返回正确",
+        "FailureMessage": 1500019,
+        "ShowPurview": "{*val1*}地区声望等级到达{*val2*}解锁"
+    },
+    "108": {
+        "Key": 108,
+        "Type": 108,
+        "Param": "是否在指定ID视野层级",
+        "ImplStatus": 1,
+        "Example": "108=1=1",
+        "RefreshNum": "108=视野层级ID=0（在视野层级）/1（取反）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "109": {
+        "Key": 109,
+        "Type": 109,
+        "Param": "完成指定成就解锁",
+        "ImplStatus": 0,
+        "Example": "109=100010103",
+        "RefreshNum": "完成指定成就解锁，后面参数为AchievementDateTable表的ID",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "110": {
+        "Key": 110,
+        "Type": 110,
+        "Param": "判断开启时间",
+        "ImplStatus": 2,
+        "Example": "110=24",
+        "RefreshNum": "（只判断开启时间，无视结束时间）当前时间到达24这个timerid的开始时间",
+        "FailureMessage": 1500021,
+        "ShowPurview": ""
+    },
+    "111": {
+        "Key": 111,
+        "Type": 111,
+        "Param": "是否有采集花粉次数",
+        "ImplStatus": 0,
+        "Example": "110",
+        "RefreshNum": "无需参数",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "112": {
+        "Key": 112,
+        "Type": 112,
+        "Param": "大师模式是否开启",
+        "ImplStatus": 1,
+        "Example": "112=1",
+        "RefreshNum": "1已开启，0未开启",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "113": {
+        "Key": 113,
+        "Type": 113,
+        "Param": "是否在巡游队伍中",
+        "ImplStatus": 1,
+        "Example": "113=1",
+        "RefreshNum": "0不在巡游，1在巡游队伍中",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "114": {
+        "Key": 114,
+        "Type": 114,
+        "Param": "跳层层数大于等于某层",
+        "ImplStatus": 2,
+        "Example": "114=0",
+        "RefreshNum": "当前跳层>0",
+        "FailureMessage": 1005903,
+        "ShowPurview": ""
+    },
+    "115": {
+        "Key": 115,
+        "Type": 115,
+        "Param": "爬塔跳层奖励是否领取完了",
+        "ImplStatus": 2,
+        "Example": "115=0",
+        "RefreshNum": "0未领取完，1领取完了",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "116": {
+        "Key": 116,
+        "Type": 116,
+        "Param": "是否贴地（未知改变不会刷新，需走远返回触发交互才刷新）",
+        "ImplStatus": 1,
+        "Example": "116",
+        "RefreshNum": "无需参数，是贴地",
+        "FailureMessage": 1044036,
+        "ShowPurview": ""
+    },
+    "117": {
+        "Key": 117,
+        "Type": 117,
+        "Param": "是否XZ轴旋转=0（未知改变不会刷新，需走远返回触发交互才刷新）",
+        "ImplStatus": 1,
+        "Example": "117",
+        "RefreshNum": "无需参数，是xz旋转=0",
+        "FailureMessage": 1044037,
+        "ShowPurview": ""
+    },
+    "118": {
+        "Key": 118,
+        "Type": 118,
+        "Param": "肉鸽职业",
+        "ImplStatus": 0,
+        "Example": "118=1",
+        "RefreshNum": "判断词条id=词条配置的职业id是否符合玩家当前职业（返回ture/false）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "119": {
+        "Key": 119,
+        "Type": 119,
+        "Param": "肉鸽流派",
+        "ImplStatus": 0,
+        "Example": "119=1=1=10",
+        "RefreshNum": "判断流派id=（词条配置的流派id数量）大于等于/小于=玩家需要拥有该流派的词条数量（1是大于等于，0是小于）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "120": {
+        "Key": 120,
+        "Type": 120,
+        "Param": "背包空间是否足够",
+        "ImplStatus": 1,
+        "Example": "120=1=5",
+        "RefreshNum": "120=容器id=剩余空位数量，当指定容器实际剩余空位数量>5时通过，<=5时不满足条件",
+        "FailureMessage": 1004017,
+        "ShowPurview": ""
+    },
+    "121": {
+        "Key": 121,
+        "Type": 121,
+        "Param": "在磁吸跟随乘客中",
+        "ImplStatus": 1,
+        "Example": "121=1",
+        "RefreshNum": "1满足条件，0不满足",
+        "FailureMessage": 5712,
+        "ShowPurview": ""
+    },
+    "122": {
+        "Key": 122,
+        "Type": 122,
+        "Param": "当前不在视野层级中",
+        "ImplStatus": 0,
+        "Example": "122=0",
+        "RefreshNum": "判断不在视野层级ID=视野层级ID",
+        "FailureMessage": 100124,
+        "ShowPurview": ""
+    },
+    "123": {
+        "Key": 123,
+        "Type": 123,
+        "Param": "交互对象的巡游队列长度是否小于上限",
+        "ImplStatus": 0,
+        "Example": "123=50",
+        "RefreshNum": "123=长度上限",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "124": {
+        "Key": 124,
+        "Type": 124,
+        "Param": "指定喵特赏是否已搬空",
+        "ImplStatus": 0,
+        "Example": "124=1001=1",
+        "RefreshNum": "类型ID=奖池ID=1（1表示已搬空，0表示未搬空）",
+        "FailureMessage": 0,
+        "ShowPurview": "{*val*}奖池被抽光"
+    },
+    "125": {
+        "Key": 125,
+        "Type": 125,
+        "Param": "大世界场景玩法状态",
+        "ImplStatus": 0,
+        "Example": "125=1002=1",
+        "RefreshNum": "125=活动ID=场景玩法状态，1等待状态，2即将开启 3进行 4结束 5结算",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "126": {
+        "Key": 126,
+        "Type": 126,
+        "Param": "是否激活通行证",
+        "ImplStatus": 0,
+        "Example": "126=1",
+        "RefreshNum": "126=是否激活，1激活，2没激活",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    }
+}

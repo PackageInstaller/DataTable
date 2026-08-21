@@ -1,0 +1,1043 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "Note": "技能 To Buff",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "AddBuffByConfigId",
+        "FindConditions": [],
+        "TargetPara": "buffConfigId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "Note": "技能 To 怪物",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "1"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 4
+    },
+    "3": {
+        "Key": 3,
+        "Id": 3,
+        "Note": "技能 To 宠物",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "8"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 11
+    },
+    "4": {
+        "Key": 4,
+        "Id": 4,
+        "Note": "技能 To 虚拟体",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "11"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 5
+    },
+    "5": {
+        "Key": 5,
+        "Id": 5,
+        "Note": "技能 To 领域",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "14"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 8
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "Note": "技能 To 陷阱",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "15"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 7
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "Note": "技能 To 怪物",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "1"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 4
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "Note": "技能 To 宠物",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "8"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 11
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "Note": "技能 To 虚拟体",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "11"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 5
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "Note": "技能 To 领域",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "14"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 8
+    },
+    "11": {
+        "Key": 11,
+        "Id": 11,
+        "Note": "技能 To 陷阱",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "15"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 7
+    },
+    "12": {
+        "Key": 12,
+        "Id": 12,
+        "Note": "技能 To 子弹",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonBullet",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "13": {
+        "Key": 13,
+        "Id": 13,
+        "Note": "技能 To 子弹",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonBulletEvent",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "14": {
+        "Key": 14,
+        "Id": 14,
+        "Note": "技能 To 子弹",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonBulletByPart",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "15": {
+        "Key": 15,
+        "Id": 15,
+        "Note": "技能 To 子弹",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonBulletByCircleAverage",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "16": {
+        "Key": 16,
+        "Id": 16,
+        "Note": "技能 To 子弹",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonBulletByBezier",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "17": {
+        "Key": 17,
+        "Id": 17,
+        "Note": "技能 To 假子弹",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "SummonFakeBullet",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "18": {
+        "Key": 18,
+        "Id": 18,
+        "Note": "技能 To 假子弹",
+        "NoteType": 1,
+        "FindType": 1,
+        "FindBody": "FakeBullet",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "19": {
+        "Key": 19,
+        "Id": 19,
+        "Note": "Buff To Buff",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "AddBuffByConfigId",
+        "FindConditions": [],
+        "TargetPara": "buffConfigId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "20": {
+        "Key": 20,
+        "Id": 20,
+        "Note": "Buff To 技能",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "ReplaceSkill",
+        "FindConditions": [],
+        "TargetPara": "newSkillId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "21": {
+        "Key": 21,
+        "Id": 21,
+        "Note": "Buff To 技能",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SetReplaceSkillBySlotId",
+        "FindConditions": [],
+        "TargetPara": "skillId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "22": {
+        "Key": 22,
+        "Id": 22,
+        "Note": "Buff To 技能",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "TriggerPassiveSkill",
+        "FindConditions": [],
+        "TargetPara": "skillId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "23": {
+        "Key": 23,
+        "Id": 23,
+        "Note": "Buff To 怪物",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "1"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 4
+    },
+    "24": {
+        "Key": 24,
+        "Id": 24,
+        "Note": "Buff To 宠物",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "8"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 11
+    },
+    "25": {
+        "Key": 25,
+        "Id": 25,
+        "Note": "Buff To 虚拟体",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "11"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 5
+    },
+    "26": {
+        "Key": 26,
+        "Id": 26,
+        "Note": "Buff To 领域",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "14"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 8
+    },
+    "27": {
+        "Key": 27,
+        "Id": 27,
+        "Note": "Buff To 陷阱",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "15"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 7
+    },
+    "28": {
+        "Key": 28,
+        "Id": 28,
+        "Note": "Buff To 怪物",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "1"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 4
+    },
+    "29": {
+        "Key": 29,
+        "Id": 29,
+        "Note": "Buff To 宠物",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "8"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 11
+    },
+    "30": {
+        "Key": 30,
+        "Id": 30,
+        "Note": "Buff To 虚拟体",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "11"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 5
+    },
+    "31": {
+        "Key": 31,
+        "Id": 31,
+        "Note": "Buff To 领域",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "14"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 8
+    },
+    "32": {
+        "Key": 32,
+        "Id": 32,
+        "Note": "Buff To 陷阱",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonEntity",
+        "FindConditions": [
+            [
+                "entityType",
+                "15"
+            ]
+        ],
+        "TargetPara": "baseid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 7
+    },
+    "33": {
+        "Key": 33,
+        "Id": 33,
+        "Note": "Buff To 子弹",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonBullet",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "34": {
+        "Key": 34,
+        "Id": 34,
+        "Note": "Buff To 子弹",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonBulletEvent",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "35": {
+        "Key": 35,
+        "Id": 35,
+        "Note": "Buff To 子弹",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonBulletByPart",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "36": {
+        "Key": 36,
+        "Id": 36,
+        "Note": "Buff To 子弹",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonBulletByCircleAverage",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "37": {
+        "Key": 37,
+        "Id": 37,
+        "Note": "Buff To 子弹",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonBulletByBezier",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "38": {
+        "Key": 38,
+        "Id": 38,
+        "Note": "Buff To 假子弹",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "SummonFakeBullet",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "39": {
+        "Key": 39,
+        "Id": 39,
+        "Note": "Buff To 假子弹",
+        "NoteType": 3,
+        "FindType": 1,
+        "FindBody": "FakeBullet",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "40": {
+        "Key": 40,
+        "Id": 40,
+        "Note": "子弹 To Buff",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "AddBuffByConfigId",
+        "FindConditions": [],
+        "TargetPara": "buffConfigId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "41": {
+        "Key": 41,
+        "Id": 41,
+        "Note": "子弹 To Buff",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "AddBulletBuff",
+        "FindConditions": [],
+        "TargetPara": "buffUuid",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "42": {
+        "Key": 42,
+        "Id": 42,
+        "Note": "子弹 To 怪物",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityByTarget",
+        "FindConditions": [
+            [
+                "entityType",
+                "1"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 4
+    },
+    "43": {
+        "Key": 43,
+        "Id": 43,
+        "Note": "子弹 To 宠物",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityByTarget",
+        "FindConditions": [
+            [
+                "entityType",
+                "8"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 11
+    },
+    "44": {
+        "Key": 44,
+        "Id": 44,
+        "Note": "子弹 To 虚拟体",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityByTarget",
+        "FindConditions": [
+            [
+                "entityType",
+                "11"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 5
+    },
+    "45": {
+        "Key": 45,
+        "Id": 45,
+        "Note": "子弹 To 领域",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityByTarget",
+        "FindConditions": [
+            [
+                "entityType",
+                "14"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 8
+    },
+    "46": {
+        "Key": 46,
+        "Id": 46,
+        "Note": "子弹 To 陷阱",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityByTarget",
+        "FindConditions": [
+            [
+                "entityType",
+                "15"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 7
+    },
+    "47": {
+        "Key": 47,
+        "Id": 47,
+        "Note": "子弹 To 怪物",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "1"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 4
+    },
+    "48": {
+        "Key": 48,
+        "Id": 48,
+        "Note": "子弹 To 宠物",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "8"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 11
+    },
+    "49": {
+        "Key": 49,
+        "Id": 49,
+        "Note": "子弹 To 虚拟体",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "11"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 5
+    },
+    "50": {
+        "Key": 50,
+        "Id": 50,
+        "Note": "子弹 To 领域",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "14"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 8
+    },
+    "51": {
+        "Key": 51,
+        "Id": 51,
+        "Note": "子弹 To 陷阱",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonEntityBasic",
+        "FindConditions": [
+            [
+                "entityType",
+                "15"
+            ]
+        ],
+        "TargetPara": "baseId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 7
+    },
+    "52": {
+        "Key": 52,
+        "Id": 52,
+        "Note": "子弹 To 子弹",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonBullet",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "53": {
+        "Key": 53,
+        "Id": 53,
+        "Note": "子弹 To 子弹",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonBulletByPart",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "54": {
+        "Key": 54,
+        "Id": 54,
+        "Note": "子弹 To 子弹",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonBulletByCircleAverage",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "55": {
+        "Key": 55,
+        "Id": 55,
+        "Note": "子弹 To 子弹",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonBulletByBezier",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "56": {
+        "Key": 56,
+        "Id": 56,
+        "Note": "子弹 To 假子弹",
+        "NoteType": 6,
+        "FindType": 1,
+        "FindBody": "SummonFakeBullet",
+        "FindConditions": [],
+        "TargetPara": "bulletId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 6
+    },
+    "57": {
+        "Key": 57,
+        "Id": 57,
+        "Note": "子弹 To 打击点",
+        "NoteType": 6,
+        "FindType": 2,
+        "FindBody": "DamageAttrTable",
+        "FindConditions": [
+            [
+                "DamageType",
+                "3"
+            ]
+        ],
+        "TargetPara": "",
+        "SkillLevelType": 0,
+        "TargetNodeType": 2
+    },
+    "58": {
+        "Key": 58,
+        "Id": 58,
+        "Note": "技能 To 打击点",
+        "NoteType": 1,
+        "FindType": 2,
+        "FindBody": "DamageAttrTable",
+        "FindConditions": [
+            [
+                "DamageType",
+                "1"
+            ]
+        ],
+        "TargetPara": "",
+        "SkillLevelType": 0,
+        "TargetNodeType": 2
+    },
+    "59": {
+        "Key": 59,
+        "Id": 59,
+        "Note": "Buff To 打击点",
+        "NoteType": 3,
+        "FindType": 2,
+        "FindBody": "DamageAttrTable",
+        "FindConditions": [
+            [
+                "DamageType",
+                "2"
+            ]
+        ],
+        "TargetPara": "",
+        "SkillLevelType": 0,
+        "TargetNodeType": 2
+    },
+    "60": {
+        "Key": 60,
+        "Id": 60,
+        "Note": "怪物 To 部位",
+        "NoteType": 4,
+        "FindType": 3,
+        "FindBody": "BodyPartsTable",
+        "FindConditions": [],
+        "TargetPara": "ModelID",
+        "SkillLevelType": 0,
+        "TargetNodeType": 9
+    },
+    "61": {
+        "Key": 61,
+        "Id": 61,
+        "Note": "怪物 To 技能",
+        "NoteType": 4,
+        "FindType": 4,
+        "FindBody": "MonsterTable",
+        "FindConditions": [],
+        "TargetPara": "SkillIds",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "62": {
+        "Key": 62,
+        "Id": 62,
+        "Note": "怪物 To Buff",
+        "NoteType": 4,
+        "FindType": 4,
+        "FindBody": "MonsterTable",
+        "FindConditions": [],
+        "TargetPara": "InitBuffs",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "63": {
+        "Key": 63,
+        "Id": 63,
+        "Note": "虚拟体 To 技能",
+        "NoteType": 5,
+        "FindType": 4,
+        "FindBody": "DummyTable",
+        "FindConditions": [],
+        "TargetPara": "SkillId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "64": {
+        "Key": 64,
+        "Id": 64,
+        "Note": "虚拟体 To 技能",
+        "NoteType": 5,
+        "FindType": 4,
+        "FindBody": "DummyTable",
+        "FindConditions": [],
+        "TargetPara": "SkillIds",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "65": {
+        "Key": 65,
+        "Id": 65,
+        "Note": "领域 To 技能",
+        "NoteType": 8,
+        "FindType": 4,
+        "FindBody": "FieldTable",
+        "FindConditions": [],
+        "TargetPara": "SkillId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "66": {
+        "Key": 66,
+        "Id": 66,
+        "Note": "领域 To Buff",
+        "NoteType": 8,
+        "FindType": 4,
+        "FindBody": "FieldTable",
+        "FindConditions": [],
+        "TargetPara": "BirthBuff",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "67": {
+        "Key": 67,
+        "Id": 67,
+        "Note": "陷阱 To 技能",
+        "NoteType": 7,
+        "FindType": 4,
+        "FindBody": "TrapTable",
+        "FindConditions": [],
+        "TargetPara": "SkillId",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "68": {
+        "Key": 68,
+        "Id": 68,
+        "Note": "陷阱 To Buff",
+        "NoteType": 7,
+        "FindType": 4,
+        "FindBody": "TrapTable",
+        "FindConditions": [],
+        "TargetPara": "BuffIds",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "69": {
+        "Key": 69,
+        "Id": 69,
+        "Note": "宠物 To 技能",
+        "NoteType": 11,
+        "FindType": 4,
+        "FindBody": "BattlePetTable",
+        "FindConditions": [],
+        "TargetPara": "SkillIds",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "70": {
+        "Key": 70,
+        "Id": 70,
+        "Note": "宠物 To Buff",
+        "NoteType": 11,
+        "FindType": 4,
+        "FindBody": "BattlePetTable",
+        "FindConditions": [],
+        "TargetPara": "InitBuffs",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "71": {
+        "Key": 71,
+        "Id": 71,
+        "Note": "职业 To 技能",
+        "NoteType": 10,
+        "FindType": 4,
+        "FindBody": "WeaponTable",
+        "FindConditions": [],
+        "TargetPara": "SkillIds",
+        "SkillLevelType": 0,
+        "TargetNodeType": 1
+    },
+    "72": {
+        "Key": 72,
+        "Id": 72,
+        "Note": "职业 To Buff",
+        "NoteType": 10,
+        "FindType": 4,
+        "FindBody": "WeaponTable",
+        "FindConditions": [],
+        "TargetPara": "InitBuffs",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    },
+    "73": {
+        "Key": 73,
+        "Id": 73,
+        "Note": "职业 To Buff",
+        "NoteType": 10,
+        "FindType": 4,
+        "FindBody": "WeaponTable",
+        "FindConditions": [],
+        "TargetPara": "SwitchBuff",
+        "SkillLevelType": 0,
+        "TargetNodeType": 3
+    }
+}

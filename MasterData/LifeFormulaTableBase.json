@@ -1,0 +1,4135 @@
+{
+    "101001": {
+        "Key": 101001,
+        "Id": 101001,
+        "ProId": 101,
+        "GroupId": 1001,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "菇类采集·入门",
+        "Des": "学会专注采集常见的菇类采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/mushroom_gathering_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            101007
+        ]
+    },
+    "101002": {
+        "Key": 101002,
+        "Id": 101002,
+        "ProId": 101,
+        "GroupId": 1002,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "果蔬采集·入门",
+        "Des": "学会专注采集常见的果蔬采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/fruit_gathering_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            101008
+        ]
+    },
+    "101003": {
+        "Key": 101003,
+        "Id": 101003,
+        "ProId": 101,
+        "GroupId": 1003,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "药草采集·入门",
+        "Des": "学会专注采集常见的药草采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/herb_gathering_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            101009
+        ]
+    },
+    "101004": {
+        "Key": 101004,
+        "Id": 101004,
+        "ProId": 101,
+        "GroupId": 1004,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "备用采集包·等级1",
+        "Des": "专注采集时有10%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_collect/backup_gathering_basket_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            101005,
+            101013
+        ]
+    },
+    "101005": {
+        "Key": 101005,
+        "Id": 101005,
+        "ProId": 101,
+        "GroupId": 1005,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "备用采集包·等级2",
+        "Des": "专注采集时有20%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_collect/backup_gathering_basket_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                1004,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            101006
+        ]
+    },
+    "101006": {
+        "Key": 101006,
+        "Id": 101006,
+        "ProId": 101,
+        "GroupId": 1006,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "备用采集包·等级3",
+        "Des": "专注采集时有30%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_collect/backup_gathering_basket_03",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                1005,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "101007": {
+        "Key": 101007,
+        "Id": 101007,
+        "ProId": 101,
+        "GroupId": 1007,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "菇类采集·掌握",
+        "Des": "学会专注采集较为罕见的菇类采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/mushroom_gathering_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            101010
+        ]
+    },
+    "101008": {
+        "Key": 101008,
+        "Id": 101008,
+        "ProId": 101,
+        "GroupId": 1008,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "果蔬采集·掌握",
+        "Des": "学会专注采集较为罕见的果蔬采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/fruit_gathering_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1002,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            101011
+        ]
+    },
+    "101009": {
+        "Key": 101009,
+        "Id": 101009,
+        "ProId": 101,
+        "GroupId": 1009,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "药草采集·掌握",
+        "Des": "学会专注采集较为罕见的药草采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/herb_gathering_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1003,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            101012
+        ]
+    },
+    "101010": {
+        "Key": 101010,
+        "Id": 101010,
+        "ProId": 101,
+        "GroupId": 1010,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "菇类采集·精通",
+        "Des": "学会专注采集非常罕见的菇类采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/mushroom_gathering_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1007,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "101011": {
+        "Key": 101011,
+        "Id": 101011,
+        "ProId": 101,
+        "GroupId": 1011,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "果蔬采集·精通",
+        "Des": "学会专注采集非常罕见的果蔬采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/fruit_gathering_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1008,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "101012": {
+        "Key": 101012,
+        "Id": 101012,
+        "ProId": 101,
+        "GroupId": 1012,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "药草采集·精通",
+        "Des": "学会专注采集非常罕见的药草采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/herb_gathering_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1009,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "101013": {
+        "Key": 101013,
+        "Id": 101013,
+        "ProId": 101,
+        "GroupId": 1013,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "采集提速·等级1",
+        "Des": "采集时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1004,
+                1
+            ],
+            [
+                58,
+                101,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99014,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            101014
+        ]
+    },
+    "101014": {
+        "Key": 101014,
+        "Id": 101014,
+        "ProId": 101,
+        "GroupId": 1014,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "采集提速·等级2",
+        "Des": "采集时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1013,
+                1
+            ],
+            [
+                58,
+                101,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99014,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    },
+    "101021": {
+        "Key": 101021,
+        "Id": 101021,
+        "ProId": 101,
+        "GroupId": 1021,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔蔬菜采集·入门",
+        "Des": "学会专注采集常见的巴哈马尔高原的蔬菜采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/mushroom_gathering_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            101024
+        ]
+    },
+    "101022": {
+        "Key": 101022,
+        "Id": 101022,
+        "ProId": 101,
+        "GroupId": 1022,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔果实采集·入门",
+        "Des": "学会专注采集常见的巴哈马尔高原的果实采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/fruit_gathering_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            101025
+        ]
+    },
+    "101023": {
+        "Key": 101023,
+        "Id": 101023,
+        "ProId": 101,
+        "GroupId": 1023,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔药草采集·入门",
+        "Des": "学会专注采集常见的巴哈马尔高原的药草采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/herb_gathering_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            101026
+        ]
+    },
+    "101024": {
+        "Key": 101024,
+        "Id": 101024,
+        "ProId": 101,
+        "GroupId": 1024,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔蔬菜采集·掌握",
+        "Des": "学会专注采集较为罕见的巴哈马尔高原的蔬菜采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/mushroom_gathering_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1021,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "101025": {
+        "Key": 101025,
+        "Id": 101025,
+        "ProId": 101,
+        "GroupId": 1025,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔果实采集·掌握",
+        "Des": "学会专注采集较为罕见的巴哈马尔高原的果实采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/fruit_gathering_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1022,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "101026": {
+        "Key": 101026,
+        "Id": 101026,
+        "ProId": 101,
+        "GroupId": 1026,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔药草采集·掌握",
+        "Des": "学会专注采集较为罕见的巴哈马尔高原的药草采集物",
+        "Icon": "ui/atlas/life_formula/life_collect/herb_gathering_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                1023,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102001": {
+        "Key": 102001,
+        "Id": 102001,
+        "ProId": 102,
+        "GroupId": 10201,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "巴鲁矿入门",
+        "Des": "学会专注采集巴鲁矿获得巴鲁矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/iron_talent_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102004
+        ]
+    },
+    "102002": {
+        "Key": 102002,
+        "Id": 102002,
+        "ProId": 102,
+        "GroupId": 10202,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "阿兹特矿入门",
+        "Des": "学会专注采集阿兹特矿获得阿兹特矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/pepper_talent_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102005
+        ]
+    },
+    "102003": {
+        "Key": 102003,
+        "Id": 102003,
+        "ProId": 102,
+        "GroupId": 10203,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "卢纳矿入门",
+        "Des": "学会专注采集卢纳矿获得卢纳矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/silver_talent_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102006
+        ]
+    },
+    "102004": {
+        "Key": 102004,
+        "Id": 102004,
+        "ProId": 102,
+        "GroupId": 10204,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "巴鲁矿熟识",
+        "Des": "学会专注采集富巴鲁矿获得巴鲁富矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/iron_talent_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10201,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            102008
+        ]
+    },
+    "102005": {
+        "Key": 102005,
+        "Id": 102005,
+        "ProId": 102,
+        "GroupId": 10205,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "阿兹特矿熟识",
+        "Des": "学会专注采集富阿兹特矿获得阿兹特富矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/pepper_talent_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10202,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            102009
+        ]
+    },
+    "102006": {
+        "Key": 102006,
+        "Id": 102006,
+        "ProId": 102,
+        "GroupId": 10206,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "卢纳矿熟识",
+        "Des": "学会专注采集富卢纳矿获得卢纳富矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/silver_talent_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10203,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            102010
+        ]
+    },
+    "102007": {
+        "Key": 102007,
+        "Id": 102007,
+        "ProId": 102,
+        "GroupId": 10207,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "斯托克斯矿熟识",
+        "Des": "学会专注采集富斯托克斯矿获得斯托克斯富矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/gold_talent_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102011
+        ]
+    },
+    "102008": {
+        "Key": 102008,
+        "Id": 102008,
+        "ProId": 102,
+        "GroupId": 10208,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "巴鲁矿精通",
+        "Des": "学会专注采集精巴鲁矿获得巴鲁精矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/iron_talent_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10204,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102009": {
+        "Key": 102009,
+        "Id": 102009,
+        "ProId": 102,
+        "GroupId": 10209,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "阿兹特矿精通",
+        "Des": "学会专注采集精阿兹特矿获得阿兹特精矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/pepper_talent_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10205,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102010": {
+        "Key": 102010,
+        "Id": 102010,
+        "ProId": 102,
+        "GroupId": 10210,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "卢纳矿精通",
+        "Des": "学会专注采集精卢纳矿获得卢纳精矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/silver_talent_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10206,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102011": {
+        "Key": 102011,
+        "Id": 102011,
+        "ProId": 102,
+        "GroupId": 10211,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "斯托克斯矿精通",
+        "Des": "学会专注采集精斯托克斯矿获得斯托克斯精矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/gold_talent_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10207,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102012": {
+        "Key": 102012,
+        "Id": 102012,
+        "ProId": 102,
+        "GroupId": 10212,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "挖矿增产技术入门",
+        "Des": "专注采集时有10%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_mining/mine_master_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102013,
+            102015
+        ]
+    },
+    "102013": {
+        "Key": 102013,
+        "Id": 102013,
+        "ProId": 102,
+        "GroupId": 10213,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "挖矿增产技术熟识",
+        "Des": "专注采集时有20%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_mining/mine_master_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                10212,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            102014
+        ]
+    },
+    "102014": {
+        "Key": 102014,
+        "Id": 102014,
+        "ProId": 102,
+        "GroupId": 10214,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "挖矿增产技术精通",
+        "Des": "专注采集时有30%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_mining/mine_master_03",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                10213,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102015": {
+        "Key": 102015,
+        "Id": 102015,
+        "ProId": 102,
+        "GroupId": 10215,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "快速挖掘",
+        "Des": "采集时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_stone/extreme_digging",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10212,
+                1
+            ],
+            [
+                58,
+                102,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99020,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            102016
+        ]
+    },
+    "102016": {
+        "Key": 102016,
+        "Id": 102016,
+        "ProId": 102,
+        "GroupId": 10216,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超速挖掘",
+        "Des": "采集时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_stone/extreme_digging",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10215,
+                1
+            ],
+            [
+                58,
+                102,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99020,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    },
+    "102021": {
+        "Key": 102021,
+        "Id": 102021,
+        "ProId": 102,
+        "GroupId": 10221,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "鲁涅矿入门",
+        "Des": "学会专注采集鲁涅矿获得鲁涅矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/iron_talent_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102025
+        ]
+    },
+    "102022": {
+        "Key": 102022,
+        "Id": 102022,
+        "ProId": 102,
+        "GroupId": 10222,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈矿入门",
+        "Des": "学会专注采集巴哈矿获得巴哈矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/pepper_talent_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102026
+        ]
+    },
+    "102023": {
+        "Key": 102023,
+        "Id": 102023,
+        "ProId": 102,
+        "GroupId": 10223,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "费尔矿入门",
+        "Des": "学会专注采集费尔矿获得费尔矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/silver_talent_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102027
+        ]
+    },
+    "102024": {
+        "Key": 102024,
+        "Id": 102024,
+        "ProId": 102,
+        "GroupId": 10224,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "陨铁矿入门",
+        "Des": "学会专注采集陨铁矿获得陨铁矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/gold_talent_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            102028
+        ]
+    },
+    "102025": {
+        "Key": 102025,
+        "Id": 102025,
+        "ProId": 102,
+        "GroupId": 10225,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "鲁涅矿熟识",
+        "Des": "学会专注采集富鲁涅矿获得鲁涅富矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/iron_talent_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10221,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102026": {
+        "Key": 102026,
+        "Id": 102026,
+        "ProId": 102,
+        "GroupId": 10226,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈矿熟识",
+        "Des": "学会专注采集富巴哈矿获得巴哈富矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/pepper_talent_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10222,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102027": {
+        "Key": 102027,
+        "Id": 102027,
+        "ProId": 102,
+        "GroupId": 10227,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "费尔矿熟识",
+        "Des": "学会专注采集富费尔矿获得费尔富矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/silver_talent_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10223,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "102028": {
+        "Key": 102028,
+        "Id": 102028,
+        "ProId": 102,
+        "GroupId": 10228,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "陨铁矿熟识",
+        "Des": "学会专注采集富陨铁矿获得陨铁富矿石",
+        "Icon": "ui/atlas/life_formula/life_mining/gold_talent_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10224,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103001": {
+        "Key": 103001,
+        "Id": 103001,
+        "ProId": 103,
+        "GroupId": 10301,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "赤红水晶入门",
+        "Des": "学会专注采集赤红水晶原矿获得星萃赤晶原石·1级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/ruby_introduction",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103005
+        ]
+    },
+    "103002": {
+        "Key": 103002,
+        "Id": 103002,
+        "ProId": 103,
+        "GroupId": 10302,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "蓝水晶入门",
+        "Des": "学会专注采集蓝水晶原矿获得星萃蓝晶原石·1级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/sapphire_introduction",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103006
+        ]
+    },
+    "103003": {
+        "Key": 103003,
+        "Id": 103003,
+        "ProId": 103,
+        "GroupId": 10303,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "绿水晶入门",
+        "Des": "学会专注采集绿水晶原矿获得星萃翠晶原石·1级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/emerald_introduction",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103007
+        ]
+    },
+    "103004": {
+        "Key": 103004,
+        "Id": 103004,
+        "ProId": 103,
+        "GroupId": 10304,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "黄水晶入门",
+        "Des": "学会专注采集黄水晶原矿获得星萃耀晶原石·1级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/white_sapphire_introduction",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103008
+        ]
+    },
+    "103005": {
+        "Key": 103005,
+        "Id": 103005,
+        "ProId": 103,
+        "GroupId": 10305,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "赤红水晶熟识",
+        "Des": "学会专注采集赤红水晶富矿获得星萃赤晶原石·2级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/ruby_familiarity",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10301,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            103009
+        ]
+    },
+    "103006": {
+        "Key": 103006,
+        "Id": 103006,
+        "ProId": 103,
+        "GroupId": 10306,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "蓝水晶熟识",
+        "Des": "学会专注采集蓝水晶富矿获得星萃蓝晶原石·2级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/sapphire_familiarity",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10302,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            103010
+        ]
+    },
+    "103007": {
+        "Key": 103007,
+        "Id": 103007,
+        "ProId": 103,
+        "GroupId": 10307,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "绿水晶熟识",
+        "Des": "学会专注采集绿水晶富矿获得星萃翠晶原石·2级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/emerald_familiarity",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10303,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            103011
+        ]
+    },
+    "103008": {
+        "Key": 103008,
+        "Id": 103008,
+        "ProId": 103,
+        "GroupId": 10308,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "黄水晶熟识",
+        "Des": "学会专注采集黄水晶富矿获得星萃耀晶原石·2级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/white_sapphire_familiarity",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10304,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            103012
+        ]
+    },
+    "103009": {
+        "Key": 103009,
+        "Id": 103009,
+        "ProId": 103,
+        "GroupId": 10309,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "赤红水晶精通",
+        "Des": "学会专注采集赤红水晶晶簇获得星萃赤晶原石·3级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/ruby_mastery",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10305,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103010": {
+        "Key": 103010,
+        "Id": 103010,
+        "ProId": 103,
+        "GroupId": 10310,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "蓝水晶精通",
+        "Des": "学会专注采集蓝水晶晶簇获得星萃蓝晶原石·3级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/sapphire_mastery",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10306,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103011": {
+        "Key": 103011,
+        "Id": 103011,
+        "ProId": 103,
+        "GroupId": 10311,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "绿水晶精通",
+        "Des": "学会专注采集绿水晶晶簇获得星萃翠晶原石·3级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/emerald_mastery",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10307,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103012": {
+        "Key": 103012,
+        "Id": 103012,
+        "ProId": 103,
+        "GroupId": 10312,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "黄水晶精通",
+        "Des": "学会专注采集黄水晶晶簇获得星萃耀晶原石·3级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/white_sapphire_mastery",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10308,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103013": {
+        "Key": 103013,
+        "Id": 103013,
+        "ProId": 103,
+        "GroupId": 10313,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "晶石增产技术入门",
+        "Des": "专注采集宝石时有10%概率获取额外1个晶石",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/extra_output_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103014,
+            103016
+        ]
+    },
+    "103014": {
+        "Key": 103014,
+        "Id": 103014,
+        "ProId": 103,
+        "GroupId": 10314,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "晶石增产技术熟识",
+        "Des": "专注采集宝石时有20%概率获取额外1个晶石",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/extra_output_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                10313,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            103015
+        ]
+    },
+    "103015": {
+        "Key": 103015,
+        "Id": 103015,
+        "ProId": 103,
+        "GroupId": 10315,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "晶石增产技术精通",
+        "Des": "专注采集宝石时有30%概率获取额外1个晶石",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/extra_output_03",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                10314,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103016": {
+        "Key": 103016,
+        "Id": 103016,
+        "ProId": 103,
+        "GroupId": 10316,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "快速挖掘",
+        "Des": "采集时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_stone/all_treasuresmastery",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10313,
+                1
+            ],
+            [
+                58,
+                103,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99021,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            103017
+        ]
+    },
+    "103017": {
+        "Key": 103017,
+        "Id": 103017,
+        "ProId": 103,
+        "GroupId": 10317,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超速挖掘",
+        "Des": "采集时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_stone/all_treasuresmastery",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10316,
+                1
+            ],
+            [
+                58,
+                103,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99021,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    },
+    "103021": {
+        "Key": 103021,
+        "Id": 103021,
+        "ProId": 103,
+        "GroupId": 10321,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀赤红水晶入门",
+        "Des": "学会专注采集幻蚀赤红水晶原矿获得幻蚀赤晶原石·1级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/ruby_introduction",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103025
+        ]
+    },
+    "103022": {
+        "Key": 103022,
+        "Id": 103022,
+        "ProId": 103,
+        "GroupId": 10322,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀蓝水晶入门",
+        "Des": "学会专注采集幻蚀蓝水晶原矿获得幻蚀蓝晶原石·1级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/sapphire_introduction",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103026
+        ]
+    },
+    "103023": {
+        "Key": 103023,
+        "Id": 103023,
+        "ProId": 103,
+        "GroupId": 10323,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀绿水晶入门",
+        "Des": "学会专注采集幻蚀绿水晶原矿获得幻蚀翠晶原石·1级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/emerald_introduction",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103027
+        ]
+    },
+    "103024": {
+        "Key": 103024,
+        "Id": 103024,
+        "ProId": 103,
+        "GroupId": 10324,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀黄水晶入门",
+        "Des": "学会专注采集幻蚀黄水晶原矿获得幻蚀耀晶原石·1级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/white_sapphire_introduction",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            103028
+        ]
+    },
+    "103025": {
+        "Key": 103025,
+        "Id": 103025,
+        "ProId": 103,
+        "GroupId": 10325,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀赤红水晶熟识",
+        "Des": "学会专注采集幻蚀赤红水晶富矿获得幻蚀赤晶原石·2级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/ruby_familiarity",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10321,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103026": {
+        "Key": 103026,
+        "Id": 103026,
+        "ProId": 103,
+        "GroupId": 10326,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀蓝水晶熟识",
+        "Des": "学会专注采集幻蚀蓝水晶富矿获得幻蚀蓝晶原石·2级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/sapphire_familiarity",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10322,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103027": {
+        "Key": 103027,
+        "Id": 103027,
+        "ProId": 103,
+        "GroupId": 10327,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀绿水晶熟识",
+        "Des": "学会专注采集幻蚀绿水晶富矿获得幻蚀翠晶原石·2级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/emerald_familiarity",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10323,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "103028": {
+        "Key": 103028,
+        "Id": 103028,
+        "ProId": 103,
+        "GroupId": 10328,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀黄水晶熟识",
+        "Des": "学会专注采集幻蚀黄水晶富矿获得幻蚀耀晶原石·2级",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/white_sapphire_familiarity",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                10324,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201001": {
+        "Key": 201001,
+        "Id": 201001,
+        "ProId": 201,
+        "GroupId": 2001,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "鱼类料理入门",
+        "Des": "学会加工鱼肉，并且使用鱼肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fish_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201005
+        ]
+    },
+    "201002": {
+        "Key": 201002,
+        "Id": 201002,
+        "ProId": 201,
+        "GroupId": 2002,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "肉类料理入门",
+        "Des": "学会加工鲜肉，并且使用鲜肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/meat_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201006
+        ]
+    },
+    "201003": {
+        "Key": 201003,
+        "Id": 201003,
+        "ProId": 201,
+        "GroupId": 2003,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "蘑菇料理入门",
+        "Des": "学会使用草地小伞进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/mushroom_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201007
+        ]
+    },
+    "201004": {
+        "Key": 201004,
+        "Id": 201004,
+        "ProId": 201,
+        "GroupId": 2004,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "果实料理入门",
+        "Des": "学会使用甜甜浆果进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fruit_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201008
+        ]
+    },
+    "201005": {
+        "Key": 201005,
+        "Id": 201005,
+        "ProId": 201,
+        "GroupId": 2005,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "鱼类料理掌握",
+        "Des": "学会加工精制鱼肉，并且使用精制鱼肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fish_dishes_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            201009
+        ]
+    },
+    "201006": {
+        "Key": 201006,
+        "Id": 201006,
+        "ProId": 201,
+        "GroupId": 2006,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "肉类料理掌握",
+        "Des": "学会加工精制鲜肉，并且使用精制鲜肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/meat_dishes_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2002,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            201010
+        ]
+    },
+    "201007": {
+        "Key": 201007,
+        "Id": 201007,
+        "ProId": 201,
+        "GroupId": 2007,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "蘑菇料理掌握",
+        "Des": "学会使用萤光蕈进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/mushroom_dishes_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2003,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            201011
+        ]
+    },
+    "201008": {
+        "Key": 201008,
+        "Id": 201008,
+        "ProId": 201,
+        "GroupId": 2008,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "果实料理掌握",
+        "Des": "学会使用乌姆果进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fruit_dishes_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2004,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            201012
+        ]
+    },
+    "201009": {
+        "Key": 201009,
+        "Id": 201009,
+        "ProId": 201,
+        "GroupId": 2009,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "鱼类料理精通",
+        "Des": "学会加工顶级鱼肉，并且使用顶级鱼肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fish_dishes_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2005,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201010": {
+        "Key": 201010,
+        "Id": 201010,
+        "ProId": 201,
+        "GroupId": 2010,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "肉类料理精通",
+        "Des": "学会加工顶级鲜肉，并且使用顶级鲜肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/meat_dishes_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2006,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201011": {
+        "Key": 201011,
+        "Id": 201011,
+        "ProId": 201,
+        "GroupId": 2011,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "蘑菇料理精通",
+        "Des": "学会使用婆婆树松进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/mushroom_dishes_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2007,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201012": {
+        "Key": 201012,
+        "Id": 201012,
+        "ProId": 201,
+        "GroupId": 2012,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "果实料理精通",
+        "Des": "学会使用幽蓝果进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fruit_dishes_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2008,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201013": {
+        "Key": 201013,
+        "Id": 201013,
+        "ProId": 201,
+        "GroupId": 2013,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超元气甜品制作",
+        "Des": "学会制作超元气甜品",
+        "Icon": "ui/atlas/life_formula/life_cook/lifeformula_dessert_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201014": {
+        "Key": 201014,
+        "Id": 201014,
+        "ProId": 201,
+        "GroupId": 2014,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "充满诱惑的饵料制作",
+        "Des": "学会制作充满诱惑的饵料",
+        "Icon": "ui/atlas/life_formula/life_cook/lifeformula_fishbait_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                45,
+                9999
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201015": {
+        "Key": 201015,
+        "Id": 201015,
+        "ProId": 201,
+        "GroupId": 2015,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "幸运烹饪·等级1",
+        "Des": "烹饪、加工时有10%概率额外获得1个产物（超元气甜品不会受此专精影响）",
+        "Icon": "ui/atlas/life_formula/life_cook/lucky_cooking_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201016,
+            201018
+        ]
+    },
+    "201016": {
+        "Key": 201016,
+        "Id": 201016,
+        "ProId": 201,
+        "GroupId": 2016,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "幸运烹饪·等级2",
+        "Des": "烹饪、加工时有20%概率额外获得1个产物（超元气甜品不会受此专精影响）",
+        "Icon": "ui/atlas/life_formula/life_cook/lucky_cooking_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                2015,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            201017
+        ]
+    },
+    "201017": {
+        "Key": 201017,
+        "Id": 201017,
+        "ProId": 201,
+        "GroupId": 2017,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "幸运烹饪·等级3",
+        "Des": "烹饪、加工时有30%概率额外获得1个产物（超元气甜品不会受此专精影响）",
+        "Icon": "ui/atlas/life_formula/life_cook/lucky_cooking_03",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                2016,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201018": {
+        "Key": 201018,
+        "Id": 201018,
+        "ProId": 201,
+        "GroupId": 2018,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "快速烹饪",
+        "Des": "烹饪、加工时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2015,
+                1
+            ],
+            [
+                58,
+                201,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99024,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            201019
+        ]
+    },
+    "201019": {
+        "Key": 201019,
+        "Id": 201019,
+        "ProId": 201,
+        "GroupId": 2019,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超速烹饪",
+        "Des": "烹饪、加工时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2018,
+                1
+            ],
+            [
+                58,
+                201,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99024,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    },
+    "201021": {
+        "Key": 201021,
+        "Id": 201021,
+        "ProId": 201,
+        "GroupId": 2021,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔鱼类料理入门",
+        "Des": "学会加工巴哈马尔高原的鱼肉，并且使用巴哈马尔高原的鱼肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fish_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201025
+        ]
+    },
+    "201022": {
+        "Key": 201022,
+        "Id": 201022,
+        "ProId": 201,
+        "GroupId": 2022,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔肉类料理入门",
+        "Des": "学会加工巴哈马尔高原的鲜肉，并且使用巴哈马尔高原的鲜肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/meat_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201026
+        ]
+    },
+    "201023": {
+        "Key": 201023,
+        "Id": 201023,
+        "ProId": 201,
+        "GroupId": 2023,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔豆类料理入门",
+        "Des": "学会使用巴哈马尔高原的豆类进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/mushroom_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201027
+        ]
+    },
+    "201024": {
+        "Key": 201024,
+        "Id": 201024,
+        "ProId": 201,
+        "GroupId": 2024,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔果实料理入门",
+        "Des": "学会使用巴哈马尔高原的果实进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fruit_dishes_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            201028
+        ]
+    },
+    "201025": {
+        "Key": 201025,
+        "Id": 201025,
+        "ProId": 201,
+        "GroupId": 2025,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔鱼类料理掌握",
+        "Des": "学会加工巴哈马尔高原的精制鱼肉，并且使用巴哈马尔高原的精制鱼肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fish_dishes_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2021,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201026": {
+        "Key": 201026,
+        "Id": 201026,
+        "ProId": 201,
+        "GroupId": 2026,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔肉类料理掌握",
+        "Des": "学会加工巴哈马尔高原的精制鲜肉，并且使用巴哈马尔高原的精制鲜肉进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/meat_dishes_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2022,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201027": {
+        "Key": 201027,
+        "Id": 201027,
+        "ProId": 201,
+        "GroupId": 2027,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔豆类料理掌握",
+        "Des": "学会使用巴哈马尔高原的豆类进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/mushroom_dishes_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2023,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "201028": {
+        "Key": 201028,
+        "Id": 201028,
+        "ProId": 201,
+        "GroupId": 2028,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔果实料理掌握",
+        "Des": "学会使用巴哈马尔高原的果实进行烹饪",
+        "Icon": "ui/atlas/life_formula/life_cook/fruit_dishes_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                2024,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202001": {
+        "Key": 202001,
+        "Id": 202001,
+        "ProId": 202,
+        "GroupId": 3001,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "草药学识·等级1",
+        "Des": "学会使用雪花芹制作治愈芳香",
+        "Icon": "ui/atlas/life_formula/life_refine/herb_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202002
+        ]
+    },
+    "202002": {
+        "Key": 202002,
+        "Id": 202002,
+        "ProId": 202,
+        "GroupId": 3002,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "草药学识·等级2",
+        "Des": "学会使用粉麝香制作治愈芳香，回复效果有概率提升",
+        "Icon": "ui/atlas/life_formula/life_refine/herb_lore_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            202003
+        ]
+    },
+    "202003": {
+        "Key": 202003,
+        "Id": 202003,
+        "ProId": 202,
+        "GroupId": 3003,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "草药学识·等级3",
+        "Des": "学会使用寄语兰制作治愈芳香，回复效果有概率大幅提升",
+        "Icon": "ui/atlas/life_formula/life_refine/herb_lore_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3002,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202004": {
+        "Key": 202004,
+        "Id": 202004,
+        "ProId": 202,
+        "GroupId": 3004,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "冰火学识·等级1",
+        "Des": "学会加工冰元素颗粒·等级1、火元素颗粒·等级1，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/ice_and_fire_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202005
+        ]
+    },
+    "202005": {
+        "Key": 202005,
+        "Id": 202005,
+        "ProId": 202,
+        "GroupId": 3005,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "冰火学识·等级2",
+        "Des": "学会加工冰元素颗粒·等级2、火元素颗粒·等级2，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/ice_and_fire_lore_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3004,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            202006
+        ]
+    },
+    "202006": {
+        "Key": 202006,
+        "Id": 202006,
+        "ProId": 202,
+        "GroupId": 3006,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "冰火学识·等级3",
+        "Des": "学会加工冰元素颗粒·等级3、火元素颗粒·等级3，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/ice_and_fire_lore_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3005,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202007": {
+        "Key": 202007,
+        "Id": 202007,
+        "ProId": 202,
+        "GroupId": 3007,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "自然学识·等级1",
+        "Des": "学会加工森元素颗粒·等级1、岩元素颗粒·等级1，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/nature_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202008
+        ]
+    },
+    "202008": {
+        "Key": 202008,
+        "Id": 202008,
+        "ProId": 202,
+        "GroupId": 3008,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "自然学识·等级2",
+        "Des": "学会加工森元素颗粒·等级2、岩元素颗粒·等级2，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/nature_lore_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3007,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            202009
+        ]
+    },
+    "202009": {
+        "Key": 202009,
+        "Id": 202009,
+        "ProId": 202,
+        "GroupId": 3009,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "自然学识·等级3",
+        "Des": "学会加工森元素颗粒·等级3、岩元素颗粒·等级3，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/nature_lore_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3008,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202010": {
+        "Key": 202010,
+        "Id": 202010,
+        "ProId": 202,
+        "GroupId": 3010,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "风雷学识·等级1",
+        "Des": "学会加工风元素颗粒·等级1、雷元素颗粒·等级1，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/wind_and_thunder_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202011
+        ]
+    },
+    "202011": {
+        "Key": 202011,
+        "Id": 202011,
+        "ProId": 202,
+        "GroupId": 3011,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "风雷学识·等级2",
+        "Des": "学会加工风元素颗粒·等级2、雷元素颗粒·等级2，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/wind_and_thunder_lore_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3010,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            202012
+        ]
+    },
+    "202012": {
+        "Key": 202012,
+        "Id": 202012,
+        "ProId": 202,
+        "GroupId": 3012,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "风雷学识·等级3",
+        "Des": "学会加工风元素颗粒·等级3、雷元素颗粒·等级3，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/wind_and_thunder_lore_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3011,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202013": {
+        "Key": 202013,
+        "Id": 202013,
+        "ProId": 202,
+        "GroupId": 3013,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "光暗学识·等级1",
+        "Des": "学会加工光元素颗粒·等级1、暗元素颗粒·等级1，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/light_and_dark_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202014
+        ]
+    },
+    "202014": {
+        "Key": 202014,
+        "Id": 202014,
+        "ProId": 202,
+        "GroupId": 3014,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "光暗学识·等级2",
+        "Des": "学会加工光元素颗粒·等级2、暗元素颗粒·等级2，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/light_and_dark_lore_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3013,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            202015
+        ]
+    },
+    "202015": {
+        "Key": 202015,
+        "Id": 202015,
+        "ProId": 202,
+        "GroupId": 3015,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "光暗学识·等级3",
+        "Des": "学会加工光元素颗粒·等级3、暗元素颗粒·等级3，并使用其制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/light_and_dark_lore_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3014,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202016": {
+        "Key": 202016,
+        "Id": 202016,
+        "ProId": 202,
+        "GroupId": 3016,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "喷剂制作",
+        "Des": "学会制作家具的染色喷剂",
+        "Icon": "ui/atlas/life_formula/life_refine/lifeformula_color_spray_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202017
+        ]
+    },
+    "202017": {
+        "Key": 202017,
+        "Id": 202017,
+        "ProId": 202,
+        "GroupId": 3017,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "喷剂增产技术·等级1",
+        "Des": "制作家具的染色喷剂时有20%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_refine/lifeformula_color_spray_increase_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                3016,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            202018
+        ]
+    },
+    "202018": {
+        "Key": 202018,
+        "Id": 202018,
+        "ProId": 202,
+        "GroupId": 3018,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "喷剂增产技术·等级2",
+        "Des": "制作家具的染色喷剂时有30%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_refine/lifeformula_color_spray_increase_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                3017,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202019": {
+        "Key": 202019,
+        "Id": 202019,
+        "ProId": 202,
+        "GroupId": 3019,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "炼金改良技术·等级1",
+        "Des": "炼制药剂、加工元素颗粒时有10%概率额外获得1个产物（所有转换药剂均不受此专精影响）",
+        "Icon": "ui/atlas/life_formula/life_refine/equipment_improvement_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202020,
+            202022
+        ]
+    },
+    "202020": {
+        "Key": 202020,
+        "Id": 202020,
+        "ProId": 202,
+        "GroupId": 3020,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "炼金改良技术·等级2",
+        "Des": "炼制药剂、加工元素颗粒时有20%概率额外获得1个产物（所有转换药剂均不受此专精影响）",
+        "Icon": "ui/atlas/life_formula/life_refine/equipment_improvement_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                3019,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            202021
+        ]
+    },
+    "202021": {
+        "Key": 202021,
+        "Id": 202021,
+        "ProId": 202,
+        "GroupId": 3021,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "炼金改良技术·等级3",
+        "Des": "炼制药剂、加工元素颗粒时有30%概率额外获得1个产物（所有转换药剂均不受此专精影响）",
+        "Icon": "ui/atlas/life_formula/life_refine/equipment_improvement_03",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                3020,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202022": {
+        "Key": 202022,
+        "Id": 202022,
+        "ProId": 202,
+        "GroupId": 3022,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "快速炼制",
+        "Des": "炼制时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_refine/lifeformula_quick_alchemy_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3019,
+                1
+            ],
+            [
+                58,
+                202,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99025,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            202023
+        ]
+    },
+    "202023": {
+        "Key": 202023,
+        "Id": 202023,
+        "ProId": 202,
+        "GroupId": 3023,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超速炼制",
+        "Des": "炼制时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_refine/lifeformula_quick_alchemy_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3022,
+                1
+            ],
+            [
+                58,
+                202,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99025,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    },
+    "202024": {
+        "Key": 202024,
+        "Id": 202024,
+        "ProId": 202,
+        "GroupId": 3024,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "转换药剂制作",
+        "Des": "学会使用常世草制作奥术转换药剂、智识转换药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/lifeformula_transform_agent_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202025": {
+        "Key": 202025,
+        "Id": 202025,
+        "ProId": 202,
+        "GroupId": 3025,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔转换药剂制作",
+        "Des": "学会制作星炼转换药剂、意志材料转化药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/lifeformula_transform_agent_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202031": {
+        "Key": 202031,
+        "Id": 202031,
+        "ProId": 202,
+        "GroupId": 3031,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔草药学识·等级1",
+        "Des": "学会使用巴哈马尔高原的草药制作回血药剂，物理、魔法增效药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/herb_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202036
+        ]
+    },
+    "202032": {
+        "Key": 202032,
+        "Id": 202032,
+        "ProId": 202,
+        "GroupId": 3032,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔冰火学识·等级1",
+        "Des": "学会使用蜥脊冰精晶片、蜥脊火精晶片制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/ice_and_fire_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202037
+        ]
+    },
+    "202033": {
+        "Key": 202033,
+        "Id": 202033,
+        "ProId": 202,
+        "GroupId": 3033,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔自然学识·等级1",
+        "Des": "学会使用蜥脊森精晶片、蜥脊岩精晶片制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/nature_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202038
+        ]
+    },
+    "202034": {
+        "Key": 202034,
+        "Id": 202034,
+        "ProId": 202,
+        "GroupId": 3034,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔风雷学识·等级1",
+        "Des": "学会使用蜥脊风精晶片、蜥脊雷精晶片制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/wind_and_thunder_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202039
+        ]
+    },
+    "202035": {
+        "Key": 202035,
+        "Id": 202035,
+        "ProId": 202,
+        "GroupId": 3035,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔光暗学识·等级1",
+        "Des": "学会使用蜥脊光精晶片、蜥脊暗精晶片制作药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/light_and_dark_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            202040
+        ]
+    },
+    "202036": {
+        "Key": 202036,
+        "Id": 202036,
+        "ProId": 202,
+        "GroupId": 3036,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔草药学识·等级2",
+        "Des": "学会使用巴哈马尔高原的草药制作更高级的回血药剂，物理、魔法增效药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/herb_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3031,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202037": {
+        "Key": 202037,
+        "Id": 202037,
+        "ProId": 202,
+        "GroupId": 3037,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔冰火学识·等级2",
+        "Des": "学会使用蜥脊冰精晶片、蜥脊火精晶片制作更高级的高原药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/ice_and_fire_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3032,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202038": {
+        "Key": 202038,
+        "Id": 202038,
+        "ProId": 202,
+        "GroupId": 3038,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔自然学识·等级2",
+        "Des": "学会使用蜥脊森精晶片、蜥脊岩精晶片制作更高级的高原药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/nature_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3033,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202039": {
+        "Key": 202039,
+        "Id": 202039,
+        "ProId": 202,
+        "GroupId": 3039,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔风雷学识·等级2",
+        "Des": "学会使用蜥脊风精晶片、蜥脊雷精晶片制作更高级的高原药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/wind_and_thunder_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3034,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "202040": {
+        "Key": 202040,
+        "Id": 202040,
+        "ProId": 202,
+        "GroupId": 3040,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔光暗学识·等级2",
+        "Des": "学会使用蜥脊光精晶片、蜥脊暗精晶片制作更高级的高原药剂",
+        "Icon": "ui/atlas/life_formula/life_refine/light_and_dark_lore_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                3035,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203001": {
+        "Key": 203001,
+        "Id": 203001,
+        "ProId": 203,
+        "GroupId": 4001,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "神秘金属铸造·等级1",
+        "Des": "学会使用巴鲁矿石制作加工神秘金属",
+        "Icon": "ui/atlas/life_formula/life_foundry/holy_metal_expertise_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203002
+        ]
+    },
+    "203002": {
+        "Key": 203002,
+        "Id": 203002,
+        "ProId": 203,
+        "GroupId": 4002,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "神秘金属铸造·等级2",
+        "Des": "学会使用巴鲁富矿石制作加工出神秘金属",
+        "Icon": "ui/atlas/life_formula/life_foundry/holy_metal_expertise_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            203003
+        ]
+    },
+    "203003": {
+        "Key": 203003,
+        "Id": 203003,
+        "ProId": 203,
+        "GroupId": 4003,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "神秘金属铸造·等级3",
+        "Des": "学会使用巴鲁精矿石制作加工出神秘金属",
+        "Icon": "ui/atlas/life_formula/life_foundry/holy_metal_expertise_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4002,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203004": {
+        "Key": 203004,
+        "Id": 203004,
+        "ProId": 203,
+        "GroupId": 4004,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "辉耀石铸造·等级1",
+        "Des": "学会使用阿兹特矿石制作加工辉耀石",
+        "Icon": "ui/atlas/life_formula/life_foundry/radiant_stone_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203005
+        ]
+    },
+    "203005": {
+        "Key": 203005,
+        "Id": 203005,
+        "ProId": 203,
+        "GroupId": 4005,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "辉耀石铸造·等级2",
+        "Des": "学会使用阿兹特富矿石制作加工出辉耀石",
+        "Icon": "ui/atlas/life_formula/life_foundry/radiant_stone_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4004,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            203006
+        ]
+    },
+    "203006": {
+        "Key": 203006,
+        "Id": 203006,
+        "ProId": 203,
+        "GroupId": 4006,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "辉耀石铸造·等级3",
+        "Des": "学会使用阿兹特精矿石制作加工出辉耀石",
+        "Icon": "ui/atlas/life_formula/life_foundry/radiant_stone_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4005,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203007": {
+        "Key": 203007,
+        "Id": 203007,
+        "ProId": 203,
+        "GroupId": 4007,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "精锻石铸造·等级1",
+        "Des": "学会使用卢纳矿石制作加工精锻石",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_god_metal_02_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203008
+        ]
+    },
+    "203008": {
+        "Key": 203008,
+        "Id": 203008,
+        "ProId": 203,
+        "GroupId": 4008,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "精锻石铸造·等级2",
+        "Des": "学会使用卢纳富矿石制作加工出精锻石",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_god_metal_02_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4007,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            203009
+        ]
+    },
+    "203009": {
+        "Key": 203009,
+        "Id": 203009,
+        "ProId": 203,
+        "GroupId": 4009,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "精锻石铸造·等级3",
+        "Des": "学会使用卢纳精矿石制作加工出精锻石",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_god_metal_02_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4008,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203010": {
+        "Key": 203010,
+        "Id": 203010,
+        "ProId": 203,
+        "GroupId": 4010,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "机械加工·等级1",
+        "Des": "学会使用斯托克斯富矿石制作加工出布里机械片",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_equipment_gems_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203011
+        ]
+    },
+    "203011": {
+        "Key": 203011,
+        "Id": 203011,
+        "ProId": 203,
+        "GroupId": 4011,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "机械加工·等级2",
+        "Des": "学会使用斯托克斯精矿石制作加工出布里机械片",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_equipment_gems_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4010,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203012": {
+        "Key": 203012,
+        "Id": 203012,
+        "ProId": 203,
+        "GroupId": 4012,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "精研加工·等级1",
+        "Des": "在制作神秘金属、辉耀石、精锻石时有5%概率额外产出1个产物",
+        "Icon": "ui/atlas/life_formula/life_foundry/casting_refining_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203013,
+            203015
+        ]
+    },
+    "203013": {
+        "Key": 203013,
+        "Id": 203013,
+        "ProId": 203,
+        "GroupId": 4013,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "精研加工·等级2",
+        "Des": "在制作神秘金属、辉耀石、精锻石时有10%概率额外产出1个产物",
+        "Icon": "ui/atlas/life_formula/life_foundry/casting_refining_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                4012,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            203014
+        ]
+    },
+    "203014": {
+        "Key": 203014,
+        "Id": 203014,
+        "ProId": 203,
+        "GroupId": 4014,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "精研加工·等级3",
+        "Des": "在制作神秘金属、辉耀石、精锻石时有15%概率额外产出1个产物",
+        "Icon": "ui/atlas/life_formula/life_foundry/casting_refining_03",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                4013,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203015": {
+        "Key": 203015,
+        "Id": 203015,
+        "ProId": 203,
+        "GroupId": 4015,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "快速铸造",
+        "Des": "铸造时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4012,
+                1
+            ],
+            [
+                58,
+                203,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99026,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            203016
+        ]
+    },
+    "203016": {
+        "Key": 203016,
+        "Id": 203016,
+        "ProId": 203,
+        "GroupId": 4016,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超速铸造",
+        "Des": "铸造时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4015,
+                1
+            ],
+            [
+                58,
+                203,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99026,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    },
+    "203021": {
+        "Key": 203021,
+        "Id": 203021,
+        "ProId": 203,
+        "GroupId": 4021,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔神秘金属铸造·等级1",
+        "Des": "学会使用鲁涅矿石制作加工神秘金属",
+        "Icon": "ui/atlas/life_formula/life_foundry/holy_metal_expertise_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203025
+        ]
+    },
+    "203022": {
+        "Key": 203022,
+        "Id": 203022,
+        "ProId": 203,
+        "GroupId": 4022,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔辉耀石铸造·等级1",
+        "Des": "学会使用巴哈矿石制作加工辉耀石",
+        "Icon": "ui/atlas/life_formula/life_foundry/radiant_stone_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203026
+        ]
+    },
+    "203023": {
+        "Key": 203023,
+        "Id": 203023,
+        "ProId": 203,
+        "GroupId": 4023,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔精锻石铸造·等级1",
+        "Des": "学会使用费尔矿石制作加工精锻石",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_god_metal_02_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203027
+        ]
+    },
+    "203024": {
+        "Key": 203024,
+        "Id": 203024,
+        "ProId": 203,
+        "GroupId": 4024,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔机械加工·等级1",
+        "Des": "学会使用陨铁矿石制作加工陨铁机械片",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_equipment_gems_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            203028
+        ]
+    },
+    "203025": {
+        "Key": 203025,
+        "Id": 203025,
+        "ProId": 203,
+        "GroupId": 4025,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔神秘金属铸造·等级2",
+        "Des": "学会使用鲁涅富矿石制作加工神秘金属",
+        "Icon": "ui/atlas/life_formula/life_foundry/holy_metal_expertise_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4021,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203026": {
+        "Key": 203026,
+        "Id": 203026,
+        "ProId": 203,
+        "GroupId": 4026,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔辉耀石铸造·等级2",
+        "Des": "学会使用巴哈富矿石制作加工辉耀石",
+        "Icon": "ui/atlas/life_formula/life_foundry/radiant_stone_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4022,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203027": {
+        "Key": 203027,
+        "Id": 203027,
+        "ProId": 203,
+        "GroupId": 4027,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔精锻石铸造·等级2",
+        "Des": "学会使用费尔富矿石制作加工精锻石",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_god_metal_02_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4023,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "203028": {
+        "Key": 203028,
+        "Id": 203028,
+        "ProId": 203,
+        "GroupId": 4028,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "巴哈马尔机械加工·等级2",
+        "Des": "学会使用陨铁富矿石制作加工陨铁机械片",
+        "Icon": "ui/atlas/life_formula/life_foundry/lifeformula_equipment_gems_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                4024,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204001": {
+        "Key": 204001,
+        "Id": 204001,
+        "ProId": 204,
+        "GroupId": 5001,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "晶石加工",
+        "Des": "学会用各色原石制作可镶嵌的初级宝石",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/gemstone_production_increase_technique_03",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            204003,
+            204002,
+            204004,
+            204005
+        ]
+    },
+    "204002": {
+        "Key": 204002,
+        "Id": 204002,
+        "ProId": 204,
+        "GroupId": 5002,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "三角切割·等级1",
+        "Des": "学会使用2级原石切割成3级三角形宝石，额外提供力量属性",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/triangle_cutting_technology_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            204006
+        ]
+    },
+    "204003": {
+        "Key": 204003,
+        "Id": 204003,
+        "ProId": 204,
+        "GroupId": 5003,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "方形切割·等级1",
+        "Des": "学会使用2级原石切割成3级方形宝石，额外提供耐力属性",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/square_cutting_technology_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            204007
+        ]
+    },
+    "204004": {
+        "Key": 204004,
+        "Id": 204004,
+        "ProId": 204,
+        "GroupId": 5004,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "异形切割·等级1",
+        "Des": "学会使用2级原石切割成3级异形宝石，额外提供敏捷属性",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/special_cutting_technology_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            204008
+        ]
+    },
+    "204005": {
+        "Key": 204005,
+        "Id": 204005,
+        "ProId": 204,
+        "GroupId": 5005,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "梨形切割·等级1",
+        "Des": "学会使用2级原石切割成3级梨形宝石，额外提供智力属性",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/pear_cutting_technology_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            204009
+        ]
+    },
+    "204006": {
+        "Key": 204006,
+        "Id": 204006,
+        "ProId": 204,
+        "GroupId": 5006,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "三角切割·等级2",
+        "Des": "学会使用3级原石切割成5级三角形宝石，额外提供力量属性",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/triangle_cutting_technology_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5002,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204007": {
+        "Key": 204007,
+        "Id": 204007,
+        "ProId": 204,
+        "GroupId": 5007,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "方形切割·等级2",
+        "Des": "学会使用3级原石切割成5级方形宝石，额外提供耐力属性",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/square_cutting_technology_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5003,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204008": {
+        "Key": 204008,
+        "Id": 204008,
+        "ProId": 204,
+        "GroupId": 5008,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "异形切割·等级2",
+        "Des": "学会使用3级原石切割成5级异形宝石，额外提供敏捷属性",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/special_cutting_technology_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5004,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204009": {
+        "Key": 204009,
+        "Id": 204009,
+        "ProId": 204,
+        "GroupId": 5009,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "梨形切割·等级2",
+        "Des": "学会使用3级原石切割成5级梨形宝石，额外提供智力属性",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/pear_cutting_technology_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5005,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204010": {
+        "Key": 204010,
+        "Id": 204010,
+        "ProId": 204,
+        "GroupId": 5010,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "工艺增产技术入门",
+        "Des": "制作宝石时有5%概率获得额外1个产物",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/gemstone_production_increase_technique_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            204011,
+            204013
+        ]
+    },
+    "204011": {
+        "Key": 204011,
+        "Id": 204011,
+        "ProId": 204,
+        "GroupId": 5011,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "工艺增产技术熟识",
+        "Des": "制作宝石时有10%概率获得额外1个产物",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/gemstone_production_increase_technique_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                5010,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            204012
+        ]
+    },
+    "204012": {
+        "Key": 204012,
+        "Id": 204012,
+        "ProId": 204,
+        "GroupId": 5012,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "工艺增产技术精通",
+        "Des": "制作宝石时有15%概率获得额外1个产物",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/gemstone_production_increase_technique_03",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                5011,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204013": {
+        "Key": 204013,
+        "Id": 204013,
+        "ProId": 204,
+        "GroupId": 5013,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "快速加工",
+        "Des": "加工时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5010,
+                1
+            ],
+            [
+                58,
+                204,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99027,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            204014
+        ]
+    },
+    "204014": {
+        "Key": 204014,
+        "Id": 204014,
+        "ProId": 204,
+        "GroupId": 5014,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超速加工",
+        "Des": "加工时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5013,
+                1
+            ],
+            [
+                58,
+                204,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99027,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    },
+    "204021": {
+        "Key": 204021,
+        "Id": 204021,
+        "ProId": 204,
+        "GroupId": 5021,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀赤晶切割·等级1",
+        "Des": "学会使用1级幻蚀赤晶原石切割成石髓",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/triangle_cutting_technology_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            204025
+        ]
+    },
+    "204022": {
+        "Key": 204022,
+        "Id": 204022,
+        "ProId": 204,
+        "GroupId": 5022,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀蓝晶切割·等级1",
+        "Des": "学会使用1级幻蚀蓝晶原石切割成石髓",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/square_cutting_technology_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            204026
+        ]
+    },
+    "204023": {
+        "Key": 204023,
+        "Id": 204023,
+        "ProId": 204,
+        "GroupId": 5023,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀翠晶切割·等级1",
+        "Des": "学会使用1级幻蚀翠晶原石切割成石髓",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/special_cutting_technology_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            204027
+        ]
+    },
+    "204024": {
+        "Key": 204024,
+        "Id": 204024,
+        "ProId": 204,
+        "GroupId": 5024,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀耀晶切割·等级1",
+        "Des": "学会使用1级幻蚀耀晶原石切割成石髓",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/pear_cutting_technology_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            204028
+        ]
+    },
+    "204025": {
+        "Key": 204025,
+        "Id": 204025,
+        "ProId": 204,
+        "GroupId": 5025,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀赤晶切割·等级2",
+        "Des": "学会使用2级幻蚀赤晶原石切割成高级石髓",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/triangle_cutting_technology_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5021,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204026": {
+        "Key": 204026,
+        "Id": 204026,
+        "ProId": 204,
+        "GroupId": 5026,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀蓝晶切割·等级2",
+        "Des": "学会使用2级幻蚀蓝晶原石切割成高级石髓",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/square_cutting_technology_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5022,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204027": {
+        "Key": 204027,
+        "Id": 204027,
+        "ProId": 204,
+        "GroupId": 5027,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀翠晶切割·等级2",
+        "Des": "学会使用2级幻蚀翠晶原石切割成高级石髓",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/special_cutting_technology_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5023,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "204028": {
+        "Key": 204028,
+        "Id": 204028,
+        "ProId": 204,
+        "GroupId": 5028,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "幻蚀耀晶切割·等级2",
+        "Des": "学会使用2级幻蚀耀晶原石切割成高级石髓",
+        "Icon": "ui/atlas/life_formula/life_gemcraft/pear_cutting_technology_02",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                5024,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "205001": {
+        "Key": 205001,
+        "Id": 205001,
+        "ProId": 205,
+        "GroupId": 6001,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "速燃碳粉制作",
+        "Des": "学会制作速燃碳粉",
+        "Icon": "ui/atlas/life_formula/life_formula/lifeformula_carbon_powder_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            205003
+        ]
+    },
+    "205002": {
+        "Key": 205002,
+        "Id": 205002,
+        "ProId": 205,
+        "GroupId": 6002,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "宝石蜡制作",
+        "Des": "学会制作宝石蜡",
+        "Icon": "ui/atlas/life_formula/life_formula/lifeformula_gem_wax_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "205003": {
+        "Key": 205003,
+        "Id": 205003,
+        "ProId": 205,
+        "GroupId": 6003,
+        "SeasonId": 1,
+        "Level": 1,
+        "Name": "高热速燃碳粉制作",
+        "Des": "学会制作高热速燃碳粉",
+        "Icon": "ui/atlas/life_formula/life_foundry/atomic_processing",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                6001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            205004
+        ]
+    },
+    "205004": {
+        "Key": 205004,
+        "Id": 205004,
+        "ProId": 205,
+        "GroupId": 6004,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "木作精通·等级1",
+        "Des": "制作速燃碳粉、石骨碳粉、宝石蜡、瑰石润泽剂时，额外产出2个产物",
+        "Icon": "ui/atlas/life_formula/life_formula/lifeformula_woodwork_ability_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                6003,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            205005
+        ]
+    },
+    "205005": {
+        "Key": 205005,
+        "Id": 205005,
+        "ProId": 205,
+        "GroupId": 6005,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "木作精通·等级2",
+        "Des": "制作速燃碳粉、石骨碳粉、宝石蜡、瑰石润泽剂时，额外产出5个产物；并且在制作高热速燃和石骨碳粉时，额外产出1个产物",
+        "Icon": "ui/atlas/life_formula/life_formula/lifeformula_woodwork_ability_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                6004,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "205006": {
+        "Key": 205006,
+        "Id": 205006,
+        "ProId": 205,
+        "GroupId": 6006,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "快速制作",
+        "Des": "制作时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                58,
+                205,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99028,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            205007
+        ]
+    },
+    "205007": {
+        "Key": 205007,
+        "Id": 205007,
+        "ProId": 205,
+        "GroupId": 6007,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超速制作",
+        "Des": "制作时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                6006,
+                1
+            ],
+            [
+                58,
+                205,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99028,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    },
+    "205008": {
+        "Key": 205008,
+        "Id": 205008,
+        "ProId": 205,
+        "GroupId": 6008,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "石骨碳粉制作",
+        "Des": "学会制作石骨碳粉",
+        "Icon": "ui/atlas/life_formula/life_formula/lifeformula_carbon_powder_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            205010
+        ]
+    },
+    "205009": {
+        "Key": 205009,
+        "Id": 205009,
+        "ProId": 205,
+        "GroupId": 6009,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "瑰石润泽剂制作",
+        "Des": "学会制作瑰石润泽剂",
+        "Icon": "ui/atlas/life_formula/life_formula/lifeformula_gem_wax_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "205010": {
+        "Key": 205010,
+        "Id": 205010,
+        "ProId": 205,
+        "GroupId": 6010,
+        "SeasonId": 2,
+        "Level": 1,
+        "Name": "高热石骨碳粉制作",
+        "Des": "学会制作高热石骨碳粉",
+        "Icon": "ui/atlas/life_formula/life_foundry/atomic_processing",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                6008,
+                1
+            ],
+            [
+                9,
+                10220
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "206001": {
+        "Key": 206001,
+        "Id": 206001,
+        "ProId": 206,
+        "GroupId": 7001,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "染料制作",
+        "Des": "学会制作各色浸染料",
+        "Icon": "ui/atlas/life_formula/life_weave/lifeformula_color_dye_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [],
+        "Attribute": [],
+        "NextNodes": [
+            206002
+        ]
+    },
+    "206002": {
+        "Key": 206002,
+        "Id": 206002,
+        "ProId": 206,
+        "GroupId": 7002,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "染料增产技术·等级1",
+        "Des": "制作浸染料时有20%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_weave/lifeformula_color_dye_increase_01",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                7001,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": [
+            206003
+        ]
+    },
+    "206003": {
+        "Key": 206003,
+        "Id": 206003,
+        "ProId": 206,
+        "GroupId": 7003,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "染料增产技术·等级2",
+        "Des": "制作浸染料时有30%概率额外获得1个产物",
+        "Icon": "ui/atlas/life_formula/life_weave/lifeformula_color_dye_increase_02",
+        "NeedPoint": 2,
+        "UnlockCondition": [
+            [
+                59,
+                7002,
+                1
+            ]
+        ],
+        "Attribute": [],
+        "NextNodes": []
+    },
+    "206004": {
+        "Key": 206004,
+        "Id": 206004,
+        "ProId": 206,
+        "GroupId": 7004,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "快速织造",
+        "Des": "织造时间降低至3秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                58,
+                206,
+                5
+            ]
+        ],
+        "Attribute": [
+            [
+                99029,
+                4000
+            ]
+        ],
+        "NextNodes": [
+            206005
+        ]
+    },
+    "206005": {
+        "Key": 206005,
+        "Id": 206005,
+        "ProId": 206,
+        "GroupId": 7005,
+        "SeasonId": 0,
+        "Level": 1,
+        "Name": "超速织造",
+        "Des": "织造时间降低至2秒",
+        "Icon": "ui/atlas/life_formula/life_common/gathering_efficiency_improvement_01",
+        "NeedPoint": 1,
+        "UnlockCondition": [
+            [
+                59,
+                7004,
+                1
+            ],
+            [
+                58,
+                206,
+                15
+            ]
+        ],
+        "Attribute": [
+            [
+                99029,
+                2000
+            ]
+        ],
+        "NextNodes": []
+    }
+}

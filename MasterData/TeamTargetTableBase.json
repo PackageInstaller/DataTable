@@ -1,0 +1,2486 @@
+{
+    "999": {
+        "Key": 999,
+        "Id": 999,
+        "Name": "全部",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 0,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 0,
+        "QuickJumpParam": [],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "1000": {
+        "Key": 1000,
+        "Id": 1000,
+        "Name": "自定义",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 0,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 10,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 0,
+        "QuickJumpParam": [],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "2000": {
+        "Key": 2000,
+        "Id": 2000,
+        "Name": "开拓局委托调查",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 800100,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [],
+        "Sort": 20,
+        "Icon": "team_copy_picture_14",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            5,
+            4361
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "2001": {
+        "Key": 2001,
+        "Id": 2001,
+        "Name": "讨伐领主",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 800902,
+        "RelativeDungeonId": 0,
+        "TeamType": 1,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 80,
+        "Icon": "team_copy_picture_13",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            504024
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_worldboss",
+        "MatchAudio": ""
+    },
+    "3000": {
+        "Key": 3000,
+        "Id": 3000,
+        "Name": "不稳定空间",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300205,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 30,
+        "Icon": "",
+        "QuickJumpType": 0,
+        "QuickJumpParam": [],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "3001": {
+        "Key": 3001,
+        "Id": 3001,
+        "Name": "不稳定·噬光牢笼",
+        "HasFatherType": true,
+        "BelongType": 3000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300215,
+        "RelativeDungeonId": 6321,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 31,
+        "Icon": "team_copy_picture_17",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 3001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_trap_2",
+        "MatchAudio": ""
+    },
+    "3002": {
+        "Key": 3002,
+        "Id": 3002,
+        "Name": "不稳定·岩蛇巢穴",
+        "HasFatherType": true,
+        "BelongType": 3000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300219,
+        "RelativeDungeonId": 1521,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 32,
+        "Icon": "team_copy_picture_rocksnake_1",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 3001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_rocksnake_1",
+        "MatchAudio": ""
+    },
+    "3003": {
+        "Key": 3003,
+        "Id": 3003,
+        "Name": "不稳定·衰败深处",
+        "HasFatherType": true,
+        "BelongType": 3000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300221,
+        "RelativeDungeonId": 6212,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 33,
+        "Icon": "team_copy_picture_deep_1",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 3001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_deep_1",
+        "MatchAudio": ""
+    },
+    "3004": {
+        "Key": 3004,
+        "Id": 3004,
+        "Name": "不稳定·无音之都",
+        "HasFatherType": true,
+        "BelongType": 3000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300223,
+        "RelativeDungeonId": 6412,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 34,
+        "Icon": "team_copy_picture_andraruins_1",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 3001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_andraruins_1",
+        "MatchAudio": ""
+    },
+    "3005": {
+        "Key": 3005,
+        "Id": 3005,
+        "Name": "不稳定·荒灵祭所",
+        "HasFatherType": true,
+        "BelongType": 3000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300225,
+        "RelativeDungeonId": 6112,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 35,
+        "Icon": "team_copy_picture_festivalhall_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 3001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_festivalhall_1",
+        "MatchAudio": ""
+    },
+    "3006": {
+        "Key": 3006,
+        "Id": 3006,
+        "Name": "不稳定·幻华流月之野",
+        "HasFatherType": true,
+        "BelongType": 3000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300217,
+        "RelativeDungeonId": 1412,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 36,
+        "Icon": "team_copy_picture_huanhua_1",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 3001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_huanhua_1",
+        "MatchAudio": ""
+    },
+    "5000": {
+        "Key": 5000,
+        "Id": 5000,
+        "Name": "极限空间",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300202,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 50,
+        "Icon": "",
+        "QuickJumpType": 0,
+        "QuickJumpParam": [],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "5001": {
+        "Key": 5001,
+        "Id": 5001,
+        "Name": "极限·幻华流月之野",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300218,
+        "RelativeDungeonId": 1421,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 51,
+        "Icon": "team_copy_picture_huanhua_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_huanhua_2",
+        "MatchAudio": ""
+    },
+    "5002": {
+        "Key": 5002,
+        "Id": 5002,
+        "Name": "极限·幻华流月之野困难",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300218,
+        "RelativeDungeonId": 1422,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 61,
+        "Icon": "team_copy_picture_huanhua_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_huanhua_3",
+        "MatchAudio": ""
+    },
+    "5003": {
+        "Key": 5003,
+        "Id": 5003,
+        "Name": "极限·噬光牢笼",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300216,
+        "RelativeDungeonId": 6331,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 52,
+        "Icon": "team_copy_picture_17",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_trap_2",
+        "MatchAudio": ""
+    },
+    "5004": {
+        "Key": 5004,
+        "Id": 5004,
+        "Name": "极限·噬光牢笼困难",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300216,
+        "RelativeDungeonId": 6332,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 62,
+        "Icon": "team_copy_picture_18",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_trap_3",
+        "MatchAudio": ""
+    },
+    "5005": {
+        "Key": 5005,
+        "Id": 5005,
+        "Name": "极限·岩蛇巢穴",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300220,
+        "RelativeDungeonId": 1531,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 53,
+        "Icon": "team_copy_picture_rocksnake_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_rocksnake_2",
+        "MatchAudio": ""
+    },
+    "5006": {
+        "Key": 5006,
+        "Id": 5006,
+        "Name": "极限·岩蛇巢穴困难",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300220,
+        "RelativeDungeonId": 1532,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 63,
+        "Icon": "team_copy_picture_rocksnake_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_rocksnake_3",
+        "MatchAudio": ""
+    },
+    "5007": {
+        "Key": 5007,
+        "Id": 5007,
+        "Name": "极限·衰败深处",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300222,
+        "RelativeDungeonId": 6221,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 54,
+        "Icon": "team_copy_picture_deep_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_deep_2",
+        "MatchAudio": ""
+    },
+    "5008": {
+        "Key": 5008,
+        "Id": 5008,
+        "Name": "极限·衰败深处困难",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300222,
+        "RelativeDungeonId": 6222,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 64,
+        "Icon": "team_copy_picture_deep_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_deep_3",
+        "MatchAudio": ""
+    },
+    "5009": {
+        "Key": 5009,
+        "Id": 5009,
+        "Name": "极限·无音之都",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300224,
+        "RelativeDungeonId": 6421,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 57,
+        "Icon": "team_copy_picture_andraruins_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_andraruins_2",
+        "MatchAudio": ""
+    },
+    "5010": {
+        "Key": 5010,
+        "Id": 5010,
+        "Name": "极限·无音之都困难",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300224,
+        "RelativeDungeonId": 6422,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 67,
+        "Icon": "team_copy_picture_andraruins_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_andraruins_3",
+        "MatchAudio": ""
+    },
+    "5011": {
+        "Key": 5011,
+        "Id": 5011,
+        "Name": "极限·荒灵祭所",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300226,
+        "RelativeDungeonId": 6121,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 58,
+        "Icon": "team_copy_picture_festivalhall_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_festivalhall_2",
+        "MatchAudio": ""
+    },
+    "5012": {
+        "Key": 5012,
+        "Id": 5012,
+        "Name": "极限·荒灵祭所困难",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300226,
+        "RelativeDungeonId": 6122,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 68,
+        "Icon": "team_copy_picture_festivalhall_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [],
+        "MatchID": 5001,
+        "Difficulty": 0,
+        "MatchPic": "ui/background/seasonact/activity_festivalhall_3",
+        "MatchAudio": ""
+    },
+    "5013": {
+        "Key": 5013,
+        "Id": 5013,
+        "Name": "极限·衰败深处大师1",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300222,
+        "RelativeDungeonId": 6223,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 69,
+        "Icon": "team_copy_picture_deep_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2030
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 1,
+        "MatchPic": "ui/background/seasonact/activity_deep_3",
+        "MatchAudio": ""
+    },
+    "5014": {
+        "Key": 5014,
+        "Id": 5014,
+        "Name": "极限·岩蛇巢穴大师1",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300220,
+        "RelativeDungeonId": 1533,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 70,
+        "Icon": "team_copy_picture_rocksnake_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2028
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 1,
+        "MatchPic": "ui/background/seasonact/activity_rocksnake_3",
+        "MatchAudio": ""
+    },
+    "5015": {
+        "Key": 5015,
+        "Id": 5015,
+        "Name": "极限·荒灵祭所大师1",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300226,
+        "RelativeDungeonId": 6123,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 71,
+        "Icon": "team_copy_picture_festivalhall_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2027
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 1,
+        "MatchPic": "ui/background/seasonact/activity_festivalhall_3",
+        "MatchAudio": ""
+    },
+    "5016": {
+        "Key": 5016,
+        "Id": 5016,
+        "Name": "极限·无音之都大师1",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300224,
+        "RelativeDungeonId": 6423,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 72,
+        "Icon": "team_copy_picture_andraruins_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2029
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 1,
+        "MatchPic": "ui/background/seasonact/activity_andraruins_3",
+        "MatchAudio": ""
+    },
+    "5017": {
+        "Key": 5017,
+        "Id": 5017,
+        "Name": "极限·噬光牢笼大师1",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300216,
+        "RelativeDungeonId": 6333,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 73,
+        "Icon": "team_copy_picture_18",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2108
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 1,
+        "MatchPic": "ui/background/seasonact/activity_trap_3",
+        "MatchAudio": ""
+    },
+    "5018": {
+        "Key": 5018,
+        "Id": 5018,
+        "Name": "极限·幻华流月之野大师1",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300218,
+        "RelativeDungeonId": 1423,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 74,
+        "Icon": "team_copy_picture_huanhua_3",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2031
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 1,
+        "MatchPic": "ui/background/seasonact/activity_huanhua_3",
+        "MatchAudio": ""
+    },
+    "5019": {
+        "Key": 5019,
+        "Id": 5019,
+        "Name": "极限·衰败深处大师6",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300222,
+        "RelativeDungeonId": 6223,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 75,
+        "Icon": "team_copy_picture_deep_4",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2122
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 6,
+        "MatchPic": "ui/background/seasonact/activity_deep_4",
+        "MatchAudio": ""
+    },
+    "5020": {
+        "Key": 5020,
+        "Id": 5020,
+        "Name": "极限·岩蛇巢穴大师6",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300220,
+        "RelativeDungeonId": 1533,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 76,
+        "Icon": "team_copy_picture_rocksnake_4",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2123
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 6,
+        "MatchPic": "ui/background/seasonact/activity_rocksnake_4",
+        "MatchAudio": ""
+    },
+    "5021": {
+        "Key": 5021,
+        "Id": 5021,
+        "Name": "极限·荒灵祭所大师6",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300226,
+        "RelativeDungeonId": 6123,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 77,
+        "Icon": "team_copy_picture_festivalhall_4",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2124
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 6,
+        "MatchPic": "ui/background/seasonact/activity_festivalhall_4",
+        "MatchAudio": ""
+    },
+    "5022": {
+        "Key": 5022,
+        "Id": 5022,
+        "Name": "极限·无音之都大师6",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300224,
+        "RelativeDungeonId": 6423,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 78,
+        "Icon": "team_copy_picture_andraruins_4",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2125
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 6,
+        "MatchPic": "ui/background/seasonact/activity_andraruins_4",
+        "MatchAudio": ""
+    },
+    "5023": {
+        "Key": 5023,
+        "Id": 5023,
+        "Name": "极限·噬光牢笼大师6",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300216,
+        "RelativeDungeonId": 6333,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 79,
+        "Icon": "team_copy_picture_23",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2126
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 6,
+        "MatchPic": "ui/background/seasonact/activity_trap_3",
+        "MatchAudio": ""
+    },
+    "5024": {
+        "Key": 5024,
+        "Id": 5024,
+        "Name": "极限·幻华流月之野大师6",
+        "HasFatherType": true,
+        "BelongType": 5000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300218,
+        "RelativeDungeonId": 1423,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "Sort": 80,
+        "Icon": "team_copy_picture_huanhua_4",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            4,
+            421
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300998
+            ],
+            [
+                9,
+                2127
+            ]
+        ],
+        "MatchID": 1004,
+        "Difficulty": 6,
+        "MatchPic": "ui/background/seasonact/activity_huanhua_4",
+        "MatchAudio": ""
+    },
+    "6000": {
+        "Key": 6000,
+        "Id": 6000,
+        "Name": "司第门遗迹",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1000,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6001": {
+        "Key": 6001,
+        "Id": 6001,
+        "Name": "司第门遗迹1层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31101,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1001,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6002": {
+        "Key": 6002,
+        "Id": 6002,
+        "Name": "司第门遗迹5层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31105,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1002,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6003": {
+        "Key": 6003,
+        "Id": 6003,
+        "Name": "司第门遗迹6层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31106,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1003,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6004": {
+        "Key": 6004,
+        "Id": 6004,
+        "Name": "司第门遗迹10层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31110,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1004,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6005": {
+        "Key": 6005,
+        "Id": 6005,
+        "Name": "司第门遗迹15层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31115,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1005,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6006": {
+        "Key": 6006,
+        "Id": 6006,
+        "Name": "司第门遗迹16层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31116,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1006,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6007": {
+        "Key": 6007,
+        "Id": 6007,
+        "Name": "司第门遗迹20层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31120,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1007,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6008": {
+        "Key": 6008,
+        "Id": 6008,
+        "Name": "司第门遗迹25层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31125,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1008,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6009": {
+        "Key": 6009,
+        "Id": 6009,
+        "Name": "司第门遗迹30层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31130,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1009,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6010": {
+        "Key": 6010,
+        "Id": 6010,
+        "Name": "司第门遗迹35层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31135,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1010,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6011": {
+        "Key": 6011,
+        "Id": 6011,
+        "Name": "司第门遗迹40层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31140,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1011,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6012": {
+        "Key": 6012,
+        "Id": 6012,
+        "Name": "司第门遗迹45层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31145,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1012,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6013": {
+        "Key": 6013,
+        "Id": 6013,
+        "Name": "司第门遗迹50层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31150,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1013,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6014": {
+        "Key": 6014,
+        "Id": 6014,
+        "Name": "司第门遗迹55层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31155,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1014,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6015": {
+        "Key": 6015,
+        "Id": 6015,
+        "Name": "司第门遗迹60层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31160,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1015,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6016": {
+        "Key": 6016,
+        "Id": 6016,
+        "Name": "司第门遗迹65层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31165,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1016,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6017": {
+        "Key": 6017,
+        "Id": 6017,
+        "Name": "司第门遗迹70层",
+        "HasFatherType": true,
+        "BelongType": 6000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31170,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1017,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "6018": {
+        "Key": 6018,
+        "Id": 6018,
+        "Name": "司第门遗迹75层",
+        "HasFatherType": true,
+        "BelongType": 6001,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 500888,
+        "RelativeDungeonId": 31175,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 1018,
+        "Icon": "team_copy_picture_7",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            8,
+            2,
+            503376
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "7000": {
+        "Key": 7000,
+        "Id": 7000,
+        "Name": "虚空浮岛·神龙枷所",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "",
+        "Time": "",
+        "FunctionID": 300400,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 15,
+        "Icon": "",
+        "QuickJumpType": 0,
+        "QuickJumpParam": [],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "7001": {
+        "Key": 7001,
+        "Id": 7001,
+        "Name": "激斗！虚空浮岛·神龙枷所",
+        "HasFatherType": true,
+        "BelongType": 7000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300401,
+        "RelativeDungeonId": 13001,
+        "TeamType": 1,
+        "MemberCountStopMatch": 20,
+        "Talent": [
+            [
+                2,
+                2
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                1,
+                16
+            ]
+        ],
+        "Sort": 16,
+        "Icon": "team_copy_picture_28",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            7,
+            5,
+            22097
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300499
+            ]
+        ],
+        "MatchID": 1001,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/roid/raid_easy_bg",
+        "MatchAudio": ""
+    },
+    "7002": {
+        "Key": 7002,
+        "Id": 7002,
+        "Name": "血战！虚空浮岛·神龙枷所",
+        "HasFatherType": true,
+        "BelongType": 7000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300402,
+        "RelativeDungeonId": 13002,
+        "TeamType": 1,
+        "MemberCountStopMatch": 20,
+        "Talent": [
+            [
+                2,
+                2
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                1,
+                16
+            ]
+        ],
+        "Sort": 17,
+        "Icon": "team_copy_picture_28",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            7,
+            5,
+            22097
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300499
+            ]
+        ],
+        "MatchID": 1002,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/roid/raid_difficulty_bg",
+        "MatchAudio": ""
+    },
+    "7003": {
+        "Key": 7003,
+        "Id": 7003,
+        "Name": "决战！虚空浮岛·神龙枷所",
+        "HasFatherType": true,
+        "BelongType": 7000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300403,
+        "RelativeDungeonId": 13003,
+        "TeamType": 1,
+        "MemberCountStopMatch": 20,
+        "Talent": [
+            [
+                2,
+                2
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                1,
+                16
+            ]
+        ],
+        "Sort": 18,
+        "Icon": "team_copy_picture_28",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            7,
+            5,
+            22097
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/roid/raid_nightmare_bg",
+        "MatchAudio": ""
+    },
+    "7010": {
+        "Key": 7010,
+        "Id": 7010,
+        "Name": "幻花沉眠之地",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "",
+        "Time": "",
+        "FunctionID": 300410,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 15,
+        "Icon": "",
+        "QuickJumpType": 0,
+        "QuickJumpParam": [],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "7011": {
+        "Key": 7011,
+        "Id": 7011,
+        "Name": "激斗！幻花沉眠之地",
+        "HasFatherType": true,
+        "BelongType": 7010,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300411,
+        "RelativeDungeonId": 13011,
+        "TeamType": 1,
+        "MemberCountStopMatch": 20,
+        "Talent": [
+            [
+                2,
+                2
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                1,
+                16
+            ]
+        ],
+        "Sort": 16,
+        "Icon": "team_copy_picture_huanhua_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            5,
+            3868
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300499
+            ]
+        ],
+        "MatchID": 1001,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/roid/raid_difficulty_bg_02",
+        "MatchAudio": ""
+    },
+    "7012": {
+        "Key": 7012,
+        "Id": 7012,
+        "Name": "血战！幻花沉眠之地",
+        "HasFatherType": true,
+        "BelongType": 7010,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300412,
+        "RelativeDungeonId": 13012,
+        "TeamType": 1,
+        "MemberCountStopMatch": 20,
+        "Talent": [
+            [
+                2,
+                2
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                1,
+                16
+            ]
+        ],
+        "Sort": 17,
+        "Icon": "team_copy_picture_huanhua_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            5,
+            3868
+        ],
+        "MatchCondition": [
+            [
+                14,
+                300499
+            ]
+        ],
+        "MatchID": 1002,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/roid/raid_difficulty_bg_02",
+        "MatchAudio": ""
+    },
+    "7013": {
+        "Key": 7013,
+        "Id": 7013,
+        "Name": "决战！幻花沉眠之地",
+        "HasFatherType": true,
+        "BelongType": 7010,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 300413,
+        "RelativeDungeonId": 13013,
+        "TeamType": 1,
+        "MemberCountStopMatch": 20,
+        "Talent": [
+            [
+                2,
+                2
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                1,
+                16
+            ]
+        ],
+        "Sort": 18,
+        "Icon": "team_copy_picture_huanhua_2",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            5,
+            3868
+        ],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/roid/raid_nightmare_bg_02",
+        "MatchAudio": ""
+    },
+    "8000": {
+        "Key": 8000,
+        "Id": 8000,
+        "Name": "沉梦林谷",
+        "HasFatherType": false,
+        "BelongType": 0,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 302000,
+        "RelativeDungeonId": 0,
+        "TeamType": 0,
+        "MemberCountStopMatch": 0,
+        "Talent": [],
+        "Sort": 15,
+        "Icon": "",
+        "QuickJumpType": 0,
+        "QuickJumpParam": [],
+        "MatchCondition": [],
+        "MatchID": 0,
+        "Difficulty": 0,
+        "MatchPic": "",
+        "MatchAudio": ""
+    },
+    "8001": {
+        "Key": 8001,
+        "Id": 8001,
+        "Name": "沉梦林谷·简单",
+        "HasFatherType": true,
+        "BelongType": 8000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 302003,
+        "RelativeDungeonId": 9202,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 16,
+        "Icon": "team_copy_picture_rogue_01",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            5,
+            3955
+        ],
+        "MatchCondition": [
+            [
+                14,
+                302003
+            ]
+        ],
+        "MatchID": 1005,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/rouge/rogue_02_01",
+        "MatchAudio": ""
+    },
+    "8002": {
+        "Key": 8002,
+        "Id": 8002,
+        "Name": "沉梦林谷·困难",
+        "HasFatherType": true,
+        "BelongType": 8000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 302004,
+        "RelativeDungeonId": 9203,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 17,
+        "Icon": "team_copy_picture_rogue_02",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            5,
+            3955
+        ],
+        "MatchCondition": [
+            [
+                14,
+                302004
+            ]
+        ],
+        "MatchID": 1005,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/rouge/rogue_02_02",
+        "MatchAudio": ""
+    },
+    "8003": {
+        "Key": 8003,
+        "Id": 8003,
+        "Name": "沉梦林谷·噩梦",
+        "HasFatherType": true,
+        "BelongType": 8000,
+        "TimeCycle": "0",
+        "Time": "000000|240000",
+        "FunctionID": 302005,
+        "RelativeDungeonId": 9204,
+        "TeamType": 0,
+        "MemberCountStopMatch": 5,
+        "Talent": [
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                1
+            ],
+            [
+                0,
+                2
+            ]
+        ],
+        "Sort": 18,
+        "Icon": "team_copy_picture_rogue_03",
+        "QuickJumpType": 1,
+        "QuickJumpParam": [
+            9,
+            5,
+            3955
+        ],
+        "MatchCondition": [
+            [
+                14,
+                302005
+            ]
+        ],
+        "MatchID": 1005,
+        "Difficulty": 0,
+        "MatchPic": "ui/textures/rouge/rogue_02_03",
+        "MatchAudio": ""
+    }
+}

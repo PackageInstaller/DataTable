@@ -1,0 +1,106 @@
+{
+    "1": {
+        "Key": 1,
+        "Id": 1,
+        "ReportScene": "会话发言场景",
+        "SceneId": 1,
+        "ReportCategoryId": [
+            1,
+            9
+        ],
+        "ReportCategoryDes": [
+            "发布违规信息",
+            "个人资料违规"
+        ],
+        "ReportReason": [
+            [
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+                108,
+                199
+            ],
+            [
+                901,
+                999
+            ]
+        ]
+    },
+    "2": {
+        "Key": 2,
+        "Id": 2,
+        "ReportScene": "个人资料场景",
+        "SceneId": 2,
+        "ReportCategoryId": [
+            9
+        ],
+        "ReportCategoryDes": [
+            "个人资料违规"
+        ],
+        "ReportReason": [
+            [
+                901,
+                903,
+                999
+            ]
+        ]
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
+        "ReportScene": "相册照片举报",
+        "SceneId": 6,
+        "ReportCategoryId": [
+            7
+        ],
+        "ReportCategoryDes": [
+            "照片违规"
+        ],
+        "ReportReason": [
+            [
+                799
+            ]
+        ]
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "ReportScene": "组织资料场景",
+        "SceneId": 7,
+        "ReportCategoryId": [
+            8
+        ],
+        "ReportCategoryDes": [
+            "组织资料违规"
+        ],
+        "ReportReason": [
+            [
+                801,
+                802,
+                803,
+                799,
+                899
+            ]
+        ]
+    },
+    "101": {
+        "Key": 101,
+        "Id": 101,
+        "ReportScene": "家园建造场景",
+        "SceneId": 8,
+        "ReportCategoryId": [
+            7
+        ],
+        "ReportCategoryDes": [
+            "家园违规"
+        ],
+        "ReportReason": [
+            [
+                798
+            ]
+        ]
+    }
+}
