@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table SDDiyInfoCfgData {
+  id:int;
+  page_type:int;
+  name:string;
+  begin_have_length:int;
+  male_begin:int;
+  male_begin_color_length:int;
+  female_begin:int;
+  female_begin_color_length:int;
+  color_select:int;
+  check_icon_id:string;
+  unchecked_icon_id:string;
+}
+
+table SDDiyInfoCfgTable {
+  datas:[SDDiyInfoCfgData];
+}
+
+root_type SDDiyInfoCfgTable;

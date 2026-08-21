@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table DailyMissionActivityRewardData {
+  id:int;
+  activity_points:int;
+  activity_reward_id:int;
+  mission_type:int;
+}
+
+table DailyMissionActivityRewardTable {
+  datas:[DailyMissionActivityRewardData];
+}
+
+root_type DailyMissionActivityRewardTable;

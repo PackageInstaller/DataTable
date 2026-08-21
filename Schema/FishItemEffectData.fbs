@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table FishItemEffectData {
+  item_id:int;
+  name:string;
+  type:int;
+  atrr1_info:int;
+  atrr1value:int;
+  atrr2_info:int;
+  atrr2value:int;
+  ex_atrr1_info:int;
+  ex_atrr1value:int;
+  ex_atrr2_info:int;
+  ex_atrr2value:int;
+}
+
+table FishItemEffectTable {
+  datas:[FishItemEffectData];
+}
+
+root_type FishItemEffectTable;

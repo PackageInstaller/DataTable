@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table ScreenCfgData {
+  x:int;
+  m_crystal_change_panel:int;
+  ui_knapsack:int;
+}
+
+table ScreenCfgTable {
+  datas:[ScreenCfgData];
+}
+
+root_type ScreenCfgTable;

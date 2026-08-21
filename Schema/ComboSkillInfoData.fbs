@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table ComboSkillInfoData {
+  id:int;
+  skill_id:int;
+  skill_level:int;
+  npc_id_length:int;
+  name:string;
+  summarize:string;
+  description:string;
+  type:int;
+  icon_id:string;
+  link_type:int;
+  order:int;
+}
+
+table ComboSkillInfoTable {
+  datas:[ComboSkillInfoData];
+}
+
+root_type ComboSkillInfoTable;

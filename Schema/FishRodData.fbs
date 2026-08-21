@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table FishRodData {
+  item_id:int;
+  name:string;
+  rod_hp:int;
+  rod_power:int;
+  reduce_biting_time:int;
+}
+
+table FishRodTable {
+  datas:[FishRodData];
+}
+
+root_type FishRodTable;

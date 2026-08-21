@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table RotationImgData {
+  id:int;
+  rotation_area_id:int;
+  img:string;
+  jump_id:int;
+  order:int;
+  item_id:int;
+}
+
+table RotationImgTable {
+  datas:[RotationImgData];
+}
+
+root_type RotationImgTable;

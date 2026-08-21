@@ -1,0 +1,29 @@
+namespace ProjectA.Data;
+
+table CardTalentUpgradeData {
+  unlock_id:int;
+  talent_base_id:int;
+  type:int;
+  lv:int;
+  desc:string;
+  value_type:int;
+  attribute:int;
+  cfg1:int;
+  des1:string;
+  cfg2_length:int;
+  des2:string;
+  cfg3:int;
+  des3:string;
+  cfg4:int;
+  des4:string;
+  required_resource1_length:int;
+  required_resource2_length:int;
+  required_resource3_length:int;
+  required_resource4_length:int;
+}
+
+table CardTalentUpgradeTable {
+  datas:[CardTalentUpgradeData];
+}
+
+root_type CardTalentUpgradeTable;

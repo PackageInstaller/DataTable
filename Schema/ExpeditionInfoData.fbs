@@ -1,0 +1,25 @@
+namespace ProjectA.Data;
+
+table ExpeditionInfoData {
+  id:int;
+  order:int;
+  exprdition_name:string;
+  expedition_desc:string;
+  bg:string;
+  member:int;
+  difficulty:int;
+  duration:int;
+  basic_reward_id:int;
+  extra_skill_id1_length:int;
+  extra_reward_id1:int;
+  extra_skill_id2_length:int;
+  extra_reward_id2:int;
+  extra_skill_id3_length:int;
+  extra_reward_id3:int;
+}
+
+table ExpeditionInfoTable {
+  datas:[ExpeditionInfoData];
+}
+
+root_type ExpeditionInfoTable;

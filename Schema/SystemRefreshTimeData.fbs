@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table SystemRefreshTimeData {
+  id:int;
+  system_id:int;
+  time:int;
+}
+
+table SystemRefreshTimeTable {
+  datas:[SystemRefreshTimeData];
+}
+
+root_type SystemRefreshTimeTable;

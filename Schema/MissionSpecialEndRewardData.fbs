@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table MissionSpecialEndRewardData {
+  id:int;
+  mission_id_length:int;
+  event_dialogue_length:int;
+  reward_id:int;
+}
+
+table MissionSpecialEndRewardTable {
+  datas:[MissionSpecialEndRewardData];
+}
+
+root_type MissionSpecialEndRewardTable;

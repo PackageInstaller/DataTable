@@ -1,0 +1,26 @@
+namespace ProjectA.Data;
+
+table ElementQuestionData {
+  id:int;
+  name:string;
+  desc1:string;
+  type:int;
+  buff_id:int;
+  conf1:int;
+  conf2:int;
+  acount_type:int;
+  acount_value:int;
+  target_length:int;
+  repeat:int;
+  probweight:int;
+  bufftime:int;
+  frame:string;
+  icon:string;
+  sound:int;
+}
+
+table ElementQuestionTable {
+  datas:[ElementQuestionData];
+}
+
+root_type ElementQuestionTable;

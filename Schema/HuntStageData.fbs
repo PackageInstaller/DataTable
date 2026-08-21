@@ -1,0 +1,29 @@
+namespace ProjectA.Data;
+
+table HuntStageData {
+  stage_id:int;
+  icon:string;
+  bg:string;
+  event_id:int;
+  level_id:int;
+  line:int;
+  access_line_length:int;
+  is_start:bool;
+  is_boss:bool;
+  stamina_cost:int;
+  target_type1_length:int;
+  target_cfg1_length:int;
+  target_desc1:string;
+  target_type2_length:int;
+  target_cfg2_length:int;
+  target_desc2:string;
+  target_type3_length:int;
+  target_cfg3_length:int;
+  target_desc3:string;
+}
+
+table HuntStageTable {
+  datas:[HuntStageData];
+}
+
+root_type HuntStageTable;

@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table RaceHitCfgData {
+  id:int;
+  type:int;
+  pic:string;
+  size:int;
+  default_pos_x:int;
+  default_pos_y:int;
+}
+
+table RaceHitCfgTable {
+  datas:[RaceHitCfgData];
+}
+
+root_type RaceHitCfgTable;

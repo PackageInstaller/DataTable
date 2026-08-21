@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table CardTalentLivingData {
+  id:int;
+  card_base_id:int;
+  type:int;
+  from_system:int;
+  from_system_text:string;
+  icon:string;
+  name:string;
+  desc:string;
+  is_control:int;
+  cfg1:int;
+  cfg2:int;
+  cfg3:int;
+  cfg4:int;
+}
+
+table CardTalentLivingTable {
+  datas:[CardTalentLivingData];
+}
+
+root_type CardTalentLivingTable;

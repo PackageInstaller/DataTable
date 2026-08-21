@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table SevenDayMissionData {
+  mission_id:int;
+  day:int;
+}
+
+table SevenDayMissionTable {
+  datas:[SevenDayMissionData];
+}
+
+root_type SevenDayMissionTable;

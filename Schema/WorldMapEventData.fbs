@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table WorldMapEventData {
+  id:int;
+  event_type:int;
+  event_title:string;
+  happen_time:int;
+  duration:int;
+  model_resource_name:string;
+  event_cfg1:int;
+  event_cfg2:string;
+  event_trigger_point_group_length:int;
+}
+
+table WorldMapEventTable {
+  datas:[WorldMapEventData];
+}
+
+root_type WorldMapEventTable;

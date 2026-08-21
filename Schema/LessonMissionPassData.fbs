@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table LessonMissionPassData {
+  lesson_group_id:int;
+  title:string;
+  name:string;
+  pre_group_id:int;
+  unlock_misson_id:int;
+  battle_pass_id:int;
+  battle_pass_reward_spacing:int;
+  battle_pass_order:int;
+}
+
+table LessonMissionPassTable {
+  datas:[LessonMissionPassData];
+}
+
+root_type LessonMissionPassTable;

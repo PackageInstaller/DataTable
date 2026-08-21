@@ -1,0 +1,26 @@
+namespace ProjectA.Data;
+
+table NpcGreetAndPositonData {
+  id:int;
+  card_id:int;
+  min_relation:int;
+  max_relation:int;
+  city:int;
+  day_time:int;
+  weather:int;
+  greet_line:string;
+  pre_mission:int;
+  necessary_mission:int;
+  action:int;
+  voice:string;
+  rate:int;
+  priority:int;
+  position:int;
+  sdid:string;
+}
+
+table NpcGreetAndPositonTable {
+  datas:[NpcGreetAndPositonData];
+}
+
+root_type NpcGreetAndPositonTable;

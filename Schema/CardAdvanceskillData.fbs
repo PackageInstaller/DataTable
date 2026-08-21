@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table CardAdvanceskillData {
+  id:int;
+  card_id:int;
+  kind_skill_id:int;
+  skill_id:int;
+  skillicon:string;
+}
+
+table CardAdvanceskillTable {
+  datas:[CardAdvanceskillData];
+}
+
+root_type CardAdvanceskillTable;

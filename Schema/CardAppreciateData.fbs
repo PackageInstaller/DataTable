@@ -1,0 +1,36 @@
+namespace ProjectA.Data;
+
+table CardAppreciateData {
+  id:int;
+  card_id:int;
+  type:int;
+  type_name:string;
+  sub_type:int;
+  list:int;
+  min_relation_level:int;
+  max_relation_level:int;
+  need_fashions_length:int;
+  event_id:int;
+  check_team:bool;
+  check_equip_fashion:bool;
+  sub_type_name:string;
+  lock_text:string;
+  sound_pack:string;
+  sound_id:string;
+  animator_trigger:string;
+  sd_animator_trigger:string;
+  desc:string;
+  volume:int;
+  weight:int;
+  force:int;
+  probability:float;
+  cd_length:int;
+  is_show:bool;
+  default_unlock:int;
+}
+
+table CardAppreciateTable {
+  datas:[CardAppreciateData];
+}
+
+root_type CardAppreciateTable;

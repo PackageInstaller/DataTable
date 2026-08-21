@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table NpcExchangeData {
+  id:int;
+  npc_id:int;
+  relation_itemtype:int;
+  relation_item_id:int;
+  name:string;
+  number:int;
+  exchange_number:int;
+  relationlevel:int;
+  relationpoint:int;
+  reset_time:int;
+}
+
+table NpcExchangeTable {
+  datas:[NpcExchangeData];
+}
+
+root_type NpcExchangeTable;

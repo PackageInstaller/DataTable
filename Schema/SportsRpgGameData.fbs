@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table SportsRpgGameData {
+  id:int;
+  escape_text:int;
+  type1:int;
+  target1:int;
+  cfg1:int;
+  cfg2:int;
+  type2:int;
+  target2:int;
+  cfg3:int;
+  cfg4:int;
+  type3:int;
+  target3:int;
+  cfg5:int;
+  cfg6:int;
+}
+
+table SportsRpgGameTable {
+  datas:[SportsRpgGameData];
+}
+
+root_type SportsRpgGameTable;

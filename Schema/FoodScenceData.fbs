@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table FoodScenceData {
+  scence_id:int;
+  scence_name:string;
+  scence_name_word:string;
+  scence_picture:string;
+  unlock_type:int;
+  unlock_cfg:int;
+  camera_name:string;
+  card_food_pos:int;
+  time_line_name:string;
+}
+
+table FoodScenceTable {
+  datas:[FoodScenceData];
+}
+
+root_type FoodScenceTable;

@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table ReputationLevelData {
+  id:int;
+  camp_id:int;
+  level:int;
+  rp_num:int;
+  buff_id_length:int;
+}
+
+table ReputationLevelTable {
+  datas:[ReputationLevelData];
+}
+
+root_type ReputationLevelTable;

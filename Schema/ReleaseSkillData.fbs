@@ -1,0 +1,33 @@
+namespace ProjectA.Data;
+
+table ReleaseSkillData {
+  id:int;
+  skill_id:int;
+  need_sp:int;
+  is_click:int;
+  is_pressing:int;
+  last_skill_id:int;
+  btn_name:int;
+  player:int;
+  distance:int;
+  is_moving:int;
+  wheel_direction_length:int;
+  energy_type:int;
+  buff:int;
+  buff_level_length:int;
+  passive_skill:int;
+  end_skill_id1:int;
+  end_skill_id2:int;
+  end_skill_id3:int;
+  buff_skill:int;
+  targetbuff:int;
+  target_buff_level_length:int;
+  skill_base_id:int;
+  buff_skill_icon:string;
+}
+
+table ReleaseSkillTable {
+  datas:[ReleaseSkillData];
+}
+
+root_type ReleaseSkillTable;

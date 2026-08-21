@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table ConstantData {
+  id:int;
+  type:string;
+  value:int;
+  server_or_client:int;
+}
+
+table ConstantTable {
+  datas:[ConstantData];
+}
+
+root_type ConstantTable;

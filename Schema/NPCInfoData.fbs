@@ -1,0 +1,54 @@
+namespace ProjectA.Data;
+
+table NPCInfoData {
+  npc_id:int;
+  building:int;
+  is_show_on_school_map:int;
+  name:string;
+  fullname:string;
+  name_en:string;
+  race:string;
+  height:string;
+  weight:string;
+  birthday:string;
+  cv:string;
+  is_illustratedbook:bool;
+  desc:string;
+  class:string;
+  sd_icon_id:int;
+  model_id:int;
+  s_dmodel_id:int;
+  release_mission:int;
+  type:int;
+  cfg1_length:int;
+  camp:int;
+  first_talk:int;
+  talk:int;
+  camera:string;
+  bg_pic:string;
+  illustratedbook_image:string;
+  rotate_bg:string;
+  exchangestoreid:int;
+  storeid:int;
+  follow_type:int;
+  dialogue_offset_length:int;
+  dialogue_exp_offset_length:int;
+  dialogue_scale:float;
+  ui_offset_length:int;
+  ui_exp_offset_length:int;
+  ui_scale:float;
+  image_offset_length:int;
+  normal_mode_talk:float;
+  isphotoed:int;
+  photo_relation_level:int;
+  select_icon:bool;
+  event_id:int;
+  version_id:int;
+  is_fisher:int;
+}
+
+table NPCInfoTable {
+  datas:[NPCInfoData];
+}
+
+root_type NPCInfoTable;

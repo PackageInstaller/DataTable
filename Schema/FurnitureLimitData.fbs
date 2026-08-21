@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table FurnitureLimitData {
+  tag_id:int;
+  max_num:int;
+}
+
+table FurnitureLimitTable {
+  datas:[FurnitureLimitData];
+}
+
+root_type FurnitureLimitTable;

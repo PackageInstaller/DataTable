@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table SdImageData {
+  id:int;
+  gender:int;
+  sd_models:string;
+  sd_hair:string;
+  sd_body:string;
+}
+
+table SdImageTable {
+  datas:[SdImageData];
+}
+
+root_type SdImageTable;

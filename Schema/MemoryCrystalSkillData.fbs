@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table MemoryCrystalSkillData {
+  crystal_skill_id:int;
+  order:int;
+  name:string;
+  desc:string;
+  icon:string;
+  passive_skill_id_length:int;
+  release_type:int;
+  release_cfg_length:int;
+  release_text:string;
+}
+
+table MemoryCrystalSkillTable {
+  datas:[MemoryCrystalSkillData];
+}
+
+root_type MemoryCrystalSkillTable;

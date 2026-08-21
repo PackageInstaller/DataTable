@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table TicketRewardData {
+  id:int;
+  reward_id:int;
+}
+
+table TicketRewardTable {
+  datas:[TicketRewardData];
+}
+
+root_type TicketRewardTable;

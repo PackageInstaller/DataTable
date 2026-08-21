@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table MonsterInfoData {
+  id:int;
+  monster_id:int;
+  order:int;
+  info_unlock_num:int;
+  info:string;
+}
+
+table MonsterInfoTable {
+  datas:[MonsterInfoData];
+}
+
+root_type MonsterInfoTable;

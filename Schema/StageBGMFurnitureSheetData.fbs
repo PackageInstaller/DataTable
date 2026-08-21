@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table StageBGMFurnitureSheetData {
+  id:int;
+  time:int;
+  scence_default_bgm_id:int;
+  parent:int;
+  parent_name:string;
+  sheet:string;
+  unlock:int;
+}
+
+table StageBGMFurnitureSheetTable {
+  datas:[StageBGMFurnitureSheetData];
+}
+
+root_type StageBGMFurnitureSheetTable;

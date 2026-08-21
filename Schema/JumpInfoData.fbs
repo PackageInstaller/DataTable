@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table JumpInfoData {
+  jump_id:int;
+  jump_type:int;
+  jump_cfg_length:int;
+  condition:int;
+  condition_cfg:int;
+  if_true_jump_type:int;
+  if_true_jump_cfg:int;
+  if_false_jump_type:int;
+  if_false_jump_cfg:int;
+  related_system_id_length:int;
+}
+
+table JumpInfoTable {
+  datas:[JumpInfoData];
+}
+
+root_type JumpInfoTable;

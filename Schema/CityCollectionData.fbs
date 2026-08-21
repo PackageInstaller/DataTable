@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table CityCollectionData {
+  id:int;
+  stage_id:int;
+  create_type:int;
+  type:int;
+  position_id:int;
+  effect:string;
+  pre_mission:int;
+  necessary_mission:int;
+  min_level:int;
+  max_level:int;
+  rate:int;
+  order:int;
+  drop_id:int;
+}
+
+table CityCollectionTable {
+  datas:[CityCollectionData];
+}
+
+root_type CityCollectionTable;

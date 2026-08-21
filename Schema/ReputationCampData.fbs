@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table ReputationCampData {
+  id:int;
+  order:int;
+  name:string;
+  icon:string;
+  bg:string;
+  rp_icon:string;
+  rare:int;
+  bg_color:int;
+  rp_name:string;
+  rp_desc:string;
+  rp_tip:string;
+  unlock_mission:int;
+  version_id:int;
+}
+
+table ReputationCampTable {
+  datas:[ReputationCampData];
+}
+
+root_type ReputationCampTable;

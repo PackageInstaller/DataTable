@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table EventGamesCfgData {
+  id:int;
+  type:int;
+  name:string;
+  game_cfg:int;
+  value:int;
+}
+
+table EventGamesCfgTable {
+  datas:[EventGamesCfgData];
+}
+
+root_type EventGamesCfgTable;

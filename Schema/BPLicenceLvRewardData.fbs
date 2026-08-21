@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table BPLicenceLvRewardData {
+  id:int;
+  bp_licence_id:int;
+  bp_licence_lv:int;
+  normal_rwd:int;
+  excellent_rwd:int;
+  especial_flag:int;
+}
+
+table BPLicenceLvRewardTable {
+  datas:[BPLicenceLvRewardData];
+}
+
+root_type BPLicenceLvRewardTable;

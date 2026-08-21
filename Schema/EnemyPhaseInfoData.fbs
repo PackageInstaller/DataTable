@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table EnemyPhaseInfoData {
+  id:int;
+  phase_id:int;
+  hp_percent:int;
+  scene_buffcfg1:int;
+  scene_buffcfg2:int;
+  scene_buffcfg3:int;
+}
+
+table EnemyPhaseInfoTable {
+  datas:[EnemyPhaseInfoData];
+}
+
+root_type EnemyPhaseInfoTable;

@@ -1,0 +1,29 @@
+namespace ProjectA.Data;
+
+table StageCollectionData {
+  id:int;
+  stage_id:int;
+  is_event_collection:int;
+  position_id:int;
+  time:int;
+  collection_id:int;
+  prefab_id:string;
+  type:int;
+  necessary_mission:int;
+  item_limit_length:int;
+  name:string;
+  rate:int;
+  limit:int;
+  release_type:int;
+  difficulty:int;
+  drop_id:int;
+  limit_drop_id:int;
+  role_exp:int;
+  card_exp:int;
+}
+
+table StageCollectionTable {
+  datas:[StageCollectionData];
+}
+
+root_type StageCollectionTable;

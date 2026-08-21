@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table AdventureAreaData {
+  area_id:int;
+  type:int;
+  area_location:int;
+  event_id:int;
+  name:string;
+  desc:string;
+  icon:string;
+  camp_map_scale:int;
+  camp_map_pos_length:int;
+}
+
+table AdventureAreaTable {
+  datas:[AdventureAreaData];
+}
+
+root_type AdventureAreaTable;

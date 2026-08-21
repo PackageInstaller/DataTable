@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table DialogueTexData {
+  id:string;
+  tex1:string;
+  tex2:string;
+  tex3:string;
+  tex4:string;
+  tex5:string;
+  tex6:string;
+}
+
+table DialogueTexTable {
+  datas:[DialogueTexData];
+}
+
+root_type DialogueTexTable;

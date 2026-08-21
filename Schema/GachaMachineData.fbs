@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table GachaMachineData {
+  id:int;
+  gacha_machine:int;
+  order:int;
+  target:bool;
+  gacha_rare:int;
+  reward_type:int;
+  reward_id:int;
+  reward_num:int;
+  gacha_machine_banner:string;
+  scene:string;
+  timeline:string;
+  preview_cfg:int;
+  goods_num:int;
+  rate:int;
+}
+
+table GachaMachineTable {
+  datas:[GachaMachineData];
+}
+
+root_type GachaMachineTable;

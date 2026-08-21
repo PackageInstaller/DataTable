@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table MMOAnimationData {
+  id:int;
+  name:string;
+  action_id:int;
+  eye_id:string;
+  mouth_id:string;
+  eyebrow:string;
+  expression_id:int;
+  icon:string;
+}
+
+table MMOAnimationTable {
+  datas:[MMOAnimationData];
+}
+
+root_type MMOAnimationTable;

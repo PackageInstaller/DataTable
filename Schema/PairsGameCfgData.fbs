@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table PairsGameCfgData {
+  id:int;
+  name:string;
+  win_reward:int;
+  fail_reward:int;
+  extra_win_reward:int;
+  turn_time:int;
+  exit_cd:bool;
+}
+
+table PairsGameCfgTable {
+  datas:[PairsGameCfgData];
+}
+
+root_type PairsGameCfgTable;

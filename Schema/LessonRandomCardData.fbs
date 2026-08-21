@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table LessonRandomCardData {
+  card_id:int;
+  lesson_type1:int;
+  lesson_type2:int;
+  lesson_type3:int;
+  lesson_type4:int;
+  lesson_type5:int;
+  lesson_type6:int;
+  in_team:int;
+}
+
+table LessonRandomCardTable {
+  datas:[LessonRandomCardData];
+}
+
+root_type LessonRandomCardTable;

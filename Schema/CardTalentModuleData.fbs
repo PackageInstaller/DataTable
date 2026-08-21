@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table CardTalentModuleData {
+  id:int;
+  cardid:int;
+  talent_module_id:int;
+  name:string;
+  desc:string;
+  release_desc:string;
+  releas_type:int;
+  release_cfg1:int;
+  release_cfg2:int;
+}
+
+table CardTalentModuleTable {
+  datas:[CardTalentModuleData];
+}
+
+root_type CardTalentModuleTable;

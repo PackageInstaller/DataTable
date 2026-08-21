@@ -1,0 +1,46 @@
+namespace ProjectA.Data;
+
+table TrainingMissionData {
+  training_id:int;
+  card_id_length:int;
+  is_done:int;
+  is_opne_card_detail:int;
+  talent_id_length:int;
+  training_name:string;
+  in_done:int;
+  stage_id:int;
+  target_desc:string;
+  unlock_desc:string;
+  order:int;
+  sd_icon:string;
+  background_icon:string;
+  backgroundbordercolor:string;
+  reward_id:int;
+  finish_num1:int;
+  is_teaching1:bool;
+  target_type1:string;
+  reminder_kind1:int;
+  reminder1:int;
+  skill_id1:int;
+  finish_num2:int;
+  is_teaching2:bool;
+  target_type2:string;
+  reminder_kind2:int;
+  reminder2:int;
+  skill_id2:int;
+  finish_num3:int;
+  is_teaching3:bool;
+  target_type3:string;
+  reminder_kind3:int;
+  reminder3:int;
+  skill_id3:int;
+  rolecfg_length:int;
+  is_try:bool;
+  event_id:int;
+}
+
+table TrainingMissionTable {
+  datas:[TrainingMissionData];
+}
+
+root_type TrainingMissionTable;

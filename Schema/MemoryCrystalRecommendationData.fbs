@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table MemoryCrystalRecommendationData {
+  id:int;
+  card_id:int;
+  suit:int;
+  main_crystal:int;
+  minor_crystal1:int;
+  minor_crystal2:int;
+  minor_crystal3:int;
+  minor_crystal4:int;
+  title:string;
+  des:string;
+}
+
+table MemoryCrystalRecommendationTable {
+  datas:[MemoryCrystalRecommendationData];
+}
+
+root_type MemoryCrystalRecommendationTable;

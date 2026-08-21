@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table TowerLevelData {
+  stage_id:int;
+  event_id:int;
+  level_id:int;
+  pre_level:int;
+  type:int;
+  base_reward_id:int;
+  time_require1:int;
+  time_require2:int;
+  time_require3:int;
+  extra_reward_id1:int;
+  extra_reward_id2:int;
+  extra_reward_id3:int;
+  icon:string;
+  pic:string;
+}
+
+table TowerLevelTable {
+  datas:[TowerLevelData];
+}
+
+root_type TowerLevelTable;

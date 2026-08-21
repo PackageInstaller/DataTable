@@ -1,0 +1,40 @@
+namespace ProjectA.Data;
+
+table FashionData {
+  fashion_id:int;
+  name:string;
+  card_id:int;
+  fashion_type:int;
+  icon_id:string;
+  big_icon_id:string;
+  rarity:int;
+  bg_color:int;
+  slot_id:int;
+  prefab_id:string;
+  henshin:string;
+  effect_id:string;
+  effect_root:string;
+  introduction:string;
+  passive_skill:int;
+  face_direction:int;
+  sdid:string;
+  cloth_group_length:int;
+  un_equip_id_length:int;
+  gain_id_length:int;
+  card_voice_id:int;
+  preview_card:int;
+  preview_fashion_length:int;
+  is_illustrated_book:bool;
+  is_new:bool;
+  opt_info:string;
+  opt_team_icon:string;
+  opt_effect:string;
+  opt_controller:string;
+  version_id:int;
+}
+
+table FashionTable {
+  datas:[FashionData];
+}
+
+root_type FashionTable;

@@ -1,0 +1,66 @@
+namespace ProjectA.Data;
+
+table MissionInfoData {
+  mission_id:int;
+  mission_name:string;
+  event_id:int;
+  episoder_num:string;
+  customer_name:string;
+  customer_icon:string;
+  entrust_icon_type:int;
+  entrust_icon_cfg:int;
+  target_desc1:string;
+  target_complete_desc:string;
+  target_desc2:string;
+  detail:string;
+  card_id:int;
+  type:int;
+  rare:int;
+  day_begin_time:int;
+  day_finish_time:int;
+  finish_time:int;
+  show_windows:int;
+  end_vfx:int;
+  accept_talk:int;
+  type_icon:string;
+  icon:string;
+  board:string;
+  time_limit:int;
+  target_npc:int;
+  target_conversation:int;
+  target_dialogue:string;
+  target_timeline:string;
+  guide_type:int;
+  guide_stage_length:int;
+  guide_aim_length:int;
+  role_exp:int;
+  reward_id:int;
+  camp:int;
+  rp:int;
+  begin_flag:int;
+  begin_dialogue:string;
+  begin_timeline:string;
+  begin_npc:int;
+  begin_stage:int;
+  begin_conversation:int;
+  finish_num:int;
+  target_type_length:int;
+  target_cfg1_length:int;
+  target_cfg2_length:int;
+  end_dialogue:string;
+  end_timeline:string;
+  end_npc:int;
+  end_stage:int;
+  end_conversation:int;
+  end_type:int;
+  jump_id:int;
+  finish_jump_id:int;
+  complite_voice_length:int;
+  map_guide_type:int;
+}
+
+table MissionInfoTable {
+  datas:[MissionInfoData];
+}
+
+root_type MissionInfoTable;

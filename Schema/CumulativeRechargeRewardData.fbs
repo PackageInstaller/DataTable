@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table CumulativeRechargeRewardData {
+  id:int;
+  cumulative_price:int;
+  reward_id:int;
+  price_type:string;
+}
+
+table CumulativeRechargeRewardTable {
+  datas:[CumulativeRechargeRewardData];
+}
+
+root_type CumulativeRechargeRewardTable;

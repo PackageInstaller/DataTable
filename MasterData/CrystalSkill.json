@@ -1,0 +1,976 @@
+{
+    "datas": [
+        {
+            "id": 1,
+            "skill_id": 12010001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 8673,
+            "grow_value1": 1558
+        },
+        {
+            "id": 2,
+            "skill_id": 12010001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1953,
+            "grow_value1": 351
+        },
+        {
+            "id": 3,
+            "skill_id": 12010001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 876,
+            "grow_value1": 157
+        },
+        {
+            "id": 4,
+            "skill_id": 12010001,
+            "level": 12,
+            "skill_name": "暴击强化",
+            "skillinfo": "暴击率+{0}%",
+            "subtype1": 1203,
+            "display_type1": 1,
+            "value1": 228,
+            "grow_value1": 5
+        },
+        {
+            "id": 5,
+            "skill_id": 12010001,
+            "level": 18,
+            "skill_name": "暴击倍化",
+            "skillinfo": "暴击倍率+{0}%",
+            "subtype1": 1204,
+            "display_type1": 1,
+            "value1": 831,
+            "grow_value1": 21
+        },
+        {
+            "id": 6,
+            "skill_id": 12010001,
+            "level": 24,
+            "skill_name": "生命吸收",
+            "skillinfo": "造成暴击伤害时，恢复50点生命值",
+            "passive_skill_id": 10400001
+        },
+        {
+            "id": 7,
+            "skill_id": 12010002,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 9678,
+            "grow_value1": 1739
+        },
+        {
+            "id": 8,
+            "skill_id": 12010002,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1753,
+            "grow_value1": 315
+        },
+        {
+            "id": 9,
+            "skill_id": 12010002,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 894,
+            "grow_value1": 161
+        },
+        {
+            "id": 10,
+            "skill_id": 12010002,
+            "level": 12,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}%",
+            "subtype1": 1001,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 593,
+            "grow_value1": 15
+        },
+        {
+            "id": 11,
+            "skill_id": 12010002,
+            "level": 18,
+            "skill_name": "防性强化",
+            "skillinfo": "格挡性能+{0}%",
+            "subtype1": 1206,
+            "display_type1": 1,
+            "value1": 166,
+            "grow_value1": 4
+        },
+        {
+            "id": 12,
+            "skill_id": 12010002,
+            "level": 24,
+            "skill_name": "坚决",
+            "skillinfo": "当自身血量低于30%时，增加30%防御",
+            "passive_skill_id": 10400002
+        },
+        {
+            "id": 13,
+            "skill_id": 12020001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 9130,
+            "grow_value1": 1640
+        },
+        {
+            "id": 14,
+            "skill_id": 12020001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1826,
+            "grow_value1": 328
+        },
+        {
+            "id": 15,
+            "skill_id": 12020001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 913,
+            "grow_value1": 164
+        },
+        {
+            "id": 16,
+            "skill_id": 12020001,
+            "level": 12,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}%",
+            "subtype1": 1002,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 560,
+            "grow_value1": 14
+        },
+        {
+            "id": 17,
+            "skill_id": 12020001,
+            "level": 18,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}%",
+            "subtype1": 1003,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 560,
+            "grow_value1": 14
+        },
+        {
+            "id": 18,
+            "skill_id": 12020001,
+            "level": 24,
+            "skill_name": "重击",
+            "skillinfo": "近战攻击时，有10%的概率使目标眩晕1.5秒，CD3秒",
+            "passive_skill_id": 10410001
+        },
+        {
+            "id": 19,
+            "skill_id": 12020002,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 8673,
+            "grow_value1": 1558
+        },
+        {
+            "id": 20,
+            "skill_id": 12020002,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1771,
+            "grow_value1": 318
+        },
+        {
+            "id": 21,
+            "skill_id": 12020002,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 967,
+            "grow_value1": 174
+        },
+        {
+            "id": 22,
+            "skill_id": 12020002,
+            "level": 12,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}%",
+            "subtype1": 1003,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 593,
+            "grow_value1": 15
+        },
+        {
+            "id": 23,
+            "skill_id": 12020002,
+            "level": 18,
+            "skill_name": "防性强化",
+            "skillinfo": "格挡性能+{0}%",
+            "subtype1": 1206,
+            "display_type1": 1,
+            "value1": 169,
+            "grow_value1": 4
+        },
+        {
+            "id": 24,
+            "skill_id": 12020002,
+            "level": 24,
+            "skill_name": "精神抖擞",
+            "skillinfo": "生命力高于80%时，攻击力增加15%",
+            "passive_skill_id": 10410002
+        },
+        {
+            "id": 25,
+            "skill_id": 12030001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 8582,
+            "grow_value1": 1542
+        },
+        {
+            "id": 26,
+            "skill_id": 12030001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1972,
+            "grow_value1": 354
+        },
+        {
+            "id": 27,
+            "skill_id": 12030001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 876,
+            "grow_value1": 157
+        },
+        {
+            "id": 28,
+            "skill_id": 12030001,
+            "level": 12,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}%",
+            "subtype1": 1002,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 604,
+            "grow_value1": 15
+        },
+        {
+            "id": 29,
+            "skill_id": 12030001,
+            "level": 18,
+            "skill_name": "连击强化",
+            "skillinfo": "连击上限+{0}%",
+            "subtype1": 1209,
+            "display_type1": 1,
+            "value1": 856,
+            "grow_value1": 22
+        },
+        {
+            "id": 30,
+            "skill_id": 12030001,
+            "level": 24,
+            "skill_name": "狂热",
+            "skillinfo": "连击数达到15时，增加10%伤害",
+            "passive_skill_id": 10420001
+        },
+        {
+            "id": 31,
+            "skill_id": 12030002,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 9221,
+            "grow_value1": 1657
+        },
+        {
+            "id": 32,
+            "skill_id": 12030002,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1844,
+            "grow_value1": 331
+        },
+        {
+            "id": 33,
+            "skill_id": 12030002,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 922,
+            "grow_value1": 166
+        },
+        {
+            "id": 34,
+            "skill_id": 12030002,
+            "level": 12,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}%",
+            "subtype1": 1001,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 565,
+            "grow_value1": 14
+        },
+        {
+            "id": 35,
+            "skill_id": 12030002,
+            "level": 18,
+            "skill_name": "法伤强化",
+            "skillinfo": "魔法伤害+{0}%",
+            "subtype1": 1505,
+            "display_type1": 1,
+            "value1": 420,
+            "grow_value1": 10
+        },
+        {
+            "id": 36,
+            "skill_id": 12030002,
+            "level": 24,
+            "skill_name": "弱点感知",
+            "skillinfo": "对中毒或出血状态的敌人增加10%伤害",
+            "passive_skill_id": 10420002
+        },
+        {
+            "id": 37,
+            "skill_id": 12040001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 8673,
+            "grow_value1": 1558
+        },
+        {
+            "id": 38,
+            "skill_id": 12040001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1734,
+            "grow_value1": 311
+        },
+        {
+            "id": 39,
+            "skill_id": 12040001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 986,
+            "grow_value1": 177
+        },
+        {
+            "id": 40,
+            "skill_id": 12040001,
+            "level": 12,
+            "skill_name": "格挡强化",
+            "skillinfo": "格挡率+{0}%",
+            "subtype1": 1205,
+            "display_type1": 1,
+            "value1": 224,
+            "grow_value1": 5
+        },
+        {
+            "id": 41,
+            "skill_id": 12040001,
+            "level": 18,
+            "skill_name": "防性强化",
+            "skillinfo": "格挡性能+{0}%",
+            "subtype1": 1206,
+            "display_type1": 1,
+            "value1": 168,
+            "grow_value1": 4
+        },
+        {
+            "id": 42,
+            "skill_id": 12040001,
+            "level": 24,
+            "skill_name": "冥助",
+            "skillinfo": "释放技能时，有30%几率不消耗MP",
+            "passive_skill_id": 10430001
+        },
+        {
+            "id": 43,
+            "skill_id": 12040002,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 9952,
+            "grow_value1": 1788
+        },
+        {
+            "id": 44,
+            "skill_id": 12040002,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1734,
+            "grow_value1": 311
+        },
+        {
+            "id": 45,
+            "skill_id": 12040002,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 876,
+            "grow_value1": 157
+        },
+        {
+            "id": 46,
+            "skill_id": 12040002,
+            "level": 12,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}%",
+            "subtype1": 1001,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 610,
+            "grow_value1": 15
+        },
+        {
+            "id": 47,
+            "skill_id": 12040002,
+            "level": 18,
+            "skill_name": "治疗强化",
+            "skillinfo": "治疗效果+{0}%",
+            "subtype1": 1534,
+            "display_type1": 1,
+            "value1": 415,
+            "grow_value1": 10
+        },
+        {
+            "id": 48,
+            "skill_id": 12040002,
+            "level": 24,
+            "skill_name": "治愈之风",
+            "skillinfo": "释放治疗技能时，使己方全体角色增加8%攻击力，持续5秒",
+            "passive_skill_id": 10430002
+        },
+        {
+            "id": 49,
+            "skill_id": 12050001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 8582,
+            "grow_value1": 1542
+        },
+        {
+            "id": 50,
+            "skill_id": 12050001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1899,
+            "grow_value1": 341
+        },
+        {
+            "id": 51,
+            "skill_id": 12050001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 949,
+            "grow_value1": 171
+        },
+        {
+            "id": 52,
+            "skill_id": 12050001,
+            "level": 12,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}%",
+            "subtype1": 1003,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 582,
+            "grow_value1": 15
+        },
+        {
+            "id": 53,
+            "skill_id": 12050001,
+            "level": 18,
+            "skill_name": "光伤强化",
+            "skillinfo": "光伤害+{0}%",
+            "subtype1": 1521,
+            "display_type1": 1,
+            "value1": 424,
+            "grow_value1": 11
+        },
+        {
+            "id": 54,
+            "skill_id": 12050001,
+            "level": 24,
+            "skill_name": "复苏之光",
+            "skillinfo": "对生命值低于50%的友方单位治疗量增加50%",
+            "passive_skill_id": 10440001
+        },
+        {
+            "id": 55,
+            "skill_id": 12060001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 8947,
+            "grow_value1": 1607
+        },
+        {
+            "id": 56,
+            "skill_id": 12060001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 1935,
+            "grow_value1": 347
+        },
+        {
+            "id": 57,
+            "skill_id": 12060001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 858,
+            "grow_value1": 154
+        },
+        {
+            "id": 58,
+            "skill_id": 12060001,
+            "level": 12,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}%",
+            "subtype1": 1002,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 593,
+            "grow_value1": 15
+        },
+        {
+            "id": 59,
+            "skill_id": 12060001,
+            "level": 18,
+            "skill_name": "暗伤强化",
+            "skillinfo": "暗伤害+{0}%",
+            "subtype1": 1523,
+            "display_type1": 1,
+            "value1": 420,
+            "grow_value1": 10
+        },
+        {
+            "id": 60,
+            "skill_id": 12060001,
+            "level": 24,
+            "skill_name": "识破",
+            "skillinfo": "破招成功时，增加自身20%伤害，持续5秒",
+            "passive_skill_id": 10450001
+        },
+        {
+            "id": 61,
+            "skill_id": 12011001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 10643,
+            "grow_value1": 1912
+        },
+        {
+            "id": 62,
+            "skill_id": 12011001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 2003,
+            "grow_value1": 360
+        },
+        {
+            "id": 63,
+            "skill_id": 12011001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 1085,
+            "grow_value1": 195
+        },
+        {
+            "id": 64,
+            "skill_id": 12011001,
+            "level": 12,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}%",
+            "subtype1": 1003,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 665,
+            "grow_value1": 17
+        },
+        {
+            "id": 65,
+            "skill_id": 12011001,
+            "level": 18,
+            "skill_name": "物伤强化",
+            "skillinfo": "物理伤害+{0}%",
+            "subtype1": 1503,
+            "display_type1": 1,
+            "value1": 480,
+            "grow_value1": 12
+        },
+        {
+            "id": 66,
+            "skill_id": 12011001,
+            "level": 24,
+            "skill_name": "余震",
+            "skillinfo": "受到敌方伤害时，40%几率提升自身20%防御，持续20秒，CD30秒",
+            "passive_skill_id": 10401001
+        },
+        {
+            "id": 67,
+            "skill_id": 12021001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 10226,
+            "grow_value1": 1837
+        },
+        {
+            "id": 68,
+            "skill_id": 12021001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 2170,
+            "grow_value1": 390
+        },
+        {
+            "id": 69,
+            "skill_id": 12021001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 1022,
+            "grow_value1": 184
+        },
+        {
+            "id": 70,
+            "skill_id": 12021001,
+            "level": 12,
+            "skill_name": "暴击强化",
+            "skillinfo": "暴击率+{0}%",
+            "subtype1": 1203,
+            "display_type1": 1,
+            "value1": 258,
+            "grow_value1": 6
+        },
+        {
+            "id": 71,
+            "skill_id": 12021001,
+            "level": 18,
+            "skill_name": "暴击倍化",
+            "skillinfo": "暴击倍率+{0}%",
+            "subtype1": 1204,
+            "display_type1": 1,
+            "value1": 950,
+            "grow_value1": 24
+        },
+        {
+            "id": 72,
+            "skill_id": 12021001,
+            "level": 24,
+            "skill_name": "水牢锁",
+            "skillinfo": "远程攻击时，有30%的概率使目标禁锢2秒，CD5秒",
+            "passive_skill_id": 10411001
+        },
+        {
+            "id": 73,
+            "skill_id": 12031001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 10121,
+            "grow_value1": 1818
+        },
+        {
+            "id": 74,
+            "skill_id": 12031001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 2233,
+            "grow_value1": 401
+        },
+        {
+            "id": 75,
+            "skill_id": 12031001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 1001,
+            "grow_value1": 180
+        },
+        {
+            "id": 76,
+            "skill_id": 12031001,
+            "level": 12,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}%",
+            "subtype1": 1002,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 684,
+            "grow_value1": 17
+        },
+        {
+            "id": 77,
+            "skill_id": 12031001,
+            "level": 18,
+            "skill_name": "法伤强化",
+            "skillinfo": "魔法伤害+{0}%",
+            "subtype1": 1505,
+            "display_type1": 1,
+            "value1": 484,
+            "grow_value1": 12
+        },
+        {
+            "id": 78,
+            "skill_id": 12031001,
+            "level": 24,
+            "skill_name": "魔力喷涌",
+            "skillinfo": "主动技能造成的伤害提升20%",
+            "passive_skill_id": 10421001
+        },
+        {
+            "id": 79,
+            "skill_id": 12041001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 9704,
+            "grow_value1": 1743
+        },
+        {
+            "id": 80,
+            "skill_id": 12041001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 2274,
+            "grow_value1": 408
+        },
+        {
+            "id": 81,
+            "skill_id": 12041001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 1012,
+            "grow_value1": 182
+        },
+        {
+            "id": 82,
+            "skill_id": 12041001,
+            "level": 12,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}%",
+            "subtype1": 1002,
+            "display_type1": 1,
+            "value_type1": 1,
+            "value1": 697,
+            "grow_value1": 18
+        },
+        {
+            "id": 83,
+            "skill_id": 12041001,
+            "level": 18,
+            "skill_name": "暴击强化",
+            "skillinfo": "暴击率+{0}%",
+            "subtype1": 1203,
+            "display_type1": 1,
+            "value1": 256,
+            "grow_value1": 6
+        },
+        {
+            "id": 84,
+            "skill_id": 12041001,
+            "level": 24,
+            "skill_name": "精密猎手",
+            "skillinfo": "远程攻击额外造成8%伤害，并使自身提升8%移动速度，持续3秒",
+            "passive_skill_id": 10431001
+        },
+        {
+            "id": 85,
+            "skill_id": 12051001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 10434,
+            "grow_value1": 1875
+        },
+        {
+            "id": 86,
+            "skill_id": 12051001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 2086,
+            "grow_value1": 375
+        },
+        {
+            "id": 87,
+            "skill_id": 12051001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 1043,
+            "grow_value1": 188
+        },
+        {
+            "id": 88,
+            "skill_id": 12051001,
+            "level": 12,
+            "skill_name": "暴击强化",
+            "skillinfo": "暴击率+{0}%",
+            "subtype1": 1203,
+            "display_type1": 1,
+            "value1": 256,
+            "grow_value1": 6
+        },
+        {
+            "id": 89,
+            "skill_id": 12051001,
+            "level": 18,
+            "skill_name": "连击强化",
+            "skillinfo": "连击上限+{0}%",
+            "subtype1": 1209,
+            "display_type1": 1,
+            "value1": 979,
+            "grow_value1": 25
+        },
+        {
+            "id": 90,
+            "skill_id": 12051001,
+            "level": 24,
+            "skill_name": "神圣反击",
+            "skillinfo": "闪避反击成功时，增加自身15%攻击，持续5秒，CD10秒",
+            "passive_skill_id": 10441001
+        },
+        {
+            "id": 91,
+            "skill_id": 12061001,
+            "level": 1,
+            "skill_name": "生命强化",
+            "skillinfo": "生命值+{0}",
+            "subtype1": 1001,
+            "value1": 10017,
+            "grow_value1": 1800
+        },
+        {
+            "id": 92,
+            "skill_id": 12061001,
+            "level": 3,
+            "skill_name": "攻击强化",
+            "skillinfo": "攻击力+{0}",
+            "subtype1": 1002,
+            "value1": 2191,
+            "grow_value1": 393
+        },
+        {
+            "id": 93,
+            "skill_id": 12061001,
+            "level": 6,
+            "skill_name": "防御强化",
+            "skillinfo": "防御值+{0}",
+            "subtype1": 1003,
+            "value1": 1064,
+            "grow_value1": 191
+        },
+        {
+            "id": 94,
+            "skill_id": 12061001,
+            "level": 12,
+            "skill_name": "全伤强化",
+            "skillinfo": "全伤害+{0}%",
+            "subtype1": 1501,
+            "display_type1": 1,
+            "value1": 484,
+            "grow_value1": 12
+        },
+        {
+            "id": 95,
+            "skill_id": 12061001,
+            "level": 18,
+            "skill_name": "物伤强化",
+            "skillinfo": "物理伤害+{0}%",
+            "subtype1": 1503,
+            "display_type1": 1,
+            "value1": 489,
+            "grow_value1": 12
+        },
+        {
+            "id": 96,
+            "skill_id": 12061001,
+            "level": 24,
+            "skill_name": "锋刃",
+            "skillinfo": "近战攻击会使敌人出血，每秒造成50伤害，持续4秒",
+            "passive_skill_id": 10451001
+        }
+    ]
+}

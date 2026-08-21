@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table SoundBaseCfgData {
+  id:int;
+  sheet:string;
+}
+
+table SoundBaseCfgTable {
+  datas:[SoundBaseCfgData];
+}
+
+root_type SoundBaseCfgTable;

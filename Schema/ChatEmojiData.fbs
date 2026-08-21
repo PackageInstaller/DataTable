@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table ChatEmojiData {
+  id:int;
+  content:string;
+}
+
+table ChatEmojiTable {
+  datas:[ChatEmojiData];
+}
+
+root_type ChatEmojiTable;

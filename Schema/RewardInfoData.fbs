@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table RewardInfoData {
+  id:int;
+  reward_id:int;
+  reward_type:int;
+  reward_list:int;
+  item_type:int;
+  item_id:int;
+  min_num:int;
+  max_num:int;
+}
+
+table RewardInfoTable {
+  datas:[RewardInfoData];
+}
+
+root_type RewardInfoTable;

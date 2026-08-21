@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table WeatherData {
+  id:int;
+  stage_id:int;
+  allow_time:int;
+  weather_type:int;
+  min_second:int;
+  max_second:int;
+  rate:int;
+  next_weather:int;
+}
+
+table WeatherTable {
+  datas:[WeatherData];
+}
+
+root_type WeatherTable;

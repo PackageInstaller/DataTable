@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table CardFriendListData {
+  id:int;
+  card_id:int;
+  relation_level:int;
+  order:int;
+  name:string;
+  icon:string;
+  desc:string;
+  detail:string;
+}
+
+table CardFriendListTable {
+  datas:[CardFriendListData];
+}
+
+root_type CardFriendListTable;

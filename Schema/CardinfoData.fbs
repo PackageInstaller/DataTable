@@ -1,0 +1,29 @@
+namespace ProjectA.Data;
+
+table CardinfoData {
+  card_base_id:int;
+  fullname:string;
+  cv:string;
+  name_en:string;
+  dorm_num:int;
+  doorplate:string;
+  bg_pic:string;
+  bookbg_pic:string;
+  rotate_bg:string;
+  race:string;
+  height:string;
+  weight:string;
+  birthday:string;
+  score:string;
+  pos_id:string;
+  desc:string;
+  is_illustratedbook:bool;
+  talent_bg:string;
+  illustratedbook_image:string;
+}
+
+table CardinfoTable {
+  datas:[CardinfoData];
+}
+
+root_type CardinfoTable;

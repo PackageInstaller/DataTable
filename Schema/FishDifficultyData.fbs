@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table FishDifficultyData {
+  difficulty:int;
+  success_radius:int;
+  fail_radius:int;
+  initial_radius:int;
+  speed:int;
+  appear_time_min:int;
+  appear_time_max:int;
+}
+
+table FishDifficultyTable {
+  datas:[FishDifficultyData];
+}
+
+root_type FishDifficultyTable;

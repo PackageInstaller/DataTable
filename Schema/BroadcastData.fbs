@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table BroadcastData {
+  id:int;
+  type:int;
+  para:int;
+  content:string;
+}
+
+table BroadcastTable {
+  datas:[BroadcastData];
+}
+
+root_type BroadcastTable;

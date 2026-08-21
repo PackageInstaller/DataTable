@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table HelpData {
+  id:int;
+  tutorial_book_id:int;
+}
+
+table HelpTable {
+  datas:[HelpData];
+}
+
+root_type HelpTable;

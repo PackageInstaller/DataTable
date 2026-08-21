@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table FurnitureScoreData {
+  id:int;
+  point:int;
+  rate:int;
+  img:string;
+}
+
+table FurnitureScoreTable {
+  datas:[FurnitureScoreData];
+}
+
+root_type FurnitureScoreTable;

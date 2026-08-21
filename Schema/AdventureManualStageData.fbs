@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table AdventureManualStageData {
+  id:int;
+  area_id:int;
+  adventure_stage_id:int;
+  difficulty:int;
+  img:string;
+  area_desc:string;
+  appear_monster_length:int;
+  appear_item_length:int;
+}
+
+table AdventureManualStageTable {
+  datas:[AdventureManualStageData];
+}
+
+root_type AdventureManualStageTable;

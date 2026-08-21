@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table AttributeLimitData {
+  id:int;
+  type:string;
+  value_type:int;
+  value:int;
+  par_type:int;
+}
+
+table AttributeLimitTable {
+  datas:[AttributeLimitData];
+}
+
+root_type AttributeLimitTable;

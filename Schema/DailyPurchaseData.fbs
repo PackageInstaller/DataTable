@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table DailyPurchaseData {
+  id:int;
+  event_id:int;
+  name:string;
+  icon:string;
+  recharge_id:string;
+  price_show:string;
+  price:int;
+  discount:string;
+  reward_id:int;
+}
+
+table DailyPurchaseTable {
+  datas:[DailyPurchaseData];
+}
+
+root_type DailyPurchaseTable;

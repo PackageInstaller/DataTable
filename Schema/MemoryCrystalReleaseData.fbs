@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table MemoryCrystalReleaseData {
+  id:int;
+  level:int;
+}
+
+table MemoryCrystalReleaseTable {
+  datas:[MemoryCrystalReleaseData];
+}
+
+root_type MemoryCrystalReleaseTable;

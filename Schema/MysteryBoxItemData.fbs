@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table MysteryBoxItemData {
+  id:int;
+  item_id:int;
+  group_id:int;
+  order:int;
+  box:int;
+  num_base:int;
+  isbroadcast:bool;
+}
+
+table MysteryBoxItemTable {
+  datas:[MysteryBoxItemData];
+}
+
+root_type MysteryBoxItemTable;

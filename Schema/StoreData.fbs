@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table StoreData {
+  id:int;
+  store_id:int;
+  store_name:string;
+  store_unlock_condition:int;
+  unlock_cfg1:int;
+  unlock_cfg2:int;
+  category_id:int;
+  camp:int;
+  category_name:string;
+  category_icon:string;
+  category_type:int;
+  refresh_time_length:int;
+  resource_id_length:int;
+}
+
+table StoreTable {
+  datas:[StoreData];
+}
+
+root_type StoreTable;

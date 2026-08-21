@@ -1,0 +1,25 @@
+namespace ProjectA.Data;
+
+table ElementDeckData {
+  id:int;
+  level_id:int;
+  name:string;
+  desc:string;
+  show_number:int;
+  show_word:string;
+  type:int;
+  number:int;
+  cost_hp:int;
+  cost_sp:int;
+  item_id:int;
+  item_num:int;
+  chance:int;
+  frame:string;
+  icon:string;
+}
+
+table ElementDeckTable {
+  datas:[ElementDeckData];
+}
+
+root_type ElementDeckTable;

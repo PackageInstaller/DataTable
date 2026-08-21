@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table PairsGameCardData {
+  id:int;
+  score:int;
+  group:int;
+  type:int;
+  icon:string;
+}
+
+table PairsGameCardTable {
+  datas:[PairsGameCardData];
+}
+
+root_type PairsGameCardTable;

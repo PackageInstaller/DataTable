@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table StoreRandomGoodsBagData {
+  id:int;
+  bag_id:int;
+  item_type:int;
+  item_id:int;
+  item_num:int;
+  cost_resource_type:int;
+  cost_resource_id:int;
+  buy_time_limit:int;
+  limit:int;
+  is_show_hold:int;
+  can_discount:int;
+}
+
+table StoreRandomGoodsBagTable {
+  datas:[StoreRandomGoodsBagData];
+}
+
+root_type StoreRandomGoodsBagTable;

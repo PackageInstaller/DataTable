@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table LessonAfterData {
+  id:int;
+  lesson_id:int;
+  option:int;
+  note_id:int;
+  card_id:int;
+  relation_level:int;
+  conversation_id:string;
+  friendly_card_id:int;
+  relation_up:int;
+}
+
+table LessonAfterTable {
+  datas:[LessonAfterData];
+}
+
+root_type LessonAfterTable;

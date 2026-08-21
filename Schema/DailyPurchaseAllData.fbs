@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table DailyPurchaseAllData {
+  id:int;
+  event_id:int;
+  recharge_id:string;
+  name:string;
+  price:int;
+  origin_price:string;
+  duration:int;
+  pachage_id_length:int;
+}
+
+table DailyPurchaseAllTable {
+  datas:[DailyPurchaseAllData];
+}
+
+root_type DailyPurchaseAllTable;

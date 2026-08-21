@@ -1,0 +1,27 @@
+namespace ProjectA.Data;
+
+table CardAdvanceData {
+  card_id:int;
+  levellimit:int;
+  advance_item:int;
+  item_value:int;
+  atrr1:int;
+  atrr1_value:int;
+  atrr1_grow_value:int;
+  atrr2:int;
+  atrr2_value:int;
+  atrr2_grow_value:int;
+  atrr3:int;
+  atrr3_value:int;
+  atrr3_grow_value:int;
+  main_skill_img:string;
+  cardbackground:string;
+  pose_action:string;
+  advance_timeline:string;
+}
+
+table CardAdvanceTable {
+  datas:[CardAdvanceData];
+}
+
+root_type CardAdvanceTable;

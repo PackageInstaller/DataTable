@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table EventPointData {
+  point_id:int;
+  system_id:int;
+  cfg1:int;
+  name:string;
+  text:string;
+  rare:int;
+  bg_color:int;
+  icon_id:string;
+  gain_id_length:int;
+}
+
+table EventPointTable {
+  datas:[EventPointData];
+}
+
+root_type EventPointTable;

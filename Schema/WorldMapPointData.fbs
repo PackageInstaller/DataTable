@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table WorldMapPointData {
+  id:int;
+  region_id:int;
+  point_type:int;
+  area_id:int;
+  strong_hold_id:int;
+  can_trigger_random_event:int;
+  event_trigger_point_group:int;
+  area_location:int;
+}
+
+table WorldMapPointTable {
+  datas:[WorldMapPointData];
+}
+
+root_type WorldMapPointTable;

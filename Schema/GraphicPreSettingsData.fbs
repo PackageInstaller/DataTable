@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table GraphicPreSettingsData {
+  id:int;
+  gpu:string;
+  prologue_graphic_setting_type:int;
+  graphic_setting_type:int;
+  close_effect:bool;
+  shadow_compatible:bool;
+  shadow_disable:bool;
+  disable_gpui_early_z:bool;
+}
+
+table GraphicPreSettingsTable {
+  datas:[GraphicPreSettingsData];
+}
+
+root_type GraphicPreSettingsTable;

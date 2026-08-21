@@ -1,0 +1,22 @@
+namespace ProjectA.Data;
+
+table EventCfgData {
+  id:int;
+  event_id:int;
+  is_scence:int;
+  operate_type:int;
+  name:string;
+  event_prefab_id:string;
+  logo_pic:string;
+  exchange_store_id:int;
+  event_item_id_length:int;
+  achieve_sub_kind:int;
+  section:int;
+  map_btn_pic:string;
+}
+
+table EventCfgTable {
+  datas:[EventCfgData];
+}
+
+root_type EventCfgTable;

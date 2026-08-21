@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table HuntAccumulateRewardData {
+  id:int;
+  event_id:int;
+  stars:int;
+  reward_id:int;
+}
+
+table HuntAccumulateRewardTable {
+  datas:[HuntAccumulateRewardData];
+}
+
+root_type HuntAccumulateRewardTable;

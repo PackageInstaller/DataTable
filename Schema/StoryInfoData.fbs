@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table StoryInfoData {
+  story_id:int;
+  chapter_id:int;
+  chapter_name:string;
+  section_id:int;
+  section_name:string;
+  unlock_id:int;
+  desc:string;
+}
+
+table StoryInfoTable {
+  datas:[StoryInfoData];
+}
+
+root_type StoryInfoTable;

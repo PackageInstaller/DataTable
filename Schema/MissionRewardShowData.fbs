@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table MissionRewardShowData {
+  mission_id:int;
+  item_type:int;
+  item_id:int;
+  show_num:int;
+}
+
+table MissionRewardShowTable {
+  datas:[MissionRewardShowData];
+}
+
+root_type MissionRewardShowTable;

@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table AIDefultTargetModelData {
+  id:int;
+  target_model:int;
+}
+
+table AIDefultTargetModelTable {
+  datas:[AIDefultTargetModelData];
+}
+
+root_type AIDefultTargetModelTable;

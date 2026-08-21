@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table NightTalkTopicData {
+  id:int;
+  show_id:int;
+  topic_name:string;
+  card_id:int;
+  conversation_id:int;
+  mail_id:int;
+  is_count:int;
+  model:int;
+}
+
+table NightTalkTopicTable {
+  datas:[NightTalkTopicData];
+}
+
+root_type NightTalkTopicTable;

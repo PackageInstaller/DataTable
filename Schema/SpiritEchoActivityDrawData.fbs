@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table SpiritEchoActivityDrawData {
+  draw_num:int;
+  cost:int;
+  item_level:int;
+}
+
+table SpiritEchoActivityDrawTable {
+  datas:[SpiritEchoActivityDrawData];
+}
+
+root_type SpiritEchoActivityDrawTable;

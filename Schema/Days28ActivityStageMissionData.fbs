@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table Days28ActivityStageMissionData {
+  id:int;
+  select_flag:int;
+  stage_type:int;
+  order:int;
+  mission_id:int;
+}
+
+table Days28ActivityStageMissionTable {
+  datas:[Days28ActivityStageMissionData];
+}
+
+root_type Days28ActivityStageMissionTable;

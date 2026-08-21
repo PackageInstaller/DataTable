@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table TabInfoData {
+  id:int;
+  tab_id1:int;
+  tab_name1:string;
+  tab_order1:int;
+  is_show_time1:bool;
+  tab_name2:string;
+  tab_order2:int;
+  is_show_time2:bool;
+  tab_show_type:int;
+  img:string;
+  jump_info:int;
+}
+
+table TabInfoTable {
+  datas:[TabInfoData];
+}
+
+root_type TabInfoTable;

@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table FoodRecipeMenuData {
+  recipe_base_id:int;
+  name:string;
+  rare:int;
+  type:int;
+  bg_color:int;
+  icon:string;
+  desc:string;
+  base_effect_desc:string;
+  extra_effeact_name1:string;
+  extra_effeact_detail1:string;
+  extra_effeact_name2:string;
+  extra_effeact_detail2:string;
+  extra_effeact_name3:string;
+  extra_effeact_detail3:string;
+}
+
+table FoodRecipeMenuTable {
+  datas:[FoodRecipeMenuData];
+}
+
+root_type FoodRecipeMenuTable;

@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table PhotoPoseData {
+  id:int;
+  card_name:string;
+  card_id:int;
+  pose_name:string;
+  pose_icon:string;
+  pose_trigger:string;
+  fashionpose:int;
+}
+
+table PhotoPoseTable {
+  datas:[PhotoPoseData];
+}
+
+root_type PhotoPoseTable;

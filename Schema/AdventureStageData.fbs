@@ -1,0 +1,78 @@
+namespace ProjectA.Data;
+
+table AdventureStageData {
+  stage_id:int;
+  event_id:int;
+  name:string;
+  main:int;
+  affix_length:int;
+  stage_machanic_type:int;
+  stage_machanic_cfg:int;
+  story_weather:int;
+  story_time:int;
+  freeze_story_time:int;
+  window_type:int;
+  desc:string;
+  reward_desc:string;
+  first_pass_reward_id:int;
+  area_id:int;
+  map_level:int;
+  require_level:int;
+  recommend_level:int;
+  asset:int;
+  target1:string;
+  target2:string;
+  target3:string;
+  stage_img:string;
+  through_type:int;
+  through_cfg:int;
+  stage_type:int;
+  is_change:int;
+  pre_stage_length:int;
+  pre_mission:int;
+  necessary_mission_length:int;
+  icon:string;
+  order:int;
+  mini_map:string;
+  mini_map_prefab:string;
+  mini_map_scale:int;
+  mini_map_offset_length:int;
+  mini_map_rotate:int;
+  map:string;
+  map_prefab:string;
+  map_layer:int;
+  map_scale:int;
+  map_offset_length:int;
+  map_rotate:int;
+  role_exp:int;
+  card_exp:int;
+  appear_monster_length:int;
+  appear_monster_level_length:int;
+  appear_collection_length:int;
+  drop_show1_type:int;
+  drop_show1:int;
+  drop_show2_type:int;
+  drop_show2:int;
+  drop_show3_type:int;
+  drop_show3:int;
+  drop_show4_type:int;
+  drop_show4:int;
+  back_point:int;
+  back_city:int;
+  spawn_at_start_point:int;
+  unavailable_card_length:int;
+  fixed_card_length:int;
+  card_number_limited:int;
+  assign_card_length:int;
+  is_event:int;
+  back_activity_ui:int;
+  frame:string;
+  game_type:int;
+  ui_type:int;
+}
+
+table AdventureStageTable {
+  datas:[AdventureStageData];
+}
+
+root_type AdventureStageTable;

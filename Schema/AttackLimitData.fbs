@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table AttackLimitData {
+  id:int;
+  lower_is_value:bool;
+  lower_limit:int;
+  upper_is_value:bool;
+  upper_limit:int;
+}
+
+table AttackLimitTable {
+  datas:[AttackLimitData];
+}
+
+root_type AttackLimitTable;

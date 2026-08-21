@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table CollectEventData {
+  event_id:int;
+  banner_img:string;
+  jump_id:int;
+}
+
+table CollectEventTable {
+  datas:[CollectEventData];
+}
+
+root_type CollectEventTable;

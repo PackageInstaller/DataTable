@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table MemoryCrystalSpineCfgData {
+  id:int;
+  min:float;
+  max:float;
+  scale:float;
+}
+
+table MemoryCrystalSpineCfgTable {
+  datas:[MemoryCrystalSpineCfgData];
+}
+
+root_type MemoryCrystalSpineCfgTable;

@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table LevelChatGeneralData {
+  id:int;
+  chat_id:int;
+  card_id:int;
+  start_voice_id:int;
+  start_voice_content:string;
+  react_voice_id:int;
+  react_voice_content:string;
+  relation_up:int;
+  cd:int;
+}
+
+table LevelChatGeneralTable {
+  datas:[LevelChatGeneralData];
+}
+
+root_type LevelChatGeneralTable;

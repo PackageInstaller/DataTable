@@ -1,0 +1,44 @@
+{
+    "datas": [
+        {
+            "id": 10303001,
+            "stage_monster_id": 23120000,
+            "sum_rule": 1,
+            "attr_percent": 100.0,
+            "amount_limit": 1,
+            "live_time_limit": -1.0,
+            "is_del_master_death": 1,
+            "is_del_out_combat": 1
+        },
+        {
+            "id": 10303002,
+            "stage_monster_id": 10303001,
+            "sum_rule": 1,
+            "attr_percent": -1.0,
+            "amount_limit": 1,
+            "live_time_limit": -1.0,
+            "is_del_master_death": 3,
+            "is_del_out_combat": 3
+        },
+        {
+            "id": 10303003,
+            "stage_monster_id": 10303001,
+            "sum_rule": -1,
+            "attr_percent": -1.0,
+            "amount_limit": 2,
+            "live_time_limit": 60.0,
+            "is_del_master_death": -1,
+            "is_del_out_combat": -1
+        },
+        {
+            "id": 10203260,
+            "stage_monster_id": 23000000,
+            "sum_rule": -1,
+            "attr_percent": 100.0,
+            "amount_limit": 24,
+            "live_time_limit": 30.0,
+            "is_del_master_death": 1,
+            "is_del_out_combat": 1
+        }
+    ]
+}

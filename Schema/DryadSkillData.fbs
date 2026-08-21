@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table DryadSkillData {
+  skill_id:int;
+  skill_type:int;
+  is_global:int;
+  cfg1:int;
+  cfg2_length:int;
+  name:string;
+  desc:string;
+  icon:string;
+  mini_icon:string;
+  is_open:int;
+}
+
+table DryadSkillTable {
+  datas:[DryadSkillData];
+}
+
+root_type DryadSkillTable;

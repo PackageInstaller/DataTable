@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table TutorialBookData {
+  id:int;
+  book_tutorial_group:int;
+  page:int;
+  title:string;
+  content_type:int;
+  img_name:string;
+  video_name:string;
+  desc:string;
+}
+
+table TutorialBookTable {
+  datas:[TutorialBookData];
+}
+
+root_type TutorialBookTable;

@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table DormitoryDecorateData {
+  id:int;
+  card_id:int;
+  judge_cfg:int;
+  item_type:int;
+  item_id:int;
+  point_id:string;
+  pic:string;
+  bgm_name:string;
+  card_appreciate_id:string;
+}
+
+table DormitoryDecorateTable {
+  datas:[DormitoryDecorateData];
+}
+
+root_type DormitoryDecorateTable;

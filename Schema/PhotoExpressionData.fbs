@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table PhotoExpressionData {
+  id:int;
+  name:string;
+  eye_id:string;
+  mouth_id:string;
+  eyebrow:string;
+  icon:string;
+}
+
+table PhotoExpressionTable {
+  datas:[PhotoExpressionData];
+}
+
+root_type PhotoExpressionTable;

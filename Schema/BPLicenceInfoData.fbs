@@ -1,0 +1,37 @@
+namespace ProjectA.Data;
+
+table BPLicenceInfoData {
+  bp_licence_id:int;
+  theme_name:string;
+  start_time:int;
+  end_time:int;
+  collection_edition_rwd_id:int;
+  background_path1:string;
+  background_path2:string;
+  bp_style_path:string;
+  bp_ads1:string;
+  bp_ads1_name:string;
+  bp_ads1_text:string;
+  bp_ads2:string;
+  bp_ads2_name:string;
+  show_advanced_rwd_id:int;
+  show_collection_rwd_id:int;
+  bp_licence_icon:string;
+  collection_edition_lv:int;
+  lv_img:string;
+  gift_bg_img1:string;
+  gift_bg_img2:string;
+  mission_tab_act:string;
+  mission_tab_inact:string;
+  gif_tab_act:string;
+  git_tab_inact:string;
+  daily_mission_tab:string;
+  weekly_mission_tab:string;
+  mission_bg:string;
+}
+
+table BPLicenceInfoTable {
+  datas:[BPLicenceInfoData];
+}
+
+root_type BPLicenceInfoTable;

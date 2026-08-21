@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table BookCollectRewardData {
+  id:int;
+  book_id_length:int;
+  icon:string;
+  title:string;
+  desc:string;
+  order:int;
+  reward_id:int;
+}
+
+table BookCollectRewardTable {
+  datas:[BookCollectRewardData];
+}
+
+root_type BookCollectRewardTable;

@@ -1,0 +1,64 @@
+namespace ProjectA.Data;
+
+table AttackData {
+  id:int;
+  attack_id:int;
+  order_id:int;
+  act_id:string;
+  se:string;
+  stuckframe:int;
+  hit_shake:int;
+  beakback:int;
+  fight:int;
+  attack_intensity:int;
+  ignore_shake:bool;
+  affect_character:int;
+  super_armor_value:int;
+  faint:int;
+  from:int;
+  base_atb:int;
+  type:int;
+  value:int;
+  value_up_per_level:int;
+  hit_up_val:int;
+  sp_up_val:float;
+  tp_up_val:float;
+  effect1:int;
+  effect2:int;
+  effect3:int;
+  effect4:int;
+  effect5:int;
+  effect6:int;
+  target:int;
+  hit_effect:string;
+  ifhit_effect_rand_rotation:bool;
+  status_type:int;
+  status_gain:int;
+  status_val1:int;
+  status_val2:int;
+  target_type:int;
+  element:int;
+  base_critical:int;
+  critical_value:int;
+  critical_damage:int;
+  blood_lv:int;
+  attack_type:int;
+  immue_argue:int;
+  no_trigger_counter:bool;
+  level_up_effect_type:int;
+  level_up_effect_value:int;
+  accumulating:int;
+  is_no_hurt_se:bool;
+  is_no_passive:bool;
+  mark_trigger_length:int;
+  hate_ratio:int;
+  control_accumulat_type:int;
+  control_accumulating:int;
+  damage_limit:int;
+}
+
+table AttackTable {
+  datas:[AttackData];
+}
+
+root_type AttackTable;

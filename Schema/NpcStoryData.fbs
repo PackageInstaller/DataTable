@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table NpcStoryData {
+  id:int;
+  card_id:int;
+  relation_level:int;
+  pre_mission:int;
+  show_mission:string;
+  story_info:string;
+  unlock_reward_id:int;
+}
+
+table NpcStoryTable {
+  datas:[NpcStoryData];
+}
+
+root_type NpcStoryTable;

@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table SceneObjectData {
+  id:int;
+  city_id:int;
+  name:string;
+  camera:string;
+  buiding_munu_length:int;
+}
+
+table SceneObjectTable {
+  datas:[SceneObjectData];
+}
+
+root_type SceneObjectTable;

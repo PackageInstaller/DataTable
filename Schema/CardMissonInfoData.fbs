@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table CardMissonInfoData {
+  id:int;
+  card_id:int;
+  pic:string;
+  name:string;
+  content_length:int;
+  pre_mission:int;
+  friend_level:int;
+  lock_text:string;
+}
+
+table CardMissonInfoTable {
+  datas:[CardMissonInfoData];
+}
+
+root_type CardMissonInfoTable;

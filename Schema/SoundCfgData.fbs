@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table SoundCfgData {
+  id:int;
+  sheet:string;
+  cue:string;
+  volume:int;
+}
+
+table SoundCfgTable {
+  datas:[SoundCfgData];
+}
+
+root_type SoundCfgTable;

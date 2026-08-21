@@ -1,0 +1,33 @@
+namespace ProjectA.Data;
+
+table ElementCardLevelData {
+  id:int;
+  type:int;
+  level:int;
+  fog_card:int;
+  pic:string;
+  deck_name:string;
+  difficulty_name:string;
+  element_icon:string;
+  pre_level:int;
+  reward_id:int;
+  ticket_id:int;
+  ticket_num:int;
+  drop_show1_type:int;
+  drop_show1:int;
+  drop_show_num1:int;
+  drop_show2_type:int;
+  drop_show2:int;
+  drop_show_num2:int;
+  drop_show3_type:int;
+  drop_show3:int;
+  drop_show_num3:int;
+  cardback:string;
+  cardback2:string;
+}
+
+table ElementCardLevelTable {
+  datas:[ElementCardLevelData];
+}
+
+root_type ElementCardLevelTable;

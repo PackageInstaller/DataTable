@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table MissionAreaData {
+  id:int;
+  stage_id:int;
+  mission_area_id:int;
+  area_name:string;
+}
+
+table MissionAreaTable {
+  datas:[MissionAreaData];
+}
+
+root_type MissionAreaTable;

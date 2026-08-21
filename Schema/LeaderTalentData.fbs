@@ -1,0 +1,27 @@
+namespace ProjectA.Data;
+
+table LeaderTalentData {
+  id:int;
+  leader_talent_id:int;
+  name:string;
+  level:int;
+  row_num:int;
+  column_num:int;
+  desc:string;
+  detail:string;
+  icon:string;
+  type_name:string;
+  effect_type:int;
+  effect_cfg1:int;
+  effect_cfg2:int;
+  required_resource1_length:int;
+  required_resource2_length:int;
+  required_resource3_length:int;
+  required_resource4_length:int;
+}
+
+table LeaderTalentTable {
+  datas:[LeaderTalentData];
+}
+
+root_type LeaderTalentTable;

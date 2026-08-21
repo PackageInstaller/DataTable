@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table CardRelationData {
+  id:int;
+  type:int;
+  name:string;
+  desc:string;
+  pre_desc:string;
+  ness_mission:int;
+  pre_mission:int;
+  pre_condition_type:int;
+  pre_condition_cfg1:int;
+  pre_condition_cfg2:int;
+  card_id_length:int;
+  relation_card_id_length:int;
+  skill_type:int;
+  skill_id:int;
+}
+
+table CardRelationTable {
+  datas:[CardRelationData];
+}
+
+root_type CardRelationTable;

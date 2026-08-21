@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table MemoryCrystalGrowUpData {
+  id:int;
+  rare:int;
+  level:int;
+  exp:int;
+}
+
+table MemoryCrystalGrowUpTable {
+  datas:[MemoryCrystalGrowUpData];
+}
+
+root_type MemoryCrystalGrowUpTable;

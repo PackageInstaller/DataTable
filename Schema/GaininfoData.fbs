@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table GaininfoData {
+  gain_id:int;
+  gain_desc:string;
+  icon:string;
+  jump_id:int;
+}
+
+table GaininfoTable {
+  datas:[GaininfoData];
+}
+
+root_type GaininfoTable;

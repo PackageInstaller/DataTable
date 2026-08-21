@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table StageMachanicConfigData {
+  id:int;
+  machanic_type:int;
+  stage_time_limit:int;
+  access_monster_limit:int;
+  monster_kill_bonus_time:int;
+  per_empty_extra_reward_id:int;
+  basic_reward_id:int;
+  total_monster_number:int;
+  spawn_monster_num:int;
+  spawn_elite_wave:int;
+  spawn_elite_num:int;
+  max_monster_number:int;
+  spawn_monster_id_length:int;
+  spawn_monster_cd:int;
+}
+
+table StageMachanicConfigTable {
+  datas:[StageMachanicConfigData];
+}
+
+root_type StageMachanicConfigTable;

@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table MissionNPCData {
+  mission_id:int;
+  type:int;
+  pathfinding_id:int;
+  stage_monster_id:int;
+}
+
+table MissionNPCTable {
+  datas:[MissionNPCData];
+}
+
+root_type MissionNPCTable;

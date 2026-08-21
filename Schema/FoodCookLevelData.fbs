@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table FoodCookLevelData {
+  cook_level:int;
+  need_exp:int;
+  exp:int;
+}
+
+table FoodCookLevelTable {
+  datas:[FoodCookLevelData];
+}
+
+root_type FoodCookLevelTable;

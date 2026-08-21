@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table StageMonsterFloatData {
+  id:int;
+  enemy_type:int;
+  level_min:int;
+  level_max:int;
+  hp:int;
+  attack:int;
+  defense:int;
+  crit_rate:int;
+}
+
+table StageMonsterFloatTable {
+  datas:[StageMonsterFloatData];
+}
+
+root_type StageMonsterFloatTable;

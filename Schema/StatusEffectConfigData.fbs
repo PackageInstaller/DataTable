@@ -1,0 +1,35 @@
+namespace ProjectA.Data;
+
+table StatusEffectConfigData {
+  id:int;
+  effect_id:int;
+  name:string;
+  buff_level:int;
+  icon_id:string;
+  parent1:string;
+  effect_id1:string;
+  color_id1:int;
+  parent2:string;
+  effect_id2:string;
+  color_id2:int;
+  parent3:string;
+  effect_id3:string;
+  color_id3:int;
+  parent4:string;
+  effect_id4:string;
+  color_id4:int;
+  parent5:string;
+  effect_id5:string;
+  color_id5:int;
+  enchantment:int;
+  emissive:int;
+  priority:bool;
+  marker_effect:string;
+  marker_effect_position:int;
+}
+
+table StatusEffectConfigTable {
+  datas:[StatusEffectConfigData];
+}
+
+root_type StatusEffectConfigTable;

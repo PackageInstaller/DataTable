@@ -1,0 +1,37 @@
+namespace ProjectA.Data;
+
+table ActionSkillData {
+  action_skill_id:int;
+  skill_id:int;
+  skill_base_id:int;
+  if_load_action:bool;
+  card_id:int;
+  icon_id:int;
+  act_type:int;
+  sp:int;
+  tp:int;
+  range:int;
+  degree:int;
+  attack_id_length:int;
+  stable_intensity:int;
+  is_super_armor:int;
+  invincible:bool;
+  skill_type:int;
+  cool_down:float;
+  if_aoe:int;
+  skill_class:int;
+  skill_info_id:int;
+  last_time:int;
+  channel_hint:string;
+  break_auto_lock:bool;
+  breakout_sp:int;
+  event_detect_type:int;
+  event_detect_time:float;
+  collider_interval:float;
+}
+
+table ActionSkillTable {
+  datas:[ActionSkillData];
+}
+
+root_type ActionSkillTable;

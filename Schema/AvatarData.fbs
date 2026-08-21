@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table AvatarData {
+  id:int;
+  avatar_resource:string;
+  rare:int;
+  bg_color:int;
+  name:string;
+  desc:string;
+  unlock_tips:string;
+  unlock_type:int;
+  unlock_cfg1:int;
+  unlock_cfg2:int;
+  version_id:int;
+}
+
+table AvatarTable {
+  datas:[AvatarData];
+}
+
+root_type AvatarTable;

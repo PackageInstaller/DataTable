@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table ExchangeStoreData {
+  exchange_store_id:int;
+  name:string;
+  type:int;
+  event_id:int;
+  npcid:int;
+  prefab_id:int;
+  talk:int;
+  touch:int;
+  touch_voice_sub_type:int;
+  enter_voice_sub_type:int;
+  event_end_enter_voice_sub_type:int;
+  almost_voice_num:int;
+  all_voice_num:int;
+}
+
+table ExchangeStoreTable {
+  datas:[ExchangeStoreData];
+}
+
+root_type ExchangeStoreTable;

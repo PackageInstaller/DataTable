@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table SceneBuffInfoData {
+  buff_id:int;
+  type:int;
+  value:int;
+  seconds:int;
+}
+
+table SceneBuffInfoTable {
+  datas:[SceneBuffInfoData];
+}
+
+root_type SceneBuffInfoTable;

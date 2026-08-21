@@ -1,0 +1,22 @@
+namespace ProjectA.Data;
+
+table RaceStageData {
+  id:int;
+  name:string;
+  stage_id:int;
+  cfg_id:int;
+  time_limit:int;
+  distance_limit:int;
+  pic:string;
+  timeline:string;
+  server_time_limit:int;
+  mid_spd:int;
+  bgm:string;
+  warm_time:int;
+}
+
+table RaceStageTable {
+  datas:[RaceStageData];
+}
+
+root_type RaceStageTable;

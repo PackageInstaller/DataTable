@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table NightTalkEndingData {
+  id:int;
+  topic_id:int;
+  option_id:int;
+  sign_type:int;
+}
+
+table NightTalkEndingTable {
+  datas:[NightTalkEndingData];
+}
+
+root_type NightTalkEndingTable;

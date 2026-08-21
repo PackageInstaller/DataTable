@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table CardTalentConfigData {
+  talent_base_id:int;
+  base_id:int;
+  connect_talents_length:int;
+  talent_local_pos_length:int;
+  talent_lines_length:int;
+  talent_line_types_length:int;
+}
+
+table CardTalentConfigTable {
+  datas:[CardTalentConfigData];
+}
+
+root_type CardTalentConfigTable;

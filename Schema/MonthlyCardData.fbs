@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table MonthlyCardData {
+  id:int;
+  resource_type:int;
+  resource_id:int;
+  resource_num:int;
+  reward_day:int;
+  renew_day:int;
+  mail:int;
+}
+
+table MonthlyCardTable {
+  datas:[MonthlyCardData];
+}
+
+root_type MonthlyCardTable;

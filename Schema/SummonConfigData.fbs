@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table SummonConfigData {
+  id:int;
+  stage_monster_id:int;
+  sum_rule:int;
+  attr_percent:float;
+  amount_limit:int;
+  live_time_limit:float;
+  is_del_master_death:int;
+  is_del_out_combat:int;
+}
+
+table SummonConfigTable {
+  datas:[SummonConfigData];
+}
+
+root_type SummonConfigTable;

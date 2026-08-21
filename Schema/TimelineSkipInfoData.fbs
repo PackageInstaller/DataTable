@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table TimelineSkipInfoData {
+  id:int;
+  time_line_id:string;
+  title_name:string;
+  text:string;
+}
+
+table TimelineSkipInfoTable {
+  datas:[TimelineSkipInfoData];
+}
+
+root_type TimelineSkipInfoTable;

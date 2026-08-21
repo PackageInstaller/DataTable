@@ -1,0 +1,22 @@
+namespace ProjectA.Data;
+
+table GuildWishData {
+  id:int;
+  wish_item:int;
+  relation_itemtype:int;
+  relation_item_id:int;
+  name:string;
+  number:int;
+  guild_position:int;
+  reward_type:int;
+  reward_id:int;
+  reward_value:int;
+  rate:int;
+  voice_sub_type:int;
+}
+
+table GuildWishTable {
+  datas:[GuildWishData];
+}
+
+root_type GuildWishTable;

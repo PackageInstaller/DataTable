@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table AchieveKindData {
+  id:int;
+  kind_id:int;
+  kind_name:string;
+  order:int;
+}
+
+table AchieveKindTable {
+  datas:[AchieveKindData];
+}
+
+root_type AchieveKindTable;

@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table CardTalentData {
+  talent_base_id:int;
+  base_id:int;
+  name:string;
+  icon_base:string;
+  icon:string;
+  effect_color:int;
+  type:int;
+  cfg1:int;
+  cfg2:int;
+  cfg3:int;
+}
+
+table CardTalentTable {
+  datas:[CardTalentData];
+}
+
+root_type CardTalentTable;

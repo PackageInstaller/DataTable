@@ -1,0 +1,27 @@
+namespace ProjectA.Data;
+
+table MysteryBoxData {
+  id:int;
+  name:string;
+  order:int;
+  drop_base:int;
+  drop_special:int;
+  reset_type:int;
+  use_time:int;
+  use_time_reduce:int;
+  preb_box:string;
+  preb_box2:string;
+  preb_box3:string;
+  box_icon:string;
+  group_id:int;
+  item_type:int;
+  item_id:int;
+  num:int;
+  new_icon:bool;
+}
+
+table MysteryBoxTable {
+  datas:[MysteryBoxData];
+}
+
+root_type MysteryBoxTable;

@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table AccumulatingDebuffBaseData {
+  id:int;
+  name:string;
+  element:int;
+  control_type:int;
+  icon_id:string;
+  backicon_id:string;
+  fullbackicon_id:string;
+  backlightid:string;
+  statusid_length:int;
+}
+
+table AccumulatingDebuffBaseTable {
+  datas:[AccumulatingDebuffBaseData];
+}
+
+root_type AccumulatingDebuffBaseTable;

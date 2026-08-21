@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table AIFeatureData {
+  id:int;
+  behaviortree:string;
+  val1:float;
+  val2:float;
+  val3:float;
+  val4:float;
+  val5:float;
+  val6:float;
+}
+
+table AIFeatureTable {
+  datas:[AIFeatureData];
+}
+
+root_type AIFeatureTable;

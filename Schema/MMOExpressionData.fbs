@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table MMOExpressionData {
+  id:int;
+  name:string;
+  eye_id:string;
+  mouth_id:string;
+  eyebrow:string;
+  icon:string;
+}
+
+table MMOExpressionTable {
+  datas:[MMOExpressionData];
+}
+
+root_type MMOExpressionTable;

@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table SpiritEchoActivityRewardData {
+  id:int;
+  event_id:int;
+  reward_id:int;
+  item_level:int;
+  item_weight:int;
+  jump_id:int;
+}
+
+table SpiritEchoActivityRewardTable {
+  datas:[SpiritEchoActivityRewardData];
+}
+
+root_type SpiritEchoActivityRewardTable;

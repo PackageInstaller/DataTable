@@ -1,0 +1,29 @@
+namespace ProjectA.Data;
+
+table StoreRegularShopData {
+  goods_id:int;
+  category_id:int;
+  order:int;
+  item_type:int;
+  item_id:int;
+  item_num:int;
+  resource_cfg1:int;
+  resource_cfg2:int;
+  limit_type:int;
+  limit_param:int;
+  unlock_condition:int;
+  unlock_cfg1:int;
+  unlock_cfg2:int;
+  lock_text:string;
+  resource_type:int;
+  is_show_countdown:int;
+  is_show_hold:int;
+  is_can_batch:int;
+  batch_purchase_limit:int;
+}
+
+table StoreRegularShopTable {
+  datas:[StoreRegularShopData];
+}
+
+root_type StoreRegularShopTable;

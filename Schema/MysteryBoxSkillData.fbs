@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table MysteryBoxSkillData {
+  id:int;
+  name:string;
+  item_type:int;
+  item_id:int;
+  type:int;
+  des:string;
+  icon:string;
+}
+
+table MysteryBoxSkillTable {
+  datas:[MysteryBoxSkillData];
+}
+
+root_type MysteryBoxSkillTable;

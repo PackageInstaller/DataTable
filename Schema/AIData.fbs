@@ -1,0 +1,19 @@
+namespace ProjectA.Data;
+
+table AIData {
+  id:int;
+  behaviortree:string;
+  int_val_ary1_length:int;
+  val1:float;
+  val2:float;
+  val3:float;
+  val4:float;
+  val5:float;
+  val6:float;
+}
+
+table AITable {
+  datas:[AIData];
+}
+
+root_type AITable;

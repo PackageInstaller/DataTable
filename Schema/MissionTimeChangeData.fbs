@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table MissionTimeChangeData {
+  mission_id:int;
+  type:int;
+  time:int;
+}
+
+table MissionTimeChangeTable {
+  datas:[MissionTimeChangeData];
+}
+
+root_type MissionTimeChangeTable;

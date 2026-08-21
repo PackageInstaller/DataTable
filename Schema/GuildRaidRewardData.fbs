@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table GuildRaidRewardData {
+  id:int;
+  event_id:int;
+  type:int;
+  require_point:int;
+  reward_id:int;
+}
+
+table GuildRaidRewardTable {
+  datas:[GuildRaidRewardData];
+}
+
+root_type GuildRaidRewardTable;

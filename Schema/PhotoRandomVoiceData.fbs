@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table PhotoRandomVoiceData {
+  id:int;
+  character_id:int;
+  voice_id:int;
+  voice_txt:string;
+}
+
+table PhotoRandomVoiceTable {
+  datas:[PhotoRandomVoiceData];
+}
+
+root_type PhotoRandomVoiceTable;

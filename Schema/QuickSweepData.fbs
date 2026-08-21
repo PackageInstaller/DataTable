@@ -1,0 +1,25 @@
+namespace ProjectA.Data;
+
+table QuickSweepData {
+  id:int;
+  name:string;
+  remark:string;
+  icon:string;
+  introtext:string;
+  type_length:int;
+  difficult:int;
+  unlocklevel:int;
+  unlockmission:int;
+  tickettype:int;
+  ticketid:int;
+  ticketnum:int;
+  collectionpointuasge:int;
+  guranteedloot:int;
+  randomloot:int;
+}
+
+table QuickSweepTable {
+  datas:[QuickSweepData];
+}
+
+root_type QuickSweepTable;

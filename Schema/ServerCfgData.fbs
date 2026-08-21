@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table ServerCfgData {
+  id:int;
+  server_id:int;
+  server_name:string;
+  publisher:string;
+  ip:string;
+  port:int;
+  part_name:int;
+}
+
+table ServerCfgTable {
+  datas:[ServerCfgData];
+}
+
+root_type ServerCfgTable;

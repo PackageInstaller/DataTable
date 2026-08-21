@@ -1,0 +1,17 @@
+namespace ProjectA.Data;
+
+table CityData {
+  id:int;
+  city_name:string;
+  city_id:int;
+  area_id:int;
+  part:int;
+  part_name:string;
+  pre_mission:int;
+}
+
+table CityTable {
+  datas:[CityData];
+}
+
+root_type CityTable;

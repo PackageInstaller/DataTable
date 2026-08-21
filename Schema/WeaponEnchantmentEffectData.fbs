@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table WeaponEnchantmentEffectData {
+  order_id:int;
+  id:int;
+  weapon_id:int;
+  trigger_name:string;
+}
+
+table WeaponEnchantmentEffectTable {
+  datas:[WeaponEnchantmentEffectData];
+}
+
+root_type WeaponEnchantmentEffectTable;

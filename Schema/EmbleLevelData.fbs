@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table EmbleLevelData {
+  id:int;
+  emblem_id:int;
+  level:int;
+  item_id1:int;
+  item_num1:int;
+  item_id2:int;
+  item_num2:int;
+  atrr1_info:int;
+  atrr1_info_value:int;
+  atrr2_info:int;
+  atrr2_info_value:int;
+  atrr3_info:int;
+  atrr3_info_value:int;
+}
+
+table EmbleLevelTable {
+  datas:[EmbleLevelData];
+}
+
+root_type EmbleLevelTable;

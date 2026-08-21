@@ -1,0 +1,26 @@
+namespace ProjectA.Data;
+
+table LoadingPictureData {
+  id:int;
+  unlock_type1:int;
+  unlock_cfg1:int;
+  unlock_type2:int;
+  unlock_cfg2:int;
+  appear_condition:int;
+  appear_cfg1:int;
+  appear_condition2:int;
+  appear_cfg2:int;
+  priority:int;
+  title:string;
+  desc:string;
+  img_name:string;
+  rate:int;
+  unlock_guarantee:int;
+  condition_guarantee:int;
+}
+
+table LoadingPictureTable {
+  datas:[LoadingPictureData];
+}
+
+root_type LoadingPictureTable;

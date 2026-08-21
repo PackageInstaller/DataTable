@@ -1,0 +1,62 @@
+namespace ProjectA.Data;
+
+table EquipInfoData {
+  equip_id:int;
+  name:string;
+  text:string;
+  equip_type_name:string;
+  type:int;
+  card_id:int;
+  sub_type:int;
+  card_base_id:int;
+  rare:int;
+  bg_color:int;
+  is_show:int;
+  atrr1_info:int;
+  atrr1_info_value:int;
+  atrr1_grow_value:int;
+  atrr2_info:int;
+  atrr2_info_value:int;
+  atrr2_grow_value:int;
+  affix1_type_length:int;
+  affix1_id_length:int;
+  affix2_type_length:int;
+  affix2_id_length:int;
+  affix3_type_length:int;
+  affix3_id_length:int;
+  enchant_affix1_type:int;
+  enchant_affix1_id_length:int;
+  enchant_affix2_type:int;
+  enchant_affix2_id_length:int;
+  icon:string;
+  bigicon:string;
+  model_id_length:int;
+  is_sell:int;
+  price:int;
+  acquire_way_length:int;
+  game_cfg:int;
+  score_good:int;
+  score_perfect:int;
+  isbroadcast:int;
+  backpack:int;
+  sub_backpack_length:int;
+  reward_type:int;
+  reward_id:int;
+  necessary_item_type:int;
+  necessary_item:int;
+  base_exp:int;
+  extra_exp:int;
+  can_break_up:int;
+  product1_length:int;
+  product2_length:int;
+  grow_cost_item_length:int;
+  is_illustratedbook:bool;
+  illustratedbook_display:int;
+  version_id:int;
+}
+
+table EquipInfoTable {
+  datas:[EquipInfoData];
+}
+
+root_type EquipInfoTable;

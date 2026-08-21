@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table MissionDropData {
+  id:int;
+  pre_system_id:int;
+  mission_id:int;
+  type:int;
+  cfg_length:int;
+}
+
+table MissionDropTable {
+  datas:[MissionDropData];
+}
+
+root_type MissionDropTable;

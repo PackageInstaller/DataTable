@@ -1,0 +1,41 @@
+namespace ProjectA.Data;
+
+table FormulaData {
+  formula_id:int;
+  name:string;
+  text:string;
+  italic_text:string;
+  intro_text:string;
+  type:int;
+  sub_type:int;
+  order:int;
+  rare:int;
+  bg_color:int;
+  icon_id:string;
+  product_type:int;
+  product_id:int;
+  chanwu:string;
+  material_type1:int;
+  material_id1:int;
+  material_num1:int;
+  material_type2:int;
+  material_id2:int;
+  material_num2:int;
+  material_type3:int;
+  material_id3:int;
+  material_num3:int;
+  material_type4:int;
+  material_id4:int;
+  material_num4:int;
+  return_type:int;
+  return_nun:int;
+  color_change_length:int;
+  need_card_length:int;
+  version_id:int;
+}
+
+table FormulaTable {
+  datas:[FormulaData];
+}
+
+root_type FormulaTable;

@@ -1,0 +1,21 @@
+namespace ProjectA.Data;
+
+table QuicklyBuyData {
+  quickly_buy:int;
+  mutative_price_id:int;
+  resource_type:int;
+  resource_id:int;
+  cost_diamond:int;
+  max_one_time:int;
+  max_time:int;
+  good_item_length:int;
+  title:string;
+  can_batch:bool;
+  is_auto_calc:bool;
+}
+
+table QuicklyBuyTable {
+  datas:[QuicklyBuyData];
+}
+
+root_type QuicklyBuyTable;

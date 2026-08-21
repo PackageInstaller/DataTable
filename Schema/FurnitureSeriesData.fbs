@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table FurnitureSeriesData {
+  id:int;
+  series_id:int;
+  num:int;
+  points:int;
+  desc:string;
+}
+
+table FurnitureSeriesTable {
+  datas:[FurnitureSeriesData];
+}
+
+root_type FurnitureSeriesTable;

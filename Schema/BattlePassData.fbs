@@ -1,0 +1,18 @@
+namespace ProjectA.Data;
+
+table BattlePassData {
+  battle_pass_id:int;
+  name:string;
+  ios_pay_id:int;
+  android_pay_id:int;
+  rare:int;
+  bg_color:int;
+  icon_id:string;
+  text:string;
+}
+
+table BattlePassTable {
+  datas:[BattlePassData];
+}
+
+root_type BattlePassTable;

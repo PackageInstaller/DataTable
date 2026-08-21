@@ -1,0 +1,36 @@
+namespace ProjectA.Data;
+
+table ExchangeStoreItemData {
+  id:int;
+  name:string;
+  exchange_store_id:int;
+  order:int;
+  group:int;
+  event_id:int;
+  goods_bg_type:int;
+  goods_item_type:int;
+  goods_item_id:int;
+  batch_purchase_limit:int;
+  good_item_num:int;
+  num:int;
+  payment_type1:int;
+  payment_id1:int;
+  payment_num1:int;
+  payment_type2:int;
+  payment_id2:int;
+  payment_num2:int;
+  payment_type3:int;
+  payment_id3:int;
+  payment_num3:int;
+  payment_type4:int;
+  payment_id4:int;
+  payment_num4:int;
+  min_level:int;
+  max_level:int;
+}
+
+table ExchangeStoreItemTable {
+  datas:[ExchangeStoreItemData];
+}
+
+root_type ExchangeStoreItemTable;

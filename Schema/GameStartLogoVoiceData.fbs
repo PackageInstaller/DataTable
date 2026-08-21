@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table GameStartLogoVoiceData {
+  id:int;
+  cue:string;
+  volume:float;
+  weight:int;
+}
+
+table GameStartLogoVoiceTable {
+  datas:[GameStartLogoVoiceData];
+}
+
+root_type GameStartLogoVoiceTable;

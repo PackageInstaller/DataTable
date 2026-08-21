@@ -1,0 +1,49 @@
+namespace ProjectA.Data;
+
+table MonsterData {
+  monster_id:int;
+  name:string;
+  rotate_speed:int;
+  root_node:string;
+  skill_id1:int;
+  skill_id2:int;
+  skill_id3:int;
+  skill_id4:int;
+  skill_id5:int;
+  skill_id6:int;
+  skill_id7:int;
+  skill_id8:int;
+  skill_id9:int;
+  skill_id10:int;
+  skill_id11:int;
+  skill_id12:int;
+  height:int;
+  hit_effect_scale:int;
+  race:int;
+  enemy_type:int;
+  model_id:int;
+  race2:int;
+  blood_lv1:string;
+  blood_lv2:string;
+  blood_lv3:string;
+  death_eff:string;
+  hit_color1:int;
+  hit_color2:int;
+  hit_color3:int;
+  hit_color3_alpha:int;
+  sight_tracing:string;
+  sight_tracing_priority:int;
+  icon_id:string;
+  child_logic_ids_length:int;
+  target_lock_offset:float;
+  target_lock_scale:float;
+  element_length:int;
+  appear_stage_length:int;
+  version_id:int;
+}
+
+table MonsterTable {
+  datas:[MonsterData];
+}
+
+root_type MonsterTable;

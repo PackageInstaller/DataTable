@@ -1,0 +1,15 @@
+namespace ProjectA.Data;
+
+table EquipGameCfgData {
+  id:int;
+  time_interval:int;
+  score:int;
+  quality_value:int;
+  exp:int;
+}
+
+table EquipGameCfgTable {
+  datas:[EquipGameCfgData];
+}
+
+root_type EquipGameCfgTable;

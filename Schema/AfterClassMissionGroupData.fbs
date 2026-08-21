@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table AfterClassMissionGroupData {
+  group_id:int;
+  mission_id:int;
+  name:string;
+  group_order:int;
+  pre_group:int;
+  pass_points:int;
+  pass_reward_id:int;
+  perfect_points:int;
+  perfect_reward_id:int;
+  lockdesc:string;
+}
+
+table AfterClassMissionGroupTable {
+  datas:[AfterClassMissionGroupData];
+}
+
+root_type AfterClassMissionGroupTable;

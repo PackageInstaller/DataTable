@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table LessonScoreData {
+  id:int;
+  name:string;
+  desc:string;
+}
+
+table LessonScoreTable {
+  datas:[LessonScoreData];
+}
+
+root_type LessonScoreTable;

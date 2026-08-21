@@ -1,0 +1,13 @@
+namespace ProjectA.Data;
+
+table ErrorData {
+  id:int;
+  error_type:int;
+  error_desc:string;
+}
+
+table ErrorTable {
+  datas:[ErrorData];
+}
+
+root_type ErrorTable;

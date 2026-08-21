@@ -1,0 +1,39 @@
+namespace ProjectA.Data;
+
+table EquipCreateFormulaData {
+  id:int;
+  equip_id:int;
+  name:string;
+  need_to_release:int;
+  level:int;
+  forge_level:int;
+  cardbase_id:int;
+  rare:int;
+  bg_color:int;
+  icon_id:string;
+  text:string;
+  cost_gold:int;
+  require_type1:int;
+  require_name1:string;
+  require_id1:int;
+  require_num1:int;
+  require_type2:int;
+  require_name2:string;
+  require_id2:int;
+  require_num2:int;
+  require_type3:int;
+  require_name3:string;
+  require_id3:int;
+  require_num3:int;
+  return_type:int;
+  return_nun:int;
+  pushtext:string;
+  reform_length:int;
+  version_id:int;
+}
+
+table EquipCreateFormulaTable {
+  datas:[EquipCreateFormulaData];
+}
+
+root_type EquipCreateFormulaTable;

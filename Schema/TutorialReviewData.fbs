@@ -1,0 +1,14 @@
+namespace ProjectA.Data;
+
+table TutorialReviewData {
+  id:int;
+  order:int;
+  tutorial_group_id:int;
+  tutorial_book_id:int;
+}
+
+table TutorialReviewTable {
+  datas:[TutorialReviewData];
+}
+
+root_type TutorialReviewTable;

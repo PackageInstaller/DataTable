@@ -1,0 +1,49 @@
+namespace ProjectA.Data;
+
+table ItemData {
+  item_id:int;
+  name:string;
+  item_type_name:string;
+  type:int;
+  kind_type:int;
+  min_type:int;
+  rare:int;
+  bg_color:int;
+  element:int;
+  icon_id:string;
+  mode_id:string;
+  price:int;
+  backpack:int;
+  sub_backpack:int;
+  is_sell:int;
+  super_limit:int;
+  is_resolve:int;
+  props_type:int;
+  props_id:int;
+  props_num:int;
+  effect_type:int;
+  effect_value:int;
+  role_level:int;
+  gift_value:int;
+  acquire_way:string;
+  wishing_pool:int;
+  text:string;
+  special_text:string;
+  gain_id_length:int;
+  quickly_buy:int;
+  resource_point_cost:int;
+  quality_value:int;
+  show_hold:int;
+  illustratedbook_type:int;
+  is_illustratedbook:bool;
+  illustratedbook_display:int;
+  deposition_flag:bool;
+  deposition_reward_id:int;
+  version_id:int;
+}
+
+table ItemTable {
+  datas:[ItemData];
+}
+
+root_type ItemTable;

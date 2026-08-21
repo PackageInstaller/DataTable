@@ -1,0 +1,16 @@
+namespace ProjectA.Data;
+
+table CardBaseBeginingCfgData {
+  card_base_id:int;
+  name:string;
+  relation_value:int;
+  team_relation_level:int;
+  follow_relation_level:int;
+  unlock_id_length:int;
+}
+
+table CardBaseBeginingCfgTable {
+  datas:[CardBaseBeginingCfgData];
+}
+
+root_type CardBaseBeginingCfgTable;

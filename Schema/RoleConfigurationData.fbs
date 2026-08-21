@@ -1,0 +1,28 @@
+namespace ProjectA.Data;
+
+table RoleConfigurationData {
+  rolecfg:int;
+  card_id:int;
+  cardlevel:int;
+  card_fashion_length:int;
+  card_weapon_length:int;
+  card_equip1_length:int;
+  card_equip2_length:int;
+  card_crstal1_length:int;
+  card_crstal2_length:int;
+  card_crstal3_length:int;
+  card_crstal4_length:int;
+  card_crstal5_length:int;
+  normal_attack_length:int;
+  skill:int;
+  doge_attack:int;
+  qte_skill_length:int;
+  chain_skill:int;
+  ouguki:int;
+}
+
+table RoleConfigurationTable {
+  datas:[RoleConfigurationData];
+}
+
+root_type RoleConfigurationTable;

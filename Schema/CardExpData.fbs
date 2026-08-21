@@ -1,0 +1,12 @@
+namespace ProjectA.Data;
+
+table CardExpData {
+  card_level:int;
+  card_exp:int;
+}
+
+table CardExpTable {
+  datas:[CardExpData];
+}
+
+root_type CardExpTable;

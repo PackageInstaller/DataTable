@@ -1,0 +1,20 @@
+namespace ProjectA.Data;
+
+table EquipRewardData {
+  id:int;
+  equip_id:int;
+  rank:int;
+  level:int;
+  affix1_id:int;
+  affix1value:int;
+  affix2_id:int;
+  affix2value:int;
+  affix3_id:int;
+  affix3value:int;
+}
+
+table EquipRewardTable {
+  datas:[EquipRewardData];
+}
+
+root_type EquipRewardTable;

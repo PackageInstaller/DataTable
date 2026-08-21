@@ -1,0 +1,24 @@
+namespace ProjectA.Data;
+
+table BossColliderData {
+  monster_id:int;
+  collider_name_length:int;
+  collider_attack_rate_length:int;
+  collider_break_rate_length:int;
+  break_action:string;
+  recover_action:string;
+  vulnerable_box_index_length:int;
+  is_parts_break:int;
+  priority_length:int;
+  hp_rate_length:int;
+  parts_length:int;
+  parts_count_length:int;
+  parts_break_effect_length:int;
+  parts_break_timeline_length:int;
+}
+
+table BossColliderTable {
+  datas:[BossColliderData];
+}
+
+root_type BossColliderTable;

@@ -1,0 +1,23 @@
+namespace ProjectA.Data;
+
+table GuildRaidLevelData {
+  level_id:int;
+  event_id:int;
+  name:string;
+  dec:string;
+  order:int;
+  pic:string;
+  prefab:string;
+  time_limit:int;
+  stage_id:int;
+  fight_time:int;
+  max_hp:int;
+  win_reward_id:int;
+  join_reward_id:int;
+}
+
+table GuildRaidLevelTable {
+  datas:[GuildRaidLevelData];
+}
+
+root_type GuildRaidLevelTable;
