@@ -1,0 +1,1829 @@
+[
+    {
+        "id": 1,
+        "type": 1,
+        "time": 200,
+        "turn": 1,
+        "turn_a": 45,
+        "move": {
+            "pos": {
+                "x": 30,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 220101,
+        "type": 2,
+        "time": 38000,
+        "turn": 3,
+        "turn_a": 0,
+        "loop": {
+            "type": 0,
+            "start_time": 0,
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "x": 1200,
+                "y": 1200
+            },
+            "shift": 0
+        }
+    },
+    {
+        "id": 240101,
+        "type": 1,
+        "time": 0,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 500101,
+        "type": 1,
+        "time": 1600,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 800,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500102,
+        "type": 1,
+        "time": 1600,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -800,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500103,
+        "type": 1,
+        "time": 1600,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500111,
+        "type": 1,
+        "time": 1600,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500112,
+        "type": 1,
+        "time": 1600,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500113,
+        "type": 1,
+        "time": 1600,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500201,
+        "type": 1,
+        "time": 1000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 1000,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500202,
+        "type": 1,
+        "time": 1000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -1000,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500203,
+        "type": 1,
+        "time": 1000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500301,
+        "type": 1,
+        "time": 1000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 900,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500302,
+        "type": 1,
+        "time": 1000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500303,
+        "type": 1,
+        "time": 1000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 500304,
+        "type": 1,
+        "time": 1000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -900,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 510101,
+        "type": 2,
+        "time": 22300,
+        "turn": 3,
+        "turn_a": 0,
+        "loop": {
+            "type": 1,
+            "start_time": 0,
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "x": 800,
+                "y": 150
+            },
+            "shift": 1
+        }
+    },
+    {
+        "id": 511101,
+        "type": 2,
+        "time": 22300,
+        "turn": 3,
+        "turn_a": 0,
+        "loop": {
+            "type": 1,
+            "start_time": 0,
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "x": 150,
+                "y": 800
+            },
+            "shift": 1
+        }
+    },
+    {
+        "id": 1003301,
+        "type": 2,
+        "time": 40000,
+        "turn": 3,
+        "turn_a": 0,
+        "loop": {
+            "type": 0,
+            "start_time": 0,
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "x": 750,
+                "y": 750
+            },
+            "shift": 0
+        }
+    },
+    {
+        "id": 2005101,
+        "type": 1,
+        "time": 1,
+        "turn": 3,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2005102,
+        "type": 1,
+        "time": 1,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 1
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2015101,
+        "type": 3,
+        "time": 100,
+        "turn": 2,
+        "turn_a": 0
+    },
+    {
+        "id": 2015102,
+        "type": 3,
+        "time": 100,
+        "turn": 1,
+        "turn_a": 0
+    },
+    {
+        "id": 2015103,
+        "type": 1,
+        "time": 300,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017101,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017102,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -400
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017301,
+        "type": 1,
+        "time": 500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017302,
+        "type": 1,
+        "time": 500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 300,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017303,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017304,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 300,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017305,
+        "type": 1,
+        "time": 3000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 300,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2017306,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 800,
+                "y": 600
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2017307,
+        "type": 1,
+        "time": 3000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 200,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2017308,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 15,
+        "move": {
+            "pos": {
+                "x": -150,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017309,
+        "type": 1,
+        "time": 1500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 400,
+                "y": 200
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2017310,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 90,
+        "move": {
+            "pos": {
+                "x": 400,
+                "y": 1950
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017311,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 90,
+        "move": {
+            "pos": {
+                "x": 400,
+                "y": 1450
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017401,
+        "type": 1,
+        "time": 500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017402,
+        "type": 1,
+        "time": 500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -300,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017403,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017404,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -300,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017405,
+        "type": 1,
+        "time": 3000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -300,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2017406,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -800,
+                "y": 600
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2017407,
+        "type": 1,
+        "time": 3000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -200,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2017408,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": -15,
+        "move": {
+            "pos": {
+                "x": 150,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017409,
+        "type": 1,
+        "time": 1500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -400,
+                "y": 200
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2017410,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": -90,
+        "move": {
+            "pos": {
+                "x": -400,
+                "y": 1450
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2017411,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": -90,
+        "move": {
+            "pos": {
+                "x": -400,
+                "y": 1950
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 2019101,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2019102,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -1000,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2019103,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 1000,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2019104,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -700,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2019105,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 700,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2019106,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -300,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 2019107,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 300,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5000101,
+        "type": 1,
+        "time": 2000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 1000,
+                "y": -100
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5000102,
+        "type": 1,
+        "time": 2000,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -1000,
+                "y": -100
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5000103,
+        "type": 1,
+        "time": 500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5000104,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 500,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5000105,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -500,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5000106,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5000107,
+        "type": 1,
+        "time": 350,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 300,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5000108,
+        "type": 1,
+        "time": 350,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -300,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5000109,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5002101,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -100
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5002102,
+        "type": 1,
+        "time": 3500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 1000,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5002103,
+        "type": 1,
+        "time": 3500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -1000,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5002104,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": -30,
+        "move": {
+            "pos": {
+                "x": -200,
+                "y": -250
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5002105,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 90,
+        "move": {
+            "pos": {
+                "x": 1350,
+                "y": 800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5002106,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": -60,
+        "move": {
+            "pos": {
+                "x": -1200,
+                "y": 500
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5002107,
+        "type": 3,
+        "time": 100,
+        "turn": 2,
+        "turn_a": 0
+    },
+    {
+        "id": 5002108,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -100
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5002109,
+        "type": 1,
+        "time": 2000,
+        "turn": 1,
+        "turn_a": -45,
+        "move": {
+            "pos": {
+                "x": 1000,
+                "y": -100
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5002110,
+        "type": 1,
+        "time": 2000,
+        "turn": 1,
+        "turn_a": 45,
+        "move": {
+            "pos": {
+                "x": -1000,
+                "y": -100
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5002111,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5009101,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5009102,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 30,
+        "move": {
+            "pos": {
+                "x": 800,
+                "y": 400
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5009103,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -800,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5009104,
+        "type": 1,
+        "time": 3000,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 600,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5009105,
+        "type": 1,
+        "time": 250,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 800,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5009106,
+        "type": 1,
+        "time": 3000,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -600,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5009107,
+        "type": 1,
+        "time": 250,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -800,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5023101,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5023102,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5023103,
+        "type": 3,
+        "time": 100,
+        "turn": 2,
+        "turn_a": 0
+    },
+    {
+        "id": 5023104,
+        "type": 3,
+        "time": 100,
+        "turn": 1,
+        "turn_a": 0
+    },
+    {
+        "id": 5030101,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5030102,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": -800
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5030103,
+        "type": 3,
+        "time": 100,
+        "turn": 2,
+        "turn_a": 0
+    },
+    {
+        "id": 5030104,
+        "type": 3,
+        "time": 100,
+        "turn": 1,
+        "turn_a": 0
+    },
+    {
+        "id": 5032101,
+        "type": 1,
+        "time": 300,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5032102,
+        "type": 1,
+        "time": 100,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 900,
+                "y": -200
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5032103,
+        "type": 1,
+        "time": 500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -900,
+                "y": 500
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5032104,
+        "type": 1,
+        "time": 100,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -900,
+                "y": -200
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5032105,
+        "type": 1,
+        "time": 500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 900,
+                "y": 500
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5032106,
+        "type": 1,
+        "time": 500,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5032107,
+        "type": 1,
+        "time": 200,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 700
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5032108,
+        "type": 1,
+        "time": 200,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -200,
+                "y": 600
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5032109,
+        "type": 1,
+        "time": 200,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 1000,
+                "y": 400
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5032110,
+        "type": 1,
+        "time": 2000,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -150,
+                "y": 400
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5032111,
+        "type": 1,
+        "time": 200,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -1000,
+                "y": 400
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 1
+        }
+    },
+    {
+        "id": 5032112,
+        "type": 1,
+        "time": 2000,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 150,
+                "y": 400
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5032113,
+        "type": 1,
+        "time": 1400,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -450,
+                "y": 400
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5032114,
+        "type": 1,
+        "time": 1400,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 450,
+                "y": 400
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 5033101,
+        "type": 3,
+        "time": 100,
+        "turn": 2,
+        "turn_a": 0
+    },
+    {
+        "id": 5033102,
+        "type": 3,
+        "time": 100,
+        "turn": 1,
+        "turn_a": 0
+    },
+    {
+        "id": 6019101,
+        "type": 1,
+        "time": 3000,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -300,
+                "y": 200
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 6019102,
+        "type": 1,
+        "time": 5000,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -1000,
+                "y": 300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 6019103,
+        "type": 1,
+        "time": 3000,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 300,
+                "y": 200
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 6019104,
+        "type": 1,
+        "time": 5000,
+        "turn": 1,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 1000,
+                "y": 300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 9000001,
+        "type": 2,
+        "time": 9680,
+        "turn": 2,
+        "turn_a": 0,
+        "loop": {
+            "type": 0,
+            "start_time": 500,
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "x": 300,
+                "y": 50
+            },
+            "shift": 0
+        }
+    },
+    {
+        "id": 9000002,
+        "type": 1,
+        "time": 500,
+        "turn": 3,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 9000003,
+        "type": 1,
+        "time": 500,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 50
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 9000004,
+        "type": 1,
+        "time": 800,
+        "turn": 3,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 0,
+                "y": 0
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 9000005,
+        "type": 1,
+        "time": 800,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 450,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 9000006,
+        "type": 1,
+        "time": 800,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -450,
+                "y": -300
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 9000007,
+        "type": 1,
+        "time": 800,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": 800,
+                "y": 150
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    },
+    {
+        "id": 9000008,
+        "type": 1,
+        "time": 800,
+        "turn": 2,
+        "turn_a": 0,
+        "move": {
+            "pos": {
+                "x": -800,
+                "y": 150
+            },
+            "curve_point": 0,
+            "curve_rate": 0,
+            "timing": 0
+        }
+    }
+]
